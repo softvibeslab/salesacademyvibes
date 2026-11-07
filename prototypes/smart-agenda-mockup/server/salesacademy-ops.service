@@ -1,0 +1,15 @@
+[Unit]
+Description=Sales Academy tours API
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/salesacademy-ops/ops_api.py
+Environment=OPS_DATA=/var/lib/salesacademy-ops/ops.json
+Environment=OPS_PORT=8026
+Restart=on-failure
+User=www-data
+Group=www-data
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
