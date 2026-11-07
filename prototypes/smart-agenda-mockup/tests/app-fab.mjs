@@ -6,6 +6,8 @@ import { clampFab, isTap, FAB_ACTIONS, resolveFabMenu } from "../fab.js";
 assert.deepEqual(clampFab(-40, -40, 390, 700), { x: 8, y: 8 });
 assert.deepEqual(clampFab(5000, 5000, 390, 700), { x: 390 - 56 - 8, y: 700 - 56 - 8 });
 assert.deepEqual(clampFab(120, 300, 390, 700), { x: 120, y: 300 });
+// Zona segura inferior (p. ej. el compositor del Copiloto embebido)
+assert.deepEqual(clampFab(120, 5000, 390, 844, 56, 8, 150), { x: 120, y: 844 - 56 - 8 - 150 });
 
 // Toque vs arrastre
 assert.equal(isTap(2, 3, 150), true);

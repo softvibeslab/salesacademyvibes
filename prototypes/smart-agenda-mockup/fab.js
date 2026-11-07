@@ -62,9 +62,9 @@ export function resolveFabMenu(view, flags = {}) {
 }
 
 /** Acota la posición del FAB a la pantalla del teléfono. */
-export function clampFab(x, y, vw, vh, size = FAB_SIZE, margin = FAB_MARGIN) {
-  const clamp = (v, max) => Math.min(Math.max(v, margin), Math.max(margin, max - size - margin));
-  return { x: clamp(x, vw), y: clamp(y, vh) };
+export function clampFab(x, y, vw, vh, size = FAB_SIZE, margin = FAB_MARGIN, bottomReserve = 0) {
+  const clamp = (v, max, extra) => Math.min(Math.max(v, margin), Math.max(margin, max - size - margin - extra));
+  return { x: clamp(x, vw, 0), y: clamp(y, vh, bottomReserve) };
 }
 
 /** Un toque es poco movimiento y poco tiempo; lo demás es arrastre o presión larga. */

@@ -208,13 +208,18 @@ fabMenu.hidden = true;
 phone.append(fabMenu, fab);
 const FAB_POS_KEY = "sa.fab.pos";
 
+// Zona segura inferior: no tapar el dock de la app ni el compositor del Copiloto embebido.
+function fabReserve() {
+  return state.view === "coach" ? 150 : 72;
+}
+
 function placeFab() {
   const w = phone.clientWidth;
   const h = phone.clientHeight;
   let saved = null;
   try { saved = JSON.parse(localStorage.getItem(FAB_POS_KEY) || "null"); } catch { saved = null; }
   const base = saved || { x: w - FAB_SIZE - 16, y: h - FAB_SIZE - 96 };
-  const pos = clampFab(base.x, base.y, w, h);
+  const pos = clampFab(base.x, base.y, w, h, FAB_SIZE, FAB_MARGIN, fabReserve());
   fab.style.left = `${pos.x}px`;
   fab.style.top = `${pos.y}px`;
 }
@@ -267,7 +272,7 @@ fab.addEventListener("pointerdown", (event) => {
 });
 fab.addEventListener("pointermove", (event) => {
   if (!fabDrag) return;
-  const pos = clampFab(fabDrag.baseX + event.clientX - fabDrag.startX, fabDrag.baseY + event.clientY - fabDrag.startY, phone.clientWidth, phone.clientHeight);
+  const pos = clampFab(fabDrag.baseX + event.clientX - fabDrag.startX, fabDrag.baseY + event.clientY - fabDrag.startY, phone.clientWidth, phone.clientHeight, FAB_SIZE, FAB_MARGIN, fabReserve());
   fab.style.left = `${pos.x}px`;
   fab.style.top = `${pos.y}px`;
   if (!fabMenu.hidden) placeFabMenu();
@@ -1742,6 +1747,7 @@ function render() {
     frame.hidden = false;
     if (!phone.contains(frame)) phone.insertBefore(frame, sheets);
     sheets.innerHTML = shell("");
+    placeFab();
     return;
   }
   if (coachFrame) coachFrame.hidden = true;
@@ -1763,6 +1769,7 @@ function render() {
       if (count) count.textContent = `${noteField.value.length}/120`;
     });
   }
+  placeFab();
   const tpl = phone.querySelector("#tpl");
   if (tpl) {
     tpl.addEventListener("input", paintTemplatePreview);

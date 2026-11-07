@@ -29,6 +29,7 @@ Un jefe asigna un tour y el representante lo ve en otro navegador. Eso no pasaba
 ### WhatsApp y atajos (corte `20261107s`)
 
 - Cotizaciones compartibles por WhatsApp desde las fichas de la app y la hoja «Tu membresía» del Copiloto: con número abre el chat, sin número eliges allá; el teléfono nunca se guarda y queda una tarea de seguimiento interna.
+- Chat del Copiloto (corte `20261107v`/`q`): burbujas de inicio según la hora y los tours programados, botón Enviar sin truncarse y zona segura para que el botón flotante no tape el compositor. El puente a Hermes quedó desplegado (server.mjs); falta un paso del operador para encenderlo.
 - Un solo botón flotante con menú por contexto (corte `20261107u`): dueño único (el Copiloto embebido ya no dibuja el suyo) y opciones dinámicas por vista; en la pestaña Copiloto maneja al agente vía mensajes internos.
 - Botón flotante arrastrable en toda la app (corte `20261107t`): Registrar resultado, Nueva nota, Cotizar, Nuevo bloque y Tablero de sala; recuerda su posición y se oculta en la pestaña Copiloto.
 - Copiloto sin barra inferior: Hoy, Catálogo y Mi mes viven en el menú de su botón flotante, junto con Programar tour (fuera del Catálogo), registrar venta/no venta, cotizar y ¿cómo voy?.
