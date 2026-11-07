@@ -1,6 +1,7 @@
 import { opsRequest } from "./ops-api.js";
 import { EXAMPLE_TODAY, ME_REP, STATUS_LABEL, addDays, defaultOps, labelDate } from "./ops-store.js";
 import { homeCounters } from "./home-counters.js";
+import { waShareUrl, previewMessage } from "./wa-share.js";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
 // estos son el respaldo si no responde.
@@ -1339,7 +1340,7 @@ function templateFields(fields) {
   }).join("")}</div>`;
 }
 
-function templateScreen(title, kicker, hint, fields, previewHtml) {
+function templateScreen(title, kicker, hint, fields, previewHtml, extra = "") {
   return `<header class="taskbar"><button class="back" data-go="resources" type="button"><span class="material-symbols-outlined">chevron_left</span> Recursos</button><span class="pill">Plantilla</span></header>
     <div class="screen task">
       <span class="kicker">${esc(kicker)}</span>
@@ -1349,6 +1350,7 @@ function templateScreen(title, kicker, hint, fields, previewHtml) {
         <section class="card preview-card" id="tpl-preview">${previewHtml}</section>
         <button class="btn gold" data-act="use-template" type="button" style="width:100%">Usar esta plantilla</button>
       </form>
+      ${extra}
     </div>`;
 }
 
@@ -1394,7 +1396,19 @@ function currentTemplate() {
 
 function viewFicha() {
   const tpl = currentTemplate();
-  return templateScreen(tpl.title, tpl.kicker, tpl.hint, tpl.fields.length ? templateFields(tpl.fields) : "", previewMarkup(tpl.preview, tpl.phrase));
+  const skill = state.openKind === "skill" ? COPILOTO_SKILLS.find((item) => item.id === state.openId) : null;
+  const share = skill && skill.category === "cotizar" ? `
+    <section class="card" style="margin-top:10px">
+      <span class="kicker">Enviar al cliente por WhatsApp</span>
+      <div class="duo">
+        <div class="field"><label for="wa-phone">WhatsApp (opcional)</label><input id="wa-phone" inputmode="tel" placeholder="52 998 123 4567" autocomplete="off"></div>
+        <div class="field"><label for="wa-lead">Lead # (opcional)</label><input id="wa-lead" placeholder="Lead #4920" autocomplete="off"></div>
+      </div>
+      <p class="fine">El número no se guarda; solo abre WhatsApp. Sin número, eliges el chat allá.</p>
+      <div class="warn" id="wa-error" role="alert" hidden></div>
+      <button class="btn line" data-act="wa-share" type="button" style="width:100%">Enviar por WhatsApp</button>
+    </section>` : "";
+  return templateScreen(tpl.title, tpl.kicker, tpl.hint, tpl.fields.length ? templateFields(tpl.fields) : "", previewMarkup(tpl.preview, tpl.phrase), share);
 }
 
 function readTemplateValues() {
@@ -1729,6 +1743,30 @@ function run(act) {
     }
     writeShortcuts(list);
     render();
+    return;
+  }
+  if (act === "wa-share") {
+    const errBox = phone.querySelector("#wa-error");
+    const fail = (msg) => { if (errBox) { errBox.hidden = false; errBox.textContent = msg; } };
+    const lead = (phone.querySelector("#wa-lead")?.value || "").trim();
+    if (lead && !/^Lead #\d{3,4}$/.test(lead)) { fail("Usa un Lead # de ejemplo, por ejemplo Lead #4920."); return; }
+    const tpl = readTemplateValues();
+    const preview = state.openKind === "skill" ? (quotePreview(state.openId, tpl.values) || tpl.preview) : tpl.preview;
+    if (!preview || !preview.hero) { fail("Completa la plantilla para armar la propuesta."); return; }
+    const url = waShareUrl(phone.querySelector("#wa-phone")?.value || "", previewMessage(tpl.title, preview));
+    if (!url) { fail("El WhatsApp no es válido. Usa solo dígitos, con lada (8 a 15)."); return; }
+    if (errBox) errBox.hidden = true;
+    window.open(url, "_blank", "noopener");
+    // La tarea interna nunca lleva el teléfono.
+    state.priorities.unshift({
+      id: `p${Date.now()}`,
+      title: `Seguimiento WhatsApp${lead ? ` · ${lead}` : ""}`,
+      when: "Mañana",
+      detail: `${tpl.title} · ${preview.hero}${preview.heroLabel ? ` ${preview.heroLabel}` : ""}`,
+      done: false,
+      origin: "WhatsApp",
+    });
+    toast("WhatsApp abierto. Seguimiento agregado a Tus prioridades.");
     return;
   }
   if (act === "use-template") {

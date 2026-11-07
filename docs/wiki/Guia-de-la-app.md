@@ -60,6 +60,10 @@ Cada paso abre un plan. El video demo es el mismo en todos: YouTube `PkB9UAx2fuI
 
 19 skills, 5 fichas de biblioteca, 4 prácticas. Cada ítem abre plantilla y vista previa. **Usar esta plantilla** pone la frase en el Copiloto embebido y no la envía sola. SK-18 manda el rol manager.
 
+## Enviar una cotización por WhatsApp
+
+En las fichas de Cotizar hay un bloque «Enviar al cliente por WhatsApp»: WhatsApp y Lead # opcionales. Con número abre el chat directo; sin número, WhatsApp te deja elegirlo. El número no se guarda en ningún lado; al enviar se agrega «Seguimiento WhatsApp» a Tus prioridades. El Copiloto tiene lo mismo en la hoja «Tu membresía», más un botón flotante arrastrable con los atajos del rep (Programar tour, registrar venta o no venta, cotizar, ¿cómo voy?).
+
 ## Perfil
 
 Rendimiento de ejemplo en Hoy / semana / mes. No lee el API de tours.

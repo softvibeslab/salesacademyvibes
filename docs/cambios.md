@@ -26,6 +26,11 @@ Un jefe asigna un tour y el representante lo ve en otro navegador. Eso no pasaba
 - Home del día: indicadores, tours, ahora, prioridades, atajos (máximo 6).
 - Calendario de la semana de ejemplo.
 
+### WhatsApp y atajos (corte `20261107s`)
+
+- Cotizaciones compartibles por WhatsApp desde las fichas de la app y la hoja «Tu membresía» del Copiloto: con número abre el chat, sin número eliges allá; el teléfono nunca se guarda y queda una tarea de seguimiento interna.
+- Copiloto: botón flotante circular arrastrable con atajos (Programar tour —que salió del Catálogo—, registrar venta/no venta, cotizar, ¿cómo voy?).
+
 ### Tablero de sala
 
 - Página independiente `/ops/`.

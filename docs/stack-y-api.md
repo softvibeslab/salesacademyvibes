@@ -109,7 +109,7 @@ Desde `prototypes/smart-agenda-mockup/`:
 
 1. `node --check` de los JS y `python3 -m py_compile server/ops_api.py`.
 2. `cp styles.css agenda.css` si cambió CSS.
-3. Subir query de caché en `index.html` y `ops/index.html` (último corte: `20261107r`).
+3. Subir query de caché en `index.html` y `ops/index.html` (último corte: `20261107s`).
 4. `rsync` al root `/var/www/salesacademy.softvibes.art/` y, si cambió el API, a `/opt/salesacademy-ops/ops_api.py` y `systemctl restart salesacademy-ops`.
 5. `node tests/e2e-ops.mjs` y `OPS_BASE=https://salesacademy.softvibes.art node tests/e2e-ops.mjs`.
 
