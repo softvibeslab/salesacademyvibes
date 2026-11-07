@@ -449,9 +449,77 @@ button { cursor: pointer; }
 .pill.dim { color: var(--faint); background: var(--surface-low); }
 .seg.two { grid-template-columns: repeat(2, 1fr); }
 
-@media (max-width: 640px) {
-  .stage, .handset, .phone { background: var(--surface); }
-  .handset, .phone { width: 100%; max-width: none; }
+/* ===== Responsivo (FTD responsive): teléfono, horizontal, tablet y escritorio ===== */
+.stage, .handset, .phone { background: var(--surface); }
+.handset, .phone { width: 100%; max-width: none; }
+.phone {
+  --content: 760px;
+  /* PWA instalada: notch, barra de inicio y bordes redondeados */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+}
+.dock { height: calc(64px + env(safe-area-inset-bottom)); padding-bottom: calc(6px + env(safe-area-inset-bottom)); }
+/* Contenido centrado con ancho de lectura; la barra superior se alinea con él */
+.screen { padding-inline: max(16px, calc((100% - var(--content)) / 2)); }
+.topbar, .taskbar { padding-inline: max(16px, calc((100% - var(--content)) / 2)); }
+.phone[data-view="hoy"], .phone[data-view="resources"], .phone[data-view="roadmap"] { --content: 1080px; }
+.phone[data-view="perfil"] { --content: 960px; }
+
+/* Cuadrículas que se abren solas cuando hay espacio */
+.res-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0 12px; align-items: stretch; }
+.res-grid .res { height: calc(100% - 8px); }
+.mods-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0 12px; }
+.kpis { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+
+/* Filas de tours: en pantallas chicas las etiquetas bajan de línea en vez de cortarse */
+.vrow { flex-wrap: wrap; }
+.vrow > span:first-child { white-space: nowrap; }
+.vtags { margin-left: auto; }
+
+/* Barra lateral: escritorio, tablet horizontal y celular horizontal */
+@media (min-width: 960px), (orientation: landscape) and (max-height: 540px) {
+  .phone.has-dock { --rail: 88px; display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .phone.has-dock > .copiloto { grid-column: 2; grid-row: 1 / -1; height: 100%; }
+  .phone.has-dock #sheets > header { grid-column: 2; grid-row: 1; }
+  .phone.has-dock #sheets > .screen { grid-column: 2; grid-row: 2; }
+  .phone.has-dock .dock {
+    grid-column: 1; grid-row: 1 / -1; height: auto;
+    display: flex; flex-direction: column; justify-content: flex-start; gap: 4px;
+    border-top: 0; border-right: 1px solid var(--line);
+    padding: 12px 8px calc(12px + env(safe-area-inset-bottom));
+  }
+  .phone.has-dock .tab { flex: none; height: 60px; border-radius: 14px; font-size: 11px; }
+  .phone.has-dock .tab.on { background: var(--tint); }
+  .phone.has-dock .screen { padding-bottom: 32px; }
+}
+@media (min-width: 1200px) {
+  .phone.has-dock { --rail: 216px; }
+  .phone.has-dock .dock { padding-top: 20px; }
+  .phone.has-dock .tab { flex-direction: row; justify-content: flex-start; gap: 14px; height: 48px; padding: 0 16px; font-size: 14px; }
+  .phone.has-dock .tab .material-symbols-outlined { font-size: 22px; }
+  /* Hoy en dos columnas: tours y ahora | prioridades y atajos */
+  .home-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; align-items: start; }
+}
+/* Celular horizontal: todo más compacto para dejar alto al contenido */
+@media (orientation: landscape) and (max-height: 540px) {
+  .phone.has-dock { --rail: 76px; }
+  .phone.has-dock .tab { height: 48px; font-size: 10px; }
+  .topbar, .taskbar { height: 48px; }
+  .screen { padding-top: 10px; }
+  .install-card { padding: 8px 12px; }
+  .install-copy p { display: none; }
+}
+
+/* Login en pantalla ancha: foto a la izquierda, formulario a la derecha */
+@media (min-width: 960px) {
+  .phone[data-view="acceso"] .login-screen {
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(360px, 440px);
+    gap: 20px 40px; align-content: start; padding: 24px max(32px, calc((100% - 1080px) / 2)) 40px;
+  }
+  .phone[data-view="acceso"] .login-top { grid-column: 1 / -1; }
+  .phone[data-view="acceso"] .login-hero { grid-column: 1; grid-row: 2 / span 4; align-self: start; position: sticky; top: 0; }
+  .phone[data-view="acceso"] .login-photo { height: 380px; }
+  .phone[data-view="acceso"] .login-screen > :not(.login-top):not(.login-hero) { grid-column: 2; }
+  .phone[data-view="acceso"] .login-screen [data-install-slot] .install-card { margin: 0; }
 }
 .fab[hidden] { display: none; }
 
@@ -565,3 +633,14 @@ button { cursor: pointer; }
 .install-x { position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; border: 0; background: none; color: var(--muted); display: grid; place-items: center; cursor: pointer; }
 .install-help { grid-column: 1 / -1; margin: 8px 0 0; font-size: 13px; line-height: 1.45; background: var(--field, var(--surface)); border-radius: 10px; padding: 10px 12px; }
 .login-screen .install-card { margin: 12px 0 0; }
+/* Aviso de instalar en una sola fila cuando hay espacio (FTD responsive) */
+@media (min-width: 600px) {
+  .install-card { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .install-ic { grid-row: auto; }
+  .install-btn { grid-column: 3; grid-row: 1; margin-top: 0; }
+  .install-copy p { padding-right: 0; }
+  .install-card:has(.install-x) { padding-right: 52px; }
+  .install-x { top: 50%; transform: translateY(-50%); }
+  .phone[data-view="acceso"] .install-card { grid-template-columns: auto minmax(0, 1fr); }
+  .phone[data-view="acceso"] .install-btn { grid-column: 2; grid-row: auto; justify-self: start; margin-top: 6px; }
+}

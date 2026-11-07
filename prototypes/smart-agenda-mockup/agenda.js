@@ -213,8 +213,12 @@ phone.append(fabMenu, fab);
 const FAB_POS_KEY = "sa.fab.pos";
 
 // Zona segura inferior: no tapar el dock de la app ni el compositor del Copiloto embebido.
+// Pantallas anchas y celular horizontal: el dock pasa a barra lateral (FTD responsive).
+const RAIL_QUERY = window.matchMedia?.("(min-width: 960px), (orientation: landscape) and (max-height: 540px)");
+
 function fabReserve() {
-  return state.view === "coach" ? 150 : 72;
+  if (state.view === "coach") return 150;
+  return RAIL_QUERY?.matches ? 16 : 72;
 }
 
 function placeFab() {
@@ -342,6 +346,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !fabMenu.hidden) toggleFabMenu(false);
 });
 window.addEventListener("resize", () => { placeFab(); if (!fabMenu.hidden) placeFabMenu(); });
+RAIL_QUERY?.addEventListener?.("change", () => placeFab());
 placeFab();
 
 function esc(value) {
@@ -544,6 +549,7 @@ function viewHoy() {
         ${stats.map(([label, value, pct]) => `<span class="stat"><em>${esc(label)}</em><b>${esc(value)}</b><span class="track"><span style="width:${pct}%"></span></span></span>`).join("")}
       </button>
       <p class="fine">Metas de ejemplo: 4 presentaciones, 2 cierres y ${money(goal)} USD. Los avances salen de tus resultados del día.${mxnSale ? " Las ventas en MXN no suman al volumen USD." : ""}</p>
+      <div class="home-grid">
       <section style="margin-top:16px">
         <p class="fine">${esc(meLabel())}. ${esc(agoLabel())}</p>
         <div class="row-between"><h2 class="section-title">Tours de hoy</h2><span><button class="linkish" data-act="reload-tours" type="button">Actualizar</button> · <button class="linkish" data-go="calendario" type="button">Calendario</button></span></div>
@@ -568,6 +574,7 @@ function viewHoy() {
         </div>
         ${shortcutBody || `<p class="fine">Todavía no hay atajos.</p>`}
       </section>
+      </div>
       <section style="margin-top:22px;text-align:center">
         <button class="btn ghost" data-go="cierre" data-flow="cierre" type="button" style="width:100%" ${state.closed ? "disabled" : ""}>
           <span class="material-symbols-outlined">task_alt</span> ${state.closed ? "Jornada cerrada" : "Cerrar jornada"}
@@ -1110,7 +1117,7 @@ function viewRoadmap() {
         <div class="row"><span class="fine">${done} de ${STEPS.length} módulos</span><button class="chip-btn on" data-go="modulo" data-id="${current.n}" type="button">Continuar</button></div>
       </section>
       <div class="row"><span class="eyebrow">Los 11 módulos</span><span class="pill">${done} / ${STEPS.length} listos</span></div>
-      ${rows}
+      <div class="mods-grid">${rows}</div>
     </div>
   `);
 }
@@ -1217,9 +1224,9 @@ function viewResources() {
     <button class="btn line" data-go="coach" type="button" style="width:100%;margin-bottom:12px">Abrir el chat</button>
     <div class="filters">${chips}</div>
     <input class="search" id="res-q" placeholder="Buscar" value="">
-    ${skillCards ? `<h2 class="section-title" style="margin:4px 0 8px">Habilidades</h2>${skillCards}` : ""}
-    ${libraryCards ? `<h2 class="section-title" style="margin:12px 0 8px">Biblioteca de la sala</h2>${libraryCards}` : ""}
-    ${practiceCards ? `<h2 class="section-title" style="margin:12px 0 8px">Prácticas de objeción</h2>${practiceCards}` : ""}
+    ${skillCards ? `<h2 class="section-title" style="margin:4px 0 8px">Habilidades</h2><div class="res-grid">${skillCards}</div>` : ""}
+    ${libraryCards ? `<h2 class="section-title" style="margin:12px 0 8px">Biblioteca de la sala</h2><div class="res-grid">${libraryCards}</div>` : ""}
+    ${practiceCards ? `<h2 class="section-title" style="margin:12px 0 8px">Prácticas de objeción</h2><div class="res-grid">${practiceCards}</div>` : ""}
   `);
 }
 
@@ -1925,6 +1932,8 @@ function readDraftFromDom() {
 let lastRenderedView = null;
 
 function render() {
+  phone.classList.toggle("has-dock", Boolean(state.auth.user));
+  phone.dataset.view = state.auth.user ? state.view : "acceso";
   if (!state.auth.user) {
     lastRenderedView = null;
     if (coachFrame) coachFrame.hidden = true;
