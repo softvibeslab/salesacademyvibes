@@ -18,15 +18,15 @@ Rosa asigna un tour a Teo en el tablero. En la app, Teo lo ve. Ana no.
 
 | Página | Para quién |
 |---|---|
-| [Status](status.md) | Dirección |
-| [Inicio rápido](inicio-rapido.md) | Quien va a abrir el demo |
-| [Ficha ejecutiva](ficha-ejecutiva.md) | Dirección y comercial |
-| [Guía de la app](guia-app.md) | Rep |
-| [Guía del tablero](guia-tablero.md) | Jefe de sala y admin |
-| [Stack y API](stack-y-api.md) | Ingeniería |
-| [Cambios](cambios.md) | Ingeniería y producto |
-| [Avance y proyección](avance-y-proyeccion.md) | Dirección y producto |
-| [Privacidad y límites](privacidad.md) | Todos |
+| [Status](status.html) | Dirección |
+| [Inicio rápido](inicio-rapido.html) | Quien va a abrir el demo |
+| [Ficha ejecutiva](ficha-ejecutiva.html) | Dirección y comercial |
+| [Guía de la app](guia-app.html) | Rep |
+| [Guía del tablero](guia-tablero.html) | Jefe de sala y admin |
+| [Stack y API](stack-y-api.html) | Ingeniería |
+| [Cambios](cambios.html) | Ingeniería y producto |
+| [Avance y proyección](avance-y-proyeccion.html) | Dirección y producto |
+| [Privacidad y límites](privacidad.html) | Todos |
 
 ## Qué hay hoy
 

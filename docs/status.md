@@ -11,4 +11,4 @@
 | Métricas de venta | Red | Home y Perfil son ejemplo. **Brecha de dato** |
 | Copiloto en este git | Yellow | Live en `/copiloto/`. Fuente no está en este repo |
 
-Detalle y proyección: [Avance y proyección](avance-y-proyeccion.md).
+Detalle y proyección: [Avance y proyección](avance-y-proyeccion.html).
