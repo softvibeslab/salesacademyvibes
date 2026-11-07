@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "results": [],
+  "error": "AssertionError [ERR_ASSERTION]: The scenario gallery must exist\n\n404 !== 200\n",
+  "errors": [],
+  "writes": [],
+  "external": []
+}

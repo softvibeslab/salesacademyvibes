@@ -1,0 +1,21 @@
+test_catalog_rejects_foreign_paths_missing_captions_and_invalid_metadata (growth.tests.test_videos.CuratedCatalogValidation.test_catalog_rejects_foreign_paths_missing_captions_and_invalid_metadata) ... ok
+test_missing_catalog_is_explicit_deployment_error (growth.tests.test_videos.CuratedCatalogValidation.test_missing_catalog_is_explicit_deployment_error) ... ok
+test_cms_contains_single_safe_catalog_and_hub_uses_film_poster (growth.tests.test_videos.CuratedVideoContract.test_cms_contains_single_safe_catalog_and_hub_uses_film_poster) ... ok
+test_cms_cover_takes_priority_over_curated_poster (growth.tests.test_videos.CuratedVideoContract.test_cms_cover_takes_priority_over_curated_poster) ... ok
+test_draft_and_archived_films_do_not_leak_into_public_hub (growth.tests.test_videos.CuratedVideoContract.test_draft_and_archived_films_do_not_leak_into_public_hub) ... ok
+test_editor_selects_preview_then_owner_publishes_and_restart_preserves (growth.tests.test_videos.CuratedVideoContract.test_editor_selects_preview_then_owner_publishes_and_restart_preserves) ... ok
+test_invalid_ids_and_source_conflicts_leave_revision_unchanged (growth.tests.test_videos.CuratedVideoContract.test_invalid_ids_and_source_conflicts_leave_revision_unchanged) ... ok
+test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) ... ok
+test_local_media_supports_partial_playback_and_correct_mime (growth.tests.test_videos.CuratedVideoContract.test_local_media_supports_partial_playback_and_correct_mime) ... ok
+test_old_documents_and_explicit_null_remain_valid (growth.tests.test_videos.CuratedVideoContract.test_old_documents_and_explicit_null_remain_valid) ... ok
+test_restore_old_document_has_no_film_until_explicit_publish (growth.tests.test_videos.CuratedVideoContract.test_restore_old_document_has_no_film_until_explicit_publish) ... ok
+test_archived_or_draft_vsl_is_not_featured_or_leaked (growth.tests.test_ai_campaign.AICampaign.test_archived_or_draft_vsl_is_not_featured_or_leaked) ... ok
+test_featured_vsl_is_unique_manual_and_captioned (growth.tests.test_ai_campaign.AICampaign.test_featured_vsl_is_unique_manual_and_captioned) ... ok
+test_journey_combines_room_photos_and_real_interfaces (growth.tests.test_ai_campaign.AICampaign.test_journey_combines_room_photos_and_real_interfaces) ... ok
+test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) ... ok
+test_static_gallery_uses_the_same_message_and_number (growth.tests.test_ai_campaign.AICampaign.test_static_gallery_uses_the_same_message_and_number) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 3.592s
+
+OK

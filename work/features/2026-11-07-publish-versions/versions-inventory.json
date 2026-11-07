@@ -1,0 +1,78 @@
+{
+  "scope": "Read-only ZIP inspection; no extraction, runtime data or production writes",
+  "versions": [
+    {
+      "version": "v1",
+      "archive": "salesacademy-growth-v1.zip",
+      "zipBytes": 3867005,
+      "sha256": "d56950a8b1b48f6207c883d708f80186689e6b3436e5eb72c6d5cc125142fbb6",
+      "manifestEntries": 115,
+      "verifiedEntries": 115,
+      "runtimeTreeBytesExcludingTests": 501733,
+      "runtimeTreeFilesExcludingTests": 41,
+      "resources": 3,
+      "requirementsSha256": "9a322c2fd61e8c9474e6b55ab8811cf41518ac95bdf9e366e8f571486b639082",
+      "hasGallery": false,
+      "entry": "growth.server.app:create_app()"
+    },
+    {
+      "version": "v2",
+      "archive": "salesacademy-growth-v2.zip",
+      "zipBytes": 9119480,
+      "sha256": "2ec61f7009a64511ea5232a7ed28e29322a7bf93d90859f39ad517bebd3c0f0a",
+      "manifestEntries": 163,
+      "verifiedEntries": 163,
+      "runtimeTreeBytesExcludingTests": 676085,
+      "runtimeTreeFilesExcludingTests": 47,
+      "resources": 3,
+      "requirementsSha256": "9a322c2fd61e8c9474e6b55ab8811cf41518ac95bdf9e366e8f571486b639082",
+      "hasGallery": false,
+      "entry": "growth.server.app:create_app()"
+    },
+    {
+      "version": "v3",
+      "archive": "salesacademy-growth-v3.zip",
+      "zipBytes": 46083211,
+      "sha256": "6d480e2dfdcd15ed1687f57a51d8c47666ee247df205da4d67e8eabecdb5a9c6",
+      "manifestEntries": 319,
+      "verifiedEntries": 319,
+      "runtimeTreeBytesExcludingTests": 23499130,
+      "runtimeTreeFilesExcludingTests": 74,
+      "resources": 8,
+      "requirementsSha256": "9a322c2fd61e8c9474e6b55ab8811cf41518ac95bdf9e366e8f571486b639082",
+      "hasGallery": false,
+      "entry": "growth.server.app:create_app()"
+    },
+    {
+      "version": "v4",
+      "archive": "salesacademy-room-scenarios-v4.zip",
+      "zipBytes": 72199451,
+      "sha256": "ce317a4df3b2e1adf3337b2bff60ea24e47c72c58f4cc81455067e3270994180",
+      "manifestEntries": 493,
+      "verifiedEntries": 493,
+      "runtimeTreeBytesExcludingTests": 28509477,
+      "runtimeTreeFilesExcludingTests": 103,
+      "resources": 9,
+      "requirementsSha256": "9a322c2fd61e8c9474e6b55ab8811cf41518ac95bdf9e366e8f571486b639082",
+      "hasGallery": true,
+      "entry": "growth.server.app:create_app()"
+    },
+    {
+      "version": "v5",
+      "archive": "salesacademy-ai-vsl-v5.zip",
+      "zipBytes": 99337177,
+      "sha256": "f9eeec30eb281783033712fd1531e8bec63541668d73b7eed31d3290345b4250",
+      "manifestEntries": 614,
+      "verifiedEntries": 614,
+      "runtimeTreeBytesExcludingTests": 29028030,
+      "runtimeTreeFilesExcludingTests": 114,
+      "resources": 9,
+      "requirementsSha256": "9a322c2fd61e8c9474e6b55ab8811cf41518ac95bdf9e366e8f571486b639082",
+      "hasGallery": true,
+      "entry": "growth.server.app:create_app()"
+    }
+  ],
+  "allArchiveHashesMatch": true,
+  "allEntryHashesMatch": true,
+  "sameRequirements": true
+}

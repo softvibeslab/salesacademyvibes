@@ -1,0 +1,27 @@
+{
+  "name": "20261107-compact-screens-02",
+  "parentRelease": "20261107-versions-01",
+  "files": [
+    {
+      "source": "growth/deploy/versions/index/styles.css",
+      "path": "index/styles.css",
+      "beforeSha256": "23b9ff60139d1f84b5ebaa96ec7eff8b0f4ff53647359cb511f38e85d0490210",
+      "sha256": "515e14206c2991b1c23272d3da8b9411ef23edc0708496e485073412ee99d261",
+      "bytes": 12498
+    },
+    {
+      "source": "growth/site/assets/ai-journey.css",
+      "path": "v5/growth/site/assets/ai-journey.css",
+      "beforeSha256": "c291a4a75d99c5292a156f70095ef0614a1bbfc5e54e469c55131b745570ac41",
+      "sha256": "0ffaa869b5240ea14bf4144e63cdb4e9ae1adf7f91493ffb9531f56938492cb5",
+      "bytes": 19894
+    },
+    {
+      "source": "growth/site/assets/scenarios/scenarios.css",
+      "path": "v5/growth/site/assets/scenarios/scenarios.css",
+      "beforeSha256": "8509272880a9bb5fd745377aa30819cea7c546ce6b316926bb59c39282051cf2",
+      "sha256": "394652b4d788397d35bd2a7eb2603b6a998156e79c1ac2fe17efbb22ca0f22d4",
+      "bytes": 22083
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "host": "salesacademy.localhost:4188",
+  "checks": [
+    {
+      "path": "/descubre/",
+      "status": 200,
+      "title": "Sales Academy | Entrenamiento para salas de ventas"
+    },
+    {
+      "path": "/mediahub/",
+      "status": 200,
+      "title": "Mediahub · Sales Academy"
+    },
+    {
+      "path": "/cms/",
+      "status": 200,
+      "title": "Estudio editorial · Sales Academy"
+    }
+  ]
+}

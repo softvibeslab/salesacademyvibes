@@ -1,0 +1,195 @@
+{
+  "url": "https://salesacademy.softvibes.art/",
+  "title": "Sales Academy",
+  "bodyText": "chevron_left\nRoadmap\nPaso 10\nPASO 10 DE 11\nCómo funciona\nPrecio y negociación\nPaso de alto impacto\n\nUna opción, el silencio, y la objeción aislada.\n\nVIDEO DEMO\nUna opción y silencio\n\nDemo del paso. La práctica sigue en el Copiloto.\n\nGUION\nDices el enganche de hoy y la mensualidad. Luego callas.\nRegla. El mensaje se queda en lo publicado por la sala.\nERRORES FRECUENTES\nhelp\nOfrecer un descuento no publicado.\nhelp\nHablar encima del silencio.\nhelp\nSoltar tres opciones a la vez.\nCHECKLIST\ncheck_circle\nUna opción primero.\ncheck_circle\nGuardas silencio.\ncheck_circle\nAíslas la objeción.\n\nDespués de la confirmación.\n\nEjecutar paso en el Copiloto\nMarcar paso como listo\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "chevron_left\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Cómo funciona",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "how"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "IFRAME",
+      "text": "",
+      "href": null,
+      "src": "https://www.youtube-nocookie.com/embed/PkB9UAx2fuI?rel=0",
+      "attributes": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ejecutar paso en el Copiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "data-q",
+          "quiero practicar la objeción de dinero"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Marcar paso como listo",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "complete-step"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "id",
+          "fab"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "url": "",
+      "bodyText": "",
+      "title": "YouTube"
+    }
+  ]
+}

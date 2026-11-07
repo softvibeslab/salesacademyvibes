@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "status": 200,
+      "sha256": "fdd3d980ccef62dc8e123e179e6435c7e188d0113b018749767d834a9c0935e5",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-journey.css",
+      "status": 200,
+      "sha256": "a821ed863ba00355dfa0442ddb413659ab60f4f25df2d91258a6e116f3ba9833",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.css",
+      "status": 200,
+      "sha256": "89a4318a8c13fc52d5888a1cafe7554cf47483a8da75f2beb9f66deb8391ed6e",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png",
+      "status": 200,
+      "sha256": "da051d399971773d91b434704ffcf34c8f82eed1cb29a01d318c9ec6fef03b9e",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.png",
+      "status": 200,
+      "sha256": "3de1c6fcbce141fa6bc3c072e8f2d92d6fc91eace838c05018c9dd93d90be14c",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+      "status": 200,
+      "sha256": "33202c6afa08462fbbd6c8f232bfaca76d5a21345475f89cb6962c921d0c024f",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/02-meet-greet.png",
+      "status": 200,
+      "sha256": "fd10196f670e2ef4c07a5e7997f9ddacb28e2ac674da213626bdd874e22dbfff",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "status": 200,
+      "meetGreetIncluded": true,
+      "labelIncluded": true
+    }
+  ],
+  "services": {
+    "v1": "active",
+    "v2": "active",
+    "v3": "active",
+    "v4": "active",
+    "v5": "active"
+  },
+  "ok": true
+}

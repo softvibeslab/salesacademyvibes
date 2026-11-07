@@ -1,0 +1,13 @@
+{
+  "previousRelease": "/srv/salesacademy-cloud/releases/20261107-meet-greet-03",
+  "release": "/srv/salesacademy-cloud/releases/20261107-film-play-04",
+  "changedFiles": [
+    "v5/growth/site/assets/media-player.css",
+    "v5/growth/site/assets/media-player.mjs",
+    "v5/growth/site/templates/macros.html"
+  ],
+  "manifestSha256": "d11c270db12d6e72c56bb0e93b4243b385c274c60c9cd5e01c7530b4081b0413",
+  "restart": "salesacademy-cloud@v5.service",
+  "privateStateChanged": false,
+  "rollback": "Atomically point current to previousRelease and restart only salesacademy-cloud@v5.service."
+}

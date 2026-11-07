@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-07",
+  "language": "es-MX",
+  "purpose": "Editorial storyboard; not a representation of app records or completed activity",
+  "sourceVideo": "media/reals/WhatsApp Video 2026-11-07 at 06.01.26.mp4",
+  "sourceSha256": "d10f73ebe4566d97eadf098ef96565cda04c478e03fe937fcb5f2d53181cc2b7",
+  "labels": {
+    "app": "Captura de la demo",
+    "scenario": "Simulación de uso",
+    "video": "Visión del producto"
+  },
+  "provenance": {
+    "times": "Proposed narrative times, not an industry schedule or copied demo agenda",
+    "characters": "Ana, Jorge, Elena and Diego are fictional editorial characters. App screenshots retain their own demonstration data.",
+    "dialogue": "New fictional scripts for this delivery, not testimonials or video transcripts",
+    "screenshots": "Real screenshots captured separately by the app capture task; paths relative to evidence/app; do not modify embedded names or numbers"
+  },
+  "scenarios": [
+    {
+      "id": "daily-intention",
+      "order": 1,
+      "time": "08:45",
+      "title": "Llegar con una intención",
+      "situation": "Ana prepara una habilidad que quiere practicar durante la jornada.",
+      "appAction": "Consultar Hoy y la plantilla Meta del mes.",
+      "nextDecision": "Elegir una pregunta abierta y compartirla con Jorge para revisión.",
+      "screenshots": [
+        "01-today-mobile.png",
+        "10-monthly-goal-mobile.png"
+      ],
+      "imageContext": "briefing",
+      "dialogue": [
+        [
+          "Ana",
+          "Hoy quiero escuchar mejor antes de presentar."
+        ],
+        [
+          "Jorge",
+          "Elige una pregunta que te ayude a entender qué buscan."
+        ],
+        [
+          "Ana",
+          "¿Cómo les gustaría viajar y qué les ha complicado hacerlo?"
+        ]
+      ],
+      "shot": "Plano medio lateral de Ana en mesa de preparación, teléfono legible o captura adyacente; luz natural de mañana, sala reconocible.",
+      "editorialOverlay": "Habilidad de ejemplo: preguntar antes de presentar",
+      "videoRange": [
+        9.96,
+        15.04
+      ],
+      "limitation": "Meta del mes es una plantilla de la demo. No se observó una hoja SMART equivalente al montaje; sus valores no pertenecen a Ana."
+    },
+    {
+      "id": "tour-preparation",
+      "order": 2,
+      "time": "09:10",
+      "title": "Preparar antes de presentar",
+      "situation": "Ana revisa su preparación antes de conversar con dos huéspedes ficticios.",
+      "appAction": "Consultar Preparar mi tour y el Roadmap.",
+      "nextDecision": "Empezar por dos preguntas de exploración y adaptar el orden a las respuestas.",
+      "screenshots": [
+        "06-tour-preparation-mobile.png",
+        "03-roadmap-mobile.png"
+      ],
+      "imageContext": "briefing",
+      "dialogue": [
+        [
+          "Jorge",
+          "¿Qué necesitas descubrir primero?"
+        ],
+        [
+          "Ana",
+          "Cómo quieren usar sus vacaciones y qué dudas traen."
+        ],
+        [
+          "Jorge",
+          "Empieza por escucharlos; después podrás explicar lo relevante."
+        ]
+      ],
+      "shot": "Sobre el hombro de Ana hacia el teléfono, con dos sillas vacías al fondo. Continuidad de sala y dispositivo.",
+      "editorialOverlay": "Antes de hablar de opciones: entender el contexto",
+      "videoRange": [
+        5.33,
+        8.08
+      ],
+      "limitation": "La consulta de recursos no implica que la app conozca preferencias de huéspedes ni importe sus datos."
+    },
+    {
+      "id": "needs-discovery",
+      "order": 3,
+      "time": "10:10",
+      "title": "Entender antes de proponer",
+      "situation": "Elena y Diego quieren entender cómo encajaría una membresía con su forma de viajar.",
+      "appAction": "Consultar el paso de descubrimiento del Roadmap después de escuchar.",
+      "nextDecision": "Revisar información oficial y señalar qué dudas necesitan confirmación.",
+      "screenshots": [
+        "04-discovery-mobile.png",
+        "03-roadmap-mobile.png"
+      ],
+      "imageContext": "consultation",
+      "dialogue": [
+        [
+          "Elena",
+          "No siempre sabemos con tiempo cuándo podremos viajar."
+        ],
+        [
+          "Ana",
+          "¿Qué flexibilidad necesitarían?"
+        ],
+        [
+          "Diego",
+          "Queremos entender las condiciones antes de decidir."
+        ],
+        [
+          "Ana",
+          "Lo revisamos juntos y dejamos identificadas las dudas que necesiten confirmación."
+        ]
+      ],
+      "shot": "Tres personas a la misma altura alrededor de la mesa, gestos de escucha, pantalla como apoyo; toma adicional legible del paso real.",
+      "editorialOverlay": "Escuchar → aclarar → revisar información confirmada",
+      "videoRange": [
+        7,
+        9.76
+      ],
+      "limitation": "Diálogo ficticio. No incluye precios, disponibilidad, garantías ni condiciones comerciales inventadas."
+    },
+    {
+      "id": "objection-practice",
+      "order": 4,
+      "time": "12:20",
+      "title": "Practicar una duda concreta",
+      "situation": "Ana y Jorge ensayan entre conversaciones; Jorge interpreta al huésped.",
+      "appAction": "Abrir la vista previa Practicar objeción.",
+      "nextDecision": "Ensayar una pregunta de clarificación y explicar solo lo confirmado.",
+      "screenshots": [
+        "07-objection-practice-mobile.png",
+        "08-price-objection-mobile.png"
+      ],
+      "imageContext": "coaching",
+      "dialogue": [
+        [
+          "Jorge · papel de huésped",
+          "Nos interesa, pero queremos pensarlo."
+        ],
+        [
+          "Ana",
+          "Claro. ¿Qué información les falta para valorar si encaja con ustedes?"
+        ],
+        [
+          "Jorge · papel de huésped",
+          "Todavía no entiendo las condiciones."
+        ],
+        [
+          "Ana",
+          "Las revisamos con calma; si una respuesta no está confirmada, la consultamos."
+        ]
+      ],
+      "shot": "Plano compartido de dos compañeros; teléfono en primer término y etiqueta Práctica simulada fuera de la interfaz.",
+      "editorialOverlay": "Práctica simulada: escuchar y aclarar",
+      "videoRange": [
+        15.42,
+        20.28
+      ],
+      "limitation": "Roleplay Live no se observó en la demo. La captura de recurso no representa llamada activa, evaluación ni ejercicio enviado."
+    },
+    {
+      "id": "leader-coaching",
+      "order": 5,
+      "time": "15:30",
+      "title": "Convertir observación en coaching",
+      "situation": "Jorge y Ana revisan el ejercicio y eligen un ajuste observable.",
+      "appAction": "Consultar Después del tour; el tablero de sala puede aportar contexto operativo separado.",
+      "nextDecision": "Acordar resumir lo escuchado antes de responder en la siguiente práctica.",
+      "screenshots": [
+        "09-after-tour-mobile.png",
+        "15-room-board-desktop.png"
+      ],
+      "imageContext": "coaching",
+      "dialogue": [
+        [
+          "Jorge",
+          "¿Qué cambió cuando preguntaste qué información faltaba?"
+        ],
+        [
+          "Ana",
+          "Dejé de asumir la duda y pude escucharla."
+        ],
+        [
+          "Jorge",
+          "En la siguiente práctica, resume lo que escuchaste antes de responder."
+        ]
+      ],
+      "shot": "Ambos al mismo nivel, mesa pequeña, líder atento. Captura real y una observación editorial separada; ninguna gráfica inventada.",
+      "editorialOverlay": "Siguiente práctica: confirmar lo que escuché",
+      "videoRange": [
+        20.46,
+        25.72
+      ],
+      "limitation": "El tablero /ops/ muestra operación de ejemplo; no acredita evaluación de coaching, sincronización de aprendizaje ni rendimiento del equipo."
+    },
+    {
+      "id": "learning-close",
+      "order": 6,
+      "time": "16:30",
+      "title": "Cerrar con el siguiente paso",
+      "situation": "Ana conserva una reflexión y decide qué practicar mañana.",
+      "appAction": "Consultar Después del tour y volver al Roadmap o al progreso demostrativo.",
+      "nextDecision": "Preparar una práctica de escucha y confirmación para la siguiente jornada.",
+      "screenshots": [
+        "09-after-tour-mobile.png",
+        "11-weekly-progress-mobile.png",
+        "03-roadmap-mobile.png"
+      ],
+      "imageContext": "briefing",
+      "dialogue": [
+        [
+          "Ana",
+          "La pregunta abierta me ayudó a entender mejor la duda."
+        ],
+        [
+          "Jorge",
+          "¿Qué practicarás mañana?"
+        ],
+        [
+          "Ana",
+          "Confirmar lo que escuché antes de explicar."
+        ],
+        [
+          "Jorge",
+          "Empezamos por ahí."
+        ]
+      ],
+      "shot": "Regreso a la mesa inicial, luz cálida y sala tranquila. El teléfono mantiene continuidad y el relato termina en una próxima acción.",
+      "editorialOverlay": "Una reflexión hoy. Una práctica para mañana.",
+      "videoRange": [
+        25.72,
+        31.96
+      ],
+      "limitation": "No se alteran porcentajes de la demo ni se afirman mejoras de ventas; el aprendizaje pertenece al guion ficticio."
+    }
+  ]
+}

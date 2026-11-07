@@ -1,0 +1,372 @@
+{
+  "url": "https://salesacademy.softvibes.art/ops/",
+  "title": "Tablero de sala · Sales Academy",
+  "bodyText": "Tablero de sala\n\nSe guarda en el servidor. Cada rep ve lo suyo en la app.\n\nVolver a la app\nJefe de sala\nAdministrador\nJorge · Sala Norte\nRosa · Sala Sur\nchevron_left\nViernes 6 de noviembre\nchevron_right\nActualizar\nAna · app\n3\nSala Norte\n09:30–10:30\nConfirmado\nLead #4920\nObjeción de cuota\nSin resultado\nEditar\nQuitar\nResultado\n11:30–12:30\nEn curso\nLead #302\nSeguimiento\nSin resultado\nEditar\nQuitar\nResultado\n15:30–16:30\nPendiente\nLead #188\nVisita de demostración\nSin resultado\nEditar\nQuitar\nResultado\nAsignar tour\nLuis\n1\nSala Norte\n10:00–11:00\nConfirmado\nLead #210\nSin resultado\nEditar\nQuitar\nResultado\nAsignar tour\nTu sala\n\nJorge ve solo Sala Norte. Los tours del día se asignan en las columnas. El resultado baja a la app del rep al abrir o al actualizar.",
+  "controls": [
+    {
+      "tag": "A",
+      "text": "Volver a la app",
+      "href": "/",
+      "src": null,
+      "attributes": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Jefe de sala",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-role",
+          "jefe"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Administrador",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-role",
+          "admin"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Jorge · Sala Norte",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-jefe",
+          "jorge"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Rosa · Sala Sur",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-jefe",
+          "rosa"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "chevron_left",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-day",
+          "-1"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "chevron_right",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-day",
+          "1"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Actualizar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-reload",
+          ""
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-edit",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Quitar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-drop",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Resultado",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-result",
+          "v1"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-edit",
+          "v2"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Quitar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-drop",
+          "v2"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Resultado",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-result",
+          "v2"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-edit",
+          "v3"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Quitar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-drop",
+          "v3"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Resultado",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-result",
+          "v3"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Asignar tour",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-new",
+          "ana"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-edit",
+          "v4"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Quitar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-drop",
+          "v4"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Resultado",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "data-result",
+          "v4"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Asignar tour",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-new",
+          "luis"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": []
+}

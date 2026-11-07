@@ -1,0 +1,383 @@
+{
+  "url": "https://salesacademy.softvibes.art/",
+  "title": "Sales Academy",
+  "bodyText": "Roadmap\nCopiloto\n11 pasos\n\nEl recorrido de la venta consultiva. Ejemplo de sala.\n\n36%\nLISTO\nPaso actual 5. Renovar el pacto\n\nSí o no hoy. Confirmas que pueden decidir hoy, antes de entrar a números.\n\n4 de 11 módulos\nContinuar\nLos 11 módulos\n4 / 11 listos\ncheck\n1. Meet & Greet\nLa bienvenida se siente natural y deja clara la visita.\nListo\ncheck\n2. Control de agenda\nEl control de la agenda se siente natural y establece autoridad desde el primer minuto.\nListo\ncheck\n3. Rapport (FORM)\nConexión breve: familia, ocupación, recreación y motivación.\nListo\ncheck\n4. Descubrimiento\nEscuchas dolor, presupuesto y si pueden decidir.\nListo\n5\n5. Renovar el pacto\nConfirmas que pueden decidir hoy, antes de entrar a números.\nEn curso\n6\n6. Presentación a tres\nEntra quien valida las condiciones y tú te quedas en la mesa.\n0%\n7\n7. Recorrido\nCada parada ancla un valor y vuelve a lo que ellos dijeron.\n0%\n8\n8. Casos de éxito\nUn caso parecido, sin nombres, y qué decidieron.\n0%\n9\n9. Punto de confirmación\nRepites lo que buscan y esperas el sí antes del número.\n0%\n10\n10. Precio y negociación\nUna opción, el silencio, y la objeción aislada.\n0%\n11\n11. Cierre y bienvenida\nFirma, pago de hoy y el siguiente paso, dichos en voz alta.\n0%\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "Copiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "data-q",
+          "quiero practicar el cierre de sí o no hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Continuar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "5"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "check\n1. Meet & Greet\nLa bienvenida se siente natural y deja clara la visita.\nListo",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "1"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "check\n2. Control de agenda\nEl control de la agenda se siente natural y establece autoridad desde el primer minuto.\nListo",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "2"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "check\n3. Rapport (FORM)\nConexión breve: familia, ocupación, recreación y motivación.\nListo",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "3"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "check\n4. Descubrimiento\nEscuchas dolor, presupuesto y si pueden decidir.\nListo",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "4"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "5\n5. Renovar el pacto\nConfirmas que pueden decidir hoy, antes de entrar a números.\nEn curso",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "5"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "6\n6. Presentación a tres\nEntra quien valida las condiciones y tú te quedas en la mesa.\n0%",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "6"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "7\n7. Recorrido\nCada parada ancla un valor y vuelve a lo que ellos dijeron.\n0%",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "7"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "8\n8. Casos de éxito\nUn caso parecido, sin nombres, y qué decidieron.\n0%",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "8"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "9\n9. Punto de confirmación\nRepites lo que buscan y esperas el sí antes del número.\n0%",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "9"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "10\n10. Precio y negociación\nUna opción, el silencio, y la objeción aislada.\n0%",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "10"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "11\n11. Cierre y bienvenida\nFirma, pago de hoy y el siguiente paso, dichos en voz alta.\n0%",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "11"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "id",
+          "fab"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": []
+}

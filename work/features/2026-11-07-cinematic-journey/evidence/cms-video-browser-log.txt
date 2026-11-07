@@ -1,0 +1,17 @@
+CMS selection, dirty state, save, private preview and explicit publication
+Conflicting sources report an error and retain unsaved form content
+Mobile clip reassignment persists and publishes without overflow
+Historical document without videoId restores as draft and only changes public page after publishing
+Starting a second actual H264 player pauses the first
+Failed media shows readable error and retry recovers real playback
+{
+  "ok": true,
+  "checks": [
+    "CMS selection, dirty state, save, private preview and explicit publication",
+    "Conflicting sources report an error and retain unsaved form content",
+    "Mobile clip reassignment persists and publishes without overflow",
+    "Historical document without videoId restores as draft and only changes public page after publishing",
+    "Starting a second actual H264 player pauses the first",
+    "Failed media shows readable error and retry recovers real playback"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "id": "briefing",
+      "source": "/Users/rogergv/.codex/generated_images/01a1b538-798c-75f0-ba13-a49f196d225e/exec-a9531697-7488-4788-8e5a-6d27572e5714.png",
+      "file": "work/features/2026-11-07-room-scenarios/assets/generated/briefing.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a85d29af9c2494d6be341016f1320d34c48b90401b856fe6ca5444afeab26dca",
+      "classification": "AI-generated fictional scene; not a customer photograph or app screenshot"
+    },
+    {
+      "id": "consultation",
+      "source": "/Users/rogergv/.codex/generated_images/01a1b538-798c-75f0-ba13-a49f196d225e/exec-4c917214-88d8-42ee-b930-536f07e57e26.png",
+      "file": "work/features/2026-11-07-room-scenarios/assets/generated/consultation.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "a54526c56c2f797b18132c48a02c3789212154658dddae6a84e5fe146665bee7",
+      "classification": "AI-generated fictional scene; not a customer photograph or app screenshot"
+    },
+    {
+      "id": "coaching",
+      "source": "/Users/rogergv/.codex/generated_images/01a1b538-798c-75f0-ba13-a49f196d225e/exec-8135d532-1de7-4477-88b0-f0d25f92a4a4.png",
+      "file": "work/features/2026-11-07-room-scenarios/assets/generated/coaching.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "8d19e39ba380543148ee607e5109959c0476ffef02bee5905462b1adf8daeef7",
+      "classification": "AI-generated fictional scene; not a customer photograph or app screenshot"
+    }
+  ]
+}

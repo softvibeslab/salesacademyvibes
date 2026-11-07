@@ -1,0 +1,72 @@
+[run ] default/build: ${GROWTH_PYTHON} -m compileall -q growth/server
+[ ok ] default/build
+[run ] default/test: ${GROWTH_PYTHON} -m unittest discover -s growth/tests -p 'test_*.py' -v && node --test growth/tests/diagnostic.test.mjs
+test_analytics_resource_reference_uses_published_id (test_backend.BackendAcceptance.test_analytics_resource_reference_uses_published_id) ... ok
+test_authentication_csrf_and_server_roles (test_backend.BackendAcceptance.test_authentication_csrf_and_server_roles) ... ok
+test_demo_request_validation_idempotency_and_disabled_contact (test_backend.BackendAcceptance.test_demo_request_validation_idempotency_and_disabled_contact) ... ok
+test_diagnostic_metric_counts_consented_started_flows_and_intersection (test_backend.BackendAcceptance.test_diagnostic_metric_counts_consented_started_flows_and_intersection) ... ok
+test_drafts_survive_restart_and_conflict_without_losing_publication (test_backend.BackendAcceptance.test_drafts_survive_restart_and_conflict_without_losing_publication) ... ok
+test_events_allowlist_deduplication_and_metrics_privacy (test_backend.BackendAcceptance.test_events_allowlist_deduplication_and_metrics_privacy) ... ok
+test_invalid_value_types_are_validation_errors (test_backend.BackendAcceptance.test_invalid_value_types_are_validation_errors) ... ok
+test_media_routes_usages_and_failed_publication_preserve_active_snapshot (test_backend.BackendAcceptance.test_media_routes_usages_and_failed_publication_preserve_active_snapshot) ... ok
+test_owner_protection_and_session_revocation (test_backend.BackendAcceptance.test_owner_protection_and_session_revocation) ... ok
+test_password_reset_during_login_cannot_create_stale_session (test_backend.BackendAcceptance.test_password_reset_during_login_cannot_create_stale_session) ... ok
+test_pdf_attachment_and_pagination_limits (test_backend.BackendAcceptance.test_pdf_attachment_and_pagination_limits) ... ok
+test_publication_restore_is_atomic_and_does_not_revert_requests (test_backend.BackendAcceptance.test_publication_restore_is_atomic_and_does_not_revert_requests) ... ok
+test_rate_limits_are_enforced_and_wrong_login_is_generic (test_backend.BackendAcceptance.test_rate_limits_are_enforced_and_wrong_login_is_generic) ... ok
+test_retention_removes_only_expired_records_and_preserves_editorial_data (test_backend.BackendAcceptance.test_retention_removes_only_expired_records_and_preserves_editorial_data) ... ok
+test_schema_validation_and_stable_slug (test_backend.BackendAcceptance.test_schema_validation_and_stable_slug) ... ok
+test_security_headers_content_escape_and_json_errors (test_backend.BackendAcceptance.test_security_headers_content_escape_and_json_errors) ... ok
+test_template_media_context_contains_only_referenced_safe_metadata (test_backend.BackendAcceptance.test_template_media_context_contains_only_referenced_safe_metadata) ... ok
+test_unpublished_resources_are_private_and_filtering_is_server_side (test_backend.BackendAcceptance.test_unpublished_resources_are_private_and_filtering_is_server_side) ... ok
+test_backup_and_restore_keep_sqlite_content_and_media_hashes (test_backup.BackupTests.test_backup_and_restore_keep_sqlite_content_and_media_hashes) ... ok
+test_destination_inside_data_is_rejected (test_backup.BackupTests.test_destination_inside_data_is_rejected) ... ok
+test_manifest_cannot_hide_missing_media_reference (test_backup.BackupTests.test_manifest_cannot_hide_missing_media_reference) ... ok
+test_modified_or_extra_files_fail_verification (test_backup.BackupTests.test_modified_or_extra_files_fail_verification) ... ok
+test_restore_refuses_existing_data_and_snapshot_is_immutable (test_backup.BackupTests.test_restore_refuses_existing_data_and_snapshot_is_immutable) ... ok
+test_traversal_or_symlinks_rejected (test_backup.BackupTests.test_traversal_or_symlinks_rejected) ... ok
+test_isolated_directory_and_loopback_are_valid (test_cli.LauncherGuardsTest.test_isolated_directory_and_loopback_are_valid) ... ok
+test_local_preview_cannot_bind_to_network (test_cli.LauncherGuardsTest.test_local_preview_cannot_bind_to_network) ... ok
+test_private_data_cannot_live_under_site (test_cli.LauncherGuardsTest.test_private_data_cannot_live_under_site) ... ok
+test_duplicate_exact_bytes_reuses_id_without_overwriting_metadata (test_media.MediaTests.test_duplicate_exact_bytes_reuses_id_without_overwriting_metadata) ... ok
+test_false_images_and_audiovisual_are_rejected (test_media.MediaTests.test_false_images_and_audiovisual_are_rejected) ... ok
+test_images_are_persistent_and_derivatives_strip_exif (test_media.MediaTests.test_images_are_persistent_and_derivatives_strip_exif) ... ok
+test_limits_and_quota_are_enforced_before_persisting (test_media.MediaTests.test_limits_and_quota_are_enforced_before_persisting) ... ok
+test_metadata_and_ids_are_validated (test_media.MediaTests.test_metadata_and_ids_are_validated) ... ok
+test_publication_requires_existing_reviewed_rights_and_alt (test_media.MediaTests.test_publication_requires_existing_reviewed_rights_and_alt) ... ok
+test_safe_pdf_is_parsed_and_active_pdfs_rejected (test_media.MediaTests.test_safe_pdf_is_parsed_and_active_pdfs_rejected) ... ok
+test_search_pagination_and_archive_preserve_files (test_media.MediaTests.test_search_pagination_and_archive_preserve_files) ... ok
+test_symlink_media_path_is_not_served (test_media.MediaTests.test_symlink_media_path_is_not_served) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 3.965s
+
+OK
+✔ initial process identifies coordination without contact (0.5165ms)
+✔ partial process identifies evidence (0.053209ms)
+✔ all defined recommends baseline, not certification (0.042291ms)
+✔ unknowns preserved and ties transparent (0.510042ms)
+✔ missing and invalid answers never evaluated (0.109917ms)
+✔ boundaries and determinism (0.089ms)
+✔ recommendations link to seeded resources and track immutable IDs (0.392333ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 37.739667
+[ ok ] default/test
+[run ] default/lint: node --check growth/site/assets/site.mjs && node --check growth/site/assets/cms.mjs && node --check growth/site/assets/diagnostic-ui.mjs
+[ ok ] default/lint
+[run ] default/secret-scan: ${GROWTH_PYTHON} growth/verify_artifacts.py
+{
+  "ok": true,
+  "sourceFiles": 26,
+  "resources": 3,
+  "apiPaths": 31,
+  "problems": []
+}
+[ ok ] default/secret-scan
+OK: gates de calidad declarados pasaron; los no declarados se omitieron.

@@ -1,0 +1,5 @@
+$ python3 tests/test_import.py
+Traceback (most recent call last):
+  File "tests/test_import.py", line 11, in <module>
+    from ops_import import preview_text
+ModuleNotFoundError: No module named 'ops_import'

@@ -1,0 +1,39 @@
+-vsync is deprecated. Use -fps_mode
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'media/reals/WhatsApp Video 2026-11-07 at 06.01.26.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+  Duration: 00:00:32.88, start: 0.000000, bitrate: 1669 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 576x1024, 1603 kb/s, 24 fps, 24 tbr, 600 tbn (default)
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 63 kb/s (default)
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+[Parsed_showinfo_1 @ 0x760f042880] config in time_base: 1/600, frame_rate: 24/1
+[Parsed_showinfo_1 @ 0x760f042880] config out time_base: 0/0, frame_rate: 0/0
+[Parsed_showinfo_1 @ 0x760f042880] n:   0 pts:   3200 pts_time:5.333333 duration:     25 duration_time:0.0416667 fmt:yuv420p cl:left sar:0/1 s:576x1024 i:P iskey:0 type:P checksum:9F83093D plane_checksum:[9B033D6C 7F2892F8 F10138CA] mean:[20 127 129] stdev:[19.7 4.0 2.1]
+[Parsed_showinfo_1 @ 0x760f042880] color_range:tv color_space:bt709 color_primaries:bt709 color_trc:bt709
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: mp42isom
+    encoder         : Lavf62.12.101
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 576x1024, q=2-31, 200 kb/s, 24 fps, 24 tbn (default)
+    Metadata:
+      encoder         : Lavc62.28.101 wrapped_avframe
+  Stream #0:1(und): Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s (default)
+    Metadata:
+      encoder         : Lavc62.28.101 pcm_s16le
+[Parsed_showinfo_1 @ 0x760f042880] n:   1 pts:   4850 pts_time:8.083333 duration:     25 duration_time:0.0416667 fmt:yuv420p cl:left sar:0/1 s:576x1024 i:P iskey:0 type:P checksum:AFB0F3B9 plane_checksum:[C43EA957 BAEE14F7 83A8356B] mean:[90 120 141] stdev:[37.2 4.9 6.6]
+[Parsed_showinfo_1 @ 0x760f042880] color_range:tv color_space:bt709 color_primaries:bt709 color_trc:bt709
+[Parsed_showinfo_1 @ 0x760f042880] n:   2 pts:   9850 pts_time:16.416667 duration:     25 duration_time:0.0416667 fmt:yuv420p cl:left sar:0/1 s:576x1024 i:P iskey:0 type:P checksum:EC78D2E2 plane_checksum:[70F3EEE5 15ED0238 999CE1B6] mean:[59 127 129] stdev:[38.2 5.9 4.5]
+[Parsed_showinfo_1 @ 0x760f042880] color_range:tv color_space:bt709 color_primaries:bt709 color_trc:bt709
+[Parsed_showinfo_1 @ 0x760f042880] n:   3 pts:  10400 pts_time:17.333333 duration:     25 duration_time:0.0416667 fmt:yuv420p cl:left sar:0/1 s:576x1024 i:P iskey:0 type:P checksum:577D7554 plane_checksum:[0420C4E0 A69D5E1A D7EC524B] mean:[61 127 129] stdev:[42.9 6.8 5.8]
+[Parsed_showinfo_1 @ 0x760f042880] color_range:tv color_space:bt709 color_primaries:bt709 color_trc:bt709
+[Parsed_showinfo_1 @ 0x760f042880] n:   4 pts:  15625 pts_time:26.041667 duration:     25 duration_time:0.0416667 fmt:yuv420p cl:left sar:0/1 s:576x1024 i:P iskey:0 type:P checksum:92B03EFD plane_checksum:[D6CCDFE8 B58F661B C240F8DC] mean:[107 128 128] stdev:[68.4 10.7 12.1]
+[Parsed_showinfo_1 @ 0x760f042880] color_range:tv color_space:bt709 color_primaries:bt709 color_trc:bt709
+[out#0/null @ 0x760f040300] video:2KiB audio:5664KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    5 fps=0.0 q=-0.0 Lsize=N/A time=00:00:26.08 bitrate=N/A speed= 109x elapsed=0:00:00.23    

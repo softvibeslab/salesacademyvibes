@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The cinematic journey must exist
+
+0 !== 1
+
+    at file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/cinematic.mjs:20:12
+    at async check (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/cinematic.mjs:16:33)
+    at async file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/cinematic.mjs:18:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 1,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

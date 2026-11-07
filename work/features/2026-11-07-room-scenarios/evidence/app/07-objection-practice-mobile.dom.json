@@ -1,0 +1,157 @@
+{
+  "url": "https://salesacademy.softvibes.art/",
+  "title": "Sales Academy",
+  "bodyText": "chevron_left\nRecursos\nPlantilla\nSK-13 · PRACTICAR · BASE\nPracticar objeción\n\nDinero, pareja, tiempo o escepticismo.\n\nObjeción\nDinero\nPareja\nTiempo\nEscepticismo\nVISTA PREVIA\ntiempo\n\nObjeción\n\n1\nAislar\n2\nReencuadrar\n3\nCerrar\n\nLa respuesta va al manager.\n\nAl Copiloto: quiero practicar la objeción de tiempo\n\nUsar esta plantilla\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "chevron_left\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "SELECT",
+      "text": "Dinero\nPareja\nTiempo\nEscepticismo",
+      "value": "tiempo",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-field",
+          "category"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Usar esta plantilla",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "use-template"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "id",
+          "fab"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": []
+}

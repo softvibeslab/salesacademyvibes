@@ -1,0 +1,15 @@
+test_template_media_context_contains_only_referenced_safe_metadata (growth.tests.test_backend.BackendAcceptance.test_template_media_context_contains_only_referenced_safe_metadata) ... FAIL
+
+======================================================================
+FAIL: test_template_media_context_contains_only_referenced_safe_metadata (growth.tests.test_backend.BackendAcceptance.test_template_media_context_contains_only_referenced_safe_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 309, in test_template_media_context_contains_only_referenced_safe_metadata
+    self.assertIn('Imagen adjunta visible',preview.text)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Imagen adjunta visible' not found in ''
+
+----------------------------------------------------------------------
+Ran 1 test in 0.197s
+
+FAILED (failures=1)

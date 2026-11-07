@@ -1,0 +1,8 @@
+test_isolated_directory_and_loopback_are_valid (growth.tests.test_cli.LauncherGuardsTest.test_isolated_directory_and_loopback_are_valid) ... ok
+test_local_preview_cannot_bind_to_network (growth.tests.test_cli.LauncherGuardsTest.test_local_preview_cannot_bind_to_network) ... ok
+test_private_data_cannot_live_under_site (growth.tests.test_cli.LauncherGuardsTest.test_private_data_cannot_live_under_site) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

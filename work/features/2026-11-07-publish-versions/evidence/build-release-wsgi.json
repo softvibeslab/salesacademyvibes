@@ -1,0 +1,70 @@
+{
+  "isolatedTemporaryDatabases": true,
+  "versions": [
+    {
+      "version": "v1",
+      "paths": {
+        "/growth-api/health": 200,
+        "/descubre/": 200,
+        "/mediahub/": 200,
+        "/cms/": 200
+      },
+      "cmsUnauthenticated": 401,
+      "secureCookie": true,
+      "publicContact": false,
+      "httpsRecognized": true
+    },
+    {
+      "version": "v2",
+      "paths": {
+        "/growth-api/health": 200,
+        "/descubre/": 200,
+        "/mediahub/": 200,
+        "/cms/": 200
+      },
+      "cmsUnauthenticated": 401,
+      "secureCookie": true,
+      "publicContact": false,
+      "httpsRecognized": true
+    },
+    {
+      "version": "v3",
+      "paths": {
+        "/growth-api/health": 200,
+        "/descubre/": 200,
+        "/mediahub/": 200,
+        "/cms/": 200
+      },
+      "cmsUnauthenticated": 401,
+      "secureCookie": true,
+      "publicContact": false,
+      "httpsRecognized": true
+    },
+    {
+      "version": "v4",
+      "paths": {
+        "/growth-api/health": 200,
+        "/descubre/": 200,
+        "/mediahub/": 200,
+        "/cms/": 200
+      },
+      "cmsUnauthenticated": 401,
+      "secureCookie": true,
+      "publicContact": false,
+      "httpsRecognized": true
+    },
+    {
+      "version": "v5",
+      "paths": {
+        "/growth-api/health": 200,
+        "/descubre/": 200,
+        "/mediahub/": 200,
+        "/cms/": 200
+      },
+      "cmsUnauthenticated": 401,
+      "secureCookie": true,
+      "publicContact": false,
+      "httpsRecognized": true
+    }
+  ]
+}

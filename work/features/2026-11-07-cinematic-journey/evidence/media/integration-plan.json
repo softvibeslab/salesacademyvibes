@@ -1,0 +1,140 @@
+{
+  "inputs": 6,
+  "uniqueVideos": 5,
+  "totalInputBytes": 41161144,
+  "uniqueBytes": 34299114,
+  "uniqueDurationSeconds": 181.258039,
+  "duplicate": {
+    "source": "clip-06",
+    "sameAs": "clip-01",
+    "sha256": "d10f73ebe4566d97eadf098ef96565cda04c478e03fe937fcb5f2d53181cc2b7"
+  },
+  "transcription": {
+    "engine": "mlx-whisper",
+    "model": "mlx-community/whisper-large-v3-turbo",
+    "language": "es",
+    "offline": true,
+    "audioUploaded": false,
+    "rawJsonRetained": true,
+    "caution": "La transcripción automática identifica locución; no se realizó escucha humana ni clasificación fiable de música/fx.",
+    "wordTimestamps": true,
+    "maxLines": 2
+  },
+  "clips": [
+    {
+      "id": "smart-agent",
+      "sourceId": "clip-01",
+      "sourceFile": "media/reals/WhatsApp Video 2026-11-07 at 06.01.26.mp4",
+      "titleProposed": "El método, acompañado",
+      "summaryObservedFromASR": "Nuevo integrante del equipo: agente, objetivos, roleplay y visibilidad.",
+      "duration": 32.879456,
+      "posterTime": 4.93,
+      "ambientRangeProposed": [
+        3.9,
+        5.8
+      ],
+      "burnedInCaptions": true,
+      "captionsFile": "work/features/2026-11-07-cinematic-journey/evidence/media/transcripts/smart-agent.vtt",
+      "captionStatus": "ASR local con tiempos por palabra, máximo dos líneas y normalización editorial; no certificación manual",
+      "captionEdits": [
+        {
+          "from": "Agenda Undemo.",
+          "to": "Agenda una demo."
+        }
+      ],
+      "publicTranscript": "growth/site/assets/films/smart-agent.es.txt"
+    },
+    {
+      "id": "menos-caos",
+      "sourceId": "clip-02",
+      "sourceFile": "media/reals/WhatsApp Video 2026-11-07 at 06.01.29.mp4",
+      "titleProposed": "Menos caos. Más criterio.",
+      "summaryObservedFromASR": "Asistente que comprende objetivos y reduce tareas repetitivas.",
+      "duration": 41.383991,
+      "posterTime": 6.21,
+      "ambientRangeProposed": [
+        5.8,
+        7.8
+      ],
+      "burnedInCaptions": false,
+      "captionsFile": "work/features/2026-11-07-cinematic-journey/evidence/media/transcripts/menos-caos.vtt",
+      "captionStatus": "ASR local con tiempos por palabra, máximo dos líneas y normalización editorial; no certificación manual",
+      "captionEdits": [],
+      "publicTranscript": "growth/site/assets/films/menos-caos.es.txt"
+    },
+    {
+      "id": "sistema-conectado",
+      "sourceId": "clip-03",
+      "sourceFile": "media/reals/WhatsApp Video 2026-11-07 at 06.01.30.mp4",
+      "titleProposed": "Del proceso a un sistema conectado",
+      "summaryObservedFromASR": "Misma locución que menos-caos; visualización de procesos, contexto e información conectados.",
+      "duration": 41.375,
+      "posterTime": 12.41,
+      "ambientRangeProposed": [
+        10.1,
+        13.4
+      ],
+      "burnedInCaptions": false,
+      "captionsFile": "work/features/2026-11-07-cinematic-journey/evidence/media/transcripts/sistema-conectado.vtt",
+      "captionStatus": "ASR local con tiempos por palabra, máximo dos líneas y normalización editorial; no certificación manual",
+      "captionEdits": [],
+      "publicTranscript": "growth/site/assets/films/sistema-conectado.es.txt"
+    },
+    {
+      "id": "infraestructura-comercial",
+      "sourceId": "clip-04",
+      "sourceFile": "media/reals/WhatsApp Video 2026-11-07 at 06.02.37.mp4",
+      "titleProposed": "De depender del gerente a compartir el método",
+      "summaryObservedFromASR": "Cuestiona la dependencia del gerente y presenta el entrenamiento como infraestructura.",
+      "duration": 29.024943,
+      "posterTime": 13.06,
+      "ambientRangeProposed": [
+        11.7,
+        14.0
+      ],
+      "burnedInCaptions": true,
+      "captionsFile": "work/features/2026-11-07-cinematic-journey/evidence/media/transcripts/infraestructura-comercial.vtt",
+      "captionStatus": "ASR local con tiempos por palabra, máximo dos líneas y normalización editorial; no certificación manual",
+      "captionEdits": [
+        {
+          "from": "Agenda on Demo.",
+          "to": "Agenda una demo."
+        }
+      ],
+      "publicTranscript": "growth/site/assets/films/infraestructura-comercial.es.txt"
+    },
+    {
+      "id": "conocimiento-en-practica",
+      "sourceId": "clip-05",
+      "sourceFile": "media/reals/WhatsApp Video 2026-11-07 at 06.02.38.mp4",
+      "titleProposed": "Del conocimiento a la práctica diaria",
+      "summaryObservedFromASR": "Smart Agent, Roadmap, recursos y GoalSheet como narrativa de acompañamiento.",
+      "duration": 36.594649,
+      "posterTime": 16.47,
+      "ambientRangeProposed": [
+        15.8,
+        17.5
+      ],
+      "burnedInCaptions": false,
+      "captionsFile": "work/features/2026-11-07-cinematic-journey/evidence/media/transcripts/conocimiento-en-practica.vtt",
+      "captionStatus": "ASR local con tiempos por palabra, máximo dos líneas y normalización editorial; no certificación manual",
+      "captionEdits": [
+        {
+          "from": "Cuch de ventas",
+          "to": "Coach de ventas"
+        },
+        {
+          "from": "24-7",
+          "to": "24/7"
+        },
+        {
+          "from": "Gold Sheet",
+          "to": "GoalSheet"
+        }
+      ],
+      "publicTranscript": "growth/site/assets/films/conocimiento-en-practica.es.txt"
+    }
+  ],
+  "derivativesCatalog": "growth/content/video-catalog.json",
+  "derivativeEvidence": "work/features/2026-11-07-cinematic-journey/evidence/media/derivatives.json"
+}

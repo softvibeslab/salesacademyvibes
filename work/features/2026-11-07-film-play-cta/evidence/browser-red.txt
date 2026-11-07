@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Every conceptual film must have a prominent play button; the requested control is absent
+
+0 !== 5
+
+    at file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/film-play-browser.mjs:49:12
+    at async check (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/film-play-browser.mjs:19:24)
+    at async file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/film-play-browser.mjs:46:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 5,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

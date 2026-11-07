@@ -1,0 +1,118 @@
+test_archived_or_draft_vsl_is_not_featured_or_leaked (growth.tests.test_ai_campaign.AICampaign.test_archived_or_draft_vsl_is_not_featured_or_leaked) ... 
+  test_archived_or_draft_vsl_is_not_featured_or_leaked (growth.tests.test_ai_campaign.AICampaign.test_archived_or_draft_vsl_is_not_featured_or_leaked) (status='draft') ... FAIL
+  test_archived_or_draft_vsl_is_not_featured_or_leaked (growth.tests.test_ai_campaign.AICampaign.test_archived_or_draft_vsl_is_not_featured_or_leaked) (status='archived') ... FAIL
+test_featured_vsl_is_unique_manual_and_captioned (growth.tests.test_ai_campaign.AICampaign.test_featured_vsl_is_unique_manual_and_captioned) ... FAIL
+test_journey_combines_room_photos_and_real_interfaces (growth.tests.test_ai_campaign.AICampaign.test_journey_combines_room_photos_and_real_interfaces) ... FAIL
+test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) ... 
+  test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/descubre/') ... FAIL
+  test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/mediahub/') ... FAIL
+  test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/mediahub/un-dia-en-la-sala/') ... FAIL
+  test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/descubre/diagnostico/') ... FAIL
+test_static_gallery_uses_the_same_message_and_number (growth.tests.test_ai_campaign.AICampaign.test_static_gallery_uses_the_same_message_and_number) ... FAIL
+
+======================================================================
+FAIL: test_archived_or_draft_vsl_is_not_featured_or_leaked (growth.tests.test_ai_campaign.AICampaign.test_archived_or_draft_vsl_is_not_featured_or_leaked) (status='draft')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 81, in test_archived_or_draft_vsl_is_not_featured_or_leaked
+    self.assert_links(text)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 40, in assert_links
+    self.assertGreaterEqual(len(links), minimum, 'Expected a voluntary WhatsApp demo link')
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 1 : Expected a voluntary WhatsApp demo link
+
+======================================================================
+FAIL: test_archived_or_draft_vsl_is_not_featured_or_leaked (growth.tests.test_ai_campaign.AICampaign.test_archived_or_draft_vsl_is_not_featured_or_leaked) (status='archived')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 81, in test_archived_or_draft_vsl_is_not_featured_or_leaked
+    self.assert_links(text)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 40, in assert_links
+    self.assertGreaterEqual(len(links), minimum, 'Expected a voluntary WhatsApp demo link')
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 1 : Expected a voluntary WhatsApp demo link
+
+======================================================================
+FAIL: test_featured_vsl_is_unique_manual_and_captioned (growth.tests.test_ai_campaign.AICampaign.test_featured_vsl_is_unique_manual_and_captioned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 65, in test_featured_vsl_is_unique_manual_and_captioned
+    self.assertEqual(sum('data-vsl' in a for _, a in tags), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_journey_combines_room_photos_and_real_interfaces (growth.tests.test_ai_campaign.AICampaign.test_journey_combines_room_photos_and_real_interfaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 85, in test_journey_combines_room_photos_and_real_interfaces
+    self.assertTrue(any('ai-scene-world' in a.get('class', '').split() for _, a in tags))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/descubre/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 55, in test_public_pages_offer_one_consistent_demo_contact
+    self.assert_links(response.text, 3 if path == '/descubre/' else 1)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 40, in assert_links
+    self.assertGreaterEqual(len(links), minimum, 'Expected a voluntary WhatsApp demo link')
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 3 : Expected a voluntary WhatsApp demo link
+
+======================================================================
+FAIL: test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/mediahub/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 55, in test_public_pages_offer_one_consistent_demo_contact
+    self.assert_links(response.text, 3 if path == '/descubre/' else 1)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 40, in assert_links
+    self.assertGreaterEqual(len(links), minimum, 'Expected a voluntary WhatsApp demo link')
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 1 : Expected a voluntary WhatsApp demo link
+
+======================================================================
+FAIL: test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/mediahub/un-dia-en-la-sala/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 55, in test_public_pages_offer_one_consistent_demo_contact
+    self.assert_links(response.text, 3 if path == '/descubre/' else 1)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 40, in assert_links
+    self.assertGreaterEqual(len(links), minimum, 'Expected a voluntary WhatsApp demo link')
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 1 : Expected a voluntary WhatsApp demo link
+
+======================================================================
+FAIL: test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) (path='/descubre/diagnostico/')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 55, in test_public_pages_offer_one_consistent_demo_contact
+    self.assert_links(response.text, 3 if path == '/descubre/' else 1)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 40, in assert_links
+    self.assertGreaterEqual(len(links), minimum, 'Expected a voluntary WhatsApp demo link')
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 1 : Expected a voluntary WhatsApp demo link
+
+======================================================================
+FAIL: test_static_gallery_uses_the_same_message_and_number (growth.tests.test_ai_campaign.AICampaign.test_static_gallery_uses_the_same_message_and_number)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 59, in test_static_gallery_uses_the_same_message_and_number
+    self.assert_links(text)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_ai_campaign.py", line 40, in assert_links
+    self.assertGreaterEqual(len(links), minimum, 'Expected a voluntary WhatsApp demo link')
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 1 : Expected a voluntary WhatsApp demo link
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.743s
+
+FAILED (failures=9)

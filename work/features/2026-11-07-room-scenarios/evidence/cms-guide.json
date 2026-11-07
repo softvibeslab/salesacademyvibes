@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "scope": "Private isolated v4 local demo only",
+  "draftEdit": 200,
+  "preview": 200,
+  "publish": 200,
+  "publicGuide": 200,
+  "galleryLink": true,
+  "seedContractUnchanged": true,
+  "credentialsPrinted": false
+}

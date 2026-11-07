@@ -1,0 +1,56 @@
+{
+  "base": "https://v5.salesacademy.softvibes.cloud",
+  "release": "20261107-film-play-04",
+  "startedAt": "2026-11-07T13:13:09.299Z",
+  "results": [
+    {
+      "width": 1440,
+      "passed": true,
+      "initialMp4Requests": 0,
+      "overflow": false,
+      "state": {
+        "paused": false,
+        "currentTime": 0.136515,
+        "muted": false,
+        "volume": 1,
+        "controls": true,
+        "focus": true,
+        "captions": [
+          {
+            "language": "es",
+            "mode": "showing",
+            "cues": 9
+          }
+        ]
+      },
+      "pauseRestoresButton": true
+    },
+    {
+      "width": 390,
+      "passed": true,
+      "initialMp4Requests": 0,
+      "overflow": false,
+      "state": {
+        "paused": false,
+        "currentTime": 0.127211,
+        "muted": false,
+        "volume": 1,
+        "controls": true,
+        "focus": true,
+        "captions": [
+          {
+            "language": "es",
+            "mode": "showing",
+            "cues": 9
+          }
+        ]
+      },
+      "pauseRestoresButton": true
+    }
+  ],
+  "errors": [],
+  "cmsLogin": false,
+  "whatsappOpened": false,
+  "ok": true,
+  "finishedAt": "2026-11-07T13:13:17.733Z"
+}

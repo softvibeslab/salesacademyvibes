@@ -1,0 +1,15 @@
+✔ before the journey remains at the first frame (0.772709ms)
+✔ the viewport reading line selects the chapter and its continuous progress (0.083042ms)
+✔ chapter boundaries select the next scene without overshoot (0.083125ms)
+✔ scrolling backwards recovers the same state (0.066625ms)
+✔ after the last chapter clamps every value (0.499666ms)
+✔ unequal chapter sizes use measured geometry (0.12725ms)
+✔ empty or invalid geometry does not produce NaN or unsafe state (0.1075ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 50.854292

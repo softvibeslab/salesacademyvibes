@@ -1,0 +1,15 @@
+PASS Landing, consentimiento opcional y separación del producto
+PASS Lectura pública completa sin JavaScript y descarga real
+PASS Mediahub filtrado, estado vacío y recursos reales
+PASS Diagnóstico sin contacto, respuestas desconocidas, empates y enlaces válidos
+PASS Medición con permiso, propiedades permitidas y retirada
+PASS Solicitud voluntaria almacenada con consentimiento separado
+PASS Vistas móviles 360/390 sin desbordamiento ni controles cortados
+PASS CMS: cuenta individual, borrador, vista previa y publicación real
+PASS CMS: biblioteca, validación de archivo y derechos editoriales
+PASS CMS: crear recurso por bloques y publicar portada y adjunto
+PASS CMS: conflicto entre editores conserva cambios locales
+PASS CMS: bandeja real y seguimiento sin envío externo
+PASS CMS: restauración a borrador sin cambiar sitio ni solicitudes
+PASS CMS: usuarios y permisos editor comprobados por servidor
+PASS CMS móvil: navegación, formularios y cierre de sesión

@@ -1,0 +1,24 @@
+{
+  "backupVerified": {
+    "ok": true,
+    "files": 3,
+    "bytes": 122944,
+    "createdAt": "2026-11-07T09:51:11+00:00"
+  },
+  "restoredDatabase": {
+    "sqlite": "ok",
+    "users": 1,
+    "publications": 1
+  },
+  "purgeOnRestoredCopy": {
+    "requests": 0,
+    "events": 0,
+    "sessions": 0,
+    "rateLimits": 0,
+    "audit": 0
+  },
+  "previewRootMode": "0o700",
+  "credentialFileMode": "0o600",
+  "dataOutsideSource": true,
+  "liveStoreUnchanged": true
+}

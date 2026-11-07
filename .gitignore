@@ -29,3 +29,6 @@ prototypes/copiloto-rep-dist/
 
 # Config local de Claude Code (contiene host del VPS)
 .claude/
+
+# Artefactos generados (paquetes .zip de growth)
+growth/dist/

@@ -1,0 +1,3273 @@
+{
+  "checkedAt": "2026-11-07T12:34:32.602971+00:00",
+  "domain": "salesacademy.softvibes.cloud",
+  "method": "GET only; verified TLS; redirects and external links never followed; no credentials",
+  "passed": 544,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "html",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "unknown_route",
+      "url": "https://salesacademy.softvibes.cloud/__salesacademy_verify_missing__/",
+      "ok": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "check": "redirect",
+      "url": "http://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 301; destination https://salesacademy.softvibes.cloud/"
+    },
+    {
+      "check": "redirect",
+      "url": "http://v1.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 301; destination https://v1.salesacademy.softvibes.cloud/"
+    },
+    {
+      "check": "redirect",
+      "url": "http://v2.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 301; destination https://v2.salesacademy.softvibes.cloud/"
+    },
+    {
+      "check": "redirect",
+      "url": "http://v3.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 301; destination https://v3.salesacademy.softvibes.cloud/"
+    },
+    {
+      "check": "redirect",
+      "url": "http://v4.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 301; destination https://v4.salesacademy.softvibes.cloud/"
+    },
+    {
+      "check": "redirect",
+      "url": "http://v5.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 301; destination https://v5.salesacademy.softvibes.cloud/"
+    },
+    {
+      "check": "index_version_link",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "Index links to v1"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v1/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v1.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v1/mediahub/?q=agentes",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v1.salesacademy.softvibes.cloud/mediahub/?q=agentes"
+    },
+    {
+      "check": "redirect",
+      "url": "https://v1.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v1.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v1.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v1.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v1.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "health",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTP 200; ok=True"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "unknown_route",
+      "url": "https://v1.salesacademy.softvibes.cloud/__salesacademy_verify_missing__/",
+      "ok": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "check": "index_version_link",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "Index links to v2"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v2/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v2.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v2/mediahub/?q=agentes",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v2.salesacademy.softvibes.cloud/mediahub/?q=agentes"
+    },
+    {
+      "check": "redirect",
+      "url": "https://v2.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v2.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v2.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v2.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v2.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "health",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTP 200; ok=True"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "unknown_route",
+      "url": "https://v2.salesacademy.softvibes.cloud/__salesacademy_verify_missing__/",
+      "ok": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "check": "index_version_link",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "Index links to v3"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v3/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v3.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v3/mediahub/?q=agentes",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v3.salesacademy.softvibes.cloud/mediahub/?q=agentes"
+    },
+    {
+      "check": "redirect",
+      "url": "https://v3.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v3.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v3.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v3.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v3.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "health",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTP 200; ok=True"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "unknown_route",
+      "url": "https://v3.salesacademy.softvibes.cloud/__salesacademy_verify_missing__/",
+      "ok": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "check": "index_version_link",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "Index links to v4"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v4/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v4.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v4/mediahub/?q=agentes",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v4.salesacademy.softvibes.cloud/mediahub/?q=agentes"
+    },
+    {
+      "check": "redirect",
+      "url": "https://v4.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v4.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v4.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v4.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v4.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "health",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTP 200; ok=True"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "unknown_route",
+      "url": "https://v4.salesacademy.softvibes.cloud/__salesacademy_verify_missing__/",
+      "ok": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "check": "html",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "index_version_link",
+      "url": "https://salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "Index links to v5"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v5/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v5.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "redirect",
+      "url": "https://salesacademy.softvibes.cloud/v5/mediahub/?q=agentes",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v5.salesacademy.softvibes.cloud/mediahub/?q=agentes"
+    },
+    {
+      "check": "redirect",
+      "url": "https://v5.salesacademy.softvibes.cloud/",
+      "ok": true,
+      "detail": "HTTP 302; destination https://v5.salesacademy.softvibes.cloud/descubre/"
+    },
+    {
+      "check": "html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/diagnostico/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/privacidad/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/analisis/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v5.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v5.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v5.salesacademy.softvibes.cloud/mediahub/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "html",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/session",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/draft",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/resources",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/revisions",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/api/media",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/preview/",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "anonymous_cms_denied",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTP 401; error code unauthorized"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/preview/?page=hub",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "health",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTP 200; ok=True"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-api/health",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "unknown_route",
+      "url": "https://v5.salesacademy.softvibes.cloud/__salesacademy_verify_missing__/",
+      "ok": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "check": "html",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "security_headers",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "HTTPS hardening present"
+    },
+    {
+      "check": "complete_html",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "HTML read limit: 2 MiB"
+    },
+    {
+      "check": "no_localhost",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "ok": true,
+      "detail": "No local addresses in markup"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://salesacademy.softvibes.cloud/assets/consultation.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://salesacademy.softvibes.cloud/assets/consultation.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://salesacademy.softvibes.cloud/assets/mark.svg",
+      "ok": true,
+      "detail": "HTTP 206; image/svg+xml"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://salesacademy.softvibes.cloud/assets/mark.svg",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://salesacademy.softvibes.cloud/assets/preparation.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://salesacademy.softvibes.cloud/assets/preparation.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://salesacademy.softvibes.cloud/styles.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://salesacademy.softvibes.cloud/styles.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "HTTP 206; image/svg+xml; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/landing-v2.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/landing-v2.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "HTTP 206; image/svg+xml; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/product-agenda.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/product-agenda.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/product-resources.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/product-resources.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/cinematic.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/cinematic.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3342374; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3587135; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3786601; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/6367669; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/5549996; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/journey.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/journey.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "HTTP 206; image/svg+xml; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/media-player.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/media-player.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/media-player.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/media-player.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/product-agenda.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/product-agenda.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/product-resources.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/product-resources.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/cinematic.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/cinematic.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3342374; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3587135; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3786601; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/6367669; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/5549996; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/journey.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/journey.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "HTTP 206; image/svg+xml; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/media-player.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/media-player.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/media-player.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/media-player.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/product-agenda.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/product-agenda.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/product-demo.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/product-resources.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/product-resources.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios-entry.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios-entry.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/briefing.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/briefing.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/coaching.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/coaching.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/consultation.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/consultation.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/01-today-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/01-today-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/02-calendar-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/02-calendar-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/03-roadmap-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/03-roadmap-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/04-discovery-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/04-discovery-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/05-negotiation-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/05-negotiation-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/06-tour-preparation-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/06-tour-preparation-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/07-objection-practice-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/07-objection-practice-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/08-price-objection-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/08-price-objection-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/09-after-tour-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/09-after-tour-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/10-monthly-goal-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/10-monthly-goal-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/11-weekly-progress-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/11-weekly-progress-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/12-copilot-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/12-copilot-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/13-today-desktop.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/13-today-desktop.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/14-roadmap-desktop.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/14-roadmap-desktop.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/15-room-board-desktop.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/15-room-board-desktop.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-journey.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-journey.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/briefing.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/briefing.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/coaching.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/coaching.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/consultation.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/consultation.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/03-roadmap-mobile.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/03-roadmap-mobile.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/09-after-tour-mobile.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/09-after-tour-mobile.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/12-copilot-mobile.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/12-copilot-mobile.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/campaign.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/campaign.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cinematic.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cinematic.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3342374; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3587135; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/3786601; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/6367669; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "video_range",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.mp4",
+      "ok": true,
+      "detail": "HTTP 206; video/mp4; bytes 0-1023/5549996; read 1024 bytes"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.mp4",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/hub-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/journey.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/journey.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/landing-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "HTTP 206; image/svg+xml; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/mark.svg",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/public-v2.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/briefing.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/briefing.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/coaching.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/coaching.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/consultation.webp",
+      "ok": true,
+      "detail": "HTTP 206; image/webp"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/consultation.webp",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/01-today-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/01-today-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/02-calendar-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/02-calendar-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/03-roadmap-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/03-roadmap-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/04-discovery-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/04-discovery-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/05-negotiation-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/05-negotiation-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/06-tour-preparation-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/06-tour-preparation-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/07-objection-practice-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/07-objection-practice-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/08-price-objection-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/08-price-objection-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/09-after-tour-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/09-after-tour-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/10-monthly-goal-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/10-monthly-goal-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/11-weekly-progress-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/11-weekly-progress-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/12-copilot-mobile.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/12-copilot-mobile.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/13-today-desktop.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/13-today-desktop.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/14-roadmap-desktop.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/14-roadmap-desktop.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/15-room-board-desktop.png",
+      "ok": true,
+      "detail": "HTTP 206; image/png"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/15-room-board-desktop.png",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "HTTP 206; text/css; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/site.css",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    },
+    {
+      "check": "referenced_asset",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "HTTP 206; text/javascript; charset=utf-8"
+    },
+    {
+      "check": "asset_cache",
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/site.mjs",
+      "ok": true,
+      "detail": "Cache-Control: no-cache; validator present: True"
+    }
+  ]
+}

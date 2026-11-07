@@ -1,0 +1,372 @@
+{
+  "url": "https://salesacademy.softvibes.art/",
+  "title": "Sales Academy",
+  "bodyText": "chevron_left\nHome\nCalendario\nAna\nchevron_left\nviernes 6 de noviembre\nchevron_right\nAna\nLuis\nMira\nTeo\n\nAna · Sala Norte. Los tours los asigna el jefe de sala. Actualizado ahora\n\nLun\n2\nMar\n3\nMié\n4\nJue\n5\nVie\n6\nSáb\n7\nDom\n8\n09:30–10:30\nLead #4920 · Objeción de cuota\nConfirmado\nSin resultado\n11:30–12:30\nLead #302 · Seguimiento\nEn curso\nSin resultado\n15:30–16:30\nLead #188 · Visita de demostración\nPendiente\nSin resultado\nActualizar\nAbrir tablero de sala\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "chevron_left\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "chevron_left",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-prev"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "chevron_right",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-next"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ana",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-ana"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Luis",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-luis"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Mira",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-mira"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Teo",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-teo"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Lun\n2",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-2026-11-02"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Mar\n3",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-2026-11-03"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Mié\n4",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-2026-11-04"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Jue\n5",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-2026-11-05"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Vie\n6",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-2026-11-06"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Sáb\n7",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-2026-11-07"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Dom\n8",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "cal-2026-11-08"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Actualizar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "reload-tours"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "A",
+      "text": "Abrir tablero de sala",
+      "href": "/ops/",
+      "src": null,
+      "attributes": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "id",
+          "fab"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": []
+}

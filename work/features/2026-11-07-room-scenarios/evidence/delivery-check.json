@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "zipIntegrity": true,
+  "manifestHashes": true,
+  "rawScreenshotsUnchanged": 15,
+  "compositions": 6,
+  "compositionDimensions": [
+    1600,
+    1000
+  ],
+  "generatedPhotographs": 3,
+  "privateRuntimeFilesFound": 0,
+  "v3ArchiveUnchanged": true,
+  "archive": "salesacademy-room-scenarios-v4.zip",
+  "finalArchiveHashLocation": "growth/dist/delivery-manifest-v4.json"
+}

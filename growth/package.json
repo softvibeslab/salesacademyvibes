@@ -1,0 +1,12 @@
+{
+  "name": "sales-academy-growth",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Verificación de navegador del módulo editorial de Sales Academy",
+  "scripts": {
+    "test": "node --test tests/diagnostic.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "preview": [
+    {
+      "path": "/descubre/",
+      "status": 200,
+      "bytes": 19198,
+      "robots": null
+    },
+    {
+      "path": "/descubre/analisis/",
+      "status": 200,
+      "bytes": 8555,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/descubre/diagnostico/",
+      "status": 200,
+      "bytes": 5215,
+      "robots": null
+    },
+    {
+      "path": "/mediahub/",
+      "status": 200,
+      "bytes": 8347,
+      "robots": null
+    },
+    {
+      "path": "/cms/",
+      "status": 200,
+      "bytes": 4215,
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "ownerLoginAndLogout": true,
+  "existingPublicRoutesReadOnly": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/ops/",
+      "status": 200
+    },
+    {
+      "path": "/copiloto/",
+      "status": 200
+    }
+  ],
+  "noPublicMutations": true
+}

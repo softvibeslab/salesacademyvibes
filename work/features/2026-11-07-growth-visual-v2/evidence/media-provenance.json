@@ -1,0 +1,42 @@
+{
+  "reviewDate": "2026-11-07",
+  "source": "https://salesacademy.softvibes.art/",
+  "method": "Chromium/Playwright, viewport móvil390×844, navegación pública de solo lectura y screenshot. Imágenes inspeccionadas visualmente por el agente principal.",
+  "disclosure": "Pantallas de demostración · datos de ejemplo.",
+  "limits": "No son fotografías de clientes ni evidencia de resultados reales. No se capturaron sesiones autenticadas, bases o datos privados de otros proyectos.",
+  "assets": [
+    {
+      "file": "growth/site/assets/product-demo.png",
+      "view": "Roadmap",
+      "origin": "Conservada de la entrega v1",
+      "dimensions": [
+        390,
+        844
+      ],
+      "bytes": 78780,
+      "sha256": "34124d5a0897961de0ef869eee2063cbbf457ceffb8ce966b4d3445ee0cae749"
+    },
+    {
+      "file": "growth/site/assets/product-resources.png",
+      "view": "Recursos",
+      "origin": "Capturada de nuevo durante v2: botón data-go=resources",
+      "dimensions": [
+        390,
+        844
+      ],
+      "bytes": 52612,
+      "sha256": "22dea634e8bf5d9096ec647f24ba865538086dd828a1cc1fcf2753a973e7581a"
+    },
+    {
+      "file": "growth/site/assets/product-agenda.png",
+      "view": "Hoy / Agenda",
+      "origin": "Capturada de nuevo durante v2: botón data-go=hoy",
+      "dimensions": [
+        390,
+        844
+      ],
+      "bytes": 69815,
+      "sha256": "16e57f1db2d9a8dfd04b1ff07b481bcac9e485b08277e3da8e65628b65c00e0f"
+    }
+  ]
+}

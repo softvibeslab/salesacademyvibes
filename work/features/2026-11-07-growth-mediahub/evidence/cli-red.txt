@@ -1,0 +1,26 @@
+test_isolated_directory_and_loopback_are_valid (growth.tests.test_cli.LauncherGuardsTest.test_isolated_directory_and_loopback_are_valid) ... ok
+test_local_preview_cannot_bind_to_network (growth.tests.test_cli.LauncherGuardsTest.test_local_preview_cannot_bind_to_network) ... FAIL
+test_private_data_cannot_live_under_site (growth.tests.test_cli.LauncherGuardsTest.test_private_data_cannot_live_under_site) ... FAIL
+
+======================================================================
+FAIL: test_local_preview_cannot_bind_to_network (growth.tests.test_cli.LauncherGuardsTest.test_local_preview_cannot_bind_to_network)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_cli.py", line 16, in test_local_preview_cannot_bind_to_network
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_private_data_cannot_live_under_site (growth.tests.test_cli.LauncherGuardsTest.test_private_data_cannot_live_under_site)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_cli.py", line 12, in test_private_data_cannot_live_under_site
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=2)

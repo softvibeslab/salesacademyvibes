@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "scope": "full",
+  "results": [
+    {
+      "name": "Landing, consentimiento opcional y separación del producto",
+      "passed": true
+    },
+    {
+      "name": "Lectura pública completa sin JavaScript y descarga real",
+      "passed": true
+    },
+    {
+      "name": "Mediahub filtrado, estado vacío y recursos reales",
+      "passed": true
+    },
+    {
+      "name": "Diagnóstico sin contacto, respuestas desconocidas, empates y enlaces válidos",
+      "passed": true
+    },
+    {
+      "name": "Medición con permiso, propiedades permitidas y retirada",
+      "passed": true
+    },
+    {
+      "name": "Solicitud voluntaria almacenada con consentimiento separado",
+      "passed": true
+    },
+    {
+      "name": "Vistas móviles 360/390 sin desbordamiento ni controles cortados",
+      "passed": true
+    },
+    {
+      "name": "CMS: cuenta individual, borrador, vista previa y publicación real",
+      "passed": true
+    },
+    {
+      "name": "CMS: biblioteca, validación de archivo y derechos editoriales",
+      "passed": true
+    },
+    {
+      "name": "CMS: crear recurso por bloques y publicar portada y adjunto",
+      "passed": true
+    },
+    {
+      "name": "CMS: conflicto entre editores conserva cambios locales",
+      "passed": true
+    },
+    {
+      "name": "CMS: bandeja real y seguimiento sin envío externo",
+      "passed": true
+    },
+    {
+      "name": "CMS: restauración a borrador sin cambiar sitio ni solicitudes",
+      "passed": true
+    },
+    {
+      "name": "CMS: usuarios y permisos editor comprobados por servidor",
+      "passed": true
+    },
+    {
+      "name": "CMS móvil: navegación, formularios y cierre de sesión",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

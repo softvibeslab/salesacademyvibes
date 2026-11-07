@@ -1,0 +1,173 @@
+test_copies_index_and_rejects_index_symlinks (test_build_release.ReleaseBuilderTests.test_copies_index_and_rejects_index_symlinks) ... ERROR
+test_existing_output_is_never_overwritten (test_build_release.ReleaseBuilderTests.test_existing_output_is_never_overwritten) ... FAIL
+test_extracts_only_runtime_whitelist_and_records_provenance (test_build_release.ReleaseBuilderTests.test_extracts_only_runtime_whitelist_and_records_provenance) ... FAIL
+test_incomplete_runtime_does_not_build (test_build_release.ReleaseBuilderTests.test_incomplete_runtime_does_not_build) ... FAIL
+test_manifest_and_archive_must_have_identical_members (test_build_release.ReleaseBuilderTests.test_manifest_and_archive_must_have_identical_members) ... FAIL
+test_outputs_are_reproducible_and_index_is_optional (test_build_release.ReleaseBuilderTests.test_outputs_are_reproducible_and_index_is_optional) ... ok
+test_pinned_archive_digest_is_required (test_build_release.ReleaseBuilderTests.test_pinned_archive_digest_is_required) ... FAIL
+test_production_wrapper_locks_flags_and_trusts_one_proxy (test_build_release.ReleaseBuilderTests.test_production_wrapper_locks_flags_and_trusts_one_proxy) ... FAIL
+test_rejects_duplicate_archive_members (test_build_release.ReleaseBuilderTests.test_rejects_duplicate_archive_members) ... FAIL
+test_rejects_symlinks_even_outside_whitelist (test_build_release.ReleaseBuilderTests.test_rejects_symlinks_even_outside_whitelist) ... FAIL
+test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) ... 
+  test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='../escape') ... FAIL
+  test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='growth/site/../../escape') ... FAIL
+  test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='growth//site/evil') ... FAIL
+  test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='growth\\site\\evil') ... FAIL
+  test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='C:/evil') ... FAIL
+test_verifies_excluded_files_too (test_build_release.ReleaseBuilderTests.test_verifies_excluded_files_too) ... FAIL
+test_version_ids_cannot_escape_output (test_build_release.ReleaseBuilderTests.test_version_ids_cannot_escape_output) ... FAIL
+
+======================================================================
+ERROR: test_copies_index_and_rejects_index_symlinks (test_build_release.ReleaseBuilderTests.test_copies_index_and_rejects_index_symlinks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 176, in test_copies_index_and_rejects_index_symlinks
+    self.assertEqual((self.output / "index/index.html").read_text(), "<h1>Versions</h1>")
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 787, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/st/6m6rs6vd4dx8mv_52r4c1d8w0000gn/T/tmpl47b_xv5/release/index/index.html'
+
+======================================================================
+FAIL: test_existing_output_is_never_overwritten (test_build_release.ReleaseBuilderTests.test_existing_output_is_never_overwritten)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 121, in test_existing_output_is_never_overwritten
+    with self.assertRaisesRegex(ValueError, "exists"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_extracts_only_runtime_whitelist_and_records_provenance (test_build_release.ReleaseBuilderTests.test_extracts_only_runtime_whitelist_and_records_provenance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 87, in test_extracts_only_runtime_whitelist_and_records_provenance
+    self.assertTrue((self.output / "v1/growth/server/app.py").is_file())
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_incomplete_runtime_does_not_build (test_build_release.ReleaseBuilderTests.test_incomplete_runtime_does_not_build)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 167, in test_incomplete_runtime_does_not_build
+    with self.assertRaisesRegex(ValueError, "required runtime"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_manifest_and_archive_must_have_identical_members (test_build_release.ReleaseBuilderTests.test_manifest_and_archive_must_have_identical_members)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 143, in test_manifest_and_archive_must_have_identical_members
+    with self.assertRaisesRegex(ValueError, "manifest.*members"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_pinned_archive_digest_is_required (test_build_release.ReleaseBuilderTests.test_pinned_archive_digest_is_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 129, in test_pinned_archive_digest_is_required
+    with self.assertRaisesRegex(ValueError, "archive.*SHA-256"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_production_wrapper_locks_flags_and_trusts_one_proxy (test_build_release.ReleaseBuilderTests.test_production_wrapper_locks_flags_and_trusts_one_proxy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 191, in test_production_wrapper_locks_flags_and_trusts_one_proxy
+    self.assertTrue(wrapper.is_file())
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_rejects_duplicate_archive_members (test_build_release.ReleaseBuilderTests.test_rejects_duplicate_archive_members)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 162, in test_rejects_duplicate_archive_members
+    with self.assertRaisesRegex(ValueError, "duplicate"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rejects_symlinks_even_outside_whitelist (test_build_release.ReleaseBuilderTests.test_rejects_symlinks_even_outside_whitelist)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 156, in test_rejects_symlinks_even_outside_whitelist
+    with self.assertRaisesRegex(ValueError, "symlink|special"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='../escape')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 150, in test_rejects_traversal_and_nonportable_archive_paths
+    with self.assertRaisesRegex(ValueError, "unsafe.*path"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='growth/site/../../escape')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 150, in test_rejects_traversal_and_nonportable_archive_paths
+    with self.assertRaisesRegex(ValueError, "unsafe.*path"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='growth//site/evil')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 150, in test_rejects_traversal_and_nonportable_archive_paths
+    with self.assertRaisesRegex(ValueError, "unsafe.*path"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='growth\\site\\evil')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 150, in test_rejects_traversal_and_nonportable_archive_paths
+    with self.assertRaisesRegex(ValueError, "unsafe.*path"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) (name='C:/evil')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 150, in test_rejects_traversal_and_nonportable_archive_paths
+    with self.assertRaisesRegex(ValueError, "unsafe.*path"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_verifies_excluded_files_too (test_build_release.ReleaseBuilderTests.test_verifies_excluded_files_too)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 136, in test_verifies_excluded_files_too
+    with self.assertRaisesRegex(ValueError, "entry.*SHA-256"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_version_ids_cannot_escape_output (test_build_release.ReleaseBuilderTests.test_version_ids_cannot_escape_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/versions/test_build_release.py", line 185, in test_version_ids_cannot_escape_output
+    with self.assertRaisesRegex(ValueError, "version"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.020s
+
+FAILED (failures=15, errors=1)

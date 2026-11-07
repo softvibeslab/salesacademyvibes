@@ -1,0 +1,444 @@
+{
+  "source": "https://salesacademy.softvibes.art/",
+  "capturedAt": "2026-11-07T11:47:42.243Z",
+  "classification": "Capturas reales de una demo; los relatos de casos se mantienen fuera de estas imágenes.",
+  "captureMethod": "Playwright Chromium, viewport screenshot, deviceScaleFactor1. No CSS injection, no overlays, no edits.",
+  "safety": "Only GET/HEAD permitted; all other HTTP methods aborted. No credentials, messages, or operational actions.",
+  "items": [
+    {
+      "id": "01-today-mobile",
+      "title": "Home: jornada de sala",
+      "actions": [],
+      "observed": [
+        "Presentaciones",
+        "Tours de hoy"
+      ],
+      "context": "Vista inicial; Ana, Sala Norte; la propia app presenta metas de ejemplo.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "01-today-mobile.png",
+      "dom": "01-today-mobile.dom.json",
+      "sha256": "659b52f9f753badd16cebb2250e2983a6826ed3ef35279fad17b19357b61c259",
+      "bytes": 73733,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "02-calendar-mobile",
+      "title": "Calendario de tours",
+      "actions": [
+        "[data-go=\"calendario\"]"
+      ],
+      "observed": [
+        "Calendario",
+        "Los tours los asigna el jefe de sala"
+      ],
+      "context": "Calendario visible de Ana sin cambiar fechas ni tours.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "02-calendar-mobile.png",
+      "dom": "02-calendar-mobile.dom.json",
+      "sha256": "b80c2ec560524059b2d3f10aef18b1aac4fe33056baba9236216f97db3548632",
+      "bytes": 60604,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "03-roadmap-mobile",
+      "title": "Roadmap: 11 pasos",
+      "actions": [
+        "[data-go=\"roadmap\"]"
+      ],
+      "observed": [
+        "11 pasos",
+        "5. Renovar el pacto"
+      ],
+      "context": "Progreso de ejemplo:4 de11módulos.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "03-roadmap-mobile.png",
+      "dom": "03-roadmap-mobile.dom.json",
+      "sha256": "266043ef4733d3d704ee161afe6b5fa94df14f59fe36a9cc19f1d4b83b1de892",
+      "bytes": 82171,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "04-discovery-mobile",
+      "title": "Paso4: Descubrimiento",
+      "actions": [
+        "[data-go=\"roadmap\"]",
+        "[data-go=\"modulo\"][data-id=\"4\"]"
+      ],
+      "observed": [
+        "Descubrimiento",
+        "El presupuesto está en sus palabras."
+      ],
+      "context": "Guion y checklist reales; no se ejecuta el paso en Copiloto.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "04-discovery-mobile.png",
+      "dom": "04-discovery-mobile.dom.json",
+      "sha256": "7118b9e66312402675fb616d26cfe9c1897457a35a9361fca40cad3de4a0a2d8",
+      "bytes": 53373,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "05-negotiation-mobile",
+      "title": "Paso10: Precio y negociación",
+      "actions": [
+        "[data-go=\"roadmap\"]",
+        "[data-go=\"modulo\"][data-id=\"10\"]"
+      ],
+      "observed": [
+        "Precio y negociación"
+      ],
+      "context": "Lección de la demo; no se ejecuta ni cambia progreso.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "05-negotiation-mobile.png",
+      "dom": "05-negotiation-mobile.dom.json",
+      "sha256": "388a66bba4dcee044014e79e8b1ea7ede507a8d051e1c174ecd16a13214fc54e",
+      "bytes": 54031,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "06-tour-preparation-mobile",
+      "title": "Preparar mi tour",
+      "actions": [
+        "[data-go=\"resources\"]",
+        "[data-open=\"skill\"][data-id=\"SK-14\"]"
+      ],
+      "observed": [
+        "Preparar mi tour",
+        "Sin apellidos ni datos reales."
+      ],
+      "context": "Plantilla con ejemplo nativo: una pareja de jubilados. No se envía.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "06-tour-preparation-mobile.png",
+      "dom": "06-tour-preparation-mobile.dom.json",
+      "sha256": "5cea5d3b0e275876eeed90d2d2540f614cade78cad46d212a01019e36569f248",
+      "bytes": 38396,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "07-objection-practice-mobile",
+      "title": "Practicar objeción",
+      "actions": [
+        "[data-go=\"resources\"]",
+        "[data-open=\"skill\"][data-id=\"SK-13\"]"
+      ],
+      "observed": [
+        "Practicar objeción",
+        "La respuesta va al manager."
+      ],
+      "context": "Vista previa nativa: tiempo. No se genera respuesta ni se envía al manager.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "07-objection-practice-mobile.png",
+      "dom": "07-objection-practice-mobile.dom.json",
+      "sha256": "d46845c43b5e4b69e3bde01f927bb982715c1e177290940cbafff6f2ca50bf5b",
+      "bytes": 43067,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "08-price-objection-mobile",
+      "title": "Biblioteca: objeción de dinero",
+      "actions": [
+        "[data-go=\"resources\"]",
+        "[data-open=\"lib\"][data-id=\"LIB-02\"]"
+      ],
+      "observed": [
+        "Objeción de dinero",
+        "Guion de la sala de ejemplo."
+      ],
+      "context": "Guion de ejemplo ya publicado. No se consulta al Copiloto.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "08-price-objection-mobile.png",
+      "dom": "08-price-objection-mobile.dom.json",
+      "sha256": "1e5527bef1ff98c858455fdb70974baf8bd63be3536c28ed76358580dee7d751",
+      "bytes": 55039,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "09-after-tour-mobile",
+      "title": "Después del tour",
+      "actions": [
+        "[data-go=\"resources\"]",
+        "[data-open=\"skill\"][data-id=\"SK-15\"]"
+      ],
+      "observed": [
+        "Después del tour",
+        "Qué aprendiste"
+      ],
+      "context": "Plantilla visible; no es un reporte generado ni feedback de un tour real.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "09-after-tour-mobile.png",
+      "dom": "09-after-tour-mobile.dom.json",
+      "sha256": "a771bf85e3f4743ec48c670d72a384d72cb399935a41d1488cf7dcc9e0ea23de",
+      "bytes": 40586,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "10-monthly-goal-mobile",
+      "title": "Meta del mes",
+      "actions": [
+        "[data-go=\"resources\"]",
+        "[data-open=\"skill\"][data-id=\"SK-09\"]"
+      ],
+      "observed": [
+        "Meta del mes",
+        "Ejemplo de volumen."
+      ],
+      "context": "Valor de ejemplo nativo60000; no se edita ni guarda. No es una hojaSMART.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "10-monthly-goal-mobile.png",
+      "dom": "10-monthly-goal-mobile.dom.json",
+      "sha256": "43421cd30783394d7b97214ecd070121dc97a99d75de5cea57a06d7c08d896b9",
+      "bytes": 37590,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "11-weekly-progress-mobile",
+      "title": "Perfil: esta semana",
+      "actions": [
+        "[data-go=\"perfil\"]",
+        "[data-act=\"range-semana\"]"
+      ],
+      "observed": [
+        "Rendimiento",
+        "Sala de ejemplo"
+      ],
+      "context": "Cambio de filtro visual semanal; cifras demostrativas, no resultados de implementación.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "11-weekly-progress-mobile.png",
+      "dom": "11-weekly-progress-mobile.dom.json",
+      "sha256": "3858cf46889c4190797ce43f6244dde951b59849926826fdc6ceb0347d40f595",
+      "bytes": 66882,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "12-copilot-mobile",
+      "title": "Copiloto: pantalla inicial",
+      "actions": [
+        "[data-go=\"coach\"]"
+      ],
+      "observed": [],
+      "iframe": true,
+      "context": "Chat visible en estado inicial, sin escribir ni enviar mensajes. SalaS1, rolRep por defecto.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "12-copilot-mobile.png",
+      "dom": "12-copilot-mobile.dom.json",
+      "sha256": "daef7dda95a1fadba6c5dcc8297465b011f62e9a3ba67c2895e17cc85fb30bcc",
+      "bytes": 37308,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 390,
+        "height": 844,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "id": "13-today-desktop",
+      "title": "Home en escritorio",
+      "actions": [],
+      "observed": [
+        "Presentaciones"
+      ],
+      "desktop": true,
+      "context": "Layout real al ampliar viewport; no se rediseñó para escritorio.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 1240,
+        "height": 900
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "13-today-desktop.png",
+      "dom": "13-today-desktop.dom.json",
+      "sha256": "902f39761880bd52ef83faf9f8613e324a6f09380df29ee7cfe8ce36e1907aec",
+      "bytes": 92847,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 1240,
+        "height": 900,
+        "viewportWidth": 1240,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "id": "14-roadmap-desktop",
+      "title": "Roadmap en escritorio",
+      "actions": [
+        "[data-go=\"roadmap\"]"
+      ],
+      "observed": [
+        "11 pasos"
+      ],
+      "desktop": true,
+      "context": "Layout real al ampliar viewport.",
+      "url": "https://salesacademy.softvibes.art/",
+      "viewport": {
+        "width": 1240,
+        "height": 900
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "14-roadmap-desktop.png",
+      "dom": "14-roadmap-desktop.dom.json",
+      "sha256": "23b75ecebde780e118ce709c6edbdf6047fc2de80be60095b7732ccfa888fea5",
+      "bytes": 100310,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 1240,
+        "height": 900,
+        "viewportWidth": 1240,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "id": "15-room-board-desktop",
+      "title": "Tablero de sala: jefe de sala",
+      "url": "https://salesacademy.softvibes.art/ops/",
+      "actions": [],
+      "observed": [
+        "Tablero de sala",
+        "Jorge ve solo Sala Norte."
+      ],
+      "desktop": true,
+      "context": "Vista pública inicial de jefe de sala; ninguna acción de asignar, editar, quitar o resultado.",
+      "viewport": {
+        "width": 1240,
+        "height": 900
+      },
+      "deviceScaleFactor": 1,
+      "screenshot": "15-room-board-desktop.png",
+      "dom": "15-room-board-desktop.dom.json",
+      "sha256": "dee5a1227497c6a964a2d34b1528b94793c63760b109135fffc5a35a85c94072",
+      "bytes": 93955,
+      "blockedRequests": [],
+      "documentDimensions": {
+        "width": 1240,
+        "height": 1001,
+        "viewportWidth": 1240,
+        "viewportHeight": 900
+      }
+    }
+  ]
+}

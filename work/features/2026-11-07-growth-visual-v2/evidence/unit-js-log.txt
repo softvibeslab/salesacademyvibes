@@ -1,0 +1,15 @@
+✔ initial process identifies coordination without contact (0.475292ms)
+✔ partial process identifies evidence (0.049084ms)
+✔ all defined recommends baseline, not certification (0.042833ms)
+✔ unknowns preserved and ties transparent (0.505917ms)
+✔ missing and invalid answers never evaluated (0.098416ms)
+✔ boundaries and determinism (0.084125ms)
+✔ recommendations link to seeded resources and track immutable IDs (0.493625ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32.604

@@ -1,0 +1,13 @@
+{
+  "previousRelease": "/srv/salesacademy-cloud/releases/20261107-versions-01",
+  "release": "/srv/salesacademy-cloud/releases/20261107-compact-screens-02",
+  "changedFiles": [
+    "index/styles.css",
+    "v5/growth/site/assets/ai-journey.css",
+    "v5/growth/site/assets/scenarios/scenarios.css"
+  ],
+  "manifestSha256": "c587c429e784d49ceb9830ace424d073047bb4539203c04746e2b0ca9e4a5e52",
+  "restart": "salesacademy-cloud@v5.service",
+  "privateStateChanged": false,
+  "rollback": "Atomically point current to previousRelease and restart only salesacademy-cloud@v5.service."
+}

@@ -1,0 +1,195 @@
+{
+  "url": "https://salesacademy.softvibes.art/",
+  "title": "Sales Academy",
+  "bodyText": "Perfil\nSala de ejemplo\nRendimiento\n\nSemana 45 · lun a vie · rep de sala, ejemplo\n\nHoy\nEsta semana\nMes Q4\nbolt\nAcelerador del día\nLlevas $34,500 de $50,000. Jueves y viernes siguen en cero.\nVolumen\npayments\n$34,500\nMeta $50,000 USD\n69%\nFaltan $15,500\nTasa de cierre\npie_chart\n29%\nSobre la meta de 25%\nPresentaciones\nforum\n8 / 12\n4 tours listos\n67%\nComisión\nmonetization_on\n$2,100\nEstimada · ejemplo\nEmbudo\n40 contactos\n1 Contactados\n40\n2 Calificados\n18\n3 Presentaciones\n8\n4 Cierres\n2 · $34,500\nRitmo de la semana\nLun a vie · meta $50,000\n$34,500\n$9k\nLun\n$11k\nMar\n$8k\nHoy\n—\nJue\n—\nVie\nRegistrar presentación o venta\nVer acceso\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "Hoy",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "range-hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Esta semana",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "range-semana"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Mes Q4",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "range-mes"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Registrar presentación o venta",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "presentacion"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ver acceso",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "acceso"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "id",
+          "fab"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": []
+}

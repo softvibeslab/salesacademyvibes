@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "A continuous five-chapter journey is present before media playback",
+      "passed": true
+    },
+    {
+      "name": "Forward and reverse scrolling update the same scene and native anchors",
+      "passed": true
+    },
+    {
+      "name": "A manual motion preference and the system preference keep a linear readable version",
+      "passed": true
+    },
+    {
+      "name": "All five full films have local captions, native controls and defer transfer",
+      "passed": true
+    },
+    {
+      "name": "Mobile and no-JavaScript keep films, cases and readable content",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "mediaRequests": [
+    "http://127.0.0.1:49943/growth-assets/films/smart-agent.mp4"
+  ]
+}

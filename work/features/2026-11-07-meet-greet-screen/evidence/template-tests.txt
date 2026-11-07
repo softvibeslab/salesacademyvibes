@@ -1,0 +1,14 @@
+test_archived_or_draft_vsl_is_not_featured_or_leaked (growth.tests.test_ai_campaign.AICampaign.test_archived_or_draft_vsl_is_not_featured_or_leaked) ... ok
+test_featured_vsl_is_unique_manual_and_captioned (growth.tests.test_ai_campaign.AICampaign.test_featured_vsl_is_unique_manual_and_captioned) ... ok
+test_journey_combines_room_photos_and_real_interfaces (growth.tests.test_ai_campaign.AICampaign.test_journey_combines_room_photos_and_real_interfaces) ... ok
+test_public_pages_offer_one_consistent_demo_contact (growth.tests.test_ai_campaign.AICampaign.test_public_pages_offer_one_consistent_demo_contact) ... ok
+test_static_gallery_uses_the_same_message_and_number (growth.tests.test_ai_campaign.AICampaign.test_static_gallery_uses_the_same_message_and_number) ... ok
+test_gallery_is_public_asset_independent_of_editorial_privacy (growth.tests.test_scenarios.ScenarioPublication.test_gallery_is_public_asset_independent_of_editorial_privacy) ... ok
+test_hidden_guide_removes_entry_and_reader (growth.tests.test_scenarios.ScenarioPublication.test_hidden_guide_removes_entry_and_reader) ... ok
+test_published_guide_links_from_landing_and_reader (growth.tests.test_scenarios.ScenarioPublication.test_published_guide_links_from_landing_and_reader) ... ok
+test_seed_contains_an_editable_existing_contract_guide (growth.tests.test_scenarios.ScenarioPublication.test_seed_contains_an_editable_existing_contract_guide) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.961s
+
+OK

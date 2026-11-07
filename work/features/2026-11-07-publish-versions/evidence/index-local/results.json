@@ -1,0 +1,52 @@
+[
+  {
+    "width": 360,
+    "horizontalOverflow": false,
+    "noJS": true,
+    "imagesLoaded": true,
+    "noExternalRequests": true,
+    "links": 18,
+    "minimumTargetHeight": 44,
+    "overflows": []
+  },
+  {
+    "width": 390,
+    "horizontalOverflow": false,
+    "noJS": true,
+    "imagesLoaded": true,
+    "noExternalRequests": true,
+    "links": 18,
+    "minimumTargetHeight": 44,
+    "overflows": []
+  },
+  {
+    "width": 768,
+    "horizontalOverflow": false,
+    "noJS": true,
+    "imagesLoaded": true,
+    "noExternalRequests": true,
+    "links": 18,
+    "minimumTargetHeight": 44,
+    "overflows": []
+  },
+  {
+    "width": 980,
+    "horizontalOverflow": false,
+    "noJS": true,
+    "imagesLoaded": true,
+    "noExternalRequests": true,
+    "links": 18,
+    "minimumTargetHeight": 44,
+    "overflows": []
+  },
+  {
+    "width": 1440,
+    "horizontalOverflow": false,
+    "noJS": true,
+    "imagesLoaded": true,
+    "noExternalRequests": true,
+    "links": 18,
+    "minimumTargetHeight": 44,
+    "overflows": []
+  }
+]

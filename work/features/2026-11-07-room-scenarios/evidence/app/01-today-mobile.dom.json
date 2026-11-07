@@ -1,0 +1,648 @@
+{
+  "url": "https://salesacademy.softvibes.art/",
+  "title": "Sales Academy",
+  "bodyText": "SA\nSales Academy\ncalendar_today\nHoy\n\nViernes 6 de noviembre\n\nNov 06\nPresentaciones\n0/4\nCierres\n0/2\nVolumen\n$0\n\nMetas de ejemplo: 4 presentaciones, 2 cierres y $12,000 USD. Los avances salen de tus resultados del día.\n\nAna\nLuis\nMira\nTeo\n\nAna · Sala Norte. Actualizado ahora\n\nTours de hoy\nActualizar · Calendario\n09:30 Lead #4920\nConfirmado\nSin resultado\n11:30 Lead #302\nEn curso\nSin resultado\n15:30 Lead #188\nPendiente\nSin resultado\nAhora\n+ Bloque\nnotifications_active\nAHORA\n11:30\n\nLlamada con Lead #4920 · Objeción de cuota y cierre de ciclo.\n\nPosponer 15m\ncall\nIniciar\nTus prioridades\nEditar\nConfirmar seguimiento 10:45\nLead #302 · Propuesta enviada ayer\nchevron_right\nPracticar preguntas de descubrimiento 11:00\nAcuerdo de coaching · Foco en objeción de precio\nchevron_right\nPreparar tour presencial 15:00\nDesde nota #12 · Demo con equipo de compras\nchevron_right\nVer pendientes (5)\nAtajos\nAgregarEditar\nedit_note\nNueva nota\nco_present\nRegistrar presentación\nbolt\nCotizar\ntimeline\n5. Renovar el pacto\ntask_alt\nCerrar jornada\n\nlock El cierre es personal\n\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "calendar_today",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "calendario"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Nov 06",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "calendario"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Presentaciones\n0/4\nCierres\n0/2\nVolumen\n$0",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ana",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-ana"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Luis",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-luis"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Mira",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-mira"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Teo",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "me-teo"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Actualizar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "reload-tours"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Calendario",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "calendario"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "09:30 Lead #4920\nConfirmado\nSin resultado",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "open-result-v1"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "11:30 Lead #302\nEn curso\nSin resultado",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "open-result-v2"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "15:30 Lead #188\nPendiente\nSin resultado",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "open-result-v3"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+ Bloque",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "bloque"
+        ],
+        [
+          "data-flow",
+          "bloque"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Posponer 15m",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "snooze"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "call\nIniciar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "call"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "metas"
+        ],
+        [
+          "data-flow",
+          "metas"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "on",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-done",
+          "p1"
+        ],
+        [
+          "type",
+          "checkbox"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Confirmar seguimiento 10:45\nLead #302 · Propuesta enviada ayer",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-task",
+          "p1"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "on",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-done",
+          "p2"
+        ],
+        [
+          "type",
+          "checkbox"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Practicar preguntas de descubrimiento 11:00\nAcuerdo de coaching · Foco en objeción de precio",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-task",
+          "p2"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "value": "on",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-done",
+          "p3"
+        ],
+        [
+          "type",
+          "checkbox"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Preparar tour presencial 15:00\nDesde nota #12 · Demo con equipo de compras",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-task",
+          "p3"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ver pendientes (5)",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "pendientes"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Agregar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "atajos"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "edit-shortcuts"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "edit_note\nNueva nota",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "nota"
+        ],
+        [
+          "data-flow",
+          "nota"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "co_present\nRegistrar presentación",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "presentacion"
+        ],
+        [
+          "data-flow",
+          "presentacion"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "bolt\nCotizar",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-open",
+          "skill"
+        ],
+        [
+          "data-id",
+          "SK-01"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\n5. Renovar el pacto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "modulo"
+        ],
+        [
+          "data-id",
+          "5"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "task_alt\nCerrar jornada",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "cierre"
+        ],
+        [
+          "data-flow",
+          "cierre"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "id",
+          "fab"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": []
+}

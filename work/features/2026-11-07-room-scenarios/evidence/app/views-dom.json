@@ -1,0 +1,1330 @@
+[
+  {
+    "view": "roadmap",
+    "body": "Roadmap\nCopiloto\n11 pasos\n\nEl recorrido de la venta consultiva. Ejemplo de sala.\n\n36%\nLISTO\nPaso actual 5. Renovar el pacto\n\nSí o no hoy. Confirmas que pueden decidir hoy, antes de entrar a números.\n\n4 de 11 módulos\nContinuar\nLos 11 módulos\n4 / 11 listos\ncheck\n1. Meet & Greet\nLa bienvenida se siente natural y deja clara la visita.\nListo\ncheck\n2. Control de agenda\nEl control de la agenda se siente natural y establece autoridad desde el primer minuto.\nListo\ncheck\n3. Rapport (FORM)\nConexión breve: familia, ocupación, recreación y motivación.\nListo\ncheck\n4. Descubrimiento\nEscuchas dolor, presupuesto y si pueden decidir.\nListo\n5\n5. Renovar el pacto\nConfirmas que pueden decidir hoy, antes de entrar a números.\nEn curso\n6\n6. Presentación a tres\nEntra quien valida las condiciones y tú te quedas en la mesa.\n0%\n7\n7. Recorrido\nCada parada ancla un valor y vuelve a lo que ellos dijeron.\n0%\n8\n8. Casos de éxito\nUn caso parecido, sin nombres, y qué decidieron.\n0%\n9\n9. Punto de confirmación\nRepites lo que buscan y esperas el sí antes del número.\n0%\n10\n10. Precio y negociación\nUna opción, el silencio, y la objeción aislada.\n0%\n11\n11. Cierre y bienvenida\nFirma, pago de hoy y el siguiente paso, dichos en voz alta.\n0%\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "buttons": [
+      {
+        "text": "Copiloto",
+        "go": "coach",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "data-q",
+            "quiero practicar el cierre de sí o no hoy"
+          ]
+        ]
+      },
+      {
+        "text": "Continuar",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "5"
+          ]
+        ]
+      },
+      {
+        "text": "check\n1. Meet & Greet\nLa bienvenida se siente natural y deja clara la visita.\nListo",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "1"
+          ]
+        ]
+      },
+      {
+        "text": "check\n2. Control de agenda\nEl control de la agenda se siente natural y establece autoridad desde el primer minuto.\nListo",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "2"
+          ]
+        ]
+      },
+      {
+        "text": "check\n3. Rapport (FORM)\nConexión breve: familia, ocupación, recreación y motivación.\nListo",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "3"
+          ]
+        ]
+      },
+      {
+        "text": "check\n4. Descubrimiento\nEscuchas dolor, presupuesto y si pueden decidir.\nListo",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "4"
+          ]
+        ]
+      },
+      {
+        "text": "5\n5. Renovar el pacto\nConfirmas que pueden decidir hoy, antes de entrar a números.\nEn curso",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "5"
+          ]
+        ]
+      },
+      {
+        "text": "6\n6. Presentación a tres\nEntra quien valida las condiciones y tú te quedas en la mesa.\n0%",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "6"
+          ]
+        ]
+      },
+      {
+        "text": "7\n7. Recorrido\nCada parada ancla un valor y vuelve a lo que ellos dijeron.\n0%",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "7"
+          ]
+        ]
+      },
+      {
+        "text": "8\n8. Casos de éxito\nUn caso parecido, sin nombres, y qué decidieron.\n0%",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "8"
+          ]
+        ]
+      },
+      {
+        "text": "9\n9. Punto de confirmación\nRepites lo que buscan y esperas el sí antes del número.\n0%",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "9"
+          ]
+        ]
+      },
+      {
+        "text": "10\n10. Precio y negociación\nUna opción, el silencio, y la objeción aislada.\n0%",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "10"
+          ]
+        ]
+      },
+      {
+        "text": "11\n11. Cierre y bienvenida\nFirma, pago de hoy y el siguiente paso, dichos en voz alta.\n0%",
+        "go": "modulo",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "modulo"
+          ],
+          [
+            "data-id",
+            "11"
+          ]
+        ]
+      },
+      {
+        "text": "home\nHome",
+        "go": "hoy",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ]
+        ]
+      },
+      {
+        "text": "timeline\nRoadmap",
+        "go": "roadmap",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ]
+        ]
+      },
+      {
+        "text": "smart_toy\nCopiloto",
+        "go": "coach",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ]
+        ]
+      },
+      {
+        "text": "local_library\nRecursos",
+        "go": "resources",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ]
+        ]
+      },
+      {
+        "text": "person\nPerfil",
+        "go": "perfil",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ]
+        ]
+      },
+      {
+        "text": "+",
+        "id": "fab",
+        "attrs": []
+      }
+    ]
+  },
+  {
+    "view": "resources",
+    "body": "SA\nRecursos\nRecursos\n\nCada item abre su plantilla. La vista previa se arma con lo que escribes.\n\nAbrir el chat\nTodas\nCotizar\nRegistrar\nMedir\nPracticar\nAprender\nCuidar al cliente\nBiblioteca\nHabilidades\nCotizar membresía\nCotizar · Base\nComparar enganches\nCotizar · Base\nCotizar upgrade\nCotizar · Base\n¿Cuánto puede pagar?\nCotizar · Base\nEnganche diferido\nCotizar · Pro\nConvertir a pesos\nCotizar · Base\nRegistrar tour en 30 s\nRegistrar · Base\nMi día / Mi mes\nMedir · Base\nMeta del mes\nMedir · Base\nMi comisión estimada\nMedir · Pro\nAhorro vacacional\nCotizar · Pro\nMantenimiento proyectado\nCotizar · Pro\nPracticar objeción\nPracticar · Base\nPreparar mi tour\nAprender · Base\nDespués del tour\nAprender · Base\nBuscar en la biblioteca\nAprender · Base\nSeguimiento de cliente\nCuidar al cliente · Pro\nSala del manager\nMedir · Base\nInicio del día\nMedir · Base\nBiblioteca de la sala\nObjeción de tiempo: \"no sé cuándo podré viajar\"\ntiempo · agenda · fechas\nObjeción de dinero: \"está muy caro\"\ndinero · precio · enganche\nDecisión de pareja: \"lo tengo que platicar\"\npareja · decisión\nEscepticismo: \"leí cosas malas en redes\"\nescepticismo · redes · contrato\nPasos de la presentación\nguion · presentación\nPrácticas de objeción\nPráctica · dinero\n\"Nos encanta, pero ahorita está muy caro para nosotros.\"\nPráctica · pareja\n\"Esto lo tengo que platicar con mi esposa.\"\nPráctica · tiempo\n\"Nunca sé qué fechas voy a tener libres.\"\nPráctica · escepticismo\n\"Vi en redes que esto es un fraude.\"\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "buttons": [
+      {
+        "text": "Abrir el chat",
+        "go": "coach",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ]
+        ]
+      },
+      {
+        "text": "Todas",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "todas"
+          ]
+        ]
+      },
+      {
+        "text": "Cotizar",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "cotizar"
+          ]
+        ]
+      },
+      {
+        "text": "Registrar",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "registrar"
+          ]
+        ]
+      },
+      {
+        "text": "Medir",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "medir"
+          ]
+        ]
+      },
+      {
+        "text": "Practicar",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "practicar"
+          ]
+        ]
+      },
+      {
+        "text": "Aprender",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "aprender"
+          ]
+        ]
+      },
+      {
+        "text": "Cuidar al cliente",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "cliente"
+          ]
+        ]
+      },
+      {
+        "text": "Biblioteca",
+        "id": "",
+        "attrs": [
+          [
+            "data-filter",
+            "biblioteca"
+          ]
+        ]
+      },
+      {
+        "text": "Cotizar membresía\nCotizar · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-01"
+          ]
+        ]
+      },
+      {
+        "text": "Comparar enganches\nCotizar · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-02"
+          ]
+        ]
+      },
+      {
+        "text": "Cotizar upgrade\nCotizar · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-03"
+          ]
+        ]
+      },
+      {
+        "text": "¿Cuánto puede pagar?\nCotizar · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-04"
+          ]
+        ]
+      },
+      {
+        "text": "Enganche diferido\nCotizar · Pro",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-05"
+          ]
+        ]
+      },
+      {
+        "text": "Convertir a pesos\nCotizar · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-06"
+          ]
+        ]
+      },
+      {
+        "text": "Registrar tour en 30 s\nRegistrar · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-07"
+          ]
+        ]
+      },
+      {
+        "text": "Mi día / Mi mes\nMedir · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-08"
+          ]
+        ]
+      },
+      {
+        "text": "Meta del mes\nMedir · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-09"
+          ]
+        ]
+      },
+      {
+        "text": "Mi comisión estimada\nMedir · Pro",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-10"
+          ]
+        ]
+      },
+      {
+        "text": "Ahorro vacacional\nCotizar · Pro",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-11"
+          ]
+        ]
+      },
+      {
+        "text": "Mantenimiento proyectado\nCotizar · Pro",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-12"
+          ]
+        ]
+      },
+      {
+        "text": "Practicar objeción\nPracticar · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-13"
+          ]
+        ]
+      },
+      {
+        "text": "Preparar mi tour\nAprender · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-14"
+          ]
+        ]
+      },
+      {
+        "text": "Después del tour\nAprender · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-15"
+          ]
+        ]
+      },
+      {
+        "text": "Buscar en la biblioteca\nAprender · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-16"
+          ]
+        ]
+      },
+      {
+        "text": "Seguimiento de cliente\nCuidar al cliente · Pro",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-17"
+          ]
+        ]
+      },
+      {
+        "text": "Sala del manager\nMedir · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-18"
+          ]
+        ]
+      },
+      {
+        "text": "Inicio del día\nMedir · Base",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "skill"
+          ],
+          [
+            "data-id",
+            "SK-19"
+          ]
+        ]
+      },
+      {
+        "text": "Objeción de tiempo: \"no sé cuándo podré viajar\"\ntiempo · agenda · fechas",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "lib"
+          ],
+          [
+            "data-id",
+            "LIB-01"
+          ]
+        ]
+      },
+      {
+        "text": "Objeción de dinero: \"está muy caro\"\ndinero · precio · enganche",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "lib"
+          ],
+          [
+            "data-id",
+            "LIB-02"
+          ]
+        ]
+      },
+      {
+        "text": "Decisión de pareja: \"lo tengo que platicar\"\npareja · decisión",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "lib"
+          ],
+          [
+            "data-id",
+            "LIB-03"
+          ]
+        ]
+      },
+      {
+        "text": "Escepticismo: \"leí cosas malas en redes\"\nescepticismo · redes · contrato",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "lib"
+          ],
+          [
+            "data-id",
+            "LIB-04"
+          ]
+        ]
+      },
+      {
+        "text": "Pasos de la presentación\nguion · presentación",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "lib"
+          ],
+          [
+            "data-id",
+            "LIB-05"
+          ]
+        ]
+      },
+      {
+        "text": "Práctica · dinero\n\"Nos encanta, pero ahorita está muy caro para nosotros.\"",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "practice"
+          ],
+          [
+            "data-id",
+            "dinero"
+          ]
+        ]
+      },
+      {
+        "text": "Práctica · pareja\n\"Esto lo tengo que platicar con mi esposa.\"",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "practice"
+          ],
+          [
+            "data-id",
+            "pareja"
+          ]
+        ]
+      },
+      {
+        "text": "Práctica · tiempo\n\"Nunca sé qué fechas voy a tener libres.\"",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "practice"
+          ],
+          [
+            "data-id",
+            "tiempo"
+          ]
+        ]
+      },
+      {
+        "text": "Práctica · escepticismo\n\"Vi en redes que esto es un fraude.\"",
+        "id": "",
+        "attrs": [
+          [
+            "data-hit",
+            ""
+          ],
+          [
+            "data-open",
+            "practice"
+          ],
+          [
+            "data-id",
+            "escepticismo"
+          ]
+        ]
+      },
+      {
+        "text": "home\nHome",
+        "go": "hoy",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ]
+        ]
+      },
+      {
+        "text": "timeline\nRoadmap",
+        "go": "roadmap",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ]
+        ]
+      },
+      {
+        "text": "smart_toy\nCopiloto",
+        "go": "coach",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ]
+        ]
+      },
+      {
+        "text": "local_library\nRecursos",
+        "go": "resources",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ]
+        ]
+      },
+      {
+        "text": "person\nPerfil",
+        "go": "perfil",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ]
+        ]
+      },
+      {
+        "text": "+",
+        "id": "fab",
+        "attrs": []
+      }
+    ]
+  },
+  {
+    "view": "coach",
+    "body": "home\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "buttons": [
+      {
+        "text": "home\nHome",
+        "go": "hoy",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ]
+        ]
+      },
+      {
+        "text": "timeline\nRoadmap",
+        "go": "roadmap",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ]
+        ]
+      },
+      {
+        "text": "smart_toy\nCopiloto",
+        "go": "coach",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ]
+        ]
+      },
+      {
+        "text": "local_library\nRecursos",
+        "go": "resources",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ]
+        ]
+      },
+      {
+        "text": "person\nPerfil",
+        "go": "perfil",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ]
+        ]
+      },
+      {
+        "text": "+",
+        "id": "fab",
+        "attrs": []
+      }
+    ]
+  },
+  {
+    "view": "perfil",
+    "body": "Perfil\nSala de ejemplo\nRendimiento\n\nNoviembre 2026 · semana 45 · rep de sala, ejemplo\n\nHoy\nEsta semana\nMes Q4\nbolt\nAcelerador del día\nCon 1 presentación más hoy llegas al 100% de la cuota diaria.\nVolumen\npayments\n$0\nMeta $12,000 USD\n0%\nFaltan $12,000\nTasa de cierre\npie_chart\n33.3%\n+8.3 pp vs la meta de 25%\nPresentaciones\nforum\n0 / 4\n1 para la tarde\n0%\nComisión\nmonetization_on\n$1,600\nEstimada · ejemplo\nEmbudo\n12 contactos\n1 Contactados\n12\n2 Calificados\n6\n3 Presentaciones\n3\n4 Cierres\n1 · $8,000\nRitmo de la semana\nLun a vie · meta $50,000\n$34,500\n$9k\nLun\n$11k\nMar\n$8k\nHoy\n—\nJue\n—\nVie\nCuentas de hoy\n3 registros\nLead #4920 · 09:30\nConfirmado\nVenta cerrada · $0 USD\nLead #302 · 11:30\nEn curso\nPresentación hecha · seguimiento 17:00\nLead #188 · 15:30\nPendiente\nVisita de demostración · sala de ejemplo\nRegistrar presentación o venta\nVer acceso\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "buttons": [
+      {
+        "text": "Hoy",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "range-hoy"
+          ]
+        ]
+      },
+      {
+        "text": "Esta semana",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "range-semana"
+          ]
+        ]
+      },
+      {
+        "text": "Mes Q4",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "range-mes"
+          ]
+        ]
+      },
+      {
+        "text": "Registrar presentación o venta",
+        "go": "presentacion",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "presentacion"
+          ]
+        ]
+      },
+      {
+        "text": "Ver acceso",
+        "go": "acceso",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "acceso"
+          ]
+        ]
+      },
+      {
+        "text": "home\nHome",
+        "go": "hoy",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ]
+        ]
+      },
+      {
+        "text": "timeline\nRoadmap",
+        "go": "roadmap",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ]
+        ]
+      },
+      {
+        "text": "smart_toy\nCopiloto",
+        "go": "coach",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ]
+        ]
+      },
+      {
+        "text": "local_library\nRecursos",
+        "go": "resources",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ]
+        ]
+      },
+      {
+        "text": "person\nPerfil",
+        "go": "perfil",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ]
+        ]
+      },
+      {
+        "text": "+",
+        "id": "fab",
+        "attrs": []
+      }
+    ]
+  },
+  {
+    "view": "calendario",
+    "body": "chevron_left\nHome\nCalendario\nAna\nchevron_left\nviernes 6 de noviembre\nchevron_right\nAna\nLuis\nMira\nTeo\n\nAna · Sala Norte. Los tours los asigna el jefe de sala. Actualizado ahora\n\nLun\n2\nMar\n3\nMié\n4\nJue\n5\nVie\n6\nSáb\n7\nDom\n8\n09:30–10:30\nLead #4920 · Objeción de cuota\nConfirmado\nSin resultado\n11:30–12:30\nLead #302 · Seguimiento\nEn curso\nSin resultado\n15:30–16:30\nLead #188 · Visita de demostración\nPendiente\nSin resultado\nActualizar\nAbrir tablero de sala\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "buttons": [
+      {
+        "text": "chevron_left\nHome",
+        "go": "hoy",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ]
+        ]
+      },
+      {
+        "text": "chevron_left",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-prev"
+          ]
+        ]
+      },
+      {
+        "text": "chevron_right",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-next"
+          ]
+        ]
+      },
+      {
+        "text": "Ana",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "me-ana"
+          ]
+        ]
+      },
+      {
+        "text": "Luis",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "me-luis"
+          ]
+        ]
+      },
+      {
+        "text": "Mira",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "me-mira"
+          ]
+        ]
+      },
+      {
+        "text": "Teo",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "me-teo"
+          ]
+        ]
+      },
+      {
+        "text": "Lun\n2",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-2026-11-02"
+          ]
+        ]
+      },
+      {
+        "text": "Mar\n3",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-2026-11-03"
+          ]
+        ]
+      },
+      {
+        "text": "Mié\n4",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-2026-11-04"
+          ]
+        ]
+      },
+      {
+        "text": "Jue\n5",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-2026-11-05"
+          ]
+        ]
+      },
+      {
+        "text": "Vie\n6",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-2026-11-06"
+          ]
+        ]
+      },
+      {
+        "text": "Sáb\n7",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-2026-11-07"
+          ]
+        ]
+      },
+      {
+        "text": "Dom\n8",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "cal-2026-11-08"
+          ]
+        ]
+      },
+      {
+        "text": "Actualizar",
+        "id": "",
+        "attrs": [
+          [
+            "data-act",
+            "reload-tours"
+          ]
+        ]
+      },
+      {
+        "text": "Abrir tablero de sala",
+        "id": "",
+        "attrs": []
+      },
+      {
+        "text": "home\nHome",
+        "go": "hoy",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ]
+        ]
+      },
+      {
+        "text": "timeline\nRoadmap",
+        "go": "roadmap",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ]
+        ]
+      },
+      {
+        "text": "smart_toy\nCopiloto",
+        "go": "coach",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ]
+        ]
+      },
+      {
+        "text": "local_library\nRecursos",
+        "go": "resources",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ]
+        ]
+      },
+      {
+        "text": "person\nPerfil",
+        "go": "perfil",
+        "id": "",
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ]
+        ]
+      },
+      {
+        "text": "+",
+        "id": "fab",
+        "attrs": []
+      }
+    ]
+  }
+]

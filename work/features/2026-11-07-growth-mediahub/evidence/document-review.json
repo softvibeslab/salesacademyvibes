@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-07",
+  "checks": [
+    {
+      "check": "verify-story",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "verify-governance",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "documentsChecked": 14,
+  "missing_link_targets": [],
+  "story_ac": 14,
+  "story_scenarios": 14,
+  "story_datasets": 14,
+  "product_implemented": true,
+  "production_modified": false,
+  "catalogEntries": 46,
+  "newCatalogEntries": 1,
+  "scope": "local-approved",
+  "unrelatedChangesPreserved": [
+    "prototypes/smart-agenda-mockup/tests/e2e-ops.mjs",
+    "prototypes/smart-agenda-mockup/tests/home-counters.mjs",
+    "work/features/2026-11-07-resultado-del-tour/"
+  ]
+}

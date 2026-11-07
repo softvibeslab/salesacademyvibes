@@ -1,0 +1,139 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "route": "/descubre/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/mediahub/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/descubre/diagnostico/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/mediahub/piloto-en-tres-salas/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/descubre/analisis/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "keyboardDiagnostic": true,
+      "skipLink": true,
+      "visibleFocus": true,
+      "primaryTargetMinimum44": true,
+      "reducedMotion": true
+    },
+    {
+      "route": "/cms/",
+      "reflowEquivalent200Percent": true
+    }
+  ],
+  "landingBudget": {
+    "assets": [
+      {
+        "url": "/descubre/",
+        "bytes": 37416,
+        "gzipBytes": 7929
+      },
+      {
+        "url": "/growth-assets/mark.svg",
+        "bytes": 206,
+        "gzipBytes": 184
+      },
+      {
+        "url": "/growth-assets/site.css",
+        "bytes": 35641,
+        "gzipBytes": 6965
+      },
+      {
+        "url": "/growth-assets/public-v2.css",
+        "bytes": 3071,
+        "gzipBytes": 1036
+      },
+      {
+        "url": "/growth-assets/landing-v2.css",
+        "bytes": 30258,
+        "gzipBytes": 6032
+      },
+      {
+        "url": "/growth-assets/media-player.css",
+        "bytes": 851,
+        "gzipBytes": 431
+      },
+      {
+        "url": "/growth-assets/cinematic.css",
+        "bytes": 21881,
+        "gzipBytes": 5305
+      },
+      {
+        "url": "/growth-assets/site.mjs",
+        "bytes": 4009,
+        "gzipBytes": 1463
+      },
+      {
+        "url": "/growth-assets/journey.mjs",
+        "bytes": 3563,
+        "gzipBytes": 1292
+      },
+      {
+        "url": "/growth-assets/media-player.mjs",
+        "bytes": 1215,
+        "gzipBytes": 478
+      },
+      {
+        "url": "/growth-assets/films/smart-agent.webp",
+        "bytes": 21764,
+        "gzipBytes": 21792
+      },
+      {
+        "url": "/growth-assets/films/menos-caos.webp",
+        "bytes": 23520,
+        "gzipBytes": 23548
+      },
+      {
+        "url": "/growth-assets/films/sistema-conectado.webp",
+        "bytes": 22980,
+        "gzipBytes": 23008
+      },
+      {
+        "url": "/growth-assets/films/infraestructura-comercial.webp",
+        "bytes": 37864,
+        "gzipBytes": 37897
+      },
+      {
+        "url": "/growth-assets/films/conocimiento-en-practica.webp",
+        "bytes": 15266,
+        "gzipBytes": 15289
+      },
+      {
+        "url": "/growth-assets/product-resources.png",
+        "bytes": 52612,
+        "gzipBytes": 48874
+      },
+      {
+        "url": "/growth-assets/product-agenda.png",
+        "bytes": 69815,
+        "gzipBytes": 68201
+      },
+      {
+        "url": "/growth-assets/product-demo.png",
+        "bytes": 78780,
+        "gzipBytes": 77165
+      },
+      {
+        "url": "/growth-assets/journey-math.mjs",
+        "bytes": 1117,
+        "gzipBytes": 514
+      }
+    ],
+    "uncompressedBytes": 461829,
+    "estimatedGzipBytes": 347403,
+    "limitBytes": 500000
+  },
+  "limitations": "200% reflow modeled as 720 CSS pixels and DPR2 on a 1440-pixel display. Not a screen-reader certification or field Core Web Vitals measurement."
+}

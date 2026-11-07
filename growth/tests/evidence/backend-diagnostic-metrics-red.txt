@@ -1,0 +1,15 @@
+test_diagnostic_metric_counts_consented_started_flows_and_intersection (growth.tests.test_backend.BackendAcceptance.test_diagnostic_metric_counts_consented_started_flows_and_intersection) ... FAIL
+
+======================================================================
+FAIL: test_diagnostic_metric_counts_consented_started_flows_and_intersection (growth.tests.test_backend.BackendAcceptance.test_diagnostic_metric_counts_consented_started_flows_and_intersection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 323, in test_diagnostic_metric_counts_consented_started_flows_and_intersection
+    self.assertEqual(empty.get('diagnostic'),{'startedFlows':0,'completedFlows':0,'completionRate':None})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'startedFlows': 0, 'completedFlows': 0, 'completionRate': None}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.166s
+
+FAILED (failures=1)

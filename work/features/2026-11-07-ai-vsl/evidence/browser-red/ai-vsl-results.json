@@ -1,0 +1,22 @@
+{
+  "ok": false,
+  "results": [
+    {
+      "name": "Completed diagnostic uses the generic WhatsApp CTA",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The demo CTA must explicitly point to WhatsApp"
+    },
+    {
+      "name": "Requested VSL is featured once before the journey",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The requested VSL must be featured in the hero\n\n0 !== 1\n"
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: New campaign requirements are absent in the preserved version",
+  "errors": [],
+  "interceptedWhatsApp": [],
+  "initialBudget": null,
+  "deferredBudget": null,
+  "mediaRequests": [],
+  "geometry": []
+}

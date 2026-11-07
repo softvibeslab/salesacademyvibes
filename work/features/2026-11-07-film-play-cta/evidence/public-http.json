@@ -1,0 +1,57 @@
+{
+  "pages": [
+    {
+      "url": "https://salesacademy.softvibes.cloud/",
+      "status": 200,
+      "bytes": 8492,
+      "sha256": "41f400508a867f5c85e084ec322369af5e4b544e3ab2c84b7987bb1ef4e6caa1"
+    },
+    {
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/",
+      "status": 200,
+      "bytes": 19367,
+      "sha256": "0eb8b5060612692df2660f7488cec7db5dc1fbd74c131bfba8ac42a6c5080ccb"
+    },
+    {
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/",
+      "status": 200,
+      "bytes": 22974,
+      "sha256": "341a4b1ccc8fd8b052168303dab52b73eec4205222fe2bb1db0d1bd0d23befb2"
+    },
+    {
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/",
+      "status": 200,
+      "bytes": 37585,
+      "sha256": "d70f0fa5531fa32e3194269e544b211775acf07fc4af7ed29626c96f883757eb"
+    },
+    {
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/",
+      "status": 200,
+      "bytes": 38846,
+      "sha256": "9b04cd2420d5168746a8c6f36637ef5049666f7b2d8ed444aa2eca816560af76"
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "status": 200,
+      "bytes": 43534,
+      "sha256": "7aeb4bf53b2f3897cd29eeac3c374c2918edc5f1c3ebaa49108ae83648721328",
+      "playButtons": 5
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.css",
+      "status": 200,
+      "bytes": 2353,
+      "sha256": "8d2c298e2bffcc573d95d7ee2251f4324f81ba538c8c8a3007f3090f81dc2f6b"
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.mjs",
+      "status": 200,
+      "bytes": 2134,
+      "sha256": "729857c81082d0fdfcfa3777c5264a5e555b0c1d2db19292d80ea3cc07c0b660"
+    }
+  ],
+  "privateDataRead": false,
+  "ok": true
+}

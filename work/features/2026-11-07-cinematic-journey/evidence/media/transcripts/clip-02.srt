@@ -1,0 +1,20 @@
+1
+00:00:00,000 --> 00:00:07,160
+Imagina tener un asistente que no solo responde preguntas, sino que entiende tus objetivos, recuerda lo importante y te ayuda a actuar.
+
+2
+00:00:07,160 --> 00:00:16,780
+Eso es un agente inteligente, una inteligencia artificial capaz de analizar información, utilizar herramientas y ejecutar tareas con cierto nivel de autonomía.
+
+3
+00:00:17,200 --> 00:00:25,820
+En el día a día puede organizar pendientes, resumir mensajes, preparar reuniones, revisar métricas, detectar problemas y recordarte qué necesita atención.
+
+4
+00:00:25,820 --> 00:00:31,820
+También puede aprender tus procesos, adaptarse a tu forma de trabajar y ayudarte a dar el siguiente paso.
+
+5
+00:00:31,820 --> 00:00:41,020
+No se trata de reemplazar tu criterio, sino de reducir el trabajo repetitivo para que te concentres en las decisiones importantes, con menos caos y más control.
+

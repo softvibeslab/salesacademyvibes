@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-07",
+  "method": "Computed Chromium CSS, local isolated data, foreground/inherited opaque background, visible direct text nodes excluding aria-hidden and disabled controls",
+  "surfaces": [
+    {
+      "name": "/descubre/",
+      "textNodes": 142,
+      "failures": 0
+    },
+    {
+      "name": "/mediahub/",
+      "textNodes": 55,
+      "failures": 0
+    },
+    {
+      "name": "/mediahub/antes-del-tour/",
+      "textNodes": 62,
+      "failures": 0
+    },
+    {
+      "name": "/descubre/diagnostico/",
+      "textNodes": 39,
+      "failures": 0
+    },
+    {
+      "name": "/descubre/privacidad/",
+      "textNodes": 37,
+      "failures": 0
+    },
+    {
+      "name": "/descubre/analisis/",
+      "textNodes": 73,
+      "failures": 0
+    },
+    {
+      "name": "/cms/",
+      "textNodes": 18,
+      "failures": 0
+    },
+    {
+      "name": "CMS Inicio",
+      "textNodes": 77,
+      "failures": 0
+    },
+    {
+      "name": "CMS landing",
+      "textNodes": 79,
+      "failures": 0
+    },
+    {
+      "name": "CMS resources",
+      "textNodes": 51,
+      "failures": 0
+    },
+    {
+      "name": "CMS media",
+      "textNodes": 31,
+      "failures": 0
+    },
+    {
+      "name": "CMS requests",
+      "textNodes": 27,
+      "failures": 0
+    },
+    {
+      "name": "CMS publications",
+      "textNodes": 30,
+      "failures": 0
+    },
+    {
+      "name": "CMS users",
+      "textNodes": 35,
+      "failures": 0
+    }
+  ],
+  "beforeFailureInstances": 37,
+  "afterFailureInstances": 0,
+  "textNodes": 756
+}

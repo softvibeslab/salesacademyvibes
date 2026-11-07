@@ -1,0 +1,7 @@
+Verificando gobierno del ecosistema: /Users/rogergv/Documents/SoftvibesLab/px-onboarding-mob-gen
+Validando iniciativa: /Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-07-room-scenarios
+Iniciativa sin artefacto requerido (patron): cp1-srs
+Iniciativa sin artefacto requerido (patron): cp3-implementation-plan
+Strict: cp2-spec sin criterios de aceptacion
+Strict (aviso): cp2-spec sin requisitos no funcionales (NFR-...).
+Strict (aviso): cp2-spec sin consideraciones de seguridad.

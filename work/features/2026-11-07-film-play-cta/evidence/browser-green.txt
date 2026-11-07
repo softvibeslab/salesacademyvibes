@@ -1,0 +1,12 @@
+PASS The conceptual films expose prominent semantic play buttons before media transfer
+PASS A real click starts audible captioned playback with usable focus at 1440px
+PASS Enter and Space resume the film, and end-of-film offers replay at 1440px
+PASS Native controls remain operable after a pause at 1440px
+PASS A real click starts audible captioned playback with usable focus at 390px
+PASS Enter and Space resume the film, and end-of-film offers replay at 390px
+PASS Native controls remain operable after a pause at 390px
+PASS Starting another film pauses the first and restores its play control
+PASS MediaHub uses the same working prominent control
+PASS Reduced motion disables decorative animation while keeping the CTA
+PASS Without JavaScript native playback stays available and enhanced CTA stays hidden
+PASS A media download failure exposes retry and successful retry clears recovery state

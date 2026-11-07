@@ -1,0 +1,222 @@
+{
+  "title": "Sales Academy",
+  "url": "https://salesacademy.softvibes.art/",
+  "body": "SA\nSales Academy\ncalendar_today\nHoy\n\nViernes 6 de noviembre\n\nNov 06\nPresentaciones\n0/4\nCierres\n0/2\nVolumen\n$0\n\nMetas de ejemplo: 4 presentaciones, 2 cierres y $12,000 USD. Los avances salen de tus resultados del día.\n\nAna\nLuis\nMira\nTeo\n\nAna · Sala Norte. Actualizado ahora\n\nTours de hoy\nActualizar · Calendario\n09:30 Lead #4920\nConfirmado\nSin resultado\n11:30 Lead #302\nEn curso\nSin resultado\n15:30 Lead #188\nPendiente\nSin resultado\nAhora\n+ Bloque\nnotifications_active\nAHORA\n11:30\n\nLlamada con Lead #4920 · Objeción de cuota y cierre de ciclo.\n\nPosponer 15m\ncall\nIniciar\nTus prioridades\nEditar\nConfirmar seguimiento 10:45\nLead #302 · Propuesta enviada ayer\nchevron_right\nPracticar preguntas de descubrimiento 11:00\nAcuerdo de coaching · Foco en objeción de precio\nchevron_right\nPreparar tour presencial 15:00\nDesde nota #12 · Demo con equipo de compras\nchevron_right\nVer pendientes (5)\nAtajos\nAgregarEditar\nedit_note\nNueva nota\nco_present\nRegistrar presentación\nbolt\nCotizar\ntimeline\n5. Renovar el pacto\ntask_alt\nCerrar jornada\n\nlock El cierre es personal\n\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "buttons": [
+    {
+      "tag": "BUTTON",
+      "text": "calendar_today",
+      "go": "calendario",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Nov 06",
+      "go": "calendario",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Presentaciones\n0/4\nCierres\n0/2\nVolumen\n$0",
+      "go": "perfil",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ana",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Luis",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Mira",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Teo",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Actualizar",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Calendario",
+      "go": "calendario",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "09:30 Lead #4920\nConfirmado\nSin resultado",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "11:30 Lead #302\nEn curso\nSin resultado",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "15:30 Lead #188\nPendiente\nSin resultado",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+ Bloque",
+      "go": "bloque",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Posponer 15m",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "call\nIniciar",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "go": "metas",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Confirmar seguimiento 10:45\nLead #302 · Propuesta enviada ayer",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Practicar preguntas de descubrimiento 11:00\nAcuerdo de coaching · Foco en objeción de precio",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Preparar tour presencial 15:00\nDesde nota #12 · Demo con equipo de compras",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ver pendientes (5)",
+      "go": "pendientes",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Agregar",
+      "go": "atajos",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Editar",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "edit_note\nNueva nota",
+      "go": "nota",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "co_present\nRegistrar presentación",
+      "go": "presentacion",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "bolt\nCotizar",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\n5. Renovar el pacto",
+      "go": "modulo",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "task_alt\nCerrar jornada",
+      "go": "cierre",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "go": "hoy",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "go": "roadmap",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "go": "coach",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "go": "resources",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "go": "perfil",
+      "id": "",
+      "href": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "id": "fab",
+      "href": null
+    }
+  ]
+}

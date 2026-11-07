@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-07",
+  "url": "https://digitalspace.softvibes.pro/",
+  "status": 200,
+  "method": "Playwright Chromium, DOM inspection and screenshots at initial position and 15%, 30%, 50%, 70%, 90% of scroll span; public CSS/JS read only",
+  "viewports": [
+    {"width": 1440, "height": 1000, "documentHeight": 16028},
+    {"width": 390, "height": 844, "documentHeight": 13540}
+  ],
+  "chapters": 8,
+  "videoElements": 2,
+  "canvasElements": 0,
+  "sourceModules": [
+    "https://digitalspace.softvibes.pro/js/video.js?v=15",
+    "https://digitalspace.softvibes.pro/js/voyage.js?v=14",
+    "https://digitalspace.softvibes.pro/styles.css?v=17"
+  ],
+  "temporaryEvidence": "/private/tmp/salesacademy-v3-reference/",
+  "thirdPartyAssetsCopiedToProduct": false,
+  "limitations": "Visual/source research; not a complete accessibility, performance, security or functional audit of DigitalSpace. No external forms submitted or site state changed."
+}

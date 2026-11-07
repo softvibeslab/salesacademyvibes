@@ -1,0 +1,335 @@
+{
+  "startedAt": "2026-11-07T13:03:36.766Z",
+  "base": "https://v5.salesacademy.softvibes.cloud",
+  "published": true,
+  "cmsLogin": false,
+  "whatsappOpened": false,
+  "checks": [
+    {
+      "type": "landing",
+      "width": 390,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 0,
+            "height": 0
+          },
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 156,
+            "height": 338
+          }
+        ],
+        "target": {
+          "x": 20,
+          "y": 630.71875,
+          "width": 350,
+          "height": 575.390625,
+          "right": 370,
+          "bottom": 1206.109375
+        },
+        "image": {
+          "x": 207,
+          "y": 637.71875,
+          "width": 156,
+          "height": 337.59375,
+          "right": 363,
+          "bottom": 975.3125
+        },
+        "caption": {
+          "x": 20,
+          "y": 1111.71875,
+          "width": 350,
+          "height": 85.390625,
+          "right": 370,
+          "bottom": 1197.109375
+        },
+        "captionText": "Meet & Greet \u00b7 La bienvenida.\nCaptura aportada \u00b7 presentaci\u00f3n retocada \u00b7 escena ilustrativa generada.\nVer captura original \u2197",
+        "chapters": 5,
+        "catalog": 0,
+        "originalLinks": [
+          "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "active": "start",
+        "retouchedLabel": "none",
+        "originalLabel": "inline",
+        "phoneWidths": [
+          170,
+          170,
+          170,
+          170,
+          170
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "gallery",
+      "width": 390,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 155,
+            "height": 335
+          },
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 137,
+            "height": 296
+          }
+        ],
+        "target": {
+          "x": 23.390625,
+          "y": 264.84375,
+          "width": 343.21875,
+          "height": 560,
+          "right": 366.609375,
+          "bottom": 824.84375
+        },
+        "image": {
+          "x": 206.609375,
+          "y": 269.84375,
+          "width": 155,
+          "height": 335.421875,
+          "right": 361.609375,
+          "bottom": 605.265625
+        },
+        "caption": {
+          "x": 201.609375,
+          "y": 619.265625,
+          "width": 165,
+          "height": 25.5,
+          "right": 366.609375,
+          "bottom": 644.765625
+        },
+        "captionText": "PRESENTACI\u00d3N RETOCADA\nMeet & Greet \u00b7 abrir captura original",
+        "chapters": 0,
+        "catalog": 16,
+        "originalLinks": [
+          "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png",
+          "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "retouchedLabel": null,
+        "originalLabel": null,
+        "phoneWidths": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "landing",
+      "width": 1440,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 204,
+            "height": 466
+          },
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 166,
+            "height": 359
+          }
+        ],
+        "target": {
+          "x": 79,
+          "y": 67.5,
+          "width": 1,
+          "height": 610,
+          "right": 80,
+          "bottom": 677.5
+        },
+        "image": {
+          "x": -93,
+          "y": 74.5,
+          "width": 166,
+          "height": 359.234375,
+          "right": 73,
+          "bottom": 433.734375
+        },
+        "caption": {
+          "x": 79,
+          "y": 602.5,
+          "width": 20,
+          "height": 360.90625,
+          "right": 99,
+          "bottom": 963.40625
+        },
+        "captionText": "Meet & Greet \u00b7 La bienvenida.\nCaptura aportada \u00b7 presentaci\u00f3n retocada \u00b7 escena ilustrativa generada.\nVer captura original \u2197",
+        "chapters": 5,
+        "catalog": 0,
+        "originalLinks": [
+          "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "active": "method",
+        "retouchedLabel": "inline",
+        "originalLabel": "none",
+        "phoneWidths": [
+          220,
+          180,
+          180,
+          180,
+          180,
+          180
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "gallery",
+      "width": 1440,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 200,
+            "height": 433
+          },
+          {
+            "loaded": true,
+            "src": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 196,
+            "height": 425
+          }
+        ],
+        "target": {
+          "x": 79.1875,
+          "y": 378.59375,
+          "width": 629.6875,
+          "height": 680,
+          "right": 708.875,
+          "bottom": 1058.59375
+        },
+        "image": {
+          "x": 501.875,
+          "y": 385.59375,
+          "width": 200,
+          "height": 432.8125,
+          "right": 701.875,
+          "bottom": 818.40625
+        },
+        "caption": {
+          "x": 494.875,
+          "y": 837.40625,
+          "width": 214,
+          "height": 30,
+          "right": 708.875,
+          "bottom": 867.40625
+        },
+        "captionText": "PRESENTACI\u00d3N RETOCADA\nMeet & Greet \u00b7 abrir captura original",
+        "chapters": 0,
+        "catalog": 16,
+        "originalLinks": [
+          "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png",
+          "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "retouchedLabel": null,
+        "originalLabel": null,
+        "phoneWidths": [
+          214,
+          214,
+          214,
+          214,
+          214,
+          214
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "issues": [],
+  "assets": [
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png",
+      "status": 200,
+      "bytes": 162319,
+      "sha256": "da051d399971773d91b434704ffcf34c8f82eed1cb29a01d318c9ec6fef03b9e"
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.png",
+      "status": 200,
+      "bytes": 1517543,
+      "sha256": "3de1c6fcbce141fa6bc3c072e8f2d92d6fc91eace838c05018c9dd93d90be14c"
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+      "status": 200,
+      "bytes": 49838,
+      "sha256": "33202c6afa08462fbbd6c8f232bfaca76d5a21345475f89cb6962c921d0c024f"
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/02-meet-greet.png",
+      "status": 200,
+      "bytes": 695340,
+      "sha256": "fd10196f670e2ef4c07a5e7997f9ddacb28e2ac674da213626bdd874e22dbfff"
+    }
+  ],
+  "finishedAt": "2026-11-07T13:03:56.820Z",
+  "finalAssertions": {
+    "compactPhones": [
+      {
+        "type": "landing",
+        "viewport": 390,
+        "maxPhone": 170,
+        "limit": 170
+      },
+      {
+        "type": "gallery",
+        "viewport": 390,
+        "maxPhone": 165,
+        "limit": 170
+      },
+      {
+        "type": "landing",
+        "viewport": 1440,
+        "maxPhone": 220,
+        "limit": 220
+      },
+      {
+        "type": "gallery",
+        "viewport": 1440,
+        "maxPhone": 214,
+        "limit": 220
+      }
+    ],
+    "fourPublishedAssetsMatchLocalSHA256": true,
+    "cssOrHtmlInterception": false,
+    "exportRegeneratedInPublicRun": false
+  }
+}

@@ -1,0 +1,160 @@
+[
+  {
+    "width": 360,
+    "phone": {
+      "x": 170.1652374267578,
+      "y": 243.87628173828125,
+      "right": 328.8347473144531,
+      "bottom": 539.7018432617188,
+      "width": 158.6695098876953,
+      "height": 295.8255615234375
+    },
+    "lines": [
+      {
+        "selector": ".art-annotation",
+        "text": "DE LA PREGUNTA",
+        "rect": {
+          "x": 40,
+          "y": 513.59375,
+          "right": 122.203125,
+          "bottom": 522.59375,
+          "width": 82.203125,
+          "height": 9
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".art-annotation",
+        "text": "al siguiente paso.",
+        "rect": {
+          "x": 40,
+          "y": 529.59375,
+          "right": 150.8125,
+          "bottom": 556.59375,
+          "width": 110.8125,
+          "height": 27
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".art-annotation",
+        "text": "al siguiente paso.",
+        "rect": {
+          "x": 40,
+          "y": 555.984375,
+          "right": 91.390625,
+          "bottom": 582.984375,
+          "width": 51.390625,
+          "height": 27
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".featured-art figcaption",
+        "text": "Pantalla real de la demo.",
+        "rect": {
+          "x": 40,
+          "y": 627.6875,
+          "right": 139.5625,
+          "bottom": 637.6875,
+          "width": 99.5625,
+          "height": 10
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".featured-art figcaption",
+        "text": "Escena ilustrativa generada.",
+        "rect": {
+          "x": 40,
+          "y": 642.53125,
+          "right": 153.578125,
+          "bottom": 652.53125,
+          "width": 113.578125,
+          "height": 10
+        },
+        "overlap": false
+      }
+    ],
+    "collisions": []
+  },
+  {
+    "width": 390,
+    "phone": {
+      "x": 200.1652374267578,
+      "y": 243.87628173828125,
+      "right": 358.8347473144531,
+      "bottom": 539.7018432617188,
+      "width": 158.6695098876953,
+      "height": 295.8255615234375
+    },
+    "lines": [
+      {
+        "selector": ".art-annotation",
+        "text": "DE LA PREGUNTA",
+        "rect": {
+          "x": 40,
+          "y": 513.59375,
+          "right": 122.203125,
+          "bottom": 522.59375,
+          "width": 82.203125,
+          "height": 9
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".art-annotation",
+        "text": "al siguiente paso.",
+        "rect": {
+          "x": 40,
+          "y": 529.59375,
+          "right": 150.8125,
+          "bottom": 556.59375,
+          "width": 110.8125,
+          "height": 27
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".art-annotation",
+        "text": "al siguiente paso.",
+        "rect": {
+          "x": 40,
+          "y": 555.984375,
+          "right": 91.390625,
+          "bottom": 582.984375,
+          "width": 51.390625,
+          "height": 27
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".featured-art figcaption",
+        "text": "Pantalla real de la demo.",
+        "rect": {
+          "x": 40,
+          "y": 627.6875,
+          "right": 139.5625,
+          "bottom": 637.6875,
+          "width": 99.5625,
+          "height": 10
+        },
+        "overlap": false
+      },
+      {
+        "selector": ".featured-art figcaption",
+        "text": "Escena ilustrativa generada.",
+        "rect": {
+          "x": 40,
+          "y": 642.53125,
+          "right": 153.578125,
+          "bottom": 652.53125,
+          "width": 113.578125,
+          "height": 10
+        },
+        "overlap": false
+      }
+    ],
+    "collisions": []
+  }
+]

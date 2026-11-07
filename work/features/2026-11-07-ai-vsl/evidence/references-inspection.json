@@ -1,0 +1,161 @@
+{
+  "readOnly": true,
+  "results": [
+    {
+      "key": "v3",
+      "url": "http://salesacademy.localhost:4188/descubre/",
+      "status": 200,
+      "title": "Sales Academy | Entrenamiento para salas de ventas",
+      "headings": [
+        "Tu método.En cada sala.",
+        "Saber el método es el inicio. Llevarlo a la práctica es el trabajo.",
+        "La práctica tiene su lugar.",
+        "La tecnología acompaña.Tu equipo transforma.",
+        "Un método compartido. Tres salas, paso a paso.",
+        "Imagina lo que sigue.Empieza con lo que importa.",
+        "Menos guardar.Más poner en práctica.",
+        "Tu siguiente paso empieza con una pregunta.",
+        "Las preguntasque importan.",
+        "Hagamos espaciopara tu equipo."
+      ],
+      "navigation": [
+        {
+          "label": "La plataforma",
+          "href": "/descubre/#recorrido"
+        },
+        {
+          "label": "Mediahub",
+          "href": "/mediahub/"
+        },
+        {
+          "label": "Ver la demo ↗",
+          "href": "https://salesacademy.softvibes.art/"
+        },
+        {
+          "label": "01 El inicio",
+          "href": "#start"
+        },
+        {
+          "label": "02 El método",
+          "href": "#method"
+        },
+        {
+          "label": "03 La práctica",
+          "href": "#practice"
+        },
+        {
+          "label": "04 El equipo",
+          "href": "#coaching"
+        },
+        {
+          "label": "05 La transformación",
+          "href": "#scale"
+        }
+      ],
+      "videos": [
+        {
+          "src": "/growth-assets/films/smart-agent.mp4",
+          "controls": true,
+          "autoplay": false,
+          "preload": "none",
+          "poster": "http://salesacademy.localhost:4188/growth-assets/films/smart-agent.webp",
+          "paused": true,
+          "captionTracks": 1
+        },
+        {
+          "src": "/growth-assets/films/menos-caos.mp4",
+          "controls": true,
+          "autoplay": false,
+          "preload": "none",
+          "poster": "http://salesacademy.localhost:4188/growth-assets/films/menos-caos.webp",
+          "paused": true,
+          "captionTracks": 1
+        },
+        {
+          "src": "/growth-assets/films/sistema-conectado.mp4",
+          "controls": true,
+          "autoplay": false,
+          "preload": "none",
+          "poster": "http://salesacademy.localhost:4188/growth-assets/films/sistema-conectado.webp",
+          "paused": true,
+          "captionTracks": 1
+        },
+        {
+          "src": "/growth-assets/films/infraestructura-comercial.mp4",
+          "controls": true,
+          "autoplay": false,
+          "preload": "none",
+          "poster": "http://salesacademy.localhost:4188/growth-assets/films/infraestructura-comercial.webp",
+          "paused": true,
+          "captionTracks": 1
+        },
+        {
+          "src": "/growth-assets/films/conocimiento-en-practica.mp4",
+          "controls": true,
+          "autoplay": false,
+          "preload": "none",
+          "poster": "http://salesacademy.localhost:4188/growth-assets/films/conocimiento-en-practica.webp",
+          "paused": true,
+          "captionTracks": 1
+        }
+      ],
+      "scenes": 0,
+      "chapters": 5,
+      "stageState": {
+        "active": "practice",
+        "enhanced": true
+      },
+      "mobileOverflow": false
+    },
+    {
+      "key": "v4",
+      "url": "http://simulacion.localhost:4189/growth-assets/scenarios/index.html",
+      "status": 200,
+      "title": "Un día en la sala · Sales Academy",
+      "headings": [
+        "Un díaen la sala.",
+        "Llegar con una intención.",
+        "Preparar antes de presentar.",
+        "Entender antes de proponer.",
+        "Practicar una duda concreta.",
+        "Convertir observación en coaching.",
+        "Cerrar con el siguiente paso.",
+        "Quince pantallas.Una mirada más cercana.",
+        "Una reflexión hoy.Una práctica para mañana."
+      ],
+      "navigation": [
+        {
+          "label": "01Una intención",
+          "href": "#daily-intention"
+        },
+        {
+          "label": "02La preparación",
+          "href": "#tour-preparation"
+        },
+        {
+          "label": "03La conversación",
+          "href": "#needs-discovery"
+        },
+        {
+          "label": "04La práctica",
+          "href": "#objection-practice"
+        },
+        {
+          "label": "05El coaching",
+          "href": "#leader-coaching"
+        },
+        {
+          "label": "06Lo que sigue",
+          "href": "#learning-close"
+        }
+      ],
+      "videos": [],
+      "scenes": 6,
+      "chapters": 0,
+      "mobileOverflow": false
+    }
+  ],
+  "blocked": [],
+  "errors": [],
+  "mp4Requested": []
+}

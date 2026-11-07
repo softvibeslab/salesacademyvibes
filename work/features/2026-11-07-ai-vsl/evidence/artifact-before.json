@@ -1,0 +1,10 @@
+{
+  "ok": false,
+  "sourceFiles": 90,
+  "resources": 9,
+  "apiPaths": 31,
+  "problems": [
+    "Asset faltante: scenarios/scenes/",
+    "Asset faltante: scenarios/screens/"
+  ]
+}

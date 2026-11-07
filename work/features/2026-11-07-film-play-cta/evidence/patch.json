@@ -1,0 +1,27 @@
+{
+  "name": "20261107-film-play-04",
+  "parentRelease": "20261107-meet-greet-03",
+  "files": [
+    {
+      "source": "growth/site/templates/macros.html",
+      "path": "v5/growth/site/templates/macros.html",
+      "beforeSha256": "b5072c96df34c2622c680954f0ce9ac0d69999ef5bc39e374ab02996afac5819",
+      "sha256": "e2e405fdd8aee22f1fa100a8cbc948d76c936f4a00c7402b8c2907df63f5e756",
+      "bytes": 3494
+    },
+    {
+      "source": "growth/site/assets/media-player.css",
+      "path": "v5/growth/site/assets/media-player.css",
+      "beforeSha256": "20fb79fff7eb994a6135cddfe8298fe2437812060a6b9d7a84267b09478bae3c",
+      "sha256": "8d2c298e2bffcc573d95d7ee2251f4324f81ba538c8c8a3007f3090f81dc2f6b",
+      "bytes": 2353
+    },
+    {
+      "source": "growth/site/assets/media-player.mjs",
+      "path": "v5/growth/site/assets/media-player.mjs",
+      "beforeSha256": "aba9490671129779ff75963670513957bbd01d2ca0fabe575bb538a93ecdda69",
+      "sha256": "729857c81082d0fdfcfa3777c5264a5e555b0c1d2db19292d80ea3cc07c0b660",
+      "bytes": 2134
+    }
+  ]
+}

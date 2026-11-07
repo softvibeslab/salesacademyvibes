@@ -1,0 +1,22 @@
+✔ initial process identifies coordination without contact (0.797917ms)
+✔ partial process identifies evidence (0.113958ms)
+✔ all defined recommends baseline, not certification (0.073667ms)
+✔ unknowns preserved and ties transparent (0.684916ms)
+✔ missing and invalid answers never evaluated (0.16575ms)
+✔ boundaries and determinism (0.117125ms)
+✔ recommendations link to seeded resources and track immutable IDs (0.784625ms)
+✔ before the journey remains at the first frame (0.755458ms)
+✔ the viewport reading line selects the chapter and its continuous progress (0.140375ms)
+✔ chapter boundaries select the next scene without overshoot (0.199125ms)
+✔ scrolling backwards recovers the same state (0.079542ms)
+✔ after the last chapter clamps every value (0.703291ms)
+✔ unequal chapter sizes use measured geometry (0.115333ms)
+✔ empty or invalid geometry does not produce NaN or unsafe state (0.087709ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 56.587833

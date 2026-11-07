@@ -1,0 +1,4 @@
+Verificando gobierno del ecosistema: /Users/rogergv/Documents/SoftvibesLab/px-onboarding-mob-gen
+Validando iniciativa: /Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-07-ai-vsl
+OK: adapters sincronizados con la fuente neutral (16 agentes, 13 skills, 6 rules, 7 bloques multi-herramienta).
+OK: metodologia y plantillas de gobierno completas.

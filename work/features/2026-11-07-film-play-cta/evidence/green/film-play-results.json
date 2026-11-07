@@ -1,0 +1,147 @@
+{
+  "base": "http://127.0.0.1:4191",
+  "redOnly": false,
+  "startedAt": "2026-11-07T13:11:55.368Z",
+  "results": [
+    {
+      "name": "The conceptual films expose prominent semantic play buttons before media transfer",
+      "passed": true,
+      "players": 5,
+      "initialMp4Requests": 0
+    },
+    {
+      "name": "A real click starts audible captioned playback with usable focus at 1440px",
+      "passed": true,
+      "geometry": {
+        "button": {
+          "x": 1055.59375,
+          "y": 390.265625,
+          "width": 190,
+          "height": 162,
+          "bottom": 552.265625
+        },
+        "video": {
+          "x": 1010.59375,
+          "y": 222.390625,
+          "width": 280,
+          "height": 497.765625,
+          "bottom": 720.15625
+        },
+        "overflow": false
+      },
+      "state": {
+        "muted": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "playsInline": true,
+        "duration": 32.879002,
+        "captions": [
+          {
+            "language": "es",
+            "mode": "showing",
+            "cues": 9
+          }
+        ]
+      }
+    },
+    {
+      "name": "Enter and Space resume the film, and end-of-film offers replay at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Native controls remain operable after a pause at 1440px",
+      "passed": true
+    },
+    {
+      "name": "A real click starts audible captioned playback with usable focus at 390px",
+      "passed": true,
+      "geometry": {
+        "button": {
+          "x": 100,
+          "y": 434.859375,
+          "width": 190,
+          "height": 162,
+          "bottom": 596.859375
+        },
+        "video": {
+          "x": 60,
+          "y": 275.859375,
+          "width": 270,
+          "height": 480,
+          "bottom": 755.859375
+        },
+        "overflow": false
+      },
+      "state": {
+        "muted": false,
+        "volume": 1,
+        "controls": true,
+        "autoplay": false,
+        "playsInline": true,
+        "duration": 32.879002,
+        "captions": [
+          {
+            "language": "es",
+            "mode": "showing",
+            "cues": 9
+          }
+        ]
+      }
+    },
+    {
+      "name": "Enter and Space resume the film, and end-of-film offers replay at 390px",
+      "passed": true
+    },
+    {
+      "name": "Native controls remain operable after a pause at 390px",
+      "passed": true
+    },
+    {
+      "name": "Starting another film pauses the first and restores its play control",
+      "passed": true
+    },
+    {
+      "name": "MediaHub uses the same working prominent control",
+      "passed": true,
+      "route": "/mediahub/smart-agent/"
+    },
+    {
+      "name": "Reduced motion disables decorative animation while keeping the CTA",
+      "passed": true,
+      "animations": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ]
+    },
+    {
+      "name": "Without JavaScript native playback stays available and enhanced CTA stays hidden",
+      "passed": true
+    },
+    {
+      "name": "A media download failure exposes retry and successful retry clears recovery state",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "cmsLogin": false,
+  "whatsappOpened": false,
+  "ok": true,
+  "finishedAt": "2026-11-07T13:12:07.137Z"
+}

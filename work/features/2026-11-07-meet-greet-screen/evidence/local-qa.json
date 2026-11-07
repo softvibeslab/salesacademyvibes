@@ -1,0 +1,436 @@
+{
+  "startedAt": "2026-11-07T13:00:35.084Z",
+  "base": "http://127.0.0.1:4191",
+  "published": false,
+  "cmsLogin": false,
+  "whatsappOpened": false,
+  "checks": [
+    {
+      "type": "landing",
+      "width": 390,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 0,
+            "height": 0
+          },
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 156,
+            "height": 338
+          }
+        ],
+        "target": {
+          "x": 20,
+          "y": 630.71875,
+          "width": 350,
+          "height": 575.390625,
+          "right": 370,
+          "bottom": 1206.109375
+        },
+        "image": {
+          "x": 207,
+          "y": 637.71875,
+          "width": 156,
+          "height": 337.59375,
+          "right": 363,
+          "bottom": 975.3125
+        },
+        "caption": {
+          "x": 20,
+          "y": 1111.71875,
+          "width": 350,
+          "height": 85.390625,
+          "right": 370,
+          "bottom": 1197.109375
+        },
+        "captionText": "Meet & Greet · La bienvenida.\nCaptura aportada · presentación retocada · escena ilustrativa generada.\nVer captura original ↗",
+        "chapters": 5,
+        "catalog": 0,
+        "originalLinks": [
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "active": "start",
+        "retouchedLabel": "none",
+        "originalLabel": "inline",
+        "phoneWidths": [
+          170,
+          170,
+          170,
+          170,
+          170
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "gallery",
+      "width": 390,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 155,
+            "height": 335
+          },
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 137,
+            "height": 296
+          }
+        ],
+        "target": {
+          "x": 23.390625,
+          "y": 316.84375,
+          "width": 343.21875,
+          "height": 560,
+          "right": 366.609375,
+          "bottom": 876.84375
+        },
+        "image": {
+          "x": 206.609375,
+          "y": 321.84375,
+          "width": 155,
+          "height": 335.421875,
+          "right": 361.609375,
+          "bottom": 657.265625
+        },
+        "caption": {
+          "x": 201.609375,
+          "y": 671.265625,
+          "width": 165,
+          "height": 25.5,
+          "right": 366.609375,
+          "bottom": 696.765625
+        },
+        "captionText": "PRESENTACIÓN RETOCADA\nMeet & Greet · abrir captura original",
+        "chapters": 0,
+        "catalog": 16,
+        "originalLinks": [
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png",
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "retouchedLabel": null,
+        "originalLabel": null,
+        "phoneWidths": [
+          165,
+          165,
+          165,
+          165,
+          165,
+          165
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "landing",
+      "width": 980,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 164,
+            "height": 378
+          },
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 166,
+            "height": 359
+          }
+        ],
+        "target": {
+          "x": 31,
+          "y": 68.03125,
+          "width": 1,
+          "height": 610,
+          "right": 32,
+          "bottom": 678.03125
+        },
+        "image": {
+          "x": -141,
+          "y": 75.03125,
+          "width": 166,
+          "height": 359.234375,
+          "right": 25,
+          "bottom": 434.265625
+        },
+        "caption": {
+          "x": 31,
+          "y": 603.03125,
+          "width": 20,
+          "height": 360.90625,
+          "right": 51,
+          "bottom": 963.9375
+        },
+        "captionText": "Meet & Greet · La bienvenida.\nCaptura aportada · presentación retocada · escena ilustrativa generada.\nVer captura original ↗",
+        "chapters": 5,
+        "catalog": 0,
+        "originalLinks": [
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "active": "method",
+        "retouchedLabel": "inline",
+        "originalLabel": "none",
+        "phoneWidths": [
+          180,
+          180,
+          180,
+          180,
+          180,
+          180
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "gallery",
+      "width": 980,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 170,
+            "height": 368
+          },
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 133,
+            "height": 288
+          }
+        ],
+        "target": {
+          "x": 53.890625,
+          "y": 369.375,
+          "width": 414.296875,
+          "height": 620,
+          "right": 468.1875,
+          "bottom": 989.375
+        },
+        "image": {
+          "x": 291.1875,
+          "y": 376.375,
+          "width": 170,
+          "height": 367.890625,
+          "right": 461.1875,
+          "bottom": 744.265625
+        },
+        "caption": {
+          "x": 284.1875,
+          "y": 763.265625,
+          "width": 184,
+          "height": 30,
+          "right": 468.1875,
+          "bottom": 793.265625
+        },
+        "captionText": "PRESENTACIÓN RETOCADA\nMeet & Greet · abrir captura original",
+        "chapters": 0,
+        "catalog": 16,
+        "originalLinks": [
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png",
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "retouchedLabel": null,
+        "originalLabel": null,
+        "phoneWidths": [
+          184,
+          184,
+          184,
+          184,
+          184,
+          184
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "landing",
+      "width": 1440,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 204,
+            "height": 466
+          },
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 166,
+            "height": 359
+          }
+        ],
+        "target": {
+          "x": 79,
+          "y": 67.5,
+          "width": 1,
+          "height": 610,
+          "right": 80,
+          "bottom": 677.5
+        },
+        "image": {
+          "x": -93,
+          "y": 74.5,
+          "width": 166,
+          "height": 359.234375,
+          "right": 73,
+          "bottom": 433.734375
+        },
+        "caption": {
+          "x": 79,
+          "y": 602.5,
+          "width": 20,
+          "height": 360.90625,
+          "right": 99,
+          "bottom": 963.40625
+        },
+        "captionText": "Meet & Greet · La bienvenida.\nCaptura aportada · presentación retocada · escena ilustrativa generada.\nVer captura original ↗",
+        "chapters": 5,
+        "catalog": 0,
+        "originalLinks": [
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "active": "method",
+        "retouchedLabel": "inline",
+        "originalLabel": "none",
+        "phoneWidths": [
+          220,
+          180,
+          180,
+          180,
+          180,
+          180
+        ]
+      },
+      "errors": []
+    },
+    {
+      "type": "gallery",
+      "width": 1440,
+      "metrics": {
+        "overflow": false,
+        "retouchedImages": [
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 200,
+            "height": 433
+          },
+          {
+            "loaded": true,
+            "src": "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-retouched.webp",
+            "naturalWidth": 390,
+            "naturalHeight": 844,
+            "width": 196,
+            "height": 425
+          }
+        ],
+        "target": {
+          "x": 79.1875,
+          "y": 378.59375,
+          "width": 629.6875,
+          "height": 680,
+          "right": 708.875,
+          "bottom": 1058.59375
+        },
+        "image": {
+          "x": 501.875,
+          "y": 385.59375,
+          "width": 200,
+          "height": 432.8125,
+          "right": 701.875,
+          "bottom": 818.40625
+        },
+        "caption": {
+          "x": 494.875,
+          "y": 837.40625,
+          "width": 214,
+          "height": 30,
+          "right": 708.875,
+          "bottom": 867.40625
+        },
+        "captionText": "PRESENTACIÓN RETOCADA\nMeet & Greet · abrir captura original",
+        "chapters": 0,
+        "catalog": 16,
+        "originalLinks": [
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png",
+          "http://127.0.0.1:4191/growth-assets/scenarios/screens/16-meet-greet-original.png"
+        ],
+        "retouchedLabel": null,
+        "originalLabel": null,
+        "phoneWidths": [
+          214,
+          214,
+          214,
+          214,
+          214,
+          214
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "issues": [],
+  "composition": {
+    "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/site/assets/scenarios/compositions/02-meet-greet.png",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 695340,
+    "sha256": "fd10196f670e2ef4c07a5e7997f9ddacb28e2ac674da213626bdd874e22dbfff",
+    "classification": "Composición editorial: captura aportada con presentación retocada, escena generada y relato ficticio",
+    "layout": {
+      "height": 1000,
+      "scrollHeight": 1000,
+      "text": "\n  02 / Ana · Antes de la conversaciónHORA SIMULADA09:10\n  \n    \n      Escena ilustrativa generada\n      ↗La bienvenida marca el tono de la conversación\n      Presentación retocadaMeet & Greet · abrir captura original\n    \n    Simulación de uso · agentes de IADar la bienvenida con claridad.Ana revisa Meet & Greet antes de recibir a dos huéspedes ficticios y prepara una pregunta para el agente de IA.Jorge“¿Cómo harás que la bienvenida se sienta natural?”Ana“Me presento, explico cuánto dura la visita y pregunto cómo prefieren que los llame.”PREGUNTA PROPUESTA PARA EL AGENTE DE IA«Ayúdame a ensayar una bienvenida natural usando el guion de Meet & Greet.»EN LA APLICACIÓNConsultar el video, el guion y los errores frecuentes del paso Meet & Greet.Siguiente decisiónPracticar la bienvenida con Jorge e incluir a todas las personas de la conversación.\n  \n  CONTEXTO Y FUENTECaptura aportada el 7 de noviembre de 2026, con acabado y espaciado retocados. El original está enlazado en la pantalla. Video, guion y errores frecuentes proceden del adjunto; la pregunta a la IA, los personajes y la fotografía son ilustrativos.\n  SA / SALES ACADEMY UNA JORNADA CON IA · SIMULACIÓN · 02 / 06\n← Anterior\nDescargar composición ↓\nSiguiente →\n",
+      "rect": {
+        "x": 0,
+        "y": 1000,
+        "width": 1600,
+        "height": 1000,
+        "top": 1000,
+        "right": 1600,
+        "bottom": 2000,
+        "left": 0
+      },
+      "textBottom": 1943
+    }
+  },
+  "finishedAt": "2026-11-07T13:00:44.432Z"
+}

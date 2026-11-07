@@ -1,0 +1,7 @@
+[
+  {
+    "file": "/etc/nginx/sites-available/garvi.softvibes.pro.conf",
+    "before": "4cdbfdc7f6f63196550f9c9ac0521c75cc7544166f58244de3206524dccf9fc2",
+    "after": "714b91a0f736c1ebc3114d5a643fe58516d334532890b79a558d595fe0d9e96d"
+  }
+]

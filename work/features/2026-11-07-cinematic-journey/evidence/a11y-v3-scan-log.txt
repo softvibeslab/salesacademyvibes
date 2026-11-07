@@ -1,0 +1,128 @@
+[
+  {
+    "path": "/descubre/",
+    "width": 1440,
+    "class": "public-v2 landing-v2 cinematic-page",
+    "textNodes": 398,
+    "failures": [],
+    "unnamed": [],
+    "focusFailures": [],
+    "focusCount": 57,
+    "skip": {
+      "hash": "#main",
+      "active": "BODY",
+      "nextTab": {
+        "tag": "A",
+        "text": "01 El inicio",
+        "inMain": true
+      }
+    },
+    "disclosure": {
+      "selector": "details",
+      "open": true
+    }
+  },
+  {
+    "path": "/mediahub/",
+    "width": 1440,
+    "class": "public-v2 hub-v2",
+    "textNodes": 174,
+    "failures": [],
+    "unnamed": [],
+    "focusFailures": [],
+    "focusCount": 37,
+    "skip": {
+      "hash": "#main",
+      "active": "BODY",
+      "nextTab": {
+        "tag": "A",
+        "text": "Preparar mi conversación↗",
+        "inMain": true
+      }
+    },
+    "disclosure": null
+  },
+  {
+    "path": "/mediahub/smart-agent/",
+    "width": 1440,
+    "class": "public-v2 ",
+    "textNodes": 94,
+    "failures": [],
+    "unnamed": [],
+    "focusFailures": [],
+    "focusCount": 15,
+    "skip": {
+      "hash": "#main",
+      "active": "BODY",
+      "nextTab": {
+        "tag": "A",
+        "text": "← Volver al mediahub",
+        "inMain": true
+      }
+    },
+    "disclosure": null
+  },
+  {
+    "path": "/descubre/",
+    "width": 390,
+    "class": "public-v2 landing-v2 cinematic-page",
+    "textNodes": 348,
+    "failures": [],
+    "unnamed": [],
+    "focusFailures": [],
+    "focusCount": 54,
+    "skip": {
+      "hash": "#main",
+      "active": "BODY",
+      "nextTab": {
+        "tag": "A",
+        "text": "01 El inicio",
+        "inMain": true
+      }
+    },
+    "disclosure": {
+      "selector": "details",
+      "open": true
+    }
+  },
+  {
+    "path": "/mediahub/",
+    "width": 390,
+    "class": "public-v2 hub-v2",
+    "textNodes": 168,
+    "failures": [],
+    "unnamed": [],
+    "focusFailures": [],
+    "focusCount": 34,
+    "skip": {
+      "hash": "#main",
+      "active": "BODY",
+      "nextTab": {
+        "tag": "A",
+        "text": "Preparar mi conversación↗",
+        "inMain": true
+      }
+    },
+    "disclosure": null
+  },
+  {
+    "path": "/mediahub/smart-agent/",
+    "width": 390,
+    "class": "public-v2 ",
+    "textNodes": 88,
+    "failures": [],
+    "unnamed": [],
+    "focusFailures": [],
+    "focusCount": 12,
+    "skip": {
+      "hash": "#main",
+      "active": "BODY",
+      "nextTab": {
+        "tag": "A",
+        "text": "← Volver al mediahub",
+        "inMain": true
+      }
+    },
+    "disclosure": null
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-07",
+  "scenarios": 6,
+  "times": ["08:45", "09:10", "10:10", "12:20", "15:30", "16:30"],
+  "frames": 32,
+  "changedFrames": [],
+  "sourceHashMatches": true,
+  "missingMappedScreenshots": [],
+  "oldCharacterLuisPresent": false,
+  "documentLines": 136,
+  "method": "Parsed storyboard JSON; checked mapped screenshot files exist; rehashed all indexed frames and original video; inspected narrative character naming. Pure analysis/content evidence: no production code or original media modified."
+}

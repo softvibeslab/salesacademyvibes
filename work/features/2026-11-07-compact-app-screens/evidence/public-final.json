@@ -1,0 +1,111 @@
+{
+  "startedAt": "2026-11-07T12:53:49.017Z",
+  "cssIntercepted": false,
+  "tlsValidated": true,
+  "checks": [
+    {
+      "type": "index",
+      "status": 200,
+      "errors": [],
+      "width": 390,
+      "overflow": false,
+      "phones": [
+        139
+      ],
+      "vsl": [],
+      "imagesLoaded": true,
+      "matchesCandidate": true
+    },
+    {
+      "type": "landing",
+      "status": 200,
+      "errors": [],
+      "width": 390,
+      "overflow": false,
+      "phones": [
+        170,
+        170,
+        170,
+        170,
+        170
+      ],
+      "vsl": [
+        270
+      ],
+      "imagesLoaded": true,
+      "matchesCandidate": true
+    },
+    {
+      "type": "gallery",
+      "status": 200,
+      "errors": [],
+      "width": 390,
+      "overflow": false,
+      "phones": [
+        165,
+        165,
+        165,
+        165,
+        165,
+        165
+      ],
+      "vsl": [],
+      "imagesLoaded": true,
+      "matchesCandidate": true
+    },
+    {
+      "type": "index",
+      "status": 200,
+      "errors": [],
+      "width": 1440,
+      "overflow": false,
+      "phones": [
+        168
+      ],
+      "vsl": [],
+      "imagesLoaded": true,
+      "matchesCandidate": true
+    },
+    {
+      "type": "landing",
+      "status": 200,
+      "errors": [],
+      "width": 1440,
+      "overflow": false,
+      "phones": [
+        220,
+        180,
+        180,
+        180,
+        180,
+        180
+      ],
+      "vsl": [
+        280
+      ],
+      "imagesLoaded": true,
+      "matchesCandidate": true,
+      "activeChapter": "practice"
+    },
+    {
+      "type": "gallery",
+      "status": 200,
+      "errors": [],
+      "width": 1440,
+      "overflow": false,
+      "phones": [
+        214,
+        214,
+        214,
+        214,
+        214,
+        214
+      ],
+      "vsl": [],
+      "imagesLoaded": true,
+      "matchesCandidate": true
+    }
+  ],
+  "issues": [],
+  "finishedAt": "2026-11-07T12:54:05.362Z"
+}

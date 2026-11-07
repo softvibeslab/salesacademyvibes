@@ -1,0 +1,182 @@
+✔ before the journey remains at the first frame (1.064792ms)
+✖ the viewport reading line selects the chapter and its continuous progress (1.43625ms)
+✖ chapter boundaries select the next scene without overshoot (0.351584ms)
+✖ scrolling backwards recovers the same state (0.874583ms)
+✖ after the last chapter clamps every value (0.320959ms)
+✖ unequal chapter sizes use measured geometry (0.255792ms)
+✖ empty or invalid geometry does not produce NaN or unsafe state (0.405375ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 1
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 305.915
+
+✖ failing tests:
+
+test at growth/tests/journey.test.mjs:10:1
+✖ the viewport reading line selects the chapter and its continuous progress (1.43625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   chapterProgress: 0,
+  +   id: 'start',
+  +   index: 0,
+  +   progress: 0
+  -   chapterProgress: 0.5,
+  -   id: 'practice',
+  -   index: 2,
+  -   progress: 0.5
+    }
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/journey.test.mjs:12:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { index: 0, id: 'start', progress: 0, chapterProgress: 0 },
+    expected: { index: 2, id: 'practice', progress: 0.5, chapterProgress: 0.5 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at growth/tests/journey.test.mjs:14:1
+✖ chapter boundaries select the next scene without overshoot (0.351584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'start' !== 'method'
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/journey.test.mjs:15:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'start',
+    expected: 'method',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at growth/tests/journey.test.mjs:19:1
+✖ scrolling backwards recovers the same state (0.874583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'start'
+  - 'practice'
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/journey.test.mjs:23:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'start',
+    expected: 'practice',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at growth/tests/journey.test.mjs:25:1
+✖ after the last chapter clamps every value (0.320959ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   chapterProgress: 0,
+  +   id: 'start',
+  +   index: 0,
+  +   progress: 0
+  -   chapterProgress: 1,
+  -   id: 'scale',
+  -   index: 4,
+  -   progress: 1
+    }
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/journey.test.mjs:26:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { index: 0, id: 'start', progress: 0, chapterProgress: 0 },
+    expected: { index: 4, id: 'scale', progress: 1, chapterProgress: 1 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at growth/tests/journey.test.mjs:28:1
+✖ unequal chapter sizes use measured geometry (0.255792ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   chapterProgress: 0,
+  +   id: 'a',
+  +   index: 0,
+  +   progress: 0
+  -   chapterProgress: 0.2857142857142857,
+  -   id: 'b',
+  -   index: 1,
+  -   progress: 0.5
+    }
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/journey.test.mjs:30:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { index: 0, id: 'a', progress: 0, chapterProgress: 0 },
+    expected: { index: 1, id: 'b', progress: 0.5, chapterProgress: 0.2857142857142857 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at growth/tests/journey.test.mjs:32:1
+✖ empty or invalid geometry does not produce NaN or unsafe state (0.405375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      chapterProgress: 0,
+  +   id: 'bad',
+  -   id: '',
+      index: 0,
+      progress: 0
+    }
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/journey.test.mjs:34:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { index: 0, id: 'bad', progress: 0, chapterProgress: 0 },
+    expected: { index: 0, id: '', progress: 0, chapterProgress: 0 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

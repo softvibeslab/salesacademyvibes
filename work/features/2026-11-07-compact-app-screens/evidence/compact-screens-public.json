@@ -1,0 +1,121 @@
+{
+  "release": "/srv/salesacademy-cloud/releases/20261107-compact-screens-02",
+  "css": [
+    {
+      "url": "https://salesacademy.softvibes.cloud/styles.css",
+      "status": 200,
+      "sha256": "515e14206c2991b1c23272d3da8b9411ef23edc0708496e485073412ee99d261",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-journey.css",
+      "status": 200,
+      "sha256": "0ffaa869b5240ea14bf4144e63cdb4e9ae1adf7f91493ffb9531f56938492cb5",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.css",
+      "status": 200,
+      "sha256": "394652b4d788397d35bd2a7eb2603b6a998156e79c1ac2fe17efbb22ca0f22d4",
+      "matches": true
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v1.salesacademy.softvibes.cloud/mediahub/",
+      "status": 200
+    },
+    {
+      "url": "https://v1.salesacademy.softvibes.cloud/cms/",
+      "status": 200
+    },
+    {
+      "url": "https://v1.salesacademy.softvibes.cloud/growth-api/health",
+      "status": 200
+    },
+    {
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v2.salesacademy.softvibes.cloud/mediahub/",
+      "status": 200
+    },
+    {
+      "url": "https://v2.salesacademy.softvibes.cloud/cms/",
+      "status": 200
+    },
+    {
+      "url": "https://v2.salesacademy.softvibes.cloud/growth-api/health",
+      "status": 200
+    },
+    {
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v3.salesacademy.softvibes.cloud/mediahub/",
+      "status": 200
+    },
+    {
+      "url": "https://v3.salesacademy.softvibes.cloud/cms/",
+      "status": 200
+    },
+    {
+      "url": "https://v3.salesacademy.softvibes.cloud/growth-api/health",
+      "status": 200
+    },
+    {
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v4.salesacademy.softvibes.cloud/mediahub/",
+      "status": 200
+    },
+    {
+      "url": "https://v4.salesacademy.softvibes.cloud/cms/",
+      "status": 200
+    },
+    {
+      "url": "https://v4.salesacademy.softvibes.cloud/growth-api/health",
+      "status": 200
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/mediahub/",
+      "status": 200
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/cms/",
+      "status": 200
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-api/health",
+      "status": 200
+    },
+    {
+      "url": "https://salesacademy.softvibes.art/",
+      "status": 200
+    },
+    {
+      "url": "https://salesacademy.softvibes.pro/",
+      "status": 200
+    }
+  ],
+  "services": {
+    "v1": "active",
+    "v2": "active",
+    "v3": "active",
+    "v4": "active",
+    "v5": "active"
+  },
+  "ok": true
+}

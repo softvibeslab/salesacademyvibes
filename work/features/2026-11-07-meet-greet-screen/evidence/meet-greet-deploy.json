@@ -1,0 +1,18 @@
+{
+  "previousRelease": "/srv/salesacademy-cloud/releases/20261107-compact-screens-02",
+  "release": "/srv/salesacademy-cloud/releases/20261107-meet-greet-03",
+  "changedFiles": [
+    "v5/growth/site/assets/ai-journey.css",
+    "v5/growth/site/assets/scenarios/compositions/02-meet-greet.png",
+    "v5/growth/site/assets/scenarios/index.html",
+    "v5/growth/site/assets/scenarios/scenarios.css",
+    "v5/growth/site/assets/scenarios/screens/16-meet-greet-original.png",
+    "v5/growth/site/assets/scenarios/screens/16-meet-greet-retouched.png",
+    "v5/growth/site/assets/scenarios/screens/16-meet-greet-retouched.webp",
+    "v5/growth/site/templates/landing.html"
+  ],
+  "manifestSha256": "1e5af80cc52ebebd57533fa9701125f6d3314a1863f4c46a7d71f168e8a12a61",
+  "restart": "salesacademy-cloud@v5.service",
+  "privateStateChanged": false,
+  "rollback": "Atomically point current to previousRelease and restart only salesacademy-cloud@v5.service."
+}

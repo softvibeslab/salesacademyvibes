@@ -1,0 +1,9 @@
+test_gallery_is_public_asset_independent_of_editorial_privacy (growth.tests.test_scenarios.ScenarioPublication.test_gallery_is_public_asset_independent_of_editorial_privacy) ... ok
+test_hidden_guide_removes_entry_and_reader (growth.tests.test_scenarios.ScenarioPublication.test_hidden_guide_removes_entry_and_reader) ... ok
+test_published_guide_links_from_landing_and_reader (growth.tests.test_scenarios.ScenarioPublication.test_published_guide_links_from_landing_and_reader) ... ok
+test_seed_contains_an_editable_existing_contract_guide (growth.tests.test_scenarios.ScenarioPublication.test_seed_contains_an_editable_existing_contract_guide) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.405s
+
+OK

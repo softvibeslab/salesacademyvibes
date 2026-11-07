@@ -1,0 +1,98 @@
+{
+  "viewCombinations": 6,
+  "states": 12,
+  "textObservations": 1270,
+  "textFailures": [],
+  "minimumNormalText": 4.542,
+  "minimumLargeText": 3.717,
+  "focusObservations": 209,
+  "focusFailures": [],
+  "minimumFocusRatio": 3.641,
+  "missingAccessibleNames": [],
+  "controlResults": [
+    {
+      "width": 1440,
+      "systemReduced": {
+        "class": "cinematic-journey journey-reduced",
+        "stageDisplay": "none",
+        "chapters": [
+          {
+            "id": "start",
+            "display": "block"
+          },
+          {
+            "id": "method",
+            "display": "block"
+          },
+          {
+            "id": "practice",
+            "display": "block"
+          },
+          {
+            "id": "coaching",
+            "display": "block"
+          },
+          {
+            "id": "scale",
+            "display": "block"
+          }
+        ],
+        "togglePressed": "true",
+        "disabled": true
+      },
+      "play": true,
+      "pause": true,
+      "captions": [
+        {
+          "label": "Espa\u00f1ol",
+          "language": "es",
+          "kind": "captions",
+          "mode": "showing",
+          "cues": 9
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "systemReduced": {
+        "class": "cinematic-journey journey-reduced",
+        "stageDisplay": "none",
+        "chapters": [
+          {
+            "id": "start",
+            "display": "block"
+          },
+          {
+            "id": "method",
+            "display": "block"
+          },
+          {
+            "id": "practice",
+            "display": "block"
+          },
+          {
+            "id": "coaching",
+            "display": "block"
+          },
+          {
+            "id": "scale",
+            "display": "block"
+          }
+        ],
+        "togglePressed": "true",
+        "disabled": true
+      },
+      "play": true,
+      "pause": true,
+      "captions": [
+        {
+          "label": "Espa\u00f1ol",
+          "language": "es",
+          "kind": "captions",
+          "mode": "showing",
+          "cues": 9
+        }
+      ]
+    }
+  ]
+}

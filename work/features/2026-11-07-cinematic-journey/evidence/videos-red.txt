@@ -1,0 +1,197 @@
+test_cms_contains_single_safe_catalog_and_hub_uses_film_poster (growth.tests.test_videos.CuratedVideoContract.test_cms_contains_single_safe_catalog_and_hub_uses_film_poster) ... FAIL
+test_draft_and_archived_films_do_not_leak_into_public_hub (growth.tests.test_videos.CuratedVideoContract.test_draft_and_archived_films_do_not_leak_into_public_hub) ... FAIL
+test_editor_selects_preview_then_owner_publishes_and_restart_preserves (growth.tests.test_videos.CuratedVideoContract.test_editor_selects_preview_then_owner_publishes_and_restart_preserves) ... FAIL
+test_invalid_ids_and_source_conflicts_leave_revision_unchanged (growth.tests.test_videos.CuratedVideoContract.test_invalid_ids_and_source_conflicts_leave_revision_unchanged) ... ok
+test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) ... 
+  test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='smart-agent') ... FAIL
+  test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='menos-caos') ... FAIL
+  test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='sistema-conectado') ... FAIL
+  test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='infraestructura-comercial') ... FAIL
+  test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='conocimiento-en-practica') ... FAIL
+test_old_documents_and_explicit_null_remain_valid (growth.tests.test_videos.CuratedVideoContract.test_old_documents_and_explicit_null_remain_valid) ... FAIL
+test_restore_old_document_has_no_film_until_explicit_publish (growth.tests.test_videos.CuratedVideoContract.test_restore_old_document_has_no_film_until_explicit_publish) ... FAIL
+
+======================================================================
+FAIL: test_cms_contains_single_safe_catalog_and_hub_uses_film_poster (growth.tests.test_videos.CuratedVideoContract.test_cms_contains_single_safe_catalog_and_hub_uses_film_poster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 150, in test_cms_contains_single_safe_catalog_and_hub_uses_film_poster
+    self.assertIn('id="video-catalog"', shell)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'id="video-catalog"' not found in '<!doctype html>\n<html lang="es">\n  <head>\n    <meta charset="utf-8" />\n    <meta name="viewport" content="width=device-width,initial-scale=1" />\n    <meta name="robots" content="noindex,nofollow" />\n    <title>Estudio editorial · Sales Academy</title>\n    <meta name="theme-color" content="#171b17" />\n    <link rel="icon" href="/growth-assets/mark.svg" type="image/svg+xml" />\n    <link rel="stylesheet" href="/growth-assets/site.css" />\n    <link rel="stylesheet" href="/growth-assets/cms.css" />\n    <script type="module" src="/growth-assets/cms.mjs"></script>\n  </head>\n  <body class="cms-body">\n    <a class="skip" href="#cms-content">Saltar al editor</a>\n    <div id="login-view" class="login-layout">\n      <div class="login-story">\n        <a class="brand" href="/descubre/"\n          ><span class="brand-mark">S<span>A</span></span\n          ><span>SALES<br />ACADEMY</span></a\n        >\n        <div>\n          <p class="eyebrow">ESTUDIO EDITORIAL</p>\n          <h1>El conocimiento<br />merece una<br /><em>buena casa.</em></h1>\n          <p>\n            Prepara el contenido.<br />Revisa cada detalle.<br />Publica con\n            intención.\n          </p>\n        </div>\n        <span class="login-foot">SALES ACADEMY / CONTENT STUDIO</span>\n      </div>\n      <div class="login-main">\n        <form id="login-form">\n          <p class="eyebrow">ACCESO PRIVADO</p>\n          <h2>Bienvenido al estudio.</h2>\n          <p>\n            Entra con tu cuenta editorial para trabajar en la landing y el\n            mediahub.\n          </p>\n          <label\n            >Usuario<input\n              name="username"\n              autocomplete="username"\n              required\n              maxlength="80"\n              autofocus /></label\n          ><label\n            >Contraseña<input\n              type="password"\n              name="password"\n              autocomplete="current-password"\n              required /></label\n          ><button class="button" type="submit">\n            Entrar al CMS <span>↗</span>\n          </button>\n          <p id="login-status" class="form-status" role="status"></p>\n          <p class="caption">\n            ¿Necesitas acceso o recuperar tu cuenta? Contacta al administrador\n            del proyecto.\n          </p>\n          <a href="/descubre/" class="quiet-link">← Volver al sitio</a>\n        </form>\n        <noscript\n          ><p>\n            El editor necesita JavaScript. Los recursos públicos se pueden leer\n            sin activarlo.\n          </p></noscript\n        >\n      </div>\n    </div>\n    <div id="cms-shell" hidden>\n      <aside class="cms-sidebar">\n        <a class="brand" href="/cms/"\n          ><span class="brand-mark">S<span>A</span></span\n          ><span\n            >SALES<br />ACADEMY<span class="brand-sub"\n              >ESTUDIO EDITORIAL</span\n            ></span\n          ></a\n        >\n        <p class="sidebar-label">TU ESPACIO DE TRABAJO</p>\n        <nav id="cms-nav" aria-label="Módulos del CMS"></nav>\n        <div class="sidebar-bottom">\n          <a href="/descubre/" target="_blank" rel="noopener"\n            >Ver sitio público ↗</a\n          >\n          <div id="cms-user"></div>\n          <button id="logout-button" class="text-button">Cerrar sesión</button>\n        </div>\n      </aside>\n      <div class="cms-main">\n        <header class="cms-topbar">\n          <div>\n            <span class="cms-breadcrumb">SALES ACADEMY / ESTUDIO</span\n            ><span id="save-indicator">Cargando contenido…</span>\n          </div>\n          <div class="cms-top-actions">\n            <a\n              class="button button-small button-outline"\n              id="preview-link"\n              href="/cms/preview/"\n              target="_blank"\n              rel="noopener"\n              >Vista previa ↗</a\n            ><button class="button button-small" id="publish-button" hidden>\n              Publicar cambios\n            </button>\n          </div>\n        </header>\n        <div\n          id="cms-status"\n          class="cms-toast"\n          role="status"\n          aria-live="polite"\n          hidden\n        ></div>\n        <main id="cms-content" tabindex="-1"></main>\n      </div>\n    </div>\n  </body>\n</html>'
+
+======================================================================
+FAIL: test_draft_and_archived_films_do_not_leak_into_public_hub (growth.tests.test_videos.CuratedVideoContract.test_draft_and_archived_films_do_not_leak_into_public_hub)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 131, in test_draft_and_archived_films_do_not_leak_into_public_hub
+    saved = self.add_film(status='draft', title='BORRADOR-AUDIOVISUAL')
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 53, in add_film
+    self.assertEqual(response.status_code, 201, response.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 400 != 201 : {"error":{"code":"invalid_content","message":"Recurso: estructura inv\u00e1lida."}}
+
+
+======================================================================
+FAIL: test_editor_selects_preview_then_owner_publishes_and_restart_preserves (growth.tests.test_videos.CuratedVideoContract.test_editor_selects_preview_then_owner_publishes_and_restart_preserves)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 93, in test_editor_selects_preview_then_owner_publishes_and_restart_preserves
+    saved = self.add_film(editor, editor_headers)
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 53, in add_film
+    self.assertEqual(response.status_code, 201, response.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 400 != 201 : {"error":{"code":"invalid_content","message":"Recurso: estructura inv\u00e1lida."}}
+
+
+======================================================================
+FAIL: test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='smart-agent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 70, in test_known_local_film_is_a_published_video_source
+    validate_resource(video_resource(videoId=identifier))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 98, in validate_resource
+    obj(r, RESOURCE_KEYS, "Recurso", RESOURCE_KEYS)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 66, in obj
+    raise ContentError(f"{label}: estructura inválida.")
+growth.server.content.ContentError: Recurso: estructura inválida.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 72, in test_known_local_film_is_a_published_video_source
+    self.fail(f'Curated film must be accepted: {error}')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Curated film must be accepted: Recurso: estructura inválida.
+
+======================================================================
+FAIL: test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='menos-caos')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 70, in test_known_local_film_is_a_published_video_source
+    validate_resource(video_resource(videoId=identifier))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 98, in validate_resource
+    obj(r, RESOURCE_KEYS, "Recurso", RESOURCE_KEYS)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 66, in obj
+    raise ContentError(f"{label}: estructura inválida.")
+growth.server.content.ContentError: Recurso: estructura inválida.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 72, in test_known_local_film_is_a_published_video_source
+    self.fail(f'Curated film must be accepted: {error}')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Curated film must be accepted: Recurso: estructura inválida.
+
+======================================================================
+FAIL: test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='sistema-conectado')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 70, in test_known_local_film_is_a_published_video_source
+    validate_resource(video_resource(videoId=identifier))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 98, in validate_resource
+    obj(r, RESOURCE_KEYS, "Recurso", RESOURCE_KEYS)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 66, in obj
+    raise ContentError(f"{label}: estructura inválida.")
+growth.server.content.ContentError: Recurso: estructura inválida.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 72, in test_known_local_film_is_a_published_video_source
+    self.fail(f'Curated film must be accepted: {error}')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Curated film must be accepted: Recurso: estructura inválida.
+
+======================================================================
+FAIL: test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='infraestructura-comercial')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 70, in test_known_local_film_is_a_published_video_source
+    validate_resource(video_resource(videoId=identifier))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 98, in validate_resource
+    obj(r, RESOURCE_KEYS, "Recurso", RESOURCE_KEYS)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 66, in obj
+    raise ContentError(f"{label}: estructura inválida.")
+growth.server.content.ContentError: Recurso: estructura inválida.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 72, in test_known_local_film_is_a_published_video_source
+    self.fail(f'Curated film must be accepted: {error}')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Curated film must be accepted: Recurso: estructura inválida.
+
+======================================================================
+FAIL: test_known_local_film_is_a_published_video_source (growth.tests.test_videos.CuratedVideoContract.test_known_local_film_is_a_published_video_source) (identifier='conocimiento-en-practica')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 70, in test_known_local_film_is_a_published_video_source
+    validate_resource(video_resource(videoId=identifier))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 98, in validate_resource
+    obj(r, RESOURCE_KEYS, "Recurso", RESOURCE_KEYS)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 66, in obj
+    raise ContentError(f"{label}: estructura inválida.")
+growth.server.content.ContentError: Recurso: estructura inválida.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 72, in test_known_local_film_is_a_published_video_source
+    self.fail(f'Curated film must be accepted: {error}')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Curated film must be accepted: Recurso: estructura inválida.
+
+======================================================================
+FAIL: test_old_documents_and_explicit_null_remain_valid (growth.tests.test_videos.CuratedVideoContract.test_old_documents_and_explicit_null_remain_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 61, in test_old_documents_and_explicit_null_remain_valid
+    validate_document(document)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 217, in validate_document
+    validate_resource(r)
+    ~~~~~~~~~~~~~~~~~^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 98, in validate_resource
+    obj(r, RESOURCE_KEYS, "Recurso", RESOURCE_KEYS)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/server/content.py", line 66, in obj
+    raise ContentError(f"{label}: estructura inválida.")
+growth.server.content.ContentError: Recurso: estructura inválida.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 63, in test_old_documents_and_explicit_null_remain_valid
+    self.fail(f'An explicit absent film must remain valid: {error}')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: An explicit absent film must remain valid: Recurso: estructura inválida.
+
+======================================================================
+FAIL: test_restore_old_document_has_no_film_until_explicit_publish (growth.tests.test_videos.CuratedVideoContract.test_restore_old_document_has_no_film_until_explicit_publish)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 117, in test_restore_old_document_has_no_film_until_explicit_publish
+    saved = self.add_film()
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 53, in add_film
+    self.assertEqual(response.status_code, 201, response.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 400 != 201 : {"error":{"code":"invalid_content","message":"Recurso: estructura inv\u00e1lida."}}
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.182s
+
+FAILED (failures=10)

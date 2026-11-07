@@ -1,0 +1,25 @@
+{
+  "method": "Built-in imagegen retouch; cwebp quality92 delivery encoding at390px width, proportional height; full-resolution PNG preserved",
+  "retouchedWidth": 853,
+  "retouchedHeight": 1844,
+  "originalSource": "User-supplied Desktop screenshot",
+  "files": [
+    {
+      "path": "growth/site/assets/scenarios/screens/16-meet-greet-original.png",
+      "bytes": 162319,
+      "sha256": "da051d399971773d91b434704ffcf34c8f82eed1cb29a01d318c9ec6fef03b9e"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/16-meet-greet-retouched.png",
+      "bytes": 1517543,
+      "sha256": "3de1c6fcbce141fa6bc3c072e8f2d92d6fc91eace838c05018c9dd93d90be14c"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/16-meet-greet-retouched.webp",
+      "bytes": 49838,
+      "sha256": "33202c6afa08462fbbd6c8f232bfaca76d5a21345475f89cb6962c921d0c024f"
+    }
+  ],
+  "displayWidth": 390,
+  "displayHeight": 844
+}

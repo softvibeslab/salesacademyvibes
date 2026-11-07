@@ -1,0 +1,62 @@
+{
+  "name": "20261107-meet-greet-03",
+  "parentRelease": "20261107-compact-screens-02",
+  "files": [
+    {
+      "source": "growth/site/templates/landing.html",
+      "path": "v5/growth/site/templates/landing.html",
+      "beforeSha256": "ff6f1c690d5e318442cf345cf5f9cf88c36a4a91c6af94f0d3d195da44001f1d",
+      "sha256": "d6521ac07d0ce75f186cbb762dbd20b7f575cfb1da17ad575159d27b53ff64d5",
+      "bytes": 22497
+    },
+    {
+      "source": "growth/site/assets/scenarios/index.html",
+      "path": "v5/growth/site/assets/scenarios/index.html",
+      "beforeSha256": "9b20397276c3b11331131cb9803350157e057752f4da9546e7136fdf1b14acd0",
+      "sha256": "fdd3d980ccef62dc8e123e179e6435c7e188d0113b018749767d834a9c0935e5",
+      "bytes": 32507
+    },
+    {
+      "source": "growth/site/assets/ai-journey.css",
+      "path": "v5/growth/site/assets/ai-journey.css",
+      "beforeSha256": "0ffaa869b5240ea14bf4144e63cdb4e9ae1adf7f91493ffb9531f56938492cb5",
+      "sha256": "a821ed863ba00355dfa0442ddb413659ab60f4f25df2d91258a6e116f3ba9833",
+      "bytes": 20514
+    },
+    {
+      "source": "growth/site/assets/scenarios/scenarios.css",
+      "path": "v5/growth/site/assets/scenarios/scenarios.css",
+      "beforeSha256": "394652b4d788397d35bd2a7eb2603b6a998156e79c1ac2fe17efbb22ca0f22d4",
+      "sha256": "89a4318a8c13fc52d5888a1cafe7554cf47483a8da75f2beb9f66deb8391ed6e",
+      "bytes": 22216
+    },
+    {
+      "source": "growth/site/assets/scenarios/screens/16-meet-greet-original.png",
+      "path": "v5/growth/site/assets/scenarios/screens/16-meet-greet-original.png",
+      "beforeSha256": null,
+      "sha256": "da051d399971773d91b434704ffcf34c8f82eed1cb29a01d318c9ec6fef03b9e",
+      "bytes": 162319
+    },
+    {
+      "source": "growth/site/assets/scenarios/screens/16-meet-greet-retouched.png",
+      "path": "v5/growth/site/assets/scenarios/screens/16-meet-greet-retouched.png",
+      "beforeSha256": null,
+      "sha256": "3de1c6fcbce141fa6bc3c072e8f2d92d6fc91eace838c05018c9dd93d90be14c",
+      "bytes": 1517543
+    },
+    {
+      "source": "growth/site/assets/scenarios/screens/16-meet-greet-retouched.webp",
+      "path": "v5/growth/site/assets/scenarios/screens/16-meet-greet-retouched.webp",
+      "beforeSha256": null,
+      "sha256": "33202c6afa08462fbbd6c8f232bfaca76d5a21345475f89cb6962c921d0c024f",
+      "bytes": 49838
+    },
+    {
+      "source": "growth/site/assets/scenarios/compositions/02-meet-greet.png",
+      "path": "v5/growth/site/assets/scenarios/compositions/02-meet-greet.png",
+      "beforeSha256": null,
+      "sha256": "fd10196f670e2ef4c07a5e7997f9ddacb28e2ac674da213626bdd874e22dbfff",
+      "bytes": 695340
+    }
+  ]
+}

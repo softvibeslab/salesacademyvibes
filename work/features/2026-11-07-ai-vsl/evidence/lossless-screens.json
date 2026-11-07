@@ -1,0 +1,46 @@
+{
+  "mode": "lossless WebP encoding, no crop or resize; original PNG retained",
+  "items": [
+    {
+      "source": "growth/site/assets/scenarios/screens/06-tour-preparation-mobile.png",
+      "derivative": "growth/site/assets/ai-screens/06-tour-preparation-mobile.webp",
+      "sourceBytes": 38396,
+      "webpBytes": 16396,
+      "pixelIdentical": true,
+      "pixelSha256": "92d1d5e700e5a10b86400091fc2819e9d22a35e24e0c703aa6d21a242c0a8945"
+    },
+    {
+      "source": "growth/site/assets/scenarios/screens/12-copilot-mobile.png",
+      "derivative": "growth/site/assets/ai-screens/12-copilot-mobile.webp",
+      "sourceBytes": 37308,
+      "webpBytes": 16990,
+      "pixelIdentical": true,
+      "pixelSha256": "24b3efa5e017c4009a8681ba5cb8d9ce1fb78d956c44f0154b593fef6e88c887"
+    },
+    {
+      "source": "growth/site/assets/scenarios/screens/07-objection-practice-mobile.png",
+      "derivative": "growth/site/assets/ai-screens/07-objection-practice-mobile.webp",
+      "sourceBytes": 43067,
+      "webpBytes": 18494,
+      "pixelIdentical": true,
+      "pixelSha256": "155a9eae2371cc0d3daf9e0fe46cbba408f754e4a866cf15a491e492c87a89e4"
+    },
+    {
+      "source": "growth/site/assets/scenarios/screens/09-after-tour-mobile.png",
+      "derivative": "growth/site/assets/ai-screens/09-after-tour-mobile.webp",
+      "sourceBytes": 40586,
+      "webpBytes": 17592,
+      "pixelIdentical": true,
+      "pixelSha256": "ee069c8caf1be3ccf260505997b1f7e47b18ac35022707403ac955f53c7c7600"
+    },
+    {
+      "source": "growth/site/assets/scenarios/screens/03-roadmap-mobile.png",
+      "derivative": "growth/site/assets/ai-screens/03-roadmap-mobile.webp",
+      "sourceBytes": 82171,
+      "webpBytes": 32110,
+      "pixelIdentical": true,
+      "pixelSha256": "e91804cef5105cd75eabcfaaa5fdb95b11cace98fd02093ca961a69d6d7b75b9"
+    }
+  ],
+  "savedBytes": 139946
+}

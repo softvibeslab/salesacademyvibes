@@ -1,0 +1,19 @@
+{
+  "command": "python3 growth/deploy/versions/build_release.py --source-root <product> --output <new-temp-dir>",
+  "builds": 2,
+  "versions": 5,
+  "verifiedSourceEntries": 1704,
+  "runtimeFiles": {
+    "v1": 27,
+    "v2": 33,
+    "v3": 60,
+    "v4": 88,
+    "v5": 99
+  },
+  "outputFiles": 317,
+  "allOutputHashesMatch": true,
+  "manifestBytesIdentical": true,
+  "releaseManifestSha256": "7f74c9cfa0dc4022e42cb609f15ec4009aab5e391344881b92fc9be26032dff3",
+  "indexIncluded": true,
+  "temporaryBuildsRemovedAfterCheck": true
+}

@@ -1,0 +1,43 @@
+{
+  "domain": "softvibes.cloud",
+  "overwrite": false,
+  "records": [
+    {
+      "name": "salesacademy",
+      "type": "A",
+      "ttl": 300,
+      "content": "76.13.231.12"
+    },
+    {
+      "name": "v1.salesacademy",
+      "type": "A",
+      "ttl": 300,
+      "content": "76.13.231.12"
+    },
+    {
+      "name": "v2.salesacademy",
+      "type": "A",
+      "ttl": 300,
+      "content": "76.13.231.12"
+    },
+    {
+      "name": "v3.salesacademy",
+      "type": "A",
+      "ttl": 300,
+      "content": "76.13.231.12"
+    },
+    {
+      "name": "v4.salesacademy",
+      "type": "A",
+      "ttl": 300,
+      "content": "76.13.231.12"
+    },
+    {
+      "name": "v5.salesacademy",
+      "type": "A",
+      "ttl": 300,
+      "content": "76.13.231.12"
+    }
+  ],
+  "result": "Hostinger Request accepted; connector list confirmed all six; resolver 1.1.1.1 from VPS returned IP for all six. Local resolver initially cached NXDOMAIN for parent."
+}

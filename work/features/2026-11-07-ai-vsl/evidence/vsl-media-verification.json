@@ -1,0 +1,85 @@
+{
+  "originalsIdentical": true,
+  "items": [
+    {
+      "path": "media/reals/WhatsApp Video 2026-11-07 at 06.02.39.mp4",
+      "sha256": "d10f73ebe4566d97eadf098ef96565cda04c478e03fe937fcb5f2d53181cc2b7",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 576,
+            "height": 1024,
+            "avg_frame_rate": "24/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "32.879456",
+          "size": "6862030"
+        }
+      }
+    },
+    {
+      "path": "media/reals/WhatsApp Video 2026-11-07 at 06.01.26.mp4",
+      "sha256": "d10f73ebe4566d97eadf098ef96565cda04c478e03fe937fcb5f2d53181cc2b7",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 576,
+            "height": 1024,
+            "avg_frame_rate": "24/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "32.879456",
+          "size": "6862030"
+        }
+      }
+    },
+    {
+      "path": "growth/site/assets/films/smart-agent.mp4",
+      "sha256": "862d0958977f03c0d39fdc1e8259d7f58303f71fbdbebc2f1865e24e48459c11",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 576,
+            "height": 1024,
+            "avg_frame_rate": "24/1"
+          },
+          {
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "avg_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "32.879002",
+          "size": "5549996"
+        }
+      }
+    }
+  ],
+  "captionExists": true,
+  "transcriptExists": true
+}

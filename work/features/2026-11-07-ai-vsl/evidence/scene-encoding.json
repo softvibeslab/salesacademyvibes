@@ -1,0 +1,35 @@
+[
+  {
+    "name": "briefing",
+    "dimensions": [
+      1672,
+      941
+    ],
+    "source": "Existing generated PNG, preserved unchanged",
+    "encoding": "WebP quality70; same size/composition; no crop, resize or retouch",
+    "bytes": 118284,
+    "previousWebpBytes": 198878
+  },
+  {
+    "name": "consultation",
+    "dimensions": [
+      1672,
+      941
+    ],
+    "source": "Existing generated PNG, preserved unchanged",
+    "encoding": "WebP quality70; same size/composition; no crop, resize or retouch",
+    "bytes": 119264,
+    "previousWebpBytes": 204766
+  },
+  {
+    "name": "coaching",
+    "dimensions": [
+      1672,
+      941
+    ],
+    "source": "Existing generated PNG, preserved unchanged",
+    "encoding": "WebP quality70; same size/composition; no crop, resize or retouch",
+    "bytes": 98142,
+    "previousWebpBytes": 160992
+  }
+]

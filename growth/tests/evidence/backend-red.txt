@@ -1,0 +1,140 @@
+test_authentication_csrf_and_server_roles (growth.tests.test_backend.BackendAcceptance.test_authentication_csrf_and_server_roles) ... FAIL
+test_demo_request_validation_idempotency_and_disabled_contact (growth.tests.test_backend.BackendAcceptance.test_demo_request_validation_idempotency_and_disabled_contact) ... FAIL
+test_drafts_survive_restart_and_conflict_without_losing_publication (growth.tests.test_backend.BackendAcceptance.test_drafts_survive_restart_and_conflict_without_losing_publication) ... FAIL
+test_events_allowlist_deduplication_and_metrics_privacy (growth.tests.test_backend.BackendAcceptance.test_events_allowlist_deduplication_and_metrics_privacy) ... FAIL
+test_owner_protection_and_session_revocation (growth.tests.test_backend.BackendAcceptance.test_owner_protection_and_session_revocation) ... FAIL
+test_publication_restore_is_atomic_and_does_not_revert_requests (growth.tests.test_backend.BackendAcceptance.test_publication_restore_is_atomic_and_does_not_revert_requests) ... FAIL
+test_rate_limits_are_enforced_and_wrong_login_is_generic (growth.tests.test_backend.BackendAcceptance.test_rate_limits_are_enforced_and_wrong_login_is_generic) ... FAIL
+test_schema_validation_and_stable_slug (growth.tests.test_backend.BackendAcceptance.test_schema_validation_and_stable_slug) ... FAIL
+test_security_headers_content_escape_and_json_errors (growth.tests.test_backend.BackendAcceptance.test_security_headers_content_escape_and_json_errors) ... FAIL
+test_unpublished_resources_are_private_and_filtering_is_server_side (growth.tests.test_backend.BackendAcceptance.test_unpublished_resources_are_private_and_filtering_is_server_side) ... FAIL
+
+======================================================================
+FAIL: test_authentication_csrf_and_server_roles (growth.tests.test_backend.BackendAcceptance.test_authentication_csrf_and_server_roles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 66, in test_authentication_csrf_and_server_roles
+    self.assertEqual(self.client.get('/cms/api/draft').status_code,401)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 401
+
+======================================================================
+FAIL: test_demo_request_validation_idempotency_and_disabled_contact (growth.tests.test_backend.BackendAcceptance.test_demo_request_validation_idempotency_and_disabled_contact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 150, in test_demo_request_validation_idempotency_and_disabled_contact
+    r=self.client.post('/growth-api/demo-requests',json=body,headers=headers);self.assertEqual(r.status_code,201)
+                                                                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 201
+
+======================================================================
+FAIL: test_drafts_survive_restart_and_conflict_without_losing_publication (growth.tests.test_backend.BackendAcceptance.test_drafts_survive_restart_and_conflict_without_losing_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 96, in test_drafts_survive_restart_and_conflict_without_losing_publication
+    h=self.login(); d=self.draft(); d['document']['hero']['title']='Nuevo borrador privado'
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 53, in login
+    self.assertEqual(r.status_code,200, r.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+
+======================================================================
+FAIL: test_events_allowlist_deduplication_and_metrics_privacy (growth.tests.test_backend.BackendAcceptance.test_events_allowlist_deduplication_and_metrics_privacy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 163, in test_events_allowlist_deduplication_and_metrics_privacy
+    self.assertEqual(self.client.post('/growth-api/events',json=event).status_code,202)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 202
+
+======================================================================
+FAIL: test_owner_protection_and_session_revocation (growth.tests.test_backend.BackendAcceptance.test_owner_protection_and_session_revocation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 84, in test_owner_protection_and_session_revocation
+    h=self.login(); me=self.client.get('/cms/api/session').json['user']
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 53, in login
+    self.assertEqual(r.status_code,200, r.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+
+======================================================================
+FAIL: test_publication_restore_is_atomic_and_does_not_revert_requests (growth.tests.test_backend.BackendAcceptance.test_publication_restore_is_atomic_and_does_not_revert_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 106, in test_publication_restore_is_atomic_and_does_not_revert_requests
+    h=self.login(); initial=self.client.get('/cms/api/revisions').json['items'][0]['id']; d=self.draft()
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 53, in login
+    self.assertEqual(r.status_code,200, r.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+
+======================================================================
+FAIL: test_rate_limits_are_enforced_and_wrong_login_is_generic (growth.tests.test_backend.BackendAcceptance.test_rate_limits_are_enforced_and_wrong_login_is_generic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 177, in test_rate_limits_are_enforced_and_wrong_login_is_generic
+    self.assertEqual(known.status_code,401);self.assertEqual(known.json,unknown.json)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 401
+
+======================================================================
+FAIL: test_schema_validation_and_stable_slug (growth.tests.test_backend.BackendAcceptance.test_schema_validation_and_stable_slug)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 119, in test_schema_validation_and_stable_slug
+    h=self.login();d=self.draft(); bad=copy.deepcopy(d);bad['document']['hero']['unknown']='reject'
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 53, in login
+    self.assertEqual(r.status_code,200, r.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+
+======================================================================
+FAIL: test_security_headers_content_escape_and_json_errors (growth.tests.test_backend.BackendAcceptance.test_security_headers_content_escape_and_json_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 183, in test_security_headers_content_escape_and_json_errors
+    r=self.client.get('/descubre/');self.assertEqual(r.status_code,200)
+                                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_unpublished_resources_are_private_and_filtering_is_server_side (growth.tests.test_backend.BackendAcceptance.test_unpublished_resources_are_private_and_filtering_is_server_side)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 131, in test_unpublished_resources_are_private_and_filtering_is_server_side
+    h=self.login();d=self.draft(); new=copy.deepcopy(d['document']['resources'][0]);new.update(id='private',slug='privado',title='SECRETO-EDITORIAL',status='draft')
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 53, in login
+    self.assertEqual(r.status_code,200, r.get_data(as_text=True))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.029s
+
+FAILED (failures=10)

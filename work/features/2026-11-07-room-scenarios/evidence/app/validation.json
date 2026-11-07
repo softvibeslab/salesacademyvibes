@@ -1,0 +1,143 @@
+{
+  "result": "PASS",
+  "captureCount": 15,
+  "mobile": 12,
+  "desktop": 3,
+  "checks": [
+    {
+      "file": "01-today-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "02-calendar-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "03-roadmap-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "04-discovery-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "05-negotiation-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "06-tour-preparation-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "07-objection-practice-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "08-price-objection-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "09-after-tour-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "10-monthly-goal-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "11-weekly-progress-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "12-copilot-mobile.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "13-today-desktop.png",
+      "dimensions": [
+        1240,
+        900
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "14-roadmap-desktop.png",
+      "dimensions": [
+        1240,
+        900
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    },
+    {
+      "file": "15-room-board-desktop.png",
+      "dimensions": [
+        1240,
+        900
+      ],
+      "sha256Matches": true,
+      "blockedRequests": 0
+    }
+  ]
+}

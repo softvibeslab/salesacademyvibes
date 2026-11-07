@@ -1,0 +1,33 @@
+{
+  "comparisons": 18,
+  "viewports": [
+    360,
+    390,
+    768,
+    980,
+    1440,
+    1920
+  ],
+  "widthReductionPercentRange": [
+    21.43,
+    23.4
+  ],
+  "overflow": 0,
+  "imageLoadOrRatioProblems": [],
+  "vslAndPhotoGeometryUnchanged": true,
+  "originalBoundingBoxFlags": [
+    {
+      "width": 360,
+      "type": "index",
+      "reason": "See page metrics and comparison"
+    },
+    {
+      "width": 390,
+      "type": "index",
+      "reason": "See page metrics and comparison"
+    }
+  ],
+  "actualTextCollisions": 0,
+  "resolved": true,
+  "publicContentModified": false
+}

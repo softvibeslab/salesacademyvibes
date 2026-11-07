@@ -1,0 +1,18 @@
+test_copies_index_and_rejects_index_symlinks (test_build_release.ReleaseBuilderTests.test_copies_index_and_rejects_index_symlinks) ... ok
+test_existing_output_is_never_overwritten (test_build_release.ReleaseBuilderTests.test_existing_output_is_never_overwritten) ... ok
+test_extracts_only_runtime_whitelist_and_records_provenance (test_build_release.ReleaseBuilderTests.test_extracts_only_runtime_whitelist_and_records_provenance) ... ok
+test_incomplete_runtime_does_not_build (test_build_release.ReleaseBuilderTests.test_incomplete_runtime_does_not_build) ... ok
+test_manifest_and_archive_must_have_identical_members (test_build_release.ReleaseBuilderTests.test_manifest_and_archive_must_have_identical_members) ... ok
+test_outputs_are_reproducible_and_index_is_optional (test_build_release.ReleaseBuilderTests.test_outputs_are_reproducible_and_index_is_optional) ... ok
+test_pinned_archive_digest_is_required (test_build_release.ReleaseBuilderTests.test_pinned_archive_digest_is_required) ... ok
+test_production_wrapper_locks_flags_and_trusts_one_proxy (test_build_release.ReleaseBuilderTests.test_production_wrapper_locks_flags_and_trusts_one_proxy) ... ok
+test_rejects_duplicate_archive_members (test_build_release.ReleaseBuilderTests.test_rejects_duplicate_archive_members) ... ok
+test_rejects_symlinks_even_outside_whitelist (test_build_release.ReleaseBuilderTests.test_rejects_symlinks_even_outside_whitelist) ... ok
+test_rejects_traversal_and_nonportable_archive_paths (test_build_release.ReleaseBuilderTests.test_rejects_traversal_and_nonportable_archive_paths) ... ok
+test_verifies_excluded_files_too (test_build_release.ReleaseBuilderTests.test_verifies_excluded_files_too) ... ok
+test_version_ids_cannot_escape_output (test_build_release.ReleaseBuilderTests.test_version_ids_cannot_escape_output) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.058s
+
+OK

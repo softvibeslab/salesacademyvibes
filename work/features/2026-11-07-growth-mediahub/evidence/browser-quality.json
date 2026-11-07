@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "route": "/descubre/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/mediahub/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/descubre/diagnostico/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/mediahub/piloto-en-tres-salas/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "route": "/descubre/analisis/",
+      "reflowEquivalent200Percent": true
+    },
+    {
+      "keyboardDiagnostic": true,
+      "skipLink": true,
+      "visibleFocus": true,
+      "primaryTargetMinimum44": true,
+      "reducedMotion": true
+    },
+    {
+      "route": "/cms/",
+      "reflowEquivalent200Percent": true
+    }
+  ],
+  "landingBudget": {
+    "assets": [
+      {
+        "url": "/descubre/",
+        "bytes": 19198,
+        "gzipBytes": 5427
+      },
+      {
+        "url": "/growth-assets/site.css",
+        "bytes": 35641,
+        "gzipBytes": 6965
+      },
+      {
+        "url": "/growth-assets/site.mjs",
+        "bytes": 4009,
+        "gzipBytes": 1463
+      },
+      {
+        "url": "/growth-assets/mark.svg",
+        "bytes": 206,
+        "gzipBytes": 184
+      },
+      {
+        "url": "/growth-assets/product-demo.png",
+        "bytes": 78780,
+        "gzipBytes": 77165
+      }
+    ],
+    "uncompressedBytes": 137834,
+    "estimatedGzipBytes": 91204,
+    "limitBytes": 500000
+  },
+  "limitations": "200% reflow modeled as 720 CSS pixels and DPR2 on a 1440-pixel display. Not a screen-reader certification or field Core Web Vitals measurement."
+}

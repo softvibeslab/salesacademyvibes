@@ -1,0 +1,39 @@
+{
+  "overall_score": 13,
+  "categories": {
+    "cta_buttons": {
+      "score": 0,
+      "button_count": 0,
+      "cta_link_count": 0,
+      "cta_text_count": 0,
+      "above_fold_ctas": 0,
+      "weight": "30%"
+    },
+    "social_proof": {
+      "score": 0,
+      "testimonial_signals": 0,
+      "logo_badge_images": 0,
+      "total_signals": 0,
+      "weight": "25%"
+    },
+    "trust_signals": {
+      "score": 20,
+      "ssl_mentions": 0,
+      "guarantee_mentions": 0,
+      "privacy_mentions": 0,
+      "weight": "20%"
+    },
+    "forms": {
+      "score": 60,
+      "form_count": 0,
+      "field_count": 0,
+      "note": "No form detected (OK if not a lead gen page)",
+      "weight": "15%"
+    },
+    "viewport_mobile": {
+      "score": 0,
+      "viewport_meta_present": false,
+      "weight": "10%"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+test_cms_cover_takes_priority_over_curated_poster (growth.tests.test_videos.CuratedVideoContract.test_cms_cover_takes_priority_over_curated_poster) ... FAIL
+
+======================================================================
+FAIL: test_cms_cover_takes_priority_over_curated_poster (growth.tests.test_videos.CuratedVideoContract.test_cms_cover_takes_priority_over_curated_poster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_videos.py", line 189, in test_cms_cover_takes_priority_over_curated_poster
+    self.assertNotIn('/growth-assets/films/smart-agent.webp', markup)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '/growth-assets/films/smart-agent.webp' unexpectedly found in '\n<article\n  class="resource-card"\n  data-resource-card\n  data-title="película de prueba"\n  data-role="rep"\n  data-topic="practice"\n  data-type="video"\n>\n  <a\n    class="resource-art art-video"\n    href="/mediahub/pelicula-de-prueba/"\n    tabindex="-1"\n    aria-hidden="true"\n  >\n    <img\n      src="/media/reviewed-cover-fixture/web"\n      alt=""\n      loading="lazy"\n    />\n  </a>\n  <div class="resource-info">\n    <div class="meta">\n      <span\n        >Video</span\n      ><span>20 segundos</span>\n    </div>\n    <h3>\n      <a\n        href="/mediahub/pelicula-de-prueba/"\n        >Película de prueba <span aria-hidden="true">↗</span></a\n      >\n    </h3>\n    <p>Guía de preparación</p>\n    <span class="resource-role"\n      >Para representantes</span\n    >\n  </div>\n</article>\n\n\n\n<figure class="film-player" data-film-player>\n  <video\n    class="film-player-video"\n    controls\n    playsinline\n    preload="none"\n    width="576"\n    height="1024"\n    poster="/growth-assets/films/smart-agent.webp"\n    aria-label="Película de prueba. Película con subtítulos en español."\n  >\n    <source src="/growth-assets/films/smart-agent.mp4" type="video/mp4" />\n    <track kind="captions" src="/growth-assets/films/smart-agent.es.vtt" srclang="es" label="Español" default />\n    Tu navegador no puede reproducir este video. Puedes leer su contenido en esta página.\n  </video>\n  <figcaption>\n    <span class="film-player-label">PELÍCULA CONCEPTUAL · SALES ACADEMY</span>\n    <p class="film-player-hint">Reproduce cuando quieras. Audio y subtítulos disponibles.</p>\n    <p class="film-player-error" data-video-error role="status" hidden>No se pudo cargar la película. Puedes reintentar o continuar con el contenido escrito.</p>\n    <button class="button button-small button-outline" type="button" data-video-retry hidden>Reintentar video</button>\n  </figcaption>\n</figure>\n\n'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.317s
+
+FAILED (failures=1)

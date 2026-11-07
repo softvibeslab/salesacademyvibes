@@ -1,0 +1,48 @@
+test_authentication_csrf_and_server_roles (growth.tests.test_backend.BackendAcceptance.test_authentication_csrf_and_server_roles) ... ok
+test_demo_request_validation_idempotency_and_disabled_contact (growth.tests.test_backend.BackendAcceptance.test_demo_request_validation_idempotency_and_disabled_contact) ... ok
+test_drafts_survive_restart_and_conflict_without_losing_publication (growth.tests.test_backend.BackendAcceptance.test_drafts_survive_restart_and_conflict_without_losing_publication) ... ok
+test_events_allowlist_deduplication_and_metrics_privacy (growth.tests.test_backend.BackendAcceptance.test_events_allowlist_deduplication_and_metrics_privacy) ... ok
+test_invalid_value_types_are_validation_errors (growth.tests.test_backend.BackendAcceptance.test_invalid_value_types_are_validation_errors) ... ok
+test_media_routes_usages_and_failed_publication_preserve_active_snapshot (growth.tests.test_backend.BackendAcceptance.test_media_routes_usages_and_failed_publication_preserve_active_snapshot) ... FAIL
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py:668: ResourceWarning: unclosed file <_io.BufferedReader name='/private/var/folders/st/6m6rs6vd4dx8mv_52r4c1d8w0000gn/T/tmpbymxjchz/media/derived/m_f15e8528aa324589a92f721b2a76971c.web.webp'>
+  with outcome.testPartExecutor(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_owner_protection_and_session_revocation (growth.tests.test_backend.BackendAcceptance.test_owner_protection_and_session_revocation) ... ok
+test_pdf_attachment_and_pagination_limits (growth.tests.test_backend.BackendAcceptance.test_pdf_attachment_and_pagination_limits) ... /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/case.py:615: ResourceWarning: unclosed file <_io.BufferedReader name='/private/var/folders/st/6m6rs6vd4dx8mv_52r4c1d8w0000gn/T/tmpw44bulaj/media/derived/m_af15a45008854ab1a899e8a66464b158.download.pdf'>
+  result = method()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_publication_restore_is_atomic_and_does_not_revert_requests (growth.tests.test_backend.BackendAcceptance.test_publication_restore_is_atomic_and_does_not_revert_requests) ... ok
+test_rate_limits_are_enforced_and_wrong_login_is_generic (growth.tests.test_backend.BackendAcceptance.test_rate_limits_are_enforced_and_wrong_login_is_generic) ... ok
+test_retention_removes_only_expired_records_and_preserves_editorial_data (growth.tests.test_backend.BackendAcceptance.test_retention_removes_only_expired_records_and_preserves_editorial_data) ... FAIL
+test_schema_validation_and_stable_slug (growth.tests.test_backend.BackendAcceptance.test_schema_validation_and_stable_slug) ... ok
+test_security_headers_content_escape_and_json_errors (growth.tests.test_backend.BackendAcceptance.test_security_headers_content_escape_and_json_errors) ... ok
+test_unpublished_resources_are_private_and_filtering_is_server_side (growth.tests.test_backend.BackendAcceptance.test_unpublished_resources_are_private_and_filtering_is_server_side) ... ok
+
+======================================================================
+FAIL: test_media_routes_usages_and_failed_publication_preserve_active_snapshot (growth.tests.test_backend.BackendAcceptance.test_media_routes_usages_and_failed_publication_preserve_active_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 215, in test_media_routes_usages_and_failed_publication_preserve_active_snapshot
+    self.assertEqual(image_response.mimetype,'image/webp')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'image/png' != 'image/webp'
+- image/png
+?        --
++ image/webp
+?       +++
+
+
+======================================================================
+FAIL: test_retention_removes_only_expired_records_and_preserves_editorial_data (growth.tests.test_backend.BackendAcceptance.test_retention_removes_only_expired_records_and_preserves_editorial_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 260, in test_retention_removes_only_expired_records_and_preserves_editorial_data
+    self.assertEqual(counts['requests'],1);self.assertEqual(counts['events'],2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.025s
+
+FAILED (failures=2)

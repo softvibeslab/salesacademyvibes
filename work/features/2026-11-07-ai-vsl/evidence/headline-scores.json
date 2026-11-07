@@ -1,0 +1,236 @@
+[
+  {
+    "headline": "Agentes de IA. Tu m\u00e9todo, presente en cada conversaci\u00f3n.",
+    "overall_score": 30,
+    "grade": "F",
+    "breakdown": {
+      "power_words": {
+        "score": 0,
+        "found": [],
+        "weight": "25%"
+      },
+      "emotional_triggers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "numbers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "length": {
+        "score": 100,
+        "note": "9 words \u2014 optimal (6-12)",
+        "weight": "20%"
+      },
+      "specificity": {
+        "score": 0,
+        "signals": [],
+        "weight": "15%"
+      },
+      "clarity": {
+        "score": 100,
+        "note": "No jargon detected",
+        "weight": "10%"
+      }
+    }
+  },
+  {
+    "headline": "Agentes de IA para preparar, practicar y acompa\u00f1ar a tu equipo.",
+    "overall_score": 30,
+    "grade": "F",
+    "breakdown": {
+      "power_words": {
+        "score": 0,
+        "found": [],
+        "weight": "25%"
+      },
+      "emotional_triggers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "numbers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "length": {
+        "score": 100,
+        "note": "11 words \u2014 optimal (6-12)",
+        "weight": "20%"
+      },
+      "specificity": {
+        "score": 0,
+        "signals": [],
+        "weight": "15%"
+      },
+      "clarity": {
+        "score": 100,
+        "note": "No jargon detected",
+        "weight": "10%"
+      }
+    }
+  },
+  {
+    "headline": "Tu sala, acompa\u00f1ada por agentes de inteligencia artificial.",
+    "overall_score": 30,
+    "grade": "F",
+    "breakdown": {
+      "power_words": {
+        "score": 0,
+        "found": [],
+        "weight": "25%"
+      },
+      "emotional_triggers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "numbers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "length": {
+        "score": 100,
+        "note": "8 words \u2014 optimal (6-12)",
+        "weight": "20%"
+      },
+      "specificity": {
+        "score": 0,
+        "signals": [],
+        "weight": "15%"
+      },
+      "clarity": {
+        "score": 100,
+        "note": "No jargon detected",
+        "weight": "10%"
+      }
+    }
+  },
+  {
+    "headline": "Agentes de IA: una ruta simple para tus 3 salas.",
+    "overall_score": 61,
+    "grade": "C",
+    "breakdown": {
+      "power_words": {
+        "score": 45,
+        "found": [
+          "simple"
+        ],
+        "weight": "25%"
+      },
+      "emotional_triggers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "numbers": {
+        "score": 100,
+        "found": [
+          "3"
+        ],
+        "weight": "15%"
+      },
+      "length": {
+        "score": 100,
+        "note": "10 words \u2014 optimal (6-12)",
+        "weight": "20%"
+      },
+      "specificity": {
+        "score": 34,
+        "signals": [
+          "contains number"
+        ],
+        "weight": "15%"
+      },
+      "clarity": {
+        "score": 100,
+        "note": "No jargon detected",
+        "weight": "10%"
+      }
+    }
+  },
+  {
+    "headline": "Agentes de IA: una jornada simple en 6 momentos.",
+    "overall_score": 61,
+    "grade": "C",
+    "breakdown": {
+      "power_words": {
+        "score": 45,
+        "found": [
+          "simple"
+        ],
+        "weight": "25%"
+      },
+      "emotional_triggers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "numbers": {
+        "score": 100,
+        "found": [
+          "6"
+        ],
+        "weight": "15%"
+      },
+      "length": {
+        "score": 100,
+        "note": "9 words \u2014 optimal (6-12)",
+        "weight": "20%"
+      },
+      "specificity": {
+        "score": 34,
+        "signals": [
+          "contains number"
+        ],
+        "weight": "15%"
+      },
+      "clarity": {
+        "score": 100,
+        "note": "No jargon detected",
+        "weight": "10%"
+      }
+    }
+  },
+  {
+    "headline": "La IA que lleva tu m\u00e9todo a la siguiente conversaci\u00f3n.",
+    "overall_score": 30,
+    "grade": "F",
+    "breakdown": {
+      "power_words": {
+        "score": 0,
+        "found": [],
+        "weight": "25%"
+      },
+      "emotional_triggers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "numbers": {
+        "score": 0,
+        "found": [],
+        "weight": "15%"
+      },
+      "length": {
+        "score": 100,
+        "note": "10 words \u2014 optimal (6-12)",
+        "weight": "20%"
+      },
+      "specificity": {
+        "score": 0,
+        "signals": [],
+        "weight": "15%"
+      },
+      "clarity": {
+        "score": 100,
+        "note": "No jargon detected",
+        "weight": "10%"
+      }
+    }
+  }
+]

@@ -1,0 +1,526 @@
+[
+  {
+    "width": 980,
+    "requested": "start",
+    "afterMs": 100,
+    "active": "start",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 508.92816162109375,
+        "gap": 46.41253662109375
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 748.0703125,
+        "gap": 285.5546875
+      },
+      {
+        "class": "journey-device",
+        "left": 610.6727905273438,
+        "gap": 148.15716552734375
+      }
+    ],
+    "minimumGap": 46.41253662109375,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "start",
+    "afterMs": 1300,
+    "active": "start",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 508.92816162109375,
+        "gap": 46.41253662109375
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 748.0703125,
+        "gap": 285.5546875
+      },
+      {
+        "class": "journey-device",
+        "left": 610.6727905273438,
+        "gap": 148.15716552734375
+      }
+    ],
+    "minimumGap": 46.41253662109375,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "method",
+    "afterMs": 100,
+    "active": "method",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 585.7948608398438,
+        "gap": 123.27923583984375
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 687.085693359375,
+        "gap": 224.570068359375
+      },
+      {
+        "class": "journey-device",
+        "left": 585.4225463867188,
+        "gap": 122.90692138671875
+      }
+    ],
+    "minimumGap": 122.90692138671875,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "method",
+    "afterMs": 1300,
+    "active": "method",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 580.9705810546875,
+        "gap": 118.4549560546875
+      }
+    ],
+    "minimumGap": 118.4549560546875,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "practice",
+    "afterMs": 100,
+    "active": "practice",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 620.7750854492188,
+        "gap": 158.25946044921875
+      }
+    ],
+    "minimumGap": 158.25946044921875,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "practice",
+    "afterMs": 1300,
+    "active": "practice",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 620.1568603515625,
+        "gap": 157.6412353515625
+      }
+    ],
+    "minimumGap": 157.6412353515625,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "coaching",
+    "afterMs": 100,
+    "active": "coaching",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 588.6553955078125,
+        "gap": 126.1397705078125
+      }
+    ],
+    "minimumGap": 126.1397705078125,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "coaching",
+    "afterMs": 1300,
+    "active": "coaching",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 583.9802856445312,
+        "gap": 121.46466064453125
+      }
+    ],
+    "minimumGap": 121.46466064453125,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "scale",
+    "afterMs": 100,
+    "active": "scale",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 594.3846435546875,
+        "gap": 131.8690185546875
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 737.072265625,
+        "gap": 274.556640625
+      },
+      {
+        "class": "journey-device",
+        "left": 639.7739868164062,
+        "gap": 177.25836181640625
+      }
+    ],
+    "minimumGap": 131.8690185546875,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "scale",
+    "afterMs": 1300,
+    "active": "scale",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 546.9210815429688,
+        "gap": 84.40545654296875
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 754.2842407226562,
+        "gap": 291.76861572265625
+      },
+      {
+        "class": "journey-device",
+        "left": 641.58837890625,
+        "gap": 179.07275390625
+      }
+    ],
+    "minimumGap": 84.40545654296875,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "start",
+    "afterMs": 100,
+    "active": "start",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 547.9213256835938,
+        "gap": 85.40570068359375
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 738.428955078125,
+        "gap": 275.913330078125
+      },
+      {
+        "class": "journey-device",
+        "left": 611.4900512695312,
+        "gap": 148.97442626953125
+      }
+    ],
+    "minimumGap": 85.40570068359375,
+    "overflow": false
+  },
+  {
+    "width": 980,
+    "requested": "start",
+    "afterMs": 1300,
+    "active": "start",
+    "copyRight": 462.515625,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 508.92816162109375,
+        "gap": 46.41253662109375
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 748.0703125,
+        "gap": 285.5546875
+      },
+      {
+        "class": "journey-device",
+        "left": 610.6727905273438,
+        "gap": 148.15716552734375
+      }
+    ],
+    "minimumGap": 46.41253662109375,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "start",
+    "afterMs": 100,
+    "active": "start",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 726.306640625,
+        "gap": 131.306640625
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 1136.28125,
+        "gap": 541.28125
+      },
+      {
+        "class": "journey-device",
+        "left": 922.2090454101562,
+        "gap": 327.20904541015625
+      }
+    ],
+    "minimumGap": 131.306640625,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "start",
+    "afterMs": 1300,
+    "active": "start",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 726.306640625,
+        "gap": 131.306640625
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 1136.28125,
+        "gap": 541.28125
+      },
+      {
+        "class": "journey-device",
+        "left": 922.2090454101562,
+        "gap": 327.20904541015625
+      }
+    ],
+    "minimumGap": 131.306640625,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "method",
+    "afterMs": 100,
+    "active": "method",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 802.1057739257812,
+        "gap": 207.10577392578125
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 1074.5950927734375,
+        "gap": 479.5950927734375
+      },
+      {
+        "class": "journey-device",
+        "left": 888.2278442382812,
+        "gap": 293.22784423828125
+      }
+    ],
+    "minimumGap": 207.10577392578125,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "method",
+    "afterMs": 1300,
+    "active": "method",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 882.5668334960938,
+        "gap": 287.56683349609375
+      }
+    ],
+    "minimumGap": 287.56683349609375,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "practice",
+    "afterMs": 100,
+    "active": "practice",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 938.5402221679688,
+        "gap": 343.54022216796875
+      }
+    ],
+    "minimumGap": 343.54022216796875,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "practice",
+    "afterMs": 1300,
+    "active": "practice",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 938.1050415039062,
+        "gap": 343.10504150390625
+      }
+    ],
+    "minimumGap": 343.10504150390625,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "coaching",
+    "afterMs": 100,
+    "active": "coaching",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 890.6295166015625,
+        "gap": 295.6295166015625
+      }
+    ],
+    "minimumGap": 295.6295166015625,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "coaching",
+    "afterMs": 1300,
+    "active": "coaching",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-device",
+        "left": 884.3170776367188,
+        "gap": 289.31707763671875
+      }
+    ],
+    "minimumGap": 289.31707763671875,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "scale",
+    "afterMs": 100,
+    "active": "scale",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 836.3824462890625,
+        "gap": 241.3824462890625
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 1129.0751953125,
+        "gap": 534.0751953125
+      },
+      {
+        "class": "journey-device",
+        "left": 960.4319458007812,
+        "gap": 365.43194580078125
+      }
+    ],
+    "minimumGap": 241.3824462890625,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "scale",
+    "afterMs": 1300,
+    "active": "scale",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 783.0859375,
+        "gap": 188.0859375
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 1140.4757080078125,
+        "gap": 545.4757080078125
+      },
+      {
+        "class": "journey-device",
+        "left": 963.0810546875,
+        "gap": 368.0810546875
+      }
+    ],
+    "minimumGap": 188.0859375,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "start",
+    "afterMs": 100,
+    "active": "start",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 766.8696899414062,
+        "gap": 171.86968994140625
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 1132.1304931640625,
+        "gap": 537.1304931640625
+      },
+      {
+        "class": "journey-device",
+        "left": 923.0338745117188,
+        "gap": 328.03387451171875
+      }
+    ],
+    "minimumGap": 171.86968994140625,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "requested": "start",
+    "afterMs": 1300,
+    "active": "start",
+    "copyRight": 595,
+    "layers": [
+      {
+        "class": "journey-companion journey-companion-left",
+        "left": 726.306640625,
+        "gap": 131.306640625
+      },
+      {
+        "class": "journey-companion journey-companion-right",
+        "left": 1136.28125,
+        "gap": 541.28125
+      },
+      {
+        "class": "journey-device",
+        "left": 922.2090454101562,
+        "gap": 327.20904541015625
+      }
+    ],
+    "minimumGap": 131.306640625,
+    "overflow": false
+  }
+]

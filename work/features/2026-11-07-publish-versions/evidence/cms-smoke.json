@@ -1,0 +1,381 @@
+{
+  "checks": [
+    {
+      "version": "v1",
+      "check": "anonymous_session_401",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "login_https_200",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "cookie_secure_httponly_strict_hostonly",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "session_owner",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "read_only_/cms/api/draft",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "read_only_/cms/api/resources",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "read_only_/cms/api/revisions",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "read_only_/cms/preview/",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "read_only_/cms/preview/?page=hub",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "logout_without_csrf_403",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "foreign_origin_403",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "session_survives_rejected_posts",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "cookie_not_sent_to_other_version",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "logout_with_csrf",
+      "ok": true
+    },
+    {
+      "version": "v1",
+      "check": "logged_out_401",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "anonymous_session_401",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "login_https_200",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "cookie_secure_httponly_strict_hostonly",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "session_owner",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "read_only_/cms/api/draft",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "read_only_/cms/api/resources",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "read_only_/cms/api/revisions",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "read_only_/cms/preview/",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "read_only_/cms/preview/?page=hub",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "logout_without_csrf_403",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "foreign_origin_403",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "session_survives_rejected_posts",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "cookie_not_sent_to_other_version",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "logout_with_csrf",
+      "ok": true
+    },
+    {
+      "version": "v2",
+      "check": "logged_out_401",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "anonymous_session_401",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "login_https_200",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "cookie_secure_httponly_strict_hostonly",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "session_owner",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "read_only_/cms/api/draft",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "read_only_/cms/api/resources",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "read_only_/cms/api/revisions",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "read_only_/cms/preview/",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "read_only_/cms/preview/?page=hub",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "logout_without_csrf_403",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "foreign_origin_403",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "session_survives_rejected_posts",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "cookie_not_sent_to_other_version",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "logout_with_csrf",
+      "ok": true
+    },
+    {
+      "version": "v3",
+      "check": "logged_out_401",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "anonymous_session_401",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "login_https_200",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "cookie_secure_httponly_strict_hostonly",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "session_owner",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "read_only_/cms/api/draft",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "read_only_/cms/api/resources",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "read_only_/cms/api/revisions",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "read_only_/cms/preview/",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "read_only_/cms/preview/?page=hub",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "logout_without_csrf_403",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "foreign_origin_403",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "session_survives_rejected_posts",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "cookie_not_sent_to_other_version",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "logout_with_csrf",
+      "ok": true
+    },
+    {
+      "version": "v4",
+      "check": "logged_out_401",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "anonymous_session_401",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "login_https_200",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "cookie_secure_httponly_strict_hostonly",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "session_owner",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "read_only_/cms/api/draft",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "read_only_/cms/api/resources",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "read_only_/cms/api/revisions",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "read_only_/cms/preview/",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "read_only_/cms/preview/?page=hub",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "logout_without_csrf_403",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "foreign_origin_403",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "session_survives_rejected_posts",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "cookie_not_sent_to_other_version",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "logout_with_csrf",
+      "ok": true
+    },
+    {
+      "version": "v5",
+      "check": "logged_out_401",
+      "ok": true
+    }
+  ],
+  "passed": 75,
+  "failed": 0
+}

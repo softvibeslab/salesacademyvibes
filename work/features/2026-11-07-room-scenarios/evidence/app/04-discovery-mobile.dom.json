@@ -1,0 +1,178 @@
+{
+  "url": "https://salesacademy.softvibes.art/",
+  "title": "Sales Academy",
+  "bodyText": "chevron_left\nRoadmap\nPaso 4\nPASO 4 DE 11\nCómo funciona\nDescubrimiento\n\nEscuchas dolor, presupuesto y si pueden decidir.\n\nVIDEO DEMO\nDiagnóstico antes de presentar\n\nDemo del paso. La práctica sigue en el Copiloto.\n\nGUION\n¿Qué tendría que pasar hoy para que esto les haga sentido?\nRegla. El mensaje se queda en lo publicado por la sala.\nERRORES FRECUENTES\nhelp\nPresentar antes de escuchar.\nhelp\nAsumir el presupuesto.\nhelp\nHablar tú más que ellos.\nCHECKLIST\ncheck_circle\nEl presupuesto está en sus palabras.\ncheck_circle\nSabes quién decide.\ncheck_circle\nAnotaste una objeción.\n\nAntes de cualquier número.\n\nEjecutar paso en el Copiloto\n\nEste paso ya está listo.\n\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "chevron_left\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Cómo funciona",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-act",
+          "how"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "IFRAME",
+      "text": "",
+      "href": null,
+      "src": "https://www.youtube-nocookie.com/embed/PkB9UAx2fuI?rel=0",
+      "attributes": []
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ejecutar paso en el Copiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "data-q",
+          "pasos de la presentación"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "home\nHome",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "hoy"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "timeline\nRoadmap",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "roadmap"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "smart_toy\nCopiloto",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "coach"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "local_library\nRecursos",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "resources"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "person\nPerfil",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "data-go",
+          "perfil"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    },
+    {
+      "tag": "BUTTON",
+      "text": "+",
+      "value": "",
+      "href": null,
+      "src": null,
+      "attributes": [
+        [
+          "id",
+          "fab"
+        ],
+        [
+          "type",
+          "button"
+        ]
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "url": "",
+      "bodyText": "",
+      "title": "YouTube"
+    }
+  ]
+}

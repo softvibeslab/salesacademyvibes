@@ -1,0 +1,15 @@
+test_password_reset_during_login_cannot_create_stale_session (growth.tests.test_backend.BackendAcceptance.test_password_reset_during_login_cannot_create_stale_session) ... FAIL
+
+======================================================================
+FAIL: test_password_reset_during_login_cannot_create_stale_session (growth.tests.test_backend.BackendAcceptance.test_password_reset_during_login_cannot_create_stale_session)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 287, in test_password_reset_during_login_cannot_create_stale_session
+    self.assertEqual(response.status_code,401)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 200 != 401
+
+----------------------------------------------------------------------
+Ran 1 test in 0.204s
+
+FAILED (failures=1)

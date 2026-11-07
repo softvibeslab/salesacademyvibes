@@ -1,0 +1,28 @@
+# Perfil del módulo. No declara instalado Ecosistema 360 en el producto.
+project:
+  name: sales-academy-growth
+  description: Landing, diagnóstico, mediahub y CMS editorial independiente
+  owner_accountable: Roger
+active_layers:
+  - frontend
+  - backend
+  - data
+runtime:
+  frontend: vanilla-js-jinja-css
+  backend: python-flask
+  data: sqlite-local-files
+conventions:
+  functional_docs_language: es
+  code_language: en
+  feature_workdir: work/features
+verification:
+  required_env: "GROWTH_PYTHON"
+  required_tools: "node"
+  build_cmd: "${GROWTH_PYTHON} -m compileall -q growth/server"
+  test_cmd: "${GROWTH_PYTHON} -m unittest discover -s growth/tests -p 'test_*.py' -v && node --test growth/tests/diagnostic.test.mjs growth/tests/journey.test.mjs"
+  lint_cmd: "node --check growth/site/assets/site.mjs && node --check growth/site/assets/cms.mjs && node --check growth/site/assets/diagnostic-ui.mjs && node --check growth/site/assets/journey.mjs && node --check growth/site/assets/journey-math.mjs && node --check growth/site/assets/media-player.mjs && node --check growth/site/assets/scenarios/scenarios.mjs"
+  secret_scan_cmd: "${GROWTH_PYTHON} growth/verify_artifacts.py"
+  openapi: ""
+knowledge:
+  hermes: disabled
+  default_context: workspace

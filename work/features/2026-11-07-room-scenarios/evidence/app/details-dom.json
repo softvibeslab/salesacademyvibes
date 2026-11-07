@@ -1,0 +1,1385 @@
+[
+  {
+    "name": "SK-09",
+    "body": "chevron_left\nRecursos\nPlantilla\nSK-09 · MEDIR · BASE\nMeta del mes\n\nEl volumen que quieres cerrar este mes.\n\nMeta\nVISTA PREVIA\n$60,000.00\n\nMeta del mes\n\nEjemplo de volumen.\n\nAl Copiloto: mi meta es 60000\n\nUsar esta plantilla\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "60000",
+        "href": null,
+        "attrs": [
+          [
+            "data-field",
+            "goal"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Usar esta plantilla",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "use-template"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": []
+  },
+  {
+    "name": "SK-13",
+    "body": "chevron_left\nRecursos\nPlantilla\nSK-13 · PRACTICAR · BASE\nPracticar objeción\n\nDinero, pareja, tiempo o escepticismo.\n\nObjeción\nDinero\nPareja\nTiempo\nEscepticismo\nVISTA PREVIA\ntiempo\n\nObjeción\n\n1\nAislar\n2\nReencuadrar\n3\nCerrar\n\nLa respuesta va al manager.\n\nAl Copiloto: quiero practicar la objeción de tiempo\n\nUsar esta plantilla\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "SELECT",
+        "text": "Dinero\nPareja\nTiempo\nEscepticismo",
+        "value": "tiempo",
+        "href": null,
+        "attrs": [
+          [
+            "data-field",
+            "category"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Usar esta plantilla",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "use-template"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": []
+  },
+  {
+    "name": "SK-14",
+    "body": "chevron_left\nRecursos\nPlantilla\nSK-14 · APRENDER · BASE\nPreparar mi tour\n\nQuién llega. Sin apellidos ni datos reales.\n\nPerfil\nVISTA PREVIA\n\nCompleta la plantilla para ver el resultado.\n\nAl Copiloto: prepárame para una pareja de jubilados\n\nUsar esta plantilla\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "una pareja de jubilados",
+        "href": null,
+        "attrs": [
+          [
+            "data-field",
+            "profile"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Usar esta plantilla",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "use-template"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": []
+  },
+  {
+    "name": "SK-15",
+    "body": "chevron_left\nRecursos\nPlantilla\nSK-15 · APRENDER · BASE\nDespués del tour\n\nQué aprendiste y qué practicar después de cada tour.\n\nVISTA PREVIA\n\nQué salió en el último tour y qué conviene practicar después.\n\nSe ejecuta con la frase de abajo.\n\nAl Copiloto: ¿cómo me fue en el último tour?\n\nUsar esta plantilla\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Usar esta plantilla",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "use-template"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": []
+  },
+  {
+    "name": "SK-18",
+    "body": "chevron_left\nRecursos\nPlantilla\nSK-18 · MEDIR · BASE\nSala del manager\n\nRanking de reps, alertas de cierre y asignar práctica.\n\nVISTA PREVIA\n\nRanking de la sala de ejemplo. Solo manager y admin.\n\nSe ejecuta con la frase de abajo.\n\nAl Copiloto: ranking de mi sala\n\nUsar esta plantilla\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Usar esta plantilla",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "use-template"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": []
+  },
+  {
+    "name": "LIB-02",
+    "body": "chevron_left\nRecursos\nPlantilla\nLIB-02\nObjeción de dinero: \"está muy caro\"\n\ndinero · precio · enganche\n\nPregunta\nVISTA PREVIA\n\nPregunta qué mensualidad le resulta cómoda y usa \"¿Cuánto puede pagar?\" para mostrar el paquete que sí le cabe. No negocies precio fuera de lo publicado por la sala; si pide descuento, deriva al manager.\n\nGuion de la sala de ejemplo.\n\nAl Copiloto: ¿qué le digo si está muy caro?\n\nUsar esta plantilla\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "¿qué le digo si está muy caro?",
+        "href": null,
+        "attrs": [
+          [
+            "data-field",
+            "query"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Usar esta plantilla",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "use-template"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": []
+  },
+  {
+    "name": "module4",
+    "body": "chevron_left\nRoadmap\nPaso 4\nPASO 4 DE 11\nCómo funciona\nDescubrimiento\n\nEscuchas dolor, presupuesto y si pueden decidir.\n\nVIDEO DEMO\nDiagnóstico antes de presentar\n\nDemo del paso. La práctica sigue en el Copiloto.\n\nGUION\n¿Qué tendría que pasar hoy para que esto les haga sentido?\nRegla. El mensaje se queda en lo publicado por la sala.\nERRORES FRECUENTES\nhelp\nPresentar antes de escuchar.\nhelp\nAsumir el presupuesto.\nhelp\nHablar tú más que ellos.\nCHECKLIST\ncheck_circle\nEl presupuesto está en sus palabras.\ncheck_circle\nSabes quién decide.\ncheck_circle\nAnotaste una objeción.\n\nAntes de cualquier número.\n\nEjecutar paso en el Copiloto\n\nEste paso ya está listo.\n\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Cómo funciona",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "how"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Ejecutar paso en el Copiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "data-q",
+            "pasos de la presentación"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": [
+      {
+        "url": "",
+        "body": "",
+        "controls": []
+      }
+    ]
+  },
+  {
+    "name": "priorities",
+    "body": "chevron_left\nHome\nMetas del día\nDía\n10:45\n11:00\n15:00\nGuardar metas\nhome\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "chevron_left\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "Confirmar seguimiento",
+        "href": null,
+        "attrs": [
+          [
+            "data-goal",
+            "p1"
+          ]
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "Practicar preguntas de descubrimiento",
+        "href": null,
+        "attrs": [
+          [
+            "data-goal",
+            "p2"
+          ]
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "value": "Preparar tour presencial",
+        "href": null,
+        "attrs": [
+          [
+            "data-goal",
+            "p3"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Guardar metas",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-act",
+            "save-goals"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": []
+  },
+  {
+    "name": "copiloto",
+    "body": "home\nHome\ntimeline\nRoadmap\nsmart_toy\nCopiloto\nlocal_library\nRecursos\nperson\nPerfil\n+",
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "text": "home\nHome",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "hoy"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "timeline\nRoadmap",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "roadmap"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "smart_toy\nCopiloto",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "coach"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "local_library\nRecursos",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "resources"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "person\nPerfil",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "data-go",
+            "perfil"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "text": "+",
+        "value": "",
+        "href": null,
+        "attrs": [
+          [
+            "id",
+            "fab"
+          ],
+          [
+            "type",
+            "button"
+          ]
+        ]
+      }
+    ],
+    "frames": [
+      {
+        "url": "",
+        "body": "Sales Academy\n\nCopiloto\nSala \nS1\nS2\nS3\n Rol \nRep\nManager\nAdmin\nEscríbele a tu copiloto  Enviar\n+",
+        "controls": [
+          {
+            "tag": "SELECT",
+            "text": "S1\nS2\nS3",
+            "value": "S1",
+            "attrs": [
+              [
+                "data-testid",
+                "sala"
+              ],
+              [
+                "id",
+                "sala"
+              ]
+            ]
+          },
+          {
+            "tag": "SELECT",
+            "text": "Rep\nManager\nAdmin",
+            "value": "sales_rep",
+            "attrs": [
+              [
+                "data-testid",
+                "role"
+              ],
+              [
+                "id",
+                "role"
+              ]
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "text": "",
+            "value": "",
+            "attrs": [
+              [
+                "id",
+                "composer"
+              ],
+              [
+                "data-testid",
+                "composer"
+              ],
+              [
+                "placeholder",
+                "Cotiza, registra o pregunta"
+              ]
+            ]
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Enviar",
+            "value": "",
+            "attrs": [
+              [
+                "type",
+                "submit"
+              ],
+              [
+                "data-testid",
+                "send"
+              ]
+            ]
+          },
+          {
+            "tag": "BUTTON",
+            "text": "+",
+            "value": "",
+            "attrs": [
+              [
+                "id",
+                "fab"
+              ],
+              [
+                "type",
+                "button"
+              ],
+              [
+                "data-testid",
+                "fab"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

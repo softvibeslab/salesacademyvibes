@@ -1,0 +1,60 @@
+{
+  "createdAt": "2026-11-07T12:14:54.825Z",
+  "method": "Local HTML rendered with Chromium at DPR1; raw screenshots remain unchanged",
+  "items": [
+    {
+      "id": "daily-intention",
+      "file": "01-daily-intention.png",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 566514,
+      "sha256": "6b60cf20f148917af470fdea242b7dc68ed48c84686d9a5c1dbaf11c8e21c9ac",
+      "classification": "Composición editorial: captura real de demo + fotografía IA + relato ficticio"
+    },
+    {
+      "id": "tour-preparation",
+      "file": "02-tour-preparation.png",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 572370,
+      "sha256": "18cc47b806ac712e0f37029e0a3507df9a5ea3330f0fa9674c869668fb49bfc4",
+      "classification": "Composición editorial: captura real de demo + fotografía IA + relato ficticio"
+    },
+    {
+      "id": "needs-discovery",
+      "file": "03-needs-discovery.png",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 615616,
+      "sha256": "ebb3cab6d0cc1cfe85a136ff2954fe87a98aaef3df060b058389262185955d6a",
+      "classification": "Composición editorial: captura real de demo + fotografía IA + relato ficticio"
+    },
+    {
+      "id": "objection-practice",
+      "file": "04-objection-practice.png",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 575260,
+      "sha256": "2114a395b0c65d8639445c7af0a3a599dcd65fc52330db6b736d562538e87f90",
+      "classification": "Composición editorial: captura real de demo + fotografía IA + relato ficticio"
+    },
+    {
+      "id": "leader-coaching",
+      "file": "05-leader-coaching.png",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 573803,
+      "sha256": "0977bd5934c99bbef1e6141a831854dfd0b0be7a4a582edaccca417a71dcf0ec",
+      "classification": "Composición editorial: captura real de demo + fotografía IA + relato ficticio"
+    },
+    {
+      "id": "learning-close",
+      "file": "06-learning-close.png",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 598800,
+      "sha256": "46dfcb23c55922f8017313325cb0f1da2b0e256c7601d7844e52b6ddeef74e8b",
+      "classification": "Composición editorial: captura real de demo + fotografía IA + relato ficticio"
+    }
+  ]
+}

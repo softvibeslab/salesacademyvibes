@@ -1,0 +1,230 @@
+[
+  {
+    "width": 1440,
+    "motion": {
+      "initialClass": "cinematic-journey journey-enhanced",
+      "initialName": "Reducir movimiento",
+      "initialPressed": "false",
+      "focus": {
+        "active": true,
+        "focusVisible": true,
+        "outline": "rgb(229, 201, 139) solid 3px",
+        "outlineOffset": "5px",
+        "name": "Reducir movimiento"
+      },
+      "afterReduce": {
+        "class": "cinematic-journey journey-reduced",
+        "name": "Activar movimiento",
+        "pressed": "true"
+      },
+      "afterRestore": {
+        "class": "cinematic-journey journey-enhanced",
+        "name": "Reducir movimiento",
+        "pressed": "false"
+      },
+      "system": {
+        "class": "cinematic-journey journey-reduced",
+        "stageDisplay": "none",
+        "chapters": [
+          {
+            "id": "start",
+            "display": "block"
+          },
+          {
+            "id": "method",
+            "display": "block"
+          },
+          {
+            "id": "practice",
+            "display": "block"
+          },
+          {
+            "id": "coaching",
+            "display": "block"
+          },
+          {
+            "id": "scale",
+            "display": "block"
+          }
+        ],
+        "togglePressed": "true",
+        "disabled": true
+      }
+    },
+    "video": {
+      "name": "El método, acompañado. Película con subtítulos en español.",
+      "focus": {
+        "active": true,
+        "focusVisible": true,
+        "outline": "rgb(154, 115, 47) solid 3px"
+      },
+      "before": {
+        "paused": true,
+        "currentTime": 0,
+        "preload": "none",
+        "autoplay": false
+      },
+      "spaceStartsPlayback": true,
+      "during": {
+        "paused": false,
+        "currentTime": 0.016383,
+        "readyState": 4,
+        "error": null,
+        "tracks": [
+          {
+            "label": "Español",
+            "language": "es",
+            "kind": "captions",
+            "mode": "showing",
+            "cues": 9
+          }
+        ]
+      },
+      "spacePauses": true,
+      "nativeAccessibleControls": [
+        {
+          "role": "button",
+          "name": "Preferencias de medición"
+        },
+        {
+          "role": "slider",
+          "name": "video time scrubber"
+        },
+        {
+          "role": "button",
+          "name": "play"
+        },
+        {
+          "role": "button",
+          "name": "enter full screen"
+        },
+        {
+          "role": "button",
+          "name": "show more media controls"
+        },
+        {
+          "role": "slider",
+          "name": "volume"
+        },
+        {
+          "role": "button",
+          "name": "unmute"
+        }
+      ]
+    }
+  },
+  {
+    "width": 390,
+    "motion": {
+      "initialClass": "cinematic-journey",
+      "initialName": "Reducir movimiento",
+      "initialPressed": "false",
+      "focus": {
+        "active": true,
+        "focusVisible": true,
+        "outline": "rgb(229, 201, 139) solid 3px",
+        "outlineOffset": "5px",
+        "name": "Reducir movimiento"
+      },
+      "afterReduce": {
+        "class": "cinematic-journey journey-reduced",
+        "name": "Activar movimiento",
+        "pressed": "true"
+      },
+      "afterRestore": {
+        "class": "cinematic-journey",
+        "name": "Reducir movimiento",
+        "pressed": "false"
+      },
+      "system": {
+        "class": "cinematic-journey journey-reduced",
+        "stageDisplay": "none",
+        "chapters": [
+          {
+            "id": "start",
+            "display": "block"
+          },
+          {
+            "id": "method",
+            "display": "block"
+          },
+          {
+            "id": "practice",
+            "display": "block"
+          },
+          {
+            "id": "coaching",
+            "display": "block"
+          },
+          {
+            "id": "scale",
+            "display": "block"
+          }
+        ],
+        "togglePressed": "true",
+        "disabled": true
+      }
+    },
+    "video": {
+      "name": "El método, acompañado. Película con subtítulos en español.",
+      "focus": {
+        "active": true,
+        "focusVisible": true,
+        "outline": "rgb(154, 115, 47) solid 3px"
+      },
+      "before": {
+        "paused": true,
+        "currentTime": 0,
+        "preload": "none",
+        "autoplay": false
+      },
+      "spaceStartsPlayback": true,
+      "during": {
+        "paused": false,
+        "currentTime": 0.010204,
+        "readyState": 4,
+        "error": null,
+        "tracks": [
+          {
+            "label": "Español",
+            "language": "es",
+            "kind": "captions",
+            "mode": "showing",
+            "cues": 9
+          }
+        ]
+      },
+      "spacePauses": true,
+      "nativeAccessibleControls": [
+        {
+          "role": "button",
+          "name": "Preferencias de medición"
+        },
+        {
+          "role": "slider",
+          "name": "video time scrubber"
+        },
+        {
+          "role": "button",
+          "name": "play"
+        },
+        {
+          "role": "button",
+          "name": "enter full screen"
+        },
+        {
+          "role": "button",
+          "name": "show more media controls"
+        },
+        {
+          "role": "slider",
+          "name": "volume"
+        },
+        {
+          "role": "button",
+          "name": "unmute"
+        }
+      ]
+    }
+  }
+]

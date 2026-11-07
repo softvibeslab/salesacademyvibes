@@ -1,0 +1,78 @@
+{
+  "originalHashesUnchanged": 6,
+  "videos": [
+    {
+      "id": "smart-agent",
+      "fullDecode": "pass",
+      "videoBytes": 5549996,
+      "posterBytes": 21764,
+      "faststart": true,
+      "codecs": [
+        "h264",
+        "aac"
+      ],
+      "captionCues": 9,
+      "captionEnd": 32.78,
+      "duration": 32.879
+    },
+    {
+      "id": "menos-caos",
+      "fullDecode": "pass",
+      "videoBytes": 3786601,
+      "posterBytes": 23520,
+      "faststart": true,
+      "codecs": [
+        "h264",
+        "aac"
+      ],
+      "captionCues": 10,
+      "captionEnd": 40.92,
+      "duration": 41.399
+    },
+    {
+      "id": "sistema-conectado",
+      "fullDecode": "pass",
+      "videoBytes": 6367669,
+      "posterBytes": 22980,
+      "faststart": true,
+      "codecs": [
+        "h264",
+        "aac"
+      ],
+      "captionCues": 10,
+      "captionEnd": 40.92,
+      "duration": 41.375
+    },
+    {
+      "id": "infraestructura-comercial",
+      "fullDecode": "pass",
+      "videoBytes": 3587135,
+      "posterBytes": 37864,
+      "faststart": true,
+      "codecs": [
+        "h264",
+        "aac"
+      ],
+      "captionCues": 9,
+      "captionEnd": 28.9,
+      "duration": 29.025
+    },
+    {
+      "id": "conocimiento-en-practica",
+      "fullDecode": "pass",
+      "videoBytes": 3342374,
+      "posterBytes": 15266,
+      "faststart": true,
+      "codecs": [
+        "h264",
+        "aac"
+      ],
+      "captionCues": 8,
+      "captionEnd": 36.5,
+      "duration": 36.594
+    }
+  ],
+  "videoBytes": 22633775,
+  "posterBytes": 121394,
+  "limits": "Captions are offline ASR with editorial corrections; no claim of manual audio or music classification."
+}

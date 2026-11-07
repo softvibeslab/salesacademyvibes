@@ -1,0 +1,15 @@
+test_analytics_resource_reference_uses_published_id (growth.tests.test_backend.BackendAcceptance.test_analytics_resource_reference_uses_published_id) ... FAIL
+
+======================================================================
+FAIL: test_analytics_resource_reference_uses_published_id (growth.tests.test_backend.BackendAcceptance.test_analytics_resource_reference_uses_published_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_backend.py", line 295, in test_analytics_resource_reference_uses_published_id
+    self.assertEqual(self.client.post('/growth-api/events',json=event).status_code,202)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 400 != 202
+
+----------------------------------------------------------------------
+Ran 1 test in 0.109s
+
+FAILED (failures=1)

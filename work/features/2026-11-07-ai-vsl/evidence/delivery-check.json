@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "fullArchiveIntegrity": true,
+  "fullManifestHashes": true,
+  "visualKitIntegrity": true,
+  "rawScreenshotsUnchanged": 15,
+  "aiCompositions": 6,
+  "compositionDimensions": [
+    1600,
+    1000
+  ],
+  "v3AndV4ArchivesUnchanged": true,
+  "runtimeFilesFound": 0,
+  "finalArchiveHashLocation": "growth/dist/delivery-manifest-v5.json"
+}

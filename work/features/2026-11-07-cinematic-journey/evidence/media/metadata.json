@@ -1,0 +1,338 @@
+[
+  {
+    "id": "clip-01",
+    "file": "media/reals/WhatsApp Video 2026-11-07 at 06.01.26.mp4",
+    "duration": 32.879456,
+    "bytes": 6862030,
+    "sha256": "d10f73ebe4566d97eadf098ef96565cda04c478e03fe937fcb5f2d53181cc2b7",
+    "video": {
+      "codec_name": "h264",
+      "width": 576,
+      "height": 1024,
+      "r_frame_rate": "24/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audio": [
+      {
+        "codec_name": "aac",
+        "sample_rate": "44100",
+        "channels": 2,
+        "duration": "32.879456"
+      }
+    ],
+    "frames": [
+      {
+        "seconds": 0.49,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-01.jpg"
+      },
+      {
+        "seconds": 4.93,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-02.jpg"
+      },
+      {
+        "seconds": 9.86,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-03.jpg"
+      },
+      {
+        "seconds": 14.8,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-04.jpg"
+      },
+      {
+        "seconds": 19.73,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-05.jpg"
+      },
+      {
+        "seconds": 24.66,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-06.jpg"
+      },
+      {
+        "seconds": 29.59,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-07.jpg"
+      },
+      {
+        "seconds": 32.39,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-01-frame-08.jpg"
+      }
+    ]
+  },
+  {
+    "id": "clip-02",
+    "file": "media/reals/WhatsApp Video 2026-11-07 at 06.01.29.mp4",
+    "duration": 41.383991,
+    "bytes": 7086685,
+    "sha256": "e3ba4f20993db22cf049f668bc3332b648db33a1baffab1992e11d5e9667a6f0",
+    "video": {
+      "codec_name": "h264",
+      "width": 576,
+      "height": 1024,
+      "r_frame_rate": "24/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audio": [
+      {
+        "codec_name": "aac",
+        "sample_rate": "44100",
+        "channels": 2,
+        "duration": "41.383991"
+      }
+    ],
+    "frames": [
+      {
+        "seconds": 0.62,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-01.jpg"
+      },
+      {
+        "seconds": 6.21,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-02.jpg"
+      },
+      {
+        "seconds": 12.42,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-03.jpg"
+      },
+      {
+        "seconds": 18.62,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-04.jpg"
+      },
+      {
+        "seconds": 24.83,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-05.jpg"
+      },
+      {
+        "seconds": 31.04,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-06.jpg"
+      },
+      {
+        "seconds": 37.25,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-07.jpg"
+      },
+      {
+        "seconds": 40.76,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-02-frame-08.jpg"
+      }
+    ]
+  },
+  {
+    "id": "clip-03",
+    "file": "media/reals/WhatsApp Video 2026-11-07 at 06.01.30.mp4",
+    "duration": 41.375,
+    "bytes": 9664869,
+    "sha256": "3ba4b233258aec1b7c5306a0a15a080960f5c257702c346f953dd4b25c5b5547",
+    "video": {
+      "codec_name": "h264",
+      "width": 720,
+      "height": 1280,
+      "r_frame_rate": "24/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audio": [
+      {
+        "codec_name": "aac",
+        "sample_rate": "44100",
+        "channels": 2,
+        "duration": "41.276667"
+      }
+    ],
+    "frames": [
+      {
+        "seconds": 0.62,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-01.jpg"
+      },
+      {
+        "seconds": 6.21,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-02.jpg"
+      },
+      {
+        "seconds": 12.41,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-03.jpg"
+      },
+      {
+        "seconds": 18.62,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-04.jpg"
+      },
+      {
+        "seconds": 24.82,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-05.jpg"
+      },
+      {
+        "seconds": 31.03,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-06.jpg"
+      },
+      {
+        "seconds": 37.24,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-07.jpg"
+      },
+      {
+        "seconds": 40.75,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-03-frame-08.jpg"
+      }
+    ]
+  },
+  {
+    "id": "clip-04",
+    "file": "media/reals/WhatsApp Video 2026-11-07 at 06.02.37.mp4",
+    "duration": 29.024943,
+    "bytes": 4774982,
+    "sha256": "627a0ecd3281df8c114d8328b19c3bf45b86b0fe28983ad04b55a3b8ea7c82ae",
+    "video": {
+      "codec_name": "h264",
+      "width": 480,
+      "height": 848,
+      "r_frame_rate": "24/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audio": [
+      {
+        "codec_name": "aac",
+        "sample_rate": "44100",
+        "channels": 2,
+        "duration": "29.024943"
+      }
+    ],
+    "frames": [
+      {
+        "seconds": 0.44,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-01.jpg"
+      },
+      {
+        "seconds": 4.35,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-02.jpg"
+      },
+      {
+        "seconds": 8.71,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-03.jpg"
+      },
+      {
+        "seconds": 13.06,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-04.jpg"
+      },
+      {
+        "seconds": 17.41,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-05.jpg"
+      },
+      {
+        "seconds": 21.77,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-06.jpg"
+      },
+      {
+        "seconds": 26.12,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-07.jpg"
+      },
+      {
+        "seconds": 28.59,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-04-frame-08.jpg"
+      }
+    ]
+  },
+  {
+    "id": "clip-05",
+    "file": "media/reals/WhatsApp Video 2026-11-07 at 06.02.38.mp4",
+    "duration": 36.594649,
+    "bytes": 5910548,
+    "sha256": "ef13f944d1cae7bebbfb10adf62844caa7c3f8376bcb37fd2e9b63fe9a727bed",
+    "video": {
+      "codec_name": "h264",
+      "width": 480,
+      "height": 848,
+      "r_frame_rate": "30/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audio": [
+      {
+        "codec_name": "aac",
+        "sample_rate": "44100",
+        "channels": 2,
+        "duration": "36.594649"
+      }
+    ],
+    "frames": [
+      {
+        "seconds": 0.55,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-01.jpg"
+      },
+      {
+        "seconds": 5.49,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-02.jpg"
+      },
+      {
+        "seconds": 10.98,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-03.jpg"
+      },
+      {
+        "seconds": 16.47,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-04.jpg"
+      },
+      {
+        "seconds": 21.96,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-05.jpg"
+      },
+      {
+        "seconds": 27.45,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-06.jpg"
+      },
+      {
+        "seconds": 32.94,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-07.jpg"
+      },
+      {
+        "seconds": 36.05,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-05-frame-08.jpg"
+      }
+    ]
+  },
+  {
+    "id": "clip-06",
+    "file": "media/reals/WhatsApp Video 2026-11-07 at 06.02.39.mp4",
+    "duration": 32.879456,
+    "bytes": 6862030,
+    "sha256": "d10f73ebe4566d97eadf098ef96565cda04c478e03fe937fcb5f2d53181cc2b7",
+    "video": {
+      "codec_name": "h264",
+      "width": 576,
+      "height": 1024,
+      "r_frame_rate": "24/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audio": [
+      {
+        "codec_name": "aac",
+        "sample_rate": "44100",
+        "channels": 2,
+        "duration": "32.879456"
+      }
+    ],
+    "frames": [
+      {
+        "seconds": 0.49,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-01.jpg"
+      },
+      {
+        "seconds": 4.93,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-02.jpg"
+      },
+      {
+        "seconds": 9.86,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-03.jpg"
+      },
+      {
+        "seconds": 14.8,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-04.jpg"
+      },
+      {
+        "seconds": 19.73,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-05.jpg"
+      },
+      {
+        "seconds": 24.66,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-06.jpg"
+      },
+      {
+        "seconds": 29.59,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-07.jpg"
+      },
+      {
+        "seconds": 32.39,
+        "path": "work/features/2026-11-07-cinematic-journey/evidence/media/clip-06-frame-08.jpg"
+      }
+    ]
+  }
+]

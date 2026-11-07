@@ -1,0 +1,5846 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "The hero features the requested film exactly once without automatic media transfer",
+      "passed": true
+    },
+    {
+      "name": "Photos and real screens change with five continuous chapters in both directions",
+      "passed": true
+    },
+    {
+      "name": "Manual and system motion preferences preserve a complete linear story",
+      "passed": true
+    },
+    {
+      "name": "Mobile and no-JavaScript retain scenes, native VSL and WhatsApp contact",
+      "passed": true
+    },
+    {
+      "name": "Every public campaign surface uses the same safe WhatsApp destination",
+      "passed": true
+    },
+    {
+      "name": "The featured VSL plays and pauses by keyboard with working local captions",
+      "passed": true
+    },
+    {
+      "name": "A failed VSL download exposes recovery and retry restores native playback",
+      "passed": true
+    },
+    {
+      "name": "Completed diagnostic keeps answers private and uses the generic WhatsApp CTA",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "interceptedWhatsApp": [
+    "https://wa.me/529843163268?text=Hola%2C%20quiero%20conocer%20los%20agentes%20de%20IA%20de%20Sales%20Academy%20y%20agendar%20una%20demo%20para%20mi%20sala%20de%20ventas."
+  ],
+  "initialBudget": {
+    "nonVideoEncodedBytes": 726074,
+    "nonVideoTransferBytes": 735074,
+    "mp4EncodedBytes": 0,
+    "items": [
+      {
+        "url": "/descubre/",
+        "encodedBodySize": 40415,
+        "transferSize": 40715,
+        "kind": "navigation"
+      },
+      {
+        "url": "/growth-assets/site.css",
+        "encodedBodySize": 35641,
+        "transferSize": 35941,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/public-v2.css",
+        "encodedBodySize": 3071,
+        "transferSize": 3371,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/campaign.css",
+        "encodedBodySize": 866,
+        "transferSize": 1166,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/landing-v2.css",
+        "encodedBodySize": 30258,
+        "transferSize": 30558,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/media-player.css",
+        "encodedBodySize": 851,
+        "transferSize": 1151,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/cinematic.css",
+        "encodedBodySize": 21881,
+        "transferSize": 22181,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-journey.css",
+        "encodedBodySize": 19894,
+        "transferSize": 20194,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-scenes/consultation.webp",
+        "encodedBodySize": 119264,
+        "transferSize": 119564,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/sistema-conectado.webp",
+        "encodedBodySize": 22980,
+        "transferSize": 23280,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/infraestructura-comercial.webp",
+        "encodedBodySize": 37864,
+        "transferSize": 38164,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/smart-agent.webp",
+        "encodedBodySize": 21764,
+        "transferSize": 22064,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/menos-caos.webp",
+        "encodedBodySize": 23520,
+        "transferSize": 23820,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/media-player.mjs",
+        "encodedBodySize": 1215,
+        "transferSize": 1515,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/journey.mjs",
+        "encodedBodySize": 3563,
+        "transferSize": 3863,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/site.mjs",
+        "encodedBodySize": 4009,
+        "transferSize": 4309,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/conocimiento-en-practica.webp",
+        "encodedBodySize": 15266,
+        "transferSize": 15566,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+        "encodedBodySize": 16396,
+        "transferSize": 16696,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-scenes/briefing.webp",
+        "encodedBodySize": 118284,
+        "transferSize": 118584,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-scenes/coaching.webp",
+        "encodedBodySize": 98142,
+        "transferSize": 98442,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+        "encodedBodySize": 16990,
+        "transferSize": 17290,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+        "encodedBodySize": 17592,
+        "transferSize": 17892,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+        "encodedBodySize": 18494,
+        "transferSize": 18794,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/smart-agent.es.vtt",
+        "encodedBodySize": 921,
+        "transferSize": 1221,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/menos-caos.es.vtt",
+        "encodedBodySize": 985,
+        "transferSize": 1285,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/sistema-conectado.es.vtt",
+        "encodedBodySize": 985,
+        "transferSize": 1285,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/infraestructura-comercial.es.vtt",
+        "encodedBodySize": 909,
+        "transferSize": 1209,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/conocimiento-en-practica.es.vtt",
+        "encodedBodySize": 827,
+        "transferSize": 1127,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/journey-math.mjs",
+        "encodedBodySize": 1117,
+        "transferSize": 1417,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+        "encodedBodySize": 32110,
+        "transferSize": 32410,
+        "kind": "resource"
+      }
+    ]
+  },
+  "deferredBudget": {
+    "nonVideoEncodedBytes": 726074,
+    "nonVideoTransferBytes": 735074,
+    "mp4EncodedBytes": 0,
+    "items": [
+      {
+        "url": "/descubre/",
+        "encodedBodySize": 40415,
+        "transferSize": 40715,
+        "kind": "navigation"
+      },
+      {
+        "url": "/growth-assets/site.css",
+        "encodedBodySize": 35641,
+        "transferSize": 35941,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/public-v2.css",
+        "encodedBodySize": 3071,
+        "transferSize": 3371,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/campaign.css",
+        "encodedBodySize": 866,
+        "transferSize": 1166,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/landing-v2.css",
+        "encodedBodySize": 30258,
+        "transferSize": 30558,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/media-player.css",
+        "encodedBodySize": 851,
+        "transferSize": 1151,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/cinematic.css",
+        "encodedBodySize": 21881,
+        "transferSize": 22181,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-journey.css",
+        "encodedBodySize": 19894,
+        "transferSize": 20194,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-scenes/consultation.webp",
+        "encodedBodySize": 119264,
+        "transferSize": 119564,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/sistema-conectado.webp",
+        "encodedBodySize": 22980,
+        "transferSize": 23280,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/infraestructura-comercial.webp",
+        "encodedBodySize": 37864,
+        "transferSize": 38164,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/smart-agent.webp",
+        "encodedBodySize": 21764,
+        "transferSize": 22064,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/menos-caos.webp",
+        "encodedBodySize": 23520,
+        "transferSize": 23820,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/media-player.mjs",
+        "encodedBodySize": 1215,
+        "transferSize": 1515,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/journey.mjs",
+        "encodedBodySize": 3563,
+        "transferSize": 3863,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/site.mjs",
+        "encodedBodySize": 4009,
+        "transferSize": 4309,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/conocimiento-en-practica.webp",
+        "encodedBodySize": 15266,
+        "transferSize": 15566,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+        "encodedBodySize": 16396,
+        "transferSize": 16696,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-scenes/briefing.webp",
+        "encodedBodySize": 118284,
+        "transferSize": 118584,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-scenes/coaching.webp",
+        "encodedBodySize": 98142,
+        "transferSize": 98442,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+        "encodedBodySize": 16990,
+        "transferSize": 17290,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+        "encodedBodySize": 17592,
+        "transferSize": 17892,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+        "encodedBodySize": 18494,
+        "transferSize": 18794,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/smart-agent.es.vtt",
+        "encodedBodySize": 921,
+        "transferSize": 1221,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/menos-caos.es.vtt",
+        "encodedBodySize": 985,
+        "transferSize": 1285,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/sistema-conectado.es.vtt",
+        "encodedBodySize": 985,
+        "transferSize": 1285,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/infraestructura-comercial.es.vtt",
+        "encodedBodySize": 909,
+        "transferSize": 1209,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/films/conocimiento-en-practica.es.vtt",
+        "encodedBodySize": 827,
+        "transferSize": 1127,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/journey-math.mjs",
+        "encodedBodySize": 1117,
+        "transferSize": 1417,
+        "kind": "resource"
+      },
+      {
+        "url": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+        "encodedBodySize": 32110,
+        "transferSize": 32410,
+        "kind": "resource"
+      }
+    ]
+  },
+  "mediaRequests": [
+    "http://agentes.localhost:4190/growth-assets/films/smart-agent.mp4"
+  ],
+  "geometry": [
+    {
+      "label": "start",
+      "active": "start",
+      "copy": {
+        "x": 80,
+        "y": 306.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 898.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 192.7264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 857.5883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 192.7264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 857.5883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 192.7264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 857.5883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 192.7264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 857.5883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 192.7264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 857.5883026123047
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 964.3880004882812,
+            "y": 214.69642639160156,
+            "width": 294.89263916015625,
+            "height": 610.185791015625,
+            "right": 1259.2806396484375,
+            "bottom": 824.8822174072266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 964.3880004882812,
+            "y": 214.69642639160156,
+            "width": 294.89263916015625,
+            "height": 610.185791015625,
+            "right": 1259.2806396484375,
+            "bottom": 824.8822174072266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 964.3880004882812,
+            "y": 214.69642639160156,
+            "width": 294.89263916015625,
+            "height": 610.185791015625,
+            "right": 1259.2806396484375,
+            "bottom": 824.8822174072266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 964.3880004882812,
+            "y": 214.69642639160156,
+            "width": 294.89263916015625,
+            "height": 610.185791015625,
+            "right": 1259.2806396484375,
+            "bottom": 824.8822174072266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 964.3880004882812,
+            "y": 214.69642639160156,
+            "width": 294.89263916015625,
+            "height": 610.185791015625,
+            "right": 1259.2806396484375,
+            "bottom": 824.8822174072266
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01043, 0, 0, 1.01043, -5.00556, -8.3426)",
+          "rect": {
+            "x": 755.2537231445312,
+            "y": 191.716064453125,
+            "width": 567.4501342773438,
+            "height": 666.8826904296875,
+            "right": 1322.703857421875,
+            "bottom": 858.5987548828125
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99863, -0.052336, 0.052336, 0.99863, 3.03743, -9.49196)",
+          "rect": {
+            "x": 955.9802856445312,
+            "y": 206.2886962890625,
+            "width": 311.70806884765625,
+            "height": 627.001220703125,
+            "right": 1267.6883544921875,
+            "bottom": 833.2899169921875
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "method",
+      "active": "method",
+      "copy": {
+        "x": 80,
+        "y": 306.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 898.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0.0751508,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0.924849,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.8674926757812,
+            "y": 180.73419189453125,
+            "width": 292.53204345703125,
+            "height": 609.2401123046875,
+            "right": 1258.3995361328125,
+            "bottom": 789.9743041992188
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 965.8674926757812,
+            "y": 180.73419189453125,
+            "width": 292.53204345703125,
+            "height": 609.2401123046875,
+            "right": 1258.3995361328125,
+            "bottom": 789.9743041992188
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.8674926757812,
+            "y": 180.73419189453125,
+            "width": 292.53204345703125,
+            "height": 609.2401123046875,
+            "right": 1258.3995361328125,
+            "bottom": 789.9743041992188
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.8674926757812,
+            "y": 180.73419189453125,
+            "width": 292.53204345703125,
+            "height": 609.2401123046875,
+            "right": 1258.3995361328125,
+            "bottom": 789.9743041992188
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.8674926757812,
+            "y": 180.73419189453125,
+            "width": 292.53204345703125,
+            "height": 609.2401123046875,
+            "right": 1258.3995361328125,
+            "bottom": 789.9743041992188
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01043, 0, 0, 1.01043, -5.00556, -8.3426)",
+          "rect": {
+            "x": 755.2537231445312,
+            "y": 158.216064453125,
+            "width": 567.4501342773438,
+            "height": 666.8826904296875,
+            "right": 1322.703857421875,
+            "bottom": 825.0987548828125
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998833, 0.0482932, -0.0482932, 0.998833, 3.33664, -10.427)",
+          "rect": {
+            "x": 957.490478515625,
+            "y": 172.35719299316406,
+            "width": 309.2860107421875,
+            "height": 625.994140625,
+            "right": 1266.7764892578125,
+            "bottom": 798.3513336181641
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "practice",
+      "active": "practice",
+      "copy": {
+        "x": 80,
+        "y": 306.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 898.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0.0957597,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.90424,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.7831420898438,
+            "y": 182.74501037597656,
+            "width": 282.70159912109375,
+            "height": 605.2160034179688,
+            "right": 1253.4847412109375,
+            "bottom": 787.9610137939453
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.7831420898438,
+            "y": 182.74501037597656,
+            "width": 282.70159912109375,
+            "height": 605.2160034179688,
+            "right": 1253.4847412109375,
+            "bottom": 787.9610137939453
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 970.7831420898438,
+            "y": 182.74501037597656,
+            "width": 282.70159912109375,
+            "height": 605.2160034179688,
+            "right": 1253.4847412109375,
+            "bottom": 787.9610137939453
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.7831420898438,
+            "y": 182.74501037597656,
+            "width": 282.70159912109375,
+            "height": 605.2160034179688,
+            "right": 1253.4847412109375,
+            "bottom": 787.9610137939453
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.7831420898438,
+            "y": 182.74501037597656,
+            "width": 282.70159912109375,
+            "height": 605.2160034179688,
+            "right": 1253.4847412109375,
+            "bottom": 787.9610137939453
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01043, 0, 0, 1.01043, -5.00556, -8.3426)",
+          "rect": {
+            "x": 755.2537231445312,
+            "y": 158.216064453125,
+            "width": 567.4501342773438,
+            "height": 666.8826904296875,
+            "right": 1322.703857421875,
+            "bottom": 825.0987548828125
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999503, -0.031536, 0.031536, 0.999503, 3.33704, -10.4282)",
+          "rect": {
+            "x": 962.5347900390625,
+            "y": 174.4967041015625,
+            "width": 299.1982421875,
+            "height": 621.7125854492188,
+            "right": 1261.7330322265625,
+            "bottom": 796.2092895507812
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "coaching",
+      "active": "coaching",
+      "copy": {
+        "x": 80,
+        "y": 320.109375,
+        "width": 500,
+        "height": 564.765625,
+        "right": 580,
+        "bottom": 884.875
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.0751028,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.924897,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.5850830078125,
+            "y": 182.66261291503906,
+            "width": 283.09765625,
+            "height": 605.3807983398438,
+            "right": 1253.6827392578125,
+            "bottom": 788.0434112548828
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.5850830078125,
+            "y": 182.66261291503906,
+            "width": 283.09765625,
+            "height": 605.3807983398438,
+            "right": 1253.6827392578125,
+            "bottom": 788.0434112548828
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.5850830078125,
+            "y": 182.66261291503906,
+            "width": 283.09765625,
+            "height": 605.3807983398438,
+            "right": 1253.6827392578125,
+            "bottom": 788.0434112548828
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 970.5850830078125,
+            "y": 182.66261291503906,
+            "width": 283.09765625,
+            "height": 605.3807983398438,
+            "right": 1253.6827392578125,
+            "bottom": 788.0434112548828
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 970.5850830078125,
+            "y": 182.66261291503906,
+            "width": 283.09765625,
+            "height": 605.3807983398438,
+            "right": 1253.6827392578125,
+            "bottom": 788.0434112548828
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01043, 0, 0, 1.01043, -5.00556, -8.3426)",
+          "rect": {
+            "x": 755.2537231445312,
+            "y": 158.216064453125,
+            "width": 567.4501342773438,
+            "height": 666.8826904296875,
+            "right": 1322.703857421875,
+            "bottom": 825.0987548828125
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999481, 0.0322088, -0.0322088, 0.999481, 3.33704, -10.4283)",
+          "rect": {
+            "x": 962.33154296875,
+            "y": 174.40908813476562,
+            "width": 299.604736328125,
+            "height": 621.8878173828125,
+            "right": 1261.936279296875,
+            "bottom": 796.2969055175781
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "scale",
+      "active": "scale",
+      "copy": {
+        "x": 80,
+        "y": 259.515625,
+        "width": 500,
+        "height": 685.96875,
+        "right": 580,
+        "bottom": 945.484375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.0957945,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0.904206,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.9107666015625,
+            "y": 180.7501983642578,
+            "width": 292.4462890625,
+            "height": 609.2056274414062,
+            "right": 1258.3570556640625,
+            "bottom": 789.9558258056641
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.9107666015625,
+            "y": 180.7501983642578,
+            "width": 292.4462890625,
+            "height": 609.2056274414062,
+            "right": 1258.3570556640625,
+            "bottom": 789.9558258056641
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.9107666015625,
+            "y": 180.7501983642578,
+            "width": 292.4462890625,
+            "height": 609.2056274414062,
+            "right": 1258.3570556640625,
+            "bottom": 789.9558258056641
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.9107666015625,
+            "y": 180.7501983642578,
+            "width": 292.4462890625,
+            "height": 609.2056274414062,
+            "right": 1258.3570556640625,
+            "bottom": 789.9558258056641
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 965.9107666015625,
+            "y": 180.7501983642578,
+            "width": 292.4462890625,
+            "height": 609.2056274414062,
+            "right": 1258.3570556640625,
+            "bottom": 789.9558258056641
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01043, 0, 0, 1.01043, -5.00556, -8.3426)",
+          "rect": {
+            "x": 755.2537231445312,
+            "y": 158.216064453125,
+            "width": 567.4501342773438,
+            "height": 666.8826904296875,
+            "right": 1322.703857421875,
+            "bottom": 825.0987548828125
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99884, -0.0481464, 0.0481464, 0.99884, 3.33704, -10.4283)",
+          "rect": {
+            "x": 957.5348510742188,
+            "y": 172.3743133544922,
+            "width": 309.19805908203125,
+            "height": 625.9573364257812,
+            "right": 1266.73291015625,
+            "bottom": 798.3316497802734
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "practice",
+      "active": "practice",
+      "copy": {
+        "x": 80,
+        "y": 306.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 898.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.904278,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0.0957223,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 969.5475463867188,
+            "y": 182.23277282714844,
+            "width": 285.17266845703125,
+            "height": 606.2404174804688,
+            "right": 1254.72021484375,
+            "bottom": 788.4731903076172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 969.5475463867188,
+            "y": 182.23277282714844,
+            "width": 285.17266845703125,
+            "height": 606.2404174804688,
+            "right": 1254.72021484375,
+            "bottom": 788.4731903076172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 969.5475463867188,
+            "y": 182.23277282714844,
+            "width": 285.17266845703125,
+            "height": 606.2404174804688,
+            "right": 1254.72021484375,
+            "bottom": 788.4731903076172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 969.5475463867188,
+            "y": 182.23277282714844,
+            "width": 285.17266845703125,
+            "height": 606.2404174804688,
+            "right": 1254.72021484375,
+            "bottom": 788.4731903076172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 969.5475463867188,
+            "y": 182.23277282714844,
+            "width": 285.17266845703125,
+            "height": 606.2404174804688,
+            "right": 1254.72021484375,
+            "bottom": 788.4731903076172
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01043, 0, 0, 1.01043, -5.00556, -8.3426)",
+          "rect": {
+            "x": 755.2537231445312,
+            "y": 158.216064453125,
+            "width": 567.4501342773438,
+            "height": 666.8826904296875,
+            "right": 1322.703857421875,
+            "bottom": 825.0987548828125
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999361, -0.0357363, 0.0357363, 0.999361, 3.33704, -10.4283)",
+          "rect": {
+            "x": 961.2667846679688,
+            "y": 173.95199584960938,
+            "width": 301.73419189453125,
+            "height": 622.802001953125,
+            "right": 1263.0009765625,
+            "bottom": 796.7539978027344
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "method",
+      "active": "method",
+      "copy": {
+        "x": 80,
+        "y": 306.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 898.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0.904171,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.0958293,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 756.26416015625,
+            "y": 159.2264862060547,
+            "width": 565.429443359375,
+            "height": 664.86181640625,
+            "right": 1321.693603515625,
+            "bottom": 824.0883026123047
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.911865234375,
+            "y": 180.75064086914062,
+            "width": 292.444091796875,
+            "height": 609.2047119140625,
+            "right": 1258.35595703125,
+            "bottom": 789.9553527832031
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 965.911865234375,
+            "y": 180.75064086914062,
+            "width": 292.444091796875,
+            "height": 609.2047119140625,
+            "right": 1258.35595703125,
+            "bottom": 789.9553527832031
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.911865234375,
+            "y": 180.75064086914062,
+            "width": 292.444091796875,
+            "height": 609.2047119140625,
+            "right": 1258.35595703125,
+            "bottom": 789.9553527832031
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.911865234375,
+            "y": 180.75064086914062,
+            "width": 292.444091796875,
+            "height": 609.2047119140625,
+            "right": 1258.35595703125,
+            "bottom": 789.9553527832031
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 965.911865234375,
+            "y": 180.75064086914062,
+            "width": 292.444091796875,
+            "height": 609.2047119140625,
+            "right": 1258.35595703125,
+            "bottom": 789.9553527832031
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01043, 0, 0, 1.01043, -5.00556, -8.3426)",
+          "rect": {
+            "x": 755.2537231445312,
+            "y": 158.216064453125,
+            "width": 567.4501342773438,
+            "height": 666.8826904296875,
+            "right": 1322.703857421875,
+            "bottom": 825.0987548828125
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99884, 0.0481427, -0.0481427, 0.99884, 3.33704, -10.4283)",
+          "rect": {
+            "x": 957.5360107421875,
+            "y": 172.37477111816406,
+            "width": 309.19580078125,
+            "height": 625.9564819335938,
+            "right": 1266.7318115234375,
+            "bottom": 798.3312530517578
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-method-transition-0.25",
+      "active": "method",
+      "copy": {
+        "x": 32,
+        "y": 526.546875,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 1079.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7361450195312,
+            "y": 239.3069610595703,
+            "width": 241.45709228515625,
+            "height": 502.708251953125,
+            "right": 877.1932373046875,
+            "bottom": 742.0152130126953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 635.7361450195312,
+            "y": 239.3069610595703,
+            "width": 241.45709228515625,
+            "height": 502.708251953125,
+            "right": 877.1932373046875,
+            "bottom": 742.0152130126953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7361450195312,
+            "y": 239.3069610595703,
+            "width": 241.45709228515625,
+            "height": 502.708251953125,
+            "right": 877.1932373046875,
+            "bottom": 742.0152130126953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7361450195312,
+            "y": 239.3069610595703,
+            "width": 241.45709228515625,
+            "height": 502.708251953125,
+            "right": 877.1932373046875,
+            "bottom": 742.0152130126953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7361450195312,
+            "y": 239.3069610595703,
+            "width": 241.45709228515625,
+            "height": 502.708251953125,
+            "right": 877.1932373046875,
+            "bottom": 742.0152130126953
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00579, 0, 0, 1.00579, -2.7774, -4.629)",
+          "rect": {
+            "x": 515.5075073242188,
+            "y": 163.46151733398438,
+            "width": 384.39898681640625,
+            "height": 663.8189697265625,
+            "right": 899.906494140625,
+            "bottom": 827.2804870605469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99863, 0.0523354, -0.0523354, 0.99863, 1.87096, -5.84674)",
+          "rect": {
+            "x": 627.3284301757812,
+            "y": 230.8992462158203,
+            "width": 258.27252197265625,
+            "height": 519.523681640625,
+            "right": 885.6009521484375,
+            "bottom": 750.4229278564453
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-method-transition-0.5",
+      "active": "start",
+      "copy": {
+        "x": 32,
+        "y": -303.453125,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 249.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0.942435,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0.0575647,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 642.40966796875,
+            "y": 221.1739044189453,
+            "width": 239.91162109375,
+            "height": 502.09466552734375,
+            "right": 882.3212890625,
+            "bottom": 723.2685699462891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.40966796875,
+            "y": 221.1739044189453,
+            "width": 239.91162109375,
+            "height": 502.09466552734375,
+            "right": 882.3212890625,
+            "bottom": 723.2685699462891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.40966796875,
+            "y": 221.1739044189453,
+            "width": 239.91162109375,
+            "height": 502.09466552734375,
+            "right": 882.3212890625,
+            "bottom": 723.2685699462891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.40966796875,
+            "y": 221.1739044189453,
+            "width": 239.91162109375,
+            "height": 502.09466552734375,
+            "right": 882.3212890625,
+            "bottom": 723.2685699462891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.40966796875,
+            "y": 221.1739044189453,
+            "width": 239.91162109375,
+            "height": 502.09466552734375,
+            "right": 882.3212890625,
+            "bottom": 723.2685699462891
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.025, 0, 0, 1.025, -11.9996, -19.9994)",
+          "rect": {
+            "x": 502.61376953125,
+            "y": 141.7508544921875,
+            "width": 391.741943359375,
+            "height": 676.49951171875,
+            "right": 894.355712890625,
+            "bottom": 818.2503662109375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998793, -0.0491231, 0.0491231, 0.998793, 7.77171, -24.2866)",
+          "rect": {
+            "x": 634.0263061523438,
+            "y": 212.7905731201172,
+            "width": 256.67828369140625,
+            "height": 518.8612670898438,
+            "right": 890.70458984375,
+            "bottom": 731.6518402099609
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-method-transition-0.75",
+      "active": "start",
+      "copy": {
+        "x": 32,
+        "y": -53.453125,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 499.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 640.0323486328125,
+            "y": 225.88925170898438,
+            "width": 241.45263671875,
+            "height": 502.7064514160156,
+            "right": 881.4849853515625,
+            "bottom": 728.595703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0323486328125,
+            "y": 225.88925170898438,
+            "width": 241.45263671875,
+            "height": 502.7064514160156,
+            "right": 881.4849853515625,
+            "bottom": 728.595703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0323486328125,
+            "y": 225.88925170898438,
+            "width": 241.45263671875,
+            "height": 502.7064514160156,
+            "right": 881.4849853515625,
+            "bottom": 728.595703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0323486328125,
+            "y": 225.88925170898438,
+            "width": 241.45263671875,
+            "height": 502.7064514160156,
+            "right": 881.4849853515625,
+            "bottom": 728.595703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0323486328125,
+            "y": 225.88925170898438,
+            "width": 241.45263671875,
+            "height": 502.7064514160156,
+            "right": 881.4849853515625,
+            "bottom": 728.595703125
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01921, 0, 0, 1.01921, -9.22188, -15.3698)",
+          "rect": {
+            "x": 506.4974060058594,
+            "y": 148.2901611328125,
+            "width": 389.5301818847656,
+            "height": 672.6800537109375,
+            "right": 896.027587890625,
+            "bottom": 820.97021484375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99863, -0.0523262, 0.0523262, 0.99863, 6.16491, -19.2653)",
+          "rect": {
+            "x": 631.6246948242188,
+            "y": 217.48159790039062,
+            "width": 258.2679443359375,
+            "height": 519.521728515625,
+            "right": 889.8926391601562,
+            "bottom": 737.0033264160156
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-practice-transition-0.25",
+      "active": "practice",
+      "copy": {
+        "x": 32,
+        "y": 515.75,
+        "width": 405,
+        "height": 574.546875,
+        "right": 437,
+        "bottom": 1090.296875
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.9603881835938,
+            "y": 241.07130432128906,
+            "width": 232.97369384765625,
+            "height": 499.28875732421875,
+            "right": 872.93408203125,
+            "bottom": 740.3600616455078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.9603881835938,
+            "y": 241.07130432128906,
+            "width": 232.97369384765625,
+            "height": 499.28875732421875,
+            "right": 872.93408203125,
+            "bottom": 740.3600616455078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 639.9603881835938,
+            "y": 241.07130432128906,
+            "width": 232.97369384765625,
+            "height": 499.28875732421875,
+            "right": 872.93408203125,
+            "bottom": 740.3600616455078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.9603881835938,
+            "y": 241.07130432128906,
+            "width": 232.97369384765625,
+            "height": 499.28875732421875,
+            "right": 872.93408203125,
+            "bottom": 740.3600616455078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.9603881835938,
+            "y": 241.07130432128906,
+            "width": 232.97369384765625,
+            "height": 499.28875732421875,
+            "right": 872.93408203125,
+            "bottom": 740.3600616455078
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00579, 0, 0, 1.00579, -2.7774, -4.629)",
+          "rect": {
+            "x": 515.5075073242188,
+            "y": 163.46151733398438,
+            "width": 384.39898681640625,
+            "height": 663.8189697265625,
+            "right": 899.906494140625,
+            "bottom": 827.2804870605469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999396, -0.0347592, 0.0347592, 0.999396, 1.85348, -5.79213)",
+          "rect": {
+            "x": 631.6871337890625,
+            "y": 232.79806518554688,
+            "width": 249.52020263671875,
+            "height": 515.835205078125,
+            "right": 881.2073364257812,
+            "bottom": 748.6332702636719
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-practice-transition-0.5",
+      "active": "method",
+      "copy": {
+        "x": 32,
+        "y": -303.453125,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 249.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0.942422,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.0575782,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.2811889648438,
+            "y": 221.12403869628906,
+            "width": 240.1678466796875,
+            "height": 502.1966552734375,
+            "right": 882.4490356445312,
+            "bottom": 723.3206939697266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 642.2811889648438,
+            "y": 221.12403869628906,
+            "width": 240.1678466796875,
+            "height": 502.1966552734375,
+            "right": 882.4490356445312,
+            "bottom": 723.3206939697266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.2811889648438,
+            "y": 221.12403869628906,
+            "width": 240.1678466796875,
+            "height": 502.1966552734375,
+            "right": 882.4490356445312,
+            "bottom": 723.3206939697266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.2811889648438,
+            "y": 221.12403869628906,
+            "width": 240.1678466796875,
+            "height": 502.1966552734375,
+            "right": 882.4490356445312,
+            "bottom": 723.3206939697266
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 642.2811889648438,
+            "y": 221.12403869628906,
+            "width": 240.1678466796875,
+            "height": 502.1966552734375,
+            "right": 882.4490356445312,
+            "bottom": 723.3206939697266
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.025, 0, 0, 1.025, -11.9996, -19.9994)",
+          "rect": {
+            "x": 502.61376953125,
+            "y": 141.7508544921875,
+            "width": 391.741943359375,
+            "height": 676.49951171875,
+            "right": 894.355712890625,
+            "bottom": 818.2503662109375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998766, 0.0496553, -0.0496553, 0.998766, 7.77134, -24.2854)",
+          "rect": {
+            "x": 633.893798828125,
+            "y": 212.73666381835938,
+            "width": 256.94256591796875,
+            "height": 518.971435546875,
+            "right": 890.8363647460938,
+            "bottom": 731.7080993652344
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-practice-transition-0.75",
+      "active": "method",
+      "copy": {
+        "x": 32,
+        "y": -53.453125,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 499.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0319213867188,
+            "y": 225.8890838623047,
+            "width": 241.45343017578125,
+            "height": 502.70672607421875,
+            "right": 881.4853515625,
+            "bottom": 728.5958099365234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 640.0319213867188,
+            "y": 225.8890838623047,
+            "width": 241.45343017578125,
+            "height": 502.70672607421875,
+            "right": 881.4853515625,
+            "bottom": 728.5958099365234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0319213867188,
+            "y": 225.8890838623047,
+            "width": 241.45343017578125,
+            "height": 502.70672607421875,
+            "right": 881.4853515625,
+            "bottom": 728.5958099365234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0319213867188,
+            "y": 225.8890838623047,
+            "width": 241.45343017578125,
+            "height": 502.70672607421875,
+            "right": 881.4853515625,
+            "bottom": 728.5958099365234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 640.0319213867188,
+            "y": 225.8890838623047,
+            "width": 241.45343017578125,
+            "height": 502.70672607421875,
+            "right": 881.4853515625,
+            "bottom": 728.5958099365234
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01921, 0, 0, 1.01921, -9.22188, -15.3698)",
+          "rect": {
+            "x": 506.4974060058594,
+            "y": 148.2901611328125,
+            "width": 389.5301818847656,
+            "height": 672.6800537109375,
+            "right": 896.027587890625,
+            "bottom": 820.97021484375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99863, 0.0523278, -0.0523278, 0.99863, 6.16491, -19.2653)",
+          "rect": {
+            "x": 631.624267578125,
+            "y": 217.48141479492188,
+            "width": 258.26873779296875,
+            "height": 519.5220947265625,
+            "right": 889.8930053710938,
+            "bottom": 737.0035095214844
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-coaching-transition-0.25",
+      "active": "coaching",
+      "copy": {
+        "x": 32,
+        "y": 526.546875,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 1079.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.953125,
+            "y": 241.06832885742188,
+            "width": 232.98822021484375,
+            "height": 499.2947082519531,
+            "right": 872.9413452148438,
+            "bottom": 740.363037109375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.953125,
+            "y": 241.06832885742188,
+            "width": 232.98822021484375,
+            "height": 499.2947082519531,
+            "right": 872.9413452148438,
+            "bottom": 740.363037109375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.953125,
+            "y": 241.06832885742188,
+            "width": 232.98822021484375,
+            "height": 499.2947082519531,
+            "right": 872.9413452148438,
+            "bottom": 740.363037109375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 639.953125,
+            "y": 241.06832885742188,
+            "width": 232.98822021484375,
+            "height": 499.2947082519531,
+            "right": 872.9413452148438,
+            "bottom": 740.363037109375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 639.953125,
+            "y": 241.06832885742188,
+            "width": 232.98822021484375,
+            "height": 499.2947082519531,
+            "right": 872.9413452148438,
+            "bottom": 740.363037109375
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00579, 0, 0, 1.00579, -2.7774, -4.629)",
+          "rect": {
+            "x": 515.5075073242188,
+            "y": 163.46151733398438,
+            "width": 384.39898681640625,
+            "height": 663.8189697265625,
+            "right": 899.906494140625,
+            "bottom": 827.2804870605469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999395, 0.0347892, -0.0347892, 0.999395, 1.85348, -5.79213)",
+          "rect": {
+            "x": 631.6796264648438,
+            "y": 232.79486083984375,
+            "width": 249.53521728515625,
+            "height": 515.8416748046875,
+            "right": 881.21484375,
+            "bottom": 748.6365356445312
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-coaching-transition-0.5",
+      "active": "practice",
+      "copy": {
+        "x": 32,
+        "y": -314.25,
+        "width": 405,
+        "height": 574.546875,
+        "right": 437,
+        "bottom": 260.296875
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.942408,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.0575918,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.3644409179688,
+            "y": 222.77793884277344,
+            "width": 232.0013427734375,
+            "height": 498.88885498046875,
+            "right": 878.3657836914062,
+            "bottom": 721.6667938232422
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.3644409179688,
+            "y": 222.77793884277344,
+            "width": 232.0013427734375,
+            "height": 498.88885498046875,
+            "right": 878.3657836914062,
+            "bottom": 721.6667938232422
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 646.3644409179688,
+            "y": 222.77793884277344,
+            "width": 232.0013427734375,
+            "height": 498.88885498046875,
+            "right": 878.3657836914062,
+            "bottom": 721.6667938232422
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.3644409179688,
+            "y": 222.77793884277344,
+            "width": 232.0013427734375,
+            "height": 498.88885498046875,
+            "right": 878.3657836914062,
+            "bottom": 721.6667938232422
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.3644409179688,
+            "y": 222.77793884277344,
+            "width": 232.0013427734375,
+            "height": 498.88885498046875,
+            "right": 878.3657836914062,
+            "bottom": 721.6667938232422
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.025, 0, 0, 1.025, -11.9996, -19.9994)",
+          "rect": {
+            "x": 502.61376953125,
+            "y": 141.7508544921875,
+            "width": 391.741943359375,
+            "height": 676.49951171875,
+            "right": 894.355712890625,
+            "bottom": 818.2503662109375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999463, -0.0327534, 0.0327534, 0.999463, 7.77134, -24.2854)",
+          "rect": {
+            "x": 638.106689453125,
+            "y": 214.52020263671875,
+            "width": 248.51678466796875,
+            "height": 515.404296875,
+            "right": 886.6234741210938,
+            "bottom": 729.9244995117188
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-coaching-transition-0.75",
+      "active": "practice",
+      "copy": {
+        "x": 32,
+        "y": -64.25,
+        "width": 405,
+        "height": 574.546875,
+        "right": 437,
+        "bottom": 510.296875
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2393798828125,
+            "y": 227.58477783203125,
+            "width": 233.03857421875,
+            "height": 499.31536865234375,
+            "right": 877.2779541015625,
+            "bottom": 726.900146484375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2393798828125,
+            "y": 227.58477783203125,
+            "width": 233.03857421875,
+            "height": 499.31536865234375,
+            "right": 877.2779541015625,
+            "bottom": 726.900146484375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 644.2393798828125,
+            "y": 227.58477783203125,
+            "width": 233.03857421875,
+            "height": 499.31536865234375,
+            "right": 877.2779541015625,
+            "bottom": 726.900146484375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2393798828125,
+            "y": 227.58477783203125,
+            "width": 233.03857421875,
+            "height": 499.31536865234375,
+            "right": 877.2779541015625,
+            "bottom": 726.900146484375
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2393798828125,
+            "y": 227.58477783203125,
+            "width": 233.03857421875,
+            "height": 499.31536865234375,
+            "right": 877.2779541015625,
+            "bottom": 726.900146484375
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01921, 0, 0, 1.01921, -9.22188, -15.3698)",
+          "rect": {
+            "x": 506.4974060058594,
+            "y": 148.2901611328125,
+            "width": 389.5301818847656,
+            "height": 672.6800537109375,
+            "right": 896.027587890625,
+            "bottom": 820.97021484375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999391, -0.034893, 0.034893, 0.999391, 6.16491, -19.2653)",
+          "rect": {
+            "x": 635.9651489257812,
+            "y": 219.31051635742188,
+            "width": 249.5870361328125,
+            "height": 515.8638916015625,
+            "right": 885.5521850585938,
+            "bottom": 735.1744079589844
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-scale-transition-0.25",
+      "active": "scale",
+      "copy": {
+        "x": 32,
+        "y": 495.03125,
+        "width": 405,
+        "height": 615.984375,
+        "right": 437,
+        "bottom": 1111.015625
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 516.5133056640625,
+            "y": 164.46730041503906,
+            "width": 382.3873291015625,
+            "height": 661.807373046875,
+            "right": 898.900634765625,
+            "bottom": 826.2746734619141
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7567138671875,
+            "y": 239.37664794921875,
+            "width": 241.38104248046875,
+            "height": 502.6781005859375,
+            "right": 877.1377563476562,
+            "bottom": 742.0547485351562
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7567138671875,
+            "y": 239.37664794921875,
+            "width": 241.38104248046875,
+            "height": 502.6781005859375,
+            "right": 877.1377563476562,
+            "bottom": 742.0547485351562
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7567138671875,
+            "y": 239.37664794921875,
+            "width": 241.38104248046875,
+            "height": 502.6781005859375,
+            "right": 877.1377563476562,
+            "bottom": 742.0547485351562
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 635.7567138671875,
+            "y": 239.37664794921875,
+            "width": 241.38104248046875,
+            "height": 502.6781005859375,
+            "right": 877.1377563476562,
+            "bottom": 742.0547485351562
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 635.7567138671875,
+            "y": 239.37664794921875,
+            "width": 241.38104248046875,
+            "height": 502.6781005859375,
+            "right": 877.1377563476562,
+            "bottom": 742.0547485351562
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00579, 0, 0, 1.00579, -2.7774, -4.629)",
+          "rect": {
+            "x": 515.5075073242188,
+            "y": 163.46151733398438,
+            "width": 384.39898681640625,
+            "height": 663.8189697265625,
+            "right": 899.906494140625,
+            "bottom": 827.2804870605469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998638, -0.0521772, 0.0521772, 0.998638, 1.85348, -5.79211)",
+          "rect": {
+            "x": 627.3502197265625,
+            "y": 230.97012329101562,
+            "width": 258.19403076171875,
+            "height": 519.4910888671875,
+            "right": 885.5442504882812,
+            "bottom": 750.4612121582031
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-scale-transition-0.5",
+      "active": "coaching",
+      "copy": {
+        "x": 32,
+        "y": -303.453125,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 249.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0.942399,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0.0576015,
+          "transform": "none",
+          "rect": {
+            "x": 503.6387634277344,
+            "y": 142.77584838867188,
+            "width": 389.6919250488281,
+            "height": 674.449462890625,
+            "right": 893.3306884765625,
+            "bottom": 817.2253112792969
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.4945068359375,
+            "y": 222.83154296875,
+            "width": 231.7412109375,
+            "height": 498.78155517578125,
+            "right": 878.2357177734375,
+            "bottom": 721.6130981445312
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.4945068359375,
+            "y": 222.83154296875,
+            "width": 231.7412109375,
+            "height": 498.78155517578125,
+            "right": 878.2357177734375,
+            "bottom": 721.6130981445312
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.4945068359375,
+            "y": 222.83154296875,
+            "width": 231.7412109375,
+            "height": 498.78155517578125,
+            "right": 878.2357177734375,
+            "bottom": 721.6130981445312
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 646.4945068359375,
+            "y": 222.83154296875,
+            "width": 231.7412109375,
+            "height": 498.78155517578125,
+            "right": 878.2357177734375,
+            "bottom": 721.6130981445312
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 646.4945068359375,
+            "y": 222.83154296875,
+            "width": 231.7412109375,
+            "height": 498.78155517578125,
+            "right": 878.2357177734375,
+            "bottom": 721.6130981445312
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.025, 0, 0, 1.025, -11.9996, -19.9994)",
+          "rect": {
+            "x": 502.61376953125,
+            "y": 141.7508544921875,
+            "width": 391.741943359375,
+            "height": 676.49951171875,
+            "right": 894.355712890625,
+            "bottom": 818.2503662109375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999481, 0.0322171, -0.0322171, 0.999481, 7.77135, -24.2855)",
+          "rect": {
+            "x": 638.2409057617188,
+            "y": 214.5779571533203,
+            "width": 248.2484130859375,
+            "height": 515.2887573242188,
+            "right": 886.4893188476562,
+            "bottom": 729.8667144775391
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "980-scale-transition-0.75",
+      "active": "coaching",
+      "copy": {
+        "x": 32,
+        "y": -53.453125,
+        "width": 405,
+        "height": 552.953125,
+        "right": 437,
+        "bottom": 499.5
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 507.5166320800781,
+            "y": 149.3093719482422,
+            "width": 387.4917297363281,
+            "height": 670.6416625976562,
+            "right": 895.0083618164062,
+            "bottom": 819.9510345458984
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2398071289062,
+            "y": 227.5849151611328,
+            "width": 233.0377197265625,
+            "height": 499.3150634765625,
+            "right": 877.2775268554688,
+            "bottom": 726.8999786376953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2398071289062,
+            "y": 227.5849151611328,
+            "width": 233.0377197265625,
+            "height": 499.3150634765625,
+            "right": 877.2775268554688,
+            "bottom": 726.8999786376953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2398071289062,
+            "y": 227.5849151611328,
+            "width": 233.0377197265625,
+            "height": 499.3150634765625,
+            "right": 877.2775268554688,
+            "bottom": 726.8999786376953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 644.2398071289062,
+            "y": 227.5849151611328,
+            "width": 233.0377197265625,
+            "height": 499.3150634765625,
+            "right": 877.2775268554688,
+            "bottom": 726.8999786376953
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 644.2398071289062,
+            "y": 227.5849151611328,
+            "width": 233.0377197265625,
+            "height": 499.3150634765625,
+            "right": 877.2775268554688,
+            "bottom": 726.8999786376953
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01921, 0, 0, 1.01921, -9.22188, -15.3698)",
+          "rect": {
+            "x": 506.4974060058594,
+            "y": 148.2901611328125,
+            "width": 389.5301818847656,
+            "height": 672.6800537109375,
+            "right": 896.027587890625,
+            "bottom": 820.97021484375
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999391, 0.0348913, -0.0348913, 0.999391, 6.16492, -19.2654)",
+          "rect": {
+            "x": 635.965576171875,
+            "y": 219.31065368652344,
+            "width": 249.58624267578125,
+            "height": 515.863525390625,
+            "right": 885.5518188476562,
+            "bottom": 735.1741790771484
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-method-transition-0.25",
+      "active": "method",
+      "copy": {
+        "x": 80,
+        "y": 506.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 1098.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2318725585938,
+            "y": 184.84503173828125,
+            "width": 294.87225341796875,
+            "height": 610.1776733398438,
+            "right": 1258.1041259765625,
+            "bottom": 795.022705078125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 963.2318725585938,
+            "y": 184.84503173828125,
+            "width": 294.87225341796875,
+            "height": 610.1776733398438,
+            "right": 1258.1041259765625,
+            "bottom": 795.022705078125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2318725585938,
+            "y": 184.84503173828125,
+            "width": 294.87225341796875,
+            "height": 610.1776733398438,
+            "right": 1258.1041259765625,
+            "bottom": 795.022705078125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2318725585938,
+            "y": 184.84503173828125,
+            "width": 294.87225341796875,
+            "height": 610.1776733398438,
+            "right": 1258.1041259765625,
+            "bottom": 795.022705078125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2318725585938,
+            "y": 184.84503173828125,
+            "width": 294.87225341796875,
+            "height": 610.1776733398438,
+            "right": 1258.1041259765625,
+            "bottom": 795.022705078125
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.0058, 0, 0, 1.0058, -2.78328, -4.6388)",
+          "rect": {
+            "x": 758.7760009765625,
+            "y": 163.44772338867188,
+            "width": 564.8502197265625,
+            "height": 663.826904296875,
+            "right": 1323.626220703125,
+            "bottom": 827.2746276855469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998631, 0.0523012, -0.0523012, 0.998631, 1.87116, -5.84737)",
+          "rect": {
+            "x": 954.8244018554688,
+            "y": 176.43756103515625,
+            "width": 311.68719482421875,
+            "height": 626.9926147460938,
+            "right": 1266.5115966796875,
+            "bottom": 803.43017578125
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-method-transition-0.5",
+      "active": "method",
+      "copy": {
+        "x": 80,
+        "y": 756.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 1348.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3720092773438,
+            "y": 190.62147521972656,
+            "width": 294.89251708984375,
+            "height": 610.185791015625,
+            "right": 1256.2645263671875,
+            "bottom": 800.8072662353516
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 961.3720092773438,
+            "y": 190.62147521972656,
+            "width": 294.89251708984375,
+            "height": 610.185791015625,
+            "right": 1256.2645263671875,
+            "bottom": 800.8072662353516
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3720092773438,
+            "y": 190.62147521972656,
+            "width": 294.89251708984375,
+            "height": 610.185791015625,
+            "right": 1256.2645263671875,
+            "bottom": 800.8072662353516
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3720092773438,
+            "y": 190.62147521972656,
+            "width": 294.89251708984375,
+            "height": 610.185791015625,
+            "right": 1256.2645263671875,
+            "bottom": 800.8072662353516
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3720092773438,
+            "y": 190.62147521972656,
+            "width": 294.89251708984375,
+            "height": 610.185791015625,
+            "right": 1256.2645263671875,
+            "bottom": 800.8072662353516
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00001, 0, 0, 1.00001, -0.00552, -0.0092)",
+          "rect": {
+            "x": 763.1787719726562,
+            "y": 169.98703002929688,
+            "width": 561.6001586914062,
+            "height": 660.007568359375,
+            "right": 1324.7789306640625,
+            "bottom": 829.9945983886719
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99863, 0.0523359, -0.0523359, 0.99863, 0.0214046, -0.0668895)",
+          "rect": {
+            "x": 952.9642944335938,
+            "y": 182.21376037597656,
+            "width": 311.70794677734375,
+            "height": 627.001220703125,
+            "right": 1264.6722412109375,
+            "bottom": 809.2149810791016
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-method-transition-0.75",
+      "active": "start",
+      "copy": {
+        "x": 80,
+        "y": -73.390625,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 518.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 967.631103515625,
+            "y": 171.5916290283203,
+            "width": 294.5919189453125,
+            "height": 610.0657958984375,
+            "right": 1262.2230224609375,
+            "bottom": 781.6574249267578
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.631103515625,
+            "y": 171.5916290283203,
+            "width": 294.5919189453125,
+            "height": 610.0657958984375,
+            "right": 1262.2230224609375,
+            "bottom": 781.6574249267578
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.631103515625,
+            "y": 171.5916290283203,
+            "width": 294.5919189453125,
+            "height": 610.0657958984375,
+            "right": 1262.2230224609375,
+            "bottom": 781.6574249267578
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.631103515625,
+            "y": 171.5916290283203,
+            "width": 294.5919189453125,
+            "height": 610.0657958984375,
+            "right": 1262.2230224609375,
+            "bottom": 781.6574249267578
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.631103515625,
+            "y": 171.5916290283203,
+            "width": 294.5919189453125,
+            "height": 610.0657958984375,
+            "right": 1262.2230224609375,
+            "bottom": 781.6574249267578
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01922, 0, 0, 1.01922, -9.22776, -15.3796)",
+          "rect": {
+            "x": 748.5615234375,
+            "y": 148.27630615234375,
+            "width": 572.39013671875,
+            "height": 672.6881713867188,
+            "right": 1320.95166015625,
+            "bottom": 820.9644775390625
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998656, -0.0518206, 0.0518206, 0.998656, 6.13016, -19.1567)",
+          "rect": {
+            "x": 959.227294921875,
+            "y": 163.1878204345703,
+            "width": 311.3995361328125,
+            "height": 626.8734130859375,
+            "right": 1270.6268310546875,
+            "bottom": 790.0612335205078
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-practice-transition-0.25",
+      "active": "practice",
+      "copy": {
+        "x": 80,
+        "y": 506.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 1098.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.3551635742188,
+            "y": 186.9753875732422,
+            "width": 284.59820556640625,
+            "height": 606.0029907226562,
+            "right": 1252.953369140625,
+            "bottom": 792.9783782958984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.3551635742188,
+            "y": 186.9753875732422,
+            "width": 284.59820556640625,
+            "height": 606.0029907226562,
+            "right": 1252.953369140625,
+            "bottom": 792.9783782958984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 968.3551635742188,
+            "y": 186.9753875732422,
+            "width": 284.59820556640625,
+            "height": 606.0029907226562,
+            "right": 1252.953369140625,
+            "bottom": 792.9783782958984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.3551635742188,
+            "y": 186.9753875732422,
+            "width": 284.59820556640625,
+            "height": 606.0029907226562,
+            "right": 1252.953369140625,
+            "bottom": 792.9783782958984
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.3551635742188,
+            "y": 186.9753875732422,
+            "width": 284.59820556640625,
+            "height": 606.0029907226562,
+            "right": 1252.953369140625,
+            "bottom": 792.9783782958984
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.0058, 0, 0, 1.0058, -2.78328, -4.6388)",
+          "rect": {
+            "x": 758.7760009765625,
+            "y": 163.44772338867188,
+            "width": 564.8502197265625,
+            "height": 663.826904296875,
+            "right": 1323.626220703125,
+            "bottom": 827.2746276855469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999396, -0.0347591, 0.0347591, 0.999396, 1.85739, -5.80434)",
+          "rect": {
+            "x": 960.0819702148438,
+            "y": 178.7021484375,
+            "width": 301.14459228515625,
+            "height": 622.5494995117188,
+            "right": 1261.2265625,
+            "bottom": 801.2516479492188
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-practice-transition-0.5",
+      "active": "practice",
+      "copy": {
+        "x": 80,
+        "y": 756.609375,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 1348.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.68182373046875,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188720703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.68182373046875,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188720703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.68182373046875,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188720703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.68182373046875,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188720703125
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.68182373046875,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188720703125
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00001, 0, 0, 1.00001, -0.00552, -0.0092)",
+          "rect": {
+            "x": 763.1787719726562,
+            "y": 169.98703002929688,
+            "width": 561.6001586914062,
+            "height": 660.007568359375,
+            "right": 1324.7789306640625,
+            "bottom": 829.9945983886719
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999391, -0.034899, 0.034899, 0.999391, 0.025885, -0.0808905)",
+          "rect": {
+            "x": 958.208251953125,
+            "y": 184.40750122070312,
+            "width": 301.22900390625,
+            "height": 622.585693359375,
+            "right": 1259.437255859375,
+            "bottom": 806.9931945800781
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-practice-transition-0.75",
+      "active": "method",
+      "copy": {
+        "x": 80,
+        "y": -73.390625,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 518.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.6058959960938,
+            "y": 171.5814666748047,
+            "width": 294.64239501953125,
+            "height": 610.0858764648438,
+            "right": 1262.248291015625,
+            "bottom": 781.6673431396484
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 967.6058959960938,
+            "y": 171.5814666748047,
+            "width": 294.64239501953125,
+            "height": 610.0858764648438,
+            "right": 1262.248291015625,
+            "bottom": 781.6673431396484
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.6058959960938,
+            "y": 171.5814666748047,
+            "width": 294.64239501953125,
+            "height": 610.0858764648438,
+            "right": 1262.248291015625,
+            "bottom": 781.6673431396484
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.6058959960938,
+            "y": 171.5814666748047,
+            "width": 294.64239501953125,
+            "height": 610.0858764648438,
+            "right": 1262.248291015625,
+            "bottom": 781.6673431396484
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 967.6058959960938,
+            "y": 171.5814666748047,
+            "width": 294.64239501953125,
+            "height": 610.0858764648438,
+            "right": 1262.248291015625,
+            "bottom": 781.6673431396484
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01922, 0, 0, 1.01922, -9.22776, -15.3796)",
+          "rect": {
+            "x": 748.5615234375,
+            "y": 148.27630615234375,
+            "width": 572.39013671875,
+            "height": 672.6881713867188,
+            "right": 1320.95166015625,
+            "bottom": 820.9644775390625
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998652, 0.0519071, -0.0519071, 0.998652, 6.13019, -19.1568)",
+          "rect": {
+            "x": 959.201416015625,
+            "y": 163.17698669433594,
+            "width": 311.4512939453125,
+            "height": 626.8948364257812,
+            "right": 1270.6527099609375,
+            "bottom": 790.0718231201172
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-coaching-transition-0.25",
+      "active": "coaching",
+      "copy": {
+        "x": 80,
+        "y": 520.109375,
+        "width": 500,
+        "height": 564.765625,
+        "right": 580,
+        "bottom": 1084.875
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.346435546875,
+            "y": 186.9717254638672,
+            "width": 284.61572265625,
+            "height": 606.01025390625,
+            "right": 1252.962158203125,
+            "bottom": 792.9819793701172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.346435546875,
+            "y": 186.9717254638672,
+            "width": 284.61572265625,
+            "height": 606.01025390625,
+            "right": 1252.962158203125,
+            "bottom": 792.9819793701172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.346435546875,
+            "y": 186.9717254638672,
+            "width": 284.61572265625,
+            "height": 606.01025390625,
+            "right": 1252.962158203125,
+            "bottom": 792.9819793701172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 968.346435546875,
+            "y": 186.9717254638672,
+            "width": 284.61572265625,
+            "height": 606.01025390625,
+            "right": 1252.962158203125,
+            "bottom": 792.9819793701172
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 968.346435546875,
+            "y": 186.9717254638672,
+            "width": 284.61572265625,
+            "height": 606.01025390625,
+            "right": 1252.962158203125,
+            "bottom": 792.9819793701172
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.0058, 0, 0, 1.0058, -2.78328, -4.6388)",
+          "rect": {
+            "x": 758.7760009765625,
+            "y": 163.44772338867188,
+            "width": 564.8502197265625,
+            "height": 663.826904296875,
+            "right": 1323.626220703125,
+            "bottom": 827.2746276855469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999395, 0.0347889, -0.0347889, 0.999395, 1.8574, -5.80438)",
+          "rect": {
+            "x": 960.0729370117188,
+            "y": 178.69825744628906,
+            "width": 301.16265869140625,
+            "height": 622.5572509765625,
+            "right": 1261.235595703125,
+            "bottom": 801.2555084228516
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-coaching-transition-0.5",
+      "active": "coaching",
+      "copy": {
+        "x": 80,
+        "y": 770.109375,
+        "width": 500,
+        "height": 564.765625,
+        "right": 580,
+        "bottom": 1334.875
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.6818084716797,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188568115234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.6818084716797,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188568115234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.6818084716797,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188568115234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.6818084716797,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188568115234
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 966.4825439453125,
+            "y": 192.6818084716797,
+            "width": 284.680419921875,
+            "height": 606.0370483398438,
+            "right": 1251.1629638671875,
+            "bottom": 798.7188568115234
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00001, 0, 0, 1.00001, -0.00552, -0.0092)",
+          "rect": {
+            "x": 763.1787719726562,
+            "y": 169.98703002929688,
+            "width": 561.6001586914062,
+            "height": 660.007568359375,
+            "right": 1324.7789306640625,
+            "bottom": 829.9945983886719
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999391, 0.0348991, -0.0348991, 0.999391, 0.0258849, -0.0808904)",
+          "rect": {
+            "x": 958.2081909179688,
+            "y": 184.40748596191406,
+            "width": 301.22906494140625,
+            "height": 622.5857543945312,
+            "right": 1259.437255859375,
+            "bottom": 806.9932403564453
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-coaching-transition-0.75",
+      "active": "practice",
+      "copy": {
+        "x": 80,
+        "y": -73.390625,
+        "width": 500,
+        "height": 591.765625,
+        "right": 580,
+        "bottom": 518.375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.6876831054688,
+            "y": 173.64759826660156,
+            "width": 284.47882080078125,
+            "height": 605.9536743164062,
+            "right": 1257.16650390625,
+            "bottom": 779.6012725830078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.6876831054688,
+            "y": 173.64759826660156,
+            "width": 284.47882080078125,
+            "height": 605.9536743164062,
+            "right": 1257.16650390625,
+            "bottom": 779.6012725830078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 972.6876831054688,
+            "y": 173.64759826660156,
+            "width": 284.47882080078125,
+            "height": 605.9536743164062,
+            "right": 1257.16650390625,
+            "bottom": 779.6012725830078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.6876831054688,
+            "y": 173.64759826660156,
+            "width": 284.47882080078125,
+            "height": 605.9536743164062,
+            "right": 1257.16650390625,
+            "bottom": 779.6012725830078
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.6876831054688,
+            "y": 173.64759826660156,
+            "width": 284.47882080078125,
+            "height": 605.9536743164062,
+            "right": 1257.16650390625,
+            "bottom": 779.6012725830078
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01922, 0, 0, 1.01922, -9.22776, -15.3796)",
+          "rect": {
+            "x": 748.5615234375,
+            "y": 148.27630615234375,
+            "width": 572.39013671875,
+            "height": 672.6881713867188,
+            "right": 1320.95166015625,
+            "bottom": 820.9644775390625
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999403, -0.0345561, 0.0345561, 0.999403, 6.13019, -19.1568)",
+          "rect": {
+            "x": 964.416015625,
+            "y": 165.3759307861328,
+            "width": 301.0220947265625,
+            "height": 622.4970092773438,
+            "right": 1265.4381103515625,
+            "bottom": 787.8729400634766
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-scale-transition-0.25",
+      "active": "scale",
+      "copy": {
+        "x": 80,
+        "y": 459.515625,
+        "width": 500,
+        "height": 685.96875,
+        "right": 580,
+        "bottom": 1145.484375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 759.7817993164062,
+            "y": 164.45352172851562,
+            "width": 562.8385620117188,
+            "height": 661.8154296875,
+            "right": 1322.620361328125,
+            "bottom": 826.2689514160156
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2543334960938,
+            "y": 184.90252685546875,
+            "width": 294.79986572265625,
+            "height": 610.1488037109375,
+            "right": 1258.05419921875,
+            "bottom": 795.0513305664062
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2543334960938,
+            "y": 184.90252685546875,
+            "width": 294.79986572265625,
+            "height": 610.1488037109375,
+            "right": 1258.05419921875,
+            "bottom": 795.0513305664062
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2543334960938,
+            "y": 184.90252685546875,
+            "width": 294.79986572265625,
+            "height": 610.1488037109375,
+            "right": 1258.05419921875,
+            "bottom": 795.0513305664062
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 963.2543334960938,
+            "y": 184.90252685546875,
+            "width": 294.79986572265625,
+            "height": 610.1488037109375,
+            "right": 1258.05419921875,
+            "bottom": 795.0513305664062
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 963.2543334960938,
+            "y": 184.90252685546875,
+            "width": 294.79986572265625,
+            "height": 610.1488037109375,
+            "right": 1258.05419921875,
+            "bottom": 795.0513305664062
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.0058, 0, 0, 1.0058, -2.78328, -4.6388)",
+          "rect": {
+            "x": 758.7760009765625,
+            "y": 163.44772338867188,
+            "width": 564.8502197265625,
+            "height": 663.826904296875,
+            "right": 1323.626220703125,
+            "bottom": 827.2746276855469
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.998638, -0.0521771, 0.0521771, 0.998638, 1.85738, -5.80433)",
+          "rect": {
+            "x": 954.8477783203125,
+            "y": 176.4960174560547,
+            "width": 311.6129150390625,
+            "height": 626.9617919921875,
+            "right": 1266.460693359375,
+            "bottom": 803.4578094482422
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-scale-transition-0.5",
+      "active": "scale",
+      "copy": {
+        "x": 80,
+        "y": 709.515625,
+        "width": 500,
+        "height": 685.96875,
+        "right": 580,
+        "bottom": 1395.484375
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 764.1787719726562,
+            "y": 170.98704528808594,
+            "width": 559.6001586914062,
+            "height": 658.007568359375,
+            "right": 1323.7789306640625,
+            "bottom": 828.9946136474609
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3766479492188,
+            "y": 190.6075897216797,
+            "width": 294.89227294921875,
+            "height": 610.1856079101562,
+            "right": 1256.2689208984375,
+            "bottom": 800.7931976318359
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3766479492188,
+            "y": 190.6075897216797,
+            "width": 294.89227294921875,
+            "height": 610.1856079101562,
+            "right": 1256.2689208984375,
+            "bottom": 800.7931976318359
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3766479492188,
+            "y": 190.6075897216797,
+            "width": 294.89227294921875,
+            "height": 610.1856079101562,
+            "right": 1256.2689208984375,
+            "bottom": 800.7931976318359
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 961.3766479492188,
+            "y": 190.6075897216797,
+            "width": 294.89227294921875,
+            "height": 610.1856079101562,
+            "right": 1256.2689208984375,
+            "bottom": 800.7931976318359
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 961.3766479492188,
+            "y": 190.6075897216797,
+            "width": 294.89227294921875,
+            "height": 610.1856079101562,
+            "right": 1256.2689208984375,
+            "bottom": 800.7931976318359
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.00001, 0, 0, 1.00001, -0.00552, -0.0092)",
+          "rect": {
+            "x": 763.1787719726562,
+            "y": 169.98703002929688,
+            "width": 561.6001586914062,
+            "height": 660.007568359375,
+            "right": 1324.7789306640625,
+            "bottom": 829.9945983886719
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.99863, -0.0523354, 0.0523354, 0.99863, 0.0258736, -0.0808552)",
+          "rect": {
+            "x": 952.9689331054688,
+            "y": 182.1998748779297,
+            "width": 311.70770263671875,
+            "height": 627.0010375976562,
+            "right": 1264.6766357421875,
+            "bottom": 809.2009124755859
+          }
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "label": "1440-scale-transition-0.75",
+      "active": "coaching",
+      "copy": {
+        "x": 80,
+        "y": -59.890625,
+        "width": 500,
+        "height": 564.765625,
+        "right": 580,
+        "bottom": 504.875
+      },
+      "photos": [
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/consultation.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/coaching.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        },
+        {
+          "src": "/growth-assets/ai-scenes/briefing.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 749.5807495117188,
+            "y": 149.2955322265625,
+            "width": 570.3516235351562,
+            "height": 670.6497192382812,
+            "right": 1319.932373046875,
+            "bottom": 819.9452514648438
+          }
+        }
+      ],
+      "screens": [
+        {
+          "src": "/growth-assets/ai-screens/06-tour-preparation-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.7129516601562,
+            "y": 173.65809631347656,
+            "width": 284.42816162109375,
+            "height": 605.9327392578125,
+            "right": 1257.14111328125,
+            "bottom": 779.5908355712891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/12-copilot-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.7129516601562,
+            "y": 173.65809631347656,
+            "width": 284.42816162109375,
+            "height": 605.9327392578125,
+            "right": 1257.14111328125,
+            "bottom": 779.5908355712891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/07-objection-practice-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.7129516601562,
+            "y": 173.65809631347656,
+            "width": 284.42816162109375,
+            "height": 605.9327392578125,
+            "right": 1257.14111328125,
+            "bottom": 779.5908355712891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/09-after-tour-mobile.webp",
+          "opacity": 1,
+          "transform": "none",
+          "rect": {
+            "x": 972.7129516601562,
+            "y": 173.65809631347656,
+            "width": 284.42816162109375,
+            "height": 605.9327392578125,
+            "right": 1257.14111328125,
+            "bottom": 779.5908355712891
+          }
+        },
+        {
+          "src": "/growth-assets/ai-screens/03-roadmap-mobile.webp",
+          "opacity": 0,
+          "transform": "none",
+          "rect": {
+            "x": 972.7129516601562,
+            "y": 173.65809631347656,
+            "width": 284.42816162109375,
+            "height": 605.9327392578125,
+            "right": 1257.14111328125,
+            "bottom": 779.5908355712891
+          }
+        }
+      ],
+      "frames": [
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(1.01922, 0, 0, 1.01922, -9.22776, -15.3796)",
+          "rect": {
+            "x": 748.5615234375,
+            "y": 148.27630615234375,
+            "width": 572.39013671875,
+            "height": 672.6881713867188,
+            "right": 1320.95166015625,
+            "bottom": 820.9644775390625
+          }
+        },
+        {
+          "src": null,
+          "opacity": 1,
+          "transform": "matrix(0.999406, 0.03447, -0.03447, 0.999406, 6.13018, -19.1568)",
+          "rect": {
+            "x": 964.4419555664062,
+            "y": 165.38710021972656,
+            "width": 300.97015380859375,
+            "height": 622.4747314453125,
+            "right": 1265.412109375,
+            "bottom": 787.8618316650391
+          }
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "limitations": "Local Chromium. ResourceTiming reports initial and scroll-loaded bytes; no field Core Web Vitals claim. WhatsApp route fulfilled locally before network; no message sent."
+}

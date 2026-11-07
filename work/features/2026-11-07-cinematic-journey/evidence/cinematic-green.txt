@@ -1,0 +1,5 @@
+PASS A continuous five-chapter journey is present before media playback
+PASS Forward and reverse scrolling update the same scene and native anchors
+PASS A manual motion preference and the system preference keep a linear readable version
+PASS All five full films have local captions, native controls and defer transfer
+PASS Mobile and no-JavaScript keep films, cases and readable content

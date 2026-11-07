@@ -1,0 +1,45 @@
+{
+  "existingVhostsUnchanged": false,
+  "existingSites": {
+    "salesacademy.softvibes.art": {
+      "status": 200,
+      "bodyUnchanged": true
+    },
+    "salesacademy.softvibes.pro": {
+      "status": 200,
+      "bodyUnchanged": true
+    },
+    "digitalspace.softvibes.pro": {
+      "status": 200,
+      "bodyUnchanged": true
+    }
+  },
+  "services": {
+    "v1": "active",
+    "v2": "active",
+    "v3": "active",
+    "v4": "active",
+    "v5": "active"
+  },
+  "listeners": [
+    "LISTEN 0      2048                    127.0.0.1:18483      0.0.0.0:*   ",
+    "LISTEN 0      2048                    127.0.0.1:18482      0.0.0.0:*   ",
+    "LISTEN 0      2048                    127.0.0.1:18481      0.0.0.0:*   ",
+    "LISTEN 0      2048                    127.0.0.1:18485      0.0.0.0:*   ",
+    "LISTEN 0      2048                    127.0.0.1:18484      0.0.0.0:*   "
+  ],
+  "renewalTimer": "active",
+  "reloadHooks": [
+    "/etc/letsencrypt/renewal-hooks/deploy/softvibes-recovery-reload.sh",
+    "/etc/letsencrypt/renewal-hooks/deploy/salesacademy-nginx.sh"
+  ],
+  "tls": "notBefore=Nov  7 11:33:40 2026 GMT\nnotAfter=Feb  5 11:33:39 2027 GMT\nX509v3 Subject Alternative Name: \n    DNS:salesacademy.softvibes.cloud, DNS:v1.salesacademy.softvibes.cloud, DNS:v2.salesacademy.softvibes.cloud, DNS:v3.salesacademy.softvibes.cloud, DNS:v4.salesacademy.softvibes.cloud, DNS:v5.salesacademy.softvibes.cloud\n",
+  "privateModes": {
+    "v1": "0o700",
+    "v2": "0o700",
+    "v3": "0o700",
+    "v4": "0o700",
+    "v5": "0o700"
+  },
+  "nginxTest": "nginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful\n"
+}

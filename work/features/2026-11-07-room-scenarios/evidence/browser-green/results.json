@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "name": "Six complete scenarios and fifteen original screenshots are available",
+      "passed": true
+    },
+    {
+      "name": "Native chapter navigation works in both directions with visible keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "Responsive layouts and reduced motion keep every scene readable",
+      "passed": true
+    },
+    {
+      "name": "No-JavaScript provides all stories, screenshots and native next links",
+      "passed": true
+    },
+    {
+      "name": "Export mode preserves the complete story in a 1600 by 1000 composition",
+      "passed": true
+    },
+    {
+      "name": "The gallery makes no remote requests or operational writes",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "writes": [],
+  "external": []
+}
