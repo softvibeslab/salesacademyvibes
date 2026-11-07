@@ -66,7 +66,7 @@ En las fichas de Cotizar hay un bloque «Enviar al cliente por WhatsApp»: Whats
 
 ## Botón flotante de atajos
 
-En toda la app hay un botón dorado flotante: tócalo para Registrar resultado, Nueva nota, Cotizar membresía, Nuevo bloque o abrir el Tablero de sala. Arrástralo a donde te acomode; recuerda su posición. En la pestaña Copiloto se oculta: el Copiloto trae el suyo, que además lleva su navegación (Hoy, Catálogo, Mi mes) porque ya no tiene barra inferior.
+En toda la app hay un solo botón dorado flotante, arrastrable y con posición recordada. Su menú cambia según dónde estés: en Home los atajos globales (resultado, nota, bloque, cotizar, tablero); en Calendario, actualizar tours; en Roadmap y en cada paso, continuar o ejecutar el paso; en las fichas, usar la plantilla y, si es de Cotizar, enviarla por WhatsApp; en Perfil, la meta del mes. En la pestaña Copiloto el mismo botón trae la navegación del agente (Chat, Catálogo, Mi mes — el Copiloto ya no tiene barra inferior) y sus atajos, y se los manda al agente embebido.
 
 ## Perfil
 

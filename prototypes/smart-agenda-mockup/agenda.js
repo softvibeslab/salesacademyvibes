@@ -2,7 +2,7 @@ import { opsRequest } from "./ops-api.js";
 import { EXAMPLE_TODAY, ME_REP, STATUS_LABEL, addDays, defaultOps, labelDate } from "./ops-store.js";
 import { homeCounters } from "./home-counters.js";
 import { waShareUrl, previewMessage } from "./wa-share.js";
-import { FAB_ACTIONS, FAB_SIZE, FAB_MARGIN, clampFab, isTap } from "./fab.js";
+import { FAB_MSG_TYPE, FAB_SIZE, FAB_MARGIN, clampFab, isTap, resolveFabMenu } from "./fab.js";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
 // estos son el respaldo si no responde.
@@ -133,6 +133,7 @@ const state = {
   calDate: "2026-11-06",
   calWeek: "2026-11-02",
   meId: (() => { try { return sessionStorage.getItem("sa.app.rep") || ME_REP; } catch { return ME_REP; } })(),
+  coachTab: "hoy",
   toast: "",
   presentations: 3,
   closes: 1,
@@ -230,12 +231,24 @@ function placeFabMenu() {
   else fabMenu.style.top = `${y + FAB_SIZE + FAB_MARGIN}px`;
 }
 
+function fichaShareFlag() {
+  if (state.view !== "ficha" || state.openKind !== "skill") return false;
+  return COPILOTO_SKILLS.find((item) => item.id === state.openId)?.category === "cotizar";
+}
+
 function toggleFabMenu(open) {
   const show = open ?? fabMenu.hidden;
   fabMenu.hidden = !show;
   fab.setAttribute("aria-expanded", String(show));
   if (show) {
-    fabMenu.innerHTML = FAB_ACTIONS.map((item) => `<button type="button" data-fab-act="${esc(item.id)}"><span class="material-symbols-outlined">${esc(item.icon)}</span>${esc(item.label)}</button>`).join("");
+    // Menú dinámico según la vista (plan aprobado por el PO 2026-11-07).
+    const menu = resolveFabMenu(state.view, { share: fichaShareFlag() });
+    const current = `nav-${state.coachTab || "hoy"}`;
+    fabMenu.innerHTML = menu.map((item) => {
+      if (item.sep) return `<hr class="fab-sep">`;
+      const mark = item.nav && item.id === current ? ' aria-current="page"' : "";
+      return `<button type="button" data-fab-act="${esc(item.id)}"${mark}>${item.icon ? `<span class="material-symbols-outlined">${esc(item.icon)}</span>` : ""}${esc(item.label)}</button>`;
+    }).join("");
     placeFabMenu();
     fabMenu.querySelector("button")?.focus();
   }
@@ -271,16 +284,47 @@ fab.addEventListener("pointerup", (event) => {
   }
   try { localStorage.setItem(FAB_POS_KEY, JSON.stringify({ x: parseFloat(fab.style.left), y: parseFloat(fab.style.top) })); } catch { /* el modo privado no guarda */ }
 });
+const COACH_FAB_IDS = new Set(["nav-hoy", "nav-catalogo", "nav-mes", "tour", "venta", "no-venta", "cotizar-cop", "como-voy"]);
 fabMenu.addEventListener("click", (event) => {
   const button = event.target.closest("[data-fab-act]");
   if (!button) return;
   toggleFabMenu(false);
   const act = button.dataset.fabAct;
+  if (COACH_FAB_IDS.has(act)) {
+    // Contrato sa:fab: el Copiloto embebido ejecuta el comando (mismo origen).
+    const id = act === "cotizar-cop" ? "cotizar" : act;
+    coachFrameEl().contentWindow?.postMessage({ type: FAB_MSG_TYPE, id }, window.location.origin);
+    return;
+  }
   if (act === "resultado") { go("presentacion", "presentacion"); return; }
   if (act === "nota") { go("nota", "nota"); return; }
   if (act === "cotizar") { state.openKind = "skill"; state.openId = "SK-01"; go("ficha", "explorar"); return; }
   if (act === "bloque") { go("bloque", "bloque"); return; }
-  if (act === "tablero") window.open("/ops/", "_blank", "noopener");
+  if (act === "tablero") { window.open("/ops/", "_blank", "noopener"); return; }
+  if (act === "reload") { refreshTours(); return; }
+  if (act === "paso") { state.moduleId = currentStep().n; go("modulo"); return; }
+  if (act === "practicar") { state.copilotoQuery = currentStep().q; state.copilotoRole = ""; go("coach"); return; }
+  if (act === "ejecutar-paso") {
+    const step = STEPS.find((item) => item.n === Number(state.moduleId)) || currentStep();
+    state.copilotoQuery = step.q;
+    state.copilotoRole = "";
+    go("coach");
+    return;
+  }
+  if (act === "paso-listo") { run("complete-step"); return; }
+  if (act === "biblioteca") {
+    state.resFilter = "biblioteca";
+    go("resources", "explorar");
+    phone.querySelector("#res-q")?.focus();
+    return;
+  }
+  if (act === "usar-plantilla") { run("use-template"); return; }
+  if (act === "whatsapp") { run("wa-share"); return; }
+  if (act === "meta") go("goalsheet");
+});
+window.addEventListener("message", (event) => {
+  if (event.origin !== window.location.origin) return;
+  if (event.data?.type === "sa:fab-state") state.coachTab = event.data.tab;
 });
 document.addEventListener("click", (event) => {
   if (!fabMenu.hidden && !event.target.closest("#fab-menu, #fab")) toggleFabMenu(false);
@@ -1698,14 +1742,9 @@ function render() {
     frame.hidden = false;
     if (!phone.contains(frame)) phone.insertBefore(frame, sheets);
     sheets.innerHTML = shell("");
-    // El Copiloto embebido trae su propio FAB; ocultamos el de la app para no duplicar.
-    fab.hidden = true;
-    fabMenu.hidden = true;
-    fab.setAttribute("aria-expanded", "false");
     return;
   }
   if (coachFrame) coachFrame.hidden = true;
-  fab.hidden = false;
   const draw = views[state.view] || viewHoy;
   const html = draw();
   sheets.innerHTML = html.includes('class="dock"') ? html : shell(html);

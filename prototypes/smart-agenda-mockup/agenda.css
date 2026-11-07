@@ -422,6 +422,8 @@ button { cursor: pointer; }
 }
 .fab-menu button:hover, .fab-menu button:focus-visible { background: #f3f3f3; color: var(--gold-deep); }
 .fab-menu .material-symbols-outlined { font-size: 20px; color: var(--gold); }
+.fab-menu .fab-sep { border: 0; border-top: 1px solid #e4e0d6; margin: 4px 0; }
+.fab-menu button[aria-current="page"] { background: #f5efcf; color: var(--gold-deep); font-weight: 700; }
 
 /* Resultado del tour */
 .vrow-btn { width: 100%; background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
@@ -433,3 +435,4 @@ button { cursor: pointer; }
   .stage, .handset, .phone { background: var(--surface); }
   .handset, .phone { width: 100%; max-width: none; }
 }
+.fab[hidden] { display: none; }
