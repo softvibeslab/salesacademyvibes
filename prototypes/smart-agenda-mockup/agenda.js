@@ -2,6 +2,7 @@ import { opsRequest } from "./ops-api.js";
 import { EXAMPLE_TODAY, ME_REP, STATUS_LABEL, addDays, defaultOps, labelDate } from "./ops-store.js";
 import { homeCounters } from "./home-counters.js";
 import { waShareUrl, previewMessage } from "./wa-share.js";
+import { FAB_ACTIONS, FAB_SIZE, FAB_MARGIN, clampFab, isTap } from "./fab.js";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
 // estos son el respaldo si no responde.
@@ -189,6 +190,106 @@ const sheets = document.createElement("div");
 sheets.id = "sheets";
 phone.append(sheets);
 const map = document.getElementById("map");
+
+/* ---------- FAB de atajos (FTD fab-atajos-app) ---------- */
+const fab = document.createElement("button");
+fab.id = "fab";
+fab.className = "fab";
+fab.type = "button";
+fab.setAttribute("aria-haspopup", "true");
+fab.setAttribute("aria-expanded", "false");
+fab.setAttribute("aria-label", "Atajos");
+fab.textContent = "+";
+const fabMenu = document.createElement("div");
+fabMenu.id = "fab-menu";
+fabMenu.className = "fab-menu";
+fabMenu.hidden = true;
+phone.append(fabMenu, fab);
+const FAB_POS_KEY = "sa.fab.pos";
+
+function placeFab() {
+  const w = phone.clientWidth;
+  const h = phone.clientHeight;
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(FAB_POS_KEY) || "null"); } catch { saved = null; }
+  const base = saved || { x: w - FAB_SIZE - 16, y: h - FAB_SIZE - 96 };
+  const pos = clampFab(base.x, base.y, w, h);
+  fab.style.left = `${pos.x}px`;
+  fab.style.top = `${pos.y}px`;
+}
+
+function placeFabMenu() {
+  const w = phone.clientWidth;
+  const h = phone.clientHeight;
+  const x = parseFloat(fab.style.left) || 0;
+  const y = parseFloat(fab.style.top) || 0;
+  fabMenu.style.left = fabMenu.style.right = fabMenu.style.top = fabMenu.style.bottom = "auto";
+  if (x > w / 2) fabMenu.style.right = `${w - x - FAB_SIZE}px`;
+  else fabMenu.style.left = `${x}px`;
+  if (y > h / 2) fabMenu.style.bottom = `${h - y + FAB_MARGIN}px`;
+  else fabMenu.style.top = `${y + FAB_SIZE + FAB_MARGIN}px`;
+}
+
+function toggleFabMenu(open) {
+  const show = open ?? fabMenu.hidden;
+  fabMenu.hidden = !show;
+  fab.setAttribute("aria-expanded", String(show));
+  if (show) {
+    fabMenu.innerHTML = FAB_ACTIONS.map((item) => `<button type="button" data-fab-act="${esc(item.id)}"><span class="material-symbols-outlined">${esc(item.icon)}</span>${esc(item.label)}</button>`).join("");
+    placeFabMenu();
+    fabMenu.querySelector("button")?.focus();
+  }
+}
+
+let fabDrag = null;
+fab.addEventListener("pointerdown", (event) => {
+  fabDrag = {
+    startX: event.clientX,
+    startY: event.clientY,
+    baseX: parseFloat(fab.style.left) || 0,
+    baseY: parseFloat(fab.style.top) || 0,
+    at: Date.now(),
+  };
+  fab.setPointerCapture(event.pointerId);
+});
+fab.addEventListener("pointermove", (event) => {
+  if (!fabDrag) return;
+  const pos = clampFab(fabDrag.baseX + event.clientX - fabDrag.startX, fabDrag.baseY + event.clientY - fabDrag.startY, phone.clientWidth, phone.clientHeight);
+  fab.style.left = `${pos.x}px`;
+  fab.style.top = `${pos.y}px`;
+  if (!fabMenu.hidden) placeFabMenu();
+});
+fab.addEventListener("pointerup", (event) => {
+  if (!fabDrag) return;
+  const dx = event.clientX - fabDrag.startX;
+  const dy = event.clientY - fabDrag.startY;
+  const ms = Date.now() - fabDrag.at;
+  fabDrag = null;
+  if (isTap(dx, dy, ms)) {
+    toggleFabMenu();
+    return;
+  }
+  try { localStorage.setItem(FAB_POS_KEY, JSON.stringify({ x: parseFloat(fab.style.left), y: parseFloat(fab.style.top) })); } catch { /* el modo privado no guarda */ }
+});
+fabMenu.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-fab-act]");
+  if (!button) return;
+  toggleFabMenu(false);
+  const act = button.dataset.fabAct;
+  if (act === "resultado") { go("presentacion", "presentacion"); return; }
+  if (act === "nota") { go("nota", "nota"); return; }
+  if (act === "cotizar") { state.openKind = "skill"; state.openId = "SK-01"; go("ficha", "explorar"); return; }
+  if (act === "bloque") { go("bloque", "bloque"); return; }
+  if (act === "tablero") window.open("/ops/", "_blank", "noopener");
+});
+document.addEventListener("click", (event) => {
+  if (!fabMenu.hidden && !event.target.closest("#fab-menu, #fab")) toggleFabMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !fabMenu.hidden) toggleFabMenu(false);
+});
+window.addEventListener("resize", () => { placeFab(); if (!fabMenu.hidden) placeFabMenu(); });
+placeFab();
 
 function esc(value) {
   return String(value ?? "").replace(/[&<>"']/g, (ch) => ({
@@ -1597,9 +1698,14 @@ function render() {
     frame.hidden = false;
     if (!phone.contains(frame)) phone.insertBefore(frame, sheets);
     sheets.innerHTML = shell("");
+    // El Copiloto embebido trae su propio FAB; ocultamos el de la app para no duplicar.
+    fab.hidden = true;
+    fabMenu.hidden = true;
+    fab.setAttribute("aria-expanded", "false");
     return;
   }
   if (coachFrame) coachFrame.hidden = true;
+  fab.hidden = false;
   const draw = views[state.view] || viewHoy;
   const html = draw();
   sheets.innerHTML = html.includes('class="dock"') ? html : shell(html);

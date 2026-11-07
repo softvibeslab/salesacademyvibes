@@ -62,7 +62,11 @@ Cada paso abre un plan. El video demo es el mismo en todos: YouTube `PkB9UAx2fuI
 
 ## Enviar una cotización por WhatsApp
 
-En las fichas de Cotizar hay un bloque «Enviar al cliente por WhatsApp»: WhatsApp y Lead # opcionales. Con número abre el chat directo; sin número, WhatsApp te deja elegirlo. El número no se guarda en ningún lado; al enviar se agrega «Seguimiento WhatsApp» a Tus prioridades. El Copiloto tiene lo mismo en la hoja «Tu membresía», más un botón flotante arrastrable con los atajos del rep (Programar tour, registrar venta o no venta, cotizar, ¿cómo voy?).
+En las fichas de Cotizar hay un bloque «Enviar al cliente por WhatsApp»: WhatsApp y Lead # opcionales. Con número abre el chat directo; sin número, WhatsApp te deja elegirlo. El número no se guarda en ningún lado; al enviar se agrega «Seguimiento WhatsApp» a Tus prioridades. El Copiloto tiene lo mismo en la hoja «Tu membresía».
+
+## Botón flotante de atajos
+
+En toda la app hay un botón dorado flotante: tócalo para Registrar resultado, Nueva nota, Cotizar membresía, Nuevo bloque o abrir el Tablero de sala. Arrástralo a donde te acomode; recuerda su posición. En la pestaña Copiloto se oculta: el Copiloto trae el suyo, que además lleva su navegación (Hoy, Catálogo, Mi mes) porque ya no tiene barra inferior.
 
 ## Perfil
 

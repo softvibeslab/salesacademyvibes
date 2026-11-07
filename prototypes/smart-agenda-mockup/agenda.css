@@ -400,6 +400,29 @@ button { cursor: pointer; }
 }
 .flow.on .num { background: var(--gold); color: white; }
 
+/* FAB de atajos (FTD fab-atajos-app) */
+.fab {
+  position: absolute; z-index: 30; width: 56px; height: 56px; border-radius: 50%;
+  border: 0; background: var(--gold); color: #fff; font: 600 28px/1 inherit;
+  font-family: inherit; cursor: grab; touch-action: none;
+  box-shadow: 0 6px 18px rgba(26, 28, 28, .28); display: grid; place-items: center; padding-bottom: 3px;
+}
+.fab:active { cursor: grabbing; }
+.fab[aria-expanded="true"] { transform: rotate(45deg); background: var(--gold-deep); }
+.fab-menu {
+  position: absolute; z-index: 30; display: grid; gap: 4px; min-width: 220px;
+  background: #fff; border: 1px solid #e4e0d6; border-radius: 16px; padding: 8px;
+  box-shadow: 0 10px 28px rgba(26, 28, 28, .22);
+}
+.fab-menu[hidden] { display: none; }
+.fab-menu button {
+  display: flex; align-items: center; gap: 10px; border: 0; background: transparent;
+  color: var(--ink); text-align: left; padding: 10px 12px; border-radius: 10px;
+  font: 500 15px/1.2 inherit; font-family: inherit; cursor: pointer; width: 100%;
+}
+.fab-menu button:hover, .fab-menu button:focus-visible { background: #f3f3f3; color: var(--gold-deep); }
+.fab-menu .material-symbols-outlined { font-size: 20px; color: var(--gold); }
+
 /* Resultado del tour */
 .vrow-btn { width: 100%; background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
 .vtags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
