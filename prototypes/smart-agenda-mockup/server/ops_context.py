@@ -114,6 +114,14 @@ def build_context(data, actor, visits, today):
         for v in sorted(live, key=lambda v: (v["date"], v["start"])) if v["date"] > today
     ][:3]
 
+    # Tareas (feature tareas-evidencia): pendientes que vencen hoy o antes, y hechas del mes.
+    my_tasks = [t for t in data.get("tasks", []) if _in_scope(data, actor, {"repId": t.get("repId")})]
+    pending_tasks = sorted(
+        [t for t in my_tasks if t.get("status") == "pendiente" and t.get("due", "") <= today],
+        key=lambda t: (t.get("due", ""), t.get("when") or "99:99"),
+    )[:5]
+    done_tasks = sum(1 for t in my_tasks if t.get("status") == "hecha" and month_start <= t.get("due", "") <= today)
+
     return {
         "user": {"name": me.get("name", actor.get("name", "")), "role": actor["role"], "room": _room_name(data, me.get("roomId", ""))},
         "today": today,
@@ -127,7 +135,9 @@ def build_context(data, actor, visits, today):
             "volumeUSD": round(sum(float(r.get("amount", 0)) for r in sales if r.get("currency") == "USD"), 2),
             "volumeMXN": round(sum(float(r.get("amount", 0)) for r in sales if r.get("currency") == "MXN"), 2),
             "closePct": round(100 * len(sales) / len(results)) if results else 0,
+            "tasksDone": done_tasks,
         },
+        "tasks": [{"title": t["title"], "due": t["due"], "when": t.get("when") or "", **who(t)} for t in pending_tasks],
         "topObjections": [{"id": k, "label": OBJECTION_LABELS.get(k, "Otra"), "count": n} for k, n in _top(objections)],
         "failSteps": [{"n": k, "title": STEP_TITLES.get(k, ""), "count": n} for k, n in _top(fails)],
         "pendingResults": pending,
@@ -161,6 +171,8 @@ def context_text(ctx):
         lines.append("Tours anteriores sin resultado: " + ", ".join(f"{p['date']} {p['start']} {p['lead']}" for p in ctx["pendingResults"]) + ".")
     if ctx["followUps"]:
         lines.append("Seguimientos: " + ", ".join(f"{f['action']} a {f['lead']} el {f['date']} ({f['owner']})" for f in ctx["followUps"]) + ".")
+    if ctx.get("tasks"):
+        lines.append("Tareas pendientes: " + ", ".join(f"{t['title']} ({t['due']}{' ' + t['when'] if t['when'] else ''})" for t in ctx["tasks"]) + ".")
     if ctx["upcoming"]:
         lines.append("Próximos tours: " + ", ".join(f"{p['date']} {p['start']} {p['lead']}" for p in ctx["upcoming"]) + ".")
     text = "\n".join(lines)

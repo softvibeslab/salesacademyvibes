@@ -6,6 +6,7 @@ import { applyTheme, readThemePref, watchSystemTheme, writeThemePref } from "./t
 import { FAB_MSG_TYPE, FAB_SIZE, FAB_MARGIN, clampFab, isTap, resolveFabMenu } from "./fab.js";
 import { fichaFor } from "./fichas.js";
 import { INSTALL_HELP, installMode, isIOS, isStandalone } from "./install.js";
+import { EVIDENCE_LIMITS, canComplete, fitInside, pickAudioMime, taskToPriority } from "./tasks.js";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
 // estos son el respaldo si no responde.
@@ -498,7 +499,7 @@ function viewHoy() {
     ["Cierres", `${live.closes}/2`, closePct],
     ["Volumen", money(live.volumeUSD), volPct],
   ];
-  const items = state.priorities.map((item) => `
+  const items = homeTasks().map((item) => `
     <div class="item">
       <input class="check" data-done="${item.id}" type="checkbox" ${item.done ? "checked" : ""} aria-label="Marcar ${esc(item.title)}">
       <button data-task="${item.id}" type="button" style="flex:1;text-align:left;background:none;border:0;padding:0">
@@ -571,7 +572,7 @@ function viewHoy() {
           <button class="linkish" data-go="metas" data-flow="metas" type="button">Editar</button>
         </div>
         <div class="ledger">${items}</div>
-        <button class="linkish" data-go="pendientes" type="button" style="margin-top:8px">Ver pendientes (${state.priorities.length + state.extra.length})</button>
+        <button class="linkish" data-go="pendientes" type="button" style="margin-top:8px">Ver pendientes (${homeTasks().filter((t) => !t.done).length + state.extra.length})</button>
       </section>
       <section class="panel p-short" style="margin-top:18px">
         <div class="row-between">
@@ -793,11 +794,59 @@ function currentTask() {
   if (state.taskId === "reminder") {
     return { title: "Llamada con Lead #4920", detail: state.reminder.text, origin: "Recordatorio de hoy", when: state.reminder.time };
   }
-  return state.priorities.find((item) => item.id === state.taskId) || state.priorities[0];
+  return homeTasks().find((item) => item.id === state.taskId) || homeTasks()[0];
+}
+
+function evidenceBox(task) {
+  if (task.done) {
+    const ev = task.evidence;
+    const src = `/api/tasks/${encodeURIComponent(task.id)}/evidence`;
+    const media = !ev ? `<p class="fine">Sin evidencia.</p>`
+      : ev.expired ? `<p class="fine">La evidencia se borró a los ${EVIDENCE_LIMITS.retentionDays} días.</p>`
+        : ev.kind === "audio" ? `<audio controls preload="none" src="${src}"></audio>`
+          : `<img class="ev-img" src="${src}" alt="Evidencia de la tarea">`;
+    return `<section class="card ev-done"><span class="kicker"><span class="material-symbols-outlined">verified</span> Hecha con evidencia</span>${media}
+      <button class="btn line" data-act="ev-reopen" type="button" style="width:100%;margin-top:10px">Reabrir</button></section>`;
+  }
+  const d = evidence.draft;
+  const preview = !d ? ""
+    : d.kind === "audio" ? `<audio controls src="${d.url}"></audio><p class="fine">Audio de ${Math.round(d.durationSec)} s · ${Math.round(d.size / 1024)} KB</p>`
+      : `<img class="ev-img" src="${d.url}" alt="Vista previa de la evidencia"><p class="fine">${Math.round(d.size / 1024)} KB después de comprimir</p>`;
+  const recording = evidence.recorder ? `<button class="btn gold" data-act="ev-stop" type="button" style="width:100%"><span class="material-symbols-outlined">stop_circle</span> Detener (<span id="ev-timer">${Math.round((Date.now() - evidence.started) / 1000)}</span>/${EVIDENCE_LIMITS.audioSec} s)</button>` : "";
+  return `<section class="card ev-box">
+      <span class="kicker">Para marcarla hecha, adjunta una evidencia</span>
+      <p class="ev-warn"><span class="material-symbols-outlined">shield</span>No captures rostros, nombres, teléfonos ni datos de clientes. La evidencia la ven tú y tu jefe de sala y se borra a los ${EVIDENCE_LIMITS.retentionDays} días.</p>
+      ${recording || `<div class="duo ev-actions">
+        <label class="btn line ev-pick"><span class="material-symbols-outlined">photo_camera</span> Foto o captura<input id="ev-file" type="file" accept="image/*" hidden></label>
+        <button class="btn line" data-act="ev-record" type="button"><span class="material-symbols-outlined">mic</span> Grabar audio</button>
+      </div>`}
+      ${preview}
+      ${d ? `<button class="linkish" data-act="ev-clear" type="button">Quitar evidencia</button>` : ""}
+      <label class="ev-consent"><input id="ev-consent" type="checkbox" ${evidence.consent ? "checked" : ""}> Leí el aviso y la evidencia no tiene datos de clientes.</label>
+      ${evidence.error ? `<div class="warn" role="alert">${esc(evidence.error)}</div>` : ""}
+      <button class="btn gold" data-act="ev-complete" type="button" style="width:100%" ${canComplete({ evidence: d, consent: evidence.consent, busy: evidence.busy }) ? "" : "disabled"}>${evidence.busy ? "Subiendo…" : "Marcar hecha"}</button>
+    </section>`;
+}
+
+function paintEvidence() {
+  const slot = phone.querySelector("#ev-slot");
+  if (slot) slot.innerHTML = evidenceBox(currentTask());
 }
 
 function viewTarea() {
   const task = currentTask();
+  if (task?.server) {
+    return `${taskbar("Tarea y origen", "hoy", task.done ? "Hecha" : "Pendiente")}
+    <div class="screen task">
+      <section class="card paper">
+        <span class="badge">${esc(task.when || "")}</span>
+        <h2 class="section-title" style="margin-top:8px">${esc(task.title)}</h2>
+        <p>${esc(task.detail)}</p>
+        <p class="fine">Origen: ${esc(task.origin)}</p>
+      </section>
+      <div id="ev-slot">${evidenceBox(task)}</div>
+    </div>`;
+  }
   return `${taskbar("Tarea y origen", "hoy", "Tarea")}
     <div class="screen task">
       <section class="card paper">
@@ -909,6 +958,24 @@ function viewGoalsheet() {
 }
 
 const tours = { ready: false, error: "", visits: [], at: 0 };
+// Tareas del servidor (feature tareas-evidencia). Sin cargar, Home usa las prioridades de ejemplo.
+const taskStore = { ready: false, list: [] };
+const evidence = { draft: null, consent: false, busy: false, error: "", recorder: null, timer: 0, started: 0 };
+
+async function refreshTasks() {
+  try {
+    const data = await opsRequest(`/api/tasks?rep=${encodeURIComponent(state.meId)}`);
+    taskStore.list = data.tasks || [];
+    taskStore.ready = true;
+    if (["hoy", "tarea", "pendientes"].includes(state.view)) render();
+  } catch (error) {
+    if (error.status === 401) signedOut();
+  }
+}
+
+function homeTasks() {
+  return taskStore.ready ? taskStore.list.map(taskToPriority) : state.priorities;
+}
 const roster = defaultOps();
 let tourRequest = 0;
 
@@ -1856,6 +1923,7 @@ async function enterAs(user) {
   await refreshRoster();
   refreshTours();
   refreshCatalog();
+  refreshTasks();
 }
 
 async function submitLogin(form) {
@@ -1880,6 +1948,119 @@ async function logout() {
   signedOut();
 }
 
+/* ---------- Evidencia (tareas-evidencia) ---------- */
+function resetEvidence() {
+  if (evidence.recorder) { try { evidence.recorder.stop(); } catch { /* ya detenido */ } }
+  if (evidence.draft?.url) URL.revokeObjectURL(evidence.draft.url);
+  window.clearInterval(evidence.timer);
+  Object.assign(evidence, { draft: null, consent: false, busy: false, error: "", recorder: null, timer: 0, started: 0 });
+}
+
+function blobToBase64(blob) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(",")[1] || "");
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(blob);
+  });
+}
+
+async function takePhoto(file) {
+  evidence.error = "";
+  if (!file.type.startsWith("image/")) { evidence.error = "Elige una foto o captura de pantalla."; paintEvidence(); return; }
+  if (file.size > EVIDENCE_LIMITS.pickMB * 1024 * 1024) { evidence.error = `La foto pesa más de ${EVIDENCE_LIMITS.pickMB} MB.`; paintEvidence(); return; }
+  try {
+    const bitmap = await createImageBitmap(file);
+    const { w, h } = fitInside(bitmap.width, bitmap.height, EVIDENCE_LIMITS.maxSide);
+    const canvas = document.createElement("canvas");
+    canvas.width = w; canvas.height = h;
+    canvas.getContext("2d").drawImage(bitmap, 0, 0, w, h);
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", EVIDENCE_LIMITS.jpegQuality));
+    if (!blob || blob.size > EVIDENCE_LIMITS.uploadBytes) throw new Error("grande");
+    if (evidence.draft?.url) URL.revokeObjectURL(evidence.draft.url);
+    evidence.draft = { kind: "imagen", mime: "image/jpeg", data: await blobToBase64(blob), size: blob.size, url: URL.createObjectURL(blob) };
+  } catch {
+    evidence.error = "No se pudo preparar la foto. Intenta con otra.";
+  }
+  paintEvidence();
+}
+
+async function startRecording() {
+  evidence.error = "";
+  const mime = pickAudioMime((m) => window.MediaRecorder?.isTypeSupported?.(m));
+  if (!navigator.mediaDevices?.getUserMedia || !mime) { evidence.error = "Este navegador no puede grabar audio. Usa una foto o captura."; paintEvidence(); return; }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const chunks = [];
+    const recorder = new MediaRecorder(stream, { mimeType: mime, audioBitsPerSecond: EVIDENCE_LIMITS.audioBps });
+    recorder.ondataavailable = (e) => { if (e.data.size) chunks.push(e.data); };
+    recorder.onstop = async () => {
+      stream.getTracks().forEach((track) => track.stop());
+      window.clearInterval(evidence.timer);
+      const durationSec = Math.min(EVIDENCE_LIMITS.audioSec, Math.max(1, (Date.now() - evidence.started) / 1000));
+      evidence.recorder = null;
+      const blob = new Blob(chunks, { type: mime.split(";")[0] });
+      if (blob.size > EVIDENCE_LIMITS.uploadBytes) { evidence.error = "El audio quedó muy pesado. Graba uno más corto."; paintEvidence(); return; }
+      if (evidence.draft?.url) URL.revokeObjectURL(evidence.draft.url);
+      evidence.draft = { kind: "audio", mime: mime.split(";")[0], data: await blobToBase64(blob), size: blob.size, durationSec, url: URL.createObjectURL(blob) };
+      paintEvidence();
+    };
+    evidence.recorder = recorder;
+    evidence.started = Date.now();
+    recorder.start();
+    evidence.timer = window.setInterval(() => {
+      const secs = (Date.now() - evidence.started) / 1000;
+      const el = phone.querySelector("#ev-timer");
+      if (el) el.textContent = String(Math.round(secs));
+      if (secs >= EVIDENCE_LIMITS.audioSec) stopRecording();
+    }, 250);
+    paintEvidence();
+  } catch {
+    evidence.recorder = null;
+    evidence.error = "Sin permiso de micrófono. Actívalo o usa una foto.";
+    paintEvidence();
+  }
+}
+
+function stopRecording() {
+  if (evidence.recorder && evidence.recorder.state !== "inactive") evidence.recorder.stop();
+}
+
+async function completeTask() {
+  const task = currentTask();
+  const d = evidence.draft;
+  if (!task?.server || !canComplete({ evidence: d, consent: evidence.consent, busy: evidence.busy })) return;
+  evidence.busy = true;
+  evidence.error = "";
+  paintEvidence();
+  try {
+    const body = { kind: d.kind, mime: d.mime, data: d.data, consent: true };
+    if (d.kind === "audio") body.durationSec = Math.round(d.durationSec * 10) / 10;
+    const data = await opsRequest(`/api/tasks/${encodeURIComponent(task.id)}/complete`, { method: "POST", body });
+    taskStore.list = taskStore.list.map((row) => (row.id === data.task.id ? data.task : row));
+    resetEvidence();
+    toast("Tarea hecha con evidencia", "hoy");
+  } catch (error) {
+    if (error.status === 401) { signedOut(); return; }
+    evidence.busy = false;
+    evidence.error = error.message || "No se pudo subir la evidencia.";
+    paintEvidence();
+  }
+}
+
+async function reopenTask() {
+  const task = currentTask();
+  if (!task?.server) return;
+  try {
+    const data = await opsRequest(`/api/tasks/${encodeURIComponent(task.id)}/reopen`, { method: "POST", body: {} });
+    taskStore.list = taskStore.list.map((row) => (row.id === data.task.id ? data.task : row));
+    resetEvidence();
+    render();
+  } catch (error) {
+    toast(error.message || "No se pudo reabrir.");
+  }
+}
+
 async function boot() {
   try {
     const data = await opsRequest("/api/me");
@@ -1892,7 +2073,7 @@ async function boot() {
 }
 
 function viewPendientes() {
-  const rows = [...state.priorities, ...state.extra].map((item) => ({ title: item.title, meta: `${item.when} · ${item.detail}` }));
+  const rows = [...homeTasks().filter((item) => !item.done), ...state.extra].map((item) => ({ title: item.title, meta: `${item.when} · ${item.detail}` }));
   return viewList("Pendientes", rows, "tarea");
 }
 
@@ -2036,6 +2217,14 @@ phone.addEventListener("click", (event) => {
   const goal = event.target.closest("[data-goal]");
   if (goal) return;
   const done = event.target.closest("[data-done]");
+  if (done && taskStore.ready) {
+    // Con tareas del servidor el checkbox no marca: abre el detalle para adjuntar la evidencia.
+    event.preventDefault();
+    resetEvidence();
+    state.taskId = done.dataset.done;
+    go("tarea", "tarea");
+    return;
+  }
   if (done) {
     const item = state.priorities.find((row) => row.id === done.dataset.done);
     if (item) item.done = done.checked;
@@ -2043,6 +2232,7 @@ phone.addEventListener("click", (event) => {
   }
   const task = event.target.closest("[data-task]");
   if (task) {
+    resetEvidence();
     state.taskId = task.dataset.task;
     go("tarea", "tarea");
     return;
@@ -2079,6 +2269,16 @@ phone.addEventListener("click", (event) => {
 });
 
 phone.addEventListener("change", (event) => {
+  if (event.target.id === "ev-file") {
+    const file = event.target.files?.[0];
+    if (file) takePhoto(file);
+    return;
+  }
+  if (event.target.id === "ev-consent") {
+    evidence.consent = event.target.checked;
+    paintEvidence();
+    return;
+  }
   if (event.target.name === "result" || event.target.name === "recoverable") {
     readDraftFromDom();
     state.resultDraft.error = "";
@@ -2277,6 +2477,11 @@ function run(act) {
     submitResult();
     return;
   }
+  if (act === "ev-record") { startRecording(); return; }
+  if (act === "ev-stop") { stopRecording(); return; }
+  if (act === "ev-clear") { resetEvidence(); paintEvidence(); return; }
+  if (act === "ev-complete") { completeTask(); return; }
+  if (act === "ev-reopen") { reopenTask(); return; }
   if (act === "done-task") {
     if (state.taskId === "reminder") state.reminder.done = true;
     const item = state.priorities.find((row) => row.id === state.taskId);

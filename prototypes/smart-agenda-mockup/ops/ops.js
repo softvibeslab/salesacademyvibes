@@ -33,7 +33,7 @@ const session = {
   importPreview: null,
   importError: "",
 };
-const board = { rooms: [], people: [], visits: [], ready: false, busy: false, syncError: "" };
+const board = { rooms: [], people: [], visits: [], tasks: [], ready: false, busy: false, syncError: "" };
 const histOpen = new Set();
 let writing = false;
 let toastTimer = 0;
@@ -143,10 +143,12 @@ async function pull() {
   if (board.ready) render();
   try {
     const room = session.role === "admin" && session.room !== "todas" ? `&room=${encodeURIComponent(session.room)}` : "";
-    const [rooms, tours] = await Promise.all([
+    const [rooms, tours, tasks] = await Promise.all([
       opsRequest("/api/rooms", { actor: actor() }),
       opsRequest(`/api/tours?date=${encodeURIComponent(session.date)}${room}`, { actor: actor() }),
+      opsRequest("/api/tasks", { actor: actor() }).catch(() => ({ tasks: [] })),
     ]);
+    board.tasks = tasks.tasks || [];
     board.rooms = rooms.rooms;
     board.people = rooms.people;
     board.visits = tours.visits;
@@ -161,6 +163,43 @@ async function pull() {
     document.querySelector(`[data-visit="${CSS.escape(session.focusId)}"]`)?.scrollIntoView({ block: "center" });
   }
 }
+
+// Tareas con evidencia (feature tareas-evidencia): el jefe ve el cumplimiento y la evidencia de su sala.
+function tasksBlock(rep) {
+  const list = board.tasks.filter((task) => task.repId === rep.id);
+  const done = list.filter((task) => task.status === "hecha").length;
+  const rows = list.map((task) => {
+    const ev = task.evidence;
+    const link = task.status === "hecha" && ev && !ev.expired
+      ? `<a class="task-ev" href="/api/tasks/${encodeURIComponent(task.id)}/evidence" target="_blank" rel="noopener">Ver ${ev.kind === "audio" ? "audio" : "foto"}</a>`
+      : task.status === "hecha" && ev?.expired ? `<span class="fine">Evidencia borrada (30 días)</span>` : "";
+    return `<li class="task-row ${task.status}"><span class="task-dot" aria-hidden="true">${task.status === "hecha" ? "✓" : ""}</span>
+      <span class="task-text"><b>${esc(task.title)}</b><span class="fine">${esc(task.when || task.due)} · ${esc(task.origin)}</span></span>${link}</li>`;
+  }).join("");
+  return `<div class="col-tasks">
+    <div class="col-tasks-head"><h3>Tareas</h3><span class="md-badge">${done}/${list.length}</span></div>
+    ${rows ? `<ul class="task-list">${rows}</ul>` : `<p class="fine">Sin tareas.</p>`}
+    <form class="task-new" data-newtask="${esc(rep.id)}" autocomplete="off">
+      <input name="title" maxlength="80" placeholder="Nueva tarea para ${esc(rep.name)}" aria-label="Nueva tarea para ${esc(rep.name)}">
+      <button class="md-btn-tonal" type="submit">Asignar</button>
+    </form>
+  </div>`;
+}
+
+app.addEventListener("submit", async (event) => {
+  const form = event.target.closest("[data-newtask]");
+  if (!form) return;
+  event.preventDefault();
+  const title = form.title.value.trim();
+  if (!title) return;
+  try {
+    await opsRequest("/api/tasks", { method: "POST", actor: actor(), body: { repId: form.dataset.newtask, title, due: session.date, origin: "Jefe de sala" } });
+    pull();
+  } catch (error) {
+    board.syncError = error.message || "No se pudo asignar la tarea.";
+    render();
+  }
+});
 
 function esc(value) {
   return String(value ?? "").replace(/[&<>"']/g, (ch) => ({
@@ -302,6 +341,7 @@ function render() {
       </div>
       ${cards || `<p class="fine empty-state">Sin tours este día.</p>`}
       <button class="line md-btn-tonal full" data-new="${esc(rep.id)}" type="button">${mdIcon("add")}Asignar tour</button>
+      ${tasksBlock(rep)}
     </section>`;
   }).join("");
   const form = session.importing

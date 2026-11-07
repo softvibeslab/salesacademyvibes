@@ -17,11 +17,15 @@ from urllib.parse import parse_qs, urlparse
 
 from ops_import import preview_payload
 from ops_context import build_context, context_text
+from ops_tasks import clean_task, evidence_path, purge_expired, seed_tasks, task_view, validate_evidence
 
 HOST = "127.0.0.1"
 PORT = int(os.environ.get("OPS_PORT", "8026"))
 ROOT = os.environ.get("OPS_DATA", "/var/lib/salesacademy-ops/ops.json")
 LOCK = ROOT + ".lock"
+# Evidencias de tareas (feature tareas-evidencia): fuera del webroot, solo el API las sirve.
+EVIDENCE_DIR = os.environ.get("OPS_EVIDENCE_DIR", os.path.join(os.path.dirname(ROOT), "evidence"))
+TASK_ACTION = re.compile(r"^/tasks/([a-z0-9-]{1,40})/(complete|reopen|evidence)$")
 
 # Login (historia login-demo, Excepción Ready aprobada por el PO 2026-11-07).
 # Reps y jefes: contraseña demo pública. Admin: contraseña privada solo en el entorno del servidor.
@@ -120,6 +124,7 @@ def seed():
             {"id": "v5", "repId": "mira", "date": "2026-11-06", "start": "13:00", "end": "14:00", "lead": "Lead #077", "status": "pendiente", "note": ""},
             {"id": "v6", "repId": "ana", "date": "2026-11-07", "start": "10:00", "end": "11:00", "lead": "Lead #441", "status": "pendiente", "note": "Día siguiente"},
         ],
+        "tasks": seed_tasks(),
     }
 
 
@@ -334,6 +339,8 @@ def read_store():
         data = json.load(handle)
     if not isinstance(data, dict) or not isinstance(data.get("visits"), list):
         return seed()
+    if not isinstance(data.get("tasks"), list):
+        data["tasks"] = seed_tasks()
     return data
 
 
@@ -508,6 +515,27 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/rooms":
                 rooms, people = rooms_for(actor, data)
                 return {"status": 200, "body": {"ok": True, "rooms": rooms, "people": people}}
+            if path == "/tasks":
+                changed = purge_expired(data, EVIDENCE_DIR)
+                wanted = (query.get("rep") or [""])[0]
+                if wanted and not allowed(actor, data, {"repId": wanted}):
+                    return {"status": 403, "body": {"ok": False, "error": "Solo puedes ver tus tareas o las de tu sala."}}
+                tasks = [t for t in data.get("tasks", []) if allowed(actor, data, {"repId": t["repId"]}) and (not wanted or t["repId"] == wanted)]
+                tasks.sort(key=lambda t: (t["status"] != "pendiente", t["due"], t.get("when") or "99:99"))
+                return {"status": 200, "save": changed, "body": {"ok": True, "tasks": [task_view(t) for t in tasks]}}
+            match = TASK_ACTION.match(path)
+            if match and match.group(2) == "evidence":
+                purge_expired(data, EVIDENCE_DIR)
+                task = next((t for t in data.get("tasks", []) if t["id"] == match.group(1)), None)
+                if not task:
+                    return {"status": 404, "body": {"ok": False, "error": "La tarea ya no existe."}}
+                if not allowed(actor, data, {"repId": task["repId"]}):
+                    return {"status": 403, "body": {"ok": False, "error": "Esa evidencia no es de tu sala."}}
+                ev = task.get("evidence") or {}
+                file_path = evidence_path(EVIDENCE_DIR, task)
+                if not ev or ev.get("expired") or not file_path or not os.path.exists(file_path):
+                    return {"status": 404, "body": {"ok": False, "error": "No hay evidencia (o ya se borró a los 30 días)."}}
+                return {"status": 200, "save": True, "file": file_path, "mime": ev["mime"]}
             if path == "/context":
                 # Contexto para Hermes (feature hermes-contexto): solo lectura, mismo alcance que /tours.
                 today = (query.get("today") or [time.strftime("%Y-%m-%d")])[0]
@@ -528,7 +556,22 @@ class Handler(BaseHTTPRequestHandler):
             return {"status": 404, "body": {"ok": False, "error": "No existe."}}
 
         result = mutate(lambda data: run(data))
+        if result.get("file"):
+            self.send_file(result["file"], result["mime"])
+            return
         self.send_json(result["status"], result["body"])
+
+    def send_file(self, file_path, mime):
+        with open(file_path, "rb") as handle:
+            raw = handle.read()
+        self.send_response(200)
+        self.send_header("Content-Type", mime)
+        self.send_header("Content-Length", str(len(raw)))
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Content-Disposition", "inline")
+        self.end_headers()
+        self.wfile.write(raw)
 
     def do_POST(self):
         path, _query = self.route()
@@ -536,10 +579,12 @@ class Handler(BaseHTTPRequestHandler):
             length = int(self.headers.get("Content-Length") or "0")
         except ValueError:
             length = -1
-        limit = 2_000_000 if path == "/imports/preview" else 8192
+        is_evidence = bool(TASK_ACTION.match(path)) and path.endswith("/complete")
+        limit = 2_000_000 if path == "/imports/preview" else 1_000_000 if is_evidence else 8192
         if length < 0 or length > limit:
-            error = "El archivo es muy grande (máximo 1.5 MB)." if path == "/imports/preview" else "El cuerpo no es válido."
-            self.send_json(413 if path == "/imports/preview" else 400, {"ok": False, "error": error})
+            big = path == "/imports/preview" or is_evidence
+            error = "El archivo es muy grande (máximo 1.5 MB)." if path == "/imports/preview" else "La evidencia es muy grande (máximo 700 KB después de comprimir)." if is_evidence else "El cuerpo no es válido."
+            self.send_json(413 if big else 400, {"ok": False, "error": error})
             return
         payload = self.read_json(limit, length)
         if payload is None:
@@ -579,11 +624,53 @@ class Handler(BaseHTTPRequestHandler):
                 if actor["role"] != "admin":
                     return {"status": 403, "body": {"ok": False, "error": "Solo el administrador restaura el ejemplo."}}
                 fresh = seed()
+                if os.path.isdir(EVIDENCE_DIR):
+                    for name in os.listdir(EVIDENCE_DIR):
+                        os.remove(os.path.join(EVIDENCE_DIR, name))
                 kept_sessions = data.get("sessions") or {}
                 data.clear()
                 data.update(fresh)
                 data["sessions"] = kept_sessions
                 return {"status": 200, "save": True, "body": {"ok": True}}
+            if path == "/tasks":
+                task, error = clean_task(payload, data["people"], actor)
+                if error:
+                    forbidden = error in ("Solo puedes crear tareas para ti.", "Ese rep no está en tu sala.")
+                    return {"status": 403 if forbidden else 400, "body": {"ok": False, "error": error}}
+                data.setdefault("tasks", []).append(task)
+                return {"status": 201, "save": True, "body": {"ok": True, "task": task_view(task)}}
+            match = TASK_ACTION.match(path)
+            if match and match.group(2) != "evidence":
+                task = next((t for t in data.get("tasks", []) if t["id"] == match.group(1)), None)
+                if not task:
+                    return {"status": 404, "body": {"ok": False, "error": "La tarea ya no existe."}}
+                if not allowed(actor, data, {"repId": task["repId"]}):
+                    return {"status": 403, "body": {"ok": False, "error": "Esa tarea no es de tu sala."}}
+                if match.group(2) == "complete":
+                    if actor["role"] == "jefe" or (actor["role"] == "rep" and task["repId"] != actor["id"]):
+                        return {"status": 403, "body": {"ok": False, "error": "Solo el rep marca su tarea."}}
+                    raw, meta, error = validate_evidence(payload)
+                    if error:
+                        return {"status": 400, "body": {"ok": False, "error": error}}
+                    old = evidence_path(EVIDENCE_DIR, task)
+                    if old and os.path.exists(old):
+                        os.remove(old)
+                    task["evidence"] = {**meta, "at": time.time(), "by": actor["id"], "expired": False}
+                    target = evidence_path(EVIDENCE_DIR, task)
+                    os.makedirs(EVIDENCE_DIR, mode=0o700, exist_ok=True)
+                    fd, tmp = tempfile.mkstemp(dir=EVIDENCE_DIR)
+                    with os.fdopen(fd, "wb") as handle:
+                        handle.write(raw)
+                    os.chmod(tmp, 0o600)
+                    os.replace(tmp, target)
+                    task["status"] = "hecha"
+                    task["doneAt"] = int(time.time())
+                    return {"status": 200, "save": True, "body": {"ok": True, "task": task_view(task)}}
+                old = evidence_path(EVIDENCE_DIR, task)
+                if old and os.path.exists(old):
+                    os.remove(old)
+                task.update({"status": "pendiente", "doneAt": None, "evidence": None})
+                return {"status": 200, "save": True, "body": {"ok": True, "task": task_view(task)}}
             if path == "/imports/preview":
                 if actor["role"] == "rep":
                     return {"status": 403, "body": {"ok": False, "error": "El rep solo consulta sus tours."}}

@@ -815,3 +815,17 @@ label textarea, .md-field textarea { min-height: 72px; resize: vertical; }
   .masthead .theme-switch button { padding: 6px 10px; min-height: 30px; }
   .install-help { position: fixed; top: auto; bottom: 16px; left: 12px; right: 12px; width: auto; }
 }
+
+/* Tareas con evidencia (FTD tareas-evidencia) */
+.col-tasks { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--md-outline-variant, rgba(0,0,0,.12)); display: grid; gap: 8px; }
+.col-tasks-head { display: flex; align-items: center; justify-content: space-between; }
+.col-tasks-head h3 { margin: 0; font-size: 15px; }
+.task-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.task-row { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; font-size: 13px; }
+.task-row .task-text { display: grid; }
+.task-row.hecha .task-text b { text-decoration: line-through; opacity: .7; }
+.task-dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; border: 1px solid currentColor; }
+.task-row.hecha .task-dot { background: var(--sa-gold, #c9a227); color: var(--sa-on-gold, #1b1b1b); border-color: transparent; }
+.task-ev { font-weight: 600; font-size: 12px; white-space: nowrap; }
+.task-new { display: flex; gap: 6px; }
+.task-new input { flex: 1; min-width: 0; min-height: 36px; border-radius: 10px; border: 1px solid var(--md-outline-variant, rgba(0,0,0,.2)); padding: 0 10px; background: transparent; color: inherit; font: inherit; font-size: 13px; }

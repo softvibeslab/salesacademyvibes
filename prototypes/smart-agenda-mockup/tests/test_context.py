@@ -87,6 +87,18 @@ class ContextTest(unittest.TestCase):
         c = build_context(DATA, ANA, other, "2026-11-06")
         self.assertNotIn("Lead #555", json.dumps(c, ensure_ascii=False))
 
+    def test_tasks_pending_due_today_or_before_and_done_count(self):
+        data = {**DATA, "tasks": [
+            {"id": "a", "repId": "ana", "title": "Confirmar seguimiento", "due": "2026-11-06", "when": "10:45", "status": "pendiente"},
+            {"id": "b", "repId": "ana", "title": "Mañana", "due": "2026-11-07", "when": "", "status": "pendiente"},
+            {"id": "c", "repId": "ana", "title": "Hecha", "due": "2026-11-05", "when": "", "status": "hecha"},
+            {"id": "d", "repId": "luis", "title": "De Luis", "due": "2026-11-06", "when": "", "status": "pendiente"},
+        ]}
+        c = build_context(data, ANA, VISITS, "2026-11-06")
+        self.assertEqual(c["tasks"], [{"title": "Confirmar seguimiento", "due": "2026-11-06", "when": "10:45"}])
+        self.assertEqual(c["month"]["tasksDone"], 1)
+        self.assertIn("Tareas pendientes: Confirmar seguimiento (2026-11-06 10:45)", context_text(c))
+
     def test_text_for_prompt_is_compact_and_readable(self):
         text = context_text(self.ctx)
         self.assertIn("Ana", text)

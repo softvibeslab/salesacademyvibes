@@ -441,6 +441,55 @@ try {
   assert.ok(JSON.stringify(step.data).includes("Lead #210"), "C4 el jefe ve su sala");
   assert.ok(!JSON.stringify(step.data).includes("Lead #077"), "C4 el jefe no ve otra sala");
 
+  // E1–E6: tareas con evidencia (feature tareas-evidencia)
+  step = await api("GET", "/api/tasks?rep=ana", "rep:ana");
+  assert.equal(step.status, 200, JSON.stringify(step.data));
+  assert.ok(step.data.tasks.length >= 3, "E0 tareas sembradas de Ana");
+  step = await api("GET", "/api/tasks?rep=mira", "rep:ana");
+  assert.equal(step.status, 403, "E0 Ana no ve tareas de Mira");
+  step = await api("POST", "/api/tasks", "jefe:jorge", { repId: "mira", title: "Otra sala", due: "2026-11-06" });
+  assert.equal(step.status, 403, "E1 jefe no asigna fuera de su sala");
+  step = await api("POST", "/api/tasks", "jefe:jorge", { repId: "ana", title: "Enviar resumen de mesa", detail: "Sala Norte", due: "2026-11-06", when: "16:10" });
+  assert.equal(step.status, 201, JSON.stringify(step.data));
+  const taskId = step.data.task.id;
+  step = await api("POST", `/api/tasks/${taskId}/complete`, "rep:ana", {});
+  assert.equal(step.status, 400, "E2 sin evidencia no se marca");
+  step = await api("GET", "/api/tasks?rep=ana", "rep:ana");
+  assert.equal(step.data.tasks.find((t) => t.id === taskId).status, "pendiente", "E2 sigue pendiente");
+  step = await api("POST", `/api/tasks/${taskId}/complete`, "rep:ana", { kind: "imagen", mime: "image/png", data: Buffer.from("<svg onload=alert(1)>").toString("base64"), consent: true });
+  assert.equal(step.status, 400, "E4 firma que no coincide");
+  step = await api("POST", `/api/tasks/${taskId}/complete`, "rep:luis", { kind: "imagen", mime: "image/png", data: tinyPng, consent: true });
+  assert.equal(step.status, 403, "E3 solo el dueño marca");
+  step = await api("POST", `/api/tasks/${taskId}/complete`, "rep:ana", { kind: "imagen", mime: "image/png", data: tinyPng, consent: true });
+  assert.equal(step.status, 200, JSON.stringify(step.data));
+  assert.equal(step.data.task.status, "hecha", "E3 hecha con evidencia");
+  assert.equal(step.data.task.evidence.kind, "imagen");
+  for (const [actor, expected] of [["rep:ana", 200], ["jefe:jorge", 200], ["rep:luis", 403], ["jefe:rosa", 403]]) {
+    const cookie = await cookieFor(actor);
+    const r = await fetch(`${base}/api/tasks/${taskId}/evidence`, { headers: { Cookie: cookie } });
+    assert.equal(r.status, expected, `E5 evidencia para ${actor}`);
+    if (expected === 200) {
+      assert.equal(r.headers.get("content-type"), "image/png");
+      assert.equal(r.headers.get("cache-control"), "no-store");
+      assert.equal(r.headers.get("x-content-type-options"), "nosniff");
+      assert.equal(Buffer.from(await r.arrayBuffer()).toString("base64"), tinyPng);
+    } else await r.arrayBuffer();
+  }
+  const anon = await fetch(`${base}/api/tasks/${taskId}/evidence`);
+  assert.equal(anon.status, 401, "E5 sin sesión");
+  await anon.arrayBuffer();
+  const big = await fetch(`${base}/api/tasks/${taskId}/complete`, { method: "POST", headers: { Cookie: await cookieFor("rep:ana"), "Content-Type": "application/json" }, body: JSON.stringify({ data: "A".repeat(1_100_000) }) });
+  assert.equal(big.status, 413, "E6 cuerpo mayor a 1 MB");
+  await big.arrayBuffer();
+  step = await api("POST", `/api/tasks/${taskId}/reopen`, "jefe:jorge", {});
+  assert.equal(step.status, 200);
+  assert.equal(step.data.task.status, "pendiente");
+  const gone = await fetch(`${base}/api/tasks/${taskId}/evidence`, { headers: { Cookie: await cookieFor("jefe:jorge") } });
+  assert.equal(gone.status, 404, "E5 reabrir borra la evidencia");
+  await gone.arrayBuffer();
+  step = await api("GET", "/api/context?today=2026-11-06", "rep:ana");
+  assert.ok(step.data.text.includes("Tareas pendientes"), "E7 Hermes ve las tareas pendientes");
+
   step = await api("POST", "/api/reset", "admin", {});
   assert.equal(step.status, 200);
   console.log("e2e-ops ok", base);
