@@ -4,6 +4,7 @@ import { homeCounters } from "./home-counters.js";
 import { waShareUrl, previewMessage } from "./wa-share.js";
 import { applyTheme, readThemePref, watchSystemTheme, writeThemePref } from "./theme.js";
 import { FAB_MSG_TYPE, FAB_SIZE, FAB_MARGIN, clampFab, isTap, resolveFabMenu } from "./fab.js";
+import { fichaFor } from "./fichas.js";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
 // estos son el respaldo si no responde.
@@ -1176,7 +1177,25 @@ function coachFrameEl() {
 }
 
 function resourceCard(kind, id, title, meta) {
-  return `<button class="card res" data-hit data-open="${kind}" data-id="${esc(id)}" type="button"><strong>${esc(title)}</strong><div class="fine">${esc(meta)}</div></button>`;
+  const ficha = fichaFor(id);
+  const que = ficha ? `<p class="res-que">${esc(ficha.que)}</p>` : "";
+  return `<button class="card res" data-hit data-open="${kind}" data-id="${esc(id)}" type="button"><strong>${esc(title)}</strong>${que}<div class="fine">${esc(meta)}</div></button>`;
+}
+
+/** Ficha completa (FTD fase2-fichas): qué es, cuándo usarla con sus pasos del roadmap y cómo aporta valor. */
+function fichaSection(id) {
+  const ficha = fichaFor(id);
+  if (!ficha) return "";
+  const pasos = ficha.pasos.length === STEPS.length
+    ? `<p class="fine">En todos los pasos del roadmap.</p>`
+    : ficha.pasos.length
+      ? `<div class="ficha-steps">${ficha.pasos.map((n) => { const step = STEPS.find((row) => row.n === n); return step ? `<button class="chip-btn" data-go="modulo" data-id="${n}" type="button">${n}. ${esc(step.title)}</button>` : ""; }).join("")}</div>`
+      : `<p class="fine">Fuera del tour: tu día, tu mes y tu equipo.</p>`;
+  return `<section class="card ficha">
+    <div class="ficha-block"><span class="kicker">Qué es</span><p>${esc(ficha.que)}</p></div>
+    <div class="ficha-block"><span class="kicker">Cuándo usarla</span><p>${esc(ficha.cuando)}</p>${pasos}</div>
+    <div class="ficha-block"><span class="kicker">Cómo aporta valor</span><p>${esc(ficha.valor)}</p></div>
+  </section>`;
 }
 
 function viewResources() {
@@ -1189,7 +1208,7 @@ function viewResources() {
   const libraryCards = showLibrary ? COPILOTO_LIBRARY.map((item) => resourceCard("lib", item.id, item.title, item.tags)).join("") : "";
   const practiceCards = showPractice ? COPILOTO_PRACTICE.map((item) => resourceCard("practice", item.id, item.title, item.objection)).join("") : "";
   return viewSimple("Recursos", `
-    <div class="head"><div><h1>Recursos</h1><p>Cada item abre su plantilla. La vista previa se arma con lo que escribes.</p></div></div>
+    <div class="head"><div><h1>Recursos</h1><p>Cada recurso abre su ficha: qué es, cuándo usarlo y cómo aporta valor, con su plantilla.</p></div></div>
     <button class="btn line" data-go="coach" type="button" style="width:100%;margin-bottom:12px">Abrir el chat</button>
     <div class="filters">${chips}</div>
     <input class="search" id="res-q" placeholder="Buscar" value="">
@@ -1492,11 +1511,12 @@ function templateFields(fields) {
 }
 
 function templateScreen(title, kicker, hint, fields, previewHtml, extra = "") {
-  return `<header class="taskbar"><button class="back" data-go="resources" type="button"><span class="material-symbols-outlined">chevron_left</span> Recursos</button><span class="pill">Plantilla</span></header>
+  return `<header class="taskbar"><button class="back" data-go="resources" type="button"><span class="material-symbols-outlined">chevron_left</span> Recursos</button><span class="pill">Ficha</span></header>
     <div class="screen task">
       <span class="kicker">${esc(kicker)}</span>
       <h1 class="page-title">${esc(title)}</h1>
       <p class="fine" style="margin:6px 0 12px">${esc(hint)}</p>
+      ${fichaSection(state.openId)}
       <form id="tpl">${fields ? `<section class="card">${fields}</section>` : ""}
         <section class="card preview-card" id="tpl-preview">${previewHtml}</section>
         <button class="btn gold" data-act="use-template" type="button" style="width:100%">Usar esta plantilla</button>
