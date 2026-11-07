@@ -555,3 +555,13 @@ button { cursor: pointer; }
 .theme-switch { display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px; background: var(--field); }
 .theme-switch button { border: 0; background: transparent; color: var(--muted); font: 500 12px/1 "DM Sans", sans-serif; padding: 8px 14px; border-radius: 999px; cursor: pointer; min-height: 32px; }
 .theme-switch button.on { background: var(--tint); color: var(--gold-deep); font-weight: 700; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+
+/* «Instalar app» (FTD instalar-app) */
+.install-card { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; margin: 0 0 12px; }
+.install-ic { grid-row: span 2; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--gold); color: var(--on-gold); }
+.install-copy b { display: block; font-size: 15px; }
+.install-copy p { margin: 2px 0 0; font-size: 13px; color: var(--muted); padding-right: 28px; }
+.install-btn { grid-column: 2; justify-self: start; min-height: 44px; margin-top: 6px; padding: 0 18px; border-radius: 999px; border: 0; background: var(--gold-btn, var(--gold)); color: var(--on-gold-btn, var(--on-gold)); font: inherit; font-weight: 700; cursor: pointer; }
+.install-x { position: absolute; top: 4px; right: 4px; width: 44px; height: 44px; border: 0; background: none; color: var(--muted); display: grid; place-items: center; cursor: pointer; }
+.install-help { grid-column: 1 / -1; margin: 8px 0 0; font-size: 13px; line-height: 1.45; background: var(--field, var(--surface)); border-radius: 10px; padding: 10px 12px; }
+.login-screen .install-card { margin: 12px 0 0; }

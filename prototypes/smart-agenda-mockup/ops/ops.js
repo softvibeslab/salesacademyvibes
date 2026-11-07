@@ -1,5 +1,6 @@
 import { opsRequest } from "../ops-api.js";
 import { applyTheme, readThemePref, watchSystemTheme, writeThemePref } from "../theme.js";
+import { INSTALL_HELP, installMode, isIOS, isStandalone } from "../install.js";
 import {
   EXAMPLE_LEADS, ME_REP, STATUS_LABEL, addDays, labelDate, normalizeClock,
 } from "../ops-store.js";
@@ -354,10 +355,43 @@ function masthead(status, error, toast) {
       ${toast ? `<div class="toast md-snackbar" role="status">${esc(toast)}</div>` : ""}
       <a class="back md-btn-filled" href="/">${mdIcon("back")}Volver a la app</a>
       <div class="theme-switch" role="group" aria-label="Tema">${[["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]].map(([id, label]) => `<button type="button" class="${readThemePref(localStorage) === id ? "on" : ""}" data-theme-pref="${id}" aria-pressed="${readThemePref(localStorage) === id}">${label}</button>`).join("")}</div>
+      <span class="install-slot" data-install-slot>${installButton()}</span>
       <button class="md-btn-tonal" data-logout type="button">Cerrar sesión</button>
     </div>
   </header>`;
 }
+
+// «Instalar app» (FTD instalar-app): misma app que el cuaderno (manifest en /), solo si no está instalada.
+const install = { deferred: null, installed: false, help: false };
+
+function installButton() {
+  const mode = installMode({
+    standalone: isStandalone(window),
+    installed: install.installed,
+    canPrompt: Boolean(install.deferred),
+    ios: isIOS(navigator.userAgent, navigator.maxTouchPoints || 0),
+  });
+  if (mode === "hidden") return "";
+  const help = install.help && mode !== "prompt" ? `<span class="install-help" role="status">${esc(INSTALL_HELP[mode])}</span>` : "";
+  return `<button class="md-btn-tonal" data-install type="button">Instalar app</button>${help}`;
+}
+
+function paintInstall() {
+  document.querySelectorAll("[data-install-slot]").forEach((slot) => { slot.innerHTML = installButton(); });
+}
+
+async function promptInstall() {
+  const event = install.deferred;
+  if (!event) { install.help = !install.help; paintInstall(); return; }
+  install.deferred = null;
+  event.prompt();
+  try { if ((await event.userChoice)?.outcome === "accepted") install.installed = true; } catch { /* cancelado */ }
+  paintInstall();
+}
+
+window.addEventListener("beforeinstallprompt", (event) => { event.preventDefault(); install.deferred = event; paintInstall(); });
+window.addEventListener("appinstalled", () => { install.installed = true; install.deferred = null; paintInstall(); });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => { /* sin SW funciona igual */ });
 
 function openImport() {
   session.importing = true;
@@ -772,6 +806,10 @@ app.addEventListener("click", async (event) => {
     writeThemePref(localStorage, themeBtn.dataset.themePref);
     applyTheme();
     render();
+    return;
+  }
+  if (event.target.closest("[data-install]")) {
+    promptInstall();
     return;
   }
   if (event.target.closest("[data-logout]")) {

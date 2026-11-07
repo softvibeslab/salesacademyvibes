@@ -5,6 +5,7 @@ import { waShareUrl, previewMessage } from "./wa-share.js";
 import { applyTheme, readThemePref, watchSystemTheme, writeThemePref } from "./theme.js";
 import { FAB_MSG_TYPE, FAB_SIZE, FAB_MARGIN, clampFab, isTap, resolveFabMenu } from "./fab.js";
 import { fichaFor } from "./fichas.js";
+import { INSTALL_HELP, installMode, isIOS, isStandalone } from "./install.js";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
 // estos son el respaldo si no responde.
@@ -534,6 +535,7 @@ function viewHoy() {
       <button class="icon-btn" data-go="calendario" type="button" aria-label="Calendario"><span class="material-symbols-outlined">calendar_today</span></button>
     </header>
     <div class="screen">
+      <div data-install-slot="hoy">${installBlock("hoy")}</div>
       <div class="head">
         <div><h1>Hoy</h1><p>Viernes 6 de noviembre</p></div>
         <button class="datechip" data-go="calendario" type="button">Nov 06</button>
@@ -936,9 +938,12 @@ async function refreshTours(opts = {}) {
   try {
     const data = await opsRequest(`/api/tours?rep=${encodeURIComponent(state.meId)}`, { actor: `rep:${state.meId}` });
     if (token !== tourRequest) return;
+    // Refresco silencioso sin cambios: no redibuja (evitaba que Home saltara arriba cada 15 s).
+    const unchanged = opts.quiet && tours.ready && !tours.error && JSON.stringify(data.visits) === JSON.stringify(tours.visits);
     tours.visits = data.visits;
     tours.error = "";
     tours.at = Date.now();
+    if (unchanged) return;
   } catch (error) {
     if (token !== tourRequest) return;
     if (error.status === 401) { signedOut(); return; }
@@ -1688,6 +1693,7 @@ function viewPerfil() {
       ${accounts}
       <button class="btn gold" data-go="presentacion" type="button" style="width:100%">Registrar presentación o venta</button>
       <section class="card" style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><b>Tema</b>${themeSwitch()}</section>
+      <div data-install-slot="perfil">${installBlock("perfil")}</div>
       <button class="btn line" data-act="logout" type="button" style="width:100%;margin-top:8px">Cerrar sesión (${esc(state.auth.user?.name || "")})</button>
     </div>
   `);
@@ -1699,6 +1705,57 @@ function themeSwitch() {
   const pref = readThemePref(localStorage);
   return `<div class="theme-switch" role="group" aria-label="Tema">${[["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]]
     .map(([id, label]) => `<button type="button" class="${pref === id ? "on" : ""}" data-theme-pref="${id}" aria-pressed="${pref === id}">${label}</button>`).join("")}</div>`;
+}
+
+// «Instalar app» (FTD instalar-app): solo si no está instalada. Se repinta en su lugar
+// (data-install-slot) para no borrar lo que el usuario está escribiendo en el login.
+const install = { deferred: null, installed: false, help: false };
+const INSTALL_DISMISSED_KEY = "sa.install.dismissed";
+
+function currentInstallMode() {
+  return installMode({
+    standalone: isStandalone(window),
+    installed: install.installed,
+    canPrompt: Boolean(install.deferred),
+    ios: isIOS(navigator.userAgent, navigator.maxTouchPoints || 0),
+  });
+}
+
+function installDismissed() {
+  try { return localStorage.getItem(INSTALL_DISMISSED_KEY) === "1"; } catch { return false; }
+}
+
+function installBlock(where) {
+  const mode = currentInstallMode();
+  if (mode === "hidden" || (where === "hoy" && installDismissed())) return "";
+  const help = install.help && mode !== "prompt" ? `<p class="install-help" role="status">${esc(INSTALL_HELP[mode])}</p>` : "";
+  const dismiss = where === "hoy" ? `<button class="install-x" data-act="install-dismiss" type="button" aria-label="Ocultar aviso de instalación"><span class="material-symbols-outlined">close</span></button>` : "";
+  return `<section class="install-card">
+    <span class="material-symbols-outlined install-ic">install_mobile</span>
+    <div class="install-copy"><b>Instala Sales Academy</b><p>Ábrela desde tu pantalla de inicio, a pantalla completa.</p></div>
+    <button class="install-btn" data-act="install-app" type="button">Instalar app</button>
+    ${dismiss}${help}
+  </section>`;
+}
+
+function paintInstall() {
+  phone.querySelectorAll("[data-install-slot]").forEach((slot) => { slot.innerHTML = installBlock(slot.dataset.installSlot); });
+}
+
+async function promptInstall() {
+  const event = install.deferred;
+  if (!event) {
+    install.help = !install.help;
+    paintInstall();
+    return;
+  }
+  install.deferred = null;
+  event.prompt();
+  try {
+    const choice = await event.userChoice;
+    if (choice?.outcome === "accepted") install.installed = true;
+  } catch { /* el navegador canceló el diálogo */ }
+  paintInstall();
 }
 
 // Acceso según la pantalla «Iniciar sesión · Riviera Maya» de Stitch (aprobada por el PO 2026-11-07),
@@ -1740,6 +1797,7 @@ function viewAcceso() {
     <aside class="login-note"><span class="material-symbols-outlined">shield</span>
       <div><b>Datos de ejemplo</b><p>Es un demo de sala: no captures nombres, teléfonos ni montos reales de clientes. Los reps entran a su cuaderno; jefes y administración, al tablero.</p></div>
     </aside>
+    <div data-install-slot="login">${installBlock("login")}</div>
     <footer class="login-foot">
       ${themeSwitch()}
       <nav><a href="${DOCS}/inicio-rapido" target="_blank" rel="noopener">Centro de ayuda</a><i></i><a href="${DOCS}/privacidad" target="_blank" rel="noopener">Privacidad</a></nav>
@@ -1864,8 +1922,11 @@ function readDraftFromDom() {
   }
 }
 
+let lastRenderedView = null;
+
 function render() {
   if (!state.auth.user) {
+    lastRenderedView = null;
     if (coachFrame) coachFrame.hidden = true;
     fab.hidden = true;
     fabMenu.hidden = true;
@@ -1885,7 +1946,11 @@ function render() {
   if (coachFrame) coachFrame.hidden = true;
   const draw = views[state.view] || viewHoy;
   const html = draw();
+  // Misma vista = mismo scroll; solo una vista nueva empieza arriba.
+  const keepScroll = lastRenderedView === state.view ? sheets.querySelector(".screen")?.scrollTop || 0 : 0;
   sheets.innerHTML = html.includes('class="dock"') ? html : shell(html);
+  lastRenderedView = state.view;
+  if (keepScroll) { const screen = sheets.querySelector(".screen"); if (screen) screen.scrollTop = keepScroll; }
   phone.querySelectorAll("#q, #res-q").forEach((query) => {
     query.addEventListener("input", () => {
       const text = query.value.toLowerCase();
@@ -2003,6 +2068,15 @@ if (map) map.addEventListener("click", (event) => {
 });
 
 function run(act) {
+  if (act === "install-app") {
+    promptInstall();
+    return;
+  }
+  if (act === "install-dismiss") {
+    try { localStorage.setItem(INSTALL_DISMISSED_KEY, "1"); } catch { /* el modo privado no guarda */ }
+    paintInstall();
+    return;
+  }
   if (act === "logout") {
     logout();
     return;
@@ -2292,6 +2366,19 @@ phone.addEventListener("submit", (event) => {
   event.preventDefault();
   submitLogin(event.target);
 });
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  install.deferred = event;
+  paintInstall();
+});
+window.addEventListener("appinstalled", () => {
+  install.installed = true;
+  install.deferred = null;
+  paintInstall();
+});
+window.matchMedia?.("(display-mode: standalone)").addEventListener?.("change", paintInstall);
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => { /* sin SW la app funciona igual */ });
 
 applyTheme();
 watchSystemTheme(() => { applyTheme(); coachFrame?.contentWindow?.postMessage({ type: "sa:theme" }, window.location.origin); });
