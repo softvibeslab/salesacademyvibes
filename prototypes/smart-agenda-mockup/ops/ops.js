@@ -1,4 +1,5 @@
 import { opsRequest } from "../ops-api.js";
+import { applyTheme, readThemePref, watchSystemTheme, writeThemePref } from "../theme.js";
 import {
   EXAMPLE_LEADS, ME_REP, STATUS_LABEL, addDays, labelDate, normalizeClock,
 } from "../ops-store.js";
@@ -352,6 +353,7 @@ function masthead(status, error, toast) {
       ${error ? `<div class="warn">${esc(error)}</div>` : ""}
       ${toast ? `<div class="toast md-snackbar" role="status">${esc(toast)}</div>` : ""}
       <a class="back md-btn-filled" href="/">${mdIcon("back")}Volver a la app</a>
+      <div class="theme-switch" role="group" aria-label="Tema">${[["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]].map(([id, label]) => `<button type="button" class="${readThemePref(localStorage) === id ? "on" : ""}" data-theme-pref="${id}" aria-pressed="${readThemePref(localStorage) === id}">${label}</button>`).join("")}</div>
       <button class="md-btn-tonal" data-logout type="button">Cerrar sesión</button>
     </div>
   </header>`;
@@ -765,6 +767,13 @@ async function saveVisit() {
 }
 
 app.addEventListener("click", async (event) => {
+  const themeBtn = event.target.closest("[data-theme-pref]");
+  if (themeBtn) {
+    writeThemePref(localStorage, themeBtn.dataset.themePref);
+    applyTheme();
+    render();
+    return;
+  }
   if (event.target.closest("[data-logout]")) {
     try { await opsRequest("/api/logout", { method: "POST", body: {} }); } catch { /* sin sesión */ }
     window.location.replace("/");
@@ -1029,3 +1038,5 @@ app.addEventListener("drop", (event) => {
 
 pull();
 loadCatalog();
+applyTheme();
+watchSystemTheme(() => applyTheme());

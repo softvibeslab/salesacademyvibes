@@ -1,6 +1,6 @@
 # FTD: `fase1-temas`
 
-**Status:** in-progress (app y login hechos; falta tablero y Copiloto)
+**Status:** done
 **Lane:** FTD
 **Author:** `RogerDevAndroid`
 **Branch:** `release/demo-pruebas-20261107`
@@ -33,8 +33,8 @@
 - [x] T01-test `tests/theme.mjs` - FALLÓ: `ERR_MODULE_NOT_FOUND`.
 - [x] T01-impl `theme.js` - `theme ok`.
 - [x] T02 login + app en ambos temas (visual).
-- [ ] T03 tablero en ambos temas.
-- [ ] T04 Copiloto en ambos temas (chat rediseñado).
+- [x] T03 tablero en ambos temas.
+- [x] T04 Copiloto en ambos temas (chat rediseñado).
 
 ## Evidencia
 
@@ -44,12 +44,15 @@
 | T01 | GREEN | `node tests/theme.mjs` | `theme ok` |
 | T02 | GREEN | Playwright `theme-visual.mjs`/`theme2.mjs` | `data-theme` sigue a `prefers-color-scheme` (light/dark); login igual al diseño en ambos; Home/Recursos/Perfil en oscuro legibles; switch guarda `light`; cero errores. 48 colores fijos → variables. Regresión: app-fab, wa-share, home-counters, e2e-ops, ops-brand ok; live-smoke ok tras deploy |
 
+| T03 | GREEN | Playwright `ops-theme.mjs` | tablero de Rosa en oscuro y claro, switch en el encabezado, marca legible (encabezado fijo oscuro), `ops-brand ok`, cero errores |
+| T04 | GREEN | copiloto `npm test` + `e2e.mjs` + Playwright `chat-theme.mjs` | 74 pass, 17/17; chat sin degradado lavanda, burbuja propia dorada con borde, sello «Hermes · experto» legible; tema se propaga app→iframe (`light`); se corrigió de raíz `[hidden]` vs `display:grid` (barra vacía sobre las sugerencias) |
+
 Excepcion TDD: estilos (CSS) validados con capturas automatizadas; la lógica de tema tiene prueba.
 
 ## TRUST 5
 
-- [x] Tested [x] Readable [x] Unified [x] Secured [ ] Trackable (al cerrar T03/T04)
+- [x] Tested [x] Readable [x] Unified [x] Secured [x] Trackable
 
 ## Siguiente
 
-T03 tablero y T04 Copiloto/chat.
+Hecho: fase 1 desplegada (app `20261107z3`, tablero `20261107md6`, Copiloto `20261107o/s`). Siguiente: fase 2 (fichas de Recursos).
