@@ -32,3 +32,4 @@ prototypes/copiloto-rep-dist/
 
 # Artefactos generados (paquetes .zip de growth)
 growth/dist/
+__pycache__/
