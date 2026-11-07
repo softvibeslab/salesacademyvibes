@@ -2,6 +2,7 @@ import { opsRequest } from "./ops-api.js";
 import { EXAMPLE_TODAY, ME_REP, STATUS_LABEL, addDays, defaultOps, labelDate } from "./ops-store.js";
 import { homeCounters } from "./home-counters.js";
 import { waShareUrl, previewMessage } from "./wa-share.js";
+import { applyTheme, readThemePref, watchSystemTheme, writeThemePref } from "./theme.js";
 import { FAB_MSG_TYPE, FAB_SIZE, FAB_MARGIN, clampFab, isTap, resolveFabMenu } from "./fab.js";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
@@ -491,7 +492,7 @@ function viewHoy() {
         <strong style="${item.done ? "text-decoration:line-through" : ""}">${esc(item.title)} <span class="time">${esc(item.when)}</span></strong>
         <span class="meta">${esc(item.detail)}</span>
       </button>
-      <span class="material-symbols-outlined" style="color:#7e7666">chevron_right</span>
+      <span class="material-symbols-outlined" style="color:var(--faint)">chevron_right</span>
     </div>`).join("");
   const showReminder = !state.reminder.done && minutesOf(state.reminder.time) <= minutesOf(state.block.start);
   const now = state.closed
@@ -1666,24 +1667,65 @@ function viewPerfil() {
       </section>
       ${accounts}
       <button class="btn gold" data-go="presentacion" type="button" style="width:100%">Registrar presentación o venta</button>
+      <section class="card" style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:8px"><b>Tema</b>${themeSwitch()}</section>
       <button class="btn line" data-act="logout" type="button" style="width:100%;margin-top:8px">Cerrar sesión (${esc(state.auth.user?.name || "")})</button>
     </div>
   `);
 }
 
+const DOCS = "https://softvibeslab.github.io/salesacademyvibes";
+
+function themeSwitch() {
+  const pref = readThemePref(localStorage);
+  return `<div class="theme-switch" role="group" aria-label="Tema">${[["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]]
+    .map(([id, label]) => `<button type="button" class="${pref === id ? "on" : ""}" data-theme-pref="${id}" aria-pressed="${pref === id}">${label}</button>`).join("")}</div>`;
+}
+
+// Acceso según la pantalla «Iniciar sesión · Riviera Maya» de Stitch (aprobada por el PO 2026-11-07),
+// sin funciones inexistentes (biometría) ni promesas que hoy no se cumplen (cifrado en reposo).
 function viewAcceso() {
   const a = state.auth;
-  return `<header class="topbar"><div class="brand"><span class="avatar">SA</span> Sales Academy</div></header>
-    <div class="screen task login">
-      <div class="head"><div><h1>Entrar</h1><p>Usa tu nombre de pila y tu contraseña.</p></div></div>
-      <form id="login-form" autocomplete="on">
-        <div class="field"><label for="login-user">Usuario</label><input id="login-user" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="ana" required></div>
-        <div class="field"><label for="login-pass">Contraseña</label><input id="login-pass" name="password" type="password" autocomplete="current-password" required></div>
-        ${a.error ? `<div class="warn" role="alert">${esc(a.error)}</div>` : ""}
-        <button class="btn gold" type="submit" style="width:100%" ${a.busy ? "disabled" : ""}>${a.busy ? "Entrando…" : "Entrar"}</button>
-      </form>
-      <p class="fine" style="margin-top:12px">Reps entran a su cuaderno. Jefes de sala y administración entran al tablero.</p>
-    </div>`;
+  return `<div class="screen login-screen">
+    <header class="login-top">
+      <div class="login-brand"><span class="sa-mark">SA</span><span>Acceso</span></div>
+      <a class="login-help" href="${DOCS}/inicio-rapido" target="_blank" rel="noopener"><span class="material-symbols-outlined">help_outline</span>Ayuda</a>
+    </header>
+    <section class="login-hero">
+      <div class="login-photo" role="img" aria-label="Sala de ventas frente al Caribe">
+        <span class="login-chip"><i></i>Riviera Maya · Sala de ventas</span>
+      </div>
+      <div class="login-hero-body">
+        <div class="sa-badge">SA<span class="material-symbols-outlined">edit_note</span></div>
+        <h1>Iniciar sesión</h1>
+        <p>Tu cuaderno de ventas consultivas: tours del día, pendientes y seguimiento de tu cuota.</p>
+      </div>
+    </section>
+    <form id="login-form" class="login-card" autocomplete="on" novalidate>
+      <div class="lf">
+        <label class="lf-row" for="login-user"><span>Usuario</span><em>Requerido</em></label>
+        <div class="lf-input"><span class="material-symbols-outlined">person</span>
+          <input id="login-user" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="ana" required></div>
+      </div>
+      <div class="lf">
+        <div class="lf-row"><label for="login-pass">Contraseña</label><button type="button" class="lf-link" data-act="forgot">¿Olvidaste tu contraseña?</button></div>
+        <div class="lf-input"><span class="material-symbols-outlined">lock</span>
+          <input id="login-pass" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required>
+          <button type="button" class="lf-eye" data-act="toggle-pass" aria-label="Mostrar u ocultar contraseña"><span class="material-symbols-outlined">visibility</span></button></div>
+        <p class="lf-help" id="forgot-help" hidden>Pídesela a tu jefe de sala o al administrador.</p>
+      </div>
+      <div class="lf-row lf-meta"><span>La sesión dura 12 horas</span><span><span class="material-symbols-outlined">verified_user</span>Conexión segura</span></div>
+      ${a.error ? `<div class="warn" role="alert">${esc(a.error)}</div>` : ""}
+      <button class="login-submit" type="submit" ${a.busy ? "disabled" : ""}>${a.busy ? "Verificando…" : "Ingresar a mi libreta"}<span class="material-symbols-outlined">arrow_forward</span></button>
+    </form>
+    <aside class="login-note"><span class="material-symbols-outlined">shield</span>
+      <div><b>Datos de ejemplo</b><p>Es un demo de sala: no captures nombres, teléfonos ni montos reales de clientes. Los reps entran a su cuaderno; jefes y administración, al tablero.</p></div>
+    </aside>
+    <footer class="login-foot">
+      ${themeSwitch()}
+      <nav><a href="${DOCS}/inicio-rapido" target="_blank" rel="noopener">Centro de ayuda</a><i></i><a href="${DOCS}/privacidad" target="_blank" rel="noopener">Privacidad</a></nav>
+      <p>Sales Academy · Demo de sala</p>
+    </footer>
+  </div>`;
 }
 
 function signedOut(message = "") {
@@ -1847,7 +1889,33 @@ function render() {
   }
 }
 
+function setThemePref(pref) {
+  writeThemePref(localStorage, pref);
+  applyTheme();
+  phone.querySelectorAll("[data-theme-pref]").forEach((b) => {
+    const on = b.dataset.themePref === pref;
+    b.classList.toggle("on", on);
+    b.setAttribute("aria-pressed", String(on));
+  });
+  coachFrame?.contentWindow?.postMessage({ type: "sa:theme" }, window.location.origin);
+}
+
 phone.addEventListener("click", (event) => {
+  const themeBtn = event.target.closest("[data-theme-pref]");
+  if (themeBtn) { setThemePref(themeBtn.dataset.themePref); return; }
+  const passToggle = event.target.closest('[data-act="toggle-pass"]');
+  if (passToggle) {
+    const input = phone.querySelector("#login-pass");
+    const show = input.type === "password";
+    input.type = show ? "text" : "password";
+    passToggle.querySelector(".material-symbols-outlined").textContent = show ? "visibility_off" : "visibility";
+    return;
+  }
+  if (event.target.closest('[data-act="forgot"]')) {
+    const help = phone.querySelector("#forgot-help");
+    if (help) help.hidden = !help.hidden;
+    return;
+  }
   const goal = event.target.closest("[data-goal]");
   if (goal) return;
   const done = event.target.closest("[data-done]");
@@ -2205,5 +2273,7 @@ phone.addEventListener("submit", (event) => {
   submitLogin(event.target);
 });
 
+applyTheme();
+watchSystemTheme(() => { applyTheme(); coachFrame?.contentWindow?.postMessage({ type: "sa:theme" }, window.location.origin); });
 render();
 boot();
