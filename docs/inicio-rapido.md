@@ -26,7 +26,11 @@ Vuelve a la app. Toca **Teo**. Home y el viernes del calendario muestran el tour
 
 Si la app ya estaba abierta en Teo, toca **Actualizar** o espera el refresco (al volver a la pestaña, o unos 15 s en Home o Calendario).
 
-## 4. Copiloto
+## 4. Cierra el tour
+
+En la app, como Teo, toca el tour de las 16:00 cuando ya haya pasado su hora. Elige **No venta**, la objeción **Dinero o cuota**, **¿Se puede recuperar? Sí**, deja la segunda visita de mañana y confirma. En el tablero, la tarjeta de Teo muestra «No venta · recuperable» con su siguiente paso, y **Cambios (1)** dice quién lo registró. Home de Teo ahora cuenta 1 presentación.
+
+## 5. Copiloto
 
 [salesacademy.softvibes.art/copiloto/](https://salesacademy.softvibes.art/copiloto/) es el chat. Desde Recursos, **Usar esta plantilla** abre el Copiloto dentro de la app con la frase lista. No se envía sola.
 

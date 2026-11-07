@@ -16,13 +16,76 @@ const session = {
   confirmReset: false,
   toast: "",
   focusId: "",
+  resultEditing: null,
+  resultDraft: null,
+  confirmResId: "",
 };
 const board = { rooms: [], people: [], visits: [], ready: false, busy: false, syncError: "" };
+const histOpen = new Set();
 let writing = false;
 let toastTimer = 0;
 
 function actor() {
   return session.role === "admin" ? "admin" : `jefe:${session.jefeId}`;
+}
+
+// Catálogos del resultado (REQ-006); respaldo local si el servidor no responde.
+const catalogs = {
+  outcomes: [
+    { id: "venta", label: "Venta" },
+    { id: "no_venta", label: "No venta" },
+    { id: "abandono", label: "Abandono" },
+  ],
+  objections: [
+    { id: "confianza", label: "Confianza" },
+    { id: "dinero_cuota", label: "Dinero o cuota" },
+    { id: "pareja_decision", label: "Pareja o decisión" },
+    { id: "uso_tiempo", label: "Uso o tiempo" },
+    { id: "valor_producto", label: "Valor del producto" },
+    { id: "ya_tiene_tc", label: "Ya tiene tiempo compartido" },
+    { id: "otra", label: "Otra" },
+  ],
+  actions: [
+    { id: "llamada", label: "Llamada" },
+    { id: "segunda_visita", label: "Segunda visita" },
+    { id: "enviar_propuesta", label: "Enviar propuesta" },
+    { id: "otra", label: "Otra" },
+  ],
+  failSteps: [],
+  currencies: ["USD", "MXN"],
+};
+
+function catalogLabel(list, id) {
+  return catalogs[list].find((item) => item.id === id)?.label || id;
+}
+
+async function loadCatalog() {
+  try {
+    const data = await opsRequest("/api/catalog", { actor: actor() });
+    ["outcomes", "objections", "actions", "failSteps"].forEach((key) => {
+      if (Array.isArray(data[key]) && data[key].length) catalogs[key] = data[key];
+    });
+    if (Array.isArray(data.currencies) && data.currencies.length) catalogs.currencies = data.currencies;
+  } catch { /* respaldo local */ }
+}
+
+function tourEnded(visit) {
+  const now = new Date();
+  const iso = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  if (visit.date < iso) return true;
+  if (visit.date > iso) return false;
+  const clock = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+  return visit.end <= clock;
+}
+
+function resultLabel(result) {
+  if (result.outcome === "venta") return `Venta · ${result.currency} ${Number(result.amount).toLocaleString("en-US")}`;
+  if (result.outcome === "no_venta") return `No venta${result.recoverable ? " · recuperable" : ""}`;
+  return `Abandono · paso ${result.failStep}`;
+}
+
+function fmtAt(iso) {
+  return String(iso || "").slice(5, 16).replace("T", " ");
 }
 
 function titleDate(iso) {
@@ -148,15 +211,33 @@ function render() {
       + `<button class="chip ${session.room === "todas" ? "on" : ""}" data-room="todas" type="button">Todas</button>`;
   const columns = reps.map((rep) => {
     const visits = dayVisits(rep.id);
-    const cards = visits.map((visit) => `<article class="visit ${session.focusId === visit.id ? "fresh" : ""}" data-visit="${esc(visit.id)}">
+    const cards = visits.map((visit) => {
+      const result = visit.result;
+      const nextStep = result?.nextStep
+        ? `<div class="fine">Siguiente paso: ${esc(catalogLabel("actions", result.nextStep.action))} · ${esc(result.nextStep.date)} · ${esc(personName(result.nextStep.ownerId))}</div>`
+        : "";
+      const resLine = result
+        ? `<div class="resline ${esc(result.outcome)}">${esc(resultLabel(result))}</div>${nextStep}`
+        : (tourEnded(visit) && visit.status !== "cancelado" ? `<div class="resline dim">Sin resultado</div>` : "");
+      const history = visit.resultHistory || [];
+      const histList = histOpen.has(visit.id) && history.length
+        ? `<div class="hist">${history.slice().reverse().map((entry) => `<div class="fine">${esc(fmtAt(entry.at))} · ${esc(personName(entry.by))} · ${entry.previous ? `antes: ${esc(resultLabel(entry.previous))}` : "alta del resultado"}</div>`).join("")}</div>`
+        : "";
+      return `<article class="visit ${session.focusId === visit.id ? "fresh" : ""} ${session.resultEditing === visit.id ? "editing" : ""}" data-visit="${esc(visit.id)}">
       <header><b>${esc(visit.start)}–${esc(visit.end)}</b><span class="tag ${esc(visit.status)}">${esc(STATUS_LABEL[visit.status] || visit.status)}</span></header>
       <div>${esc(visit.lead)}</div>
       ${visit.note ? `<div class="fine">${esc(visit.note)}</div>` : ""}
+      ${resLine}
       <div class="actions">
         <button type="button" data-edit="${esc(visit.id)}">Editar</button>
         <button type="button" data-drop="${esc(visit.id)}">${session.confirmId === visit.id ? "Confirmar quitar" : "Quitar"}</button>
+        ${visit.status !== "cancelado" && tourEnded(visit) ? `<button type="button" data-result="${esc(visit.id)}">Resultado</button>` : ""}
+        ${result ? `<button type="button" data-dropres="${esc(visit.id)}">${session.confirmResId === visit.id ? "Confirmar quitar resultado" : "Quitar resultado"}</button>` : ""}
+        ${history.length ? `<button type="button" data-hist="${esc(visit.id)}">Cambios (${history.length})</button>` : ""}
       </div>
-    </article>`).join("");
+      ${histList}
+    </article>`;
+    }).join("");
     const open = session.draft && (session.editing === "new" ? session.draft.repId === rep.id : dayVisits(rep.id).some((visit) => visit.id === session.editing));
     return `<section class="col ${open ? "on" : ""}">
       <div class="row"><h2>${esc(rep.name)}${rep.id === ME_REP ? " · app" : ""}</h2><span class="fine">${visits.length}</span></div>
@@ -165,7 +246,7 @@ function render() {
       <button class="line" data-new="${esc(rep.id)}" type="button" style="margin-top:10px">Asignar tour</button>
     </section>`;
   }).join("");
-  const form = session.editing ? formPanel(reps) : "";
+  const form = session.editing ? formPanel(reps) : (session.resultEditing ? resultPanel() : "");
   const repAdmin = session.role === "admin" ? `<section class="panel">
       <h2>Reps por sala</h2>
       <p class="fine">El administrador mueve al rep de sala. Los tours se quedan con esa persona.</p>
@@ -174,7 +255,7 @@ function render() {
         <select data-move="${esc(rep.id)}">${ops.rooms.map((room) => `<option value="${esc(room.id)}" ${room.id === rep.roomId ? "selected" : ""}>${esc(room.name)}</option>`).join("")}</select>
       </div>`).join("")}</div>
       <button class="ghost" data-reset type="button">${session.confirmReset ? "Confirmar restaurar ejemplo" : "Restaurar ejemplo"}</button>
-    </section>` : `<section class="panel"><h2>Tu sala</h2><p class="fine">${esc(jefe ? `${jefe.name} ve solo ${roomName(ops, jefe.roomId)}.` : "")} Los tours del día se asignan en las columnas. La app del rep los lee al abrir o al actualizar.</p></section>`;
+    </section>` : `<section class="panel"><h2>Tu sala</h2><p class="fine">${esc(jefe ? `${jefe.name} ve solo ${roomName(ops, jefe.roomId)}.` : "")} Los tours del día se asignan en las columnas. El resultado baja a la app del rep al abrir o al actualizar.</p></section>`;
   app.innerHTML = `<div class="wrap">
     <header class="top">
       <div>
@@ -230,6 +311,111 @@ function readDraft() {
   app.querySelectorAll("[data-draft]").forEach((field) => {
     session.draft[field.dataset.draft] = field.value;
   });
+}
+
+function blankResultDraft(visit) {
+  const result = visit.result;
+  return {
+    outcome: result?.outcome || "venta",
+    currency: result?.currency || "USD",
+    amount: result?.amount != null ? String(result.amount) : "8000",
+    objection: result?.objection || "",
+    objectionOther: result?.objectionOther || "",
+    recoverable: typeof result?.recoverable === "boolean" ? (result.recoverable ? "si" : "no") : "",
+    nextAction: result?.nextStep?.action || "segunda_visita",
+    nextDate: result?.nextStep?.date || addDays(visit.date, 1),
+    nextOwner: result?.nextStep?.ownerId || visit.repId,
+    failStep: result?.failStep || 0,
+    note: result?.note || "",
+  };
+}
+
+function readResultDraft() {
+  if (!session.resultDraft) return;
+  app.querySelectorAll("[data-rdraft]").forEach((field) => {
+    session.resultDraft[field.dataset.rdraft] = field.value;
+  });
+}
+
+function resultPanel() {
+  const visit = board.visits.find((item) => item.id === session.resultEditing);
+  if (!visit || !session.resultDraft) return "";
+  const draft = session.resultDraft;
+  const rep = board.people.find((person) => person.id === visit.repId);
+  const jefes = board.people.filter((person) => person.role === "jefe" && person.roomId === rep?.roomId);
+  const owners = [rep, ...jefes].filter(Boolean);
+  const segChips = catalogs.outcomes.map((item) => `<button class="chip ${draft.outcome === item.id ? "on" : ""}" data-rout="${esc(item.id)}" type="button">${esc(item.label)}</button>`).join("");
+  let fields = "";
+  if (draft.outcome === "venta") {
+    fields = `
+      <label>Divisa<select data-rdraft="currency">${catalogs.currencies.map((cur) => `<option ${cur === draft.currency ? "selected" : ""}>${esc(cur)}</option>`).join("")}</select></label>
+      <label>Volumen<input data-rdraft="amount" inputmode="decimal" value="${esc(draft.amount)}"></label>`;
+  } else if (draft.outcome === "no_venta") {
+    fields = `
+      <label>Objeción<select data-rdraft="objection"><option value="" ${!draft.objection ? "selected" : ""}>Elige</option>${catalogs.objections.map((item) => `<option value="${esc(item.id)}" ${item.id === draft.objection ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label>
+      ${draft.objection === "otra" ? `<label>¿Cuál?<input data-rdraft="objectionOther" maxlength="60" value="${esc(draft.objectionOther)}"></label>` : ""}
+      <label>¿Se puede recuperar?<select data-rdraft="recoverable"><option value="" ${!draft.recoverable ? "selected" : ""}>Elige</option><option value="si" ${draft.recoverable === "si" ? "selected" : ""}>Sí</option><option value="no" ${draft.recoverable === "no" ? "selected" : ""}>No</option></select></label>
+      ${draft.recoverable === "si" ? `
+      <label>Siguiente paso<select data-rdraft="nextAction">${catalogs.actions.map((item) => `<option value="${esc(item.id)}" ${item.id === draft.nextAction ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label>
+      <label>Fecha<input data-rdraft="nextDate" type="date" min="${esc(visit.date)}" value="${esc(draft.nextDate)}"></label>
+      <label>Responsable<select data-rdraft="nextOwner">${owners.map((person) => `<option value="${esc(person.id)}" ${person.id === draft.nextOwner ? "selected" : ""}>${esc(person.name)} (${person.role === "jefe" ? "jefe" : "rep"})</option>`).join("")}</select></label>` : ""}`;
+  } else {
+    const steps = catalogs.failSteps.length ? catalogs.failSteps : Array.from({ length: 11 }, (_, index) => ({ n: index + 1, title: `Paso ${index + 1}` }));
+    fields = `<label>¿En qué paso se cortó?<select data-rdraft="failStep"><option value="0" ${!Number(draft.failStep) ? "selected" : ""}>Elige el paso</option>${steps.map((step) => `<option value="${step.n}" ${Number(draft.failStep) === step.n ? "selected" : ""}>${step.n} · ${esc(step.title)}</option>`).join("")}</select></label>`;
+  }
+  return `<section class="panel composer">
+    <h2>Resultado del tour · ${esc(personName(visit.repId))} · ${esc(visit.start)}–${esc(visit.end)} · ${esc(visit.lead)}</h2>
+    ${visit.result ? `<p class="fine">Hoy: ${esc(resultLabel(visit.result))}. Al guardar lo reemplazas.</p>` : ""}
+    ${session.error ? `<div class="warn" role="alert">${esc(session.error)}${session.error.includes("Alguien más") ? ` <button type="button" data-reload class="linklike">Actualizar</button>` : ""}</div>` : ""}
+    <div class="switch">${segChips}</div>
+    <div class="grid">
+      ${fields}
+      <label>Nota (opcional)<input data-rdraft="note" maxlength="120" value="${esc(draft.note)}"></label>
+    </div>
+    <p class="fine">Sin nombres, correos ni teléfonos.</p>
+    <div class="actions">
+      <button class="gold" data-saveres type="button" ${writing ? "disabled" : ""}>Guardar resultado</button>
+      <button class="line" data-cancelres type="button">Cancelar</button>
+    </div>
+  </section>`;
+}
+
+async function saveResult() {
+  if (writing) return;
+  readResultDraft();
+  const visit = board.visits.find((item) => item.id === session.resultEditing);
+  const draft = session.resultDraft;
+  if (!visit || !draft) return;
+  const body = { outcome: draft.outcome, note: draft.note.trim(), version: visit.result?.version || 0 };
+  if (draft.outcome === "venta") {
+    body.currency = draft.currency;
+    body.amount = Number(String(draft.amount).replace(/[^0-9.]/g, ""));
+  } else if (draft.outcome === "no_venta") {
+    if (!draft.objection) { session.error = "Elige la objeción principal."; render(); return; }
+    if (!draft.recoverable) { session.error = "Indica si se puede recuperar."; render(); return; }
+    body.objection = draft.objection;
+    body.objectionOther = draft.objection === "otra" ? draft.objectionOther.trim() : "";
+    body.recoverable = draft.recoverable === "si";
+    if (body.recoverable) body.nextStep = { action: draft.nextAction, date: draft.nextDate, ownerId: draft.nextOwner };
+  } else {
+    body.failStep = Number(draft.failStep);
+    if (!body.failStep) { session.error = "Elige el paso donde se cortó."; render(); return; }
+  }
+  writing = true;
+  try {
+    await opsRequest(`/api/tours/${encodeURIComponent(visit.id)}/result`, { method: "PUT", actor: actor(), body });
+    session.resultEditing = null;
+    session.resultDraft = null;
+    session.error = "";
+    session.focusId = visit.id;
+    showToast(`Resultado guardado para ${personName(visit.repId)}.`);
+    await pull();
+  } catch (error) {
+    session.error = error.message;
+    render();
+  } finally {
+    writing = false;
+  }
 }
 
 async function saveVisit() {
@@ -332,8 +518,71 @@ app.addEventListener("click", async (event) => {
   if (create) {
     session.editing = "new";
     session.draft = blankDraft(create.dataset.new);
+    session.resultEditing = null;
+    session.resultDraft = null;
     session.error = "";
     session.focusId = "";
+    render();
+    return;
+  }
+  const resultBtn = event.target.closest("[data-result]");
+  if (resultBtn) {
+    const visit = board.visits.find((item) => item.id === resultBtn.dataset.result);
+    if (!visit) return;
+    session.resultEditing = visit.id;
+    session.resultDraft = blankResultDraft(visit);
+    session.editing = null;
+    session.draft = null;
+    session.error = "";
+    session.confirmResId = "";
+    render();
+    document.querySelector(".composer")?.scrollIntoView({ block: "nearest" });
+    return;
+  }
+  const rout = event.target.closest("[data-rout]");
+  if (rout) {
+    readResultDraft();
+    if (session.resultDraft) session.resultDraft.outcome = rout.dataset.rout;
+    session.error = "";
+    render();
+    return;
+  }
+  const dropRes = event.target.closest("[data-dropres]");
+  if (dropRes) {
+    if (session.confirmResId !== dropRes.dataset.dropres) {
+      session.confirmResId = dropRes.dataset.dropres;
+      render();
+      return;
+    }
+    const id = dropRes.dataset.dropres;
+    session.confirmResId = "";
+    if (session.resultEditing === id) { session.resultEditing = null; session.resultDraft = null; }
+    try {
+      await opsRequest(`/api/tours/${encodeURIComponent(id)}/result`, { method: "DELETE", actor: actor() });
+      showToast("Resultado quitado.");
+      await pull();
+    } catch (error) {
+      board.syncError = error.message;
+      render();
+    }
+    return;
+  }
+  const hist = event.target.closest("[data-hist]");
+  if (hist) {
+    const id = hist.dataset.hist;
+    if (histOpen.has(id)) histOpen.delete(id);
+    else histOpen.add(id);
+    render();
+    return;
+  }
+  if (event.target.closest("[data-saveres]")) {
+    saveResult();
+    return;
+  }
+  if (event.target.closest("[data-cancelres]")) {
+    session.resultEditing = null;
+    session.resultDraft = null;
+    session.error = "";
     render();
     return;
   }
@@ -343,6 +592,8 @@ app.addEventListener("click", async (event) => {
     if (!visit) return;
     session.editing = visit.id;
     session.draft = { repId: visit.repId, start: visit.start, end: visit.end, lead: visit.lead, status: visit.status, note: visit.note || "" };
+    session.resultEditing = null;
+    session.resultDraft = null;
     session.error = "";
     render();
     return;
@@ -409,6 +660,14 @@ app.addEventListener("change", async (event) => {
     field?.focus();
     return;
   }
+  if (event.target.dataset.rdraft) {
+    readResultDraft();
+    session.error = "";
+    render();
+    const field = app.querySelector(`[data-rdraft="${event.target.dataset.rdraft}"]`);
+    field?.focus();
+    return;
+  }
   const move = event.target.dataset.move;
   if (!move || session.role !== "admin") return;
   const rep = board.people.find((person) => person.id === move && person.role === "rep");
@@ -428,3 +687,4 @@ app.addEventListener("change", async (event) => {
 });
 
 pull();
+loadCatalog();

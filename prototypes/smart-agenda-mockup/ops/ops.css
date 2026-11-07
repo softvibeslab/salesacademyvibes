@@ -87,3 +87,13 @@ textarea { min-height: 64px; resize: vertical; }
 .warn { background: #faf7ee; border-left: 3px solid var(--gold); padding: 8px 10px; border-radius: 8px; margin: 8px 0; }
 .reps { display: grid; gap: 8px; margin-top: 8px; }
 .rep { display: flex; justify-content: space-between; gap: 8px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
+
+/* Resultado del tour */
+.resline { margin-top: 6px; font-size: 12px; font-weight: 600; display: inline-block; padding: 2px 8px; border-radius: 999px; background: var(--chip); }
+.resline.venta { background: #ffe08a; color: var(--gold-deep); }
+.resline.no_venta { background: var(--tint); color: var(--gold-deep); }
+.resline.abandono { background: #eee; color: #4c4638; }
+.resline.dim { background: #f3f3f3; color: #7e7666; font-weight: 500; }
+.visit.editing { outline: 2px solid var(--gold); }
+.hist { margin-top: 6px; border-left: 2px solid var(--gold); padding-left: 8px; }
+.linklike { background: none; border: 0; color: var(--gold-deep); text-decoration: underline; cursor: pointer; font: inherit; }

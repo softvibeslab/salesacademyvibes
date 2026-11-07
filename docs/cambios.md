@@ -1,12 +1,22 @@
 # Cambios de este corte
 
-Rama: `feat/sala-tours-sync`. Sitio live con caché `20261107z`. Fecha de corte: 7 de noviembre de 2026.
+Rama: `feat/sala-tours-sync`. Sitio live con caché `20261107r`. Fecha de corte: 7 de noviembre de 2026.
 
 ## Impacto
 
 Un jefe asigna un tour y el representante lo ve en otro navegador. Eso no pasaba cuando el tablero y la app compartían solo `localStorage`.
 
 ## Qué se movió
+
+### Resultado del tour (corte `20261107r`)
+
+- Cada tour puede cerrarse con venta, no venta o abandono; con objeción, recuperable, siguiente paso o paso del roadmap, y nota filtrada (sin correos ni teléfonos).
+- El rep lo registra desde la app (tour elegible, vista previa, confirmación, estados de error y conflicto); el jefe lo registra, corrige o quita en `/ops/`, con historial de cambios.
+- Versión optimista: dos ediciones simultáneas ya no se pisan (409 con aviso).
+- Los indicadores de Home (presentaciones, cierres, volumen) se calculan desde los resultados del día; las metas siguen de ejemplo. Perfil no cambió.
+- API: `GET /catalog`, `PUT`/`DELETE /tours/:id/result`; editar un tour conserva su resultado; cancelar exige quitarlo.
+- Pruebas: 13 casos nuevos en `tests/e2e-ops.mjs` y `tests/home-counters.mjs`.
+- Diseño: pantallas aprobadas en Stitch (móvil y tablero). Los textos «Sincronización instantánea» e «Historial verificado» del mockup no se implementaron a propósito: el refresco sigue siendo de 15 s.
 
 ### Producto unificado (cortes anteriores en el mismo sitio)
 

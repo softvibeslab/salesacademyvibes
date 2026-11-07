@@ -10,6 +10,7 @@
 - Recorrido comprobado: Rosa → Teo → app de Teo; Ana no ve ese tour.
 - Script e2e del API en local y en https://salesacademy.softvibes.art/api/.
 - Repo público y rama `feat/sala-tours-sync`.
+- Resultado del tour de punta a punta: el rep cierra, el jefe corrige, Home calcula sus indicadores. Historia aprobada por el PO y evidencia TDD en `work/features/2026-11-07-resultado-del-tour/`.
 
 ## Now
 
@@ -36,7 +37,7 @@ Hipótesis, no fechas de release ni KPI.
 
 | Si | Entonces se ve | Nota |
 |---|---|---|
-| Hay ventas reales por leer | Home y Perfil dejan el volumen de ejemplo | No hay API de ventas en este repo |
+| Hay ventas reales por leer | Perfil deja el ejemplo (Home ya calcula desde resultados del demo) | No hay API de ventas en este repo |
 | Hay más de un tenant | Un JSON y un header de rol no bastan | No diseñado |
 | Se quiere push al teléfono | El poll de 15 s se sustituye | No hay websockets hoy |
 

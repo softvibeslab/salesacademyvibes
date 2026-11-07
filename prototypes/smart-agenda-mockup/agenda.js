@@ -1,5 +1,49 @@
 import { opsRequest } from "./ops-api.js";
 import { EXAMPLE_TODAY, ME_REP, STATUS_LABEL, addDays, defaultOps, labelDate } from "./ops-store.js";
+import { homeCounters } from "./home-counters.js";
+
+// Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
+// estos son el respaldo si no responde.
+const catalogs = {
+  outcomes: [
+    { id: "venta", label: "Venta" },
+    { id: "no_venta", label: "No venta" },
+    { id: "abandono", label: "Abandono" },
+  ],
+  objections: [
+    { id: "confianza", label: "Confianza" },
+    { id: "dinero_cuota", label: "Dinero o cuota" },
+    { id: "pareja_decision", label: "Pareja o decisión" },
+    { id: "uso_tiempo", label: "Uso o tiempo" },
+    { id: "valor_producto", label: "Valor del producto" },
+    { id: "ya_tiene_tc", label: "Ya tiene tiempo compartido" },
+    { id: "otra", label: "Otra" },
+  ],
+  actions: [
+    { id: "llamada", label: "Llamada" },
+    { id: "segunda_visita", label: "Segunda visita" },
+    { id: "enviar_propuesta", label: "Enviar propuesta" },
+    { id: "otra", label: "Otra" },
+  ],
+  failSteps: [],
+  currencies: ["USD", "MXN"],
+};
+
+function catalogLabel(list, id) {
+  return catalogs[list].find((item) => item.id === id)?.label || id;
+}
+
+async function refreshCatalog() {
+  try {
+    const data = await opsRequest("/api/catalog", { actor: `rep:${state.meId}` });
+    ["outcomes", "objections", "actions", "failSteps"].forEach((key) => {
+      if (Array.isArray(data[key]) && data[key].length) catalogs[key] = data[key];
+    });
+    if (Array.isArray(data.currencies) && data.currencies.length) catalogs.currencies = data.currencies;
+  } catch { /* el respaldo local cubre los catálogos */ }
+}
+
+const CONFLICT_HINT = "Alguien más actualizó";
 
 const FLOWS = [
   { id: "nota", n: "02", title: "Nota personal", path: "Hoy → Nueva nota → Guardar", start: "nota" },
@@ -96,7 +140,7 @@ const state = {
     { title: "Descubrimiento", body: "Confirmar la necesidad antes de presentar una solución.", cat: "Entrenamiento", when: "6 nov" },
   ],
   talks: [
-    { ref: "Lead #302", result: "Seguimiento", amount: "", when: "5 nov" },
+    { ref: "Lead #302", result: "No venta · recuperable", amount: "", when: "5 nov" },
     { ref: "Mesa 2", result: "No venta", amount: "", when: "6 nov" },
     { ref: "Lead #188", result: "Venta", amount: "USD 8,000", when: "6 nov" },
   ],
@@ -120,15 +164,22 @@ const state = {
     body: "Confirmar la necesidad antes de presentar una solución.",
     cat: "Entrenamiento",
     makeTask: false,
-    result: "venta",
-    amount: "8000",
+  },
+  resultDraft: {
+    tourId: "",
+    outcome: "venta",
     currency: "USD",
-    status: "procesable",
-    down: "20%",
-    commission: "1600",
-    tour: "Q",
-    ref: "Lead #4920 - Salón Norte",
+    amount: "8000",
+    objection: "",
+    objectionOther: "",
+    recoverable: null,
+    nextAction: "segunda_visita",
+    nextDate: "",
+    nextOwner: "",
+    failStep: 0,
     note: "",
+    saving: false,
+    error: "",
   },
 };
 
@@ -268,13 +319,18 @@ function minutesOf(value) {
 
 function viewHoy() {
   const goal = 12000;
-  const presPct = Math.min(100, Math.round((state.presentations / 4) * 100));
-  const closePct = Math.min(100, Math.round((state.closes / 2) * 100));
-  const volPct = Math.min(100, Math.round((state.volume / goal) * 100));
+  const live = homeCounters(tours.visits, state.meId, EXAMPLE_TODAY);
+  state.presentations = live.presentations;
+  state.closes = live.closes;
+  state.volume = live.volumeUSD;
+  const presPct = Math.min(100, Math.round((live.presentations / 4) * 100));
+  const closePct = Math.min(100, Math.round((live.closes / 2) * 100));
+  const volPct = Math.min(100, Math.round((live.volumeUSD / goal) * 100));
+  const mxnSale = myVisits(EXAMPLE_TODAY).some((visit) => visit.result?.outcome === "venta" && visit.result.currency === "MXN");
   const stats = [
-    ["Presentaciones", `${state.presentations}/4`, presPct],
-    ["Cierres", `${state.closes}/2`, closePct],
-    ["Volumen", money(state.volume), volPct],
+    ["Presentaciones", `${live.presentations}/4`, presPct],
+    ["Cierres", `${live.closes}/2`, closePct],
+    ["Volumen", money(live.volumeUSD), volPct],
   ];
   const items = state.priorities.map((item) => `
     <div class="item">
@@ -331,11 +387,11 @@ function viewHoy() {
       <button class="stats" data-go="perfil" type="button" aria-label="Ver rendimiento">
         ${stats.map(([label, value, pct]) => `<span class="stat"><em>${esc(label)}</em><b>${esc(value)}</b><span class="track"><span style="width:${pct}%"></span></span></span>`).join("")}
       </button>
-      <p class="fine">Volumen de ${money(goal)} USD. Toca los indicadores para ver el rendimiento.</p>
+      <p class="fine">Metas de ejemplo: 4 presentaciones, 2 cierres y ${money(goal)} USD. Los avances salen de tus resultados del día.${mxnSale ? " Las ventas en MXN no suman al volumen USD." : ""}</p>
       <section style="margin-top:16px">
         ${whoChips()}
         <p class="fine">${esc(meLabel())}. ${esc(agoLabel())}</p>
-        <div class="row-between"><h2 class="section-title">Tours de hoy</h2><span><button class="linkish" data-act="reload-tours" type="button">Actualizar</button> <button class="linkish" data-go="calendario" type="button">Calendario</button></span></div>
+        <div class="row-between"><h2 class="section-title">Tours de hoy</h2><span><button class="linkish" data-act="reload-tours" type="button">Actualizar</button> · <button class="linkish" data-go="calendario" type="button">Calendario</button></span></div>
         ${tourCard(EXAMPLE_TODAY)}
       </section>
       <section style="margin-top:16px">
@@ -409,52 +465,145 @@ function viewNota() {
     </div>`;
 }
 
+function selectedTour() {
+  return tours.visits.find((visit) => visit.id === state.resultDraft.tourId) || null;
+}
+
+function prefillResultDraft(visit) {
+  const r = state.resultDraft;
+  r.tourId = visit ? visit.id : "";
+  r.saving = false;
+  r.error = "";
+  const result = visit?.result;
+  if (result) {
+    r.outcome = result.outcome;
+    r.currency = result.currency || "USD";
+    r.amount = result.amount != null ? String(result.amount) : "8000";
+    r.objection = result.objection || "";
+    r.objectionOther = result.objectionOther || "";
+    r.recoverable = typeof result.recoverable === "boolean" ? result.recoverable : null;
+    r.nextAction = result.nextStep?.action || "segunda_visita";
+    r.nextDate = result.nextStep?.date || (visit ? addDays(visit.date, 1) : "");
+    r.nextOwner = result.nextStep?.ownerId || state.meId;
+    r.failStep = result.failStep || 0;
+    r.note = result.note || "";
+  } else {
+    r.outcome = "venta";
+    r.currency = "USD";
+    r.amount = "8000";
+    r.objection = "";
+    r.objectionOther = "";
+    r.recoverable = null;
+    r.nextAction = "segunda_visita";
+    r.nextDate = visit ? addDays(visit.date, 1) : "";
+    r.nextOwner = state.meId;
+    r.failStep = 0;
+    r.note = "";
+  }
+}
+
+function ensureResultDraft() {
+  const r = state.resultDraft;
+  const candidates = closableTours();
+  if (!candidates.some((visit) => visit.id === r.tourId)) {
+    prefillResultDraft(candidates[0] || null);
+  }
+}
+
 function viewPresentacion() {
-  const d = state.draft;
-  const result = (value, label) => `<label><input name="result" type="radio" value="${value}" ${d.result === value ? "checked" : ""}><span>${label}</span></label>`;
-  const tour = (value) => `<label><input name="tour" type="radio" value="${value}" ${d.tour === value ? "checked" : ""}><span>${value === "unclassified" ? "Sin clasif." : value}</span></label>`;
-  return `${taskbar("Registrar presentación", "hoy", "Registro")}
+  ensureResultDraft();
+  const r = state.resultDraft;
+  const candidates = closableTours();
+  const visit = selectedTour();
+  if (!candidates.length) {
+    return `${taskbar("Registrar resultado", "hoy", "Registro")}
+      <div class="screen task">
+        <section class="card"><p class="fine">No tienes tours por cerrar hoy. Los asigna el jefe de sala en el tablero.</p></section>
+        <div class="footer-actions"><button class="btn text" data-go="hoy" type="button" style="width:100%">Volver</button></div>
+      </div>`;
+  }
+  const seg = (value, label) => `<label><input name="result" type="radio" value="${value}" ${r.outcome === value ? "checked" : ""}><span>${label}</span></label>`;
+  const objChips = catalogs.objections.map((item) => `<button class="chip-btn ${r.objection === item.id ? "gold" : ""}" data-act="obj-${esc(item.id)}" type="button">${esc(item.label)}</button>`).join("");
+  const jefes = roster.people.filter((person) => person.role === "jefe" && person.roomId === mePerson().roomId);
+  const owners = [mePerson(), ...jefes];
+  const steps = (catalogs.failSteps.length ? catalogs.failSteps : STEPS.map((step) => ({ n: step.n, title: step.title })));
+  const saleBox = r.outcome === "venta" ? `<section class="card paper">
+      <h2 class="section-title">Detalle de la venta</h2>
+      <div class="duo">
+        <div class="field"><label for="res-currency">Divisa</label><select id="res-currency">${catalogs.currencies.map((cur) => `<option ${cur === r.currency ? "selected" : ""}>${esc(cur)}</option>`).join("")}</select></div>
+        <div class="field"><label for="res-amount">Volumen</label><input id="res-amount" inputmode="decimal" value="${esc(r.amount)}"></div>
+      </div>
+    </section>` : "";
+  const noSaleBox = r.outcome === "no_venta" ? `<section class="card paper">
+      <h2 class="section-title">Detalle de la no venta</h2>
+      <div class="field"><label>Objeción principal</label><div class="types" role="group" aria-label="Objeción principal">${objChips}</div></div>
+      ${r.objection === "otra" ? `<div class="field"><label for="res-obj-other">¿Cuál?</label><input id="res-obj-other" maxlength="60" value="${esc(r.objectionOther)}"></div>` : ""}
+      <div class="field"><label>¿Se puede recuperar?</label><div class="seg two">
+        <label><input name="recoverable" type="radio" value="si" ${r.recoverable === true ? "checked" : ""}><span>Sí</span></label>
+        <label><input name="recoverable" type="radio" value="no" ${r.recoverable === false ? "checked" : ""}><span>No</span></label>
+      </div></div>
+      ${r.recoverable ? `<div class="field"><label for="res-action">Siguiente paso</label><select id="res-action">${catalogs.actions.map((item) => `<option value="${esc(item.id)}" ${item.id === r.nextAction ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></div>
+      <div class="duo">
+        <div class="field"><label for="res-date">Fecha</label><input id="res-date" type="date" value="${esc(r.nextDate)}" min="${esc(visit?.date || "")}"></div>
+        <div class="field"><label for="res-owner">Responsable</label><select id="res-owner">${owners.map((person) => `<option value="${esc(person.id)}" ${person.id === r.nextOwner ? "selected" : ""}>${esc(person.name)} (${person.role === "jefe" ? "jefe" : "rep"})</option>`).join("")}</select></div>
+      </div>` : ""}
+    </section>` : "";
+  const abandonBox = r.outcome === "abandono" ? `<section class="card paper">
+      <h2 class="section-title">¿En qué paso se cortó?</h2>
+      <div class="field"><select id="res-step"><option value="0" ${!r.failStep ? "selected" : ""}>Elige el paso</option>${steps.map((step) => `<option value="${step.n}" ${Number(r.failStep) === step.n ? "selected" : ""}>${step.n} · ${esc(step.title)}</option>`).join("")}</select></div>
+    </section>` : "";
+  const correction = visit?.result ? `<p class="note"><span class="material-symbols-outlined">history</span> Este tour ya tiene resultado (${esc(resultLabel(visit.result))}). Al confirmar lo reemplazas.</p>` : "";
+  const conflict = r.error.includes(CONFLICT_HINT);
+  return `${taskbar("Registrar resultado", "hoy", "Registro")}
     <div class="screen task">
-      <p class="note">Agenda de hoy: 6 nov 2026 · Turno matutino</p>
-      <div class="field"><label>Resultado obtenido</label><div class="seg">${result("venta", "Venta")}${result("no_venta", "No venta")}${result("seguimiento", "Seguimiento")}</div></div>
-      <section class="card paper" id="sale-box" ${d.result === "venta" ? "" : "hidden"}>
-        <h2 class="section-title">Detalle de la venta</h2>
-        <div class="duo">
-          <div class="field"><label for="sale-currency">Divisa</label><select id="sale-currency"><option ${d.currency === "USD" ? "selected" : ""}>USD</option><option ${d.currency === "MXN" ? "selected" : ""}>MXN</option></select></div>
-          <div class="field"><label for="sale-amount">Volumen</label><input id="sale-amount" value="${esc(d.amount)}"></div>
-        </div>
-        <div class="duo">
-          <div class="field"><label for="sale-down">Enganche</label><input id="sale-down" value="${esc(d.down)}"></div>
-          <div class="field"><label for="sale-commission">Comisión manual</label><input id="sale-commission" value="${esc(d.commission)}"></div>
-        </div>
-      </section>
-      <h2 class="section-title" style="margin:14px 0 8px">Datos del tour</h2>
-      <div class="field"><label>Tipo de prospecto</label><div class="types">${["unclassified", "Q", "CT", "NQ"].map(tour).join("")}</div></div>
-      <div class="field"><label for="sale-ref">Referencia</label><input id="sale-ref" value="${esc(d.ref)}"></div>
-      <div class="field"><label for="sale-note">Motivo u objeción</label><textarea id="sale-note" style="min-height:72px">${esc(d.note)}</textarea></div>
+      <div class="field"><label for="res-tour">Tour</label><select id="res-tour">${candidates.map((item) => `<option value="${esc(item.id)}" ${item.id === r.tourId ? "selected" : ""}>${esc(item.start)}–${esc(item.end)} · ${esc(item.lead)}${item.result ? " · con resultado" : ""}</option>`).join("")}</select></div>
+      <p class="fine">Solo tus tours que ya terminaron.</p>
+      ${correction}
+      <div class="field"><label>Resultado</label><div class="seg">${catalogs.outcomes.map((item) => seg(item.id, item.label)).join("")}</div></div>
+      ${saleBox}${noSaleBox}${abandonBox}
+      <div class="field"><label for="res-note">Nota (opcional) <span class="fine" id="note-count">${r.note.length}/120</span></label><textarea id="res-note" maxlength="120" style="min-height:64px">${esc(r.note)}</textarea></div>
+      <p class="fine">Sin nombres, correos ni teléfonos.</p>
+      ${r.error ? `<div class="warn" role="alert">${esc(r.error)}${conflict ? ` <button class="linkish" data-act="refresh-result" type="button">Actualizar</button>` : ""}</div>` : ""}
       <div class="footer-actions">
-        <button class="btn gold" data-act="save-talk" type="button" style="width:100%">Guardar resultado</button>
+        <button class="btn gold" data-act="save-talk" type="button" style="width:100%" ${r.saving ? "disabled" : ""}>Vista previa</button>
         <button class="btn text" data-go="hoy" type="button" style="width:100%">Cancelar</button>
       </div>
     </div>`;
 }
 
 function viewPreview() {
-  const d = state.draft;
-  const label = { venta: "Venta", no_venta: "No venta", seguimiento: "Seguimiento" }[d.result];
+  const r = state.resultDraft;
+  const visit = selectedTour();
+  if (!visit) {
+    return `${taskbar("Vista previa", "presentacion", "Confirmar", "Registro")}
+      <div class="screen task"><section class="card"><p class="fine">Elige primero el tour.</p></section></div>`;
+  }
+  let detail = "";
+  if (r.outcome === "venta") {
+    detail = `<p><b>${esc(r.currency)} ${esc(Number(String(r.amount).replace(/[^0-9.]/g, "")).toLocaleString("en-US"))}</b></p>`;
+  } else if (r.outcome === "no_venta") {
+    const objection = r.objection === "otra" ? r.objectionOther : catalogLabel("objections", r.objection);
+    detail = `<p>Objeción: <b>${esc(objection)}</b> · ${r.recoverable ? "recuperable" : "no recuperable"}</p>
+      ${r.recoverable ? `<p class="fine">Siguiente paso: ${esc(catalogLabel("actions", r.nextAction))} · ${esc(r.nextDate)} · ${esc(roster.people.find((person) => person.id === r.nextOwner)?.name || r.nextOwner)}</p>` : ""}`;
+  } else {
+    const step = STEPS.find((item) => item.n === Number(r.failStep));
+    detail = `<p>Se cortó en el paso <b>${esc(r.failStep)}${step ? ` · ${esc(step.title)}` : ""}</b></p>`;
+  }
+  const conflict = r.error.includes(CONFLICT_HINT);
   return `${taskbar("Vista previa", "presentacion", "Confirmar", "Registro")}
     <div class="screen task">
       <section class="card paper">
-        <p class="fine">Así queda el registro. Todavía no entra a la agenda.</p>
-        <h2 class="section-title" style="margin-top:8px">${esc(label)}</h2>
-        <p>${esc(d.ref)}</p>
-        ${d.result === "venta" ? `<p><b>${esc(d.currency)} ${esc(Number(d.amount).toLocaleString("en-US"))}</b> · enganche ${esc(d.down)} · comisión ${esc(d.currency)} ${esc(Number(d.commission).toLocaleString("en-US"))}</p>` : ""}
-        <p class="fine">Tour ${esc(d.tour)} · 6 nov 2026${d.note ? ` · ${esc(d.note)}` : ""}</p>
+        <p class="fine">Así queda el resultado. Se guarda al confirmar.</p>
+        <h2 class="section-title" style="margin-top:8px">${esc(catalogLabel("outcomes", r.outcome))}</h2>
+        <p>${esc(visit.start)}–${esc(visit.end)} · ${esc(visit.lead)}</p>
+        ${detail}
+        ${r.note ? `<p class="fine">Nota: ${esc(r.note)}</p>` : ""}
+        ${visit.result ? `<p class="fine">Reemplaza el resultado actual (${esc(resultLabel(visit.result))}).</p>` : ""}
       </section>
-      <p class="note"><span class="material-symbols-outlined">event</span> Después de confirmar se agenda el siguiente paso de mañana.</p>
+      ${r.error ? `<div class="warn" role="alert">${esc(r.error)}${conflict ? ` <button class="linkish" data-act="refresh-result" type="button">Actualizar</button>` : ""}</div>` : ""}
       <div class="footer-actions">
-        <button class="btn gold" data-act="confirm-talk" type="button" style="width:100%">Confirmar registro</button>
-        <button class="btn text" data-go="presentacion" type="button" style="width:100%">Volver a editar</button>
+        <button class="btn gold" data-act="confirm-talk" type="button" style="width:100%" ${r.saving ? "disabled" : ""}>${r.saving ? "Guardando…" : "Confirmar resultado"}</button>
+        <button class="btn text" data-go="presentacion" type="button" style="width:100%" ${r.saving ? "disabled" : ""}>Volver a editar</button>
       </div>
     </div>`;
 }
@@ -646,12 +795,42 @@ async function refreshTours(opts = {}) {
   render();
 }
 
+function tourEnded(visit) {
+  const now = new Date();
+  const iso = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  if (visit.date < iso) return true;
+  if (visit.date > iso) return false;
+  const clock = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+  return visit.end <= clock;
+}
+
+function resultLabel(result) {
+  if (result.outcome === "venta") return `Venta · ${result.currency} ${Number(result.amount).toLocaleString("en-US")}`;
+  if (result.outcome === "no_venta") return `No venta${result.recoverable ? " · recuperable" : ""}`;
+  return `Abandono · paso ${result.failStep}`;
+}
+
+function resultChip(visit) {
+  if (visit.result) return `<span class="pill ${visit.result.outcome === "venta" ? "on" : ""}">${esc(resultLabel(visit.result))}</span>`;
+  if (tourEnded(visit)) return `<span class="pill dim">Sin resultado</span>`;
+  return "";
+}
+
+function closableTours() {
+  return tours.visits
+    .filter((visit) => visit.repId === state.meId && visit.status !== "cancelado" && tourEnded(visit))
+    .sort((a, b) => `${b.date} ${b.start}`.localeCompare(`${a.date} ${a.start}`));
+}
+
 function tourCard(date) {
   if (!tours.ready) return `<section class="card"><p class="fine">Cargando tours…</p></section>`;
   if (tours.error && !tours.visits.length) return `<section class="card"><p class="fine">${esc(tours.error)}</p></section>`;
   const visits = myVisits(date);
   if (!visits.length) return `<section class="card"><p class="fine">Sin tours asignados. Los carga el jefe de sala.</p></section>`;
-  return `<section class="card">${visits.map((visit) => `<div class="vrow"><span><b>${esc(visit.start)}</b> ${esc(visit.lead)}</span><span class="pill">${esc(STATUS_LABEL[visit.status] || visit.status)}</span></div>`).join("")}</section>`;
+  return `<section class="card">${visits.map((visit) => `<button class="vrow vrow-btn" data-act="open-result-${esc(visit.id)}" type="button">
+      <span><b>${esc(visit.start)}</b> ${esc(visit.lead)}</span>
+      <span class="vtags"><span class="pill">${esc(STATUS_LABEL[visit.status] || visit.status)}</span>${resultChip(visit)}</span>
+    </button>`).join("")}</section>`;
 }
 
 function viewCalendario() {
@@ -665,7 +844,7 @@ function viewCalendario() {
   }).join("");
   const visits = myVisits(selected);
   const list = visits.length
-    ? visits.map((visit) => `<section class="card vrow"><span><b>${esc(visit.start)}–${esc(visit.end)}</b><br>${esc(visit.lead)}${visit.note ? `<span class="fine"> · ${esc(visit.note)}</span>` : ""}</span><span class="pill">${esc(STATUS_LABEL[visit.status] || visit.status)}</span></section>`).join("")
+    ? visits.map((visit) => `<section class="card vrow"><span><b>${esc(visit.start)}–${esc(visit.end)}</b><br>${esc(visit.lead)}${visit.note ? `<span class="fine"> · ${esc(visit.note)}</span>` : ""}</span><span class="vtags"><span class="pill">${esc(STATUS_LABEL[visit.status] || visit.status)}</span>${resultChip(visit)}</span></section>`).join("")
     : `<section class="card"><p class="fine">Este día no tienes tours.</p></section>`;
   return `${taskbar("Calendario", "hoy", mePerson().name)}
     <div class="screen task">
@@ -1379,16 +1558,22 @@ function readDraftFromDom() {
     state.draft.cat = phone.querySelector("#note-cat").value;
     state.draft.makeTask = phone.querySelector("#note-task").checked;
   }
-  const amount = phone.querySelector("#sale-amount");
-  if (amount) {
-    state.draft.result = phone.querySelector("input[name=result]:checked")?.value || "venta";
-    state.draft.amount = amount.value;
-    state.draft.currency = phone.querySelector("#sale-currency").value;
-    state.draft.down = phone.querySelector("#sale-down").value;
-    state.draft.commission = phone.querySelector("#sale-commission").value;
-    state.draft.tour = phone.querySelector("input[name=tour]:checked")?.value || "Q";
-    state.draft.ref = phone.querySelector("#sale-ref").value;
-    state.draft.note = phone.querySelector("#sale-note").value;
+  const tourSelect = phone.querySelector("#res-tour");
+  if (tourSelect) {
+    const r = state.resultDraft;
+    r.tourId = tourSelect.value;
+    r.outcome = phone.querySelector("input[name=result]:checked")?.value || r.outcome;
+    const read = (id) => phone.querySelector(id)?.value;
+    r.currency = read("#res-currency") ?? r.currency;
+    r.amount = read("#res-amount") ?? r.amount;
+    r.objectionOther = read("#res-obj-other") ?? r.objectionOther;
+    r.nextAction = read("#res-action") ?? r.nextAction;
+    r.nextDate = read("#res-date") ?? r.nextDate;
+    r.nextOwner = read("#res-owner") ?? r.nextOwner;
+    r.failStep = read("#res-step") ?? r.failStep;
+    r.note = read("#res-note") ?? r.note;
+    const rec = phone.querySelector("input[name=recoverable]:checked")?.value;
+    if (rec) r.recoverable = rec === "si";
   }
 }
 
@@ -1412,6 +1597,13 @@ function render() {
       });
     });
   });
+  const noteField = phone.querySelector("#res-note");
+  if (noteField) {
+    noteField.addEventListener("input", () => {
+      const count = phone.querySelector("#note-count");
+      if (count) count.textContent = `${noteField.value.length}/120`;
+    });
+  }
   const tpl = phone.querySelector("#tpl");
   if (tpl) {
     tpl.addEventListener("input", paintTemplatePreview);
@@ -1466,10 +1658,16 @@ phone.addEventListener("click", (event) => {
 });
 
 phone.addEventListener("change", (event) => {
-  if (event.target.name === "result") {
-    state.draft.result = event.target.value;
-    const box = phone.querySelector("#sale-box");
-    if (box) box.hidden = event.target.value !== "venta";
+  if (event.target.name === "result" || event.target.name === "recoverable") {
+    readDraftFromDom();
+    state.resultDraft.error = "";
+    render();
+    return;
+  }
+  if (event.target.id === "res-tour") {
+    readDraftFromDom();
+    prefillResultDraft(selectedTour());
+    render();
   }
 });
 
@@ -1584,25 +1782,41 @@ function run(act) {
     toast("Nota guardada", "hoy");
     return;
   }
+  if (act.startsWith("open-result-")) {
+    const id = act.slice(12);
+    const visit = tours.visits.find((item) => item.id === id);
+    if (visit && visit.repId === state.meId && visit.status !== "cancelado" && tourEnded(visit)) {
+      prefillResultDraft(visit);
+    }
+    go("presentacion", "presentacion");
+    return;
+  }
+  if (act.startsWith("obj-")) {
+    state.resultDraft.objection = act.slice(4);
+    state.resultDraft.error = "";
+    render();
+    return;
+  }
+  if (act === "refresh-result") {
+    state.resultDraft.error = "";
+    state.view = "presentacion";
+    refreshTours();
+    toast("Actualizado. Revisa el resultado vigente y vuelve a confirmar.", "presentacion");
+    return;
+  }
   if (act === "save-talk") {
+    const error = validateResultDraft();
+    if (error) {
+      state.resultDraft.error = error;
+      render();
+      return;
+    }
+    state.resultDraft.error = "";
     go("preview", "presentacion");
     return;
   }
   if (act === "confirm-talk") {
-    const d = state.draft;
-    const amount = Number(String(d.amount).replace(/[^0-9.]/g, "")) || 0;
-    state.talks.unshift({
-      ref: d.ref || "Tour sin referencia",
-      result: { venta: "Venta", no_venta: "No venta", seguimiento: "Seguimiento" }[d.result],
-      amount: d.result === "venta" ? `${d.currency} ${amount.toLocaleString("en-US")}` : "",
-      when: "6 nov",
-    });
-    state.presentations += 1;
-    if (d.result === "venta") {
-      state.closes += 1;
-      state.volume += amount;
-    }
-    toast("Registro confirmado", "hoy");
+    submitResult();
     return;
   }
   if (act === "done-task") {
@@ -1642,6 +1856,77 @@ function run(act) {
   }
 }
 
+function validateResultDraft() {
+  const r = state.resultDraft;
+  const visit = selectedTour();
+  if (!visit) return "Elige el tour.";
+  if (r.outcome === "venta") {
+    const amount = Number(String(r.amount).replace(/[^0-9.]/g, ""));
+    if (!r.amount) return "Falta el volumen de la venta.";
+    if (!Number.isFinite(amount) || amount <= 0 || amount > 1000000) return "El volumen no es válido.";
+  } else if (r.outcome === "no_venta") {
+    if (!r.objection) return "Elige la objeción principal.";
+    if (r.objection === "otra" && !r.objectionOther.trim()) return "Describe la objeción (máximo 60).";
+    if (r.recoverable !== true && r.recoverable !== false) return "Indica si se puede recuperar.";
+    if (r.recoverable) {
+      if (!r.nextAction || !r.nextDate || !r.nextOwner) return "Falta el siguiente paso.";
+      if (r.nextDate < visit.date) return "La fecha del siguiente paso no puede ser anterior al tour.";
+    }
+  } else if (!Number(r.failStep)) {
+    return "Elige el paso donde se cortó.";
+  }
+  return "";
+}
+
+async function submitResult() {
+  const r = state.resultDraft;
+  const visit = selectedTour();
+  const error = validateResultDraft();
+  if (error || !visit) {
+    r.error = error || "Elige el tour.";
+    state.view = "presentacion";
+    render();
+    return;
+  }
+  const body = { outcome: r.outcome, note: r.note.trim(), version: visit.result?.version || 0 };
+  if (r.outcome === "venta") {
+    body.currency = r.currency;
+    body.amount = Number(String(r.amount).replace(/[^0-9.]/g, ""));
+  } else if (r.outcome === "no_venta") {
+    body.objection = r.objection;
+    body.objectionOther = r.objection === "otra" ? r.objectionOther.trim() : "";
+    body.recoverable = r.recoverable;
+    if (r.recoverable) body.nextStep = { action: r.nextAction, date: r.nextDate, ownerId: r.nextOwner };
+  } else {
+    body.failStep = Number(r.failStep);
+  }
+  r.saving = true;
+  r.error = "";
+  render();
+  try {
+    const saved = await opsRequest(`/api/tours/${encodeURIComponent(visit.id)}/result`, {
+      method: "PUT",
+      actor: `rep:${state.meId}`,
+      body,
+    });
+    r.saving = false;
+    const result = saved.visit?.result;
+    state.talks.unshift({
+      ref: visit.lead,
+      result: result ? resultLabel(result) : catalogLabel("outcomes", r.outcome),
+      amount: "",
+      when: visit.date.slice(8) + " nov",
+    });
+    prefillResultDraft(null);
+    toast("Resultado guardado", "hoy");
+    refreshTours({ quiet: true });
+  } catch (requestError) {
+    r.saving = false;
+    r.error = requestError.message || "No se pudo guardar. Intenta de nuevo.";
+    render();
+  }
+}
+
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible") refreshTours({ quiet: true });
 });
@@ -1652,3 +1937,4 @@ window.setInterval(() => {
 
 render();
 refreshRoster().then(() => refreshTours());
+refreshCatalog();

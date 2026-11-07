@@ -32,6 +32,16 @@ El tour queda en el servidor. El rep lo ve al abrir Home o Calendario, al tocar 
 
 Si dos personas editan el mismo tour, queda el último guardado. El otro lo ve al actualizar. No hay websockets.
 
+## Resultado del tour
+
+En la tarjeta de un tour que ya terminó aparece **Resultado**. El formulario se abre arriba: Venta (divisa y volumen), No venta (objeción, ¿se puede recuperar? y siguiente paso con fecha y responsable) o Abandono (paso 1 a 11 del roadmap). La tarjeta muestra la etiqueta y, si hay siguiente paso, la línea de seguimiento.
+
+- El rep registra el suyo desde la app; el jefe corrige o quita los de su sala; el admin en todas.
+- **Quitar resultado** pide dos toques y queda en el historial.
+- **Cambios (n)** muestra quién cambió qué y el valor anterior.
+- Si dos personas editan el mismo resultado, el segundo recibe un aviso de conflicto: actualiza y vuelve a guardar. Nada se pierde en silencio.
+- Un tour cancelado no lleva resultado; para cancelar un tour con resultado, primero quítalo.
+
 ## Mover de sala
 
 Solo administrador. Los tours se quedan con la persona. Si Luis pasa a Sur, Jorge ya no lo asigna; Rosa sí.

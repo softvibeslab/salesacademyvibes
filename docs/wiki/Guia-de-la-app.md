@@ -19,8 +19,8 @@ En Home y Calendario hay chips: Ana, Luis, Mira, Teo. Eso simula quién abre el 
 
 Fecha de ejemplo: viernes 6 de noviembre de 2026. No usa el día real del reloj.
 
-- Indicadores (ejemplo): presentaciones 3/4, cierres 1/2, volumen $8,000 de $12,000. Tocan Perfil.
-- Tours de hoy: los que el servidor tiene para esa persona en `2026-11-06`, sin cancelados.
+- Indicadores: presentaciones, cierres y volumen del día salen de tus resultados guardados (el abandono cuenta como presentación; el volumen suma solo ventas en USD). Las metas 4, 2 y $12,000 siguen siendo de ejemplo. Tocan Perfil.
+- Tours de hoy: los que el servidor tiene para esa persona en `2026-11-06`, sin cancelados. Cada tour muestra su estado y su resultado (`Venta · USD 8,000`, `No venta · recuperable`, `Abandono · paso 6` o `Sin resultado` si ya terminó). Tocar un tour abre Registrar resultado.
 - Ahora: recordatorio o bloque de coaching de ejemplo.
 - Prioridades y atajos: se pueden reordenar. Máximo 6 atajos, en `localStorage` (`sa.home.shortcuts`).
 
@@ -31,6 +31,10 @@ Fecha de ejemplo: viernes 6 de noviembre de 2026. No usa el día real del reloj.
 Semana de ejemplo que empieza el lunes 2 de noviembre de 2026. Punto dorado si ese día tiene tour. El sábado 7 muestra el tour de Ana (Lead #441) solo si la identidad es Ana.
 
 **Abrir tablero de sala** va a `/ops/`.
+
+## Registrar resultado
+
+Desde un tour de Home o con el atajo Registrar presentación. Eliges el tour (solo los tuyos que ya terminaron), el resultado y sus datos: venta pide divisa y volumen; no venta pide la objeción del catálogo, si se puede recuperar y, si sí, el siguiente paso con fecha y responsable; abandono pide el paso del roadmap donde se cortó. La nota es opcional (120 máximo, sin nombres, correos ni teléfonos). Vista previa y Confirmar. Si alguien más guardó antes, la app avisa y puedes actualizar sin perder lo capturado. El jefe puede corregir o quitar el resultado desde el tablero.
 
 ## Roadmap
 

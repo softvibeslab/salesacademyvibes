@@ -400,6 +400,12 @@ button { cursor: pointer; }
 }
 .flow.on .num { background: var(--gold); color: white; }
 
+/* Resultado del tour */
+.vrow-btn { width: 100%; background: none; border: 0; font: inherit; color: inherit; cursor: pointer; }
+.vtags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+.pill.dim { color: #7e7666; background: #f3f3f3; }
+.seg.two { grid-template-columns: repeat(2, 1fr); }
+
 @media (max-width: 640px) {
   .stage, .handset, .phone { background: var(--surface); }
   .handset, .phone { width: 100%; max-width: none; }

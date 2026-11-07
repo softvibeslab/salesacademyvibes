@@ -20,6 +20,51 @@ CLOCK_IN = re.compile(r"^(\d{1,2}):([0-5]\d)(?::[0-5]\d)?$")
 DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 STATUSES = {"confirmado", "en_curso", "pendiente", "cancelado"}
 
+# Resultado comercial del tour (historia 2026-11-07). Catálogos aprobados por el PO.
+OUTCOMES = [
+    {"id": "venta", "label": "Venta"},
+    {"id": "no_venta", "label": "No venta"},
+    {"id": "abandono", "label": "Abandono"},
+]
+OBJECTIONS = [
+    {"id": "confianza", "label": "Confianza"},
+    {"id": "dinero_cuota", "label": "Dinero o cuota"},
+    {"id": "pareja_decision", "label": "Pareja o decisión"},
+    {"id": "uso_tiempo", "label": "Uso o tiempo"},
+    {"id": "valor_producto", "label": "Valor del producto"},
+    {"id": "ya_tiene_tc", "label": "Ya tiene tiempo compartido"},
+    {"id": "otra", "label": "Otra"},
+]
+ACTIONS = [
+    {"id": "llamada", "label": "Llamada"},
+    {"id": "segunda_visita", "label": "Segunda visita"},
+    {"id": "enviar_propuesta", "label": "Enviar propuesta"},
+    {"id": "otra", "label": "Otra"},
+]
+FAIL_STEPS = [
+    {"n": 1, "title": "Meet & Greet"},
+    {"n": 2, "title": "Control de agenda"},
+    {"n": 3, "title": "Rapport (FORM)"},
+    {"n": 4, "title": "Descubrimiento"},
+    {"n": 5, "title": "Renovar el pacto"},
+    {"n": 6, "title": "Presentación a tres"},
+    {"n": 7, "title": "Recorrido"},
+    {"n": 8, "title": "Casos de éxito"},
+    {"n": 9, "title": "Punto de confirmación"},
+    {"n": 10, "title": "Precio y negociación"},
+    {"n": 11, "title": "Cierre y bienvenida"},
+]
+CURRENCIES = {"USD", "MXN"}
+OUTCOME_IDS = {item["id"] for item in OUTCOMES}
+OBJECTION_IDS = {item["id"] for item in OBJECTIONS}
+ACTION_IDS = {item["id"] for item in ACTIONS}
+RESULT_NOTE_MAX = 120
+RESULT_HISTORY_MAX = 20
+AMOUNT_MAX = 1_000_000
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+")
+PHONE_RE = re.compile(r"(?:\d[ \-]?){7,}")
+CONFLICT_ERROR = "Alguien más actualizó este resultado. Actualiza y vuelve a intentar."
+
 
 def parse_clock(raw):
     match = CLOCK_IN.match(str(raw or "").strip())
@@ -129,6 +174,78 @@ def clean_visit(payload, data, actor, current=None):
     return visit, ""
 
 
+def clean_result(payload, data, visit):
+    """Valida el cuerpo del resultado. Devuelve (result, error). Sin persistencia parcial."""
+    outcome = str(payload.get("outcome") or "").strip()
+    if outcome not in OUTCOME_IDS:
+        return None, "El resultado no es válido."
+    note = str(payload.get("note") or "").strip()
+    if len(note) > RESULT_NOTE_MAX:
+        return None, "La nota es muy larga (máximo 120)."
+    if note and (EMAIL_RE.search(note) or PHONE_RE.search(note)):
+        return None, "Quita los correos o teléfonos de la nota."
+    result = {"outcome": outcome, "note": note}
+    if outcome == "venta":
+        currency = str(payload.get("currency") or "").strip()
+        if currency not in CURRENCIES:
+            return None, "La divisa no es válida."
+        raw = payload.get("amount")
+        if raw is None or raw == "":
+            return None, "Falta el volumen de la venta."
+        try:
+            amount = float(raw)
+        except (TypeError, ValueError):
+            return None, "El volumen no es válido."
+        if not 0 < amount <= AMOUNT_MAX:
+            return None, "El volumen no es válido."
+        result.update({"currency": currency, "amount": round(amount, 2)})
+    elif outcome == "no_venta":
+        objection = str(payload.get("objection") or "").strip()
+        if objection not in OBJECTION_IDS:
+            return None, "Elige la objeción principal."
+        other = str(payload.get("objectionOther") or "").strip()
+        if objection == "otra" and (not other or len(other) > 60):
+            return None, "Describe la objeción (máximo 60)."
+        if objection != "otra":
+            other = ""
+        recoverable = payload.get("recoverable")
+        if not isinstance(recoverable, bool):
+            return None, "Indica si se puede recuperar."
+        result.update({"objection": objection, "objectionOther": other, "recoverable": recoverable})
+        if recoverable:
+            step = payload.get("nextStep")
+            step = step if isinstance(step, dict) else {}
+            action = str(step.get("action") or "").strip()
+            date = str(step.get("date") or "").strip()
+            owner = str(step.get("ownerId") or "").strip()
+            if action not in ACTION_IDS or not DAY.match(date) or not owner:
+                return None, "Falta el siguiente paso."
+            if date < visit["date"]:
+                return None, "La fecha del siguiente paso no puede ser anterior al tour."
+            who = person(data, owner)
+            room = room_of(data, visit["repId"])
+            owner_ok = owner == visit["repId"] or (who and who["role"] == "jefe" and who["roomId"] == room)
+            if not owner_ok:
+                return None, "Ese responsable no está en la sala del tour."
+            result["nextStep"] = {"action": action, "date": date, "ownerId": owner}
+    else:
+        raw = payload.get("failStep")
+        try:
+            fail = int(raw)
+        except (TypeError, ValueError):
+            return None, "Elige el paso donde se cortó."
+        if not 1 <= fail <= 11:
+            return None, "Elige el paso donde se cortó."
+        result["failStep"] = fail
+    return result, ""
+
+
+def append_result_history(visit, actor, now):
+    history = list(visit.get("resultHistory") or [])
+    history.append({"at": now, "by": actor["id"], "previous": visit.get("result")})
+    visit["resultHistory"] = history[-RESULT_HISTORY_MAX:]
+
+
 def read_store():
     if not os.path.exists(ROOT):
         return seed()
@@ -223,6 +340,8 @@ def tours_for(actor, data, query):
     if end:
         visits = [visit for visit in visits if visit["date"] <= end]
     visits.sort(key=lambda visit: (visit["date"], visit["start"], visit["repId"]))
+    if actor["role"] == "rep":
+        visits = [{key: value for key, value in visit.items() if key != "resultHistory"} for visit in visits]
     return visits, ""
 
 
@@ -271,6 +390,15 @@ class Handler(BaseHTTPRequestHandler):
         def run(data):
             if path == "/directory":
                 return {"status": 200, "body": {"ok": True, "rooms": data["rooms"], "people": data["people"]}}
+            if path == "/catalog":
+                return {"status": 200, "body": {
+                    "ok": True,
+                    "outcomes": OUTCOMES,
+                    "objections": OBJECTIONS,
+                    "actions": ACTIONS,
+                    "failSteps": FAIL_STEPS,
+                    "currencies": sorted(CURRENCIES),
+                }}
             actor = self.actor(data)
             if not actor:
                 return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
@@ -356,8 +484,57 @@ class Handler(BaseHTTPRequestHandler):
                 return reject(error)
             if overlaps(data, visit, current["id"]):
                 return clash()
+            if current.get("result"):
+                if visit["status"] == "cancelado":
+                    return clash("Quita el resultado antes de cancelar el tour.")
+                visit["result"] = current["result"]
+            if current.get("resultHistory"):
+                visit["resultHistory"] = current["resultHistory"]
             data["visits"] = [visit if item["id"] == visit["id"] else item for item in data["visits"]]
             return {"status": 200, "save": True, "body": {"ok": True, "visit": visit}}
+
+        result = mutate(run)
+        self.send_json(result["status"], result["body"])
+
+    def do_PUT(self):
+        path, _query = self.route()
+        payload = self.read_json()
+        if payload is None:
+            self.send_json(400, {"ok": False, "error": "El cuerpo no es válido."})
+            return
+
+        def run(data):
+            actor = self.actor(data)
+            if not actor:
+                return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
+            match = re.fullmatch(r"/tours/(v[0-9]+)/result", path)
+            if not match:
+                return {"status": 404, "body": {"ok": False, "error": "No existe."}}
+            current = next((visit for visit in data["visits"] if visit["id"] == match.group(1)), None)
+            if not current:
+                return {"status": 404, "body": {"ok": False, "error": "No encontré ese tour."}}
+            if not allowed(actor, data, current):
+                return {"status": 403, "body": {"ok": False, "error": "Ese tour no está en tu sala."}}
+            if current["status"] == "cancelado":
+                return clash("Un tour cancelado no lleva resultado.")
+            today = time.strftime("%Y-%m-%d", time.localtime())
+            if current["date"] > today:
+                return {"status": 400, "body": {"ok": False, "error": "Ese tour todavía no ocurre."}}
+            result, error = clean_result(payload, data, current)
+            if error:
+                return {"status": 400, "body": {"ok": False, "error": error}}
+            expected = (current.get("result") or {}).get("version", 0)
+            try:
+                sent = int(payload.get("version") or 0)
+            except (TypeError, ValueError):
+                return {"status": 400, "body": {"ok": False, "error": "La versión no es válida."}}
+            if sent != expected:
+                return clash(CONFLICT_ERROR)
+            now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            append_result_history(current, actor, now)
+            result.update({"version": expected + 1, "by": actor["id"], "at": now})
+            current["result"] = result
+            return {"status": 200, "save": True, "body": {"ok": True, "visit": current}}
 
         result = mutate(run)
         self.send_json(result["status"], result["body"])
@@ -369,6 +546,21 @@ class Handler(BaseHTTPRequestHandler):
             actor = self.actor(data)
             if not actor:
                 return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
+            result_match = re.fullmatch(r"/tours/(v[0-9]+)/result", path)
+            if result_match:
+                if actor["role"] == "rep":
+                    return {"status": 403, "body": {"ok": False, "error": "Solo el jefe o el administrador quitan un resultado."}}
+                current = next((visit for visit in data["visits"] if visit["id"] == result_match.group(1)), None)
+                if not current:
+                    return {"status": 404, "body": {"ok": False, "error": "No encontré ese tour."}}
+                if not allowed(actor, data, current):
+                    return {"status": 403, "body": {"ok": False, "error": "Ese tour no está en tu sala."}}
+                if not current.get("result"):
+                    return {"status": 404, "body": {"ok": False, "error": "Ese tour no tiene resultado."}}
+                now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+                append_result_history(current, actor, now)
+                del current["result"]
+                return {"status": 200, "save": True, "body": {"ok": True, "visit": current}}
             match = re.fullmatch(r"/tours/(v[0-9]+)", path)
             if not match:
                 return {"status": 404, "body": {"ok": False, "error": "No existe."}}
