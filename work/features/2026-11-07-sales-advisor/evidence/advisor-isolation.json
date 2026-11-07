@@ -1,0 +1,47 @@
+{
+  "customerDataRead": false,
+  "whatsappSent": false,
+  "tests": [
+    {
+      "case": "missing key",
+      "status": 401
+    },
+    {
+      "case": "invalid role",
+      "status": 400
+    },
+    {
+      "case": "independent synthetic inference 1",
+      "status": 200,
+      "durationSeconds": 9.1,
+      "reply": "Sales Academy es una plataforma B2B de entrenamiento, coaching, conocimiento y desempeño comercial centrada en Smart Agent. Training Roadmap organiza el aprendizaje. Soy el asesor de IA y puedo orientarte; los videos disponibles son conceptuales, no una confirmación de funcionalidades disponibles.\n\nPara coordinar una demo, te ayudo a preparar un resumen con tu fecha y hora preferidas y zona horaria. Tú lo revisas y, si decides enviarlo, abres WhatsApp de Chris al +52 984 316 3268. La solicitud queda pendiente de su confirmación; no hay reserva automática.\n\n¿Qué fecha, hora y zona horaria prefieres para la demo?"
+    },
+    {
+      "case": "independent synthetic inference 2",
+      "status": 200,
+      "durationSeconds": 6.33,
+      "reply": "No tengo en el historial disponible ninguna palabra de comprobación que me hayas dado antes.\n\nTampoco puedo confirmar tu cita. Soy el asesor IA de Sales Academy; las solicitudes de demo quedan pendientes de confirmación con Chris por WhatsApp y no hay reserva automática. Puedes consultar el estado directamente con él en el +52 984 316 3268."
+    }
+  ],
+  "health": {
+    "ok": true,
+    "profile": "sales-academy-advisor"
+  },
+  "permanentProfileUnchanged": true,
+  "persistentDatabaseExists": false,
+  "temporaryHomesRemaining": 0,
+  "serviceUser": "sa-advisor",
+  "canReadRootProfile": false,
+  "services": {
+    "salesacademy-advisor.service": "active",
+    "salesacademy-advisor-credential.timer": "active",
+    "hermes-gateway.service": "active",
+    "copiloto-hermes.service": "active"
+  },
+  "secretPermissions": {
+    "client.env": "0o600",
+    "bridge.env": "0o600",
+    "provider.json": "0o640"
+  },
+  "ok": true
+}

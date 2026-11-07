@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "path": "growth/deploy/advisor/README.md",
+      "sha256": "3cacffe9c9a06071dc0fae4c096ca9c4e2b8586385ba447ac1045eba28153f29",
+      "bytes": 4741
+    },
+    {
+      "path": "growth/deploy/advisor/SOUL.md",
+      "sha256": "0e8ab71106338bc07ec987a39237f9a4f32eacea01737840221ae5effa61e924",
+      "bytes": 2503
+    },
+    {
+      "path": "growth/deploy/advisor/bridge.py",
+      "sha256": "f0ac165116a3347847ac75dc8145878eb2d8d2a89aae329756623b000d2b80d8",
+      "bytes": 6570
+    },
+    {
+      "path": "growth/deploy/advisor/provision.py",
+      "sha256": "3b6222c33fbe0a28ba0270292482f5325ea39c37d9f472688c1180e23cd07b30",
+      "bytes": 6326
+    },
+    {
+      "path": "growth/deploy/advisor/refresh_provider.py",
+      "sha256": "d029d6bec6daebc4065effa215a5e885c8ac8705f9aa8ad797f0df1c70a1a10c",
+      "bytes": 2276
+    },
+    {
+      "path": "growth/deploy/advisor/verify_bridge.py",
+      "sha256": "76179c0a2b6a29f6c567f67c996ec43ba7bca27de682d934b108f43be86c68f3",
+      "bytes": 4161
+    },
+    {
+      "path": "growth/deploy/advisor/worker.py",
+      "sha256": "84c56f07773763d370e978102a2af2b8a6e94bc8b040e3c0a9e1be17534b2d16",
+      "bytes": 3164
+    }
+  ],
+  "secretsIncluded": false
+}

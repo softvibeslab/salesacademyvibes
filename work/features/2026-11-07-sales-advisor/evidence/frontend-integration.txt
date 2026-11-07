@@ -1,0 +1,5 @@
+PASS Real session cookie and CSRF support the conversation without CMS login
+PASS Consented request is persisted with pending confirmation and an editable WhatsApp summary
+PASS A second visitor has no access to the first visitor conversation
+PASS Owner sees the real consented lead, escaped summary and updates follow-up
+PASS Editor cannot see or read advisor leads

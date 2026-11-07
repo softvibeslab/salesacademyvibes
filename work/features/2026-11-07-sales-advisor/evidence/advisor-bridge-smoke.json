@@ -1,0 +1,13 @@
+{
+  "health": {
+    "ok": true,
+    "profile": "sales-academy-advisor"
+  },
+  "privateStateRead": false,
+  "unauthorizedStatus": 401,
+  "inferenceStatus": 200,
+  "inference": {
+    "reply": "Soy el asesor de IA de Sales Academy. Sales Academy es una plataforma B2B de entrenamiento, coaching, conocimiento y desempeño comercial, centrada en Smart Agent. Training Roadmap organiza el aprendizaje de los representantes. Las escenas que se muestran en los videos son conceptuales.\n\nPara coordinar una demo para tu sala, puedo ayudarte a preparar un resumen con tu fecha y hora preferidas y zona horaria. Tú lo revisas y decides enviarlo por WhatsApp a Chris al +52 984 316 3268. La solicitud queda pendiente de su confirmación; no constituye una reserva.\n\n¿Qué fecha, hora y zona horaria te vendrían bien para la demo?"
+  },
+  "durationSeconds": 8.66
+}

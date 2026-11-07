@@ -1,0 +1,4 @@
+f0ac165116a3347847ac75dc8145878eb2d8d2a89aae329756623b000d2b80d8  /opt/salesacademy-advisor/bridge.py
+84c56f07773763d370e978102a2af2b8a6e94bc8b040e3c0a9e1be17534b2d16  /opt/salesacademy-advisor/worker.py
+d029d6bec6daebc4065effa215a5e885c8ac8705f9aa8ad797f0df1c70a1a10c  /opt/salesacademy-advisor/refresh_provider.py
+0e8ab71106338bc07ec987a39237f9a4f32eacea01737840221ae5effa61e924  /opt/salesacademy-advisor/SOUL.md

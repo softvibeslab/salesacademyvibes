@@ -1,0 +1,26 @@
+✔ review summary contains qualification and explicit pending preference (0.645625ms)
+✔ WhatsApp is encoded to the approved Chris number without sending (0.181084ms)
+✔ only a public local MediaHub resource may be rendered as an agent link (0.150917ms)
+✔ appointment requires matching date/time and an IANA timezone (12.283458ms)
+✔ initial process identifies coordination without contact (0.950125ms)
+✔ partial process identifies evidence (0.0975ms)
+✔ all defined recommends baseline, not certification (0.072ms)
+✔ unknowns preserved and ties transparent (0.581042ms)
+✔ missing and invalid answers never evaluated (0.157875ms)
+✔ boundaries and determinism (0.127125ms)
+✔ recommendations link to seeded resources and track immutable IDs (0.4765ms)
+✔ before the journey remains at the first frame (0.978833ms)
+✔ the viewport reading line selects the chapter and its continuous progress (0.097ms)
+✔ chapter boundaries select the next scene without overshoot (0.099334ms)
+✔ scrolling backwards recovers the same state (0.070708ms)
+✔ after the last chapter clamps every value (0.552083ms)
+✔ unequal chapter sizes use measured geometry (0.115917ms)
+✔ empty or invalid geometry does not produce NaN or unsafe state (0.093167ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.2335

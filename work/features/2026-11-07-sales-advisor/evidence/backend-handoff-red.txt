@@ -1,0 +1,15 @@
+test_whatsapp_uses_only_reviewed_summary_without_reintroducing_removed_contact (growth.tests.test_advisor.AdvisorAcceptance.test_whatsapp_uses_only_reviewed_summary_without_reintroducing_removed_contact) ... FAIL
+
+======================================================================
+FAIL: test_whatsapp_uses_only_reviewed_summary_without_reintroducing_removed_contact (growth.tests.test_advisor.AdvisorAcceptance.test_whatsapp_uses_only_reviewed_summary_without_reintroducing_removed_contact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 236, in test_whatsapp_uses_only_reviewed_summary_without_reintroducing_removed_contact
+    self.assertNotIn(payload['contact'],message)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'removed@example.invalid' unexpectedly found in 'Hola Chris, quiero coordinar una demo de Sales Academy.\nSolicitud de horario pendiente de tu confirmación.\nNombre: Nombre quitado\nContacto: removed@example.invalid\nEquipo: 12\nNecesidad: Practicar objeciones\nPlazo: Este mes\nRol: Líder\nSalas: 2-3\nHorario preferido: 2026-11-10 10:30 (America/Cancun)\nResumen: Quiero conocer Sales Academy. Prefiero acordar el horario por aquí.'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.110s
+
+FAILED (failures=1)

@@ -1,0 +1,170 @@
+test_daily_and_session_budgets_stop_inference (growth.tests.test_advisor.AdvisorAcceptance.test_daily_and_session_budgets_stop_inference) ... FAIL
+test_date_timezone_and_shape_validation (growth.tests.test_advisor.AdvisorAcceptance.test_date_timezone_and_shape_validation) ... FAIL
+test_disabled_advisor_does_not_invoke_model (growth.tests.test_advisor.AdvisorAcceptance.test_disabled_advisor_does_not_invoke_model) ... FAIL
+test_expired_sessions_and_leads_are_purged_without_editorial_changes (growth.tests.test_advisor.AdvisorAcceptance.test_expired_sessions_and_leads_are_purged_without_editorial_changes) ... FAIL
+test_invalid_input_or_client_tools_never_reach_model (growth.tests.test_advisor.AdvisorAcceptance.test_invalid_input_or_client_tools_never_reach_model) ... FAIL
+test_lead_consent_pending_status_and_replay (growth.tests.test_advisor.AdvisorAcceptance.test_lead_consent_pending_status_and_replay) ... FAIL
+test_model_failure_releases_lease_and_can_retry (growth.tests.test_advisor.AdvisorAcceptance.test_model_failure_releases_lease_and_can_retry) ... FAIL
+test_only_current_published_knowledge_is_sent_to_model (growth.tests.test_advisor.AdvisorAcceptance.test_only_current_published_knowledge_is_sent_to_model) ... FAIL
+test_owner_only_leads_metrics_and_followup (growth.tests.test_advisor.AdvisorAcceptance.test_owner_only_leads_metrics_and_followup) ... FAIL
+test_real_contract_reply_resources_and_idempotency (growth.tests.test_advisor.AdvisorAcceptance.test_real_contract_reply_resources_and_idempotency) ... FAIL
+test_session_cookie_is_separate_no_inference_and_csrf_origin_required (growth.tests.test_advisor.AdvisorAcceptance.test_session_cookie_is_separate_no_inference_and_csrf_origin_required) ... FAIL
+test_visitors_never_share_history_or_idempotent_responses (growth.tests.test_advisor.AdvisorAcceptance.test_visitors_never_share_history_or_idempotent_responses) ... FAIL
+
+======================================================================
+FAIL: test_daily_and_session_budgets_stop_inference (growth.tests.test_advisor.AdvisorAcceptance.test_daily_and_session_budgets_stop_inference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 121, in test_daily_and_session_budgets_stop_inference
+    self.assertEqual(self.chat().status_code,200)
+                     ~~~~~~~~~^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 44, in chat
+    headers=headers or self.session(client))
+                       ~~~~~~~~~~~~^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_date_timezone_and_shape_validation (growth.tests.test_advisor.AdvisorAcceptance.test_date_timezone_and_shape_validation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 145, in test_date_timezone_and_shape_validation
+    h = self.session()
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_disabled_advisor_does_not_invoke_model (growth.tests.test_advisor.AdvisorAcceptance.test_disabled_advisor_does_not_invoke_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 189, in test_disabled_advisor_does_not_invoke_model
+    self.assertEqual(response.status_code,200)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_expired_sessions_and_leads_are_purged_without_editorial_changes (growth.tests.test_advisor.AdvisorAcceptance.test_expired_sessions_and_leads_are_purged_without_editorial_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 175, in test_expired_sessions_and_leads_are_purged_without_editorial_changes
+    h = self.session();self.chat(headers=h)
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_invalid_input_or_client_tools_never_reach_model (growth.tests.test_advisor.AdvisorAcceptance.test_invalid_input_or_client_tools_never_reach_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 100, in test_invalid_input_or_client_tools_never_reach_model
+    h = self.session()
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_lead_consent_pending_status_and_replay (growth.tests.test_advisor.AdvisorAcceptance.test_lead_consent_pending_status_and_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 131, in test_lead_consent_pending_status_and_replay
+    h = self.session(); payload = self.lead()
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_model_failure_releases_lease_and_can_retry (growth.tests.test_advisor.AdvisorAcceptance.test_model_failure_releases_lease_and_can_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 112, in test_model_failure_releases_lease_and_can_retry
+    h = self.session(); rid = str(uuid.uuid4())
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_only_current_published_knowledge_is_sent_to_model (growth.tests.test_advisor.AdvisorAcceptance.test_only_current_published_knowledge_is_sent_to_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 90, in test_only_current_published_knowledge_is_sent_to_model
+    self.assertEqual(self.chat().status_code, 200)
+                     ~~~~~~~~~^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 44, in chat
+    headers=headers or self.session(client))
+                       ~~~~~~~~~~~~^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_owner_only_leads_metrics_and_followup (growth.tests.test_advisor.AdvisorAcceptance.test_owner_only_leads_metrics_and_followup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 155, in test_owner_only_leads_metrics_and_followup
+    h = self.session()
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_real_contract_reply_resources_and_idempotency (growth.tests.test_advisor.AdvisorAcceptance.test_real_contract_reply_resources_and_idempotency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 68, in test_real_contract_reply_resources_and_idempotency
+    h = self.session(); rid = str(uuid.uuid4())
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_session_cookie_is_separate_no_inference_and_csrf_origin_required (growth.tests.test_advisor.AdvisorAcceptance.test_session_cookie_is_separate_no_inference_and_csrf_origin_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 56, in test_session_cookie_is_separate_no_inference_and_csrf_origin_required
+    h = self.session()
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+======================================================================
+FAIL: test_visitors_never_share_history_or_idempotent_responses (growth.tests.test_advisor.AdvisorAcceptance.test_visitors_never_share_history_or_idempotent_responses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 79, in test_visitors_never_share_history_or_idempotent_responses
+    self.assertEqual(self.chat('Mi código sintético es TURQUESA-42').status_code, 200)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 44, in chat
+    headers=headers or self.session(client))
+                       ~~~~~~~~~~~~^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 36, in session
+    self.assertEqual(response.status_code, 200, response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 200 : {"error":{"code":"404","message":"No encontramos este recurso."}}
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.013s
+
+FAILED (failures=12)

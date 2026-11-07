@@ -1,0 +1,12 @@
+/srv/salesacademy-cloud/releases/20261107-advisor-links-06
+active
+active
+active
+active
+Result=success
+ExecMainStatus=0
+
+Result=success
+ExecMainStatus=0
+cba8f22381c399071937459bc192d9844dadcb87131ae76e15aecf2b40fea856  /srv/salesacademy-cloud/current/v5/growth/server/advisor.py
+d0349863edbc66f05b0613da7e22c614f2cd18f75d91b54ff697d5e65d58794e  /srv/salesacademy-cloud/current/v5/growth/openapi.json

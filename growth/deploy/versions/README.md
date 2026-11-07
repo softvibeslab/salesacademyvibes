@@ -12,11 +12,11 @@ Publicación solicitada por Roger el 2026-11-07. Evidencia y contrato: `work/fea
 
 ## Release y servicios
 
-VPS76.13.231.12. Raíz `/srv/salesacademy-cloud`, release activo `releases/20261107-film-play-04`, symlink `current`. Release anterior recuperable: `releases/20261107-meet-greet-03` (también se conservan `20261107-compact-screens-02` y la entrega inicial `20261107-versions-01`). El índice está en `current/index`; los cinco runtimes en `current/vN`. Venv propio, requirements fijados e iguales en las cinco versiones. La extracción verifica hashes de los ZIPs y cada miembro antes de seleccionar exclusivamente runtime.
+VPS (host privado). Raíz `/srv/salesacademy-cloud`, release activo `releases/20261107-advisor-links-06`, symlink `current`. Release anterior recuperable: `releases/20261107-advisor-05`. También se conservan film-play-04, meet-greet-03, compact-screens-02 y versions-01. El índice está en `current/index`; los cinco runtimes en `current/vN`. Venv propio, requirements fijados e iguales en las cinco versiones. La extracción verifica hashes de los ZIPs y cada miembro antes de seleccionar exclusivamente runtime.
 
 Units `salesacademy-cloud@v1.service`…`@v5.service`. Usuarios `sa-cloud-v1`…`sa-cloud-v5`. Puertos18481–18485 ligados solo a127.0.0.1. Cada servicio tiene un worker y cuatro threads. Estado SQLite/medios fuera del release: `/var/lib/salesacademy-cloud/vN`, permisos0700. Configuración sin contraseñas en `/etc/salesacademy-cloud/vN.env`,0600.
 
-Vhost dedicado `/etc/nginx/sites-available/salesacademy-cloud.conf`, enlazado en `sites-enabled`. DNS: seis A a76.13.231.12, TTL300, creados con `overwrite:false`. Certificado SAN dedicado `/etc/letsencrypt/live/salesacademy.softvibes.cloud/`, válido hasta2027-02-05, timer de renovación y hook Nginx existentes comprobados.
+Vhost dedicado `/etc/nginx/sites-available/salesacademy-cloud.conf`, enlazado en `sites-enabled`. DNS: seis A a<host privado>, TTL300, creados con `overwrite:false`. Certificado SAN dedicado `/etc/letsencrypt/live/salesacademy.softvibes.cloud/`, válido hasta2027-02-05, timer de renovación y hook Nginx existentes comprobados.
 
 `COOKIE_SECURE=True`, `PUBLIC_CONTACT_ENABLED=False`; cookies host-only, HttpOnly, SameSite Strict. Nginx reemplaza headers reenviados y ProxyFix confía en un solo salto. El CTA WhatsApp de v5 conserva el número solicitado; no se envían mensajes desde servidor ni desde QA.
 
@@ -69,3 +69,17 @@ Para revertir únicamente esta incorporación: apuntar current a releases/202611
 V5 incorpora un botón dorado sobre las películas de la landing y del MediaHub. Reproduce por clic o teclado, transfiere el foco al video, se oculta durante la reproducción y reaparece al pausar o terminar. Conserva audio, subtítulos y controles nativos; funciona sin JavaScript mediante los controles originales y respeta movimiento reducido. Pruebas y publicación: work/features/2026-11-07-film-play-cta/.
 
 Solo cambian macros.html, media-player.css y media-player.mjs en V5. Para revertir únicamente este ajuste: apuntar current a releases/20261107-meet-greet-03 y reiniciar salesacademy-cloud@v5.service. Se conservan el retoque Meet & Greet, las pantallas compactas y el estado CMS.
+
+## Asesor IA · 2026-11-07
+
+V5 incorpora el widget público en landing, MediaHub, diagnóstico y galería. Perfil Hermes `sales-academy-advisor`, transporte privado loopback18642, servicio `salesacademy-advisor.service` bajo usuario propio. El backend compone contexto desde publicación actual y ficha comercial revisada; no incluye borradores ni datos operativos. Cada inferencia usa un hogar efímero, sin herramientas generales ni memoria compartida. Detalles en `growth/deploy/advisor/README.md`.
+
+V5 carga `/etc/salesacademy-advisor/client.env` mediante `/etc/systemd/system/salesacademy-cloud@v5.service.d/advisor.conf`; contiene configuración privada solo en VPS. No imprimir ni descargar valores. `PUBLIC_CONTACT_ENABLED=False` permanece; las solicitudes del asesor tienen su consentimiento y rutas propios.
+
+Sesiones de chat caducan una hora después de crearse. Solicitudes consentidas permanecen hasta90d sin actividad. `salesacademy-advisor-retention.timer` ejecuta purga como sa-cloud-v5 cada5min. Owner CMS dispone de «Asesor IA» con solicitudes y estados pending_confirmation/contacted/qualified/closed. Sesiones/mensajes son conteos de sesiones sin expirar, no acumulados históricos.
+
+WhatsApp de Chris:529843163268, confirmado por Roger. El enlace contiene solo el resumen revisado; el visitante decide enviarlo. No se verifica disponibilidad, confirma reserva ni se envían mensajes automáticamente. Cualificación y nutrición se realizan en la conversación; campañas posteriores no están activadas.
+
+Publicación: advisor-05 añadió12 archivos nuevos/modificados de V5 y tablas aditivas. Una copia SQLite privada previa permanece solo en VPS en operations/advisor-05-private-backup. advisor-links-06 ajusta ranking de recursos mencionados por la respuesta y límite Unicode del contrato. Evidencia: work/features/2026-11-07-sales-advisor/.
+
+Revertir solo el último ajuste: cambiar current atómicamente a advisor-05 y reiniciar V5. Revertir toda la incorporación: desactivar timer de retención, retirar únicamente advisor.conf, daemon-reload, cambiar current a film-play-04 y reiniciar V5; conservar DB privada (tablas aditivas), y detener servicio advisor y timer de credencial cuando no haya solicitudes. No afecta gateway Hermes/Copiloto anteriores ni las otras cuatro versiones.

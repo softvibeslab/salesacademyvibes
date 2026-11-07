@@ -1,0 +1,13 @@
+test_accepts_trusted_history (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_accepts_trusted_history) ... ok
+test_agent_is_ephemeral_and_tool_free (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_agent_is_ephemeral_and_tool_free) ... ok
+test_auth_is_constant_time_and_empty_key_fails_closed (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_auth_is_constant_time_and_empty_key_fails_closed) ... ok
+test_no_shell_and_hard_deadline (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_no_shell_and_hard_deadline) ... ok
+test_profile_files_are_isolated_and_removed_after_success_or_timeout (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_profile_files_are_isolated_and_removed_after_success_or_timeout) ... ok
+test_rejects_untrusted_shape_and_mid_history_system (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_rejects_untrusted_shape_and_mid_history_system) ... ok
+test_timeout_and_model_error_are_sanitized (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_timeout_and_model_error_are_sanitized) ... ok
+test_export_strips_refresh_tokens_and_unrelated_keys (growth.tests.test_advisor_bridge.ProviderExportTests.test_export_strips_refresh_tokens_and_unrelated_keys) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.032s
+
+OK

@@ -1228,3 +1228,4 @@
 .login-story :focus-visible {
   outline-color: #cfb478;
 }
+.advisor-lead-summary{white-space:pre-wrap;overflow-wrap:anywhere;max-width:400px;font-size:12px;line-height:1.6;margin:0 0 8px}

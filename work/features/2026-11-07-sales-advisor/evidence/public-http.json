@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "url": "https://salesacademy.softvibes.cloud/",
+      "status": 200
+    },
+    {
+      "url": "https://v1.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v2.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v3.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v4.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/descubre/",
+      "status": 200
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/advisor.mjs",
+      "status": 200,
+      "sha256": "2f18502f5761ba10579095bc035736f09eda0a27324040f3514837878edcf97f",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/advisor.css",
+      "status": 200,
+      "sha256": "ff6f5c9a91b7a792f92d589bbb314ab08e681886832be1ceb5ea7df9d240290b",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.mjs",
+      "status": 200,
+      "sha256": "ae0b9488f25b6f88d152dfc065524531b007f456198e93339d2a16a9c8bcca8f",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.css",
+      "status": 200,
+      "sha256": "b596e94f82500acbac113de74d37cbefe3ff5f38d4a0dd4ad50051cfa1b287dc",
+      "matches": true
+    },
+    {
+      "url": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html",
+      "status": 200,
+      "sha256": "ddc995f9a43845b8bea1acf3caa6701bd4227dff6fa4d54f07af9388c18c92aa",
+      "matches": true
+    },
+    {
+      "route": "/cms/api/advisor-leads",
+      "anonymousStatus": 401
+    },
+    {
+      "route": "/cms/api/advisor-metrics",
+      "anonymousStatus": 401
+    },
+    {
+      "route": "/growth-api/advisor/session",
+      "enabled": true,
+      "secureCookie": true,
+      "noStore": true,
+      "emptyNewSession": true
+    }
+  ],
+  "ok": true
+}

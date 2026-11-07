@@ -1,0 +1,111 @@
+{
+  "base": "https://v5.salesacademy.softvibes.cloud",
+  "startedAt": "2026-11-07T14:19:15.336Z",
+  "results": [
+    {
+      "name": "Public advisor opens without overflow or consent collision at 1440px",
+      "passed": true,
+      "geometry": {
+        "inside": true,
+        "overlap": false,
+        "overflow": false
+      }
+    },
+    {
+      "name": "Hermes answers one real synthetic question with published resources at 1440px",
+      "passed": true,
+      "reply": "Sales Academy plantea usar Smart Agent para ensayar objeciones ficticias con el método y los materiales autorizados de tu sala. El representante practica cómo aclarar la duda, confirmar lo que entendió y responder solo con información aprobada; el líder revisa la práctica y acuerda una mejora observable. La demo muestra una vista previa de «Practicar objeción»; el alcance disponible se revisa con Chris.\n\nTe recomiendo el recurso publicado «Coaching y agentes de IA: el siguiente paso». Propone elegir una habilidad, ensayar con el líder en el papel de huésped y repetir la situación con una corrección concreta. Por ejemplo, ante «queremos pensarlo», practicar: «¿Qué información les falta para valorar si encaja con ustedes?», y después resumir la respuesta antes de explicar.\n\n¿Qué objeción les interesa practicar primero en tu sala?",
+      "resources": [
+        {
+          "title": "Agentes de IA en el día a día de tu sala",
+          "url": "/mediahub/smart-agent/"
+        },
+        {
+          "title": "Prepara el próximo tour con IA",
+          "url": "/mediahub/antes-del-tour/"
+        },
+        {
+          "title": "Agentes de IA: una ruta para tres salas",
+          "url": "/mediahub/piloto-en-tres-salas/"
+        }
+      ],
+      "remainingTurns": 19
+    },
+    {
+      "name": "Future preference and edited WhatsApp summary need no saved lead at 1440px",
+      "passed": true,
+      "preferredDate": "2026-11-09",
+      "timezone": "America/Cancun",
+      "leadSaved": false
+    },
+    {
+      "name": "The launcher leaves an overlapping playing VSL unobstructed at 1440px",
+      "passed": true,
+      "overlaps": false
+    },
+    {
+      "name": "The advisor remains available on /mediahub/ at 1440px",
+      "passed": true
+    },
+    {
+      "name": "The advisor remains available on /growth-assets/scenarios/index.html at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Public advisor opens without overflow or consent collision at 390px",
+      "passed": true,
+      "geometry": {
+        "inside": true,
+        "overlap": false,
+        "overflow": false
+      }
+    },
+    {
+      "name": "Hermes answers one real synthetic question with published resources at 390px",
+      "passed": true,
+      "reply": "Sales Academy plantea apoyar la práctica de objeciones con Smart Agent, usando el método y los materiales autorizados de tu sala. El representante puede preparar una situación ficticia, ensayar una pregunta para aclarar la duda y revisar con su líder cómo responder sin prometer condiciones no confirmadas. La demo muestra una vista previa de «Practicar objeción»; el alcance disponible se revisa durante la demostración.\n\nTe recomiendo el recurso publicado «Coaching y agentes de IA: el siguiente paso». Propone elegir una habilidad, ensayar con el líder, repetir con una corrección concreta y acordar una acción observable. Por ejemplo, ante «queremos pensarlo», practicar preguntar qué información falta y resumir la respuesta antes de explicar.\n\n¿Qué objeción les interesa practicar primero en tu sala?",
+      "resources": [
+        {
+          "title": "Agentes de IA en el día a día de tu sala",
+          "url": "/mediahub/smart-agent/"
+        },
+        {
+          "title": "Prepara el próximo tour con IA",
+          "url": "/mediahub/antes-del-tour/"
+        },
+        {
+          "title": "Agentes de IA: una ruta para tres salas",
+          "url": "/mediahub/piloto-en-tres-salas/"
+        }
+      ],
+      "remainingTurns": 19
+    },
+    {
+      "name": "Future preference and edited WhatsApp summary need no saved lead at 390px",
+      "passed": true,
+      "preferredDate": "2026-11-09",
+      "timezone": "America/Cancun",
+      "leadSaved": false
+    },
+    {
+      "name": "The launcher leaves an overlapping playing VSL unobstructed at 390px",
+      "passed": true,
+      "overlaps": true
+    },
+    {
+      "name": "The advisor remains available on /mediahub/ at 390px",
+      "passed": true
+    },
+    {
+      "name": "The advisor remains available on /growth-assets/scenarios/index.html at 390px",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "inferenceRequests": 2,
+  "leadRequests": 0,
+  "whatsappRequests": 0,
+  "cmsLogin": false,
+  "ok": true,
+  "finishedAt": "2026-11-07T14:19:52.729Z"
+}

@@ -1,0 +1,65 @@
+test_accepts_trusted_history (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_accepts_trusted_history) ... FAIL
+test_agent_is_ephemeral_and_tool_free (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_agent_is_ephemeral_and_tool_free) ... FAIL
+test_auth_is_constant_time_and_empty_key_fails_closed (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_auth_is_constant_time_and_empty_key_fails_closed) ... FAIL
+test_no_shell_and_hard_deadline (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_no_shell_and_hard_deadline) ... FAIL
+test_rejects_untrusted_shape_and_mid_history_system (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_rejects_untrusted_shape_and_mid_history_system) ... FAIL
+test_timeout_and_model_error_are_sanitized (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_timeout_and_model_error_are_sanitized) ... FAIL
+
+======================================================================
+FAIL: test_accepts_trusted_history (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_accepts_trusted_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 15, in setUp
+    self.assertTrue(SOURCE.is_file(), 'The isolated advisor bridge must exist before public chat can run')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : The isolated advisor bridge must exist before public chat can run
+
+======================================================================
+FAIL: test_agent_is_ephemeral_and_tool_free (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_agent_is_ephemeral_and_tool_free)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 15, in setUp
+    self.assertTrue(SOURCE.is_file(), 'The isolated advisor bridge must exist before public chat can run')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : The isolated advisor bridge must exist before public chat can run
+
+======================================================================
+FAIL: test_auth_is_constant_time_and_empty_key_fails_closed (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_auth_is_constant_time_and_empty_key_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 15, in setUp
+    self.assertTrue(SOURCE.is_file(), 'The isolated advisor bridge must exist before public chat can run')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : The isolated advisor bridge must exist before public chat can run
+
+======================================================================
+FAIL: test_no_shell_and_hard_deadline (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_no_shell_and_hard_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 15, in setUp
+    self.assertTrue(SOURCE.is_file(), 'The isolated advisor bridge must exist before public chat can run')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : The isolated advisor bridge must exist before public chat can run
+
+======================================================================
+FAIL: test_rejects_untrusted_shape_and_mid_history_system (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_rejects_untrusted_shape_and_mid_history_system)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 15, in setUp
+    self.assertTrue(SOURCE.is_file(), 'The isolated advisor bridge must exist before public chat can run')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : The isolated advisor bridge must exist before public chat can run
+
+======================================================================
+FAIL: test_timeout_and_model_error_are_sanitized (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_timeout_and_model_error_are_sanitized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 15, in setUp
+    self.assertTrue(SOURCE.is_file(), 'The isolated advisor bridge must exist before public chat can run')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : The isolated advisor bridge must exist before public chat can run
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=6)

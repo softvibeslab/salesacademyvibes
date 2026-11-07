@@ -1,0 +1,24 @@
+{
+  "release": "/srv/salesacademy-cloud/releases/20261107-advisor-05",
+  "previousRelease": "/srv/salesacademy-cloud/releases/20261107-film-play-04",
+  "changedFiles": [
+    "v5/growth/server/app.py",
+    "v5/growth/server/store.py",
+    "v5/growth/server/advisor.py",
+    "v5/growth/content/advisor-knowledge.md",
+    "v5/growth/openapi.json",
+    "v5/growth/site/assets/advisor.mjs",
+    "v5/growth/site/assets/advisor.css",
+    "v5/growth/site/assets/cms.mjs",
+    "v5/growth/site/assets/cms.css",
+    "v5/growth/site/assets/scenarios/index.html",
+    "v5/growth/site/templates/base.html",
+    "v5/growth/site/templates/privacy.html"
+  ],
+  "manifestSha256": "8b8a844728d86a8321f8a7caa55037735a2611b38b32e3e270fb1279443b9fed",
+  "databaseChange": "Additive advisor tables; private SQLite backup remains only on VPS",
+  "cmsContentImported": false,
+  "restart": "salesacademy-cloud@v5.service",
+  "retentionTimer": "salesacademy-advisor-retention.timer",
+  "rollback": "Disable retention timer, remove advisor drop-in, daemon-reload, atomically restore current to previousRelease, restart only V5. Preserve private DB; advisor tables are additive."
+}

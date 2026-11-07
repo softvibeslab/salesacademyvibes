@@ -140,4 +140,14 @@ def purge_expired_data(data_root, now_override=None):
                 "DELETE FROM audit WHERE created_at<?", (old_events,)
             ).rowcount,
         }
+        # Additive advisor tables exist only in deployments with the advisor module.
+        tables = {row[0] for row in con.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        if "advisor_sessions" in tables:
+            result["advisorSessions"] = con.execute(
+                "DELETE FROM advisor_sessions WHERE expires<=?", (int(instant.timestamp()),)
+            ).rowcount
+        if "advisor_leads" in tables:
+            result["advisorLeads"] = con.execute(
+                "DELETE FROM advisor_leads WHERE updated_at<?", (old_requests,)
+            ).rowcount
     return result

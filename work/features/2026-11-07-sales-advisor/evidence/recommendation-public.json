@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "modelCalls": 1,
+  "seconds": 12.83,
+  "question": "¿Qué es Sales Academy y cómo ayuda a un líder de sala? Si recomiendas un recurso publicado, menciona su título exacto.",
+  "reply": "Sales Academy es una plataforma B2B de entrenamiento, coaching, conocimiento y desempeño comercial. Soy su asesor de IA. La propuesta es ayudar a los representantes a prepararse, consultar materiales autorizados y practicar con el método de su sala, sin sustituir el criterio del líder.\n\nPara un líder, puede apoyar la preparación del equipo y enfocar el coaching en acciones concretas. Smart Agent ofrece asistencia basada en conocimiento autorizado; Training Roadmap organiza el recorrido de aprendizaje y práctica; y Smart GoalSheet plantea la organización de metas, actividad y reflexión diaria. En la demo se revisa el alcance disponible; los tableros, reportes y sincronizaciones deben confirmarse con Chris.\n\nTe recomiendo «Coaching y agentes de IA: el siguiente paso». Es una guía práctica para revisar una habilidad, describir lo observado y acordar una conducta que el líder pueda evaluar después, sin prometer resultados comerciales.\n\n¿Qué te interesa mejorar primero en tu sala: la preparación de los reps, la práctica de objeciones o el seguimiento del coaching?",
+  "resources": [
+    {
+      "title": "Coaching y agentes de IA: el siguiente paso",
+      "url": "/mediahub/coaching-con-una-accion/"
+    },
+    {
+      "title": "Agentes de IA en el día a día de tu sala",
+      "url": "/mediahub/smart-agent/"
+    },
+    {
+      "title": "Un día en la sala con agentes de IA",
+      "url": "/mediahub/un-dia-en-la-sala/"
+    }
+  ],
+  "resourceChecks": [
+    {
+      "url": "/mediahub/coaching-con-una-accion/",
+      "status": 200
+    },
+    {
+      "url": "/mediahub/smart-agent/",
+      "status": 200
+    },
+    {
+      "url": "/mediahub/un-dia-en-la-sala/",
+      "status": 200
+    }
+  ],
+  "leadsCreated": 0,
+  "whatsappOpened": false
+}

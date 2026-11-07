@@ -1,0 +1,20 @@
+{
+  "name": "20261107-advisor-links-06",
+  "parentRelease": "20261107-advisor-05",
+  "files": [
+    {
+      "source": "growth/server/advisor.py",
+      "path": "v5/growth/server/advisor.py",
+      "beforeSha256": "77b49b795cd1a3098da772ec4f06f91565833fa716f026bdfa81eb3d3455abba",
+      "sha256": "cba8f22381c399071937459bc192d9844dadcb87131ae76e15aecf2b40fea856",
+      "bytes": 21531
+    },
+    {
+      "source": "growth/openapi.json",
+      "path": "v5/growth/openapi.json",
+      "beforeSha256": "d7d135ecddf443a2f89793ff3d5aa52ba413c5ad9d1a85af8ed52c6088b8ed72",
+      "sha256": "d0349863edbc66f05b0613da7e22c614f2cd18f75d91b54ff697d5e65d58794e",
+      "bytes": 136308
+    }
+  ]
+}

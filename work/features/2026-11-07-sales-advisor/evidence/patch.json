@@ -1,0 +1,90 @@
+{
+  "name": "20261107-advisor-05",
+  "parentRelease": "20261107-film-play-04",
+  "files": [
+    {
+      "source": "growth/server/app.py",
+      "path": "v5/growth/server/app.py",
+      "beforeSha256": "0b48e5087dd531d8c8247d30129cee1b0ebfa0523f448c0e82f4a69c2309b8a5",
+      "sha256": "53e613821bc5e1f1764864451e9071f8dccc05976c63c9341c8b4967a2f2041a",
+      "bytes": 42784
+    },
+    {
+      "source": "growth/server/store.py",
+      "path": "v5/growth/server/store.py",
+      "beforeSha256": "0c2fcde7b2b1f739f100a6d657b5182bc733f824082863894761a29098e1ade5",
+      "sha256": "9ea79142acb6205a5f63972d72c4f6b11f5c424e50e10dbd514dc84137a870ce",
+      "bytes": 7077
+    },
+    {
+      "source": "growth/server/advisor.py",
+      "path": "v5/growth/server/advisor.py",
+      "beforeSha256": null,
+      "sha256": "77b49b795cd1a3098da772ec4f06f91565833fa716f026bdfa81eb3d3455abba",
+      "bytes": 20907
+    },
+    {
+      "source": "growth/content/advisor-knowledge.md",
+      "path": "v5/growth/content/advisor-knowledge.md",
+      "beforeSha256": null,
+      "sha256": "877d30c0b04a4de06993df8e853a2c1633a50fe0b1ef306e11fdcc064b5d36a7",
+      "bytes": 4999
+    },
+    {
+      "source": "growth/openapi.json",
+      "path": "v5/growth/openapi.json",
+      "beforeSha256": null,
+      "sha256": "d7d135ecddf443a2f89793ff3d5aa52ba413c5ad9d1a85af8ed52c6088b8ed72",
+      "bytes": 136308
+    },
+    {
+      "source": "growth/site/assets/advisor.mjs",
+      "path": "v5/growth/site/assets/advisor.mjs",
+      "beforeSha256": null,
+      "sha256": "2f18502f5761ba10579095bc035736f09eda0a27324040f3514837878edcf97f",
+      "bytes": 18770
+    },
+    {
+      "source": "growth/site/assets/advisor.css",
+      "path": "v5/growth/site/assets/advisor.css",
+      "beforeSha256": null,
+      "sha256": "ff6f5c9a91b7a792f92d589bbb314ab08e681886832be1ceb5ea7df9d240290b",
+      "bytes": 9104
+    },
+    {
+      "source": "growth/site/assets/cms.mjs",
+      "path": "v5/growth/site/assets/cms.mjs",
+      "beforeSha256": "c2098ba39d7c939addd1462c90e1379a1d06b31c1cafa52123486dc764567bf0",
+      "sha256": "ae0b9488f25b6f88d152dfc065524531b007f456198e93339d2a16a9c8bcca8f",
+      "bytes": 53228
+    },
+    {
+      "source": "growth/site/assets/cms.css",
+      "path": "v5/growth/site/assets/cms.css",
+      "beforeSha256": "fea710befea3f63cf889805d5938412077b6ea98ca5bfaf81b9f6ab237f99d4a",
+      "sha256": "b596e94f82500acbac113de74d37cbefe3ff5f38d4a0dd4ad50051cfa1b287dc",
+      "bytes": 20751
+    },
+    {
+      "source": "growth/site/assets/scenarios/index.html",
+      "path": "v5/growth/site/assets/scenarios/index.html",
+      "beforeSha256": "fdd3d980ccef62dc8e123e179e6435c7e188d0113b018749767d834a9c0935e5",
+      "sha256": "ddc995f9a43845b8bea1acf3caa6701bd4227dff6fa4d54f07af9388c18c92aa",
+      "bytes": 32633
+    },
+    {
+      "source": "growth/site/templates/base.html",
+      "path": "v5/growth/site/templates/base.html",
+      "beforeSha256": "8191ff72815c770d3f0b600f3b0c1ed6294be269abff286ac71d82f48396b2d9",
+      "sha256": "8ecf0a11bc559cd1c697f049139a7c5ef7ba286d42eefe48d08492cfe6ef456b",
+      "bytes": 4353
+    },
+    {
+      "source": "growth/site/templates/privacy.html",
+      "path": "v5/growth/site/templates/privacy.html",
+      "beforeSha256": "440fc0fbd789d1227a3527971e5cb0c56986cb4666fb0575270bac3be1f04ea0",
+      "sha256": "26dddbdeafafa4b0cc6ac906a7f2dbca2277a6167a9e6744a456ff1f9a179915",
+      "bytes": 3886
+    }
+  ]
+}

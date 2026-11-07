@@ -1,0 +1,17 @@
+{
+  "base": "http://127.0.0.1:4191",
+  "startedAt": "2026-11-07T14:08:30.210Z",
+  "results": [
+    {
+      "name": "A voluntary advisor launcher exists at 390px without a chat request",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The requested advisor launcher must exist\n\n0 !== 1\n"
+    }
+  ],
+  "errors": [],
+  "synthetic": true,
+  "whatsappOpened": false,
+  "ok": false,
+  "error": "AssertionError [ERR_ASSERTION]: The requested advisor launcher must exist\n\n0 !== 1\n",
+  "finishedAt": "2026-11-07T14:08:31.094Z"
+}

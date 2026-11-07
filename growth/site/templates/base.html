@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="/growth-assets/site.css" />
     <link rel="stylesheet" href="/growth-assets/public-v2.css" />
     <link rel="stylesheet" href="/growth-assets/campaign.css" />
+    <link rel="stylesheet" href="/growth-assets/advisor.css" />
     {% block styles %}{% endblock %}
     <script type="module" src="/growth-assets/site.mjs"></script>
+    {% if not preview %}<script type="module" src="/growth-assets/advisor.mjs"></script>{% endif %}
     {% block scripts %}{% endblock %}
   </head>
   <body

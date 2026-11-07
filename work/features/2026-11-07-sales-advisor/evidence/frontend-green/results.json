@@ -1,0 +1,83 @@
+{
+  "base": "http://127.0.0.1:4191",
+  "startedAt": "2026-11-07T14:15:16.452Z",
+  "results": [
+    {
+      "name": "A voluntary advisor launcher exists at 1440px without a chat request",
+      "passed": true
+    },
+    {
+      "name": "Dialog is accessible, contained and restores keyboard focus at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Chat uses safe text and approved resource links at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Request summary is editable and WhatsApp needs no lead opt-in at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Network recovery preserves the question and offers WhatsApp at 1440px",
+      "passed": true
+    },
+    {
+      "name": "A playing film keeps native controls free of the launcher at 1440px",
+      "passed": true
+    },
+    {
+      "name": "A voluntary advisor launcher exists at 390px without a chat request",
+      "passed": true
+    },
+    {
+      "name": "Dialog is accessible, contained and restores keyboard focus at 390px",
+      "passed": true
+    },
+    {
+      "name": "Chat uses safe text and approved resource links at 390px",
+      "passed": true
+    },
+    {
+      "name": "Request summary is editable and WhatsApp needs no lead opt-in at 390px",
+      "passed": true
+    },
+    {
+      "name": "Network recovery preserves the question and offers WhatsApp at 390px",
+      "passed": true
+    },
+    {
+      "name": "A playing film keeps native controls free of the launcher at 390px",
+      "passed": true
+    },
+    {
+      "name": "A voluntary advisor launcher exists at 360px without a chat request",
+      "passed": true
+    },
+    {
+      "name": "Dialog is accessible, contained and restores keyboard focus at 360px",
+      "passed": true
+    },
+    {
+      "name": "Chat uses safe text and approved resource links at 360px",
+      "passed": true
+    },
+    {
+      "name": "Request summary is editable and WhatsApp needs no lead opt-in at 360px",
+      "passed": true
+    },
+    {
+      "name": "Network recovery preserves the question and offers WhatsApp at 360px",
+      "passed": true
+    },
+    {
+      "name": "A playing film keeps native controls free of the launcher at 360px",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "synthetic": true,
+  "whatsappOpened": false,
+  "ok": true,
+  "finishedAt": "2026-11-07T14:15:27.243Z"
+}

@@ -1,0 +1,22 @@
+test_profile_files_are_isolated_and_removed_after_success_or_timeout (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_profile_files_are_isolated_and_removed_after_success_or_timeout) ... ERROR
+
+======================================================================
+ERROR: test_profile_files_are_isolated_and_removed_after_success_or_timeout (growth.tests.test_advisor_bridge.AdvisorBridgeTests.test_profile_files_are_isolated_and_removed_after_success_or_timeout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 79, in test_profile_files_are_isolated_and_removed_after_success_or_timeout
+    else:self.module.run_isolated(self.messages,runner=runner)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/deploy/advisor/bridge.py", line 50, in run_isolated
+    result = runner([sys.executable, str(Path(__file__).with_name('worker.py'))],
+                    input=json.dumps({'messages': messages}, ensure_ascii=False),
+                    text=True, capture_output=True, timeout=TIMEOUT, check=False)
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor_bridge.py", line 69, in runner
+    temporary=Path(kwargs['env']['HERMES_HOME'])
+                   ~~~~~~^^^^^^^
+KeyError: 'env'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.018s
+
+FAILED (errors=1)

@@ -1,0 +1,18 @@
+test_resources_prioritize_published_title_named_by_reply_over_query_matches (growth.tests.test_advisor.AdvisorAcceptance.test_resources_prioritize_published_title_named_by_reply_over_query_matches) ... FAIL
+
+======================================================================
+FAIL: test_resources_prioritize_published_title_named_by_reply_over_query_matches (growth.tests.test_advisor.AdvisorAcceptance.test_resources_prioritize_published_title_named_by_reply_over_query_matches)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 143, in test_resources_prioritize_published_title_named_by_reply_over_query_matches
+    self.assertEqual(resources[0],{'title':named['title'],'url':'/mediahub/coaching-y-agentes/'})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'title': 'Práctica previa 0', 'url': '/mediahub/practica-0/'} != {'title': 'Coaching y agentes de IA: el siguiente pa[39 chars]es/'}
+- {'title': 'Práctica previa 0', 'url': '/mediahub/practica-0/'}
++ {'title': 'Coaching y agentes de IA: el siguiente paso',
++  'url': '/mediahub/coaching-y-agentes/'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.515s
+
+FAILED (failures=1)

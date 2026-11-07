@@ -37,6 +37,12 @@ const labels = {
     qualified: "Calificada",
     closed: "Cerrada",
   },
+  advisorStatus: {
+    pending_confirmation: "Pendiente de confirmar",
+    contacted: "Contactada",
+    qualified: "Calificada",
+    closed: "Cerrada",
+  },
 };
 const state = {
   user: null,
@@ -199,6 +205,7 @@ function navigation() {
   if (state.user.role === "owner")
     items.push(
       ["requests", "↗", "Solicitudes"],
+      ["advisor", "✦", "Asesor IA"],
       ["publications", "◷", "Publicaciones"],
       ["users", "♙", "Usuarios"],
     );
@@ -249,6 +256,7 @@ async function navigate(page, force = false) {
     else if (page === "resources") resourceList();
     else if (page === "media") await mediaLibrary();
     else if (page === "requests") await requests();
+    else if (page === "advisor") await advisorLeads();
     else if (page === "publications") await publications();
     else if (page === "users") await users();
   } catch (error) {
@@ -634,6 +642,20 @@ async function requests(cursor = 0) {
         )) +
     pagination("requests", cursor, data.nextCursor);
 }
+async function advisorLeads(cursor = 0) {
+  const generation = state.navigationGeneration;
+  const [data, metrics] = await Promise.all([
+    api("advisor-leads?limit=20&cursor=" + cursor),
+    api("advisor-metrics"),
+  ]);
+  if (!currentView(generation, "advisor")) return;
+  content.innerHTML = heading(
+    "ASESOR IA · SEGUIMIENTO HUMANO",
+    "De la conversación al siguiente paso.",
+    "Solicitudes guardadas con consentimiento. Chris confirma la fecha por WhatsApp; abrir un enlace no significa una cita reservada.",
+  ) + `<div class="cms-stats"><div class="stat-box"><span>SESIONES SIN EXPIRAR (1 H)</span><strong>${h(metrics.sessions)}</strong></div><div class="stat-box"><span>MENSAJES EN ESAS SESIONES</span><strong>${h(metrics.messages)}</strong></div><div class="stat-box"><span>SOLICITUDES</span><strong>${h(metrics.leads)}</strong><small>${h(metrics.pendingConfirmation)} pendientes de confirmación</small></div><div class="stat-box"><span>CALIFICADAS</span><strong>${h(metrics.qualified)}</strong></div></div><p class="cms-note">Las sesiones y sus mensajes corresponden a conversaciones sin expirar, no a un acumulado histórico. Las solicitudes se conservan durante 90 días sin actividad, con eliminación automática periódica. El conocimiento del asesor usa el contenido publicado del MediaHub y la ficha comercial revisada.</p>` +
+    (data.items.length ? `<div class="cms-table-wrap"><table class="cms-table"><thead><tr><th>Persona y contexto</th><th>Solicitud revisada</th><th>Preferencia de horario</th><th>Seguimiento</th></tr></thead><tbody>${data.items.map(r => `<tr><td><strong>${h(r.name || "Sin nombre indicado")}</strong><small>${h(r.contact || "Sin contacto adicional")}</small><small>${h(labels.role[r.role] || "Otro rol")} · ${h({"1":"1 sala","2-3":"2–3 salas","4+":"4 o más salas",unknown:"Salas por definir"}[r.roomCountBucket])}</small><small>${h(r.teamSize || "Equipo por definir")}</small><small>${h(date(r.createdAt))}</small></td><td><p class="advisor-lead-summary">${h(r.summary)}</p><small>Necesidad: ${h(r.need || "Por explorar")}</small><small>Plazo: ${h(r.timeframe || "Por acordar")}</small><small>Consentimiento de seguimiento · ${h(r.privacyVersion)}</small></td><td>${r.preferredDate && r.preferredTime ? `<strong>${h(r.preferredDate)} · ${h(r.preferredTime)}</strong><small>${h(r.timezone)}</small>` : "Por acordar con Chris"}<small>Preferencia, no reserva</small></td><td><form data-advisor-lead-form="${h(r.id)}"><label class="sr-only" for="advisor-lead-${h(r.id)}">Estado de solicitud ${h(r.id)}</label><select id="advisor-lead-${h(r.id)}" name="status">${options(labels.advisorStatus, r.status)}</select><button class="button button-small button-outline" type="submit">Guardar seguimiento</button></form><small>Actualizada ${h(date(r.updatedAt))}</small><small>Referencia ${h(r.id)}</small></td></tr>`).join("")}</tbody></table></div>` : empty("Aún no hay solicitudes del asesor.", "Aparecerán aquí cuando el visitante elija guardar su resumen para seguimiento.")) + pagination("advisor", cursor, data.nextCursor);
+}
 function pagination(type, cursor, next) {
   return `<div class="cms-pagination">${cursor ? button("← Primera página", "page-list", `data-list="${type}" data-cursor="0"`) : ""}${next !== null ? button("Siguiente página →", "page-list", `data-list="${type}" data-cursor="${next}"`) : ""}</div>`;
 }
@@ -841,7 +863,7 @@ async function action(name, target) {
   else if (name === "back-media") await navigate("media");
   else if (name === "more-media") await mediaLibrary(true);
   else if (name === "page-list") {
-    const fn = { requests, publications, users }[target.dataset.list];
+    const fn = { requests, advisor: advisorLeads, publications, users }[target.dataset.list];
     await fn(Number(target.dataset.cursor));
   } else if (name === "restore") await restore(target.dataset.id);
   else if (name === "new-user") userEditor();
@@ -928,6 +950,13 @@ content.addEventListener("submit", async (event) => {
         status: new FormData(form).get("status"),
       });
       notice("Seguimiento actualizado.");
+    } else if (form.dataset.advisorLeadForm) {
+      await api("advisor-leads", "PATCH", {
+        id: form.dataset.advisorLeadForm,
+        status: new FormData(form).get("status"),
+      });
+      await advisorLeads();
+      notice("Seguimiento del asesor actualizado. La fecha se confirma con Chris.");
     }
   } catch (error) {
     failure(error);

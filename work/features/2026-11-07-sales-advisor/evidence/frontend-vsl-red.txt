@@ -1,0 +1,24 @@
+PASS A voluntary advisor launcher exists at 1440px without a chat request
+PASS A playing film keeps native controls free of the launcher at 1440px
+PASS A voluntary advisor launcher exists at 390px without a chat request
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The floating control must not cover a playing movie
+
+true !== false
+
+    at file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-browser.mjs:25:21
+    at async check (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-browser.mjs:15:36)
+    at async playingFilmDoesNotCollide (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-browser.mjs:17:2)
+    at async file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-browser.mjs:57:15 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

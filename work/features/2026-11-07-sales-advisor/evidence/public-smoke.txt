@@ -1,0 +1,12 @@
+PASS Public advisor opens without overflow or consent collision at 1440px
+PASS Hermes answers one real synthetic question with published resources at 1440px
+PASS Future preference and edited WhatsApp summary need no saved lead at 1440px
+PASS The launcher leaves an overlapping playing VSL unobstructed at 1440px
+PASS The advisor remains available on /mediahub/ at 1440px
+PASS The advisor remains available on /growth-assets/scenarios/index.html at 1440px
+PASS Public advisor opens without overflow or consent collision at 390px
+PASS Hermes answers one real synthetic question with published resources at 390px
+PASS Future preference and edited WhatsApp summary need no saved lead at 390px
+PASS The launcher leaves an overlapping playing VSL unobstructed at 390px
+PASS The advisor remains available on /mediahub/ at 390px
+PASS The advisor remains available on /growth-assets/scenarios/index.html at 390px

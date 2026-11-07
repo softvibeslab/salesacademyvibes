@@ -126,6 +126,11 @@ def create_app(config=None):
         RATE_LIMIT_ENABLED=True,
         MAX_CONTENT_LENGTH=11 * 1024 * 1024,
         JSON_SORT_KEYS=False,
+        ADVISOR_ENABLED=os.environ.get("ADVISOR_ENABLED", "").lower() in {"1", "true", "yes"},
+        ADVISOR_HERMES_URL=os.environ.get("ADVISOR_HERMES_URL", ""),
+        ADVISOR_HERMES_KEY=os.environ.get("ADVISOR_HERMES_KEY", ""),
+        ADVISOR_DAILY_LIMIT=int(os.environ.get("ADVISOR_DAILY_LIMIT", "200")),
+        ADVISOR_KNOWLEDGE_PATH=GROWTH / "content/advisor-knowledge.md",
     )
     app.config.update(config or {})
     video_catalog = load_video_catalog()
@@ -342,6 +347,7 @@ def create_app(config=None):
             "preview": preview,
             "contact_enabled": bool(app.config["PUBLIC_CONTACT_ENABLED"])
             and not preview,
+            "advisor_enabled": bool(app.config["ADVISOR_ENABLED"]) and not preview,
         }
 
     @app.get("/growth-assets/<path:filename>")
@@ -1090,4 +1096,7 @@ def create_app(config=None):
             },
         )
 
+    from .advisor import register_advisor
+    register_advisor(app, root, active_document, owner, rate_limit, body, exact,
+                     origin_check, page_args)
     return app

@@ -1,0 +1,33 @@
+{
+  "startedAt": "2026-11-07T14:15:15.559Z",
+  "base": "http://127.0.0.1:52444",
+  "results": [
+    {
+      "name": "Real session cookie and CSRF support the conversation without CMS login",
+      "passed": true
+    },
+    {
+      "name": "Consented request is persisted with pending confirmation and an editable WhatsApp summary",
+      "passed": true
+    },
+    {
+      "name": "A second visitor has no access to the first visitor conversation",
+      "passed": true
+    },
+    {
+      "name": "Owner sees the real consented lead, escaped summary and updates follow-up",
+      "passed": true
+    },
+    {
+      "name": "Editor cannot see or read advisor leads",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "syntheticData": true,
+  "whatsappOpened": false,
+  "reply": "Sales Academy puede ayudar a preparar y practicar con el método de tu sala. Podemos explorar entrenamiento y coaching para tu equipo. ¿Qué reto quieres trabajar primero? La demo se confirma con Chris por WhatsApp.",
+  "leadId": "09fcd0ea-6870-4800-97ef-649d00cb944d",
+  "ok": true,
+  "finishedAt": "2026-11-07T14:15:20.803Z"
+}

@@ -2,6 +2,10 @@
 
 Implementación local aprobada por Roger el 7 de noviembre de 2026: «si lo apruebo contruye lis artefactis». [Contrato y evidencia](../work/features/2026-11-07-growth-mediahub/README.md).
 
+## Publicación actual
+
+Disponible en [Sales Academy V5](https://v5.salesacademy.softvibes.cloud/descubre/), con asesor IA conectado a un perfil propio de Hermes y [CMS](https://v5.salesacademy.softvibes.cloud/cms/) para solicitudes consentidas. [Entrega y evidencia](../work/features/2026-11-07-sales-advisor/README.md). La agenda se confirma con Chris por WhatsApp. Los apartados locales que siguen documentan la preparación histórica; para operación de producción consulta [el runbook](deploy/versions/README.md).
+
 ## Abrir la entrega
 
 Con el servidor iniciado:
