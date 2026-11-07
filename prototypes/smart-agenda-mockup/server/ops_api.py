@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Demo JSON API for Sales Academy tours. Not authentication."""
 
+import datetime
 import hashlib
 import hmac
 import json
@@ -15,6 +16,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 from ops_import import preview_payload
+from ops_context import build_context, context_text
 
 HOST = "127.0.0.1"
 PORT = int(os.environ.get("OPS_PORT", "8026"))
@@ -506,6 +508,18 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/rooms":
                 rooms, people = rooms_for(actor, data)
                 return {"status": 200, "body": {"ok": True, "rooms": rooms, "people": people}}
+            if path == "/context":
+                # Contexto para Hermes (feature hermes-contexto): solo lectura, mismo alcance que /tours.
+                today = (query.get("today") or [time.strftime("%Y-%m-%d")])[0]
+                try:
+                    valid_day = bool(DAY.match(today)) and bool(datetime.date.fromisoformat(today))
+                except ValueError:
+                    valid_day = False
+                if not valid_day:
+                    return {"status": 400, "body": {"ok": False, "error": "La fecha no es válida."}}
+                visits = [visit for visit in data["visits"] if allowed(actor, data, visit)]
+                context = build_context(data, actor, visits, today)
+                return {"status": 200, "body": {"ok": True, "context": context, "text": context_text(context)}}
             if path == "/tours":
                 visits, error = tours_for(actor, data, query)
                 if error:

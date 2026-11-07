@@ -338,6 +338,8 @@ fabMenu.addEventListener("click", (event) => {
 window.addEventListener("message", (event) => {
   if (event.origin !== window.location.origin) return;
   if (event.data?.type === "sa:fab-state") state.coachTab = event.data.tab;
+  // hermes-contexto: una sugerencia de Hermes lleva a una vista de la app (solo vistas permitidas).
+  if (event.data?.type === "sa:go" && ["hoy", "calendario"].includes(event.data.view)) go(event.data.view);
 });
 document.addEventListener("click", (event) => {
   if (!fabMenu.hidden && !event.target.closest("#fab-menu, #fab")) toggleFabMenu(false);
@@ -1183,7 +1185,7 @@ function viewModulo() {
 }
 
 function copilotoSrc() {
-  const query = new URLSearchParams({ embed: "1" });
+  const query = new URLSearchParams({ embed: "1", today: EXAMPLE_TODAY });
   if (state.copilotoQuery) query.set("q", state.copilotoQuery);
   if (state.copilotoRole) query.set("role", state.copilotoRole);
   return `/copiloto/?${query.toString()}`;

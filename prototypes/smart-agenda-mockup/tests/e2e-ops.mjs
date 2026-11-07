@@ -422,6 +422,25 @@ try {
   const afterImage = await api("GET", "/api/tours?date=2026-11-06", "admin");
   assert.equal(afterImage.data.visits.length, countBefore + 1);
 
+  // C1–C4: contexto para Hermes (feature hermes-contexto)
+  step = await raw("GET", "/api/context?today=2026-11-06");
+  assert.equal(step.status, 401, "C1 sin sesión");
+  step = await api("GET", "/api/context?today=2026-11-06", "rep:ana");
+  assert.equal(step.status, 200, JSON.stringify(step.data));
+  assert.equal(step.data.context.user.name, "Ana");
+  assert.ok(step.data.context.agenda.length >= 1, "C2 agenda de Ana");
+  assert.ok(step.data.context.agenda.every((a) => !a.rep), "C2 rep sin columna de otros reps");
+  assert.ok(!JSON.stringify(step.data).includes("Lead #210"), "C2 Ana no ve el tour de Luis");
+  assert.ok(step.data.text.includes("Agenda de hoy"), "C2 texto para el prompt");
+  step = await api("GET", "/api/context?today=06-11-2026", "rep:ana");
+  assert.equal(step.status, 400, "C3 fecha inválida");
+  step = await api("GET", "/api/context?today=2026-13-45", "rep:ana");
+  assert.equal(step.status, 400, "C3 fecha imposible");
+  step = await api("GET", "/api/context?today=2026-11-06", "jefe:jorge");
+  assert.equal(step.status, 200);
+  assert.ok(JSON.stringify(step.data).includes("Lead #210"), "C4 el jefe ve su sala");
+  assert.ok(!JSON.stringify(step.data).includes("Lead #077"), "C4 el jefe no ve otra sala");
+
   step = await api("POST", "/api/reset", "admin", {});
   assert.equal(step.status, 200);
   console.log("e2e-ops ok", base);
