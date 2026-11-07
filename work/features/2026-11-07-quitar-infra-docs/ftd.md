@@ -1,6 +1,6 @@
 # FTD: `quitar-infra-docs`
 
-**Status:** in-progress
+**Status:** done
 **Lane:** FTD
 **Author:** `RogerDevAndroid`
 **Branch:** `feat/sala-tours-sync`
@@ -64,8 +64,8 @@ Excepcion TDD (solo si aplica): N/A. El cambio es de documentacion, pero tiene u
 - [x] Readable: nombres claros, sin codigo muerto.
 - [x] Unified: sigue los patrones de la capa.
 - [x] Secured: sin secretos ni datos reales; inputs validados si aplica.
-- [ ] Trackable: commit con referencia a este documento o al ticket.
+- [x] Trackable: commit `b1ea8b6` cita este documento; publicado en `feat/sala-tours-sync` y `main`.
 
 ## Siguiente
 
-Publicar (commit y push a `feat/sala-tours-sync` y `main`) y confirmar que GitHub Pages ya no muestra la IP. Fuera de este FTD: la IP sigue en la historia de git; endurecer el VPS (solo llave, sin password, firewall) se recomienda aparte.
+Hecho: GitHub Pages reconstruido desde `b1ea8b6` (2026-11-07T09:07:49Z); `stack-y-api` ya no contiene la IP ni el nombre de la llave (grep = 0) y muestra la referencia al runbook privado. Gate `verify-governance --strict` en verde. Fuera de este FTD: la IP sigue en la historia de git; endurecer el VPS (solo llave, sin password, firewall) se recomienda aparte.
