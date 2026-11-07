@@ -3,6 +3,8 @@ Description=Sales Academy tours API
 After=network.target
 
 [Service]
+# Contraseña privada del admin (login-demo): OPS_ADMIN_PASSWORD=... (archivo 600, solo en el servidor)
+EnvironmentFile=-/etc/salesacademy-ops/admin.env
 ExecStart=/usr/bin/python3 /opt/salesacademy-ops/ops_api.py
 Environment=OPS_DATA=/var/lib/salesacademy-ops/ops.json
 Environment=OPS_PORT=8026

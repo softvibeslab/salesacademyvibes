@@ -8,7 +8,7 @@
 | Tablero `/ops/` | Green | CRUD de tours por sala, formulario arriba, aviso al guardar |
 | Sync tablero → app | Green | Servidor JSON, e2e local y live, recorrido Rosa → Teo |
 | Resultado del tour | Green | Venta / no venta / abandono con historial y versión; e2e en verde |
-| Identidad | Yellow | Selector de rol, no contraseña |
+| Identidad | Green | Login con sesión; usuarios demo + admin privado; Hermes con sesión |
 | Métricas de venta | Yellow | Home calcula desde resultados (sintéticos). Perfil sigue de ejemplo |
 | Copiloto en este git | Yellow | Live en `/copiloto/`. Fuente no está en este repo |
 

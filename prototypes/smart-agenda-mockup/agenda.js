@@ -132,7 +132,8 @@ const state = {
   showHow: false,
   calDate: "2026-11-06",
   calWeek: "2026-11-02",
-  meId: (() => { try { return sessionStorage.getItem("sa.app.rep") || ME_REP; } catch { return ME_REP; } })(),
+  meId: ME_REP,
+  auth: { user: null, checked: false, error: "", busy: false },
   coachTab: "hoy",
   toast: "",
   presentations: 3,
@@ -540,7 +541,6 @@ function viewHoy() {
       </button>
       <p class="fine">Metas de ejemplo: 4 presentaciones, 2 cierres y ${money(goal)} USD. Los avances salen de tus resultados del día.${mxnSale ? " Las ventas en MXN no suman al volumen USD." : ""}</p>
       <section style="margin-top:16px">
-        ${whoChips()}
         <p class="fine">${esc(meLabel())}. ${esc(agoLabel())}</p>
         <div class="row-between"><h2 class="section-title">Tours de hoy</h2><span><button class="linkish" data-act="reload-tours" type="button">Actualizar</button> · <button class="linkish" data-go="calendario" type="button">Calendario</button></span></div>
         ${tourCard(EXAMPLE_TODAY)}
@@ -939,6 +939,7 @@ async function refreshTours(opts = {}) {
     tours.at = Date.now();
   } catch (error) {
     if (token !== tourRequest) return;
+    if (error.status === 401) { signedOut(); return; }
     tours.error = error.message || "No se pudo actualizar.";
     if (!opts.quiet) tours.visits = tours.visits;
   }
@@ -1000,7 +1001,6 @@ function viewCalendario() {
   return `${taskbar("Calendario", "hoy", mePerson().name)}
     <div class="screen task">
       <div class="row"><button class="icon-btn" data-act="cal-prev" type="button" aria-label="Semana anterior"><span class="material-symbols-outlined">chevron_left</span></button><h1 class="page-title" style="font-size:18px">${esc(labelDate(selected))}</h1><button class="icon-btn" data-act="cal-next" type="button" aria-label="Semana siguiente"><span class="material-symbols-outlined">chevron_right</span></button></div>
-      ${whoChips()}
       <p class="fine">${esc(meLabel())}. Los tours los asigna el jefe de sala. ${esc(agoLabel())}</p>
       ${tours.error ? `<div class="warn">${esc(tours.error)}</div>` : ""}
       <div class="week">${days}</div>
@@ -1666,18 +1666,79 @@ function viewPerfil() {
       </section>
       ${accounts}
       <button class="btn gold" data-go="presentacion" type="button" style="width:100%">Registrar presentación o venta</button>
-      <button class="btn line" data-go="acceso" type="button" style="width:100%;margin-top:8px">Ver acceso</button>
+      <button class="btn line" data-act="logout" type="button" style="width:100%;margin-top:8px">Cerrar sesión (${esc(state.auth.user?.name || "")})</button>
     </div>
   `);
 }
 
 function viewAcceso() {
-  return `${taskbar("Acceso", "perfil", "Sala", "Perfil")}
-    <div class="screen task">
-      <div class="head"><div><h1>Entrar</h1><p>Esta vista no pide cuenta ni contraseña.</p></div></div>
-      <div class="field"><label>Sala</label><input value="Sala de ejemplo" readonly></div>
-      <button class="btn gold" data-go="hoy" type="button" style="width:100%">Entrar al cuaderno</button>
+  const a = state.auth;
+  return `<header class="topbar"><div class="brand"><span class="avatar">SA</span> Sales Academy</div></header>
+    <div class="screen task login">
+      <div class="head"><div><h1>Entrar</h1><p>Usa tu nombre de pila y tu contraseña.</p></div></div>
+      <form id="login-form" autocomplete="on">
+        <div class="field"><label for="login-user">Usuario</label><input id="login-user" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="ana" required></div>
+        <div class="field"><label for="login-pass">Contraseña</label><input id="login-pass" name="password" type="password" autocomplete="current-password" required></div>
+        ${a.error ? `<div class="warn" role="alert">${esc(a.error)}</div>` : ""}
+        <button class="btn gold" type="submit" style="width:100%" ${a.busy ? "disabled" : ""}>${a.busy ? "Entrando…" : "Entrar"}</button>
+      </form>
+      <p class="fine" style="margin-top:12px">Reps entran a su cuaderno. Jefes de sala y administración entran al tablero.</p>
     </div>`;
+}
+
+function signedOut(message = "") {
+  state.auth.user = null;
+  state.auth.error = message;
+  state.auth.busy = false;
+  render();
+}
+
+async function enterAs(user) {
+  if (user.role !== "rep") {
+    window.location.href = "/ops/";
+    return;
+  }
+  state.auth.user = user;
+  state.auth.error = "";
+  state.meId = user.id;
+  state.view = "hoy";
+  render();
+  await refreshRoster();
+  refreshTours();
+  refreshCatalog();
+}
+
+async function submitLogin(form) {
+  const username = form.username.value.trim().toLowerCase();
+  const password = form.password.value;
+  state.auth.busy = true;
+  state.auth.error = "";
+  render();
+  try {
+    const data = await opsRequest("/api/login", { method: "POST", body: { username, password } });
+    state.auth.busy = false;
+    enterAs(data.user);
+  } catch (error) {
+    signedOut(error.message || "No se pudo entrar.");
+  }
+}
+
+async function logout() {
+  try { await opsRequest("/api/logout", { method: "POST", body: {} }); } catch { /* la cookie ya no sirve */ }
+  tours.visits = [];
+  tours.ready = false;
+  signedOut();
+}
+
+async function boot() {
+  try {
+    const data = await opsRequest("/api/me");
+    state.auth.checked = true;
+    enterAs(data.user);
+  } catch {
+    state.auth.checked = true;
+    signedOut();
+  }
 }
 
 function viewPendientes() {
@@ -1742,6 +1803,15 @@ function readDraftFromDom() {
 }
 
 function render() {
+  if (!state.auth.user) {
+    if (coachFrame) coachFrame.hidden = true;
+    fab.hidden = true;
+    fabMenu.hidden = true;
+    sheets.innerHTML = state.auth.checked ? viewAcceso() : `<div class="screen"><p class="fine">Cargando…</p></div>`;
+    phone.querySelector("#login-user")?.focus();
+    return;
+  }
+  fab.hidden = false;
   if (state.view === "coach") {
     const frame = coachFrameEl();
     frame.hidden = false;
@@ -1845,6 +1915,10 @@ if (map) map.addEventListener("click", (event) => {
 });
 
 function run(act) {
+  if (act === "logout") {
+    logout();
+    return;
+  }
   if (act.startsWith("me-")) {
     const id = act.slice(3);
     if (!roster.people.some((person) => person.id === id && person.role === "rep")) return;
@@ -2118,13 +2192,18 @@ async function submitResult() {
 }
 
 document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") refreshTours({ quiet: true });
+  if (document.visibilityState === "visible" && state.auth.user) refreshTours({ quiet: true });
 });
 window.setInterval(() => {
-  if (document.visibilityState !== "visible") return;
+  if (document.visibilityState !== "visible" || !state.auth.user) return;
   if (state.view === "hoy" || state.view === "calendario") refreshTours({ quiet: true });
 }, 15000);
 
+phone.addEventListener("submit", (event) => {
+  if (event.target.id !== "login-form") return;
+  event.preventDefault();
+  submitLogin(event.target);
+});
+
 render();
-refreshRoster().then(() => refreshTours());
-refreshCatalog();
+boot();

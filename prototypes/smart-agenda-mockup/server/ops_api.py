@@ -1,19 +1,39 @@
 #!/usr/bin/env python3
 """Demo JSON API for Sales Academy tours. Not authentication."""
 
+import hashlib
+import hmac
 import json
 import os
 import re
+import secrets
 import tempfile
 import threading
 import time
+from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
+
+from ops_import import preview_payload
 
 HOST = "127.0.0.1"
 PORT = int(os.environ.get("OPS_PORT", "8026"))
 ROOT = os.environ.get("OPS_DATA", "/var/lib/salesacademy-ops/ops.json")
 LOCK = ROOT + ".lock"
+
+# Login (historia login-demo, Excepción Ready aprobada por el PO 2026-11-07).
+# Reps y jefes: contraseña demo pública. Admin: contraseña privada solo en el entorno del servidor.
+DEMO_PASSWORD = os.environ.get("OPS_DEMO_PASSWORD", "Demo-2026")
+ADMIN_PASSWORD = os.environ.get("OPS_ADMIN_PASSWORD", "")
+COOKIE_NAME = "sa_session"
+COOKIE_SECURE = os.environ.get("OPS_COOKIE_SECURE", "1") != "0"
+ALLOW_ACTOR_HEADER = os.environ.get("OPS_ALLOW_ACTOR_HEADER") == "1"
+SESSION_TTL = 12 * 60 * 60
+LOGIN_MAX_FAILS = 5
+LOGIN_WINDOW = 10 * 60
+LOGIN_FAILS = {}
+LOGIN_LOCK = threading.Lock()
+BAD_LOGIN = "Usuario o contraseña incorrectos."
 
 LEAD = re.compile(r"^Lead #\d{3,4}$")
 CLOCK_IN = re.compile(r"^(\d{1,2}):([0-5]\d)(?::[0-5]\d)?$")
@@ -121,6 +141,65 @@ def parse_actor(header, data):
     if not who or who["role"] != role or role not in {"jefe", "rep"}:
         return None
     return {"role": role, "id": ident}
+
+
+def token_hash(token):
+    return hashlib.sha256(token.encode("utf-8")).hexdigest()
+
+
+def session_actor(data, token, now=None):
+    if not token:
+        return None
+    now = now or time.time()
+    entry = (data.get("sessions") or {}).get(token_hash(token))
+    if not entry or entry.get("exp", 0) < now:
+        return None
+    who = entry.get("who")
+    if who == "admin":
+        return {"role": "admin", "id": "admin"}
+    person_row = person(data, who)
+    if not person_row:
+        return None
+    return {"role": person_row["role"], "id": who}
+
+
+def user_view(data, actor):
+    if actor["role"] == "admin":
+        return {"id": "admin", "name": "Administrador", "role": "admin", "roomId": "todas"}
+    row = person(data, actor["id"])
+    return {"id": row["id"], "name": row["name"], "role": row["role"], "roomId": row["roomId"]}
+
+
+def login_locked(username, now=None):
+    now = now or time.time()
+    with LOGIN_LOCK:
+        recent = [at for at in LOGIN_FAILS.get(username, []) if now - at < LOGIN_WINDOW]
+        LOGIN_FAILS[username] = recent
+        return len(recent) >= LOGIN_MAX_FAILS
+
+
+def login_failed(username):
+    with LOGIN_LOCK:
+        LOGIN_FAILS.setdefault(username, []).append(time.time())
+
+
+def login_cleared(username):
+    with LOGIN_LOCK:
+        LOGIN_FAILS.pop(username, None)
+
+
+def check_password(data, username, password):
+    if username == "admin":
+        return bool(ADMIN_PASSWORD) and hmac.compare_digest(password, ADMIN_PASSWORD)
+    row = person(data, username)
+    return bool(row) and hmac.compare_digest(password, DEMO_PASSWORD)
+
+
+def session_cookie(token, max_age):
+    parts = [f"{COOKIE_NAME}={token}", "Path=/", "HttpOnly", "SameSite=Lax", f"Max-Age={max_age}"]
+    if COOKIE_SECURE:
+        parts.append("Secure")
+    return "; ".join(parts)
 
 
 def allowed(actor, data, visit):
@@ -351,21 +430,41 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
         return
 
-    def actor(self, data):
-        return parse_actor(self.headers.get("X-Ops-Actor"), data)
+    def cookie_token(self):
+        raw = self.headers.get("Cookie")
+        if not raw:
+            return ""
+        jar = SimpleCookie()
+        try:
+            jar.load(raw)
+        except Exception:
+            return ""
+        morsel = jar.get(COOKIE_NAME)
+        return morsel.value if morsel else ""
 
-    def send_json(self, status, payload):
+    def actor(self, data):
+        found = session_actor(data, self.cookie_token())
+        if found:
+            return found
+        if ALLOW_ACTOR_HEADER:
+            return parse_actor(self.headers.get("X-Ops-Actor"), data)
+        return None
+
+    def send_json(self, status, payload, cookie=None):
         raw = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        if cookie:
+            self.send_header("Set-Cookie", cookie)
         self.send_header("Content-Length", str(len(raw)))
         self.send_header("Cache-Control", "no-store")
         self.end_headers()
         self.wfile.write(raw)
 
-    def read_json(self):
-        length = int(self.headers.get("Content-Length") or "0")
-        if length < 0 or length > 8192:
+    def read_json(self, limit=8192, length=None):
+        if length is None:
+            length = int(self.headers.get("Content-Length") or "0")
+        if length < 0 or length > limit:
             return None
         if length == 0:
             return {}
@@ -401,7 +500,9 @@ class Handler(BaseHTTPRequestHandler):
                 }}
             actor = self.actor(data)
             if not actor:
-                return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
+                return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
+            if path == "/me":
+                return {"status": 200, "body": {"ok": True, "user": user_view(data, actor)}}
             if path == "/rooms":
                 rooms, people = rooms_for(actor, data)
                 return {"status": 200, "body": {"ok": True, "rooms": rooms, "people": people}}
@@ -417,22 +518,71 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path, _query = self.route()
-        payload = self.read_json()
+        try:
+            length = int(self.headers.get("Content-Length") or "0")
+        except ValueError:
+            length = -1
+        limit = 2_000_000 if path == "/imports/preview" else 8192
+        if length < 0 or length > limit:
+            error = "El archivo es muy grande (máximo 1.5 MB)." if path == "/imports/preview" else "El cuerpo no es válido."
+            self.send_json(413 if path == "/imports/preview" else 400, {"ok": False, "error": error})
+            return
+        payload = self.read_json(limit, length)
         if payload is None:
             self.send_json(400, {"ok": False, "error": "El cuerpo no es válido."})
             return
 
         def run(data):
+            if path == "/login":
+                username = str(payload.get("username") or "").strip().lower()[:40]
+                password = str(payload.get("password") or "")[:200]
+                if login_locked(username):
+                    return {"status": 429, "body": {"ok": False, "error": "Demasiados intentos. Espera unos minutos."}}
+                if not check_password(data, username, password):
+                    login_failed(username)
+                    return {"status": 401, "body": {"ok": False, "error": BAD_LOGIN}}
+                login_cleared(username)
+                now = time.time()
+                sessions = {k: v for k, v in (data.get("sessions") or {}).items() if v.get("exp", 0) > now}
+                token = secrets.token_urlsafe(32)
+                sessions[token_hash(token)] = {"who": username, "exp": now + SESSION_TTL}
+                data["sessions"] = sessions
+                found = session_actor(data, token, now)
+                return {"status": 200, "save": True, "cookie": session_cookie(token, SESSION_TTL),
+                        "body": {"ok": True, "user": user_view(data, found)}}
+            if path == "/logout":
+                token = self.cookie_token()
+                sessions = data.get("sessions") or {}
+                if token and token_hash(token) in sessions:
+                    del sessions[token_hash(token)]
+                    data["sessions"] = sessions
+                    return {"status": 200, "save": True, "cookie": session_cookie("", 0), "body": {"ok": True}}
+                return {"status": 200, "cookie": session_cookie("", 0), "body": {"ok": True}}
             actor = self.actor(data)
             if not actor:
-                return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
+                return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             if path == "/reset":
                 if actor["role"] != "admin":
                     return {"status": 403, "body": {"ok": False, "error": "Solo el administrador restaura el ejemplo."}}
                 fresh = seed()
+                kept_sessions = data.get("sessions") or {}
                 data.clear()
                 data.update(fresh)
+                data["sessions"] = kept_sessions
                 return {"status": 200, "save": True, "body": {"ok": True}}
+            if path == "/imports/preview":
+                if actor["role"] == "rep":
+                    return {"status": 403, "body": {"ok": False, "error": "El rep solo consulta sus tours."}}
+                default_date = str(payload.get("defaultDate") or time.strftime("%Y-%m-%d"))
+                result = preview_payload(payload, data["people"], data["visits"], default_date)
+                if not result.get("ok"):
+                    return {"status": 400, "body": result}
+                for row in result.get("rows") or []:
+                    visit = row.get("visit") or {}
+                    if visit.get("repId") and not allowed(actor, data, {"repId": visit["repId"]}):
+                        row["issues"] = list(row.get("issues") or []) + ["Ese rep no está en tu sala."]
+                        row["selected"] = False
+                return {"status": 200, "body": result}
             if path != "/tours":
                 return {"status": 404, "body": {"ok": False, "error": "No existe."}}
             if actor["role"] == "rep":
@@ -446,7 +596,7 @@ class Handler(BaseHTTPRequestHandler):
             return {"status": 201, "save": True, "body": {"ok": True, "visit": visit}}
 
         result = mutate(run)
-        self.send_json(result["status"], result["body"])
+        self.send_json(result["status"], result["body"], result.get("cookie"))
 
     def do_PATCH(self):
         path, _query = self.route()
@@ -458,7 +608,7 @@ class Handler(BaseHTTPRequestHandler):
         def run(data):
             actor = self.actor(data)
             if not actor:
-                return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
+                return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             people = re.fullmatch(r"/people/([a-z]{2,12})", path)
             tours = re.fullmatch(r"/tours/(v[0-9]+)", path)
             if people:
@@ -506,7 +656,7 @@ class Handler(BaseHTTPRequestHandler):
         def run(data):
             actor = self.actor(data)
             if not actor:
-                return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
+                return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             match = re.fullmatch(r"/tours/(v[0-9]+)/result", path)
             if not match:
                 return {"status": 404, "body": {"ok": False, "error": "No existe."}}
@@ -545,7 +695,7 @@ class Handler(BaseHTTPRequestHandler):
         def run(data):
             actor = self.actor(data)
             if not actor:
-                return {"status": 401, "body": {"ok": False, "error": "Falta el rol."}}
+                return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             result_match = re.fullmatch(r"/tours/(v[0-9]+)/result", path)
             if result_match:
                 if actor["role"] == "rep":
@@ -586,7 +736,8 @@ def serve():
 
 
 def selftest():
-    global ROOT, LOCK
+    global ROOT, LOCK, ALLOW_ACTOR_HEADER
+    ALLOW_ACTOR_HEADER = True
     folder = tempfile.mkdtemp()
     ROOT = os.path.join(folder, "ops.json")
     LOCK = ROOT + ".lock"

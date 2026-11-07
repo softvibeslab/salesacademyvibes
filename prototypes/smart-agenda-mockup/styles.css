@@ -436,3 +436,7 @@ button { cursor: pointer; }
   .handset, .phone { width: 100%; max-width: none; }
 }
 .fab[hidden] { display: none; }
+
+/* Acceso (login-demo) */
+.screen.login form { margin-top: 8px; }
+.screen.login input { width: 100%; }

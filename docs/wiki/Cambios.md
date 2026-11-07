@@ -8,6 +8,12 @@ Un jefe asigna un tour y el representante lo ve en otro navegador. Eso no pasaba
 
 ## Qué se movió
 
+### Login (corte `20261107x`)
+
+- Pantalla de Acceso única: reps a su cuaderno, jefes y admin al tablero; identidad por sesión (sin chips ni selector de rol).
+- Usuarios demo con contraseña pública para testers; admin con contraseña privada en el servidor.
+- Hermes solo responde con sesión.
+
 ### Resultado del tour (corte `20261107r`)
 
 - Cada tour puede cerrarse con venta, no venta o abandono; con objeción, recuperable, siguiente paso o paso del roadmap, y nota filtrada (sin correos ni teléfonos).

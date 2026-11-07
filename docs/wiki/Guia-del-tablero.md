@@ -26,6 +26,10 @@ Jorge no asigna a Teo. El servidor lo rechaza.
 
 Empalme: aviso y no guarda. Cancelado no cuenta para el empalme.
 
+## Importar varios de un jalón
+
+**Importar** → archivo, foto o texto → **Analizar** → revisar la tabla → **Confirmar**. Solo se crean las filas que aceptas. La foto no se guarda.
+
 ## Qué baja a la app
 
 El tour queda en el servidor. El rep lo ve al abrir Home o Calendario, al tocar Actualizar, al volver a la pestaña o en el refresco de 15 s. Cancelado no se lista en la app.

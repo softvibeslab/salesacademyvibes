@@ -8,6 +8,19 @@ Un jefe asigna un tour y el representante lo ve en otro navegador. Eso no pasaba
 
 ## Qué se movió
 
+### Login (corte `20261107x`)
+
+- Pantalla de Acceso única: reps a su cuaderno, jefes y admin al tablero; identidad por sesión (sin chips ni selector de rol).
+- Usuarios demo con contraseña pública para testers; admin con contraseña privada en el servidor.
+- Hermes solo responde con sesión.
+
+### Importar tours con preview (corte `20261107w`)
+
+- En `/ops/`, **Importar** abre archivo, foto o texto pegado.
+- `POST /api/imports/preview` mapea al directorio y a `Lead #` y no escribe tours. Confirmar usa `POST /api/tours`.
+- Foto en RAM; OCR local si hay Tesseract. Sin vendedor cloud.
+- Pruebas: `tests/test_import.py` y casos nuevos en `tests/e2e-ops.mjs`.
+
 ### Resultado del tour (corte `20261107r`)
 
 - Cada tour puede cerrarse con venta, no venta o abandono; con objeción, recuperable, siguiente paso o paso del roadmap, y nota filtrada (sin correos ni teléfonos).

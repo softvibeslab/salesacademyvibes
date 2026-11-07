@@ -9,23 +9,62 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LIVE = process.env.OPS_BASE || "";
 const PORT = 18000 + Math.floor(Math.random() * 1000);
 const TMP = mkdtempSync(path.join(tmpdir(), "ops-e2e-"));
+// Login (historia login-demo): la suite se autentica con sesión real, no con encabezado.
+const DEMO_PASSWORD = "Demo-2026";
+const ADMIN_PASSWORD = process.env.OPS_ADMIN_PASSWORD || (LIVE ? "" : "test-admin-pass");
+
+if (LIVE && !ADMIN_PASSWORD) {
+  console.log("e2e-ops: contra el sitio necesita OPS_ADMIN_PASSWORD (la suite restaura el ejemplo). Usa tests/live-smoke.mjs para la prueba sin admin.");
+  process.exit(0);
+}
 
 let child = null;
 const base = LIVE.replace(/\/$/, "") || `http://127.0.0.1:${PORT}`;
+const cookies = new Map();
 
-async function api(method, url, actor, body) {
-  const headers = { Accept: "application/json" };
-  if (actor) headers["X-Ops-Actor"] = actor;
-  if (body) headers["Content-Type"] = "application/json";
-  const response = await fetch(base + url, {
-    method,
-    headers,
-    body: body ? JSON.stringify(body) : undefined,
+function userOf(actor) {
+  if (actor === "admin") return "admin";
+  return actor.split(":")[1];
+}
+
+async function login(username, password) {
+  const response = await fetch(`${base}/api/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ username, password }),
   });
   const text = await response.text();
   let data;
   try { data = JSON.parse(text); } catch { data = { ok: false, raw: text.slice(0, 120) }; }
+  const raw = response.headers.get("set-cookie") || "";
+  const cookie = (raw.match(/sa_session=[^;]*/) || [""])[0];
+  return { status: response.status, data, cookie, raw };
+}
+
+async function cookieFor(actor) {
+  if (!cookies.has(actor)) {
+    const user = userOf(actor);
+    const step = await login(user, user === "admin" ? ADMIN_PASSWORD : DEMO_PASSWORD);
+    assert.equal(step.status, 200, `login de ${user}: ${JSON.stringify(step.data)}`);
+    cookies.set(actor, step.cookie);
+  }
+  return cookies.get(actor);
+}
+
+async function raw(method, url, { cookie, headers = {}, body } = {}) {
+  const h = { Accept: "application/json", ...headers };
+  if (cookie) h.Cookie = cookie;
+  if (body) h["Content-Type"] = "application/json";
+  const response = await fetch(base + url, { method, headers: h, body: body ? JSON.stringify(body) : undefined });
+  const text = await response.text();
+  let data;
+  try { data = JSON.parse(text); } catch { data = { ok: false, raw: text.slice(0, 120) }; }
   return { status: response.status, data };
+}
+
+async function api(method, url, actor, body) {
+  const cookie = actor ? await cookieFor(actor) : undefined;
+  return raw(method, url, { cookie, body });
 }
 
 async function waitHealth() {
@@ -41,14 +80,62 @@ async function waitHealth() {
 
 if (!LIVE) {
   child = spawn("python3", [path.join(ROOT, "server/ops_api.py")], {
-    env: { ...process.env, OPS_DATA: path.join(TMP, "ops.json"), OPS_PORT: String(PORT) },
+    env: { ...process.env, OPS_DATA: path.join(TMP, "ops.json"), OPS_PORT: String(PORT), OPS_ADMIN_PASSWORD: ADMIN_PASSWORD, OPS_COOKIE_SECURE: "0" },
     stdio: ["ignore", "ignore", "inherit"],
   });
 }
 
 try {
   await waitHealth();
-  let step = await api("POST", "/api/reset", "admin", {});
+  let step;
+
+  // ---- Login (historia login-demo) ----
+  // A1: login correcto entrega cookie de sesión HttpOnly
+  step = await login("ana", DEMO_PASSWORD);
+  assert.equal(step.status, 200, JSON.stringify(step.data));
+  assert.equal(step.data.user.id, "ana");
+  assert.equal(step.data.user.role, "rep");
+  assert.match(step.raw, /sa_session=/);
+  assert.match(step.raw, /HttpOnly/i);
+  assert.match(step.raw, /SameSite=Lax/i);
+  const anaCookie = step.cookie;
+  // A2: contraseña incorrecta o usuario inexistente → 401 con el mismo mensaje, sin cookie
+  step = await login("ana", "otra-cosa");
+  assert.equal(step.status, 401);
+  assert.equal(step.cookie, "");
+  const wrongMsg = step.data.error;
+  step = await login("nadie", DEMO_PASSWORD);
+  assert.equal(step.status, 401);
+  assert.equal(step.data.error, wrongMsg, "no revela si el usuario existe");
+  // A3: /api/me con y sin sesión
+  step = await raw("GET", "/api/me", { cookie: anaCookie });
+  assert.equal(step.status, 200);
+  assert.equal(step.data.user.id, "ana");
+  step = await raw("GET", "/api/me");
+  assert.equal(step.status, 401);
+  // A4: el encabezado X-Ops-Actor ya no autentica
+  step = await raw("GET", "/api/tours", { headers: { "X-Ops-Actor": "admin" } });
+  assert.equal(step.status, 401, "el encabezado de rol no debe dar acceso");
+  // A5: cookie inventada → 401
+  step = await raw("GET", "/api/me", { cookie: "sa_session=inventada123" });
+  assert.equal(step.status, 401);
+  // A6: admin solo con su contraseña privada
+  step = await login("admin", DEMO_PASSWORD);
+  assert.equal(step.status, 401, "el admin no usa la contraseña demo");
+  step = await login("admin", ADMIN_PASSWORD);
+  assert.equal(step.status, 200);
+  assert.equal(step.data.user.role, "admin");
+  // A7: cerrar sesión invalida la cookie
+  step = await raw("POST", "/api/logout", { cookie: anaCookie, body: {} });
+  assert.equal(step.status, 200);
+  step = await raw("GET", "/api/me", { cookie: anaCookie });
+  assert.equal(step.status, 401);
+  // A8: 5 intentos fallidos bloquean al usuario (429), aun con la contraseña correcta
+  for (let i = 0; i < 5; i += 1) await login("mira", "mala");
+  step = await login("mira", DEMO_PASSWORD);
+  assert.equal(step.status, 429);
+
+  step = await api("POST", "/api/reset", "admin", {});
   assert.equal(step.status, 200, step.data);
 
   step = await api("GET", "/api/directory");
@@ -224,7 +311,7 @@ try {
   assert.equal(step.status, 403);
   step = await api("DELETE", "/api/tours/v1/result", "jefe:jorge");
   assert.equal(step.status, 200);
-  step = await api("PUT", "/api/tours/v1/result", "", saleBody);
+  step = await raw("PUT", "/api/tours/v1/result", { body: saleBody });
   assert.equal(step.status, 401);
 
   // T07: cancelado → 409; futuro → 400 (AC-09)
@@ -289,6 +376,51 @@ try {
   }
   step = await api("PUT", "/api/tours/v2/result", "rep:ana", { ...noSale, note: "q".repeat(120) });
   assert.equal(step.status, 200, JSON.stringify(step.data));
+
+  step = await api("POST", "/api/reset", "admin", {});
+  assert.equal(step.status, 200);
+
+  // ---- Import preview (2026-11-07) ----
+  const listed = await api("GET", "/api/tours?date=2026-11-06", "admin");
+  const countBefore = listed.data.visits.length;
+  const csv = "rep,fecha,inicio,fin,lead,estado,nota\nAna,2026-11-06,17:00,18:00,Lead #8801,pendiente,Import e2e\n";
+  step = await api("POST", "/api/imports/preview", "jefe:jorge", {
+    text: csv, filename: "tours.csv", defaultDate: "2026-11-06",
+  });
+  assert.equal(step.status, 200, JSON.stringify(step.data));
+  assert.equal(step.data.rows.length, 1);
+  assert.equal(step.data.rows[0].visit.repId, "ana");
+  assert.equal(step.data.rows[0].visit.lead, "Lead #8801");
+  assert.equal(step.data.rows[0].selected, true);
+  const mappedVisit = step.data.rows[0].visit;
+  const afterPreview = await api("GET", "/api/tours?date=2026-11-06", "admin");
+  assert.equal(afterPreview.data.visits.length, countBefore);
+
+  step = await api("POST", "/api/tours", "jefe:jorge", mappedVisit);
+  assert.equal(step.status, 201, step.data);
+  const importedId = step.data.visit.id;
+  step = await api("GET", "/api/tours?rep=ana", "rep:ana");
+  assert.ok(step.data.visits.some((visit) => visit.id === importedId && visit.lead === "Lead #8801"));
+
+  step = await api("POST", "/api/imports/preview", "rep:ana", { text: csv, defaultDate: "2026-11-06" });
+  assert.equal(step.status, 403);
+
+  step = await api("POST", "/api/imports/preview", "jefe:rosa", {
+    text: "Ana 17:00-18:00 Lead #8809", defaultDate: "2026-11-06",
+  });
+  assert.equal(step.status, 200, JSON.stringify(step.data));
+  assert.ok(step.data.rows[0].issues.join(" ").includes("sala"));
+
+  step = await api("POST", "/api/imports/preview", "jefe:jorge", { text: "", defaultDate: "2026-11-06" });
+  assert.equal(step.status, 400);
+
+  const tinyPng = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==";
+  step = await api("POST", "/api/imports/preview", "jefe:jorge", {
+    image: tinyPng, mime: "image/png", defaultDate: "2026-11-06",
+  });
+  assert.equal(step.status, 200, JSON.stringify(step.data));
+  const afterImage = await api("GET", "/api/tours?date=2026-11-06", "admin");
+  assert.equal(afterImage.data.visits.length, countBefore + 1);
 
   step = await api("POST", "/api/reset", "admin", {});
   assert.equal(step.status, 200);

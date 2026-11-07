@@ -4,9 +4,11 @@ import {
 } from "../ops-store.js";
 
 const app = document.querySelector("#app");
+// Identidad desde la sesión (login-demo): ya no se elige el rol en pantalla.
 const session = {
-  role: sessionStorage.getItem("sa.ops.role") || "jefe",
-  jefeId: sessionStorage.getItem("sa.ops.jefe") || "jorge",
+  role: "",
+  jefeId: "",
+  userName: "",
   room: sessionStorage.getItem("sa.ops.room") || "todas",
   date: "2026-11-06",
   editing: null,
@@ -19,6 +21,15 @@ const session = {
   resultEditing: null,
   resultDraft: null,
   confirmResId: "",
+  importing: false,
+  importBusy: false,
+  importText: "",
+  importName: "",
+  importThumb: "",
+  importMime: "",
+  importImage: "",
+  importPreview: null,
+  importError: "",
 };
 const board = { rooms: [], people: [], visits: [], ready: false, busy: false, syncError: "" };
 const histOpen = new Set();
@@ -104,7 +115,28 @@ function showToast(text) {
   }, 2200);
 }
 
+async function whoAmI() {
+  try {
+    const data = await opsRequest("/api/me");
+    return data.user;
+  } catch (error) {
+    if (error.status === 401) window.location.replace("/");
+    return null;
+  }
+}
+
 async function pull() {
+  if (!session.role) {
+    const user = await whoAmI();
+    if (!user) return;
+    if (user.role === "rep") {
+      app.innerHTML = `<div class="wrap"><h1>Tablero de sala</h1><p>El tablero es para jefes de sala y administración, ${esc(user.name)}.</p><p><a class="back md-btn-filled" href="/">Ir a mi cuaderno</a> <button class="md-btn-tonal" data-logout type="button">Cerrar sesión</button></p></div>`;
+      return;
+    }
+    session.role = user.role;
+    session.jefeId = user.role === "jefe" ? user.id : "";
+    session.userName = user.name;
+  }
   board.busy = true;
   if (board.ready) render();
   try {
@@ -132,6 +164,24 @@ function esc(value) {
   return String(value ?? "").replace(/[&<>"']/g, (ch) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   }[ch]));
+}
+
+const MD_ICONS = {
+  check: "M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
+  refresh: "M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4z",
+  upload: "M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z",
+  photo: "M9 2 7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z",
+  add: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",
+  edit: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",
+  delete: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z",
+  fact: "M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z",
+  history: "M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.95 8.95 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z",
+  back: "M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",
+};
+
+function mdIcon(name) {
+  const d = MD_ICONS[name];
+  return d ? `<svg class="md-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>` : "";
 }
 
 function persistSession() {
@@ -196,19 +246,19 @@ function blankDraft(repId) {
 
 function render() {
   if (!board.ready && !board.people.length) {
-    app.innerHTML = `<div class="wrap"><h1>Tablero de sala</h1><p class="fine">Cargando el servidor…</p></div>`;
+    app.innerHTML = `${masthead("Cargando el servidor…")}<div class="wrap"><p class="fine">Cargando el servidor…</p></div>`;
     return;
   }
   const { ops, jefe } = scope();
   const reps = visibleReps();
-  const roleChips = [
-    ["jefe", "Jefe de sala"],
-    ["admin", "Administrador"],
-  ].map(([id, label]) => `<button class="chip ${session.role === id ? "on" : ""}" data-role="${id}" type="button">${label}</button>`).join("");
+  const roleChips = `<span class="chip on">${mdIcon("check")}${esc(session.userName)} · ${session.role === "admin" ? "Administrador" : `Jefe de sala · ${esc(roomName(ops, jefe?.roomId || ""))}`}</span>`;
   const jefeChips = session.role === "jefe"
-    ? ops.people.filter((person) => person.role === "jefe").map((person) => `<button class="chip ${session.jefeId === person.id ? "on" : ""}" data-jefe="${person.id}" type="button">${esc(person.name)} · ${esc(roomName(ops, person.roomId))}</button>`).join("")
-    : ops.rooms.map((room) => `<button class="chip ${session.room === room.id ? "on" : ""}" data-room="${room.id}" type="button">${esc(room.name)}</button>`).join("")
-      + `<button class="chip ${session.room === "todas" ? "on" : ""}" data-room="todas" type="button">Todas</button>`;
+    ? ""
+    : ops.rooms.map((room) => `<button class="chip md-filter-chip ${session.room === room.id ? "on" : ""}" data-room="${room.id}" type="button">${session.room === room.id ? mdIcon("check") : ""}${esc(room.name)}</button>`).join("")
+      + `<button class="chip md-filter-chip ${session.room === "todas" ? "on" : ""}" data-room="todas" type="button">${session.room === "todas" ? mdIcon("check") : ""}Todas</button>`;
+  const jumpTabs = reps.length > 1
+    ? `<nav class="rep-tabs" aria-label="Representantes">${reps.map((rep) => `<button class="chip md-assist-chip" data-jump="${esc(rep.id)}" type="button"><span class="md-avatar sm">${esc(rep.name.slice(0, 1))}</span>${esc(rep.name)} <b class="md-badge">${dayVisits(rep.id).length}</b></button>`).join("")}</nav>`
+    : "";
   const columns = reps.map((rep) => {
     const visits = dayVisits(rep.id);
     const cards = visits.map((visit) => {
@@ -223,85 +273,317 @@ function render() {
       const histList = histOpen.has(visit.id) && history.length
         ? `<div class="hist">${history.slice().reverse().map((entry) => `<div class="fine">${esc(fmtAt(entry.at))} · ${esc(personName(entry.by))} · ${entry.previous ? `antes: ${esc(resultLabel(entry.previous))}` : "alta del resultado"}</div>`).join("")}</div>`
         : "";
-      return `<article class="visit ${session.focusId === visit.id ? "fresh" : ""} ${session.resultEditing === visit.id ? "editing" : ""}" data-visit="${esc(visit.id)}">
+      return `<article class="visit md-card ${session.focusId === visit.id ? "fresh" : ""} ${session.resultEditing === visit.id ? "editing" : ""}" data-visit="${esc(visit.id)}">
       <header><b>${esc(visit.start)}–${esc(visit.end)}</b><span class="tag ${esc(visit.status)}">${esc(STATUS_LABEL[visit.status] || visit.status)}</span></header>
-      <div>${esc(visit.lead)}</div>
+      <div class="visit-lead">${esc(visit.lead)}</div>
       ${visit.note ? `<div class="fine">${esc(visit.note)}</div>` : ""}
       ${resLine}
       <div class="actions">
-        <button type="button" data-edit="${esc(visit.id)}">Editar</button>
-        <button type="button" data-drop="${esc(visit.id)}">${session.confirmId === visit.id ? "Confirmar quitar" : "Quitar"}</button>
-        ${visit.status !== "cancelado" && tourEnded(visit) ? `<button type="button" data-result="${esc(visit.id)}">Resultado</button>` : ""}
-        ${result ? `<button type="button" data-dropres="${esc(visit.id)}">${session.confirmResId === visit.id ? "Confirmar quitar resultado" : "Quitar resultado"}</button>` : ""}
-        ${history.length ? `<button type="button" data-hist="${esc(visit.id)}">Cambios (${history.length})</button>` : ""}
+        <button class="md-btn-tonal" type="button" data-edit="${esc(visit.id)}">${mdIcon("edit")}Editar</button>
+        <button class="md-btn-text danger" type="button" data-drop="${esc(visit.id)}">${mdIcon("delete")}${session.confirmId === visit.id ? "Confirmar quitar" : "Quitar"}</button>
+        ${visit.status !== "cancelado" && tourEnded(visit) ? `<button class="md-btn-tonal" type="button" data-result="${esc(visit.id)}">${mdIcon("fact")}Resultado</button>` : ""}
+        ${result ? `<button class="md-btn-text danger" type="button" data-dropres="${esc(visit.id)}">${session.confirmResId === visit.id ? "Confirmar quitar resultado" : "Quitar resultado"}</button>` : ""}
+        ${history.length ? `<button class="md-btn-text" type="button" data-hist="${esc(visit.id)}">${mdIcon("history")}Cambios (${history.length})</button>` : ""}
       </div>
       ${histList}
     </article>`;
     }).join("");
     const open = session.draft && (session.editing === "new" ? session.draft.repId === rep.id : dayVisits(rep.id).some((visit) => visit.id === session.editing));
-    return `<section class="col ${open ? "on" : ""}">
-      <div class="row"><h2>${esc(rep.name)}${rep.id === ME_REP ? " · app" : ""}</h2><span class="fine">${visits.length}</span></div>
-      <div class="fine">${esc(roomName(ops, rep.roomId))}</div>
-      ${cards || `<p class="fine">Sin tours este día.</p>`}
-      <button class="line" data-new="${esc(rep.id)}" type="button" style="margin-top:10px">Asignar tour</button>
+    return `<section class="col md-card ${open ? "on" : ""}" data-col="${esc(rep.id)}">
+      <div class="col-head">
+        <span class="md-avatar">${esc(rep.name.slice(0, 1))}</span>
+        <div class="col-title">
+          <h2>${esc(rep.name)}${rep.id === ME_REP ? " · app" : ""}</h2>
+          <div class="fine">${esc(roomName(ops, rep.roomId))}</div>
+        </div>
+        <span class="md-badge">${visits.length}</span>
+      </div>
+      ${cards || `<p class="fine empty-state">Sin tours este día.</p>`}
+      <button class="line md-btn-tonal full" data-new="${esc(rep.id)}" type="button">${mdIcon("add")}Asignar tour</button>
     </section>`;
   }).join("");
-  const form = session.editing ? formPanel(reps) : (session.resultEditing ? resultPanel() : "");
-  const repAdmin = session.role === "admin" ? `<section class="panel">
+  const form = session.importing
+    ? importPanel(reps)
+    : (session.editing ? formPanel(reps) : (session.resultEditing ? resultPanel() : ""));
+  const repAdmin = session.role === "admin" ? `<section class="panel md-card">
       <h2>Reps por sala</h2>
       <p class="fine">El administrador mueve al rep de sala. Los tours se quedan con esa persona.</p>
-      <div class="reps">${ops.people.filter((person) => person.role === "rep").map((rep) => `<div class="rep">
-        <b>${esc(rep.name)}</b>
-        <select data-move="${esc(rep.id)}">${ops.rooms.map((room) => `<option value="${esc(room.id)}" ${room.id === rep.roomId ? "selected" : ""}>${esc(room.name)}</option>`).join("")}</select>
+      <div class="reps">${ops.people.filter((person) => person.role === "rep").map((rep) => `<div class="rep md-list-item">
+        <span class="rep-ident"><span class="md-avatar sm">${esc(rep.name.slice(0, 1))}</span><b>${esc(rep.name)}</b></span>
+        <select class="md-select" data-move="${esc(rep.id)}">${ops.rooms.map((room) => `<option value="${esc(room.id)}" ${room.id === rep.roomId ? "selected" : ""}>${esc(room.name)}</option>`).join("")}</select>
       </div>`).join("")}</div>
-      <button class="ghost" data-reset type="button">${session.confirmReset ? "Confirmar restaurar ejemplo" : "Restaurar ejemplo"}</button>
-    </section>` : `<section class="panel"><h2>Tu sala</h2><p class="fine">${esc(jefe ? `${jefe.name} ve solo ${roomName(ops, jefe.roomId)}.` : "")} Los tours del día se asignan en las columnas. El resultado baja a la app del rep al abrir o al actualizar.</p></section>`;
-  app.innerHTML = `<div class="wrap">
-    <header class="top">
-      <div>
-        <h1>Tablero de sala</h1>
-        <p>Se guarda en el servidor. Cada rep ve lo suyo en la app.</p>
-        ${board.busy ? `<p class="fine">Actualizando…</p>` : ""}
-        ${board.syncError ? `<div class="warn">${esc(board.syncError)}</div>` : ""}
-        ${session.toast ? `<div class="toast">${esc(session.toast)}</div>` : ""}
+      <button class="ghost md-btn-text danger" data-reset type="button">${session.confirmReset ? "Confirmar restaurar ejemplo" : "Restaurar ejemplo"}</button>
+    </section>` : `<section class="panel md-card"><h2>Tu sala</h2><p class="fine">${esc(jefe ? `${jefe.name} ve solo ${roomName(ops, jefe.roomId)}.` : "")} Los tours del día se asignan en las columnas. El resultado baja a la app del rep al abrir o al actualizar.</p></section>`;
+  app.innerHTML = `<div class="shell">
+    ${masthead(board.busy ? "Actualizando…" : "", board.syncError, session.toast)}
+    <div class="wrap">
+      <p class="kicker">Sales Academy / operación de sala</p>
+      <h1>Tablero de <em>sala</em></h1>
+      <p class="lede">Se guarda en el servidor. Cada rep ve lo suyo en la app.</p>
+      <div class="toolbar">
+        <div class="switch md-segmented" role="group" aria-label="Rol">${roleChips}</div>
+        <div class="bar md-chip-set" role="group" aria-label="Sala">${jefeChips}</div>
+        <div class="datebar">
+          <button class="icon md-icon-btn" data-day="-1" type="button" aria-label="Día anterior">‹</button>
+          <strong>${esc(titleDate(session.date))}</strong>
+          <button class="icon md-icon-btn" data-day="1" type="button" aria-label="Día siguiente">›</button>
+          <button class="line md-btn-outlined" data-reload type="button">${mdIcon("refresh")}Actualizar</button>
+          <button class="gold md-btn-filled" data-import type="button">${mdIcon("upload")}Importar</button>
+        </div>
       </div>
-      <a class="back" href="/">Volver a la app</a>
-    </header>
-    <div class="switch">${roleChips}</div>
-    <div class="bar">${jefeChips}</div>
-    <div class="datebar">
-      <button class="icon" data-day="-1" type="button" aria-label="Día anterior"><span class="material-symbols-outlined">chevron_left</span></button>
-      <strong>${esc(titleDate(session.date))}</strong>
-      <button class="icon" data-day="1" type="button" aria-label="Día siguiente"><span class="material-symbols-outlined">chevron_right</span></button>
-      <button class="line" data-reload type="button">Actualizar</button>
+      ${form}
+      ${jumpTabs}
+      <p class="fine board-hint">Toca un nombre o desliza para ver cada rep.</p>
+      <div class="board">${columns || `<section class="col md-card"><p>Esta sala no tiene reps.</p></section>`}</div>
+      ${repAdmin}
     </div>
-    ${form}
-    <div class="board">${columns || `<section class="col"><p>Esta sala no tiene reps.</p></section>`}</div>
-    ${repAdmin}
   </div>`;
   if (session.editing) document.querySelector(".composer")?.scrollIntoView({ block: "nearest" });
+}
+
+function masthead(status, error, toast) {
+  return `<header class="masthead">
+    <a class="brand" href="/">
+      <span class="brand-mark">S<span>A</span></span>
+      <span>SALES<br>ACADEMY<span class="brand-sub">TABLERO DE SALA</span></span>
+    </a>
+    <div class="masthead-actions">
+      ${status ? `<p class="fine">${esc(status)}</p>` : ""}
+      ${error ? `<div class="warn">${esc(error)}</div>` : ""}
+      ${toast ? `<div class="toast md-snackbar" role="status">${esc(toast)}</div>` : ""}
+      <a class="back md-btn-filled" href="/">${mdIcon("back")}Volver a la app</a>
+      <button class="md-btn-tonal" data-logout type="button">Cerrar sesión</button>
+    </div>
+  </header>`;
+}
+
+function openImport() {
+  session.importing = true;
+  session.editing = null;
+  session.draft = null;
+  session.resultEditing = null;
+  session.resultDraft = null;
+  session.importError = "";
+  session.error = "";
+  render();
+}
+
+function closeImport() {
+  session.importing = false;
+  session.importBusy = false;
+  session.importText = "";
+  session.importName = "";
+  session.importThumb = "";
+  session.importMime = "";
+  session.importImage = "";
+  session.importPreview = null;
+  session.importError = "";
+  render();
+}
+
+function readImportDraft() {
+  const area = app.querySelector("[data-import-text]");
+  if (area) session.importText = area.value;
+  if (!session.importPreview) return;
+  app.querySelectorAll("[data-isel]").forEach((box) => {
+    const row = session.importPreview.rows[Number(box.dataset.isel)];
+    if (row) row.selected = box.checked;
+  });
+  app.querySelectorAll("[data-imap]").forEach((field) => {
+    const [index, key] = field.dataset.imap.split(".");
+    const row = session.importPreview.rows[Number(index)];
+    if (row?.visit && key) row.visit[key] = field.value;
+  });
+}
+
+function importPanel(reps) {
+  const preview = session.importPreview;
+  const rows = preview?.rows || [];
+  const ready = rows.filter((row) => row.selected);
+  const table = rows.length ? `<div class="preview-scroll"><table class="preview-table">
+      <thead><tr><th></th><th>Rep</th><th>Fecha</th><th>Inicio</th><th>Fin</th><th>Lead</th><th>Estado</th><th>Nota</th></tr></thead>
+      <tbody>${rows.map((row, index) => {
+        const visit = row.visit || {};
+        const blocked = (row.issues || []).length || row.clash;
+        return `<tr class="${blocked ? (row.clash ? "clash" : "bad") : ""}">
+          <td data-label="Incluir"><input type="checkbox" data-isel="${index}" ${row.selected ? "checked" : ""}></td>
+          <td data-label="Rep"><select data-imap="${index}.repId">${reps.map((rep) => `<option value="${esc(rep.id)}" ${rep.id === visit.repId ? "selected" : ""}>${esc(rep.name)}</option>`).join("")}</select></td>
+          <td data-label="Fecha"><input data-imap="${index}.date" type="date" value="${esc(visit.date || session.date)}"></td>
+          <td data-label="Inicio"><input data-imap="${index}.start" type="time" step="60" value="${esc(visit.start || "")}"></td>
+          <td data-label="Fin"><input data-imap="${index}.end" type="time" step="60" value="${esc(visit.end || "")}"></td>
+          <td data-label="Lead"><input data-imap="${index}.lead" value="${esc(visit.lead || "")}"></td>
+          <td data-label="Estado"><select data-imap="${index}.status">${Object.entries(STATUS_LABEL).map(([id, label]) => `<option value="${id}" ${id === visit.status ? "selected" : ""}>${label}</option>`).join("")}</select></td>
+          <td data-label="Nota"><input data-imap="${index}.note" maxlength="80" value="${esc(visit.note || "")}">
+            ${blocked ? `<p class="issues">${esc((row.issues || []).join(" "))}</p>` : ""}</td>
+        </tr>`;
+      }).join("")}</tbody>
+    </table></div>` : (preview ? `<p class="fine">No encontré tours en ese archivo. Revisa el texto o toma otra foto.</p>` : "");
+  const warnings = (preview?.warnings || []).map((item) => `<div class="warn">${esc(item)}</div>`).join("");
+  return `<section class="panel composer md-card">
+    <p class="kicker">Importar / confirmar</p>
+    <h2>Importar tours</h2>
+    <p class="fine">Sube un CSV, pega la lista o toma una foto. Se mapea al directorio y a Lead #. Nada se guarda hasta que confirmas.</p>
+    ${session.importError ? `<div class="warn" role="alert">${esc(session.importError)}</div>` : ""}
+    <div class="dropzone" data-dropzone>
+      <p class="fine">CSV, JSON, texto o foto. Máximo 1.5 MB. Ejemplo: Ana, 09:00-10:00, Lead #8801</p>
+      <div class="import-actions">
+        <button class="line md-btn-tonal" data-pick-file type="button">${mdIcon("upload")}Archivo</button>
+        <button class="line md-btn-tonal" data-pick-photo type="button">${mdIcon("photo")}Foto</button>
+        <input data-import-file type="file" accept=".csv,.json,.txt,.tsv,text/csv,application/json,text/plain,image/*" hidden>
+        <input data-import-photo type="file" accept="image/*" capture="environment" hidden>
+      </div>
+      ${session.importName ? `<p class="fine">${esc(session.importName)}</p>` : ""}
+      ${session.importThumb ? `<img class="thumb" alt="Vista previa de la foto" src="${esc(session.importThumb)}">` : ""}
+    </div>
+    <label class="md-field">Texto a analizar<textarea data-import-text placeholder="Ana 09:00-10:00 Lead #8801">${esc(session.importText)}</textarea></label>
+    ${warnings}
+    ${table}
+    <div class="actions">
+      <button class="gold md-btn-filled" data-analyze type="button" ${session.importBusy ? "disabled" : ""}>${session.importBusy ? "Analizando…" : "Analizar"}</button>
+      <button class="gold md-btn-filled" data-confirm-import type="button" ${session.importBusy || !ready.length ? "disabled" : ""}>Confirmar ${ready.length || ""}</button>
+      <button class="line md-btn-outlined" data-import-close type="button">Cancelar</button>
+    </div>
+  </section>`;
+}
+
+async function analyzeImport() {
+  if (session.importBusy) return;
+  readImportDraft();
+  session.importBusy = true;
+  session.importError = "";
+  render();
+  try {
+    const body = {
+      text: session.importText,
+      filename: session.importName,
+      mime: session.importMime,
+      defaultDate: session.date,
+    };
+    if (session.importImage) body.image = session.importImage;
+    const data = await opsRequest("/api/imports/preview", { method: "POST", actor: actor(), body });
+    session.importPreview = data;
+    session.importError = "";
+  } catch (error) {
+    session.importError = error.message;
+  } finally {
+    session.importBusy = false;
+    render();
+  }
+}
+
+async function confirmImport() {
+  if (session.importBusy || !session.importPreview) return;
+  readImportDraft();
+  const rows = session.importPreview.rows.filter((row) => row.selected);
+  if (!rows.length) {
+    session.importError = "No hay filas listas para confirmar.";
+    render();
+    return;
+  }
+  session.importBusy = true;
+  session.importError = "";
+  render();
+  const saved = [];
+  const failed = [];
+  try {
+    for (const row of rows) {
+      try {
+        const created = await opsRequest("/api/tours", { method: "POST", actor: actor(), body: row.visit });
+        saved.push(created.visit?.id);
+      } catch (error) {
+        failed.push(error.message);
+        row.issues = listIssues(row, error.message);
+        row.selected = false;
+      }
+    }
+    session.focusId = saved[saved.length - 1] || "";
+    if (saved.length) showToast(failed.length
+      ? `${saved.length} tours confirmados. ${failed.length} no pasaron.`
+      : `${saved.length} tours confirmados.`);
+    if (!failed.length) {
+      session.importing = false;
+      session.importPreview = null;
+      session.importText = "";
+      session.importName = "";
+      session.importThumb = "";
+      session.importImage = "";
+    } else {
+      session.importError = failed[0];
+    }
+    await pull();
+  } finally {
+    session.importBusy = false;
+    if (session.importing) render();
+  }
+}
+
+function listIssues(row, message) {
+  const issues = listCopy(row.issues);
+  if (message && !issues.includes(message)) issues.push(message);
+  return issues;
+}
+
+function listCopy(value) {
+  return Array.isArray(value) ? value.slice() : [];
+}
+
+function fileKind(file) {
+  const type = (file.type || "").toLowerCase();
+  const name = (file.name || "").toLowerCase();
+  if (type.startsWith("image/") || /\.(png|jpe?g|webp|gif)$/.test(name)) return "image";
+  return "text";
+}
+
+function readPickedFile(file) {
+  if (!file) return;
+  if (file.size > 1_500_000) {
+    session.importError = "El archivo es muy grande (máximo 1.5 MB).";
+    render();
+    return;
+  }
+  const kind = fileKind(file);
+  const reader = new FileReader();
+  reader.onload = () => {
+    session.importName = file.name || (kind === "image" ? "foto" : "archivo");
+    session.importMime = file.type || "";
+    session.importPreview = null;
+    session.importError = "";
+    if (kind === "image") {
+      const url = String(reader.result || "");
+      session.importThumb = url;
+      session.importImage = url.includes(",") ? url.split(",")[1] : url;
+    } else {
+      session.importText = String(reader.result || "");
+      session.importThumb = "";
+      session.importImage = "";
+    }
+    render();
+  };
+  if (kind === "image") reader.readAsDataURL(file);
+  else reader.readAsText(file);
 }
 
 function formPanel(reps) {
   const draft = session.draft;
   const clash = overlaps(draft, session.editing === "new" ? "" : session.editing);
-  return `<section class="panel composer">
+  return `<section class="panel composer md-card">
+    <p class="kicker">${session.editing === "new" ? "Asignar" : "Editar"}</p>
     <h2>${session.editing === "new" ? "Nuevo tour" : "Editar tour"}</h2>
     <p class="fine">${esc(titleDate(session.date))} · ${esc(personName(draft.repId))}. El lead se queda como Lead #.</p>
     ${session.error ? `<div class="warn">${esc(session.error)}</div>` : ""}
     ${clash ? `<div class="warn">Ese horario se empalma con otro tour del mismo rep. Cámbialo para guardar.</div>` : ""}
     <div class="grid">
-      <label>Rep<select data-draft="repId">${reps.map((rep) => `<option value="${esc(rep.id)}" ${rep.id === draft.repId ? "selected" : ""}>${esc(rep.name)}</option>`).join("")}</select></label>
-      <label>Lead<input data-draft="lead" list="leads" value="${esc(draft.lead)}"></label>
-      <label>Inicio<input data-draft="start" type="time" step="60" value="${esc(normalizeClock(draft.start) || draft.start)}"></label>
-      <label>Fin<input data-draft="end" type="time" step="60" value="${esc(normalizeClock(draft.end) || draft.end)}"></label>
-      <label>Estado<select data-draft="status">${Object.entries(STATUS_LABEL).map(([id, label]) => `<option value="${id}" ${id === draft.status ? "selected" : ""}>${label}</option>`).join("")}</select></label>
-      <label>Nota<input data-draft="note" value="${esc(draft.note)}" maxlength="80"></label>
+      <label class="md-field span-2">Rep<select data-draft="repId">${reps.map((rep) => `<option value="${esc(rep.id)}" ${rep.id === draft.repId ? "selected" : ""}>${esc(rep.name)}</option>`).join("")}</select></label>
+      <label class="md-field span-2">Lead<input data-draft="lead" list="leads" value="${esc(draft.lead)}"></label>
+      <label class="md-field">Inicio<input data-draft="start" type="time" step="60" value="${esc(normalizeClock(draft.start) || draft.start)}"></label>
+      <label class="md-field">Fin<input data-draft="end" type="time" step="60" value="${esc(normalizeClock(draft.end) || draft.end)}"></label>
+      <label class="md-field span-2">Estado<select data-draft="status">${Object.entries(STATUS_LABEL).map(([id, label]) => `<option value="${id}" ${id === draft.status ? "selected" : ""}>${label}</option>`).join("")}</select></label>
+      <label class="md-field span-2">Nota<input data-draft="note" value="${esc(draft.note)}" maxlength="80"></label>
     </div>
     <datalist id="leads">${EXAMPLE_LEADS.map((lead) => `<option value="${esc(lead)}"></option>`).join("")}</datalist>
     <div class="actions">
-      <button class="gold" data-save type="button" ${clash ? "disabled" : ""}>Guardar</button>
-      <button class="line" data-cancel type="button">Cancelar</button>
+      <button class="gold md-btn-filled" data-save type="button" ${clash ? "disabled" : ""}>Guardar</button>
+      <button class="line md-btn-outlined" data-cancel type="button">Cancelar</button>
     </div>
   </section>`;
 }
@@ -344,38 +626,39 @@ function resultPanel() {
   const rep = board.people.find((person) => person.id === visit.repId);
   const jefes = board.people.filter((person) => person.role === "jefe" && person.roomId === rep?.roomId);
   const owners = [rep, ...jefes].filter(Boolean);
-  const segChips = catalogs.outcomes.map((item) => `<button class="chip ${draft.outcome === item.id ? "on" : ""}" data-rout="${esc(item.id)}" type="button">${esc(item.label)}</button>`).join("");
+  const segChips = catalogs.outcomes.map((item) => `<button class="chip ${draft.outcome === item.id ? "on" : ""}" data-rout="${esc(item.id)}" type="button" aria-pressed="${draft.outcome === item.id}">${draft.outcome === item.id ? mdIcon("check") : ""}${esc(item.label)}</button>`).join("");
   let fields = "";
   if (draft.outcome === "venta") {
     fields = `
-      <label>Divisa<select data-rdraft="currency">${catalogs.currencies.map((cur) => `<option ${cur === draft.currency ? "selected" : ""}>${esc(cur)}</option>`).join("")}</select></label>
-      <label>Volumen<input data-rdraft="amount" inputmode="decimal" value="${esc(draft.amount)}"></label>`;
+      <label class="md-field">Divisa<select data-rdraft="currency">${catalogs.currencies.map((cur) => `<option ${cur === draft.currency ? "selected" : ""}>${esc(cur)}</option>`).join("")}</select></label>
+      <label class="md-field">Volumen<input data-rdraft="amount" inputmode="decimal" value="${esc(draft.amount)}"></label>`;
   } else if (draft.outcome === "no_venta") {
     fields = `
-      <label>Objeción<select data-rdraft="objection"><option value="" ${!draft.objection ? "selected" : ""}>Elige</option>${catalogs.objections.map((item) => `<option value="${esc(item.id)}" ${item.id === draft.objection ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label>
-      ${draft.objection === "otra" ? `<label>¿Cuál?<input data-rdraft="objectionOther" maxlength="60" value="${esc(draft.objectionOther)}"></label>` : ""}
-      <label>¿Se puede recuperar?<select data-rdraft="recoverable"><option value="" ${!draft.recoverable ? "selected" : ""}>Elige</option><option value="si" ${draft.recoverable === "si" ? "selected" : ""}>Sí</option><option value="no" ${draft.recoverable === "no" ? "selected" : ""}>No</option></select></label>
+      <label class="md-field">Objeción<select data-rdraft="objection"><option value="" ${!draft.objection ? "selected" : ""}>Elige</option>${catalogs.objections.map((item) => `<option value="${esc(item.id)}" ${item.id === draft.objection ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label>
+      ${draft.objection === "otra" ? `<label class="md-field">¿Cuál?<input data-rdraft="objectionOther" maxlength="60" value="${esc(draft.objectionOther)}"></label>` : ""}
+      <label class="md-field">¿Se puede recuperar?<select data-rdraft="recoverable"><option value="" ${!draft.recoverable ? "selected" : ""}>Elige</option><option value="si" ${draft.recoverable === "si" ? "selected" : ""}>Sí</option><option value="no" ${draft.recoverable === "no" ? "selected" : ""}>No</option></select></label>
       ${draft.recoverable === "si" ? `
-      <label>Siguiente paso<select data-rdraft="nextAction">${catalogs.actions.map((item) => `<option value="${esc(item.id)}" ${item.id === draft.nextAction ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label>
-      <label>Fecha<input data-rdraft="nextDate" type="date" min="${esc(visit.date)}" value="${esc(draft.nextDate)}"></label>
-      <label>Responsable<select data-rdraft="nextOwner">${owners.map((person) => `<option value="${esc(person.id)}" ${person.id === draft.nextOwner ? "selected" : ""}>${esc(person.name)} (${person.role === "jefe" ? "jefe" : "rep"})</option>`).join("")}</select></label>` : ""}`;
+      <label class="md-field">Siguiente paso<select data-rdraft="nextAction">${catalogs.actions.map((item) => `<option value="${esc(item.id)}" ${item.id === draft.nextAction ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label>
+      <label class="md-field">Fecha<input data-rdraft="nextDate" type="date" min="${esc(visit.date)}" value="${esc(draft.nextDate)}"></label>
+      <label class="md-field">Responsable<select data-rdraft="nextOwner">${owners.map((person) => `<option value="${esc(person.id)}" ${person.id === draft.nextOwner ? "selected" : ""}>${esc(person.name)} (${person.role === "jefe" ? "jefe" : "rep"})</option>`).join("")}</select></label>` : ""}`;
   } else {
     const steps = catalogs.failSteps.length ? catalogs.failSteps : Array.from({ length: 11 }, (_, index) => ({ n: index + 1, title: `Paso ${index + 1}` }));
-    fields = `<label>¿En qué paso se cortó?<select data-rdraft="failStep"><option value="0" ${!Number(draft.failStep) ? "selected" : ""}>Elige el paso</option>${steps.map((step) => `<option value="${step.n}" ${Number(draft.failStep) === step.n ? "selected" : ""}>${step.n} · ${esc(step.title)}</option>`).join("")}</select></label>`;
+    fields = `<label class="md-field span-2">¿En qué paso se cortó?<select data-rdraft="failStep"><option value="0" ${!Number(draft.failStep) ? "selected" : ""}>Elige el paso</option>${steps.map((step) => `<option value="${step.n}" ${Number(draft.failStep) === step.n ? "selected" : ""}>${step.n} · ${esc(step.title)}</option>`).join("")}</select></label>`;
   }
-  return `<section class="panel composer">
+  return `<section class="panel composer md-card">
+    <p class="kicker">Resultado</p>
     <h2>Resultado del tour · ${esc(personName(visit.repId))} · ${esc(visit.start)}–${esc(visit.end)} · ${esc(visit.lead)}</h2>
     ${visit.result ? `<p class="fine">Hoy: ${esc(resultLabel(visit.result))}. Al guardar lo reemplazas.</p>` : ""}
     ${session.error ? `<div class="warn" role="alert">${esc(session.error)}${session.error.includes("Alguien más") ? ` <button type="button" data-reload class="linklike">Actualizar</button>` : ""}</div>` : ""}
-    <div class="switch">${segChips}</div>
+    <div class="switch md-segmented" role="group" aria-label="Resultado">${segChips}</div>
     <div class="grid">
       ${fields}
-      <label>Nota (opcional)<input data-rdraft="note" maxlength="120" value="${esc(draft.note)}"></label>
+      <label class="md-field span-2">Nota (opcional)<input data-rdraft="note" maxlength="120" value="${esc(draft.note)}"></label>
     </div>
     <p class="fine">Sin nombres, correos ni teléfonos.</p>
     <div class="actions">
-      <button class="gold" data-saveres type="button" ${writing ? "disabled" : ""}>Guardar resultado</button>
-      <button class="line" data-cancelres type="button">Cancelar</button>
+      <button class="gold md-btn-filled" data-saveres type="button" ${writing ? "disabled" : ""}>Guardar resultado</button>
+      <button class="line md-btn-outlined" data-cancelres type="button">Cancelar</button>
     </div>
   </section>`;
 }
@@ -482,6 +765,11 @@ async function saveVisit() {
 }
 
 app.addEventListener("click", async (event) => {
+  if (event.target.closest("[data-logout]")) {
+    try { await opsRequest("/api/logout", { method: "POST", body: {} }); } catch { /* sin sesión */ }
+    window.location.replace("/");
+    return;
+  }
   const role = event.target.closest("[data-role]");
   if (role) {
     session.role = role.dataset.role;
@@ -506,6 +794,11 @@ app.addEventListener("click", async (event) => {
     pull();
     return;
   }
+  const jump = event.target.closest("[data-jump]");
+  if (jump) {
+    document.querySelector(`[data-col="${CSS.escape(jump.dataset.jump)}"]`)?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    return;
+  }
   const day = event.target.closest("[data-day]");
   if (day) {
     session.date = addDays(session.date, Number(day.dataset.day));
@@ -514,8 +807,33 @@ app.addEventListener("click", async (event) => {
     pull();
     return;
   }
+  if (event.target.closest("[data-import-close]")) {
+    closeImport();
+    return;
+  }
+  if (event.target.closest("[data-analyze]")) {
+    analyzeImport();
+    return;
+  }
+  if (event.target.closest("[data-confirm-import]")) {
+    confirmImport();
+    return;
+  }
+  if (event.target.closest("[data-pick-file]")) {
+    app.querySelector("[data-import-file]")?.click();
+    return;
+  }
+  if (event.target.closest("[data-pick-photo]")) {
+    app.querySelector("[data-import-photo]")?.click();
+    return;
+  }
+  if (event.target.closest("[data-import]")) {
+    openImport();
+    return;
+  }
   const create = event.target.closest("[data-new]");
   if (create) {
+    session.importing = false;
     session.editing = "new";
     session.draft = blankDraft(create.dataset.new);
     session.resultEditing = null;
@@ -531,6 +849,7 @@ app.addEventListener("click", async (event) => {
     if (!visit) return;
     session.resultEditing = visit.id;
     session.resultDraft = blankResultDraft(visit);
+    session.importing = false;
     session.editing = null;
     session.draft = null;
     session.error = "";
@@ -652,6 +971,11 @@ app.addEventListener("click", async (event) => {
 });
 
 app.addEventListener("change", async (event) => {
+  if (event.target.matches("[data-import-file], [data-import-photo]")) {
+    readPickedFile(event.target.files?.[0]);
+    event.target.value = "";
+    return;
+  }
   if (event.target.dataset.draft) {
     readDraft();
     session.error = "";
@@ -684,6 +1008,23 @@ app.addEventListener("change", async (event) => {
     board.syncError = error.message;
     render();
   }
+});
+
+app.addEventListener("dragover", (event) => {
+  const zone = event.target.closest("[data-dropzone]");
+  if (!zone) return;
+  event.preventDefault();
+  zone.classList.add("on");
+});
+app.addEventListener("dragleave", (event) => {
+  event.target.closest("[data-dropzone]")?.classList.remove("on");
+});
+app.addEventListener("drop", (event) => {
+  const zone = event.target.closest("[data-dropzone]");
+  if (!zone) return;
+  event.preventDefault();
+  zone.classList.remove("on");
+  readPickedFile(event.dataTransfer.files?.[0]);
 });
 
 pull();

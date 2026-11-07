@@ -1,6 +1,19 @@
 # Inicio rápido
 
-Tres minutos. Dos pestañas. Sin cuenta.
+Tres minutos. Dos pestañas.
+
+## Acceso
+
+Usuario = nombre de pila en minúsculas. Contraseña demo: `Demo-2026`.
+
+| Usuario | Rol |
+|---|---|
+| `ana`, `luis` | Rep · Sala Norte |
+| `mira`, `teo` | Rep · Sala Sur |
+| `jorge` | Jefe · Sala Norte |
+| `rosa` | Jefa · Sala Sur |
+
+El rep entra a su cuaderno; el jefe va directo al tablero. El administrador tiene contraseña privada (no está en esta guía). Datos 100 % de ejemplo: no captures nombres, teléfonos ni montos reales.
 
 ## 1. App del rep
 

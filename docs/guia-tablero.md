@@ -26,6 +26,16 @@ Jorge no asigna a Teo. El servidor lo rechaza.
 
 Empalme: aviso y no guarda. Cancelado no cuenta para el empalme.
 
+## Importar varios de un jalón
+
+1. **Importar** junto a Actualizar.
+2. Sube un CSV o JSON, pega texto o toma una foto.
+3. **Analizar**. El tablero propone reps del directorio (Ana, Luis, Mira, Teo) y leads `Lead #`.
+4. Revisa la tabla, corrige lo que falte y **Confirmar**.
+5. Cada fila aceptada se crea con el mismo alta de un tour suelto. Las que chocan o traen nombre real se quedan marcadas y no se guardan.
+
+La foto no se queda en el servidor. Si no se lee, pega el texto.
+
 ## Qué baja a la app
 
 El tour queda en el servidor. El rep lo ve al abrir Home o Calendario, al tocar Actualizar, al volver a la pestaña o en el refresco de 15 s. Cancelado no se lista en la app.

@@ -34,6 +34,10 @@ Identidad: `sessionStorage sa.app.rep`. Atajos: `localStorage sa.home.shortcuts`
 
 Sesión: `sa.ops.role`, `sa.ops.jefe`, `sa.ops.room` en `sessionStorage`.
 
+## Sesión (login-demo)
+
+La identidad viaja en la cookie `sa_session` (HttpOnly, Secure, SameSite=Lax, 12 h). `POST /api/login {username, password}`, `POST /api/logout`, `GET /api/me`. Reps y jefes usan la contraseña demo; el admin, `OPS_ADMIN_PASSWORD` del servidor. 5 fallos por usuario en 10 min → 429. El encabezado `X-Ops-Actor` ya no autentica (solo con `OPS_ALLOW_ACTOR_HEADER=1`, para el selftest). Hermes (`/copiloto/api/hermes`) exige sesión.
+
 ## Contrato del API
 
 Base live: `https://salesacademy.softvibes.art/api/`
@@ -50,6 +54,7 @@ Hora guardada: `HH:MM`. Acepta `9:00`, `09:00`, `09:00:00`.
 | GET | `/rooms` | admin, jefe, rep | Salas y personas visibles para ese actor |
 | GET | `/tours?date=&rep=&room=&from=&to=` | admin, jefe, rep | Visitas filtradas y acotadas al alcance |
 | POST | `/tours` | admin, jefe | Crea. 201. 409 si empalma |
+| POST | `/imports/preview` | admin, jefe | Propone filas mapeadas. No escribe tours |
 | PATCH | `/tours/:id` | admin, jefe | Edita. El id es `v` + dígitos |
 | DELETE | `/tours/:id` | admin, jefe | Quita |
 | PATCH | `/people/:id` | admin | Cambia `roomId` de un rep |
@@ -109,7 +114,7 @@ Desde `prototypes/smart-agenda-mockup/`:
 
 1. `node --check` de los JS y `python3 -m py_compile server/ops_api.py`.
 2. `cp styles.css agenda.css` si cambió CSS.
-3. Subir query de caché en `index.html` y `ops/index.html` (último corte: `20261107v`).
+3. Subir query de caché en `index.html` y `ops/index.html` (último corte: `20261107x`).
 4. `rsync` al root `/var/www/salesacademy.softvibes.art/` y, si cambió el API, a `/opt/salesacademy-ops/ops_api.py` y `systemctl restart salesacademy-ops`.
 5. `node tests/e2e-ops.mjs` y `OPS_BASE=https://salesacademy.softvibes.art node tests/e2e-ops.mjs`.
 

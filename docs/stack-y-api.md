@@ -2,7 +2,7 @@
 
 Hechos del código inspeccionado. Si no está en estos archivos, no se documenta.
 
-**Files inspected:** `prototypes/smart-agenda-mockup/index.html`, `agenda.js`, `home-counters.js`, `ops-store.js`, `ops-api.js`, `ops/ops.js`, `ops/ops.css`, `ops/index.html`, `server/ops_api.py`, `server/salesacademy-ops.service`, `tests/e2e-ops.mjs`, `tests/home-counters.mjs`.
+**Files inspected:** `prototypes/smart-agenda-mockup/index.html`, `agenda.js`, `home-counters.js`, `ops-store.js`, `ops-api.js`, `ops/ops.js`, `ops/ops.css`, `ops/index.html`, `server/ops_api.py`, `server/ops_import.py`, `server/salesacademy-ops.service`, `tests/e2e-ops.mjs`, `tests/test_import.py`, `tests/home-counters.mjs`.
 
 ## Stack
 
@@ -34,6 +34,10 @@ Identidad: `sessionStorage sa.app.rep`. Atajos: `localStorage sa.home.shortcuts`
 
 Sesión: `sa.ops.role`, `sa.ops.jefe`, `sa.ops.room` en `sessionStorage`.
 
+## Sesión (login-demo)
+
+La identidad viaja en la cookie `sa_session` (HttpOnly, Secure, SameSite=Lax, 12 h). `POST /api/login {username, password}`, `POST /api/logout`, `GET /api/me`. Reps y jefes usan la contraseña demo; el admin, `OPS_ADMIN_PASSWORD` del servidor. 5 fallos por usuario en 10 min → 429. El encabezado `X-Ops-Actor` ya no autentica (solo con `OPS_ALLOW_ACTOR_HEADER=1`, para el selftest). Hermes (`/copiloto/api/hermes`) exige sesión.
+
 ## Contrato del API
 
 Base live: `https://salesacademy.softvibes.art/api/`
@@ -50,6 +54,7 @@ Hora guardada: `HH:MM`. Acepta `9:00`, `09:00`, `09:00:00`.
 | GET | `/rooms` | admin, jefe, rep | Salas y personas visibles para ese actor |
 | GET | `/tours?date=&rep=&room=&from=&to=` | admin, jefe, rep | Visitas filtradas y acotadas al alcance |
 | POST | `/tours` | admin, jefe | Crea. 201. 409 si empalma |
+| POST | `/imports/preview` | admin, jefe | Propone filas mapeadas. No escribe tours. 403 el rep. 400 sin texto. 413 si el cuerpo pasa de 2 MB |
 | PATCH | `/tours/:id` | admin, jefe | Edita. El id es `v` + dígitos |
 | DELETE | `/tours/:id` | admin, jefe | Quita |
 | PATCH | `/people/:id` | admin | Cambia `roomId` de un rep |
@@ -73,6 +78,10 @@ Cuerpo de alta o edición:
 ```
 
 Estados: `confirmado`, `en_curso`, `pendiente`, `cancelado`.
+
+### Importar con preview
+
+`POST /imports/preview` no escribe. Cuerpo: `text`, `filename`, `mime`, `image` (base64, opcional), `defaultDate`. Respuesta: `engine` (`rules`, `tesseract` o `none`), `warnings[]`, `rows[]` con `visit`, `issues`, `clash` y `selected`. El tablero confirma cada fila aceptada con `POST /tours`. La foto no se guarda. Nombres fuera del directorio o leads que no son `Lead #` salen como issue. OCR local con Tesseract si está instalado; si no, se pega el texto.
 
 ### Resultado del tour
 
@@ -109,8 +118,8 @@ Desde `prototypes/smart-agenda-mockup/`:
 
 1. `node --check` de los JS y `python3 -m py_compile server/ops_api.py`.
 2. `cp styles.css agenda.css` si cambió CSS.
-3. Subir query de caché en `index.html` y `ops/index.html` (último corte: `20261107v`).
-4. `rsync` al root `/var/www/salesacademy.softvibes.art/` y, si cambió el API, a `/opt/salesacademy-ops/ops_api.py` y `systemctl restart salesacademy-ops`.
+3. Subir query de caché en `index.html` y `ops/index.html` (último corte: `20261107w`).
+4. `rsync` al root `/var/www/salesacademy.softvibes.art/` y, si cambió el API, a `/opt/salesacademy-ops/ops_api.py` más `ops_import.py` y `systemctl restart salesacademy-ops`.
 5. `node tests/e2e-ops.mjs` y `OPS_BASE=https://salesacademy.softvibes.art node tests/e2e-ops.mjs`.
 
 Acceso SSH al VPS: host y llave en el runbook privado del equipo, fuera de este repo. No reescribir otros vhosts. No tocar el puerto 8010.

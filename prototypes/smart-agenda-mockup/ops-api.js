@@ -1,9 +1,11 @@
-export async function opsRequest(path, { method = "GET", actor, body } = {}) {
+// Cliente del API de tours. La identidad viaja en la cookie de sesión (login-demo);
+// el parámetro `actor` se conserva por compatibilidad y ya no se envía.
+export async function opsRequest(path, { method = "GET", body } = {}) {
   const response = await fetch(path, {
     method,
+    credentials: "same-origin",
     headers: {
       Accept: "application/json",
-      "X-Ops-Actor": actor,
       ...(body ? { "Content-Type": "application/json" } : {}),
     },
     body: body ? JSON.stringify(body) : undefined,
@@ -15,7 +17,9 @@ export async function opsRequest(path, { method = "GET", actor, body } = {}) {
     data = {};
   }
   if (!response.ok || data.ok === false) {
-    throw new Error(data.error || "No se pudo completar.");
+    const error = new Error(data.error || "No se pudo completar.");
+    error.status = response.status;
+    throw error;
   }
   return data;
 }
