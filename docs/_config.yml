@@ -1,0 +1,8 @@
+title: Sales Academy
+description: Documentación comercial, ejecutiva y técnica del demo de sala.
+theme: jekyll-theme-primer
+lang: es
+exclude:
+  - wiki
+  - _sidebar.md
+  - _footer.md
