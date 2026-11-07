@@ -491,14 +491,6 @@ button { cursor: pointer; }
   .phone.has-dock .tab.on { background: var(--tint); }
   .phone.has-dock .screen { padding-bottom: 32px; }
 }
-@media (min-width: 1200px) {
-  .phone.has-dock { --rail: 216px; }
-  .phone.has-dock .dock { padding-top: 20px; }
-  .phone.has-dock .tab { flex-direction: row; justify-content: flex-start; gap: 14px; height: 48px; padding: 0 16px; font-size: 14px; }
-  .phone.has-dock .tab .material-symbols-outlined { font-size: 22px; }
-  /* Hoy en dos columnas: tours y ahora | prioridades y atajos */
-  .home-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; align-items: start; }
-}
 /* Celular horizontal: todo más compacto para dejar alto al contenido */
 @media (orientation: landscape) and (max-height: 540px) {
   .phone.has-dock { --rail: 76px; }
@@ -643,4 +635,104 @@ button { cursor: pointer; }
   .install-x { top: 50%; transform: translateY(-50%); }
   .phone[data-view="acceso"] .install-card { grid-template-columns: auto minmax(0, 1fr); }
   .phone[data-view="acceso"] .install-btn { grid-column: 2; grid-row: auto; justify-self: start; margin-top: 6px; }
+}
+
+/* ===== Escritorio según Stitch «17 · Hoy · Escritorio» y «21 · Biblioteca» (FTD responsive, revisión 2) ===== */
+.home-layout { display: flex; flex-direction: column; }
+.home-main, .home-side { display: contents; }
+.p-stats { order: 1; } .p-tours { order: 2; } .p-now { order: 3; } .p-prio { order: 4; } .p-short { order: 5; } .p-close { order: 6; }
+.dock-brand, .dock-cta, .dock-foot { display: none; }
+.top-actions { display: flex; align-items: center; gap: 10px; }
+.pill-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap; }
+.pill-btn.line { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+.pill-btn.gold { background: var(--gold-btn); color: var(--on-gold-btn); border: 0; }
+.side-note { display: flex; gap: 10px; align-items: flex-start; order: 7; }
+@media (max-width: 1099.98px) { .d-only { display: none !important; } }
+
+@media (min-width: 1100px) {
+  .m-only { display: none !important; }
+  .phone.has-dock { --rail: 264px; }
+  /* Barra lateral */
+  .phone.has-dock .dock { padding: 24px 16px calc(16px + env(safe-area-inset-bottom)); gap: 4px; background: var(--surface); }
+  .dock-brand { display: flex; align-items: center; gap: 12px; padding: 0 8px 20px; }
+  .dock-brand .sa-mark { width: 46px; height: 46px; border-radius: 12px; font-size: 17px; }
+  .dock-brand b { display: block; font-size: 19px; line-height: 1.1; font-weight: 700; color: var(--ink); }
+  .dock-brand em { display: block; font-style: normal; font-size: 13px; color: var(--muted); margin-top: 3px; }
+  .dock-cta { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; margin: 0 0 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font-weight: 600; font-size: 14px; }
+  .dock-cta:hover { border-color: var(--gold); }
+  .phone.has-dock .tab { flex-direction: row; justify-content: flex-start; gap: 14px; height: 50px; padding: 0 16px; font-size: 16px; font-weight: 500; color: var(--ink); border-radius: 12px; }
+  .phone.has-dock .tab .material-symbols-outlined { font-size: 22px; color: var(--muted); }
+  .phone.has-dock .tab:hover { background: var(--surface-low); }
+  .phone.has-dock .tab.on { background: var(--tint); color: var(--gold-deep); font-weight: 700; box-shadow: inset 4px 0 0 var(--gold); }
+  .phone.has-dock .tab.on .material-symbols-outlined { color: var(--gold-deep); }
+  .dock-foot { display: block; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); }
+  .dock-link { display: flex; align-items: center; gap: 14px; width: 100%; height: 46px; padding: 0 16px; border: 0; border-radius: 12px; background: none; color: var(--muted); font-size: 15px; }
+  .dock-link:hover { background: var(--surface-low); color: var(--ink); }
+
+  /* Encabezado de página: título grande + acciones (sin la marca, que ya está en la barra lateral) */
+  .phone.has-dock { --content: 1240px; }
+  .phone.has-dock .topbar, .phone.has-dock .taskbar { height: 76px; padding-inline: max(40px, calc((100% - var(--content)) / 2)); }
+  .phone.has-dock .topbar .avatar { display: none; }
+  .phone.has-dock .topbar .brand { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; }
+  .phone.has-dock .taskbar .back { font-size: 16px; }
+  .top-actions .datechip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; font-size: 14px; }
+
+  /* Contenido: tipografía de escritorio (Headline Lg 28 · Headline Sm 18–20 · Body 14–16) */
+  .phone.has-dock .screen { padding: 32px max(40px, calc((100% - var(--content)) / 2)) 56px; font-size: 15px; }
+  .phone.has-dock .section-title { font-size: 20px; font-weight: 500; }
+  .phone.has-dock .fine { font-size: 13px; }
+  .phone.has-dock .head h1, .phone.has-dock .page-title { font-size: 30px; }
+  .phone.has-dock .item strong { font-size: 17px; }
+  .phone.has-dock .item .meta { font-size: 14px; }
+
+  /* Hoy: paneles en dos columnas */
+  .phone[data-view="hoy"] .screen > .head { display: none; }
+  .home-layout { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(320px, 1fr); gap: 24px; align-items: start; margin-top: 8px; }
+  .home-main, .home-side { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+  .home-layout .panel { margin: 0 !important; text-align: left !important; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 0 24px 22px; }
+  .home-layout .panel > .row-between:first-child { margin: 0 -24px 16px; padding: 18px 24px; border-bottom: 1px solid var(--line); background: var(--surface-low); border-radius: 20px 20px 0 0; }
+  .home-layout .panel .section-title { display: inline-flex; align-items: center; gap: 10px; margin: 0; }
+  .home-layout .panel .section-title .material-symbols-outlined { font-size: 22px; color: var(--gold-deep); }
+  .home-layout .panel .card { border: 0; background: transparent; box-shadow: none; padding: 0; margin: 0; }
+  .home-layout .stats { gap: 32px; }
+  .home-layout .stat { border: 0; background: transparent; padding: 0; }
+  .home-layout .stat em { font-size: 15px; color: var(--ink); }
+  .home-layout .stat b { font-size: 28px; margin: 4px 0 10px; }
+  .home-layout .stat .track, .home-layout .stat .track span { height: 8px; border-radius: 999px; }
+  .home-layout .ledger { border-top: 0; margin: -16px -24px 0; }
+  .home-layout .ledger .item { padding: 16px 24px; min-height: 72px; }
+  .home-layout .p-tours .vrow { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .home-layout .p-tours .vrow:last-child { border-bottom: 0; }
+  .home-layout .p-close { padding-top: 22px; }
+  .home-layout .p-close .btn { min-height: 48px; }
+  .side-note { background: var(--surface-low); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .side-note b { color: var(--ink); }
+  .side-note .material-symbols-outlined { color: var(--gold-deep); }
+
+  /* Ficha: información a la izquierda, plantilla a la derecha */
+  .ficha-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 8px; }
+  .ficha-layout .ficha { margin: 0; padding: 24px; gap: 20px; }
+  .ficha-layout .ficha-block p { font-size: 16px; }
+  .tpl-col { position: sticky; top: 0; }
+
+  /* Tarjetas de Recursos y módulos con más aire */
+  .phone.has-dock .res { padding: 18px; }
+  .phone.has-dock .res strong { font-size: 17px; }
+  .phone.has-dock .res-que { font-size: 14px; }
+  .phone.has-dock .mod { padding: 14px 16px; }
+  .phone.has-dock .mod strong { font-size: 15px; }
+  .phone.has-dock .mod em { font-size: 13px; }
+}
+.kpis { margin: 10px 0; }
+@media (min-width: 1100px) {
+  .phone[data-view="resources"] .screen > .head h1 { display: none; }
+  .phone[data-view="resources"] .screen > .btn.line { width: auto !important; padding: 0 28px; }
+  .phone.has-dock .kpis { margin: 14px 0; gap: 14px; }
+  .phone.has-dock .card { border-radius: 18px; }
+}
+@media (min-width: 1100px) {
+  /* Canal derecho para el botón flotante: no tapa paneles */
+  .phone.has-dock .screen { padding-right: max(104px, calc((100% - var(--content)) / 2)); }
+  .phone.has-dock .topbar, .phone.has-dock .taskbar { padding-right: max(104px, calc((100% - var(--content)) / 2)); }
+  .phone[data-view="resources"] .screen > .head { margin-top: -8px; }
 }

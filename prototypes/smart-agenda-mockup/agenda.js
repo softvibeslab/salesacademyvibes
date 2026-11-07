@@ -394,7 +394,11 @@ function shell(inner) {
       <span class="material-symbols-outlined ${tab.id === current ? "fill" : ""}">${tab.icon}</span>
       ${esc(tab.label)}
     </button>`).join("");
-  return `${inner}<nav class="dock">${tabs}</nav>${state.toast ? `<div class="toast" role="status">${esc(state.toast)}</div>` : ""}`;
+  // Escritorio (Stitch «17 · Hoy · Escritorio»): marca, acción principal y cierre de sesión en la barra lateral.
+  const brand = `<div class="dock-brand"><span class="sa-mark">SA</span><span><b>Sales Academy</b><em>Agenda inteligente</em></span></div>
+    <button class="dock-cta" data-go="presentacion" type="button"><span class="material-symbols-outlined">add_task</span>Registrar presentación</button>`;
+  const foot = `<div class="dock-foot"><button class="dock-link" data-act="logout" type="button"><span class="material-symbols-outlined">logout</span>Cerrar sesión</button></div>`;
+  return `${inner}<nav class="dock" aria-label="Navegación">${brand}${tabs}${foot}</nav>${state.toast ? `<div class="toast" role="status">${esc(state.toast)}</div>` : ""}`;
 }
 
 function taskbar(title, back, badge, label = "Home") {
@@ -536,8 +540,13 @@ function viewHoy() {
   const addLink = pinned.length < 6 ? `<button class="linkish" data-go="atajos" type="button">Agregar</button>` : `<span class="fine">6 de 6</span>`;
   return shell(`
     <header class="topbar">
-      <div class="brand"><span class="avatar">SA</span> Sales Academy</div>
-      <button class="icon-btn" data-go="calendario" type="button" aria-label="Calendario"><span class="material-symbols-outlined">calendar_today</span></button>
+      <div class="brand"><span class="avatar">SA</span> <span class="m-only">Sales Academy</span><span class="d-only page-title-d">Hoy · Viernes 6 de noviembre</span></div>
+      <div class="top-actions">
+        <button class="datechip d-only" data-go="calendario" type="button"><span class="material-symbols-outlined">calendar_today</span>Nov 06</button>
+        <button class="pill-btn line d-only" data-go="nota" type="button"><span class="material-symbols-outlined">edit_note</span>Nueva nota</button>
+        <button class="pill-btn gold d-only" data-go="presentacion" type="button"><span class="material-symbols-outlined">add_task</span>Registrar presentación</button>
+        <button class="icon-btn m-only" data-go="calendario" type="button" aria-label="Calendario"><span class="material-symbols-outlined">calendar_today</span></button>
+      </div>
     </header>
     <div class="screen">
       <div data-install-slot="hoy">${installBlock("hoy")}</div>
@@ -545,21 +554,16 @@ function viewHoy() {
         <div><h1>Hoy</h1><p>Viernes 6 de noviembre</p></div>
         <button class="datechip" data-go="calendario" type="button">Nov 06</button>
       </div>
+      <div class="home-layout">
+      <div class="home-main">
+      <section class="panel p-stats">
+        <div class="row-between panel-head d-only"><h2 class="section-title"><span class="material-symbols-outlined">donut_large</span>Avance diario de objetivos</h2><button class="linkish" data-go="metas" data-flow="metas" type="button">Editar metas</button></div>
       <button class="stats" data-go="perfil" type="button" aria-label="Ver rendimiento">
         ${stats.map(([label, value, pct]) => `<span class="stat"><em>${esc(label)}</em><b>${esc(value)}</b><span class="track"><span style="width:${pct}%"></span></span></span>`).join("")}
       </button>
       <p class="fine">Metas de ejemplo: 4 presentaciones, 2 cierres y ${money(goal)} USD. Los avances salen de tus resultados del día.${mxnSale ? " Las ventas en MXN no suman al volumen USD." : ""}</p>
-      <div class="home-grid">
-      <section style="margin-top:16px">
-        <p class="fine">${esc(meLabel())}. ${esc(agoLabel())}</p>
-        <div class="row-between"><h2 class="section-title">Tours de hoy</h2><span><button class="linkish" data-act="reload-tours" type="button">Actualizar</button> · <button class="linkish" data-go="calendario" type="button">Calendario</button></span></div>
-        ${tourCard(EXAMPLE_TODAY)}
       </section>
-      <section style="margin-top:16px">
-        <div class="row-between"><h2 class="section-title">Ahora</h2><button class="linkish" data-go="bloque" data-flow="bloque" type="button">+ Bloque</button></div>
-        ${now}
-      </section>
-      <section style="margin-top:18px">
+      <section class="panel p-prio" style="margin-top:18px">
         <div class="row-between">
           <h2 class="section-title">Tus prioridades</h2>
           <button class="linkish" data-go="metas" data-flow="metas" type="button">Editar</button>
@@ -567,7 +571,7 @@ function viewHoy() {
         <div class="ledger">${items}</div>
         <button class="linkish" data-go="pendientes" type="button" style="margin-top:8px">Ver pendientes (${state.priorities.length + state.extra.length})</button>
       </section>
-      <section style="margin-top:18px">
+      <section class="panel p-short" style="margin-top:18px">
         <div class="row-between">
           <h2 class="section-title">Atajos</h2>
           <span>${addLink}<button class="linkish" data-act="edit-shortcuts" type="button" style="margin-left:10px">${state.editingShortcuts ? "Listo" : "Editar"}</button></span>
@@ -575,12 +579,25 @@ function viewHoy() {
         ${shortcutBody || `<p class="fine">Todavía no hay atajos.</p>`}
       </section>
       </div>
-      <section style="margin-top:22px;text-align:center">
+      <aside class="home-side">
+      <section class="panel p-tours" style="margin-top:16px">
+        <div class="row-between"><h2 class="section-title">Tours de hoy</h2><span><button class="linkish" data-act="reload-tours" type="button">Actualizar</button> · <button class="linkish" data-go="calendario" type="button">Calendario</button></span></div>
+        <p class="fine">${esc(meLabel())}. ${esc(agoLabel())}</p>
+        ${tourCard(EXAMPLE_TODAY)}
+      </section>
+      <section class="panel p-now" style="margin-top:16px">
+        <div class="row-between"><h2 class="section-title">Ahora</h2><button class="linkish" data-go="bloque" data-flow="bloque" type="button">+ Bloque</button></div>
+        ${now}
+      </section>
+      <section class="panel p-close" style="margin-top:22px;text-align:center">
         <button class="btn ghost" data-go="cierre" data-flow="cierre" type="button" style="width:100%" ${state.closed ? "disabled" : ""}>
           <span class="material-symbols-outlined">task_alt</span> ${state.closed ? "Jornada cerrada" : "Cerrar jornada"}
         </button>
         <p class="fine"><span class="material-symbols-outlined" style="font-size:14px">lock</span> El cierre es personal</p>
       </section>
+      <p class="side-note d-only"><span class="material-symbols-outlined">verified_user</span><span><b>Libreta personal.</b> Tus notas, prioridades y cierre son solo tuyos.</span></p>
+      </aside>
+      </div>
     </div>`);
 }
 
@@ -1528,12 +1545,16 @@ function templateScreen(title, kicker, hint, fields, previewHtml, extra = "") {
       <span class="kicker">${esc(kicker)}</span>
       <h1 class="page-title">${esc(title)}</h1>
       <p class="fine" style="margin:6px 0 12px">${esc(hint)}</p>
-      ${fichaSection(state.openId)}
+      <div class="ficha-layout">
+      <div class="ficha-col">${fichaSection(state.openId)}</div>
+      <div class="tpl-col">
       <form id="tpl">${fields ? `<section class="card">${fields}</section>` : ""}
         <section class="card preview-card" id="tpl-preview">${previewHtml}</section>
         <button class="btn gold" data-act="use-template" type="button" style="width:100%">Usar esta plantilla</button>
       </form>
       ${extra}
+      </div>
+      </div>
     </div>`;
 }
 
