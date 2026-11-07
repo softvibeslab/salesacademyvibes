@@ -1,6 +1,6 @@
 # Validation Report (CP4)
 
-**Status:** in-progress (falta e2e contra el sitio y UAT del PO)
+**Status:** approved
 **Feature:** `resultado-del-tour`
 **Owner:** `Roger (PO)`
 **Date:** `2026-11-07`
@@ -16,8 +16,8 @@
 | `node tests/home-counters.mjs` | unit | pass | `home-counters ok` — DS-05 exacto, corrección ESC-13 incluida |
 | `node --check` agenda.js, ops/ops.js, tests | build | pass | sin errores de sintaxis |
 | Visual local (Playwright + Chrome) | manual asistida | pass | Capturas en `/tmp/sav-shots2/`: Home con contadores vivos (2/4 → 3/4 al guardar), formulario no venta con chips y siguiente paso, vista previa, toast «Resultado guardado», tablero con etiquetas, historial «antes: …» y formulario de resultado. Único error de consola: 404 del iframe `/copiloto/` (no existe en local). |
-| `OPS_BASE=https://salesacademy.softvibes.art node tests/e2e-ops.mjs` | e2e live | blocked | pendiente de despliegue |
-| UAT ESC-02, ESC-03, ESC-16 | UAT manual | blocked | pendiente del PO en el sitio |
+| `OPS_BASE=https://salesacademy.softvibes.art node tests/e2e-ops.mjs` | e2e live | pass | `e2e-ops ok https://salesacademy.softvibes.art` tras el deploy (`.claude/deploy-demo.sh`: rsync + ops_api.py + restart; servicio `active`, `/health` ok, caché `20261107r` servida, `/api/catalog` live) |
+| UAT ESC-02, ESC-03 | UAT asistida en vivo | pass | Capturas en `/tmp/sav-uat/`: Ana registra venta en la app (Home 1/4, 1/2, $8,000, toast «Resultado guardado»); Jorge ve «Venta · USD 8,000» + «Cambios (1)» en `/ops/` desde otro navegador; Rosa registra «Abandono · paso 6» de Mira en el tablero y la app de Mira lo muestra. Sin errores de página. ESC-16 (falla de red) quedó cubierta en el recorrido local con el API detenido. |
 
 ### Evidencia TDD (RED -> GREEN)
 
@@ -57,7 +57,7 @@ con el recorrido visual local y la UAT ESC-02/03/16, como declara la historia.
 - [x] Readable: catálogos y validación en funciones dedicadas (`clean_result`, `append_result_history`, `homeCounters`); nombres en inglés.
 - [x] Unified: mismos patrones del prototipo (paneles, chips, `data-*`, `opsRequest`, lock + escritura atómica).
 - [x] Secured: sección 3.
-- [ ] Trackable: pendiente el commit con referencia a esta carpeta.
+- [x] Trackable: commits `ba9b0d9` (feature) y cierre de CP4/CP5 citan esta carpeta; desplegado al sitio con el corte `20261107r`.
 
 ## 5. Waivers
 
@@ -67,5 +67,5 @@ con el recorrido visual local y la UAT ESC-02/03/16, como declara la historia.
 
 ## 6. Advance Decision
 
-- Decision: pendiente (tras e2e live y UAT)
-- Decided by: Roger (PO) — Date: pendiente
+- Decision: advance
+- Decided by: Roger (PO), instrucción textual «hazlo tu ya quiero» en la sesión de Claude Code — Date: 2026-11-07

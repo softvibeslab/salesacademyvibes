@@ -26,3 +26,6 @@ meetings/
 .kilo/
 prototypes/copiloto-rep/
 prototypes/copiloto-rep-dist/
+
+# Config local de Claude Code (contiene host del VPS)
+.claude/
