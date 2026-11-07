@@ -67,6 +67,8 @@ button { cursor: pointer; }
   padding: 16px;
 }
 .screen.task { padding-bottom: 24px; }
+/* Zona segura del FAB (fase 0): el final de cualquier lista se puede despejar del botón flotante. */
+.screen, .screen.task { padding-bottom: 104px; }
 
 .topbar, .taskbar {
   height: 56px;
