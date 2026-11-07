@@ -88,7 +88,7 @@ Desde `prototypes/smart-agenda-mockup/`:
 4. `rsync` al root `/var/www/salesacademy.softvibes.art/` y, si cambió el API, a `/opt/salesacademy-ops/ops_api.py` y `systemctl restart salesacademy-ops`.
 5. `node tests/e2e-ops.mjs` y `OPS_BASE=https://salesacademy.softvibes.art node tests/e2e-ops.mjs`.
 
-SSH del VPS: clave `beglobal_vps_ed25519` a `76.13.231.12`. No reescribir otros vhosts. No tocar el puerto 8010.
+Acceso SSH al VPS: host y llave en el runbook privado del equipo, fuera de este repo. No reescribir otros vhosts. No tocar el puerto 8010.
 
 ## Prueba e2e
 
