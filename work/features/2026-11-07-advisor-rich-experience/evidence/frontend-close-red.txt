@@ -1,0 +1,25 @@
+PASS Contextual controls and an introductory film appear without inference at 1440px
+PASS Computed colors are readable and layout fits at 1440px
+PASS Suggested answers replace the previous choices and media remains trusted at 1440px
+PASS Film plays only after a gesture with audio and captions, then pauses on tab switch at 1440px
+PASS Demo action and editable WhatsApp handoff stay voluntary at 1440px
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+false !== true
+
+    at file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-rich-browser.mjs:67:96
+    at async check (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-rich-browser.mjs:16:49)
+    at async file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-rich-browser.mjs:65:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

@@ -1,0 +1,195 @@
+{
+  "base": "https://v5.salesacademy.softvibes.cloud",
+  "startedAt": "2026-11-07T15:08:13.801Z",
+  "results": [
+    {
+      "name": "Public advisor opens without overflow or consent collision at 1440px",
+      "passed": true,
+      "geometry": {
+        "inside": true,
+        "overlap": false,
+        "overflow": false
+      }
+    },
+    {
+      "name": "Hermes answers one real synthetic question with published resources at 1440px",
+      "passed": true,
+      "reply": "Sales Academy propone apoyar la práctica de objeciones con Smart Agent y materiales autorizados de tu sala: ensayar una duda ficticia, aclararla antes de responder y revisar un ajuste con el líder; el alcance se valida en demo.\n\nRecomiendo «Coaching y agentes de IA: el siguiente paso», con un ejercicio concreto para practicar y acordar una conducta observable. ¿Eres representante o líder de sala?",
+      "resources": [
+        {
+          "evidenceLabel": "Guía original · orientación práctica",
+          "excerpt": "Una guía para preparar una reflexión con apoyo de IA y acordar una acción observable con el líder.",
+          "title": "Coaching y agentes de IA: el siguiente paso",
+          "type": "guide",
+          "url": "/mediahub/coaching-con-una-accion/"
+        },
+        {
+          "evidenceLabel": "Visión de producto",
+          "excerpt": "Una visión de agentes de IA que ayudan a dar contexto a la jornada y preparar el siguiente paso.",
+          "title": "IA para ordenar la siguiente acción",
+          "type": "video",
+          "url": "/mediahub/menos-caos/",
+          "video": {
+            "captions": "/growth-assets/films/menos-caos.es.vtt",
+            "durationSeconds": 41.399,
+            "height": 1024,
+            "id": "menos-caos",
+            "poster": "/growth-assets/films/menos-caos.webp",
+            "src": "/growth-assets/films/menos-caos.mp4",
+            "width": 576
+          }
+        }
+      ],
+      "suggestions": [
+        {
+          "id": "role-rep",
+          "kind": "prompt",
+          "label": "Soy representante",
+          "prompt": "Soy representante. ¿Cómo puede ayudarme Sales Academy en mi día a día?"
+        },
+        {
+          "id": "role-leader",
+          "kind": "prompt",
+          "label": "Soy líder de sala",
+          "prompt": "Soy líder de sala. ¿Cómo puede ayudarme Sales Academy con mi equipo?"
+        },
+        {
+          "id": "demo",
+          "kind": "demo",
+          "label": "Coordinar demo con Chris"
+        }
+      ],
+      "replyWords": 64,
+      "remainingTurns": 19
+    },
+    {
+      "name": "Curated video plays inside the advisor with audio and captions only after a gesture at 1440px",
+      "passed": true,
+      "src": "/growth-assets/films/menos-caos.mp4",
+      "muted": false,
+      "controls": true,
+      "playsInline": true,
+      "autoplay": false,
+      "mp4Requests": 1,
+      "pausedOnClose": true
+    },
+    {
+      "name": "Future preference and edited WhatsApp summary need no saved lead at 1440px",
+      "passed": true,
+      "preferredDate": "2026-11-09",
+      "timezone": "America/Cancun",
+      "leadSaved": false
+    },
+    {
+      "name": "The launcher leaves an overlapping playing VSL unobstructed at 1440px",
+      "passed": true,
+      "overlaps": false
+    },
+    {
+      "name": "The advisor remains available on /mediahub/ at 1440px",
+      "passed": true
+    },
+    {
+      "name": "The advisor remains available on /growth-assets/scenarios/index.html at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Public advisor opens without overflow or consent collision at 390px",
+      "passed": true,
+      "geometry": {
+        "inside": true,
+        "overlap": false,
+        "overflow": false
+      }
+    },
+    {
+      "name": "Hermes answers one real synthetic question with published resources at 390px",
+      "passed": true,
+      "reply": "Sales Academy propone practicar objeciones con situaciones ficticias y materiales aprobados de tu sala: aclarar la duda, ensayar una respuesta y acordar una mejora con el líder; la demo muestra una vista previa de «Practicar objeción».\n\nTe recomiendo «Coaching y agentes de IA: el siguiente paso», una guía para repetir una situación con una corrección observable. ¿Eres representante o líder de sala?",
+      "resources": [
+        {
+          "evidenceLabel": "Guía original · orientación práctica",
+          "excerpt": "Una guía para preparar una reflexión con apoyo de IA y acordar una acción observable con el líder.",
+          "title": "Coaching y agentes de IA: el siguiente paso",
+          "type": "guide",
+          "url": "/mediahub/coaching-con-una-accion/"
+        },
+        {
+          "evidenceLabel": "Visión de producto",
+          "excerpt": "Una visión de agentes de IA que ayudan a dar contexto a la jornada y preparar el siguiente paso.",
+          "title": "IA para ordenar la siguiente acción",
+          "type": "video",
+          "url": "/mediahub/menos-caos/",
+          "video": {
+            "captions": "/growth-assets/films/menos-caos.es.vtt",
+            "durationSeconds": 41.399,
+            "height": 1024,
+            "id": "menos-caos",
+            "poster": "/growth-assets/films/menos-caos.webp",
+            "src": "/growth-assets/films/menos-caos.mp4",
+            "width": 576
+          }
+        }
+      ],
+      "suggestions": [
+        {
+          "id": "role-rep",
+          "kind": "prompt",
+          "label": "Soy representante",
+          "prompt": "Soy representante. ¿Cómo puede ayudarme Sales Academy en mi día a día?"
+        },
+        {
+          "id": "role-leader",
+          "kind": "prompt",
+          "label": "Soy líder de sala",
+          "prompt": "Soy líder de sala. ¿Cómo puede ayudarme Sales Academy con mi equipo?"
+        },
+        {
+          "id": "demo",
+          "kind": "demo",
+          "label": "Coordinar demo con Chris"
+        }
+      ],
+      "replyWords": 62,
+      "remainingTurns": 19
+    },
+    {
+      "name": "Curated video plays inside the advisor with audio and captions only after a gesture at 390px",
+      "passed": true,
+      "src": "/growth-assets/films/menos-caos.mp4",
+      "muted": false,
+      "controls": true,
+      "playsInline": true,
+      "autoplay": false,
+      "mp4Requests": 1,
+      "pausedOnClose": true
+    },
+    {
+      "name": "Future preference and edited WhatsApp summary need no saved lead at 390px",
+      "passed": true,
+      "preferredDate": "2026-11-09",
+      "timezone": "America/Cancun",
+      "leadSaved": false
+    },
+    {
+      "name": "The launcher leaves an overlapping playing VSL unobstructed at 390px",
+      "passed": true,
+      "overlaps": true
+    },
+    {
+      "name": "The advisor remains available on /mediahub/ at 390px",
+      "passed": true
+    },
+    {
+      "name": "The advisor remains available on /growth-assets/scenarios/index.html at 390px",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "inferenceRequests": 2,
+  "leadRequests": 0,
+  "whatsappRequests": 0,
+  "cmsLogin": false,
+  "ok": true,
+  "finishedAt": "2026-11-07T15:08:49.449Z"
+}

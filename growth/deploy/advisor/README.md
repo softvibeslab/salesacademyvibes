@@ -38,3 +38,11 @@ Rollback: deshabilitar el widget V5 mediante su configuración o restaurar su re
 Smoke real final: dos respuestas HTTP 200 (9.10 s y 6.33 s), sin clave 401, rol no permitido 400. La segunda conversación no conoció el marcador sintético de la primera y no afirmó cita confirmada. Perfil permanente sin modificaciones, sin `state.db`, cero temporales después, acceso a root rechazado, servicios existentes activos. Fuente: `evidence/advisor-isolation.json`.
 
 Excepción TDD: el provisionador y unidades son configuración operativa puntual; se validaron mediante sintaxis, salud, permisos, hashes y pruebas reales en VPS. La lógica de transporte, mínimos de credencial, timeout y aislamiento sí tienen pruebas previas RED → GREEN.
+
+## Respuestas breves y contenido contextual
+
+El incremento advisor-rich-07 pide al perfil 30–65 palabras, una idea y como máximo una pregunta útil. El servidor limita la vista a 90 palabras y conserva el original en un detalle desplegable si hace falta. El historial usado por el modelo no se recorta por esta presentación.
+
+El siguiente paso se calcula con un catálogo del servidor y datos declarados por el visitante. Las acciones pueden continuar la conversación o abrir el formulario de demo sin inferencia. Videos y guías se resuelven contra la publicación actual del CMS y el catálogo audiovisual autorizado; el modelo no genera controles ni rutas ejecutables. No cambia el funcionamiento de solicitudes, consentimiento o WhatsApp.
+
+La identidad se actualiza en /var/lib/salesacademy-advisor/.hermes/profiles/sales-academy-advisor/SOUL.md y /opt/salesacademy-advisor/SOUL.md preservando propietarios y modos. Evidencia, revisión y reversión: work/features/2026-11-07-advisor-rich-experience/.

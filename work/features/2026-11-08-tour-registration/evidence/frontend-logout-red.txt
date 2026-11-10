@@ -1,0 +1,81 @@
+(node:16500) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tour-registration.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ choice names both paths and exposes demo notice (0.843ms)
+✔ manual form has associated labels, safe escaping and progressive disclosure (0.371458ms)
+✔ summary requires explicit confirmation and separate final action (1.250625ms)
+✔ structured API errors are preserved and abort signal passes through (0.356ms)
+✖ logout clears the local session before a slow network revocation completes (3.809417ms)
+(node:16501) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tour-registration.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ uses operational date and starts with optional context closed (0.684334ms)
+✔ validates required name, real dates, clock order and optional contact (1.580083ms)
+✔ manual capture maps only contract fields and never assigns another rep (0.199375ms)
+✔ late OCR never overwrites a human correction and manual values survive switching (0.208834ms)
+✔ logout revokes photo and ignores inflight preview from previous user (0.272541ms)
+✔ saving requires review, blocks double click and succeeds once (0.185417ms)
+✔ 409 and network retries preserve draft and the same request id (0.202417ms)
+✔ 401 clears draft and photo, disabled capabilities prevent requests (0.125083ms)
+✔ preparation exposes only a valid anonymous reference (0.367583ms)
+✔ image envelope respects both decoded and 2MB JSON limits (18.905958ms)
+✔ permission loss clears already held private data (0.2255ms)
+✔ a slower detail cannot replace the most recently selected tour (0.178625ms)
+✔ starting a fresh capture does not inherit a previous private detail context (0.073792ms)
+✖ phone contact needs 7 to 15 digits, not only spacing and punctuation (4.324208ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 17
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 88.869708
+
+✖ failing tests:
+
+test at tests/tour-registration-ui.mjs:26:1
+✖ logout clears the local session before a slow network revocation completes (3.809417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/tour-registration-ui.mjs:32:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/tour-registration.mjs:79:1
+✖ phone contact needs 7 to 15 digits, not only spacing and punctuation (4.324208ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(validateDraft(c.state.draft).contactValue)
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/tour-registration.mjs:81:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

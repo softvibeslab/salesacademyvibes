@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-10",
+  "exit_code": 0,
+  "release": "tour-registration-v1-20261110",
+  "service": "active",
+  "capabilities": {
+    "ok": true,
+    "enabled": false,
+    "mode": "demo",
+    "ocrAvailable": true,
+    "canRegister": false,
+    "operationalDate": "2026-11-07",
+    "timeZone": "America/Cancun"
+  },
+  "timer": "active",
+  "timer_next": "Wed 2026-11-11 00:00:00 UTC",
+  "store_directory_mode": "0o700",
+  "store_mode": "0o600",
+  "existing_visits_before": 7,
+  "existing_visits_after": 7,
+  "existing_visits_preserved": true,
+  "private_records": 0,
+  "backup": "/var/backups/salesacademy-ops/releases/tour-v1-20261110T214039Z",
+  "backup_contains": "code and units only, no store or credentials",
+  "installed_files": {
+    "/var/www/salesacademy.softvibes.art/agenda.js": "df3f31b29b147391cdf16f482a01cad5a8b0780d98704eac3e335bf6c524b3cf",
+    "/var/www/salesacademy.softvibes.art/index.html": "1796df0ef2ff6ee4a590ef4567d2ff984ef2b28bfc6828959caf3830e6251ceb",
+    "/var/www/salesacademy.softvibes.art/ops-api.js": "efdc3966a06143a5012e32c2e12976e74f4ed11fc27f0207c59b7ac71474e929",
+    "/var/www/salesacademy.softvibes.art/tour-registration.js": "17ced86a13ab3dba7984536278822c4f81f76f1291d51a193725a0a52c27ff73",
+    "/var/www/salesacademy.softvibes.art/tour-registration.css": "988e80863b27b13aa00c0641045031dbfabac0e94cd3c2d2ae73c5fbab10b665",
+    "/opt/salesacademy-ops/ops_api.py": "8f615476e51254f95357fd26a7249c250590d765a314f8638c2cf94bf1d1f4e0",
+    "/opt/salesacademy-ops/private_auth.py": "0ff5b446cd35069ff227d9fbe1e7673484b9e3ab41faecb31339b077cb413f05",
+    "/opt/salesacademy-ops/tour_registration.py": "5b2fccbe31b2fa264889e30f4feefbdd2618cad363c96bcb89297227c8ee2f1d",
+    "/opt/salesacademy-ops/survey_preview.py": "79a02c927e9bb3957a3d8f114386fa6eb26c93c8d7a95fda9077976071cce529",
+    "/opt/salesacademy-ops/provision_private_user.py": "9aa30d6b5799546e074fc30034d69498b7909d83d8da376adde0ca6ff03bd8ed",
+    "/opt/salesacademy-ops/cleanup_registrations.py": "d23ae8f245d615d09f59abc562a701bd47d923f0ff692f906d950745ac3f5865",
+    "/etc/systemd/system/salesacademy-registration-cleanup.service": "d8d5e68027736949afffb08e04ba8703a6f0edf9c942d2b3b8bd71a207e706c3",
+    "/etc/systemd/system/salesacademy-registration-cleanup.timer": "a663cf477279327572c33954d851949a348ffefe14c702c4a947631bbbed1b31"
+  }
+}

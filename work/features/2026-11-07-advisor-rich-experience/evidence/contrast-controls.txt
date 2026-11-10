@@ -1,0 +1,1 @@
+PASS border and keyboard focus ≥3:1 at 1440/390/360

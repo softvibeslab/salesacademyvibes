@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Academy · CMS · Subir y revisar medio</title>
+<!-- Google Fonts: Libre Caslon Text & Arimo -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration with Design System Tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-xl": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f0eee8;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #d0c5b5;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="h-full bg-surface-container-low text-on-surface antialiased flex flex-col font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Interfaz de Workspace CMS: Sidebar Oscura (#1d241c) + Lienzo Claro Editorial -->
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar Operativa Oscura (#1d241c) -->
+<aside class="w-64 bg-[#1d241c] text-[#e3e3dd] flex flex-col shrink-0 border-r border-[#2b352a]">
+<!-- Brand Anchor Header -->
+<div class="h-20 px-6 flex items-center justify-between border-b border-[#2b352a]/70">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#d4b574] text-[#251a00] flex items-center justify-center font-headline-md font-bold shadow-sm">
+            SA
+          </div>
+<div>
+<span class="font-headline-md tracking-tight block text-[#f5f3ed]">Sales Academy</span>
+<span class="text-[10px] uppercase tracking-widest text-[#d4b574] block font-medium">CMS Editorial</span>
+</div>
+</div>
+</div>
+<!-- Navigation Hierarchy -->
+<div class="flex-1 py-6 px-4 space-y-6 overflow-y-auto custom-scroll">
+<div>
+<span class="px-3 text-[11px] font-semibold text-[#8b9487] uppercase tracking-wider block mb-2 font-label-sm">
+            Gestión de Sala
+          </span>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-[#c6c7c2] hover:bg-[#252e24] hover:text-[#ffffff] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Tablero Operativo</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-[#c6c7c2] hover:bg-[#252e24] hover:text-[#ffffff] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+<span>Agentes en acción</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-[#c6c7c2] hover:bg-[#252e24] hover:text-[#ffffff] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">collections_bookmark</span>
+<span>Galería y Pitch</span>
+</a>
+</nav>
+</div>
+<div>
+<span class="px-3 text-[11px] font-semibold text-[#8b9487] uppercase tracking-wider block mb-2 font-label-sm">
+            Centro de Medios &amp; IA
+          </span>
+<nav class="space-y-1">
+<!-- Active State: Medios -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm bg-[#2b352a] text-[#ffffff] font-medium border-l-2 border-[#d4b574]" href="#">
+<span class="material-symbols-outlined text-[20px] text-[#d4b574]">perm_media</span>
+<span>MediaHub / Archivo</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-[#c6c7c2] hover:bg-[#252e24] hover:text-[#ffffff] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">clinical_notes</span>
+<span>Diagnóstico Clínico</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-[#c6c7c2] hover:bg-[#252e24] hover:text-[#ffffff] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+<span>FAQ de Objeciones</span>
+</a>
+</nav>
+</div>
+<div>
+<span class="px-3 text-[11px] font-semibold text-[#8b9487] uppercase tracking-wider block mb-2 font-label-sm">
+            Gobernanza
+          </span>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-[#c6c7c2] hover:bg-[#252e24] hover:text-[#ffffff] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span>Derechos &amp; Legal</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-[#c6c7c2] hover:bg-[#252e24] hover:text-[#ffffff] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Parámetros de Sala</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- User / Status Badge Footer in Sidebar -->
+<div class="p-4 border-t border-[#2b352a] bg-[#161c15]/60 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#203c28] border border-[#d4b574]/40 flex items-center justify-center text-[#d4b574] text-xs font-bold">
+            ES
+          </div>
+<div class="overflow-hidden">
+<p class="text-xs font-medium text-[#f5f3ed] truncate">Editor Senior</p>
+<p class="text-[11px] text-[#8b9487] truncate">Sala Cancún VIP</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-[#8b9487] hover:text-[#ffffff] cursor-pointer">logout</span>
+</div>
+</aside>
+<!-- Canvas Principal (1440px target layout responsive workspace) -->
+<div class="flex-1 flex flex-col min-w-0 bg-surface-container-low overflow-y-auto custom-scroll">
+<!-- Sub-Barra de Navegación de Contexto / Breadcrumbs -->
+<header class="h-20 bg-surface border-b border-outline-variant/30 px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-3">
+<nav class="flex items-center text-label-sm text-secondary gap-2">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+              CMS
+            </a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Medios</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-medium">Nuevo</span>
+</nav>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="px-2.5 py-0.5 rounded text-[11px] bg-surface-container text-on-surface-variant font-medium border border-outline-variant/40">
+            ID: MED-2025-0894
+          </span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-body-md text-on-surface-variant flex items-center gap-1.5 text-xs bg-surface-container px-3 py-1.5 rounded-lg border border-outline-variant/30">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+            Modo Borrador Seguro
+          </span>
+<button class="h-10 px-4 rounded-lg border border-outline-variant bg-surface hover:bg-surface-variant text-on-surface text-body-md font-medium transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+            Versiones
+          </button>
+</div>
+</header>
+<!-- Main Form Container -->
+<main class="flex-1 p-8 max-w-[1360px] mx-auto w-full">
+<!-- Header de Página Editorial -->
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-outline-variant/25">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-primary-fixed text-on-primary-fixed border border-primary-fixed-dim/40">
+                Módulo 21
+              </span>
+<span class="text-label-sm text-on-surface-variant">Ruta interna: <code class="text-primary font-mono text-xs">/cms/medios/nuevo/</code></span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+              Subir y revisar medio
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+              Carga activos fotográficos o documentos complementarios en alta fidelidad. Verifique derechos de propiedad intelectual antes de someter a la mesa de aprobación.
+            </p>
+</div>
+<!-- Quick Metadata Badge -->
+<div class="bg-surface-container px-4 py-2.5 rounded-lg border border-outline-variant/40 flex items-center gap-3 text-xs">
+<div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</div>
+<div>
+<p class="font-medium text-on-surface">Protocolo de Integridad</p>
+<p class="text-on-surface-variant">Revisión obligatoria de cesión</p>
+</div>
+</div>
+</div>
+<!-- Formulario en Dos Columnas -->
+<form action="#" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" method="POST" onsubmit="event.preventDefault();">
+<!-- COLUMNA IZQUIERDA: Dropzone y Directrices Técnicas (5 Columnas) -->
+<section class="lg:col-span-5 flex flex-col gap-6">
+<!-- Card Contenedor Dropzone -->
+<div class="bg-surface rounded-xl border border-outline-variant/40 p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">cloud_upload</span>
+                  Archivo del activo
+                </h2>
+<span class="text-[11px] font-medium text-on-surface-variant bg-surface-container px-2 py-0.5 rounded border border-outline-variant/30">
+                  Imágenes / PDFs
+                </span>
+</div>
+<!-- Interactive Drag & Drop Area -->
+<div class="relative group border-2 border-dashed border-outline-variant rounded-xl p-8 bg-surface-bright hover:bg-surface-container transition-all cursor-pointer text-center flex flex-col items-center justify-center min-h-[310px]">
+<input accept=".jpg,.jpeg,.png,.webp,.pdf,.tiff" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file_upload" name="file_upload" type="file"/>
+<div class="w-16 h-16 rounded-full bg-primary-fixed/30 text-primary flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">upload_file</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface mb-1">
+                  Arrastra tu archivo aquí
+                </p>
+<p class="text-body-md text-on-surface-variant text-xs mb-4 max-w-xs">
+                  o <span class="text-primary font-medium underline underline-offset-2">haz clic para examinar</span> en tu almacenamiento local
+                </p>
+<!-- File Constraints Specs -->
+<div class="flex flex-wrap justify-center gap-2 text-[11px] text-secondary">
+<span class="bg-surface-variant/50 px-2 py-0.5 rounded">JPG, PNG, WEBP</span>
+<span class="bg-surface-variant/50 px-2 py-0.5 rounded">PDF Vectorial</span>
+<span class="bg-surface-variant/50 px-2 py-0.5 rounded">Máx. 45 MB</span>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 w-full flex items-center justify-center gap-2 text-[11px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+<span>Cálculo automático de hash SHA-256</span>
+</div>
+</div>
+<!-- NOTA EXPLÍCITA Y MANDATORIA SOBRE VIDEOS MP4 -->
+<div class="mt-5 rounded-lg bg-[#f0eee8] border-l-4 border-primary p-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">info</span>
+<div class="text-xs text-on-surface-variant leading-relaxed">
+<span class="font-bold text-on-surface block mb-0.5 font-label-sm">Restricción de catálogo audiovisual:</span>
+                    Los 5 clips de video pertenecen a la colección curada fija y se seleccionan en el editor de recursos; no se suben MP4 generales aquí.
+                  </div>
+</div>
+</div>
+</div>
+<!-- Previsualización Simulada / Estado de Buffer -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/40 p-5">
+<div class="flex items-center justify-between mb-3 text-xs">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">image</span>
+                  Previsualización en cola
+                </span>
+<span class="text-on-surface-variant text-[11px]">Listo para hash</span>
+</div>
+<div class="flex items-center gap-4 bg-surface rounded-lg p-3 border border-outline-variant/30">
+<div class="w-14 h-14 rounded bg-surface-dim overflow-hidden shrink-0 border border-outline-variant/40 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[24px]">draft</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="text-xs font-medium text-on-surface truncate">sala-vip-master-suite-render.webp</p>
+<p class="text-[11px] text-on-surface-variant">3840 × 2160 px · 4.2 MB · Color DCI-P3</p>
+<div class="w-full bg-surface-variant h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full w-full"></div>
+</div>
+</div>
+<button class="text-secondary hover:text-error transition-colors p-1" title="Descartar" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Tarjeta de Asesor de Cumplimiento Editorial -->
+<div class="bg-[#f7f5f0] border border-outline-variant/40 rounded-xl p-5">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-[#203c28]"></span>
+<h3 class="font-label-sm text-xs font-semibold uppercase tracking-wider text-on-surface">
+                  Criterio de Curaduría Sales Academy
+                </h3>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                Toda pieza visual integrada en el ecosistema debe proyectar calma, sofisticación residencial y veracidad arquitectónica. Evite renders sobresaturados o fotografía con luz artificial directa invasiva.
+              </p>
+</div>
+</section>
+<!-- COLUMNA DERECHA: Metadatos y Formulario Obligatorio (7 Columnas) -->
+<section class="lg:col-span-7 flex flex-col gap-6">
+<div class="bg-surface rounded-xl border border-outline-variant/40 p-7 shadow-sm">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-outline-variant/30">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">
+                    Ficha Técnica y Legal del Activo
+                  </h2>
+<p class="text-xs text-on-surface-variant mt-0.5">
+                    Campos indispensables para indexación semántica y auditoría VIP.
+                  </p>
+</div>
+<span class="text-[11px] text-error flex items-center gap-1 font-medium bg-error-container/40 px-2 py-0.5 rounded">
+                  * Campos obligatorios
+                </span>
+</div>
+<div class="space-y-5">
+<!-- 1. Título del medio -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface mb-1.5 font-label-sm" for="titulo_medio">
+                    Título del medio <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-3.5 py-2.5 text-sm text-on-surface placeholder-secondary focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim transition-all" id="titulo_medio" name="titulo_medio" required="" type="text" value="Plano Maestro y Perspectiva Crepuscular · Club Privado"/>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-1">Identificador editorial visible en el carrusel de asesores y diapositivas de cierre.</p>
+</div>
+<!-- 2. Texto alternativo (alt text) -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-on-surface font-label-sm" for="alt_text">
+                      Texto alternativo (alt text) <span class="text-error">*</span>
+</label>
+<span class="text-[11px] text-on-surface-variant">Accesibilidad WCAG 2.1 AAA</span>
+</div>
+<textarea class="w-full bg-surface-bright border border-outline-variant rounded-lg p-3 text-sm text-on-surface placeholder-secondary focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim transition-all resize-none" id="alt_text" name="alt_text" required="" rows="3">Fotografía arquitectónica en ángulo bajo que retrata la terraza principal y los acabados en piedra caliza con iluminación crepuscular suave y mobiliario de nogal natural.</textarea>
+<p class="text-[11px] text-on-surface-variant mt-1">Describe los elementos visuales concretos para la narración asistida de los agentes IA.</p>
+</div>
+<!-- Fila Dual: Origen / Autoría + Cesión de Derechos -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- 3. Origen / Autoría -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface mb-1.5 font-label-sm" for="autoria">
+                      Origen / Autoría <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-3.5 py-2.5 text-sm text-on-surface placeholder-secondary focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim transition-all" id="autoria" name="autoria" required="" type="text" value="Estudio Sordo Madaleno / Fototeca SA"/>
+</div>
+</div>
+<!-- 4. Cesión de derechos (select) -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface mb-1.5 font-label-sm" for="cesion_derechos">
+                      Cesión de derechos <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full bg-surface-bright border border-outline-variant rounded-lg px-3.5 py-2.5 text-sm text-on-surface focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim transition-all appearance-none cursor-pointer" id="cesion_derechos" name="cesion_derechos" required="">
+<option selected="" value="institucional">Institucional Sales Academy</option>
+<option value="dominio_publico">Dominio público</option>
+<option value="licencia_comercial">Licencia comercial</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-secondary">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fila Dual: Fecha de revisión + Estado de Aprobación -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- 5. Fecha de revisión -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface mb-1.5 font-label-sm" for="fecha_revision">
+                      Fecha de revisión <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-3.5 py-2 text-sm text-on-surface focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim transition-all" id="fecha_revision" name="fecha_revision" required="" type="date" value="2025-05-18"/>
+</div>
+</div>
+<!-- 6. Estado de aprobación -->
+<div>
+<span class="block text-xs font-semibold uppercase tracking-wider text-on-surface mb-1.5 font-label-sm">
+                      Estado de aprobación <span class="text-error">*</span>
+</span>
+<div class="flex items-center gap-3 h-[42px]">
+<label class="flex-1 flex items-center justify-center gap-2 p-2 border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:bg-surface-container has-[:checked]:border-outline">
+<input class="text-primary focus:ring-primary h-4 w-4 border-outline-variant" name="estado_aprobacion" type="radio" value="pendiente"/>
+<span class="text-xs font-medium text-on-surface">Pendiente</span>
+</label>
+<label class="flex-1 flex items-center justify-center gap-2 p-2 border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-variant transition-colors has-[:checked]:bg-[#203c28]/10 has-[:checked]:border-[#203c28] has-[:checked]:text-[#182219]">
+<input checked="" class="text-[#203c28] focus:ring-[#203c28] h-4 w-4 border-outline-variant" name="estado_aprobacion" type="radio" value="aprobado"/>
+<span class="text-xs font-medium text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#203c28]">check_circle</span>
+                          Aprobado para publicación
+                        </span>
+</label>
+</div>
+</div>
+</div>
+<!-- 7. Selector de referencias editoriales 'Vincular a recurso' -->
+<div class="pt-2">
+<label class="block text-xs font-semibold uppercase tracking-wider text-on-surface mb-1.5 font-label-sm" for="vincular_recurso">
+                    Vincular a recurso (Referencias editoriales)
+                  </label>
+<div class="relative">
+<select class="w-full bg-surface-bright border border-outline-variant rounded-lg px-3.5 py-2.5 text-sm text-on-surface focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim transition-all appearance-none cursor-pointer" id="vincular_recurso" name="vincular_recurso">
+<option value="pitch_deck_cancun">Módulo 04 · Pitch Deck Sala Cancún (Fase de Cierre)</option>
+<option value="manual_objeciones_tiempo_compartido">Capítulo 08 · Objeción de Mantenimiento Anual y Cuotas</option>
+<option selected="" value="brochure_master_collection">Brochure VIP · The Master Residences Collection 2025</option>
+<option value="guia_induccion_agentes">Guía Operativa · Inducción de Agentes IA de Sala</option>
+<option value="sin_vincular">-- Mantener en archivo general sin asignar --</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-secondary">
+<span class="material-symbols-outlined text-[20px]">link</span>
+</div>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-1">Asigna este medio a las secuencias de venta directa para que los asesores dispongan del gráfico durante el recorrido.</p>
+</div>
+</div>
+<!-- Barra de Acciones del Formulario (Guardar medio / Cancelar) -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex flex-col-reverse sm:flex-row items-center justify-end gap-3">
+<button class="w-full sm:w-auto h-[44px] px-6 rounded-lg border border-outline-variant text-secondary hover:text-on-surface hover:bg-surface-variant font-label-sm text-sm font-medium transition-colors" type="button">
+                  Cancelar
+                </button>
+<button class="w-full sm:w-auto h-[44px] px-8 rounded-lg bg-[#d4b574] hover:bg-[#c3a463] text-[#251a00] font-label-sm text-sm font-semibold tracking-wide shadow-sm hover:shadow transition-all flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[19px]">save</span>
+                  Guardar medio
+                </button>
+</div>
+</div>
+<!-- Panel de Auditoría Previa -->
+<div class="bg-surface-container rounded-xl border border-outline-variant/30 p-5 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0">policy</span>
+<div>
+<h4 class="text-xs font-semibold text-on-surface font-label-sm mb-0.5">Control de Cadena de Custodia Legal</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                  Al pulsar <strong class="text-on-surface">Guardar medio</strong>, queda registrado un token inmutable con su identificador de red, fecha y estatus de cesión. Cualquier uso posterior por agentes generativos de voz o pantalla citará la fuente acreditada en este formulario.
+                </p>
+</div>
+</div>
+</section>
+</form>
+</main>
+<!-- Pie de Página Fiel al Shared Components JSON -->
+<footer class="mt-auto bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="font-headline-sm text-headline-sm text-on-surface">Sales Academy</span>
+<span class="text-outline-variant">|</span>
+<span class="text-body-sm text-on-surface-variant/70">
+              © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+            </span>
+</div>
+<div class="flex flex-wrap items-center gap-6 text-label-sm text-on-surface-variant/70">
+<a class="hover:text-primary transition-colors duration-150" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Términos de servicio</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Contacto</a>
+<a class="hover:text-primary transition-colors duration-150 font-medium text-primary" href="#">Auditoría VIP</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

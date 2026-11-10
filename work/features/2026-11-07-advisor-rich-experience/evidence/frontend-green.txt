@@ -1,0 +1,22 @@
+PASS Contextual controls and an introductory film appear without inference at 1440px
+PASS Computed colors are readable and layout fits at 1440px
+PASS Suggested answers replace the previous choices and media remains trusted at 1440px
+PASS Film plays only after a gesture with audio and captions, then pauses on tab switch at 1440px
+PASS Demo action and editable WhatsApp handoff stay voluntary at 1440px
+PASS Media stops on close, hidden page, another film and a new question at 1440px
+PASS MediaHub and scenarios preserve strong text colors at 1440px
+PASS Contextual controls and an introductory film appear without inference at 390px
+PASS Computed colors are readable and layout fits at 390px
+PASS Suggested answers replace the previous choices and media remains trusted at 390px
+PASS Film plays only after a gesture with audio and captions, then pauses on tab switch at 390px
+PASS Demo action and editable WhatsApp handoff stay voluntary at 390px
+PASS Media stops on close, hidden page, another film and a new question at 390px
+PASS MediaHub and scenarios preserve strong text colors at 390px
+PASS Contextual controls and an introductory film appear without inference at 360px
+PASS Computed colors are readable and layout fits at 360px
+PASS Suggested answers replace the previous choices and media remains trusted at 360px
+PASS Film plays only after a gesture with audio and captions, then pauses on tab switch at 360px
+PASS Demo action and editable WhatsApp handoff stay voluntary at 360px
+PASS Media stops on close, hidden page, another film and a new question at 360px
+PASS MediaHub and scenarios preserve strong text colors at 360px
+PASS Legacy answers stay brief while preserving the complete original in details

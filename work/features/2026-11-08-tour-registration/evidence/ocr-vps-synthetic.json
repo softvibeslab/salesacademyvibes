@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-10",
+  "destination": "VPS app .art, temporary directory only",
+  "exit_code": 0,
+  "fixture": "survey-demo.png",
+  "synthetic": true,
+  "seconds": 0.995,
+  "temporary_cleanup": true,
+  "result": {
+    "ok": true,
+    "engine": "tesseract",
+    "candidates": {
+      "primaryName": {
+        "value": "Ana Demo",
+        "source": "survey",
+        "state": "review"
+      },
+      "companionName": {
+        "value": "Luis Demo",
+        "source": "survey",
+        "state": "review"
+      },
+      "language": {
+        "value": "es",
+        "source": "survey",
+        "state": "review"
+      },
+      "interests": {
+        "value": [
+          "Playa",
+          "descanso"
+        ],
+        "source": "survey",
+        "state": "review"
+      },
+      "notes": {
+        "value": "Prefieren una visita por la manana.",
+        "source": "survey",
+        "state": "review"
+      }
+    },
+    "warnings": []
+  }
+}

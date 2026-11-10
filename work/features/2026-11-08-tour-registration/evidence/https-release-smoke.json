@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-10",
+  "exit_code": 0,
+  "checks": {
+    "/": {
+      "status": 200,
+      "bytes": 1687,
+      "cache_control": "no-cache, must-revalidate",
+      "sha256": "1796df0ef2ff6ee4a590ef4567d2ff984ef2b28bfc6828959caf3830e6251ceb"
+    },
+    "/agenda.js?v=20261110tour1": {
+      "status": 200,
+      "bytes": 148579,
+      "cache_control": "no-cache, must-revalidate",
+      "sha256": "df3f31b29b147391cdf16f482a01cad5a8b0780d98704eac3e335bf6c524b3cf"
+    },
+    "/tour-registration.js?v=20261110tour1": {
+      "status": 200,
+      "bytes": 27198,
+      "cache_control": "no-cache, must-revalidate",
+      "sha256": "17ced86a13ab3dba7984536278822c4f81f76f1291d51a193725a0a52c27ff73"
+    },
+    "/tour-registration.css?v=20261110tour1": {
+      "status": 200,
+      "bytes": 6167,
+      "cache_control": "no-cache, must-revalidate",
+      "sha256": "988e80863b27b13aa00c0641045031dbfabac0e94cd3c2d2ae73c5fbab10b665"
+    },
+    "/ops-api.js?v=20261110tour1": {
+      "status": 200,
+      "bytes": 1082,
+      "cache_control": "no-cache, must-revalidate",
+      "sha256": "efdc3966a06143a5012e32c2e12976e74f4ed11fc27f0207c59b7ac71474e929"
+    },
+    "/api/health": {
+      "status": 200,
+      "bytes": 12,
+      "cache_control": "no-store",
+      "body": {
+        "ok": true
+      }
+    },
+    "/api/tour-registrations/capabilities": {
+      "status": 200,
+      "bytes": 153,
+      "cache_control": "no-store",
+      "body": {
+        "ok": true,
+        "enabled": false,
+        "mode": "demo",
+        "ocrAvailable": true,
+        "canRegister": false,
+        "operationalDate": "2026-11-07",
+        "timeZone": "America/Cancun"
+      }
+    },
+    "/api/tour-registrations": {
+      "status": 503,
+      "body": {
+        "ok": false,
+        "code": "module_disabled",
+        "error": "El registro de tours no está habilitado."
+      }
+    }
+  }
+}

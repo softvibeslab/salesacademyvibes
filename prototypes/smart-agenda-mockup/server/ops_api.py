@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Demo JSON API for Sales Academy tours. Not authentication."""
+"""Sales Academy agenda API with optional private authenticated tour registration."""
 
 import datetime
 import hashlib
@@ -14,10 +14,14 @@ import time
 from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from ops_import import preview_payload
 from ops_context import build_context, context_text
 from ops_tasks import clean_task, evidence_path, purge_expired, seed_tasks, task_view, validate_evidence
+import private_auth
+import tour_registration as registration
+import survey_preview
 
 HOST = "127.0.0.1"
 PORT = int(os.environ.get("OPS_PORT", "8026"))
@@ -33,6 +37,7 @@ DEMO_PASSWORD = os.environ.get("OPS_DEMO_PASSWORD", "Demo-2026")
 ADMIN_PASSWORD = os.environ.get("OPS_ADMIN_PASSWORD", "")
 COOKIE_NAME = "sa_session"
 COOKIE_SECURE = os.environ.get("OPS_COOKIE_SECURE", "1") != "0"
+ALLOW_OPS_HEADER = os.environ.get("OPS_ALLOW_OPS_HEADER", "1") != "0"
 ALLOW_ACTOR_HEADER = os.environ.get("OPS_ALLOW_ACTOR_HEADER") == "1"
 SESSION_TTL = 12 * 60 * 60
 LOGIN_MAX_FAILS = 5
@@ -162,6 +167,8 @@ def session_actor(data, token, now=None):
     if not entry or entry.get("exp", 0) < now:
         return None
     who = entry.get("who")
+    if not private_auth.session_valid(entry, who):
+        return None
     if who == "admin":
         return {"role": "admin", "id": "admin"}
     person_row = person(data, who)
@@ -196,6 +203,10 @@ def login_cleared(username):
 
 
 def check_password(data, username, password):
+    if private_auth.mode() == "private":
+        return bool(username == "admin" or person(data, username)) and private_auth.verify(username, password)
+    if private_auth.mode() != "demo":
+        return False
     if username == "admin":
         return bool(ADMIN_PASSWORD) and hmac.compare_digest(password, ADMIN_PASSWORD)
     row = person(data, username)
@@ -346,7 +357,7 @@ def read_store():
 
 def write_store(data):
     folder = os.path.dirname(ROOT)
-    os.makedirs(folder, exist_ok=True)
+    os.makedirs(folder, mode=0o700, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=folder, suffix=".tmp")
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as handle:
@@ -365,8 +376,9 @@ def mutate(change):
         import fcntl
         fcntl.flock(lock, fcntl.LOCK_EX)
         data = read_store()
+        expired = registration.purge(data)
         result = change(data)
-        if result.get("save"):
+        if result.get("save") or expired:
             write_store(data)
         return result
 
@@ -451,15 +463,157 @@ class Handler(BaseHTTPRequestHandler):
         morsel = jar.get(COOKIE_NAME)
         return morsel.value if morsel else ""
 
-    def actor(self, data):
+    def actor(self, data, query=None):
+        raw_actor = self.headers.get("X-Ops-Actor") or ((query.get("actor") or [""])[0] if query else "")
+        header_actor = parse_actor(raw_actor, data)
+        if header_actor and ALLOW_OPS_HEADER and header_actor["role"] in {"admin", "jefe"}:
+            return header_actor
         found = session_actor(data, self.cookie_token())
         if found:
             return found
-        if ALLOW_ACTOR_HEADER:
-            return parse_actor(self.headers.get("X-Ops-Actor"), data)
+        if header_actor and ALLOW_ACTOR_HEADER:
+            return header_actor
         return None
 
+    def private_headers_error(self):
+        host = self.headers.get("Host", "")
+        expected = os.environ.get("OPS_TOUR_REGISTRATION_ORIGIN") or (("https://" if COOKIE_SECURE else "http://") + host)
+        origin = self.headers.get("Origin", "")
+        if not origin or origin == "null" or origin != expected:
+            return registration.response(403, "invalid_origin", "Abre el formulario desde Sales Academy.")
+        if self.command != "DELETE" and self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower() != "application/json":
+            return registration.response(415, "invalid_content_type", "Envía el formulario en formato JSON.")
+        return None
+
+    def mutation_actor(self, data, path):
+        """Legacy routes stay public for anonymous fixtures, never for private linked tours."""
+        rows = data.get("tourRegistrations", {})
+        tour = re.fullmatch(r"/tours/(v[0-9]+)(?:/result)?", path)
+        owner = re.fullmatch(r"/people/([a-z]{2,12})", path)
+        row = rows.get(tour.group(1)) if tour else None
+        protected = bool(row) or (path == "/reset" and bool(rows or data.get("tourRegistrationRequests"))) or (owner and any(r["repId"] == owner.group(1) for r in rows.values()))
+        if not protected:
+            return self.actor(data), None
+        actor = session_actor(data, self.cookie_token())
+        if not actor:
+            return None, registration.response(401, "authentication_required", "Inicia sesión con tu acceso privado.")
+        if private_auth.mode() != "private":
+            return None, registration.response(403, "private_auth_required", "Esta operación requiere un acceso privado.")
+        error = self.private_headers_error()
+        if error:
+            return None, error
+        if row and not registration.in_scope(data, actor, row):
+            return None, registration.response(403, "forbidden", "No tienes acceso a este registro.")
+        if (path == "/reset" or owner) and actor["role"] != "admin":
+            return None, registration.response(403, "forbidden", "Esta operación requiere administrador privado.")
+        return actor, None
+
+    def registration_gate(self, data):
+        if os.environ.get("OPS_TOUR_REGISTRATION_ENABLED", "0") != "1":
+            return None, registration.response(503, "module_disabled", "El registro de tours no está habilitado.")
+        actor = session_actor(data, self.cookie_token())
+        if not actor:
+            return None, registration.response(401, "authentication_required", "Inicia sesión para registrar un tour.")
+        mode = os.environ.get("OPS_TOUR_REGISTRATION_MODE", "demo")
+        if mode not in ("demo", "private"):
+            return None, registration.response(503, "configuration_required", "El módulo necesita configuración.")
+        if mode == "private" and private_auth.mode() != "private":
+            return None, registration.response(403, "private_auth_required", "Este módulo requiere tu acceso privado.")
+        if mode == "private" and not private_auth.storage_ready(ROOT):
+            return None, registration.response(503, "storage_configuration", "El almacenamiento privado necesita configuración.")
+        return actor, None
+
+    def registration_capabilities(self, data):
+        mode = os.environ.get("OPS_TOUR_REGISTRATION_MODE", "demo")
+        zone = os.environ.get("OPS_TIME_ZONE", "America/Cancun")
+        try:
+            day = datetime.datetime.now(ZoneInfo(zone)).date().isoformat()
+        except (ZoneInfoNotFoundError, ValueError):
+            zone, day = "America/Cancun", ""
+        actor, error = self.registration_gate(data)
+        return {"ok": True, "enabled": os.environ.get("OPS_TOUR_REGISTRATION_ENABLED", "0") == "1",
+                "mode": mode if mode in ("demo", "private") else "unavailable", "ocrAvailable": survey_preview.available(),
+                "canRegister": bool(actor and not error and day), "operationalDate": day if mode == "private" else "2026-11-07", "timeZone": zone}
+
+    def handle_registration(self, method, path, query):
+        payload = None
+        if method == "POST":
+            error = self.private_headers_error()
+            if error:
+                self.close_connection = True
+                self.send_json(error["status"], error["body"])
+                return
+            limit = 2_000_000 if path == "/tour-registrations/preview" else 8192
+            try:
+                length = int(self.headers.get("Content-Length") or "0")
+            except ValueError:
+                length = -1
+            if length < 0 or length > limit:
+                self.close_connection = True
+                error = registration.response(413, "body_too_large", "El archivo o formulario supera el tamaño permitido.")
+                self.send_json(error["status"], error["body"])
+                return
+            payload = self.read_json(limit, length)
+            if payload is None:
+                self.send_json(400, registration.response(400, "invalid_json", "El formulario no es válido.")["body"])
+                return
+
+        def run(data):
+            if method == "GET" and path == "/tour-registrations/capabilities":
+                return {"status": 200, "body": self.registration_capabilities(data)}
+            actor, error = self.registration_gate(data)
+            if error:
+                return error
+            if method == "POST" and path == "/tour-registrations/preview":
+                return {"status": 200, "body": {"ok": True}, "previewActor": actor}
+            if method == "POST" and path == "/tour-registrations":
+                return registration.create(data, actor, payload, overlaps, privacy_mode=private_auth.mode())
+            if method != "GET":
+                return registration.response(404, "not_found", "No existe.")
+            rows = [r for r in data.get("tourRegistrations", {}).values()
+                    if registration.in_scope(data, actor, r) and (r.get("privacyMode", "private") != "private" or private_auth.mode() == "private")]
+            if path == "/tour-registrations":
+                date = (query.get("date") or [""])[0]
+                try:
+                    limit = int((query.get("limit") or ["50"])[0])
+                except ValueError:
+                    limit = 0
+                if not 1 <= limit <= 100 or (date and not registration.valid_date(date)):
+                    return registration.response(400, "validation_error", "La fecha o el límite no es válido.")
+                rows = sorted((r for r in rows if not date or r["date"] == date), key=lambda r: (r["date"], r["start"], r["tourId"]))
+                return {"status": 200, "body": {"ok": True, "registrations": [registration.view(r) for r in rows[:limit]]}}
+            found = re.fullmatch(r"/tour-registrations/(v[0-9]+)", path)
+            row = next((r for r in rows if found and r["tourId"] == found.group(1)), None)
+            if not row:
+                return registration.response(404, "not_found", "El registro no está disponible.")
+            visit = next((v for v in data["visits"] if v["id"] == row["tourId"]), None)
+            return {"status": 200, "body": {"ok": True, "registration": registration.view(row), "visit": registration.public_visit(visit) if visit else None}}
+
+        result = mutate(run)
+        if "previewActor" in result:
+            raw, error = survey_preview.image_bytes(payload)
+            if error:
+                status = 413 if error == "image_too_large" else 415
+                result = registration.response(status, error, "Usa una imagen JPEG o PNG válida de hasta 1.5 MB.")
+            elif not survey_preview.rate_allowed(result["previewActor"]["id"]):
+                result = registration.response(429, "preview_rate_limit", "Espera un minuto antes de analizar otra foto.")
+            else:
+                # No data lock is held while the OCR subprocess is running.
+                preview = survey_preview.preview(raw, payload["mime"])
+                def recheck(data):
+                    actor, error = self.registration_gate(data)
+                    if error:
+                        return error
+                    if actor != result["previewActor"]:
+                        return registration.response(401, "authentication_required", "Vuelve a iniciar sesión.")
+                    if preview.get("busy"):
+                        return registration.response(429, "preview_busy", "Hay otra lectura en curso. Intenta en un momento.")
+                    return {"status": 200, "body": preview}
+                result = mutate(recheck)
+        self.send_json(result["status"], result["body"])
+
     def send_json(self, status, payload, cookie=None):
+        payload = registration.public_response(payload)
         raw = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -472,13 +626,17 @@ class Handler(BaseHTTPRequestHandler):
 
     def read_json(self, limit=8192, length=None):
         if length is None:
-            length = int(self.headers.get("Content-Length") or "0")
+            try:
+                length = int(self.headers.get("Content-Length") or "0")
+            except ValueError:
+                return None
         if length < 0 or length > limit:
             return None
         if length == 0:
             return {}
         try:
-            return json.loads(self.rfile.read(length).decode("utf-8"))
+            value = json.loads(self.rfile.read(length).decode("utf-8"))
+            return value if isinstance(value, dict) else None
         except (UnicodeError, json.JSONDecodeError):
             return None
 
@@ -491,6 +649,9 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path, query = self.route()
+        if path.startswith("/tour-registrations"):
+            self.handle_registration("GET", path, query)
+            return
         if path == "/health":
             self.send_json(200, {"ok": True})
             return
@@ -507,7 +668,7 @@ class Handler(BaseHTTPRequestHandler):
                     "failSteps": FAIL_STEPS,
                     "currencies": sorted(CURRENCIES),
                 }}
-            actor = self.actor(data)
+            actor = self.actor(data, query)
             if not actor:
                 return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             if path == "/me":
@@ -575,6 +736,15 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path, _query = self.route()
+        if path.startswith("/tour-registrations"):
+            self.handle_registration("POST", path, _query)
+            return
+        if path in {"/login", "/logout"} and private_auth.mode() == "private":
+            error = self.private_headers_error()
+            if error:
+                self.close_connection = True
+                self.send_json(error["status"], error["body"])
+                return
         try:
             length = int(self.headers.get("Content-Length") or "0")
         except ValueError:
@@ -597,16 +767,21 @@ class Handler(BaseHTTPRequestHandler):
                 password = str(payload.get("password") or "")[:200]
                 if login_locked(username):
                     return {"status": 429, "body": {"ok": False, "error": "Demasiados intentos. Espera unos minutos."}}
-                if not check_password(data, username, password):
+                auth_mode = private_auth.mode()
+                auth_stamp = private_auth.authenticate(username, password) if auth_mode == "private" and (username == "admin" or person(data, username)) else ""
+                valid_password = bool(auth_stamp) if auth_mode == "private" else check_password(data, username, password)
+                if not valid_password or private_auth.mode() != auth_mode or (auth_mode == "private" and private_auth.credential_version(username) != auth_stamp):
                     login_failed(username)
                     return {"status": 401, "body": {"ok": False, "error": BAD_LOGIN}}
                 login_cleared(username)
                 now = time.time()
                 sessions = {k: v for k, v in (data.get("sessions") or {}).items() if v.get("exp", 0) > now}
                 token = secrets.token_urlsafe(32)
-                sessions[token_hash(token)] = {"who": username, "exp": now + SESSION_TTL}
+                sessions[token_hash(token)] = {"who": username, "exp": now + SESSION_TTL, "authMode": auth_mode, "credentialVersion": auth_stamp}
                 data["sessions"] = sessions
                 found = session_actor(data, token, now)
+                if not found:
+                    return {"status": 401, "body": {"ok": False, "error": BAD_LOGIN}}
                 return {"status": 200, "save": True, "cookie": session_cookie(token, SESSION_TTL),
                         "body": {"ok": True, "user": user_view(data, found)}}
             if path == "/logout":
@@ -617,7 +792,9 @@ class Handler(BaseHTTPRequestHandler):
                     data["sessions"] = sessions
                     return {"status": 200, "save": True, "cookie": session_cookie("", 0), "body": {"ok": True}}
                 return {"status": 200, "cookie": session_cookie("", 0), "body": {"ok": True}}
-            actor = self.actor(data)
+            actor, guard_error = self.mutation_actor(data, path)
+            if guard_error:
+                return guard_error
             if not actor:
                 return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             if path == "/reset":
@@ -707,7 +884,9 @@ class Handler(BaseHTTPRequestHandler):
             return
 
         def run(data):
-            actor = self.actor(data)
+            actor, guard_error = self.mutation_actor(data, path)
+            if guard_error:
+                return guard_error
             if not actor:
                 return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             people = re.fullmatch(r"/people/([a-z]{2,12})", path)
@@ -755,7 +934,9 @@ class Handler(BaseHTTPRequestHandler):
             return
 
         def run(data):
-            actor = self.actor(data)
+            actor, guard_error = self.mutation_actor(data, path)
+            if guard_error:
+                return guard_error
             if not actor:
                 return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             match = re.fullmatch(r"/tours/(v[0-9]+)/result", path)
@@ -794,7 +975,9 @@ class Handler(BaseHTTPRequestHandler):
         path, _query = self.route()
 
         def run(data):
-            actor = self.actor(data)
+            actor, guard_error = self.mutation_actor(data, path)
+            if guard_error:
+                return guard_error
             if not actor:
                 return {"status": 401, "body": {"ok": False, "error": "Inicia sesión."}}
             result_match = re.fullmatch(r"/tours/(v[0-9]+)/result", path)
@@ -823,6 +1006,7 @@ class Handler(BaseHTTPRequestHandler):
             if not allowed(actor, data, current):
                 return {"status": 403, "body": {"ok": False, "error": "Ese tour no está en tu sala."}}
             data["visits"] = [visit for visit in data["visits"] if visit["id"] != current["id"]]
+            registration.remove(data, current["id"])
             return {"status": 200, "save": True, "body": {"ok": True}}
 
         result = mutate(run)
@@ -830,9 +1014,10 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def serve():
-    os.makedirs(os.path.dirname(ROOT), exist_ok=True)
+    os.makedirs(os.path.dirname(ROOT), mode=0o700, exist_ok=True)
     if not os.path.exists(ROOT):
         write_store(seed())
+    mutate(lambda data: {"status": 200, "body": {"ok": True}})
     ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
 
 

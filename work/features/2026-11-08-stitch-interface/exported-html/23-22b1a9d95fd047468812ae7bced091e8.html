@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>23 · CMS · Asesor IA — Sales Academy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-xl": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-[#f4f4ed] text-on-surface antialiased font-body-md text-body-md h-full selection:bg-primary-container selection:text-on-primary-container">
+<!-- Desktop Canvas Wrapper (1440px target layout) -->
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar verde oscuro (#1d241c) -->
+<aside class="w-[280px] bg-[#1d241c] text-[#e4e2dd] flex flex-col justify-between shrink-0 select-none border-r border-[#2d382c]">
+<div class="flex flex-col">
+<!-- Brand Monogram & Portal Info -->
+<div class="h-20 flex items-center px-6 border-b border-[#2a3429] gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#d4b574] text-[#1b1c18] font-bold flex items-center justify-center font-headline-md tracking-tight">
+            SA
+          </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-[#fbf9f3] tracking-tight leading-tight">Sales Academy</span>
+<span class="font-label-sm text-label-sm text-[#9da59b] tracking-wider">CMS · Sala Operativa</span>
+</div>
+</div>
+<!-- Navigation Group -->
+<div class="px-4 py-6">
+<span class="px-3 font-label-sm text-label-sm text-[#7e887b] tracking-widest block mb-3">MÓDULOS DEL SISTEMA</span>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9da59b] hover:text-[#fbf9f3] hover:bg-[#252f24] transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]">dashboard</span>
+<span class="font-body-md text-body-md font-medium">Panel general</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9da59b] hover:text-[#fbf9f3] hover:bg-[#252f24] transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]">school</span>
+<span class="font-body-md text-body-md font-medium">Simulaciones de sala</span>
+</a>
+<!-- Active Link: Asesor IA -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[#273325] text-[#fbf9f3] border-l-2 border-[#d4b574] transition-colors" href="/cms/asesor-ia/">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-[#d4b574]" data-icon="smart_toy">smart_toy</span>
+<span class="font-body-md text-body-md font-medium text-[#fbf9f3]">Asesor IA</span>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-label-sm bg-[#3a4937] text-[#d4b574] font-semibold">ACTIVO</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9da59b] hover:text-[#fbf9f3] hover:bg-[#252f24] transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]">library_books</span>
+<span class="font-body-md text-body-md font-medium">MediaHub &amp; Objeciones</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9da59b] hover:text-[#fbf9f3] hover:bg-[#252f24] transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]">insights</span>
+<span class="font-body-md text-body-md font-medium">Diagnóstico de equipo</span>
+</a>
+</nav>
+<span class="px-3 font-label-sm text-label-sm text-[#7e887b] tracking-widest block mt-8 mb-3">CANALES DIRECTOS</span>
+<nav class="space-y-1">
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-[#9da59b] hover:text-[#fbf9f3] hover:bg-[#252f24] transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px]">chat</span>
+<span class="font-body-md text-body-md font-medium">WhatsApp Chris</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9da59b] hover:text-[#fbf9f3] hover:bg-[#252f24] transition-colors" href="#">
+<span class="material-symbols-outlined text-[19px]">history_edu</span>
+<span class="font-body-md text-body-md font-medium">Registro de auditoría</span>
+</a>
+</nav>
+</div>
+</div>
+<!-- User footer in sidebar -->
+<div class="p-4 border-t border-[#2a3429] bg-[#171d16] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#2f3d2d] flex items-center justify-center text-xs font-semibold text-[#d4b574]">
+            CM
+          </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-[#fbf9f3]">Chris · Dirección</span>
+<span class="text-[11px] text-[#869183]">Sesión administrativa</span>
+</div>
+</div>
+<button aria-label="Ajustes de cuenta" class="text-[#869183] hover:text-[#fbf9f3] transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0 bg-[#f4f4ed] overflow-y-auto">
+<!-- Top Bar / Breadcrumb Docked -->
+<header class="h-20 bg-surface flex items-center justify-between px-8 border-b border-outline-variant/30 sticky top-0 z-20">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary">Sistema CMS</span>
+<span class="text-outline-variant text-xs">/</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Asesor IA</span>
+<span class="text-outline-variant text-xs">/</span>
+<code class="px-2 py-0.5 rounded bg-surface-container text-xs font-mono text-on-surface-variant tracking-tight">/cms/asesor-ia/</code>
+</div>
+<div class="flex items-center gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-[#d4b574]"></span>
+<span>Entorno de demostración sintética</span>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold hover:brightness-95 transition-all">
+<span class="material-symbols-outlined text-[17px]">sync</span>
+<span>Actualizar registros</span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-[1360px] mx-auto w-full space-y-8">
+<!-- Header Editorial Title & Deck -->
+<section class="border-b border-outline-variant/40 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-2 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold tracking-wider text-primary font-label-sm">PANEL OPERATIVO CMS · CAPTACIÓN ASISTIDA</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight leading-tight">
+              De la conversación al siguiente paso
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              Consolidación editorial de intenciones de diálogo generadas por el Asesor web/móvil. Cada registro resume la necesidad pedagógica expresada por líderes de ventas antes de la coordinación personalizada.
+            </p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-sm text-label-sm text-secondary block">Última sincronización</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Hoy, 18:42 hrs (Local)</span>
+</div>
+</section>
+<!-- Metric Cards Grid with explicit 'Datos de ejemplo' badge -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Metric 1 -->
+<div class="p-5 rounded-lg bg-surface-container-low border border-outline-variant/50 relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary">Sesiones activas</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm font-medium bg-surface-container-highest text-secondary border border-outline-variant/40">Datos de ejemplo</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-light">-</span>
+<span class="font-label-sm text-label-sm text-secondary">en tiempo real</span>
+</div>
+</div>
+<p class="mt-4 text-xs text-on-surface-variant/80 border-t border-outline-variant/20 pt-2.5">
+              Sin telemetría invasiva en demostración pública.
+            </p>
+</div>
+<!-- Metric 2 -->
+<div class="p-5 rounded-lg bg-surface-container-low border border-outline-variant/50 relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary">Mensajes orientativos</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm font-medium bg-surface-container-highest text-secondary border border-outline-variant/40">Datos de ejemplo</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-light">-</span>
+<span class="font-label-sm text-label-sm text-secondary">intercambios</span>
+</div>
+</div>
+<p class="mt-4 text-xs text-on-surface-variant/80 border-t border-outline-variant/20 pt-2.5">
+              Foco en síntesis calificada, no en volumen de chat.
+            </p>
+</div>
+<!-- Metric 3 -->
+<div class="p-5 rounded-lg bg-surface-container-low border border-outline-variant/50 relative overflow-hidden flex flex-col justify-between bg-gradient-to-b from-surface-container-low to-surface-container">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Solicitudes preparadas</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm font-semibold bg-[#ffdf9d]/50 text-on-primary-fixed border border-[#d4b574]/40">Datos de ejemplo</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-normal">4</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">demo</span>
+</div>
+</div>
+<p class="mt-4 text-xs text-on-surface-variant/80 border-t border-outline-variant/20 pt-2.5">
+              Formularios con diagnóstico sintético estructurado.
+            </p>
+</div>
+<!-- Metric 4 -->
+<div class="p-5 rounded-lg bg-surface-container-low border border-outline-variant/50 relative overflow-hidden flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary">Calificadas</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-sm font-semibold bg-[#ffdf9d]/50 text-on-primary-fixed border border-[#d4b574]/40">Datos de ejemplo</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-normal">2</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">demo</span>
+</div>
+</div>
+<p class="mt-4 text-xs text-on-surface-variant/80 border-t border-outline-variant/20 pt-2.5">
+              Criterio de sala de ventas y volumen compatible.
+            </p>
+</div>
+</section>
+<!-- Filter Controls Toolbar -->
+<section class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-4 rounded-lg bg-surface border border-outline-variant/40 shadow-xs">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary mr-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px]">filter_list</span>
+              Filtro de seguimiento:
+            </span>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#1b1c18] text-[#fbf9f3] transition-all">
+              Todos (4)
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant border border-outline-variant/40 transition-colors">
+              Pendiente de confirmación
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant border border-outline-variant/40 transition-colors">
+              Contactado por Chris
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant border border-outline-variant/40 transition-colors">
+              Cualificado
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface-variant border border-outline-variant/40 transition-colors">
+              Cerrado
+            </button>
+</div>
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+              Privacidad activa: Sin transcripciones crudas
+            </span>
+</div>
+</section>
+<!-- Main Requests Table -->
+<section class="bg-surface rounded-lg border border-outline-variant/40 overflow-hidden shadow-xs">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/40 font-label-sm text-label-sm text-secondary uppercase tracking-wider">
+<th class="py-3.5 px-6 font-medium" scope="col">Persona (Sintética)</th>
+<th class="py-3.5 px-6 font-medium" scope="col">Contexto declarado</th>
+<th class="py-3.5 px-6 font-medium" scope="col">Resumen revisado</th>
+<th class="py-3.5 px-6 font-medium" scope="col">Horario y zona preferida</th>
+<th class="py-3.5 px-6 font-medium text-right" scope="col">Estado de seguimiento</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-md text-body-md">
+<!-- Row 1: Carlos Mendoza (Item Principal solicitado) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-[#fdfcf9]">
+<td class="py-4 px-6 align-top">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/40 text-on-primary-container font-semibold flex items-center justify-center text-xs mt-0.5">
+                        CM
+                      </div>
+<div>
+<span class="font-medium text-on-surface block leading-tight">Carlos Mendoza <span class="text-xs text-secondary font-normal">(ejemplo)</span></span>
+<span class="text-xs text-on-surface-variant/80 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">call</span>
+                          +52 998 ··· ··42
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top">
+<div class="space-y-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-xs font-medium bg-surface-container text-on-surface border border-outline-variant/40">
+                        Líder de 2 a 3 salas · Vacacional Cancún
+                      </span>
+<p class="text-xs text-secondary">Equipo actual: 18 cerradores activos</p>
+</div>
+</td>
+<td class="py-4 px-6 align-top max-w-sm">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="text-xs text-on-surface leading-relaxed">
+                        “Interés en calibración de objeciones en 3 min post-tour. Busca estandarizar réplicas de mantenimiento sin fricción moral.”
+                      </p>
+</div>
+</td>
+<td class="py-4 px-6 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface text-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">schedule</span>
+                        Jueves 16:00 hrs
+                      </span>
+<span class="text-[11px] text-secondary mt-0.5">America/Cancun GMT-5</span>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="inline-flex flex-col items-end">
+<select class="rounded-lg border-outline-variant/50 bg-surface text-xs font-medium text-on-surface py-1.5 pl-2.5 pr-7 focus:ring-1 focus:ring-primary focus:border-primary shadow-xs">
+<option selected="">Pendiente de confirmación</option>
+<option>Contactado por Chris</option>
+<option>Cualificado</option>
+<option>Cerrado</option>
+</select>
+<span class="text-[11px] text-amber-700/80 mt-1 flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                        Por contactar vía WhatsApp
+                      </span>
+</div>
+</td>
+</tr>
+<!-- Row 2: Registro Demostrativo 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6 align-top">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-secondary font-semibold flex items-center justify-center text-xs mt-0.5">
+                        AL
+                      </div>
+<div>
+<span class="font-medium text-on-surface block leading-tight">Andrea Lozano <span class="text-xs text-secondary font-normal">(ejemplo)</span></span>
+<span class="text-xs text-on-surface-variant/80 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">call</span>
+                          +52 624 ··· ··19
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top">
+<div class="space-y-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-xs font-medium bg-surface-container text-on-surface border border-outline-variant/40">
+                        Directora comercial · Los Cabos
+                      </span>
+<p class="text-xs text-secondary">Segmento: Fraccional de lujo</p>
+</div>
+</td>
+<td class="py-4 px-6 align-top max-w-sm">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="text-xs text-on-surface leading-relaxed">
+                        “Busca método para liners novatos en calificación financiera previa al warm-up de mesa. Solicitó demo directa con Chris.”
+                      </p>
+</div>
+</td>
+<td class="py-4 px-6 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface text-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">schedule</span>
+                        Viernes 11:30 hrs
+                      </span>
+<span class="text-[11px] text-secondary mt-0.5">America/Mazatlan GMT-7</span>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="inline-flex flex-col items-end">
+<select class="rounded-lg border-outline-variant/50 bg-surface text-xs font-medium text-on-surface py-1.5 pl-2.5 pr-7 focus:ring-1 focus:ring-primary focus:border-primary shadow-xs">
+<option>Pendiente de confirmación</option>
+<option selected="">Contactado por Chris</option>
+<option>Cualificado</option>
+<option>Cerrado</option>
+</select>
+<span class="text-[11px] text-emerald-700/80 mt-1 flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        Mensaje enviado hoy 14:10
+                      </span>
+</div>
+</td>
+</tr>
+<!-- Row 3: Registro Demostrativo 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6 align-top">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-secondary font-semibold flex items-center justify-center text-xs mt-0.5">
+                        RV
+                      </div>
+<div>
+<span class="font-medium text-on-surface block leading-tight">Roberto Villamil <span class="text-xs text-secondary font-normal">(ejemplo)</span></span>
+<span class="text-xs text-on-surface-variant/80 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">call</span>
+                          +52 984 ··· ··77
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top">
+<div class="space-y-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-xs font-medium bg-surface-container text-on-surface border border-outline-variant/40">
+                        Gerente de Desarrollo · Riviera Maya
+                      </span>
+<p class="text-xs text-secondary">Interés en programa de 6 semanas</p>
+</div>
+</td>
+<td class="py-4 px-6 align-top max-w-sm">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="text-xs text-on-surface leading-relaxed">
+                        “Evaluando sustitución de capacitaciones teóricas por el simulador de objeciones recurrentes. Requiere costos para 30 accesos.”
+                      </p>
+</div>
+</td>
+<td class="py-4 px-6 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface text-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">schedule</span>
+                        Lunes 10:00 hrs
+                      </span>
+<span class="text-[11px] text-secondary mt-0.5">America/Cancun GMT-5</span>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="inline-flex flex-col items-end">
+<select class="rounded-lg border-outline-variant/50 bg-surface text-xs font-medium text-on-surface py-1.5 pl-2.5 pr-7 focus:ring-1 focus:ring-primary focus:border-primary shadow-xs">
+<option>Pendiente de confirmación</option>
+<option>Contactado por Chris</option>
+<option selected="">Cualificado</option>
+<option>Cerrado</option>
+</select>
+<span class="text-[11px] text-primary mt-1 flex items-center gap-1 font-medium">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#d4b574]"></span>
+                        Propuesta ejecutiva lista
+                      </span>
+</div>
+</td>
+</tr>
+<!-- Row 4: Registro Demostrativo 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-6 align-top">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container text-secondary font-semibold flex items-center justify-center text-xs mt-0.5">
+                        EP
+                      </div>
+<div>
+<span class="font-medium text-on-surface block leading-tight">Esteban Paredes <span class="text-xs text-secondary font-normal">(ejemplo)</span></span>
+<span class="text-xs text-on-surface-variant/80 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-emerald-600">call</span>
+                          +506 8··· ··91
+                        </span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top">
+<div class="space-y-1">
+<span class="inline-block px-2.5 py-0.5 rounded text-xs font-medium bg-surface-container text-on-surface border border-outline-variant/40">
+                        Operación Regional · Guanacaste
+                      </span>
+<p class="text-xs text-secondary">Multi-sala vacacional</p>
+</div>
+</td>
+<td class="py-4 px-6 align-top max-w-sm">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="text-xs text-on-surface leading-relaxed">
+                        “Revisó la galería de audios de entrenamiento. Desea validar si el Asesor opera con acento neutro y terminología de club de golf.”
+                      </p>
+</div>
+</td>
+<td class="py-4 px-6 align-top whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface text-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">schedule</span>
+                        Martes 15:30 hrs
+                      </span>
+<span class="text-[11px] text-secondary mt-0.5">America/Costa_Rica GMT-6</span>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="inline-flex flex-col items-end">
+<select class="rounded-lg border-outline-variant/50 bg-surface text-xs font-medium text-on-surface py-1.5 pl-2.5 pr-7 focus:ring-1 focus:ring-primary focus:border-primary shadow-xs">
+<option>Pendiente de confirmación</option>
+<option>Contactado por Chris</option>
+<option>Cualificado</option>
+<option selected="">Cerrado</option>
+</select>
+<span class="text-[11px] text-secondary mt-1 flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        En seguimiento posterior
+                      </span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Editorial Disclaimers & Protocol Note al pie -->
+<div class="p-6 bg-surface-container-low border-t border-outline-variant/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-3 max-w-3xl">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="info">info</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface font-medium">Nota clara:</strong> La fecha indicada es una preferencia del solicitante, no una cita confirmada automáticamente. El contacto se realiza de forma directa por WhatsApp.
+              </p>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface border border-outline-variant/40 text-xs font-medium text-secondary">
+<span class="material-symbols-outlined text-[15px] text-emerald-600">lock</span>
+                Datos protegidos sin telemetría cruda
+              </span>
+</div>
+</div>
+</section>
+<!-- Bento Protocol Info Panel -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 pb-8">
+<div class="p-5 rounded-lg bg-surface border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Validación pedagógica</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                El asesor sintético no toma decisiones de venta de tiempo compartido, sino que recopila los dolores recurrentes de sala para que la mentoría sea inmediata.
+              </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-secondary">
+<span>Calibración: 3 min post-tour</span>
+<span class="text-primary font-medium">• Método SA</span>
+</div>
+</div>
+<div class="p-5 rounded-lg bg-surface border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Contacto Directo</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                Toda interacción se transfiere directamente al canal personal de WhatsApp de Chris con un brief claro, evitando correos fríos y formularios sin contexto.
+              </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-secondary">
+<span>SLA promedio de contacto</span>
+<span class="text-primary font-medium">&lt; 4 horas hábiles</span>
+</div>
+</div>
+<div class="p-5 rounded-lg bg-surface border border-outline-variant/30 flex flex-col justify-between">
+<div class="space-y-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">security</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Ética y Confidencialidad</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                No se publican métricas sensibles de cierre de salas de terceros ni se archivan conversaciones completas en bases de datos abiertas.
+              </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-secondary">
+<span>Privacidad</span>
+<span class="text-emerald-700 font-medium">Cumplimiento estricto</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Component -->
+<footer class="mt-auto border-t border-outline-variant/20 bg-surface-container-lowest py-8 px-8">
+<div class="max-w-[1360px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant/70">
+<div class="flex items-center gap-3">
+<span class="font-headline-sm text-headline-sm text-on-surface font-normal">Sales Academy</span>
+<span>·</span>
+<span>© 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.</span>
+</div>
+<div class="flex items-center gap-6 font-normal">
+<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Términos de servicio</a>
+<a class="hover:text-primary transition-colors" href="#">Contacto</a>
+<a class="hover:text-primary transition-colors font-medium text-primary" href="#">Auditoría VIP</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

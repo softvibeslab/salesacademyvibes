@@ -1,0 +1,17 @@
+{
+  "base": "http://127.0.0.1:4310",
+  "synthetic": true,
+  "results": [
+    {
+      "name": "Legacy answers stay brief while preserving the complete original in details",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok((await bubble.locator(':scope > p').innerText()).trim().split(/\\s+/).length<=90)\n"
+    }
+  ],
+  "errors": [],
+  "mp4BeforeGesture": 0,
+  "whatsappOpened": false,
+  "ok": false,
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok((await bubble.locator(':scope > p').innerText()).trim().split(/\\s+/).length<=90)\n",
+  "finishedAt": "2026-11-07T15:06:30.485Z"
+}

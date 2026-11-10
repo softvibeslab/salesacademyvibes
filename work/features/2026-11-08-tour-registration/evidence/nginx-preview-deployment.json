@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "exact_route": "/api/tour-registrations/preview",
+  "json_limit_bytes": 2000000,
+  "other_api_limit": "32k",
+  "nginx_config_test": "passed",
+  "reload": "passed",
+  "backup": "/var/backups/salesacademy-ops/releases/tour-proxy-20261110T224035Z",
+  "config_sha256": "529e555731a07c7c30ca02dec0335eb6261282629053065c35b04bdefa9a04f4"
+}

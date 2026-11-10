@@ -1,0 +1,18 @@
+PASS A voluntary advisor launcher exists at 1440px without a chat request
+PASS Dialog is accessible, contained and restores keyboard focus at 1440px
+PASS Chat uses safe text and approved resource links at 1440px
+PASS Request summary is editable and WhatsApp needs no lead opt-in at 1440px
+PASS Network recovery preserves the question and offers WhatsApp at 1440px
+PASS A playing film keeps native controls free of the launcher at 1440px
+PASS A voluntary advisor launcher exists at 390px without a chat request
+PASS Dialog is accessible, contained and restores keyboard focus at 390px
+PASS Chat uses safe text and approved resource links at 390px
+PASS Request summary is editable and WhatsApp needs no lead opt-in at 390px
+PASS Network recovery preserves the question and offers WhatsApp at 390px
+PASS A playing film keeps native controls free of the launcher at 390px
+PASS A voluntary advisor launcher exists at 360px without a chat request
+PASS Dialog is accessible, contained and restores keyboard focus at 360px
+PASS Chat uses safe text and approved resource links at 360px
+PASS Request summary is editable and WhatsApp needs no lead opt-in at 360px
+PASS Network recovery preserves the question and offers WhatsApp at 360px
+PASS A playing film keeps native controls free of the launcher at 360px

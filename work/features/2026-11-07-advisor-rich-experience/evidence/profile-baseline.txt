@@ -1,0 +1,2 @@
+0e8ab71106338bc07ec987a39237f9a4f32eacea01737840221ae5effa61e924  /var/lib/salesacademy-advisor/.hermes/profiles/sales-academy-advisor/SOUL.md
+0e8ab71106338bc07ec987a39237f9a4f32eacea01737840221ae5effa61e924  /opt/salesacademy-advisor/SOUL.md

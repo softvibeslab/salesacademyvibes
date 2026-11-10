@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Academy · CMS · Solicitudes</title>
+<!-- Google Fonts: Libre Caslon Text & Arimo -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-xl": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="h-full bg-surface text-on-surface font-body-md text-body-md antialiased overflow-hidden">
+<div class="flex h-full w-full">
+<!-- SIDEBAR FIJA 240px: Verde Oscuro #1d241c -->
+<aside class="w-[240px] shrink-0 bg-[#1d241c] text-[#dcdcd2] flex flex-col justify-between z-20 shadow-md">
+<div>
+<!-- Brand Header -->
+<div class="h-20 flex items-center px-6 border-b border-[#2d372c]">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md font-bold">SA</span>
+<div>
+<span class="font-headline-md text-headline-md tracking-tight text-white block">Sales Academy</span>
+<span class="text-[11px] font-label-sm text-outline tracking-wider uppercase block">Gestión Operativa</span>
+</div>
+</div>
+</div>
+<!-- Meta Context: Ruta y Modo -->
+<div class="px-6 py-4 border-b border-[#273226]">
+<div class="text-[11px] font-mono tracking-tight text-outline uppercase">Entorno Seguro</div>
+<div class="text-[13px] text-[#b8bdae] font-body-md">/cms/solicitudes/</div>
+</div>
+<!-- Menú de Navegación del CMS -->
+<nav class="px-3 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#959d8f] hover:text-white hover:bg-[#273226] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Panel General</span>
+</a>
+<!-- Enlace Activo: Solicitudes -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[#273226] text-white font-medium shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" data-icon="inbox" data-weight="fill" style="font-variation-settings: 'FILL' 1;">inbox</span>
+<span class="font-body-md text-body-md">Solicitudes</span>
+</div>
+<span class="text-[10px] font-label-sm px-1.5 py-0.5 rounded bg-[#354333] text-primary-fixed border border-[#445642]">Datos de prueba</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#959d8f] hover:text-white hover:bg-[#273226] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="smart_toy">smart_toy</span>
+<span class="font-body-md text-body-md">Agentes IA</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#959d8f] hover:text-white hover:bg-[#273226] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="hotel_class">hotel_class</span>
+<span class="font-body-md text-body-md">Salas y Resorts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#959d8f] hover:text-white hover:bg-[#273226] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="history_edu">history_edu</span>
+<span class="font-body-md text-body-md">Bitácora VIP</span>
+</a>
+</nav>
+</div>
+<!-- Footer de Sidebar -->
+<div class="p-4 border-t border-[#2d372c]">
+<div class="flex items-center gap-3 p-2 rounded-lg bg-[#242d22]">
+<div class="w-8 h-8 rounded-full bg-[#354333] flex items-center justify-center text-primary-fixed font-medium text-xs">
+            OP
+          </div>
+<div class="overflow-hidden">
+<p class="text-xs font-medium text-white truncate">Coordinador Humano</p>
+<p class="text-[11px] text-[#868f80] truncate">Turno Riviera Maya</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- ÁREA DE TRABAJO PRINCIPAL: Workspace Claro (#f4f4ed) -->
+<main class="flex-1 flex flex-col min-w-0 bg-[#f4f4ed] overflow-hidden">
+<!-- Top Header de la Pantalla -->
+<header class="h-20 shrink-0 bg-surface border-b border-outline-variant/30 px-8 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2 text-xs font-label-sm text-secondary">
+<span>22 · CMS</span>
+<span>/</span>
+<span class="text-primary font-medium">Bandeja de Entrada</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Bandeja de solicitudes de demo</h1>
+</div>
+<div class="flex items-center gap-4">
+<!-- Banner de entorno de prueba controlado -->
+<div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-lg border border-outline-variant/40">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-xs font-label-sm text-on-surface-variant font-medium">Registros sintéticos simulados</span>
+</div>
+<!-- Búsqueda interna directa -->
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-lg pl-9 pr-3 py-2 text-xs font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Filtrar por nombre o empresa..." type="text"/>
+</div>
+</div>
+</header>
+<!-- BARRA DE FILTROS Y ESTADÍSTICAS OPERATIVAS -->
+<div class="px-8 py-4 bg-surface-bright border-b border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-xs font-label-sm text-secondary mr-2">Filtrar estado:</span>
+<button class="px-3.5 py-1.5 text-xs font-label-sm rounded-lg bg-[#1d241c] text-white font-medium shadow-sm transition-colors">
+            Todas <span class="ml-1 opacity-70">12</span>
+</button>
+<button class="px-3.5 py-1.5 text-xs font-label-sm rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-variant border border-outline-variant/30 transition-colors">
+            Nuevas <span class="ml-1 px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary-container text-[10px]">3</span>
+</button>
+<button class="px-3.5 py-1.5 text-xs font-label-sm rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-variant border border-outline-variant/30 transition-colors">
+            Contactadas <span class="ml-1 text-secondary">6</span>
+</button>
+<button class="px-3.5 py-1.5 text-xs font-label-sm rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-variant border border-outline-variant/30 transition-colors">
+            Cerradas <span class="ml-1 text-secondary">3</span>
+</button>
+</div>
+<div class="text-xs text-secondary italic">
+          * Protocolo estricto: Solo interacción humana 1-a-1. No automatizaciones masivas.
+        </div>
+</div>
+<!-- CONTENEDOR CENTRAL CON SPLIT VIEW (TABLA + DRAWER DERECHO) -->
+<div class="flex-1 flex min-h-0">
+<!-- COLUMNA IZQUIERDA: TABLA PRINCIPAL DE REGISTROS SINTÉTICOS -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/20 text-xs font-label-sm text-secondary uppercase tracking-wider">
+<th class="py-3.5 px-4 font-medium">Fecha</th>
+<th class="py-3.5 px-4 font-medium">Solicitante y Sala</th>
+<th class="py-3.5 px-4 font-medium">Necesidad Declarada</th>
+<th class="py-3.5 px-4 font-medium">Contacto Ficticio</th>
+<th class="py-3.5 px-4 font-medium text-center">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-xs font-body-md">
+<!-- REGISTRO SELECCIONADO (Activo) -->
+<tr class="bg-[#f0eee8]/60 hover:bg-surface-container transition-colors cursor-pointer border-l-4 border-l-primary">
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<span class="block font-medium text-on-surface">Hoy</span>
+<span class="text-[11px] text-secondary">10:42 AM</span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface text-[13px]">Carlos Mendoza</div>
+<div class="text-secondary text-[11px]">Torres Riviera Luxury Resort</div>
+<div class="text-outline text-[11px] font-mono">carlos.mendoza@example.invalid</div>
+</td>
+<td class="py-4 px-4 max-w-[220px]">
+<span class="inline-block bg-surface-container px-2 py-1 rounded text-on-surface-variant font-medium">
+                      Práctica de objeciones y coaching
+                    </span>
+<p class="text-[11px] text-secondary mt-1 truncate">Interés en módulo de sala de ventas con IA conversacional.</p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="phone">phone</span>
+<span>+52 998 555 0142</span>
+</div>
+<span class="text-[10px] text-outline italic">Dato sintético</span>
+</td>
+<td class="py-4 px-4 text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-primary-fixed text-on-primary-fixed border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                      Nueva
+                    </span>
+</td>
+</tr>
+<!-- REGISTRO 2 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<span class="block font-medium text-on-surface">Ayer</span>
+<span class="text-[11px] text-secondary">16:15 PM</span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface text-[13px]">Valeria Domínguez</div>
+<div class="text-secondary text-[11px]">Bahía Esmeralda Vacation Club</div>
+<div class="text-outline text-[11px] font-mono">valeria.d@example.invalid</div>
+</td>
+<td class="py-4 px-4 max-w-[220px]">
+<span class="inline-block bg-surface-container px-2 py-1 rounded text-on-surface-variant font-medium">
+                      Auditoría VIP y Calificación
+                    </span>
+<p class="text-[11px] text-secondary mt-1 truncate">Requiere demo guiada para equipo de 18 liners.</p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="phone">phone</span>
+<span>+52 555 019 8832</span>
+</div>
+<span class="text-[10px] text-outline italic">Dato sintético</span>
+</td>
+<td class="py-4 px-4 text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-surface-container-high text-on-surface-variant border border-outline-variant/40">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Contactadas
+                    </span>
+</td>
+</tr>
+<!-- REGISTRO 3 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<span class="block font-medium text-on-surface">24 Oct</span>
+<span class="text-[11px] text-secondary">11:05 AM</span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface text-[13px]">Rodrigo Alarcón</div>
+<div class="text-secondary text-[11px]">Palmar Real Residences</div>
+<div class="text-outline text-[11px] font-mono">r.alarcon@example.invalid</div>
+</td>
+<td class="py-4 px-4 max-w-[220px]">
+<span class="inline-block bg-surface-container px-2 py-1 rounded text-on-surface-variant font-medium">
+                      Simulaciones de cierre en vivo
+                    </span>
+<p class="text-[11px] text-secondary mt-1 truncate">Coaching para closers en mesa de negociación.</p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="phone">phone</span>
+<span>+52 984 555 0721</span>
+</div>
+<span class="text-[10px] text-outline italic">Dato sintético</span>
+</td>
+<td class="py-4 px-4 text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-surface-container text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      Contactadas
+                    </span>
+</td>
+</tr>
+<!-- REGISTRO 4 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer">
+<td class="py-4 px-4 whitespace-nowrap text-secondary">
+<span class="block font-medium text-on-surface">22 Oct</span>
+<span class="text-[11px] text-secondary">09:30 AM</span>
+</td>
+<td class="py-4 px-4">
+<div class="font-medium text-on-surface text-[13px]">Mariana Peñaloza</div>
+<div class="text-secondary text-[11px]">Sol y Luna Timeshare Club</div>
+<div class="text-outline text-[11px] font-mono">mariana.p@example.invalid</div>
+</td>
+<td class="py-4 px-4 max-w-[220px]">
+<span class="inline-block bg-surface-container px-2 py-1 rounded text-on-surface-variant font-medium">
+                      Onboarding de nuevos agentes
+                    </span>
+<p class="text-[11px] text-secondary mt-1 truncate">Piloto finalizado exitosamente en sala Los Cabos.</p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="phone">phone</span>
+<span>+52 624 555 9301</span>
+</div>
+<span class="text-[10px] text-outline italic">Dato sintético</span>
+</td>
+<td class="py-4 px-4 text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-[#e4e2dd] text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                      Cerradas
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- COMPONENTE REUSABLE: INDICADOR DE ESTADO VACÍO (Empty State) -->
+<div class="mt-8 border border-dashed border-outline-variant/60 rounded-xl p-8 bg-surface/50 text-center max-w-lg mx-auto">
+<div class="w-12 h-12 mx-auto rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[24px]" data-icon="inbox">inbox</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Patrón de Estado Vacío (Vacío o Sin Resultados)</h3>
+<p class="text-xs text-secondary mt-1 max-w-sm mx-auto">
+              Cuando el filtro no retorne prospectos o la bandeja quede vacía tras la gestión humana diaria, este contenedor informativo permanece como estándar visual.
+            </p>
+<div class="mt-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-label-sm bg-surface-container text-on-surface-variant">
+                Componente Reusable · Sales Academy Design System
+              </span>
+</div>
+</div>
+</div>
+<!-- DRAWER / PANEL LATERAL DERECHO EXPANDIDO (420px): Registro Seleccionado -->
+<aside class="w-[420px] shrink-0 bg-surface-container-lowest border-l border-outline-variant/30 flex flex-col justify-between shadow-xl z-10">
+<!-- Encabezado del Drawer -->
+<div class="p-6 border-b border-outline-variant/20 flex items-start justify-between bg-surface-bright">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-label-sm uppercase tracking-wider px-2 py-0.5 rounded bg-primary-container/30 text-on-primary-container font-semibold">Registro Activo #DEMO-804</span>
+<span class="text-xs text-secondary">10:42 AM</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Carlos Mendoza</h2>
+<p class="text-xs font-body-md text-secondary">Director de Sala · Torres Riviera Luxury Resort</p>
+</div>
+<button class="text-secondary hover:text-on-surface p-1 rounded hover:bg-surface-container transition-colors" title="Cerrar panel">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- Contenido Scrollable del Drawer -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- TARJETA: Consentimiento Explícito Verificado -->
+<div class="p-4 rounded-lg bg-[#f0eee8] border border-outline-variant/40">
+<div class="flex items-center gap-2 text-xs font-medium text-[#203c28] mb-2">
+<span class="material-symbols-outlined text-[18px] text-[#203c28]" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm tracking-wide uppercase">Consentimiento Explícito Verificado</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                El solicitante autorizó contacto exclusivamente telefónico/WhatsApp personal para demostración de capacidades operativas. No está suscrito a listas automatizadas.
+              </p>
+<div class="mt-3 pt-2 border-t border-outline-variant/30 flex items-center justify-between text-[11px] text-secondary">
+<span>IP de registro: 189.210.xx.xx (Cancún)</span>
+<span class="font-mono">Hash: 9b2e...d74</span>
+</div>
+</div>
+<!-- DETALLES DE LA SOLICITUD -->
+<div class="space-y-3">
+<h3 class="text-xs font-label-sm uppercase tracking-wider text-secondary">Datos del Solicitante Ficticio</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 bg-surface-bright rounded-lg border border-outline-variant/20">
+<span class="text-[11px] text-secondary block">Canal Directo</span>
+<span class="text-xs font-medium text-on-surface flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="call">call</span>
+                    +52 998 555 0142
+                  </span>
+</div>
+<div class="p-3 bg-surface-bright rounded-lg border border-outline-variant/20">
+<span class="text-[11px] text-secondary block">Correo Declarado</span>
+<span class="text-xs font-mono text-on-surface mt-0.5 truncate block">carlos.mendoza@example.invalid</span>
+</div>
+</div>
+<div class="p-3 bg-surface-bright rounded-lg border border-outline-variant/20">
+<span class="text-[11px] text-secondary block mb-1">Necesidad Declarada:</span>
+<p class="text-xs font-medium text-on-surface">Práctica de objeciones y coaching asistido por IA</p>
+<p class="text-xs text-secondary mt-1">"Buscamos que los asesores junior practiquen objeciones complejas de mantenimiento y cuotas de club antes de pisar sala viva."</p>
+</div>
+</div>
+<!-- SELECTOR DE ESTADO PARA SEGUIMIENTO HUMANO -->
+<div class="space-y-2">
+<label class="block text-xs font-label-sm uppercase tracking-wider text-secondary">
+                Selector de estado (Gestión humana)
+              </label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-lg px-3 py-2 text-xs font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option selected="" value="nueva">● Nueva (Requiere primer contacto)</option>
+<option value="contactada">● Contactada (Llamada inicial realizada)</option>
+<option value="cerrada">● Cerrada (Demostración programada)</option>
+<option value="descartada">● Descartada (Fuera de perfil)</option>
+</select>
+</div>
+<!-- NOTAS INTERNAS DE COORDINACIÓN -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="block text-xs font-label-sm uppercase tracking-wider text-secondary">
+                  Notas internas de coordinación
+                </label>
+<span class="text-[11px] text-secondary italic">Solo visibles por equipo interno</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-3 text-xs font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none leading-relaxed" placeholder="Añadir observaciones sobre la llamada de coordinación humana, horario preferido o notas de la sala..." rows="4">Se intentó comunicación preliminar a las 11:00 AM. Carlos solicita contacto por la tarde (16:00 hrs) para revisar detalles con el Director Comercial de Torres Riviera.</textarea>
+</div>
+<!-- ADVERTENCIA DE POLÍTICA ANTISPAM -->
+<div class="p-3 rounded bg-surface-container border border-outline-variant/30 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-outline text-[16px] shrink-0 mt-0.5" data-icon="shield">shield</span>
+<p class="text-[11px] text-secondary leading-snug">
+<strong>Estándar Sales Academy:</strong> Prohibido el marketing masivo. Cada interacción debe ser ejecutada por un asesor calificado de hospitalidad con contexto previo.
+              </p>
+</div>
+</div>
+<!-- PIE DE ACCIONES DEL DRAWER (Botones 44px de alto) -->
+<div class="p-6 border-t border-outline-variant/20 bg-surface-bright flex items-center gap-3">
+<button class="h-[44px] flex-1 bg-[#10120f] hover:bg-black text-white px-4 rounded-lg font-body-md text-xs font-medium flex items-center justify-center gap-2 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed" data-icon="check_circle">check_circle</span>
+<span>Guardar Seguimiento</span>
+</button>
+<button class="h-[44px] bg-primary-container hover:bg-[#cbb06d] text-on-primary-container px-4 rounded-lg font-body-md text-xs font-medium flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="chat">chat</span>
+<span>Abrir WhatsApp</span>
+</button>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,23 @@
+FF
+======================================================================
+FAIL: test_20_private_login_logout_reject_cross_origin (__main__.RegistrationHTTPTest.test_20_private_login_logout_reject_cross_origin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 346, in test_20_private_login_logout_reject_cross_origin
+    self.assertEqual(self.call("POST", "/login", body, headers={"Origin": "https://other.invalid"})[0], 403)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 200 != 403
+
+======================================================================
+FAIL: test_21_invalid_image_containers_rejected_before_subprocess (__main__.RegistrationHTTPTest.test_21_invalid_image_containers_rejected_before_subprocess)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 359, in test_21_invalid_image_containers_rejected_before_subprocess
+    self.assertIsNone(raw)
+    ~~~~~~~~~~~~~~~~~^^^^^
+AssertionError: b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01XXXXXXXXXXXXXIEND\xaeB`\x82' is not None
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.530s
+
+FAILED (failures=2)

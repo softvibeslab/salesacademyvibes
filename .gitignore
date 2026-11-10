@@ -33,3 +33,8 @@ prototypes/copiloto-rep-dist/
 # Artefactos generados (paquetes .zip de growth)
 growth/dist/
 __pycache__/
+
+# Keep this approved contract story alongside its feature, even with a local exclude.
+!work/stories/
+work/stories/*
+!work/stories/2026-11-08-tour-registration.md

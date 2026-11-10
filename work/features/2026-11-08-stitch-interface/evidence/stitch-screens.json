@@ -1,0 +1,430 @@
+{
+  "project": "projects/8496026853797356014",
+  "screens": [
+    {
+      "deviceType": "DESKTOP",
+      "height": "13182",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/35b4cb824aed4ea1ae721d320afb54b4:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/35b4cb824aed4ea1ae721d320afb54b4"
+      },
+      "name": "projects/8496026853797356014/screens/279476172852436f88e75e3d7cb8d016",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/6f9e1f1f8b764878b15cea97ac82a283:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/6f9e1f1f8b764878b15cea97ac82a283"
+      },
+      "title": "01 · Landing · Agentes de IA",
+      "width": "2560"
+    },
+    {
+      "deviceType": "MOBILE",
+      "height": "8450",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/19d9738d9f6f4b1182d52df368759f52:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/19d9738d9f6f4b1182d52df368759f52"
+      },
+      "name": "projects/8496026853797356014/screens/5fcbd6e9833a4ed69f925b50c4537323",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/d3e07afa2b9e44c5802191556d4e2d0c:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/d3e07afa2b9e44c5802191556d4e2d0c"
+      },
+      "title": "02 · Landing · Móvil",
+      "width": "780"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "6682",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/67d5b10a5d8d420388a3ef1f93425a14:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/67d5b10a5d8d420388a3ef1f93425a14"
+      },
+      "name": "projects/8496026853797356014/screens/53b99978ee8c495abc6a135dbf0d0464",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/9c31fad695c34c59a76ea19d47c541a7:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/9c31fad695c34c59a76ea19d47c541a7"
+      },
+      "title": "03 · MediaHub · Biblioteca",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "5328",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/58fd2f663c3644c8b6267c3482d2937e:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/58fd2f663c3644c8b6267c3482d2937e"
+      },
+      "name": "projects/8496026853797356014/screens/7af40229b83c4a6888b2423d802df6f5",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/8447120175514198be43df4e7171bcf3:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/8447120175514198be43df4e7171bcf3"
+      },
+      "title": "04 · MediaHub · Guía de preparación",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "4012",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/c8227ae13d1149aeb0dd3c2f60fde710:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/c8227ae13d1149aeb0dd3c2f60fde710"
+      },
+      "name": "projects/8496026853797356014/screens/14757ef1fc444cdabb1065f8c6b01a66",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/a9246f66438a479d84c9d132263b1906:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/a9246f66438a479d84c9d132263b1906"
+      },
+      "title": "05 · MediaHub · Película conceptual",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2278",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/c813d9a696f14211a57c848f08d51783:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/c813d9a696f14211a57c848f08d51783"
+      },
+      "name": "projects/8496026853797356014/screens/9ac57448e2f941e5b23dd6cae1475e63",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/e59f9fc6e1544f23aacdd3e7165e2f87:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/e59f9fc6e1544f23aacdd3e7165e2f87"
+      },
+      "title": "06 · Diagnóstico · Pregunta",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "4424",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/1d7ac38ab51a4b97a6e8c2270f00651b:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/1d7ac38ab51a4b97a6e8c2270f00651b"
+      },
+      "name": "projects/8496026853797356014/screens/1ff2807a244c46849b7f549b1c20f87a",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/e8681dca401f43a4ac44809e9a07ff25:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/e8681dca401f43a4ac44809e9a07ff25"
+      },
+      "title": "07 · Diagnóstico · Resultado",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "13010",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/0f5f6cc45b494fd79e2df53c7f0a994b:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/0f5f6cc45b494fd79e2df53c7f0a994b"
+      },
+      "name": "projects/8496026853797356014/screens/412e287b8ccf496eb43d898efe01a59b",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/396222dd0efb40e3a910d46d5b4454f4:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/396222dd0efb40e3a910d46d5b4454f4"
+      },
+      "title": "08 · Galería · Un día en la sala",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "7698",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/c5d2bc740c204b4ca7e2ee4a17e7765e:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/c5d2bc740c204b4ca7e2ee4a17e7765e"
+      },
+      "name": "projects/8496026853797356014/screens/3d8f70c927984f5e9468e23aa7748cb4",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/63e4e4d459f5484a925815a9b430f29f:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/63e4e4d459f5484a925815a9b430f29f"
+      },
+      "title": "09 · Análisis · Método e implementación",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "6564",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/901781c9f5e2441a8fbea66d4d3919e2:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/901781c9f5e2441a8fbea66d4d3919e2"
+      },
+      "name": "projects/8496026853797356014/screens/2a54c2459c53408bb6a29b3254338d97",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/700d1299f0b14151b4c6ea949129640b:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/700d1299f0b14151b4c6ea949129640b"
+      },
+      "title": "10 · Privacidad · Información y controles",
+      "width": "2560"
+    },
+    {
+      "deviceType": "MOBILE",
+      "height": "1768",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/db024a80fc8f451e81edd56fd9db1065:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/db024a80fc8f451e81edd56fd9db1065"
+      },
+      "name": "projects/8496026853797356014/screens/64e5de07c97f42dca8ece0870afd8617",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/80a955f18c61409c8941a77606724007:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/80a955f18c61409c8941a77606724007"
+      },
+      "title": "11 · Asesor · Bienvenida",
+      "width": "780"
+    },
+    {
+      "deviceType": "MOBILE",
+      "height": "1768",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/94f6d7b696f94a80a28fda90d329ea36:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/94f6d7b696f94a80a28fda90d329ea36"
+      },
+      "name": "projects/8496026853797356014/screens/3c19d45520eb47a3b0a83d2a7382102d",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/db711b978763484394a111cb14378bd5:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/db711b978763484394a111cb14378bd5"
+      },
+      "title": "12 · Asesor · Conversación",
+      "width": "780"
+    },
+    {
+      "deviceType": "MOBILE",
+      "height": "1768",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/d3df4dcbfa9c4d228614f47a919a0781:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/d3df4dcbfa9c4d228614f47a919a0781"
+      },
+      "name": "projects/8496026853797356014/screens/bd35ba99183e48088cd8e026e7765e9e",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/3e431d009fa34ecb9c3188a81087bb4a:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/3e431d009fa34ecb9c3188a81087bb4a"
+      },
+      "title": "13 · Asesor · Video",
+      "width": "780"
+    },
+    {
+      "deviceType": "MOBILE",
+      "height": "1768",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/3ca13483c5df4ea1bb2b38384e640a7f:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/3ca13483c5df4ea1bb2b38384e640a7f"
+      },
+      "name": "projects/8496026853797356014/screens/e40016fa245d4b889f6ccc8607b33c9f",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/c9c33a922a6f4ff3b751614a37b738e2:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/c9c33a922a6f4ff3b751614a37b738e2"
+      },
+      "title": "14 · Asesor · Demo y revisión",
+      "width": "780"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/63ccecece3ee4fcb81ae0619747902d6:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/63ccecece3ee4fcb81ae0619747902d6"
+      },
+      "name": "projects/8496026853797356014/screens/ab8b864cbec74266b1b7d5c7ef2d35dc",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/2f9dcd594c244e99bf0d02518d7fad46:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/2f9dcd594c244e99bf0d02518d7fad46"
+      },
+      "title": "15 · CMS · Acceso",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/a17a1e2e683246ca99fc6417d838df6d:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/a17a1e2e683246ca99fc6417d838df6d"
+      },
+      "name": "projects/8496026853797356014/screens/d35198f8b7a5470ab3f199af32b8bd97",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/2041279d346845ae848c7e70bda47146:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/2041279d346845ae848c7e70bda47146"
+      },
+      "title": "16 · CMS · Inicio",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/082a2d3508614fc8992bcb89bfaedb6e:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/082a2d3508614fc8992bcb89bfaedb6e"
+      },
+      "name": "projects/8496026853797356014/screens/f3c060fe3cfb4bec92d294abd9995b25",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/3d632b5423654d8bbad8880d3c7f650f:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/3d632b5423654d8bbad8880d3c7f650f"
+      },
+      "title": "17 · CMS · Editar landing",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/22acbdd421484531bd6faba5de4d70bb:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/22acbdd421484531bd6faba5de4d70bb"
+      },
+      "name": "projects/8496026853797356014/screens/74b25fc570cd48b19936d399a810a050",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/e26ad4524c984741b7299466bdd0dca3:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/e26ad4524c984741b7299466bdd0dca3"
+      },
+      "title": "18 · CMS · Recursos",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/b1bd9f383dac43c7b80b4b28ef27a09d:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/b1bd9f383dac43c7b80b4b28ef27a09d"
+      },
+      "name": "projects/8496026853797356014/screens/a160ec064ccc4594b5c6c307db766bde",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/5e7786f8091647bb96cd3d3822d3a6d7:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/5e7786f8091647bb96cd3d3822d3a6d7"
+      },
+      "title": "19 · CMS · Editor de recurso",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/7ed1d9851088444e87d57ba3097eb5ed:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/7ed1d9851088444e87d57ba3097eb5ed"
+      },
+      "name": "projects/8496026853797356014/screens/5b8e4db0c12945efa3b567b4dc2541a5",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/ab57216299b44655b199110e62401792:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/ab57216299b44655b199110e62401792"
+      },
+      "title": "20 · CMS · Biblioteca de medios",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/e8923cb2ab6d4b519f0867bede3782ef:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/e8923cb2ab6d4b519f0867bede3782ef"
+      },
+      "name": "projects/8496026853797356014/screens/a7f310e7493f4f67914b40ac4a374ae2",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/d5d2451e89024907a75538bf2ae8ff72:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/d5d2451e89024907a75538bf2ae8ff72"
+      },
+      "title": "21 · CMS · Subir y revisar medio",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/1d0e0afa667b4ff1aefb8e3e96a87405:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/1d0e0afa667b4ff1aefb8e3e96a87405"
+      },
+      "name": "projects/8496026853797356014/screens/af63017f634049d3a6925d30c57ff433",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/f5e7c2750987488291eadcc3c020fd9d:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/f5e7c2750987488291eadcc3c020fd9d"
+      },
+      "title": "22 · CMS · Solicitudes",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/e4eaed7b15f24c5aba6f311ffc311f02:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/e4eaed7b15f24c5aba6f311ffc311f02"
+      },
+      "name": "projects/8496026853797356014/screens/22b1a9d95fd047468812ae7bced091e8",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/4842bcb6b2384fefaf4dc8fb7e705bdd:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/4842bcb6b2384fefaf4dc8fb7e705bdd"
+      },
+      "title": "23 · CMS · Asesor IA",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/feca50b66cde46ed83d8691f9b7908ce:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/feca50b66cde46ed83d8691f9b7908ce"
+      },
+      "name": "projects/8496026853797356014/screens/519aefa563a34af2bbe2e33cea59c676",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/5b487b9f25054dd094739b42552aad4d:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/5b487b9f25054dd094739b42552aad4d"
+      },
+      "title": "24 · CMS · Publicaciones",
+      "width": "2560"
+    },
+    {
+      "deviceType": "DESKTOP",
+      "height": "2048",
+      "htmlCode": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/87917a7a45014e2883960fe7f77b900a:download",
+        "mimeType": "text/html",
+        "name": "projects/8496026853797356014/files/87917a7a45014e2883960fe7f77b900a"
+      },
+      "name": "projects/8496026853797356014/screens/e5cd19a5ab684a03901eaa6b9e3b337d",
+      "screenshot": {
+        "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/fc073586f5ed418d9cdcbd5bcfc05351:download",
+        "mimeType": "png",
+        "name": "projects/8496026853797356014/files/fc073586f5ed418d9cdcbd5bcfc05351"
+      },
+      "title": "25 · CMS · Usuarios y acceso",
+      "width": "2560"
+    }
+  ]
+}

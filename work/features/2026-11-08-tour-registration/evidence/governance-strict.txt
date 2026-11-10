@@ -1,0 +1,6 @@
+2026-11-10
+Command: bash /Users/rogergv/Documents/SoftvibesLab/px-onboarding-mob-gen/install/verify-governance.sh /Users/rogergv/Documents/SoftvibesLab/px-onboarding-mob-gen --feature /Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-tour-registration --strict
+Exit: 0
+OK: adapters sincronizados con la fuente neutral (16 agentes, 13 skills, 6 rules, 7 bloques multi-herramienta).
+OK: metodologia y plantillas de gobierno completas.
+Scope: governance artifacts, story readiness and TDD evidence; does not certify pending visual UAT or private activation.

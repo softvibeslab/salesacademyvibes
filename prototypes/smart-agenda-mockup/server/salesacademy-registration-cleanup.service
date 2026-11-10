@@ -1,0 +1,13 @@
+[Unit]
+Description=Sales Academy private tour retention
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+EnvironmentFile=-/etc/salesacademy-ops/admin.env
+Environment=OPS_DATA=/var/lib/salesacademy-ops/ops.json
+ExecStart=/usr/bin/python3 /opt/salesacademy-ops/cleanup_registrations.py
+NoNewPrivileges=true
+UMask=0077
+PrivateTmp=true

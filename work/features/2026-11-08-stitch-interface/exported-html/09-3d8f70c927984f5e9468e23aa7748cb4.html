@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>09 · Análisis · Método e implementación | SA Sales Academy</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text", "Georgia", "serif"],
+            "headline-md": ["Libre Caslon Text", "Georgia", "serif"],
+            "headline-xl": ["Libre Caslon Text", "Georgia", "serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TOP APP BAR (Shared Component Mapping) -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-20">
+<!-- Brand Anchor -->
+<a class="flex items-center gap-3 group" href="/descubre/analisis/">
+<div class="w-10 h-10 bg-inverse-surface text-surface flex items-center justify-center rounded font-headline-md text-headline-md tracking-tight font-normal">
+          SA
+        </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface leading-tight">Sales Academy</span>
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase text-[10px]">Inteligencia Hospitalaria</span>
+</div>
+</a>
+<!-- Desktop Navigation Cluster -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#agentes">Agentes en acción</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#galeria">Galería</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#mediahub">MediaHub</a>
+<a class="text-primary font-medium tracking-wide border-b border-primary pb-0.5" href="#diagnostico">Diagnóstico</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#faq">FAQ</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container hover:bg-tertiary-fixed-dim transition-all duration-200 ease-out px-4 py-2.5 rounded-lg font-body-md text-body-md font-medium shadow-sm" href="https://wa.me/529843163268?text=Hola%2C%20quisiera%20solicitar%20demo%20de%20Sales%20Academy" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Solicitar demo por WhatsApp</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow w-full max-w-[1360px] mx-auto px-6 lg:px-16 py-10 space-y-20">
+<!-- BREADCRUMB & HEADER EDITORIAL -->
+<section class="border-b border-outline-variant/30 pb-12">
+<div class="flex items-center gap-2 text-outline font-label-sm text-label-sm mb-4 tracking-wider">
+<span>SALES ACADEMY</span>
+<span>/</span>
+<span>DESCUBRE</span>
+<span>/</span>
+<span class="text-primary font-medium">09 · ANÁLISIS · MÉTODO E IMPLEMENTACIÓN</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+<div class="lg:col-span-8 space-y-4">
+<span class="inline-block px-3 py-1 bg-surface-container text-outline rounded text-label-sm font-label-sm tracking-widest uppercase">
+            Documento Metodológico · Hospitalidad de Alto Standing
+          </span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface leading-tight">
+            Arquitectura de interacción comercial: <span class="italic font-normal">método, acompañamiento</span> e inteligencia autónoma.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+            Una sala de ventas de tiempo compartido de prestigio no requiere automatización invasiva, sino la precisión sobria de agentes de IA entrenados en la alta hospitalidad, el ritmo persuasivo y el respeto absoluto a la promesa de marca.
+          </p>
+</div>
+<div class="lg:col-span-4 bg-surface-container-low p-6 rounded-lg border border-outline-variant/40 space-y-3">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase">Ruta Activa: /descubre/analisis/</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+            Protocolo de rigor metodológico y calibración continua para operaciones vacacionales de ultra-lujo en el Caribe y destinos premium.
+          </p>
+</div>
+</div>
+</section>
+<!-- VISIÓN EDITORIAL: FONDO OSCURO (#10120f) vs PAPEL CÁLIDO (#f5f3ed) -->
+<section class="rounded-xl overflow-hidden bg-[#10120f] text-[#f5f3ed] p-8 lg:p-14 border border-outline/20" id="vision">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 text-primary-fixed-dim text-label-sm font-label-sm tracking-widest uppercase border-b border-primary-fixed-dim/30 pb-1">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span>Visión del Modelo Cognitivo</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl leading-tight">
+            La elegancia de la interacción humana <span class="italic text-primary-fixed-dim">potenciada por agentes silenciosos.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-surface-variant/80 leading-relaxed">
+            Los agentes de IA de Sales Academy no reemplazan al asesor senior; operan como un copiloto de sala en tiempo real. Analizan objeciones tácitas, modelan escenarios de membresía complejos y garantizan que cada interacción preserve el tono de alta hospitalidad sin caer en fricciones comerciales apresuradas.
+          </p>
+<div class="pt-4 grid grid-cols-2 gap-6 border-t border-outline/30">
+<div>
+<span class="block font-headline-md text-headline-md text-primary-fixed-dim">Micro-calibración</span>
+<span class="font-body-md text-body-md text-surface-variant/70">Ajuste de vocabulario y cadencia según perfil del huésped en sala.</span>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md text-primary-fixed-dim">Integridad 100%</span>
+<span class="font-body-md text-body-md text-surface-variant/70">Cero desviaciones sobre las directrices legales y comerciales del resort.</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6">
+<div class="relative bg-[#182219] p-6 lg:p-8 rounded-lg border border-outline/30 shadow-2xl space-y-6">
+<div class="flex justify-between items-center border-b border-outline/20 pb-4">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Simulación en Sala · Transcripción en Directo</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#203c28] text-primary-fixed-dim text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span> Copiloto Activo
+              </span>
+</div>
+<!-- Burbujas del Asesor & Visitante -->
+<div class="space-y-4">
+<div class="bg-[#203c28] text-surface p-4 rounded-lg rounded-tl-none border-l-2 border-primary-container max-w-[90%]">
+<span class="block text-[11px] font-label-sm text-primary-fixed-dim uppercase mb-1">Huésped VIP · Riviera Maya Suite</span>
+<p class="font-body-md text-body-md">
+                  "Nos fascina el desarrollo, pero ya contamos con dos semanas en Aspen y solemos viajar de manera imprevista. No estamos seguros del retorno de uso."
+                </p>
+</div>
+<div class="bg-[#f5f3ed] text-[#182219] p-4 rounded-lg rounded-tr-none ml-auto max-w-[90%] border border-outline-variant shadow-sm">
+<span class="block text-[11px] font-label-sm text-primary uppercase font-bold mb-1">Recomendación SA Copilot · Modulación Sugerida</span>
+<p class="font-body-md text-body-md leading-relaxed font-medium">
+                  Validar flexibilidad antes de cuantificar costo. Evidenciar el sistema de intercambio global sin comisión adicional y la figura de conserjería dedicada para reservas de último minuto.
+                </p>
+</div>
+</div>
+<div class="pt-2 text-right">
+<span class="text-[12px] font-body-md text-surface-dim italic">
+                * El asesor adopta el marco sin romper el contacto visual directo con la familia.
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LOS CINCO PILARES METODOLÓGICOS (Bento Grid) -->
+<section class="space-y-8" id="pilares">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-outline-variant/30 pb-6">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Estructura Fundamental</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Los cinco pilares metodológicos</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Un ciclo riguroso y cerrado de mejora continua diseñado específicamente para salas de ventas vacacionales de alto volumen y alta reputación.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- 01 Preparar -->
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/40 hover:border-primary-container transition-colors duration-200 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">01</span>
+<span class="material-symbols-outlined text-outline">tune</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Preparar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Curaduría profunda de contenidos del complejo, manuales de marca y marcos de hospitalidad. Parametrización estricta de las reglas éticas y comerciales que gobernarán cada agente autónomo.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-xs font-label-sm text-outline tracking-wider uppercase">
+            Fase de Ingesta &amp; Afinamiento
+          </div>
+</div>
+<!-- 02 Aprender -->
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/40 hover:border-primary-container transition-colors duration-200 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">02</span>
+<span class="material-symbols-outlined text-outline">menu_book</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Aprender</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Consimilación de patrones de negociación y objeciones históricas reales. Los modelos asimilan el dialecto de hospitalidad de lujo, distinguiendo entre objeciones presupuestarias y desajustes de confianza.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-xs font-label-sm text-outline tracking-wider uppercase">
+            Modelado de Diálogo
+          </div>
+</div>
+<!-- 03 Practicar -->
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/40 hover:border-primary-container transition-colors duration-200 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">03</span>
+<span class="material-symbols-outlined text-outline">record_voice_over</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Practicar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Roleplays asistidos con avatares de clientes sintéticos altamente exigentes. Los liners y closers simulan escenarios complejos antes del contacto con familias reales en la mesa.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-xs font-label-sm text-outline tracking-wider uppercase">
+            Simulación Asistida
+          </div>
+</div>
+<!-- 04 Acompañar -->
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/40 hover:border-primary-container transition-colors duration-200 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">04</span>
+<span class="material-symbols-outlined text-outline">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Acompañar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Asistencia presencial o digital en sala activa: síntesis de objeciones no verbalizadas, cotizadores inteligentes en segundos y verificación de disponibilidad contractual sin fricción.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/20 text-xs font-label-sm text-outline tracking-wider uppercase">
+            Despliegue Operativo
+          </div>
+</div>
+<!-- 05 Escalar (Span 2 cols on lg) -->
+<div class="bg-[#f0eee8] p-8 rounded-lg border border-outline-variant/60 hover:border-primary transition-colors duration-200 flex flex-col justify-between lg:col-span-2">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">05</span>
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Escalar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-xl">
+              Extensión metódica de los mejores estándares de la mesa estrella hacia la totalidad de la sala y sedes multi-destino, manteniendo la autenticidad del servicio y garantizando uniformidad sin robotización.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between text-xs font-label-sm text-outline tracking-wider uppercase">
+<span>Transferencia Organizacional Multi-Salas</span>
+<span class="text-primary font-semibold">Criterio Institucional</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FLUJO CONTINUO EDITORIAL -->
+<section class="bg-surface-container-low p-8 lg:p-12 rounded-xl border border-outline-variant/30 space-y-10">
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">El Proceso Integrado</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Flujo continuo de relación con la sala</h2>
+<p class="font-body-md text-body-md text-secondary">
+          Una progresión deliberada que preserva la dignidad del prospecto y maximiza la claridad de cada paso comercial.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+<!-- Paso 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 space-y-2">
+<div class="text-[11px] font-label-sm text-outline tracking-wider uppercase font-semibold">01 · Entrada</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Descubrimiento</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+            Auditoría de hábitos de viaje, experiencias previas y expectativas patrimoniales.
+          </p>
+</div>
+<!-- Paso 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 space-y-2">
+<div class="text-[11px] font-label-sm text-outline tracking-wider uppercase font-semibold">02 · Aporte</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Contenido útil</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+            Claridad sobre el modelo de hospitalidad sin presiones de compra artificiales.
+          </p>
+</div>
+<!-- Paso 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 space-y-2 border-primary/40 bg-surface-container">
+<div class="text-[11px] font-label-sm text-primary tracking-wider uppercase font-bold">03 · Filtro</div>
+<h4 class="font-headline-md text-headline-md text-primary font-bold">Diagnóstico</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+            Mapeo analítico de compatibilidad con la membresía vacacional del club.
+          </p>
+</div>
+<!-- Paso 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 space-y-2">
+<div class="text-[11px] font-label-sm text-outline tracking-wider uppercase font-semibold">04 · Vínculo</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Conversación</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+            Diálogo de mesa honesto, con agentes modelando escenarios a medida.
+          </p>
+</div>
+<!-- Paso 5 -->
+<div class="bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/40 space-y-2">
+<div class="text-[11px] font-label-sm text-outline tracking-wider uppercase font-semibold">05 · Evidencia</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Demostración guiada</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+            Validación de inventario en tiempo real y cierre transparente con el director de sala.
+          </p>
+</div>
+</div>
+</section>
+<!-- PROPUESTA DE DESPLIEGUE EN TRES SALAS -->
+<section class="space-y-6">
+<div class="border-b border-outline-variant/30 pb-4">
+<div class="flex items-center gap-3">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase">Marco de Implementación Gradual</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Propuesta de despliegue en tres fases</h2>
+<div class="mt-2 inline-flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Nota de rigor: Esta ruta representa una <strong>propuesta metodológica estructurada</strong> para adopción de IA, no resultados medidos inventados.</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Fase 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-baseline justify-between border-b border-outline-variant/20 pb-3">
+<span class="font-headline-md text-headline-md text-primary font-bold">Fase 1</span>
+<span class="font-label-sm text-label-sm text-secondary">Mes 1 a 2</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Establecer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Calibración en una única sala piloto. Definición de taxonomía conversacional, alineación de manuales contractuales e integración del copiloto con 3 asesores de referencia.
+            </p>
+<ul class="space-y-2 pt-2 text-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Auditoría de lenguaje y objeciones locales.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Configuración de parámetros éticos del agente.</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/20 font-label-sm text-xs text-outline uppercase tracking-wider">
+            Objetivo: Validación de Adopción
+          </div>
+</div>
+<!-- Fase 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-baseline justify-between border-b border-outline-variant/20 pb-3">
+<span class="font-headline-md text-headline-md text-primary font-bold">Fase 2</span>
+<span class="font-label-sm text-label-sm text-secondary">Mes 3 a 4</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Replicar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Expansión a la segunda sala operativa o sala de closers seniors. Ajuste de modelos a diferentes dinámicas de prospecto (familias, inversionistas, parejas de retiro).
+            </p>
+<ul class="space-y-2 pt-2 text-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Estandarización de roleplays matutinos con IA.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Monitoreo de fricciones en tiempo real.</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/20 font-label-sm text-xs text-outline uppercase tracking-wider">
+            Objetivo: Consistencia Operativa
+          </div>
+</div>
+<!-- Fase 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-baseline justify-between border-b border-outline-variant/20 pb-3">
+<span class="font-headline-md text-headline-md text-primary font-bold">Fase 3</span>
+<span class="font-label-sm text-label-sm text-secondary">Mes 5 en adelante</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Consolidar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Integración completa en todo el ecosistema de la marca vacacional. Gobernanza centralizada, dashboards ejecutivos para dirección general y actualización autónoma continua.
+            </p>
+<ul class="space-y-2 pt-2 text-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Orquestación multiplataforma y reporting VIP.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Autonomía metodológica del equipo interno.</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/20 font-label-sm text-xs text-outline uppercase tracking-wider">
+            Objetivo: Excelencia Institucionalizada
+          </div>
+</div>
+</div>
+</section>
+<!-- CALL TO ACTION EDITORIAL SOBRIO -->
+<section class="bg-surface-container p-8 lg:p-14 rounded-xl border border-outline-variant/50 text-center space-y-6">
+<div class="max-w-2xl mx-auto space-y-3">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Canal de Consulta Directa</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface leading-snug">
+          Comience la evaluación metodológica de su sala comercial
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Agende una sesión personalizada con nuestros directores de implementación. Analizaremos su operación y presentaremos un prototipo adaptado a la firma de su complejo.
+        </p>
+</div>
+<div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="inline-flex items-center gap-3 bg-inverse-surface text-surface hover:bg-black transition-all duration-200 px-8 py-4 rounded-lg font-body-lg text-body-lg font-medium shadow-md" href="https://wa.me/529843163268?text=Hola%2C%20quisiera%20solicitar%20demo%20por%20WhatsApp%20de%20Sales%20Academy" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[22px] text-primary-container">chat</span>
+<span>Solicitar demo por WhatsApp</span>
+</a>
+<span class="font-body-md text-body-md text-outline">
+          Línea directa verificada: <strong class="text-on-surface">+52 984 316 3268</strong>
+</span>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Component Mapping) -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 mt-20">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Logo & Copyright -->
+<div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sales Academy</span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">
+          © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+        </span>
+</div>
+<!-- Links (JSON Mandatory Array) -->
+<div class="flex items-center gap-6 font-label-sm text-label-sm">
+<a class="text-on-surface-variant/70 hover:text-primary transition-colors duration-150" href="#privacidad">Privacidad</a>
+<a class="text-on-surface-variant/70 hover:text-primary transition-colors duration-150" href="#terminos">Términos de servicio</a>
+<a class="text-on-surface-variant/70 hover:text-primary transition-colors duration-150" href="#contacto">Contacto</a>
+<a class="text-primary font-medium hover:text-primary transition-colors duration-150" href="#auditoria">Auditoría VIP</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-10",
+  "time_zone": "America/Cancun",
+  "source": "Remote execution results reported by the coordinating agent; no credential material included",
+  "exit_code": 0,
+  "destination": "https://salesacademy.softvibes.art",
+  "activation": "private enabled",
+  "preflight": {
+    "people": 6,
+    "existing_tours": 7,
+    "private_records": 0
+  },
+  "accounts": 7,
+  "accounts_rotated": false,
+  "credential_material_printed": false,
+  "password_handoff": "/root/salesacademy-tour-access.json",
+  "hash_file": "/etc/salesacademy-ops/private-users.json",
+  "smoke": {
+    "accounts_verified": 7,
+    "private_capability": true,
+    "demo_password_rejected": true,
+    "forged_header_rejected": true,
+    "same_room_peer_denied": true,
+    "other_room_denied": true,
+    "idempotency_verified": true,
+    "synthetic_fixture_deleted": true,
+    "existing_tours_preserved": true,
+    "existing_tours_count": 7,
+    "ocr_available": true,
+    "time_zone": "America/Cancun"
+  },
+  "service": "active",
+  "retention_timer": "active",
+  "reset_executed": false,
+  "limits": [
+    "Browser UAT used synthetic local data and emulated mobile viewports, not a physical phone camera.",
+    "OCR does not guarantee handwriting recognition.",
+    "Provider backup review confirms standard documented rotation, not an inventory of individual VPS snapshots.",
+    "The active-store 31-day maximum does not mean absolute erasure of all historical backup copies by day 31 from original registration."
+  ]
+}

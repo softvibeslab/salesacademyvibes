@@ -4842,7 +4842,13 @@
                 },
                 "content": {
                   "type": "string",
-                  "maxLength": 6000
+                  "maxLength": 6000,
+                  "description": "Texto original del usuario; para el asistente, presentación de hasta 90 palabras y detail opcional. El historial original del modelo no cambia."
+                },
+                "detail": {
+                  "type": "string",
+                  "maxLength": 6000,
+                  "description": "Respuesta original completa cuando el texto visible supera 90 palabras; no consume otra inferencia."
                 }
               },
               "required": [
@@ -4855,6 +4861,21 @@
           "remainingTurns": {
             "type": "integer",
             "minimum": 0
+          },
+          "suggestions": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/components/schemas/AdvisorSuggestion"
+            },
+            "description": "Hasta tres acciones con id único; pueden omitirse en respuestas cacheadas anteriores."
+          },
+          "resources": {
+            "type": "array",
+            "maxItems": 2,
+            "items": {
+              "$ref": "#/components/schemas/AdvisorResource"
+            }
           }
         },
         "required": [
@@ -4889,28 +4910,16 @@
         "properties": {
           "reply": {
             "type": "string",
-            "maxLength": 6000
+            "maxLength": 6000,
+            "description": "Respuesta visible de hasta 90 palabras; objetivo 30–65. Si se excede, muestra frases completas y permite leer detail. Caché anterior se conserva sin reinferencia."
           },
           "resources": {
             "type": "array",
+            "maxItems": 3,
             "items": {
-              "type": "object",
-              "properties": {
-                "title": {
-                  "type": "string",
-                  "maxLength": 300
-                },
-                "url": {
-                  "type": "string",
-                  "maxLength": 500
-                }
-              },
-              "required": [
-                "title",
-                "url"
-              ],
-              "additionalProperties": false
-            }
+              "$ref": "#/components/schemas/AdvisorResource"
+            },
+            "description": "Máximo 2 en respuestas actuales. Hasta 3 enlaces únicamente para compatibilidad con respuestas cacheadas anteriores sin suggestions."
           },
           "requestId": {
             "type": "string",
@@ -4919,6 +4928,19 @@
           "remainingTurns": {
             "type": "integer",
             "minimum": 0
+          },
+          "suggestions": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/components/schemas/AdvisorSuggestion"
+            },
+            "description": "Hasta tres acciones con id único; pueden omitirse en respuestas cacheadas anteriores."
+          },
+          "detail": {
+            "type": "string",
+            "maxLength": 6000,
+            "description": "Respuesta original completa cuando el texto visible supera 90 palabras; no consume otra inferencia."
           }
         },
         "required": [
@@ -4927,7 +4949,32 @@
           "requestId",
           "remainingTurns"
         ],
-        "additionalProperties": false
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "suggestions"
+              ]
+            },
+            "then": {
+              "properties": {
+                "resources": {
+                  "maxItems": 2,
+                  "items": {
+                    "required": [
+                      "title",
+                      "url",
+                      "type",
+                      "excerpt",
+                      "evidenceLabel"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
       },
       "AdvisorLead": {
         "type": "object",
@@ -5212,6 +5259,170 @@
           "qualified"
         ],
         "additionalProperties": false
+      },
+      "AdvisorVideo": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Metadatos del catálogo audiovisual incluido en el despliegue. Solo se exponen para un recurso publicado con videoId autorizado; no los genera el modelo.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "smart-agent",
+              "menos-caos",
+              "sistema-conectado",
+              "infraestructura-comercial",
+              "conocimiento-en-practica"
+            ]
+          },
+          "src": {
+            "type": "string",
+            "pattern": "^/growth-assets/films/[a-z-]+\\.mp4$"
+          },
+          "poster": {
+            "type": "string",
+            "pattern": "^/growth-assets/films/[a-z-]+\\.webp$"
+          },
+          "captions": {
+            "type": "string",
+            "pattern": "^/growth-assets/films/[a-z-]+\\.es\\.vtt$"
+          },
+          "durationSeconds": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 600
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4096
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4096
+          }
+        },
+        "required": [
+          "id",
+          "src",
+          "poster",
+          "captions",
+          "durationSeconds",
+          "width",
+          "height"
+        ]
+      },
+      "AdvisorResource": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Recurso de la publicación actual del CMS. Los metadatos son aditivos: las respuestas cacheadas anteriores pueden incluir solamente title y url.",
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 500,
+            "pattern": "^/mediahub/[a-z0-9-]+/$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "guide",
+              "template",
+              "matrix",
+              "video",
+              "audio"
+            ]
+          },
+          "excerpt": {
+            "type": "string",
+            "maxLength": 220
+          },
+          "evidenceLabel": {
+            "type": "string",
+            "maxLength": 140
+          },
+          "video": {
+            "$ref": "#/components/schemas/AdvisorVideo"
+          }
+        },
+        "required": [
+          "title",
+          "url"
+        ]
+      },
+      "AdvisorSuggestion": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Control de un catálogo fijo del servidor, elegido por contexto declarado e historial. Nunca contiene HTML, URLs o herramientas elegidos por el modelo.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "platform",
+              "role-rep",
+              "role-leader",
+              "practice",
+              "objections",
+              "coaching",
+              "process",
+              "rooms-one",
+              "rooms-many",
+              "plan",
+              "resources",
+              "example",
+              "demo"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 48
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "prompt",
+              "demo"
+            ]
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1200
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "kind"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "prompt"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "prompt"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "prompt"
+                ]
+              }
+            }
+          }
+        ]
       }
     }
   }

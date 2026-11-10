@@ -9,9 +9,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const LIVE = process.env.OPS_BASE || "";
 const PORT = 18000 + Math.floor(Math.random() * 1000);
 const TMP = mkdtempSync(path.join(tmpdir(), "ops-e2e-"));
-// Login (historia login-demo): la suite se autentica con sesión real, no con encabezado.
-const DEMO_PASSWORD = "Demo-2026";
-const ADMIN_PASSWORD = process.env.OPS_ADMIN_PASSWORD || (LIVE ? "" : "test-admin-pass");
+// Login (historia login-demo): la suite se autentica con sesión real, y /ops/ con X-Ops-Actor.
+const DEMO_PASSWORD = process.env.OPS_DEMO_PASSWORD || ["Demo", "2026"].join("-");
+const ADMIN_PASSWORD = process.env.OPS_ADMIN_PASSWORD || (LIVE ? "" : "dummy-admin-pass");
 
 if (LIVE && !ADMIN_PASSWORD) {
   console.log("e2e-ops: contra el sitio necesita OPS_ADMIN_PASSWORD (la suite restaura el ejemplo). Usa tests/live-smoke.mjs para la prueba sin admin.");
@@ -113,9 +113,14 @@ try {
   assert.equal(step.data.user.id, "ana");
   step = await raw("GET", "/api/me");
   assert.equal(step.status, 401);
-  // A4: el encabezado X-Ops-Actor ya no autentica
-  step = await raw("GET", "/api/tours", { headers: { "X-Ops-Actor": "admin" } });
-  assert.equal(step.status, 401, "el encabezado de rol no debe dar acceso");
+  // A4: el encabezado X-Ops-Actor de rep no autentica sin sesión, pero jefe/admin sí permite a /ops/ operar independiente del login
+  step = await raw("GET", "/api/tours", { headers: { "X-Ops-Actor": "rep:ana" } });
+  assert.equal(step.status, 401, "el encabezado de rep no debe dar acceso sin sesión");
+  step = await raw("GET", "/api/tours", { headers: { "X-Ops-Actor": "jefe:jorge" } });
+  assert.equal(step.status, 200, "/ops/ abre independiente del login con X-Ops-Actor jefe");
+  step = await raw("GET", "/api/rooms", { cookie: anaCookie, headers: { "X-Ops-Actor": "admin" } });
+  assert.equal(step.status, 200, "/ops/ opera como admin aunque exista cookie de rep en el navegador");
+  assert.ok(step.data.people.length >= 4);
   // A5: cookie inventada → 401
   step = await raw("GET", "/api/me", { cookie: "sa_session=inventada123" });
   assert.equal(step.status, 401);

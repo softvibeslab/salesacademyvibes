@@ -1,11 +1,14 @@
-// Cliente del API de tours. La identidad viaja en la cookie de sesión (login-demo);
-// el parámetro `actor` se conserva por compatibilidad y ya no se envía.
-export async function opsRequest(path, { method = "GET", body } = {}) {
+// Cliente del API de tours. Envía `X-Ops-Actor` cuando se indica (para que `/ops/`
+// funcione de forma independiente al login) además de la cookie `same-origin`.
+export async function opsRequest(path, { method = "GET", actor, body, signal } = {}) {
   const response = await fetch(path, {
     method,
     credentials: "same-origin",
+    signal,
+    ...(path.startsWith("/api/tour-registrations") ? { cache: "no-store" } : {}),
     headers: {
       Accept: "application/json",
+      ...(actor ? { "X-Ops-Actor": actor } : {}),
       ...(body ? { "Content-Type": "application/json" } : {}),
     },
     body: body ? JSON.stringify(body) : undefined,
@@ -19,6 +22,8 @@ export async function opsRequest(path, { method = "GET", body } = {}) {
   if (!response.ok || data.ok === false) {
     const error = new Error(data.error || "No se pudo completar.");
     error.status = response.status;
+    error.code = typeof data.code === "string" ? data.code : "";
+    error.fields = data.fields && typeof data.fields === "object" ? data.fields : {};
     throw error;
   }
   return data;

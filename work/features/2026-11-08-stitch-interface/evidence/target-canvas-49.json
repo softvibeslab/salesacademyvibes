@@ -1,0 +1,1086 @@
+{
+  "targetProject": "16859674583431881734",
+  "verifiedAt": "2026-11-08",
+  "project": {
+    "createTime": "2026-11-09T02:13:34.671431Z",
+    "designTheme": {},
+    "metadata": {
+      "userRole": "READER"
+    },
+    "name": "projects/16859674583431881734",
+    "origin": "WEB",
+    "projectType": "TEXT_TO_UI_PRO",
+    "screenInstances": [
+      {
+        "height": 356,
+        "id": "052d68b3-d708-47c6-81e8-c09f8cf16154",
+        "label": "public__04-film-player.png",
+        "sourceScreen": "projects/16859674583431881734/screens/389596636069312919",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 1030,
+        "y": 1100
+      },
+      {
+        "height": 356,
+        "id": "14a2a824-4a00-4793-841c-b0c26cc726ce",
+        "label": "public__01-pillar-coaching.png",
+        "sourceScreen": "projects/16859674583431881734/screens/2165546286795072801",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 576
+      },
+      {
+        "height": 854,
+        "id": "202fc106-2f93-4df3-9282-5a85eabb065a",
+        "label": "films__sistema-conectado.webp",
+        "sourceScreen": "projects/16859674583431881734/screens/16248357774128596059",
+        "type": "SCREEN_INSTANCE",
+        "width": 480,
+        "x": 1088,
+        "y": 12205
+      },
+      {
+        "height": 356,
+        "id": "20f45347-766c-46ed-84d6-c566f1c14324",
+        "label": "public__01-pillar-learn.png",
+        "sourceScreen": "projects/16859674583431881734/screens/2165546286795073565",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 1728
+      },
+      {
+        "height": 356,
+        "id": "28a1ac0f-15ac-411b-9599-f2fded5639a1",
+        "label": "advisor__13-request-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/17870044937804103842",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 454,
+        "y": 3456
+      },
+      {
+        "height": 844,
+        "id": "31e8e15f-7360-4613-a737-eff9d27e9ee0",
+        "label": "app__06-tour-preparation-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/11826206182589156561",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 1816,
+        "y": 10005
+      },
+      {
+        "height": 3674,
+        "id": "33318575-f5f6-4e69-924a-dfb3bd25b3f2",
+        "label": "cms__18-video-editor-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1981914138865973402",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 1606,
+        "y": 4712
+      },
+      {
+        "height": 356,
+        "id": "34998dba-99c5-45a1-9560-d64b2dd7a839",
+        "label": "public__06-diagnostic-result.png",
+        "sourceScreen": "projects/16859674583431881734/screens/389596636069313091",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "y": 1100
+      },
+      {
+        "height": 372,
+        "id": "3c83e932-603e-45b3-84e2-eb7fe5cae6ce",
+        "label": "app__14-roadmap-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/12616333181153367758",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 1152,
+        "y": 8642
+      },
+      {
+        "height": 844,
+        "id": "42803f3f-3549-49ea-b69c-2f1248828318",
+        "label": "public__05-diagnostic-question-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/389596636069310957",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 576,
+        "y": 1100
+      },
+      {
+        "height": 356,
+        "id": "4647ed9d-cff2-40af-b3a2-335815aec4e4",
+        "label": "advisor__12-video-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/17870044937804105286",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 1484,
+        "y": 3456
+      },
+      {
+        "height": 844,
+        "id": "4cc8fd6d-f065-4aa1-a839-11f0fc72a65e",
+        "label": "app__09-after-tour-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/11826206182589157039",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 454,
+        "y": 10005
+      },
+      {
+        "height": 356,
+        "id": "5a2c8c5b-b264-4c53-9e1a-ec08835304e5",
+        "label": "public__07-gallery-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1160322765806230830",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 908,
+        "y": 2200
+      },
+      {
+        "height": 320,
+        "id": "65952ace-f645-4bc4-8d64-82d20db91972",
+        "label": "cms__22-advisor-leads-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1981914138865971544",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 1030,
+        "y": 4712
+      },
+      {
+        "height": 1000,
+        "id": "6ae9c69e-4734-48d2-899a-3ab2c142668b",
+        "label": "advisor__12-video-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/17870044937804104564",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 1030,
+        "y": 3456
+      },
+      {
+        "height": 1107,
+        "id": "6b6b3a92-8761-4de0-b130-36bee5a0ea38",
+        "label": "app__16-meet-greet-retouched.png",
+        "sourceScreen": "projects/16859674583431881734/screens/12616333181153366554",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "y": 8642
+      },
+      {
+        "height": 372,
+        "id": "6c2a15d0-2bb2-4a51-8cb3-68eeb6a2f1f7",
+        "label": "app__15-room-board-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/12616333181153369204",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 576,
+        "y": 8642
+      },
+      {
+        "height": 356,
+        "id": "72fe96ec-ff6d-48b5-838c-c5a06e2f3e41",
+        "label": "public__01-pillar-scale.png",
+        "sourceScreen": "projects/16859674583431881734/screens/389596636069310613",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 2514,
+        "y": 1100
+      },
+      {
+        "height": 844,
+        "id": "73f42aec-cacb-4911-92d5-11f5b392d369",
+        "label": "public__03-resource-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/389596636069310785",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 1606,
+        "y": 1100
+      },
+      {
+        "height": 356,
+        "id": "773dfbac-02ef-43ab-8359-f0122d2e4a77",
+        "label": "public__01-landing-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/2165546286795074467",
+        "type": "SCREEN_INSTANCE",
+        "width": 512
+      },
+      {
+        "height": 356,
+        "id": "79498dc8-680a-4bcb-98ce-d190b4266c5d",
+        "label": "public__01-journey-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/2165546286795071899",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 2304
+      },
+      {
+        "height": 844,
+        "id": "7e1e4ac8-a94b-493d-9469-67a12a5c1c48",
+        "label": "app__02-calendar-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/16288772509092746905",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 908,
+        "y": 11105
+      },
+      {
+        "height": 844,
+        "id": "7eac27dd-6470-40cc-b0af-8ec051e52808",
+        "label": "app__08-price-objection-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/11826206182589154149",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 908,
+        "y": 10005
+      },
+      {
+        "height": 1000,
+        "id": "7f234f4e-a40d-4ad1-9b87-428c4abbd7ad",
+        "label": "advisor__13-request-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/17870044937804107216",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "y": 3456
+      },
+      {
+        "height": 844,
+        "id": "8176de7f-ea50-4f40-829a-6220addbffb7",
+        "label": "public__02-mediahub-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/389596636069312747",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 2060,
+        "y": 1100
+      },
+      {
+        "height": 356,
+        "id": "8212acbe-5abb-4d5c-a961-1a1955e7ce29",
+        "label": "advisor__11-reply-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/17870044937804106730",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 2514,
+        "y": 3456
+      },
+      {
+        "height": 854,
+        "id": "821464fa-246d-40f0-bf4f-d62efe71380f",
+        "label": "films__menos-caos.webp",
+        "sourceScreen": "projects/16859674583431881734/screens/16248357774128596357",
+        "type": "SCREEN_INSTANCE",
+        "width": 480,
+        "x": 1632,
+        "y": 12205
+      },
+      {
+        "height": 844,
+        "id": "858151cb-f8d2-4f48-a0bd-efeed54a7b5b",
+        "label": "cms__15-home-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1981914138865975260",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 2060,
+        "y": 4712
+      },
+      {
+        "height": 844,
+        "id": "87c9f37a-239c-4411-b60f-02449b1d072d",
+        "label": "public__01-landing-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/2165546286795074329",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 2880
+      },
+      {
+        "height": 1000,
+        "id": "883771fb-9b81-4d48-a690-af81f56eb07c",
+        "label": "public__07-gallery-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1160322765806228212",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 454,
+        "y": 2200
+      },
+      {
+        "height": 844,
+        "id": "8850f652-4263-4623-8360-f2604a898497",
+        "label": "public__08-analysis-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1160322765806229352",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 1484,
+        "y": 2200
+      },
+      {
+        "height": 1000,
+        "id": "88ac7e74-7bdb-4f58-815f-7b80857c1e46",
+        "label": "public__04-current-film-play-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1160322765806229690",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "y": 2200
+      },
+      {
+        "height": 844,
+        "id": "9900bd04-8f47-494b-a7c5-df5dcbd37d18",
+        "label": "app__03-roadmap-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/16288772509092749219",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 454,
+        "y": 11105
+      },
+      {
+        "height": 844,
+        "id": "9f0e6cfc-36b3-472a-8bf5-4d9eb539bc5f",
+        "label": "app__04-discovery-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/16288772509092747437",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "y": 11105
+      },
+      {
+        "height": 844,
+        "id": "a141d246-a78a-46a6-98de-136927363b48",
+        "label": "app__05-negotiation-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/11826206182589153671",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 2270,
+        "y": 10005
+      },
+      {
+        "height": 1000,
+        "id": "a747f317-aded-4d55-9d44-c2da5a7d493e",
+        "label": "advisor__11-reply-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/17870044937804106008",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 2060,
+        "y": 3456
+      },
+      {
+        "height": 848,
+        "id": "ad83f576-6eaa-46ac-8544-b0d4a0e26d31",
+        "label": "films__infraestructura-comercial.webp",
+        "sourceScreen": "projects/16859674583431881734/screens/16248357774128595761",
+        "type": "SCREEN_INSTANCE",
+        "width": 480,
+        "x": 544,
+        "y": 12205
+      },
+      {
+        "height": 844,
+        "id": "b2509d8c-0bd3-49ae-92a9-6f6f6312d36c",
+        "label": "app__12-copilot-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/12616333181153368962",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 2304,
+        "y": 8642
+      },
+      {
+        "height": 356,
+        "id": "b92702f9-60f1-4404-9067-cab70f64b03c",
+        "label": "cms__15-home-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1981914138865973022",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 2514,
+        "y": 4712
+      },
+      {
+        "height": 844,
+        "id": "b9554d82-ab93-488c-aa3c-a9e187b63900",
+        "label": "app__01-today-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/16288772509092748687",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 1362,
+        "y": 11105
+      },
+      {
+        "height": 356,
+        "id": "bc334e78-a052-4512-875c-dba07dc9487e",
+        "label": "public__01-pillar-practice.png",
+        "sourceScreen": "projects/16859674583431881734/screens/2165546286795075231",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 1152
+      },
+      {
+        "height": 844,
+        "id": "c1f9c01c-e294-408d-ba22-7ded11715773",
+        "label": "app__07-objection-practice-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/11826206182589155355",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 1362,
+        "y": 10005
+      },
+      {
+        "height": 1000,
+        "id": "cc2351bc-6ab3-40e3-9bdf-6f4788b6c243",
+        "label": "advisor__10-open-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1981914138865971924",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "y": 4712
+      },
+      {
+        "height": 854,
+        "id": "d72d6982-329d-4ee9-9e54-9c0db16093d7",
+        "label": "films__smart-agent.webp",
+        "sourceScreen": "projects/16859674583431881734/screens/16248357774128596655",
+        "type": "SCREEN_INSTANCE",
+        "width": 480,
+        "x": 2176,
+        "y": 12205
+      },
+      {
+        "height": 372,
+        "id": "d79ecc86-5444-46b8-a3fb-459996968f57",
+        "label": "app__13-today-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/12616333181153366312",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 1728,
+        "y": 8642
+      },
+      {
+        "height": 356,
+        "id": "d98d04a7-3bee-4d29-98c8-c7791baa789f",
+        "label": "advisor__10-open-desktop.png",
+        "sourceScreen": "projects/16859674583431881734/screens/1981914138865973782",
+        "type": "SCREEN_INSTANCE",
+        "width": 512,
+        "x": 454,
+        "y": 4712
+      },
+      {
+        "height": 844,
+        "id": "e0b087ea-86fc-4002-adcc-22051281f67f",
+        "label": "app__10-monthly-goal-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/11826206182589155833",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "y": 10005
+      },
+      {
+        "height": 844,
+        "id": "e6e37a9a-e786-4976-96d7-d5feff805bb8",
+        "label": "app__11-weekly-progress-mobile.png",
+        "sourceScreen": "projects/16859674583431881734/screens/12616333181153367516",
+        "type": "SCREEN_INSTANCE",
+        "width": 390,
+        "x": 2758,
+        "y": 8642
+      },
+      {
+        "height": 848,
+        "id": "f9e030d9-88db-498e-8092-e95f2fc1d5e7",
+        "label": "films__conocimiento-en-practica.webp",
+        "sourceScreen": "projects/16859674583431881734/screens/16248357774128595463",
+        "type": "SCREEN_INSTANCE",
+        "width": 480,
+        "y": 12205
+      }
+    ],
+    "title": "Sales Academy · Interfaz completa",
+    "updateTime": "2026-11-09T02:47:57.736488Z",
+    "visibility": "PUBLIC"
+  },
+  "screens": {
+    "screens": [
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1981914138865975260",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1981914138865972093:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1981914138865972093"
+        },
+        "title": "cms__15-home-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/17870044937804105286",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17870044937804107695:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/17870044937804107695"
+        },
+        "title": "advisor__12-video-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1981914138865971924",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1981914138865972853:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1981914138865972853"
+        },
+        "title": "advisor__10-open-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16288772509092747437",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16288772509092746280:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/16288772509092746280"
+        },
+        "title": "app__04-discovery-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/389596636069310613",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/389596636069313642:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/389596636069313642"
+        },
+        "title": "public__01-pillar-scale.png",
+        "width": "1440"
+      },
+      {
+        "height": "900",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/12616333181153366312",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12616333181153367637:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/12616333181153367637"
+        },
+        "title": "app__13-today-desktop.png",
+        "width": "1240"
+      },
+      {
+        "height": "900",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/12616333181153367758",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12616333181153369083:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/12616333181153369083"
+        },
+        "title": "app__14-roadmap-desktop.png",
+        "width": "1240"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16288772509092748687",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16288772509092747530:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/16288772509092747530"
+        },
+        "title": "app__01-today-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/11826206182589155833",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/11826206182589156436:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/11826206182589156436"
+        },
+        "title": "app__10-monthly-goal-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/389596636069310785",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/389596636069313814:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/389596636069313814"
+        },
+        "title": "public__03-resource-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/17870044937804107216",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17870044937804105529:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/17870044937804105529"
+        },
+        "title": "advisor__13-request-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1160322765806229690",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1160322765806230999:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1160322765806230999"
+        },
+        "title": "public__04-current-film-play-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1981914138865973782",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1981914138865974711:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1981914138865974711"
+        },
+        "title": "advisor__10-open-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/17870044937804104564",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17870044937804106973:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/17870044937804106973"
+        },
+        "title": "advisor__12-video-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/17870044937804106008",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17870044937804104321:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/17870044937804104321"
+        },
+        "title": "advisor__11-reply-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "900",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/12616333181153369204",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12616333181153366433:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/12616333181153366433"
+        },
+        "title": "app__15-room-board-desktop.png",
+        "width": "1240"
+      },
+      {
+        "height": "854",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16248357774128596059",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16248357774128596208:download",
+          "mimeType": "image/webp",
+          "name": "projects/16859674583431881734/files/16248357774128596208"
+        },
+        "title": "films__sistema-conectado.webp",
+        "width": "480"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/389596636069310957",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/389596636069313986:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/389596636069313986"
+        },
+        "title": "public__05-diagnostic-question-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/2165546286795071899",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2165546286795073114:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/2165546286795073114"
+        },
+        "title": "public__01-journey-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/2165546286795074467",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2165546286795071586:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/2165546286795071586"
+        },
+        "title": "public__01-landing-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/2165546286795072801",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2165546286795074016:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/2165546286795074016"
+        },
+        "title": "public__01-pillar-coaching.png",
+        "width": "1440"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1160322765806230830",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1160322765806228043:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1160322765806228043"
+        },
+        "title": "public__07-gallery-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16288772509092746905",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16288772509092745748:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/16288772509092745748"
+        },
+        "title": "app__02-calendar-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/11826206182589153671",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/11826206182589154274:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/11826206182589154274"
+        },
+        "title": "app__05-negotiation-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "900",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1981914138865971544",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1981914138865972473:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1981914138865972473"
+        },
+        "title": "cms__22-advisor-leads-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "854",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16248357774128596655",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16248357774128596804:download",
+          "mimeType": "image/webp",
+          "name": "projects/16859674583431881734/files/16248357774128596804"
+        },
+        "title": "films__smart-agent.webp",
+        "width": "480"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1160322765806228212",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1160322765806229521:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1160322765806229521"
+        },
+        "title": "public__07-gallery-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/2165546286795074329",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2165546286795075544:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/2165546286795075544"
+        },
+        "title": "public__01-landing-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/389596636069313091",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/389596636069312024:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/389596636069312024"
+        },
+        "title": "public__06-diagnostic-result.png",
+        "width": "1440"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/17870044937804103842",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17870044937804106251:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/17870044937804106251"
+        },
+        "title": "advisor__13-request-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/11826206182589154149",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/11826206182589154752:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/11826206182589154752"
+        },
+        "title": "app__08-price-objection-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/2165546286795075231",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2165546286795072350:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/2165546286795072350"
+        },
+        "title": "public__01-pillar-practice.png",
+        "width": "1440"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/389596636069312747",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/389596636069311680:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/389596636069311680"
+        },
+        "title": "public__02-mediahub-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1160322765806229352",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1160322765806230661:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1160322765806230661"
+        },
+        "title": "public__08-analysis-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/11826206182589157039",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/11826206182589153546:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/11826206182589153546"
+        },
+        "title": "app__09-after-tour-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/389596636069312919",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/389596636069311852:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/389596636069311852"
+        },
+        "title": "public__04-film-player.png",
+        "width": "1440"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/12616333181153368962",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12616333181153366191:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/12616333181153366191"
+        },
+        "title": "app__12-copilot-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/11826206182589155355",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/11826206182589155958:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/11826206182589155958"
+        },
+        "title": "app__07-objection-practice-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "854",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16248357774128596357",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16248357774128596506:download",
+          "mimeType": "image/webp",
+          "name": "projects/16859674583431881734/files/16248357774128596506"
+        },
+        "title": "films__menos-caos.webp",
+        "width": "480"
+      },
+      {
+        "height": "3674",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1981914138865973402",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1981914138865974331:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1981914138865974331"
+        },
+        "title": "cms__18-video-editor-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/1981914138865973022",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/1981914138865973951:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/1981914138865973951"
+        },
+        "title": "cms__15-home-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/12616333181153367516",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12616333181153368841:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/12616333181153368841"
+        },
+        "title": "app__11-weekly-progress-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16288772509092749219",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16288772509092748062:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/16288772509092748062"
+        },
+        "title": "app__03-roadmap-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/17870044937804106730",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17870044937804105043:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/17870044937804105043"
+        },
+        "title": "advisor__11-reply-desktop.png",
+        "width": "1440"
+      },
+      {
+        "height": "848",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16248357774128595463",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16248357774128595612:download",
+          "mimeType": "image/webp",
+          "name": "projects/16859674583431881734/files/16248357774128595612"
+        },
+        "title": "films__conocimiento-en-practica.webp",
+        "width": "480"
+      },
+      {
+        "height": "1844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/12616333181153366554",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12616333181153367879:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/12616333181153367879"
+        },
+        "title": "app__16-meet-greet-retouched.png",
+        "width": "853"
+      },
+      {
+        "height": "844",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/11826206182589156561",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/11826206182589157164:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/11826206182589157164"
+        },
+        "title": "app__06-tour-preparation-mobile.png",
+        "width": "390"
+      },
+      {
+        "height": "1000",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/2165546286795073565",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2165546286795074780:download",
+          "mimeType": "image/png",
+          "name": "projects/16859674583431881734/files/2165546286795074780"
+        },
+        "title": "public__01-pillar-learn.png",
+        "width": "1440"
+      },
+      {
+        "height": "848",
+        "htmlCode": {},
+        "name": "projects/16859674583431881734/screens/16248357774128595761",
+        "screenshot": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16248357774128595910:download",
+          "mimeType": "image/webp",
+          "name": "projects/16859674583431881734/files/16248357774128595910"
+        },
+        "title": "films__infraestructura-comercial.webp",
+        "width": "480"
+      }
+    ]
+  }
+}

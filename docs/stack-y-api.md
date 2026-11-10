@@ -23,7 +23,8 @@ Hechos del código inspeccionado. Si no está en estos archivos, no se documenta
 | `agenda.js` | Vistas, dock, tours, identidad. |
 | `styles.css` | Tokens. Se copia a `agenda.css` al publicar. |
 | `ops-store.js` | Semilla, fechas locales, `normalizeClock`. |
-| `ops-api.js` | `fetch` con encabezado `X-Ops-Actor`. |
+| `ops-api.js` | `fetch` con cookie de sesión; conserva errores estructurados y soporta abortar una solicitud. El encabezado de actor sigue siendo solo compatibilidad de la demo operativa. |
+| `tour-registration.js`, `tour-registration.css` | Nuevo tour: foto/manual, borrador en memoria, revisión y confirmación. |
 | `home-counters.js` | Contadores de Home a partir de los resultados del día. |
 
 Identidad: `sessionStorage sa.app.rep`. Atajos: `localStorage sa.home.shortcuts`. Los tours ya no viven en el navegador.
@@ -36,7 +37,9 @@ Sesión: `sa.ops.role`, `sa.ops.jefe`, `sa.ops.room` en `sessionStorage`.
 
 ## Sesión (login-demo)
 
-La identidad viaja en la cookie `sa_session` (HttpOnly, Secure, SameSite=Lax, 12 h). `POST /api/login {username, password}`, `POST /api/logout`, `GET /api/me`. Reps y jefes usan la contraseña demo; el admin, `OPS_ADMIN_PASSWORD` del servidor. 5 fallos por usuario en 10 min → 429. El encabezado `X-Ops-Actor` ya no autentica (solo con `OPS_ALLOW_ACTOR_HEADER=1`, para el selftest). Hermes (`/copiloto/api/hermes`) exige sesión.
+La identidad viaja en la cookie `sa_session` (HttpOnly, Secure, SameSite=Lax, 12 h). `POST /api/login {username, password}`, `POST /api/logout`, `GET /api/me`. En modo demo, reps/jefes usan la contraseña demo y admin usa `OPS_ADMIN_PASSWORD`. En modo privado, cada usuario requiere su hash individual del archivo externo `OPS_PRIVATE_CREDENTIALS_FILE`. Cinco fallos por usuario en diez minutos producen 429.
+
+El tablero anónimo conserva el encabezado jefe/admin cuando `OPS_ALLOW_OPS_HEADER=1`; `OPS_ALLOW_ACTOR_HEADER=1` habilita además el actor del selftest. Ninguno autoriza leer o modificar los registros privados de parejas. Hermes (`/copiloto/api/hermes`) exige sesión.
 
 ## Contrato del API
 
@@ -106,7 +109,25 @@ Dato separado del estado operativo. Cuerpo de `PUT /tours/:id/result`:
 
 Errores vistos en código: 400 validación, 401 sin rol, 403 fuera de sala o rep que escribe, 404 no existe, 409 empalme.
 
-El rep no crea, no edita y no borra. Si pide `?rep=` de otra persona, 403.
+El rep no crea por la ruta operativa `/tours`, no edita y no borra. Puede registrar un tour propio por `/tour-registrations` cuando está habilitado y autenticado. Si pide `?rep=` de otra persona, 403.
+
+### Registrar la pareja de un tour
+
+Contrato aprobado: [CP2 v1](../work/features/2026-11-08-tour-registration/cp2-spec.md). La foto y el OCR bruto no se guardan. El OCR es Tesseract local, con candidatos editables y revisión humana obligatoria; puede no leer manuscritos o fotos borrosas.
+
+| Método | Ruta | Resultado |
+|---|---|---|
+| GET | `/tour-registrations/capabilities` | Capacidad, modo, fecha operativa y disponibilidad OCR, sin datos personales |
+| POST | `/tour-registrations/preview` | Candidatos de nombre, acompañante, idioma, intereses y notas; no crea un tour |
+| POST | `/tour-registrations` | Crea un tour anónimo y su registro privado en una transacción; requestId idempotente |
+| GET | `/tour-registrations?date=YYYY-MM-DD&limit=50` | Registros dentro del alcance privado, límite 1–100 |
+| GET | `/tour-registrations/:tourId` | Detalle privado o 404 |
+
+Estas rutas usan la cookie, nunca `X-Ops-Actor` ni `?actor=`. Las mutaciones requieren JSON y Origin del sitio. El rep ve sus registros de la sala actual; el jefe ve la sala original y el admin privado ve todas. Cambiar de sala no traslada el acceso histórico. La agenda y el contexto del Copiloto reciben referencias anónimas, sin nombres, contacto ni notas privadas. Registrar el tour no registra una venta.
+
+La colección interna `tourRegistrations` vive separada de `visits`; los reintentos se controlan con `tourRegistrationRequests`. A los treinta días se elimina la información personal y el hash del payload; queda una referencia de idempotencia sin PII. `salesacademy-registration-cleanup.timer` ejecuta la limpieza diaria incluso sin tráfico (máximo efectivo 31 días). Apagar el módulo conserva las guardas de los tours privados existentes.
+
+La configuración inicial mantiene `OPS_TOUR_REGISTRATION_ENABLED=0`. Para datos reales se requieren `OPS_AUTH_MODE=private`, `OPS_TOUR_REGISTRATION_MODE=private`, credenciales individuales externas y almacén con directorio 0700/archivo 0600. La zona operativa es `America/Cancun`. La publicación de código y la activación privada son estados distintos; consultar la evidencia de release de esta feature.
 
 ## Semilla
 
@@ -119,11 +140,11 @@ Desde `prototypes/smart-agenda-mockup/`:
 1. `node --check` de los JS y `python3 -m py_compile server/ops_api.py`.
 2. `cp styles.css agenda.css` si cambió CSS.
 3. Subir query de caché en `index.html` y `ops/index.html` (último corte: `20261107w`).
-4. `rsync` al root `/var/www/salesacademy.softvibes.art/` y, si cambió el API, a `/opt/salesacademy-ops/ops_api.py` más `ops_import.py` y `systemctl restart salesacademy-ops`.
-5. `node tests/e2e-ops.mjs` y `OPS_BASE=https://salesacademy.softvibes.art node tests/e2e-ops.mjs`.
+4. Publicar solo los archivos revisados al root `/var/www/salesacademy.softvibes.art/`. Para el API, incluir sus módulos dependientes en `/opt/salesacademy-ops/` antes de reiniciar `salesacademy-ops`. No sobrescribir el store ni otros vhosts. Instalar y verificar el timer de retención antes de activar el registro privado.
+5. Ejecutar `node tests/e2e-ops.mjs` únicamente contra su almacén temporal local. La suite hace reset; **no usar OPS_BASE con producción**. En live verificar salud, recursos y capacidad sin reset, y ejecutar cualquier escritura de prueba solo con un fixture sintético identificado y limpieza acotada.
 
 Acceso SSH al VPS: host y llave en el runbook privado del equipo, fuera de este repo. No reescribir otros vhosts. No tocar el puerto 8010.
 
 ## Prueba e2e
 
-`prototypes/smart-agenda-mockup/tests/e2e-ops.mjs` arranca el API en local o pega al live. Cubre: reset, directory, Jorge crea a Ana, Luis no lee a Ana, Rosa no asigna a Ana, hora con segundos, Teo lee lo suyo, lead con nombre real 400, empalme 409, editar, borrar, mover a Luis a Sur; y del resultado del tour: venta válida que el jefe lee, validación de venta, no venta y abandono, catálogo servido, matriz de permisos, cancelado y futuro, edición que conserva el resultado, conflicto de versión, historial con valor anterior y filtro de la nota. `tests/home-counters.mjs` cubre los contadores de Home.
+`prototypes/smart-agenda-mockup/tests/e2e-ops.mjs` arranca el API con almacén temporal local. Cubre: reset, directory, Jorge crea a Ana, Luis no lee a Ana, Rosa no asigna a Ana, hora con segundos, Teo lee lo suyo, lead con nombre real 400, empalme 409, editar, borrar, mover a Luis a Sur; y del resultado del tour: venta válida que el jefe lee, validación de venta, no venta y abandono, catálogo servido, matriz de permisos, cancelado y futuro, edición que conserva el resultado, conflicto de versión, historial con valor anterior y filtro de la nota. `tests/home-counters.mjs` cubre los contadores de Home. Las pruebas nuevas del registro están en `tests/test_tour_registration.py`, `tests/tour-registration.mjs` y `tests/tour-registration-ui.mjs`; usan datos ficticios.

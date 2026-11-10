@@ -1,0 +1,335 @@
+{
+  "targetProjectId": "16859674583431881734",
+  "uiLimitFilesPerBatch": 6,
+  "reason": "Coordinator observed 49-file selection rejected before upload; UI allows at most six files.",
+  "totalImages": 49,
+  "batchCount": 9,
+  "batches": [
+    {
+      "batch": "01",
+      "label": "Landing y primeros pilares",
+      "count": 6,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/01",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "public__01-landing-desktop.png",
+          "sha256": "5b97583b61b00cf7c66294bd192db25c6045526c610b5ea5e1be6ef7fdbe3a5a",
+          "bytes": 595410
+        },
+        {
+          "filename": "public__01-landing-mobile.png",
+          "sha256": "c8a4d8722425a5fd9fbb0749b431ede4ccd34d0418e38a17861704b53ecabe37",
+          "bytes": 181820
+        },
+        {
+          "filename": "public__01-journey-desktop.png",
+          "sha256": "57badc1ca6a4448fe5aa3e82c29ba7df7d6431c93b5bc17f5532c33c95248bef",
+          "bytes": 595454
+        },
+        {
+          "filename": "public__01-pillar-learn.png",
+          "sha256": "f5eabe27fc3e124cea73048610db1792351bfd741694699e4260719982db386f",
+          "bytes": 703063
+        },
+        {
+          "filename": "public__01-pillar-practice.png",
+          "sha256": "d3e2e42367db8107fe03b3573af0be5508451c8e27bb4bc8904cf6ee5770d23c",
+          "bytes": 665413
+        },
+        {
+          "filename": "public__01-pillar-coaching.png",
+          "sha256": "69369ee2df1990324762b90486e5c9cf7db4e16567acc297990c3a6e98b4e09d",
+          "bytes": 650730
+        }
+      ]
+    },
+    {
+      "batch": "02",
+      "label": "Pilar escalar y recursos",
+      "count": 6,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/02",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "public__01-pillar-scale.png",
+          "sha256": "fdac0c5303311a75c85b9a7be8d65f860d0350a5eb99e91600a78c3d40021137",
+          "bytes": 703289
+        },
+        {
+          "filename": "public__02-mediahub-mobile.png",
+          "sha256": "671bd6bb148987ab59318805128dc762c137d607810f2f6ca6144ed8d5771fb4",
+          "bytes": 49238
+        },
+        {
+          "filename": "public__03-resource-mobile.png",
+          "sha256": "a90cd225b1e95d609629982c7ae9fe3d5de5e0295fde23b1b617fbc57d78ca49",
+          "bytes": 71600
+        },
+        {
+          "filename": "public__05-diagnostic-question-mobile.png",
+          "sha256": "6867f19754bc1cf7a2c0bfa9c4de6af1f37acd17d920aac30cfb0a3f16ba5de3",
+          "bytes": 67369
+        },
+        {
+          "filename": "public__06-diagnostic-result.png",
+          "sha256": "58a0680157df055178bc12045faed773bc5b7693a5e8443253b3843b48b31d22",
+          "bytes": 122876
+        },
+        {
+          "filename": "public__08-analysis-mobile.png",
+          "sha256": "8b6eaf8faf806f4027609b4a20db8acbd66e15aff888e58a5dc7afa242d49e40",
+          "bytes": 69154
+        }
+      ]
+    },
+    {
+      "batch": "03",
+      "label": "Galería y películas principales",
+      "count": 6,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/03",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "public__07-gallery-desktop.png",
+          "sha256": "9c367cc8821683d6984c1bb68a51b0c6784b3c276478e0e657a1bbd53eb5dca8",
+          "bytes": 673645
+        },
+        {
+          "filename": "public__07-gallery-mobile.png",
+          "sha256": "5fc9f0f65f69bcaf0c5ad9668adc503e7e0fa53a51e4866e39c05e3654971d31",
+          "bytes": 236420
+        },
+        {
+          "filename": "public__04-film-player.png",
+          "sha256": "5eecb3375120761be981b11bebb8ec41c9b1bcf7f343f84cba3f436e38f0124b",
+          "bytes": 542304
+        },
+        {
+          "filename": "public__04-current-film-play-mobile.png",
+          "sha256": "940b8d79c4f1a16d101ffc4df577ed6f2f244e847a76adebaf817cd771ba0393",
+          "bytes": 233933
+        },
+        {
+          "filename": "films__smart-agent.webp",
+          "sha256": "3548a90610861f02557fd70291bfac224cec80ce5d38ec645a8060ea366dc238",
+          "bytes": 21764
+        },
+        {
+          "filename": "films__menos-caos.webp",
+          "sha256": "314374a9090a354f3342c4c3020ea4687d6344afbbbd476ed19769457925ec29",
+          "bytes": 23520
+        }
+      ]
+    },
+    {
+      "batch": "04",
+      "label": "Películas de visión",
+      "count": 3,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/04",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "films__sistema-conectado.webp",
+          "sha256": "bc52da68a621d16a48b480ecc71aecff9602945e870ea2713cef8dc0f64bd13c",
+          "bytes": 22980
+        },
+        {
+          "filename": "films__infraestructura-comercial.webp",
+          "sha256": "443eba51b2e84cb825074c82a063878219e163ac22e2fb7b36b0fc0d1829340b",
+          "bytes": 37864
+        },
+        {
+          "filename": "films__conocimiento-en-practica.webp",
+          "sha256": "4efc8c43fc009be7327c04aa265fb4d620be1449d60a5904ddcdc6cd0eafe4c0",
+          "bytes": 15266
+        }
+      ]
+    },
+    {
+      "batch": "05",
+      "label": "Asesor conversación y video",
+      "count": 6,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/05",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "advisor__10-open-desktop.png",
+          "sha256": "89d368e028d991cb70129fb9578fc4dc50ec928a4026eb5fa9908320efd17b98",
+          "bytes": 375792
+        },
+        {
+          "filename": "advisor__10-open-mobile.png",
+          "sha256": "698723bc647b83d5a3da36b8084198e84ea6a7c4acd88554fbda77d84397068d",
+          "bytes": 110465
+        },
+        {
+          "filename": "advisor__11-reply-desktop.png",
+          "sha256": "c392bcb3562ea176a56c615dcf3dff94a1ead57258e23eea05b2869380b94392",
+          "bytes": 376907
+        },
+        {
+          "filename": "advisor__11-reply-mobile.png",
+          "sha256": "f2bf9880b7302589f064e968d1aa1fa8145b9f8bf4c2daa34f53f4995d49fc1c",
+          "bytes": 109615
+        },
+        {
+          "filename": "advisor__12-video-desktop.png",
+          "sha256": "dd73bf37c522c83eaf77a6789223acd333d3ba53536fae12ba73230bd57f48ab",
+          "bytes": 374586
+        },
+        {
+          "filename": "advisor__12-video-mobile.png",
+          "sha256": "f2a34d3f3e28cffa4bed49807523b3a5920eafe1b4bfd4fb22ab95109a2ae98b",
+          "bytes": 118334
+        }
+      ]
+    },
+    {
+      "batch": "06",
+      "label": "Solicitud de demo y CMS",
+      "count": 6,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/06",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "advisor__13-request-desktop.png",
+          "sha256": "3f73b03f6e8abcb11f5afca030126cea38ec1545c606d1ceeae750473f7e441f",
+          "bytes": 347848
+        },
+        {
+          "filename": "advisor__13-request-mobile.png",
+          "sha256": "003ae0344d3e2b187612b12297870bf00674f78d6f8c7d16d71cd37dcf50d4e5",
+          "bytes": 96810
+        },
+        {
+          "filename": "cms__15-home-desktop.png",
+          "sha256": "ac896fe8cef60d74369cedbbbe8af0ce6e1b35851a5e74dfdb2f6c5690005e8d",
+          "bytes": 122467
+        },
+        {
+          "filename": "cms__15-home-mobile.png",
+          "sha256": "ca360e4343ab802a31e15788b695d4dd139de1a42a6665fa80c0091fb688b94f",
+          "bytes": 48539
+        },
+        {
+          "filename": "cms__18-video-editor-mobile.png",
+          "sha256": "9dcd6feaedd24f83750db4b6ce9d25513e63573e809e0d611c0fa28bbe802ff8",
+          "bytes": 166899
+        },
+        {
+          "filename": "cms__22-advisor-leads-desktop.png",
+          "sha256": "109f9ac95e79902773cf87986dcf846651d32f9f9c991ced230051b696de48f8",
+          "bytes": 116352
+        }
+      ]
+    },
+    {
+      "batch": "07",
+      "label": "App móvil01–06",
+      "count": 6,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/07",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "app__01-today-mobile.png",
+          "sha256": "659b52f9f753badd16cebb2250e2983a6826ed3ef35279fad17b19357b61c259",
+          "bytes": 73733
+        },
+        {
+          "filename": "app__02-calendar-mobile.png",
+          "sha256": "b80c2ec560524059b2d3f10aef18b1aac4fe33056baba9236216f97db3548632",
+          "bytes": 60604
+        },
+        {
+          "filename": "app__03-roadmap-mobile.png",
+          "sha256": "266043ef4733d3d704ee161afe6b5fa94df14f59fe36a9cc19f1d4b83b1de892",
+          "bytes": 82171
+        },
+        {
+          "filename": "app__04-discovery-mobile.png",
+          "sha256": "7118b9e66312402675fb616d26cfe9c1897457a35a9361fca40cad3de4a0a2d8",
+          "bytes": 53373
+        },
+        {
+          "filename": "app__05-negotiation-mobile.png",
+          "sha256": "388a66bba4dcee044014e79e8b1ea7ede507a8d051e1c174ecd16a13214fc54e",
+          "bytes": 54031
+        },
+        {
+          "filename": "app__06-tour-preparation-mobile.png",
+          "sha256": "5cea5d3b0e275876eeed90d2d2540f614cade78cad46d212a01019e36569f248",
+          "bytes": 38396
+        }
+      ]
+    },
+    {
+      "batch": "08",
+      "label": "App móvil07–12",
+      "count": 6,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/08",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "app__07-objection-practice-mobile.png",
+          "sha256": "d46845c43b5e4b69e3bde01f927bb982715c1e177290940cbafff6f2ca50bf5b",
+          "bytes": 43067
+        },
+        {
+          "filename": "app__08-price-objection-mobile.png",
+          "sha256": "1e5527bef1ff98c858455fdb70974baf8bd63be3536c28ed76358580dee7d751",
+          "bytes": 55039
+        },
+        {
+          "filename": "app__09-after-tour-mobile.png",
+          "sha256": "a771bf85e3f4743ec48c670d72a384d72cb399935a41d1488cf7dcc9e0ea23de",
+          "bytes": 40586
+        },
+        {
+          "filename": "app__10-monthly-goal-mobile.png",
+          "sha256": "43421cd30783394d7b97214ecd070121dc97a99d75de5cea57a06d7c08d896b9",
+          "bytes": 37590
+        },
+        {
+          "filename": "app__11-weekly-progress-mobile.png",
+          "sha256": "3858cf46889c4190797ce43f6244dde951b59849926826fdc6ceb0347d40f595",
+          "bytes": 66882
+        },
+        {
+          "filename": "app__12-copilot-mobile.png",
+          "sha256": "daef7dda95a1fadba6c5dcc8297465b011f62e9a3ba67c2895e17cc85fb30bcc",
+          "bytes": 37308
+        }
+      ]
+    },
+    {
+      "batch": "09",
+      "label": "App desktop13–15 y Meet & Greet",
+      "count": 4,
+      "path": "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/work/features/2026-11-08-stitch-interface/stitch-upload-batches/09",
+      "status": "prepared-not-uploaded",
+      "files": [
+        {
+          "filename": "app__13-today-desktop.png",
+          "sha256": "902f39761880bd52ef83faf9f8613e324a6f09380df29ee7cfe8ce36e1907aec",
+          "bytes": 92847
+        },
+        {
+          "filename": "app__14-roadmap-desktop.png",
+          "sha256": "23b75ecebde780e118ce709c6edbdf6047fc2de80be60095b7732ccfa888fea5",
+          "bytes": 100310
+        },
+        {
+          "filename": "app__15-room-board-desktop.png",
+          "sha256": "dee5a1227497c6a964a2d34b1528b94793c63760b109135fffc5a35a85c94072",
+          "bytes": 93955
+        },
+        {
+          "filename": "app__16-meet-greet-retouched.png",
+          "sha256": "3de1c6fcbce141fa6bc3c072e8f2d92d6fc91eace838c05018c9dd93d90be14c",
+          "bytes": 1517543
+        }
+      ]
+    }
+  ]
+}

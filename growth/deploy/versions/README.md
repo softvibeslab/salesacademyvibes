@@ -12,7 +12,7 @@ Publicación solicitada por Roger el 2026-11-07. Evidencia y contrato: `work/fea
 
 ## Release y servicios
 
-VPS (host privado). Raíz `/srv/salesacademy-cloud`, release activo `releases/20261107-advisor-links-06`, symlink `current`. Release anterior recuperable: `releases/20261107-advisor-05`. También se conservan film-play-04, meet-greet-03, compact-screens-02 y versions-01. El índice está en `current/index`; los cinco runtimes en `current/vN`. Venv propio, requirements fijados e iguales en las cinco versiones. La extracción verifica hashes de los ZIPs y cada miembro antes de seleccionar exclusivamente runtime.
+VPS (host privado). Raíz `/srv/salesacademy-cloud`, release activo `releases/20261107-advisor-rich-07`, symlink `current`. Release anterior recuperable: `releases/20261107-advisor-links-06`; también se conserva advisor-05. También se conservan film-play-04, meet-greet-03, compact-screens-02 y versions-01. El índice está en `current/index`; los cinco runtimes en `current/vN`. Venv propio, requirements fijados e iguales en las cinco versiones. La extracción verifica hashes de los ZIPs y cada miembro antes de seleccionar exclusivamente runtime.
 
 Units `salesacademy-cloud@v1.service`…`@v5.service`. Usuarios `sa-cloud-v1`…`sa-cloud-v5`. Puertos18481–18485 ligados solo a127.0.0.1. Cada servicio tiene un worker y cuatro threads. Estado SQLite/medios fuera del release: `/var/lib/salesacademy-cloud/vN`, permisos0700. Configuración sin contraseñas en `/etc/salesacademy-cloud/vN.env`,0600.
 
@@ -83,3 +83,11 @@ WhatsApp de Chris:529843163268, confirmado por Roger. El enlace contiene solo el
 Publicación: advisor-05 añadió12 archivos nuevos/modificados de V5 y tablas aditivas. Una copia SQLite privada previa permanece solo en VPS en operations/advisor-05-private-backup. advisor-links-06 ajusta ranking de recursos mencionados por la respuesta y límite Unicode del contrato. Evidencia: work/features/2026-11-07-sales-advisor/.
 
 Revertir solo el último ajuste: cambiar current atómicamente a advisor-05 y reiniciar V5. Revertir toda la incorporación: desactivar timer de retención, retirar únicamente advisor.conf, daemon-reload, cambiar current a film-play-04 y reiniciar V5; conservar DB privada (tablas aditivas), y detener servicio advisor y timer de credencial cuando no haya solicitudes. No afecta gateway Hermes/Copiloto anteriores ni las otras cuatro versiones.
+
+## Experiencia del asesor · 2026-11-07
+
+Release advisor-rich-07 refuerza contraste y tipografía, limita la respuesta visible a 90 palabras y ofrece hasta tres sugerencias contextuales y dos recursos publicados. Los cinco videos curados pueden reproducirse en el asesor con audio y subtítulos, solo tras pulsar play. El contenido completo de una respuesta larga permanece en «Ver detalle».
+
+Cambian cuatro archivos de V5 (advisor.py, OpenAPI, advisor.mjs y advisor.css) y únicamente la redacción SOUL del perfil Hermes. No cambia el esquema de datos ni las credenciales. Solo se reinicia V5; Hermes lee el perfil en cada solicitud. Evidencia: work/features/2026-11-07-advisor-rich-experience/.
+
+Reversión de este incremento: restaurar ambas SOUL desde /srv/salesacademy-cloud/operations/advisor-rich-07-profile-before.md mediante reemplazo atómico conservando dueño y permisos; apuntar current a releases/20261107-advisor-links-06 y reiniciar salesacademy-cloud@v5.service. No borrar estados ni detener otros servicios. El instalador intenta esta reversión si falla su comprobación de salud; el smoke público con inferencia es el gate adicional de cierre.

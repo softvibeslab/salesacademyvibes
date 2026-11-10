@@ -1,0 +1,138 @@
+[
+  {
+    "deviceType": "DESKTOP",
+    "height": "2048",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12047204877366265397:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/12047204877366265397"
+    },
+    "name": "projects/16859674583431881734/screens/12047204877366267359",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/12047204877366266378:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/12047204877366266378"
+    },
+    "title": "TOUR 07 · Survey · Recuperación móvil",
+    "width": "2560"
+  },
+  {
+    "deviceType": "DESKTOP",
+    "height": "2048",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/14658023913803723210:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/14658023913803723210"
+    },
+    "name": "projects/16859674583431881734/screens/14658023913803726060",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/14658023913803724635:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/14658023913803724635"
+    },
+    "title": "TOUR 06 · Tour registrado · Siguiente paso móvil",
+    "width": "2560"
+  },
+  {
+    "deviceType": "DESKTOP",
+    "height": "2498",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16813978279657542446:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/16813978279657542446"
+    },
+    "name": "projects/16859674583431881734/screens/16813978279657545428",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/16813978279657543937:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/16813978279657543937"
+    },
+    "title": "TOUR 04 · Pareja · Captura manual móvil",
+    "width": "2560"
+  },
+  {
+    "deviceType": "DESKTOP",
+    "height": "2048",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17363213564257077573:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/17363213564257077573"
+    },
+    "name": "projects/16859674583431881734/screens/17363213564257077531",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/17363213564257075504:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/17363213564257075504"
+    },
+    "title": "TOUR 01 · Nuevo tour · Inicio móvil",
+    "width": "2560"
+  },
+  {
+    "deviceType": "DESKTOP",
+    "height": "2048",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2607129285037446734:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/2607129285037446734"
+    },
+    "name": "projects/16859674583431881734/screens/2607129285037447524",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/2607129285037447129:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/2607129285037447129"
+    },
+    "title": "TOUR 02 · Survey · Foto móvil",
+    "width": "2560"
+  },
+  {
+    "deviceType": "DESKTOP",
+    "height": "2048",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/4087827021960828686:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/4087827021960828686"
+    },
+    "name": "projects/16859674583431881734/screens/4087827021960828560",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/4087827021960828623:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/4087827021960828623"
+    },
+    "title": "TOUR 03 · Survey · Revisión IA móvil",
+    "width": "2560"
+  },
+  {
+    "deviceType": "DESKTOP",
+    "height": "2048",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/8306631959820303823:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/8306631959820303823"
+    },
+    "name": "projects/16859674583431881734/screens/8306631959820301741",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/8306631959820302782:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/8306631959820302782"
+    },
+    "title": "TOUR 08 · Nuevo tour · Revisión escritorio",
+    "width": "2880"
+  },
+  {
+    "deviceType": "DESKTOP",
+    "height": "2152",
+    "htmlCode": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/9853452450223975449:download",
+      "mimeType": "text/html",
+      "name": "projects/16859674583431881734/files/9853452450223975449"
+    },
+    "name": "projects/16859674583431881734/screens/9853452450223974663",
+    "screenshot": {
+      "downloadUrl": "https://stitch.googleapis.com/v1/projects/16859674583431881734/files/9853452450223973008:download",
+      "mimeType": "image/jpeg",
+      "name": "projects/16859674583431881734/files/9853452450223973008"
+    },
+    "title": "TOUR 05 · Tour · Resumen móvil",
+    "width": "2560"
+  }
+]

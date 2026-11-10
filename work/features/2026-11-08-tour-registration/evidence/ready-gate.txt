@@ -1,0 +1,4 @@
+2026-11-10 · Roger: «Apruebo v1; implementar»
+Comando: bash /Users/rogergv/Documents/SoftvibesLab/px-onboarding-mob-gen/install/verify-story.sh work/stories/2026-11-08-tour-registration.md
+Exit: 0
+RESULTADO: historia LISTA para desarrollo.

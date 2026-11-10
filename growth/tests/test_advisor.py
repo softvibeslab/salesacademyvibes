@@ -57,6 +57,114 @@ class AdvisorAcceptance(unittest.TestCase):
         value.update(changes)
         return value
 
+    def published_catalog(self):
+        document = json.loads((Path(__file__).parents[1] / 'content/seed.json').read_text())
+        with database(self.root, True) as con:
+            con.execute('UPDATE publications SET document=? WHERE id=1', (encode(document),))
+        return document
+
+    def test_initial_controls_and_media_are_public_and_do_not_infer(self):
+        self.published_catalog()
+        response = self.client.get('/growth-api/advisor/session')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.calls, [])
+        suggestions = response.json.get('suggestions', [])
+        self.assertEqual(len(suggestions), 3, 'Initial safe controls must be present')
+        self.assertEqual(len({item['id'] for item in suggestions}), 3)
+        for item in suggestions:
+            self.assertIn(item['kind'], {'prompt', 'demo'})
+            self.assertLessEqual(len(item['label']), 48)
+        cards = response.json.get('resources', [])
+        self.assertEqual(len(cards), 2)
+        film = next(item for item in cards if item['type'] == 'video')
+        self.assertEqual(film['video']['id'], 'smart-agent')
+        self.assertEqual(film['video']['captions'], '/growth-assets/films/smart-agent.es.vtt')
+        self.assertEqual(film['evidenceLabel'], 'Visión de producto')
+        self.assertTrue(any(item['url'] == '/mediahub/un-dia-en-la-sala/' for item in cards))
+
+    def test_actions_progress_without_reasking_known_role_or_salas(self):
+        first = self.chat('Soy líder de una sala de ventas.')
+        suggestions = first.json.get('suggestions', [])
+        self.assertTrue(suggestions, 'Controls must follow the conversation')
+        self.assertFalse(any(item['id'].startswith('role-') for item in suggestions))
+        self.assertTrue(any(item['kind'] == 'demo' for item in suggestions))
+        second = self.chat('Quiero mejorar el coaching; dirigimos tres salas con 20 representantes.')
+        next_actions = second.json.get('suggestions', [])
+        self.assertTrue(next_actions)
+        self.assertLessEqual(len(next_actions), 3)
+        self.assertFalse(any(item['id'].startswith(('role-', 'rooms-')) for item in next_actions))
+        self.assertIn('SIGUIENTE PASO DE LA CONVERSACIÓN', self.calls[-1][0]['content'])
+        selected = next(item for item in next_actions if item['kind'] == 'prompt')
+        third = self.chat(selected['prompt'])
+        self.assertNotIn(selected['id'], [item['id'] for item in third.json.get('suggestions', [])])
+
+    def test_topic_interest_does_not_become_a_declared_role_or_room_count(self):
+        from growth.server.advisor import conversation_controls
+        for message in ('¿Qué hace un líder?', '¿Cómo líder puedo usarlo?', 'No soy líder; solo quiero entenderlo.'):
+            with self.subTest(message=message):
+                controls, _ = conversation_controls([], message)
+                self.assertIn('role-rep', [item['id'] for item in controls])
+        history = [{'role':'user', 'content':'Soy líder y quiero mejorar el coaching.'}]
+        for message in ('Quiero ver la guía del piloto en tres salas.', 'No tenemos tres salas.'):
+            with self.subTest(message=message):
+                controls, _ = conversation_controls(history, message)
+                self.assertIn('rooms-one', [item['id'] for item in controls])
+        for message in ('Tenemos tres salas.', 'Dirigimos 3 salas.', 'Son tres salas.', 'Soy líder de una sala.'):
+            with self.subTest(message=message):
+                controls, _ = conversation_controls(history, message)
+                self.assertFalse(any(item['id'].startswith('rooms-') for item in controls))
+
+    def test_declared_room_answer_keeps_prior_coaching_resource_context(self):
+        self.published_catalog()
+        self.chat('Soy líder y quiero mejorar el coaching.')
+        response = self.chat('Tenemos tres salas.')
+        self.assertTrue(any(card.get('video', {}).get('id') == 'infraestructura-comercial'
+                            for card in response.json['resources']))
+
+    def test_long_reply_has_complete_brief_preview_and_full_optional_detail(self):
+        sentence = 'Sales Academy acompaña la preparación y práctica del equipo con su método autorizado.'
+        original = ' '.join([sentence]*10) + ' La demo no está confirmada; Chris acuerda la fecha contigo.'
+        self.app.config['ADVISOR_CLIENT'] = lambda messages: original
+        result = self.chat().json
+        self.assertLessEqual(len(result['reply'].split()), 90)
+        self.assertEqual(result.get('detail'), original)
+        self.assertTrue(result['reply'].endswith(('.', '?', '!')))
+        restored = self.client.get('/growth-api/advisor/session').json['messages'][-1]
+        self.assertLessEqual(len(restored['content'].split()), 90)
+        self.assertEqual(restored.get('detail'), original)
+        with database(self.root) as con:
+            stored = json.loads(con.execute('SELECT history FROM advisor_sessions').fetchone()['history'])
+        self.assertEqual(stored[-1]['content'], original, 'Model context must retain the full original')
+
+    def test_oversized_single_sentence_is_not_cut_inside_a_qualification(self):
+        original = ' '.join(['El alcance de esta propuesta depende de revisión']*16) + ' y no significa una reserva confirmada.'
+        self.app.config['ADVISOR_CLIENT'] = lambda messages: original
+        result = self.chat().json
+        self.assertLessEqual(len(result['reply'].split()), 90)
+        self.assertEqual(result.get('detail'), original)
+        self.assertIn('detalle', result['reply'].casefold())
+        self.assertNotIn('El alcance', result['reply'], 'Do not present a sentence fragment as a summary')
+
+    def test_cards_match_topic_and_hide_archived_video_and_external_media(self):
+        document = self.published_catalog()
+        response = self.chat('Soy líder y quiero mejorar el coaching.')
+        cards = response.json['resources']
+        self.assertLessEqual(len(cards), 2)
+        self.assertTrue(any(item.get('video', {}).get('id') == 'infraestructura-comercial' for item in cards))
+        self.assertTrue(any(item['url'] == '/mediahub/coaching-con-una-accion/' for item in cards))
+        for resource in document['resources']:
+            if resource.get('videoId') == 'infraestructura-comercial':
+                resource['status'] = 'archived'
+        with database(self.root, True) as con:
+            con.execute('UPDATE publications SET document=? WHERE id=1', (encode(document),))
+        self.app.config['ADVISOR_CLIENT'] = lambda messages: 'Mira https://example.invalid/video.mp4 para practicar.'
+        response = self.chat('Necesito coaching para líderes')
+        self.assertNotIn('infraestructura-comercial', encode(response.json['resources']))
+        self.assertNotIn('example.invalid', encode(response.json['resources']))
+        restored = self.client.get('/growth-api/advisor/session').json
+        self.assertNotIn('infraestructura-comercial', encode(restored.get('resources', [])))
+        self.assertTrue(all(len(item['excerpt']) <= 220 for item in restored['resources']))
+
     def test_session_cookie_is_separate_no_inference_and_csrf_origin_required(self):
         h = self.session()
         self.assertEqual(self.calls, [])
@@ -140,9 +248,11 @@ class AdvisorAcceptance(unittest.TestCase):
         response=self.chat('Quiero práctica previa para el tour')
         self.assertEqual(response.status_code,200,response.text)
         resources=response.json['resources']
-        self.assertEqual(resources[0],{'title':named['title'],'url':'/mediahub/coaching-y-agentes/'})
-        self.assertEqual(len(resources),3)
-        self.assertEqual(len({resource['url'] for resource in resources}),3)
+        self.assertEqual(resources[0]['title'], named['title'])
+        self.assertEqual(resources[0]['url'], '/mediahub/coaching-y-agentes/')
+        self.assertEqual(resources[0]['evidenceLabel'], named['evidenceLabel'])
+        self.assertEqual(len(resources), 2)
+        self.assertEqual(len({resource['url'] for resource in resources}), 2)
         self.assertNotIn('guia-privada',encode(resources))
         self.assertNotIn('example.invalid',encode(resources))
 

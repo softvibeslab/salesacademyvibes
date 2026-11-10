@@ -1,0 +1,334 @@
+{
+  "ok": true,
+  "date": "2026-11-08",
+  "targetProjectId": "16859674583431881734",
+  "file": "ORIGINAL-SOURCE.md",
+  "copyForSelector": "stitch-upload-images/ORIGINAL-SOURCE.md",
+  "bytes": 450676,
+  "sha256": "4253ec77402dc85bf08a4f2d4be126b3fc181477fd0dcc8e20b05a1d5b81d5cb",
+  "sourceArchive": "salesacademy-original-interface.zip",
+  "sourceArchiveSha256": "661f770684da240aa06cb93e93be5c3414397ca93f68ad57e8e2c61309f97fe9",
+  "textFiles": 45,
+  "binaryAssetsIndexed": 49,
+  "totalSourceFiles": 94,
+  "codeBodiesByteIdentical": true,
+  "base64BinaryAssets": false,
+  "uploadStatus": "prepared-not-uploaded",
+  "bodySpans": [
+    {
+      "path": "growth/site/assets/advisor.css",
+      "sha256": "68014a07f69d6a6b49c0af4d93121ae7b51610a81f0c7051d7659816a5fa94bb",
+      "bytes": 13365,
+      "bodyStartByte": 8163,
+      "bodyEndByte": 21528
+    },
+    {
+      "path": "growth/site/assets/advisor.mjs",
+      "sha256": "773956de733de1de9b1675a1590659bf92827ebc0f57f20a50b0c6e0f0749be3",
+      "bytes": 24722,
+      "bodyStartByte": 21682,
+      "bodyEndByte": 46404
+    },
+    {
+      "path": "growth/site/assets/ai-journey.css",
+      "sha256": "a821ed863ba00355dfa0442ddb413659ab60f4f25df2d91258a6e116f3ba9833",
+      "bytes": 20514,
+      "bodyStartByte": 46554,
+      "bodyEndByte": 67068
+    },
+    {
+      "path": "growth/site/assets/campaign.css",
+      "sha256": "8f2ab0f4d55f587ff20c3a8ca85337112fbc3d443e546364b360e123a63fd150",
+      "bytes": 866,
+      "bodyStartByte": 67214,
+      "bodyEndByte": 68080
+    },
+    {
+      "path": "growth/site/assets/cinematic.css",
+      "sha256": "4d2ba6e0a4c9d6e53cdc619fb9ff8cc43b973deb1994632c4f5f0bb7f327a09c",
+      "bytes": 21881,
+      "bodyStartByte": 68229,
+      "bodyEndByte": 90110
+    },
+    {
+      "path": "growth/site/assets/cms.css",
+      "sha256": "b596e94f82500acbac113de74d37cbefe3ff5f38d4a0dd4ad50051cfa1b287dc",
+      "bytes": 20751,
+      "bodyStartByte": 90253,
+      "bodyEndByte": 111004
+    },
+    {
+      "path": "growth/site/assets/cms.mjs",
+      "sha256": "ae0b9488f25b6f88d152dfc065524531b007f456198e93339d2a16a9c8bcca8f",
+      "bytes": 53228,
+      "bodyStartByte": 111154,
+      "bodyEndByte": 164382
+    },
+    {
+      "path": "growth/site/assets/diagnostic-ui.mjs",
+      "sha256": "1148f2f6f087499ca27747200d50f442e321511f97e1d9f672a849af5d1795cb",
+      "bytes": 6477,
+      "bodyStartByte": 164541,
+      "bodyEndByte": 171018
+    },
+    {
+      "path": "growth/site/assets/diagnostic.mjs",
+      "sha256": "ea4b346de879ceb9ff5b4d49ef1e90f64510f70a4f6a904480c473482d998791",
+      "bytes": 1888,
+      "bodyStartByte": 171174,
+      "bodyEndByte": 173062
+    },
+    {
+      "path": "growth/site/assets/films/conocimiento-en-practica.es.txt",
+      "sha256": "48057685dd4e656c742ccd102da4c1946ec93a05107ad38f73b08baae4ca018d",
+      "bytes": 687,
+      "bodyStartByte": 173234,
+      "bodyEndByte": 173921
+    },
+    {
+      "path": "growth/site/assets/films/conocimiento-en-practica.es.vtt",
+      "sha256": "43c9f1440d9f05b6c17dbb1c268a9cf2e1a91f84472ee2f6daedd9f3a1556199",
+      "bytes": 827,
+      "bodyStartByte": 174093,
+      "bodyEndByte": 174920
+    },
+    {
+      "path": "growth/site/assets/films/infraestructura-comercial.es.txt",
+      "sha256": "4751bb82705e028346b80b51708ba84b78cbf03944b5d13e8d0bf4b46111b451",
+      "bytes": 752,
+      "bodyStartByte": 175093,
+      "bodyEndByte": 175845
+    },
+    {
+      "path": "growth/site/assets/films/infraestructura-comercial.es.vtt",
+      "sha256": "c0cf830233e5dd63412284df8f89a68046c49e3c2d86096a29b5c8927ac37177",
+      "bytes": 909,
+      "bodyStartByte": 176018,
+      "bodyEndByte": 176927
+    },
+    {
+      "path": "growth/site/assets/films/menos-caos.es.txt",
+      "sha256": "2870241f18851ea4d93de71e1b86f3ffe120a4e96de8d388a764cf75aa912fb3",
+      "bytes": 783,
+      "bodyStartByte": 177085,
+      "bodyEndByte": 177868
+    },
+    {
+      "path": "growth/site/assets/films/menos-caos.es.vtt",
+      "sha256": "d6d23b2511322fcc7c167bbc136d708d97f52b77b857ecc48866741458e28f11",
+      "bytes": 985,
+      "bodyStartByte": 178026,
+      "bodyEndByte": 179011
+    },
+    {
+      "path": "growth/site/assets/films/sistema-conectado.es.txt",
+      "sha256": "4f254e851db2728d0bb294b73e144a547edfed9f8dc081b45980faddb73a4ce6",
+      "bytes": 791,
+      "bodyStartByte": 179176,
+      "bodyEndByte": 179967
+    },
+    {
+      "path": "growth/site/assets/films/sistema-conectado.es.vtt",
+      "sha256": "6960a5e20db59f3481ccdce0b3a2643c65bf2a85da51ff2dd574d541fe4cb4a5",
+      "bytes": 985,
+      "bodyStartByte": 180132,
+      "bodyEndByte": 181117
+    },
+    {
+      "path": "growth/site/assets/films/smart-agent.es.txt",
+      "sha256": "19ced8711e488038e256dfddc97148725cfe556f93c04924addea9473f5973e1",
+      "bytes": 741,
+      "bodyStartByte": 181276,
+      "bodyEndByte": 182017
+    },
+    {
+      "path": "growth/site/assets/films/smart-agent.es.vtt",
+      "sha256": "b4b1f87c28420948c61f34f99ccb6913c543c3b12af982af88c66a46f0d96087",
+      "bytes": 921,
+      "bodyStartByte": 182176,
+      "bodyEndByte": 183097
+    },
+    {
+      "path": "growth/site/assets/hub-v2.css",
+      "sha256": "572a033dde48eb028226c4eca47de6170e21549804e9b50e5d4703c96fc07894",
+      "bytes": 12588,
+      "bodyStartByte": 183243,
+      "bodyEndByte": 195831
+    },
+    {
+      "path": "growth/site/assets/journey-math.mjs",
+      "sha256": "13acea44388bdb1ea17a7d63ec98970682c79c58f29d18431b62cd6fbd08bf3f",
+      "bytes": 1117,
+      "bodyStartByte": 195989,
+      "bodyEndByte": 197106
+    },
+    {
+      "path": "growth/site/assets/journey.mjs",
+      "sha256": "66b2c76c221ba28c43a1b0d61fcfecb14cc8adceb5cadc442232d7bee6544734",
+      "bytes": 3563,
+      "bodyStartByte": 197259,
+      "bodyEndByte": 200822
+    },
+    {
+      "path": "growth/site/assets/landing-v2.css",
+      "sha256": "00433ca82ef7477612e32483aa8afe8f3965b6a9ba243c7e2a42939029c5ff8e",
+      "bytes": 30258,
+      "bodyStartByte": 200972,
+      "bodyEndByte": 231230
+    },
+    {
+      "path": "growth/site/assets/landing-v2.mjs",
+      "sha256": "c1b6272777422315a1941f00bc77114d1f08f129bc77f01bebcd7bcd4d1e1a26",
+      "bytes": 946,
+      "bodyStartByte": 231385,
+      "bodyEndByte": 232331
+    },
+    {
+      "path": "growth/site/assets/mark.svg",
+      "sha256": "5ad064efb01e1579db51106b17d79610dc7aa3a0fb18c51affd7deaf0e104377",
+      "bytes": 206,
+      "bodyStartByte": 232473,
+      "bodyEndByte": 232679
+    },
+    {
+      "path": "growth/site/assets/media-player.css",
+      "sha256": "8d2c298e2bffcc573d95d7ee2251f4324f81ba538c8c8a3007f3090f81dc2f6b",
+      "bytes": 2353,
+      "bodyStartByte": 232830,
+      "bodyEndByte": 235183
+    },
+    {
+      "path": "growth/site/assets/media-player.mjs",
+      "sha256": "729857c81082d0fdfcfa3777c5264a5e555b0c1d2db19292d80ea3cc07c0b660",
+      "bytes": 2134,
+      "bodyStartByte": 235341,
+      "bodyEndByte": 237475
+    },
+    {
+      "path": "growth/site/assets/public-v2.css",
+      "sha256": "bb20a360345dd3d0ad8873566aa30021f5baba71c1108361e2ae23c357e2d347",
+      "bytes": 3071,
+      "bodyStartByte": 237623,
+      "bodyEndByte": 240694
+    },
+    {
+      "path": "growth/site/assets/scenarios/index.html",
+      "sha256": "ddc995f9a43845b8bea1acf3caa6701bd4227dff6fa4d54f07af9388c18c92aa",
+      "bytes": 32633,
+      "bodyStartByte": 240851,
+      "bodyEndByte": 273484
+    },
+    {
+      "path": "growth/site/assets/scenarios/scenarios.css",
+      "sha256": "89a4318a8c13fc52d5888a1cafe7554cf47483a8da75f2beb9f66deb8391ed6e",
+      "bytes": 22216,
+      "bodyStartByte": 273643,
+      "bodyEndByte": 295859
+    },
+    {
+      "path": "growth/site/assets/scenarios/scenarios.mjs",
+      "sha256": "4c43225d3110c9eb8c2d1a0e7b131ff1c2ef6732b8b21f1fbff9f6d1da584f4e",
+      "bytes": 1764,
+      "bodyStartByte": 296024,
+      "bodyEndByte": 297788
+    },
+    {
+      "path": "growth/site/assets/scenarios-entry.css",
+      "sha256": "8fa518e67b0036e67ed4d8b6087dadfca3a8f353265911ecf01c21af351d4e58",
+      "bytes": 1232,
+      "bodyStartByte": 297942,
+      "bodyEndByte": 299174
+    },
+    {
+      "path": "growth/site/assets/site.css",
+      "sha256": "b4ae24a7bc5d2e315a84b3433e53ccce6f4ef637037177c76b5892dcd2197e7c",
+      "bytes": 35641,
+      "bodyStartByte": 299318,
+      "bodyEndByte": 334959
+    },
+    {
+      "path": "growth/site/assets/site.mjs",
+      "sha256": "a2b6fd25d479de5b63484b2f59353e681959da8113811dee6ef38f435f037316",
+      "bytes": 4009,
+      "bodyStartByte": 335109,
+      "bodyEndByte": 339118
+    },
+    {
+      "path": "growth/site/templates/analysis.html",
+      "sha256": "68c4e6ffe7ea008e6e92edb08abe4ab6aa52e9d1b157b36acf12554ebffc2c63",
+      "bytes": 3979,
+      "bodyStartByte": 339270,
+      "bodyEndByte": 343249
+    },
+    {
+      "path": "growth/site/templates/base.html",
+      "sha256": "8ecf0a11bc559cd1c697f049139a7c5ef7ba286d42eefe48d08492cfe6ef456b",
+      "bytes": 4353,
+      "bodyStartByte": 343397,
+      "bodyEndByte": 347750
+    },
+    {
+      "path": "growth/site/templates/cms.html",
+      "sha256": "cb560e15979adf2cb207d88953f97c5fbfdb7110e86ab53419477e695db38492",
+      "bytes": 4307,
+      "bodyStartByte": 347897,
+      "bodyEndByte": 352204
+    },
+    {
+      "path": "growth/site/templates/diagnostic.html",
+      "sha256": "d4545cc337b78b659b19e22bfea5e35761c7516e73c4d305b347d7726dd015cd",
+      "bytes": 2383,
+      "bodyStartByte": 352358,
+      "bodyEndByte": 354741
+    },
+    {
+      "path": "growth/site/templates/hub.html",
+      "sha256": "e600f5a839b58f1ae3ec70701d5315b6a9b3d4f15e6acf1fb5309ea4ce25a818",
+      "bytes": 4626,
+      "bodyStartByte": 354888,
+      "bodyEndByte": 359514
+    },
+    {
+      "path": "growth/site/templates/landing.html",
+      "sha256": "d6521ac07d0ce75f186cbb762dbd20b7f575cfb1da17ad575159d27b53ff64d5",
+      "bytes": 22497,
+      "bodyStartByte": 359666,
+      "bodyEndByte": 382163
+    },
+    {
+      "path": "growth/site/templates/macros.html",
+      "sha256": "e2e405fdd8aee22f1fa100a8cbc948d76c936f4a00c7402b8c2907df63f5e756",
+      "bytes": 3494,
+      "bodyStartByte": 382313,
+      "bodyEndByte": 385807
+    },
+    {
+      "path": "growth/site/templates/privacy.html",
+      "sha256": "26dddbdeafafa4b0cc6ac906a7f2dbca2277a6167a9e6744a456ff1f9a179915",
+      "bytes": 3886,
+      "bodyStartByte": 385958,
+      "bodyEndByte": 389844
+    },
+    {
+      "path": "growth/site/templates/resource.html",
+      "sha256": "b801f11dc7cdfa1f9924dcfa8c2feff342cb23da7d1ae77b179b54068af73689",
+      "bytes": 5210,
+      "bodyStartByte": 389996,
+      "bodyEndByte": 395206
+    },
+    {
+      "path": "growth/content/seed.json",
+      "sha256": "787af23076a92234965ac44b9cd2baa703f6441586418124f5cfdadbddc22b79",
+      "bytes": 40244,
+      "bodyStartByte": 395348,
+      "bodyEndByte": 435592
+    },
+    {
+      "path": "growth/content/video-catalog.json",
+      "sha256": "01ffa655b73eb7bdd0ac14142a0f08f568d986ed67350869eef58f05d485a34f",
+      "bytes": 1958,
+      "bodyStartByte": 435742,
+      "bodyEndByte": 437700
+    }
+  ]
+}

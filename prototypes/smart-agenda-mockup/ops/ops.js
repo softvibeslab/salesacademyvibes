@@ -6,11 +6,10 @@ import {
 } from "../ops-store.js";
 
 const app = document.querySelector("#app");
-// Identidad desde la sesión (login-demo): ya no se elige el rol en pantalla.
+// El tablero /ops/ abre de forma independiente al login del cuaderno.
 const session = {
-  role: "",
-  jefeId: "",
-  userName: "",
+  role: sessionStorage.getItem("sa.ops.role") || "jefe",
+  jefeId: sessionStorage.getItem("sa.ops.jefe") || "jorge",
   room: sessionStorage.getItem("sa.ops.room") || "todas",
   date: "2026-11-06",
   editing: null,
@@ -117,28 +116,7 @@ function showToast(text) {
   }, 2200);
 }
 
-async function whoAmI() {
-  try {
-    const data = await opsRequest("/api/me");
-    return data.user;
-  } catch (error) {
-    if (error.status === 401) window.location.replace("/");
-    return null;
-  }
-}
-
 async function pull() {
-  if (!session.role) {
-    const user = await whoAmI();
-    if (!user) return;
-    if (user.role === "rep") {
-      app.innerHTML = `<div class="wrap"><h1>Tablero de sala</h1><p>El tablero es para jefes de sala y administración, ${esc(user.name)}.</p><p><a class="back md-btn-filled" href="/">Ir a mi cuaderno</a> <button class="md-btn-tonal" data-logout type="button">Cerrar sesión</button></p></div>`;
-      return;
-    }
-    session.role = user.role;
-    session.jefeId = user.role === "jefe" ? user.id : "";
-    session.userName = user.name;
-  }
   board.busy = true;
   if (board.ready) render();
   try {
@@ -171,7 +149,7 @@ function tasksBlock(rep) {
   const rows = list.map((task) => {
     const ev = task.evidence;
     const link = task.status === "hecha" && ev && !ev.expired
-      ? `<a class="task-ev" href="/api/tasks/${encodeURIComponent(task.id)}/evidence" target="_blank" rel="noopener">Ver ${ev.kind === "audio" ? "audio" : "foto"}</a>`
+      ? `<a class="task-ev" href="/api/tasks/${encodeURIComponent(task.id)}/evidence?actor=${encodeURIComponent(actor())}" target="_blank" rel="noopener">Ver ${ev.kind === "audio" ? "audio" : "foto"}</a>`
       : task.status === "hecha" && ev?.expired ? `<span class="fine">Evidencia borrada (30 días)</span>` : "";
     return `<li class="task-row ${task.status}"><span class="task-dot" aria-hidden="true">${task.status === "hecha" ? "✓" : ""}</span>
       <span class="task-text"><b>${esc(task.title)}</b><span class="fine">${esc(task.when || task.due)} · ${esc(task.origin)}</span></span>${link}</li>`;
@@ -292,9 +270,12 @@ function render() {
   }
   const { ops, jefe } = scope();
   const reps = visibleReps();
-  const roleChips = `<span class="chip on">${mdIcon("check")}${esc(session.userName)} · ${session.role === "admin" ? "Administrador" : `Jefe de sala · ${esc(roomName(ops, jefe?.roomId || ""))}`}</span>`;
+  const roleChips = [
+    ["jefe", "Jefe de sala"],
+    ["admin", "Administrador"],
+  ].map(([id, label]) => `<button class="chip ${session.role === id ? "on" : ""}" data-role="${id}" type="button" aria-pressed="${session.role === id}">${session.role === id ? mdIcon("check") : ""}${label}</button>`).join("");
   const jefeChips = session.role === "jefe"
-    ? ""
+    ? ops.people.filter((person) => person.role === "jefe").map((person) => `<button class="chip md-filter-chip ${session.jefeId === person.id ? "on" : ""}" data-jefe="${person.id}" type="button">${session.jefeId === person.id ? mdIcon("check") : ""}${esc(person.name)} · ${esc(roomName(ops, person.roomId))}</button>`).join("")
     : ops.rooms.map((room) => `<button class="chip md-filter-chip ${session.room === room.id ? "on" : ""}" data-room="${room.id}" type="button">${session.room === room.id ? mdIcon("check") : ""}${esc(room.name)}</button>`).join("")
       + `<button class="chip md-filter-chip ${session.room === "todas" ? "on" : ""}" data-room="todas" type="button">${session.room === "todas" ? mdIcon("check") : ""}Todas</button>`;
   const jumpTabs = reps.length > 1
@@ -396,7 +377,6 @@ function masthead(status, error, toast) {
       <a class="back md-btn-filled" href="/">${mdIcon("back")}Volver a la app</a>
       <div class="theme-switch" role="group" aria-label="Tema">${[["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]].map(([id, label]) => `<button type="button" class="${readThemePref(localStorage) === id ? "on" : ""}" data-theme-pref="${id}" aria-pressed="${readThemePref(localStorage) === id}">${label}</button>`).join("")}</div>
       <span class="install-slot" data-install-slot>${installButton()}</span>
-      <button class="md-btn-tonal" data-logout type="button">Cerrar sesión</button>
     </div>
   </header>`;
 }

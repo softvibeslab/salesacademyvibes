@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Academy CMS · Inicio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-xl": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface-container-low text-on-surface antialiased flex h-full min-h-screen">
+<!-- Sidebar Lateral Fija (240px, Verde Bosque Editorial Profundo) -->
+<aside class="w-[240px] flex-shrink-0 bg-[#1d241c] text-[#fbf9f3] flex flex-col justify-between z-20 select-none">
+<div>
+<!-- Brand Logo Anchor -->
+<div class="h-20 px-6 flex items-center gap-3 border-b border-[#2a3529]">
+<div class="w-9 h-9 rounded-lg bg-[#cfb16e]/15 border border-[#cfb16e]/40 flex items-center justify-center font-headline-md text-headline-md font-bold text-[#cfb16e] tracking-tight">
+          SA
+        </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-[16px] leading-tight text-[#fbf9f3] tracking-wide">Sales Academy</span>
+<span class="font-label-sm text-[11px] text-[#cfb16e] tracking-wider font-medium">Estudio editorial</span>
+</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="p-3 space-y-1">
+<!-- Inicio (Activo) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#cfb16e]/20 text-[#cfb16e] font-body-md text-body-md font-medium transition-colors" href="/cms/inicio">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Inicio</span>
+</a>
+<!-- Landing -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#dcdad4]/80 hover:bg-[#252f24] hover:text-[#fbf9f3] font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">web</span>
+<span>Landing</span>
+</a>
+<!-- Recursos -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#dcdad4]/80 hover:bg-[#252f24] hover:text-[#fbf9f3] font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">library_books</span>
+<span>Recursos</span>
+</a>
+<!-- Medios -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#dcdad4]/80 hover:bg-[#252f24] hover:text-[#fbf9f3] font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">perm_media</span>
+<span>Medios</span>
+</a>
+<!-- Solicitudes -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg text-[#dcdad4]/80 hover:bg-[#252f24] hover:text-[#fbf9f3] font-body-md text-body-md transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">inbox</span>
+<span>Solicitudes</span>
+</div>
+<span class="bg-[#2a3529] text-[11px] text-[#cfb16e] px-1.5 py-0.5 rounded font-label-sm">0</span>
+</a>
+<!-- Asesor IA -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#dcdad4]/80 hover:bg-[#252f24] hover:text-[#fbf9f3] font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span>Asesor IA</span>
+</a>
+<!-- Publicaciones -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#dcdad4]/80 hover:bg-[#252f24] hover:text-[#fbf9f3] font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">article</span>
+<span>Publicaciones</span>
+</a>
+<!-- Usuarios -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#dcdad4]/80 hover:bg-[#252f24] hover:text-[#fbf9f3] font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span>Usuarios</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom Status & Profile -->
+<div class="p-4 border-t border-[#2a3529] space-y-3">
+<div class="bg-[#141a13] p-3 rounded-lg border border-[#2a3529]">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-sm text-[11px] text-[#cfb16e] font-medium tracking-wide">MOTOR SALAS ACTIVO</span>
+</div>
+<p class="font-body-md text-[11px] text-[#dcdad4]/70 leading-relaxed">Sincronización instantánea de guías y agentes.</p>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<div class="w-8 h-8 rounded-full bg-[#2a3529] text-[#cfb16e] flex items-center justify-center font-label-sm text-[12px] font-bold border border-[#cfb16e]/30">
+          EA
+        </div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-body-md text-[13px] text-[#fbf9f3] truncate font-medium">Editor Principal</span>
+<span class="font-label-sm text-[11px] text-[#dcdad4]/60 truncate">sala.editorial@sa.com</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas (Desktop 1440px target, Fondo Claro #f4f4ed) -->
+<div class="flex-1 flex flex-col min-w-0 bg-[#f4f4ed] overflow-y-auto">
+<!-- Top Bar Operativa -->
+<header class="h-20 bg-surface px-8 border-b border-outline-variant/30 flex items-center justify-between sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide">ESPACIO DE TRABAJO</span>
+<span class="text-outline-variant">/</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wide">/cms/inicio</span>
+</div>
+<div class="flex items-center gap-4">
+<!-- Badge de rol: Owner (demo) -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Owner (demo)</span>
+</div>
+<!-- Estado de publicación: Sin cambios pendientes (demo) -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant/30 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="font-label-sm text-label-sm text-secondary font-normal">Sin cambios pendientes (demo)</span>
+</div>
+<!-- Botón Ver sitio público contextual -->
+<a class="flex items-center gap-2 h-10 px-4 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-on-surface font-body-md text-body-md font-medium transition-colors border border-outline-variant/40" href="/" target="_blank">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>Ver sitio público</span>
+</a>
+</div>
+</header>
+<!-- Main Body Area -->
+<main class="p-8 max-w-[1200px] w-full mx-auto space-y-8">
+<!-- Encabezado Editorial de Bienvenida -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2 border-b border-outline-variant/20">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-semibold">Consola de Control · Ventas de Tiempo Compartido</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mt-1 tracking-tight">Tu estudio editorial</h1>
+<p class="font-body-lg text-body-lg text-secondary mt-1 max-w-2xl">
+            Gestiona la narrativa de sala, modula los roles de los agentes IA y actualiza la biblioteca formativa para directores de línea y cerradores.
+          </p>
+</div>
+<div class="flex items-center gap-2 text-secondary text-body-md font-body-md">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Edición de Temporada Alta 2025</span>
+</div>
+</section>
+<!-- Tarjetas de Acceso Directo (Mínimo 44px de affordance táctil e interacción visual directa) -->
+<section>
+<h2 class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider mb-4">Acciones Inmediatas</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Editar landing -->
+<a class="group min-h-[76px] p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 hover:border-primary-container hover:shadow-md transition-all duration-200 flex items-center justify-between" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface group-hover:text-primary transition-colors">Editar landing</span>
+<span class="font-label-sm text-[11px] text-secondary">Ajustar narrativa principal</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</a>
+<!-- Crear recurso -->
+<a class="group min-h-[76px] p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 hover:border-primary-container hover:shadow-md transition-all duration-200 flex items-center justify-between" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-lg bg-[#cfb16e]/15 flex items-center justify-center text-primary group-hover:bg-[#cfb16e] group-hover:text-[#251a00] transition-colors">
+<span class="material-symbols-outlined text-[22px]">post_add</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface group-hover:text-primary transition-colors">Crear recurso</span>
+<span class="font-label-sm text-[11px] text-secondary">Guía, objeción o guión</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</a>
+<!-- Gestionar medios -->
+<a class="group min-h-[76px] p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 hover:border-primary-container hover:shadow-md transition-all duration-200 flex items-center justify-between" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]">photo_library</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface group-hover:text-primary transition-colors">Gestionar medios</span>
+<span class="font-label-sm text-[11px] text-secondary">Audios de sala y fotos</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</a>
+<!-- Ver sitio público -->
+<a class="group min-h-[76px] p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 hover:border-primary-container hover:shadow-md transition-all duration-200 flex items-center justify-between" href="#" target="_blank">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-[#1d241c] group-hover:text-[#cfb16e] transition-colors">
+<span class="material-symbols-outlined text-[22px]">preview</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface group-hover:text-primary transition-colors">Ver sitio público</span>
+<span class="font-label-sm text-[11px] text-secondary">Perspectiva del huésped</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:translate-x-1 group-hover:text-primary transition-all">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Panel de Métricas Operativas Sintéticas -->
+<section class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/30 shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-outline-variant/20 gap-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Métricas operativas del ecosistema</h2>
+<p class="font-body-md text-body-md text-secondary">Monitoreo de flujo editorial, inventario de contenido e interacciones en tiempo real.</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-[11px] text-on-surface-variant font-medium tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            DATOS DE EJEMPLO
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+<!-- Métrica 1 -->
+<div class="p-5 rounded-lg bg-surface-container-low border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary font-medium uppercase tracking-wider">Solicitudes pendientes</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">mark_email_read</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-xl text-[38px] leading-none font-normal text-on-surface">0</span>
+<span class="font-label-sm text-label-sm text-emerald-800 font-medium bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Al día</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-secondary font-body-md text-[12px]">
+<span>Bandeja VIP sin demoras</span>
+<span class="font-medium text-on-surface-variant">Datos de ejemplo</span>
+</div>
+</div>
+<!-- Métrica 2 -->
+<div class="p-5 rounded-lg bg-surface-container-low border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary font-medium uppercase tracking-wider">Recursos publicados</span>
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-xl text-[38px] leading-none font-normal text-primary">9</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">en catálogo vivo</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-secondary font-body-md text-[12px]">
+<span>Guías y matrices de objeción</span>
+<span class="font-medium text-on-surface-variant">Datos de ejemplo</span>
+</div>
+</div>
+<!-- Métrica 3 -->
+<div class="p-5 rounded-lg bg-surface-container-low border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm text-secondary font-medium uppercase tracking-wider">Clips curatoriales</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">mic</span>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="font-headline-xl text-[38px] leading-none font-normal text-on-surface">5</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">audios de sala reales</span>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-secondary font-body-md text-[12px]">
+<span>Curaduría de intervenciones</span>
+<span class="font-medium text-on-surface-variant">Datos de ejemplo</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tabla de Contenido Reciente con Títulos Reales del MediaHub -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden">
+<div class="p-6 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-outline-variant/20">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Contenido editorial reciente</h2>
+<p class="font-body-md text-body-md text-secondary">Documentos y audios sincronizados activamente con el MediaHub público.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/40 text-on-surface font-body-md text-body-md hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filtrar</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-medium hover:bg-on-primary-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Nuevo artículo</span>
+</button>
+</div>
+</div>
+<!-- Tabla Estilizada con Tipografía Libre Caslon y Arimo -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/20 text-secondary font-label-sm text-label-sm">
+<th class="py-3.5 px-6 font-semibold uppercase tracking-wider">Título de Contenido</th>
+<th class="py-3.5 px-6 font-semibold uppercase tracking-wider">Módulo MediaHub</th>
+<th class="py-3.5 px-6 font-semibold uppercase tracking-wider">Estado</th>
+<th class="py-3.5 px-6 font-semibold uppercase tracking-wider">Última Revisión</th>
+<th class="py-3.5 px-6 font-semibold uppercase tracking-wider text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15 font-body-md text-body-md">
+<!-- Fila 1: Antes del tour -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+</div>
+<div>
+<div class="font-headline-md text-[16px] text-on-surface font-semibold">Antes del tour</div>
+<div class="text-[12px] text-secondary">Estrategias de encuadre en el desayuno y descubrimiento de motivación.</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-[12px]">
+                    Fase I · Calificación
+                  </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 text-emerald-800 font-label-sm text-[12px] font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    Publicado
+                  </span>
+</td>
+<td class="py-4 px-6 text-secondary text-[13px]">
+                  Hoy, 09:14 AM
+                </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Editar">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Previsualizar">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 2: Coaching y agentes -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#cfb16e]/15 flex items-center justify-center text-[#735b23]">
+<span class="material-symbols-outlined text-[20px]">psychology_alt</span>
+</div>
+<div>
+<div class="font-headline-md text-[16px] text-on-surface font-semibold">Coaching y agentes</div>
+<div class="text-[12px] text-secondary">Simulación de cierres complejos y retroalimentación fonética con IA.</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-2.5 py-1 rounded bg-[#cfb16e]/15 text-[#5c460f] font-label-sm text-[12px] font-medium">
+                    Simulación Activa
+                  </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 text-emerald-800 font-label-sm text-[12px] font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    Publicado
+                  </span>
+</td>
+<td class="py-4 px-6 text-secondary text-[13px]">
+                  Ayer, 16:30 PM
+                </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Editar">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Previsualizar">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Fila 3: Piloto en tres salas -->
+<tr class="hover:bg-surface-container/40 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<div>
+<div class="font-headline-md text-[16px] text-on-surface font-semibold">Piloto en tres salas</div>
+<div class="text-[12px] text-secondary">Bitácora de campo en Cancún, Los Cabos y Vallarta. Métricas VPG e IPC.</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-[12px]">
+                    Casos de Estudio
+                  </span>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 text-emerald-800 font-label-sm text-[12px] font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    Publicado
+                  </span>
+</td>
+<td class="py-4 px-6 text-secondary text-[13px]">
+                  12 Ene 2025
+                </td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Editar">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container text-secondary hover:text-on-surface transition-colors" title="Previsualizar">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-low border-t border-outline-variant/20 flex items-center justify-between text-secondary font-body-md text-[13px]">
+<span>Mostrando 3 recursos curados prioritarios</span>
+<a class="text-primary hover:underline font-medium inline-flex items-center gap-1" href="#">
+<span>Ver biblioteca completa en MediaHub</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Banner de Metodología de Hospitalidad y Cierre Editorial -->
+<section class="rounded-xl p-6 bg-gradient-to-r from-[#203c28] to-[#141a13] text-[#fbf9f3] flex flex-col md:flex-row items-center justify-between gap-6 border border-[#cfb16e]/30 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#cfb16e]/20 border border-[#cfb16e]/40 flex items-center justify-center text-[#cfb16e] flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">hotel_class</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-[#fbf9f3]">Protocolo de Excelencia de Sala</h3>
+<p class="font-body-md text-body-md text-[#dcdad4]/80 mt-0.5">
+              El tiempo compartido no vende inmuebles, vende vivencias proyectadas con convicción y elegancia.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<a class="px-5 py-2.5 rounded-lg bg-[#cfb16e] hover:bg-[#e3c380] text-[#251a00] font-body-md text-body-md font-medium transition-colors shadow-sm whitespace-nowrap" href="#">
+            Auditar Guiones de Sala
+          </a>
+</div>
+</section>
+</main>
+<!-- Footer Operativo Discreto conforme al Design System -->
+<footer class="mt-auto border-t border-outline-variant/20 bg-surface-container-lowest py-6 px-8">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-secondary font-body-md text-[13px]">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-[14px] text-on-surface font-semibold">Sales Academy</span>
+<span>·</span>
+<span>© 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Términos de servicio</a>
+<a class="hover:text-primary transition-colors" href="#">Contacto</a>
+<a class="hover:text-primary transition-colors font-medium text-primary" href="#">Auditoría VIP</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

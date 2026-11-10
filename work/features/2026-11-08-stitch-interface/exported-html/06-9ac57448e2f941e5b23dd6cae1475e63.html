@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diagnóstico Ejecutivo · Sales Academy</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#e2e3db",
+            "outline": "#999081",
+            "on-error": "#690005",
+            "primary-container": "#d4b574",
+            "inverse-surface": "#e3e3dd",
+            "surface-container-low": "#1a1c19",
+            "inverse-on-surface": "#2f312d",
+            "primary": "#f1d18d",
+            "error": "#ffb4ab",
+            "on-surface": "#e3e3dd",
+            "surface-dim": "#121411",
+            "error-container": "#93000a",
+            "on-primary-fixed-variant": "#59440d",
+            "on-error-container": "#ffdad6",
+            "surface-container-high": "#292b27",
+            "surface-tint": "#e3c380",
+            "on-secondary": "#30312d",
+            "background": "#121411",
+            "outline-variant": "#4d463a",
+            "secondary-fixed-dim": "#c8c6c1",
+            "tertiary-fixed-dim": "#c5c7bf",
+            "primary-fixed-dim": "#e3c380",
+            "on-primary-container": "#5c460f",
+            "surface-container": "#1e201d",
+            "on-tertiary-fixed-variant": "#454842",
+            "on-tertiary": "#2e312c",
+            "on-surface-variant": "#d0c5b5",
+            "on-secondary-fixed": "#1b1c18",
+            "tertiary": "#d4d5cd",
+            "on-primary": "#3f2e00",
+            "secondary-container": "#494945",
+            "tertiary-container": "#b8bab2",
+            "secondary": "#c8c6c1",
+            "surface-container-highest": "#333532",
+            "secondary-fixed": "#e4e2dd",
+            "surface-bright": "#383a36",
+            "on-secondary-fixed-variant": "#474743",
+            "surface-container-lowest": "#0d0f0c",
+            "surface-variant": "#333532",
+            "on-primary-fixed": "#251a00",
+            "inverse-primary": "#735b23",
+            "surface": "#121411",
+            "on-background": "#e3e3dd",
+            "primary-fixed": "#ffdf9d",
+            "on-tertiary-fixed": "#191c17",
+            "on-tertiary-container": "#474a44",
+            "on-secondary-container": "#bab8b3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "3rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "4rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-md": ["Newsreader"],
+            "headline-lg": ["Newsreader"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Newsreader"],
+            "headline-xl-mobile": ["Newsreader"],
+            "label-md": ["Inter"],
+            "headline-xl": ["Newsreader"],
+            "headline-lg-mobile": ["Newsreader"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary-container antialiased font-body-md text-body-md">
+<!-- TOP BAR (Shared Component Anchored) -->
+<header class="w-full bg-surface border-b border-outline-variant/30 sticky top-0 z-50 transition-all duration-200">
+<div class="flex justify-between items-center w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-20">
+<!-- Brand & Root Link -->
+<div class="flex items-center gap-6">
+<a class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface flex items-center gap-2" href="#">
+<span>SA</span>
+<span class="text-outline text-body-sm font-light hidden sm:inline">|</span>
+<span class="font-label-sm text-label-sm text-outline tracking-widest hidden sm:inline uppercase">Sales Academy</span>
+</a>
+</div>
+<!-- Navigation Links (Active state mapped to 'Diagnóstico') -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#">Agentes en acción</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#">Galería</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#">MediaHub</a>
+<a class="text-primary font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md flex items-center gap-1.5" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+          Diagnóstico
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#">FAQ</a>
+</nav>
+<!-- Trailing Action & Security Micro-Badge -->
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-surface-container-low border border-outline-variant/40 rounded-none">
+<span class="material-symbols-outlined text-primary text-[14px]">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-normal">Sin login · Respuestas locales en tu navegador</span>
+</div>
+<a class="inline-flex items-center justify-center px-4 py-2 border border-outline-variant text-on-surface hover:text-primary hover:border-primary-container transition-colors duration-200 font-label-md text-label-md" href="#">
+          Solicitar demo por WhatsApp
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN DIAGNOSTIC CANVAS -->
+<main class="flex-grow flex flex-col justify-center items-center px-6 lg:px-16 py-12 md:py-16 max-w-[1360px] mx-auto w-full">
+<div class="w-full max-w-3xl flex flex-col">
+<!-- Privacy Badge (Mobile & Small Viewports) -->
+<div class="lg:hidden flex items-center self-start gap-2 px-2.5 py-1 mb-6 bg-surface-container-low border border-outline-variant/40">
+<span class="material-symbols-outlined text-primary text-[13px]">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-normal">Sin login · Respuestas locales</span>
+</div>
+<!-- PROGRESS & METADATA SECTION -->
+<div class="mb-10 w-full">
+<div class="flex justify-between items-baseline mb-3">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Paso 1 de 6</span>
+<span class="text-outline-variant text-body-sm font-light">/</span>
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Fricción Operativa</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline tracking-wider">16% COMPLETADO</span>
+</div>
+<!-- Hairline Subtle Progress Bar -->
+<div class="w-full h-[2px] bg-surface-container-highest relative overflow-hidden">
+<div class="h-full bg-primary transition-all duration-500 ease-out w-[16.666%]"></div>
+</div>
+</div>
+<!-- CORE QUESTION BLOCK -->
+<div class="mb-10">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface italic font-normal tracking-tight mb-4 text-balance">
+          ¿Qué necesitas ordenar primero en tu sala?
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant font-light max-w-2xl leading-relaxed">
+          Selecciona el área que genera mayor fricción o dispersión en la jornada actual de tu equipo.
+        </p>
+</div>
+<!-- INTERACTIVE OPTIONS (High-contrast hairline editorial cards) -->
+<form class="flex flex-col gap-4 mb-12" id="diagnostic-form" onsubmit="event.preventDefault();">
+<!-- Opción A -->
+<label class="group relative block cursor-pointer transition-all duration-200" for="opt-a">
+<input class="peer sr-only" id="opt-a" name="diagnostic_area" onchange="handleSelection(true)" type="radio" value="coordinacion"/>
+<div class="p-6 md:p-7 bg-surface-container-lowest border border-outline-variant/40 peer-checked:border-primary-container peer-checked:bg-surface-container-low transition-all duration-200 relative">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-5">
+<!-- Rigid Square Custom Selector -->
+<div class="w-4 h-4 mt-1 border border-primary-container/60 peer-checked:border-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<div class="w-2 h-2 bg-primary-container opacity-0 transition-opacity duration-150 selector-indicator"></div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Opción A</span>
+<span class="text-outline-variant">·</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface italic font-normal group-hover:text-primary transition-colors">
+                      Coordinación del día
+                    </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 font-light leading-relaxed">
+                    Alineación matutina, intención de los tours y preparación de briefings previos.
+                  </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px] opacity-40 group-hover:opacity-100 flex-shrink-0">
+                calendar_today
+              </span>
+</div>
+</div>
+</label>
+<!-- Opción B -->
+<label class="group relative block cursor-pointer transition-all duration-200" for="opt-b">
+<input class="peer sr-only" id="opt-b" name="diagnostic_area" onchange="handleSelection(true)" type="radio" value="practica"/>
+<div class="p-6 md:p-7 bg-surface-container-lowest border border-outline-variant/40 peer-checked:border-primary-container peer-checked:bg-surface-container-low transition-all duration-200 relative">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-5">
+<!-- Rigid Square Custom Selector -->
+<div class="w-4 h-4 mt-1 border border-primary-container/60 peer-checked:border-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<div class="w-2 h-2 bg-primary-container opacity-0 transition-opacity duration-150 selector-indicator"></div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Opción B</span>
+<span class="text-outline-variant">·</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface italic font-normal group-hover:text-primary transition-colors">
+                      Práctica y coaching
+                    </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 font-light leading-relaxed">
+                    Ensayo de objeciones reales, acompañamiento en mesa y calibración continua.
+                  </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px] opacity-40 group-hover:opacity-100 flex-shrink-0">
+                psychology
+              </span>
+</div>
+</div>
+</label>
+<!-- Opción C -->
+<label class="group relative block cursor-pointer transition-all duration-200" for="opt-c">
+<input class="peer sr-only" id="opt-c" name="diagnostic_area" onchange="handleSelection(true)" type="radio" value="evidencia"/>
+<div class="p-6 md:p-7 bg-surface-container-lowest border border-outline-variant/40 peer-checked:border-primary-container peer-checked:bg-surface-container-low transition-all duration-200 relative">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-5">
+<!-- Rigid Square Custom Selector -->
+<div class="w-4 h-4 mt-1 border border-primary-container/60 peer-checked:border-primary flex items-center justify-center flex-shrink-0 transition-colors">
+<div class="w-2 h-2 bg-primary-container opacity-0 transition-opacity duration-150 selector-indicator"></div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-1.5">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Opción C</span>
+<span class="text-outline-variant">·</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface italic font-normal group-hover:text-primary transition-colors">
+                      Evidencia para decidir
+                    </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 font-light leading-relaxed">
+                    Claridad en cierres, análisis de conversaciones y métricas cualitativas honestas.
+                  </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px] opacity-40 group-hover:opacity-100 flex-shrink-0">
+                insights
+              </span>
+</div>
+</div>
+</label>
+</form>
+<!-- STEP ACTIONS FOOTER -->
+<div class="pt-6 border-t border-outline-variant/20 flex items-center justify-between gap-4 mb-8">
+<!-- Anterior Action (Disabled in Step 1) -->
+<button aria-disabled="true" class="inline-flex items-center gap-2 px-6 py-3 border border-outline-variant/30 text-outline-variant font-label-md text-label-md uppercase tracking-wider cursor-not-allowed select-none transition-colors" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Anterior</span>
+</button>
+<!-- Continuar Action (Dynamic state) -->
+<button class="inline-flex items-center gap-3 px-8 py-3 bg-surface-container-highest text-outline font-label-md text-label-md uppercase tracking-wider cursor-not-allowed transition-all duration-200 select-none" disabled="" id="btn-continue" type="button">
+<span>Continuar</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- HONEST PRIVACY NOTE -->
+<div class="p-4 bg-surface-container-lowest/70 border border-outline-variant/20 flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary/70 text-[18px] mt-0.5 flex-shrink-0">shield</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 leading-relaxed font-light">
+          Las respuestas son orientativas y se procesan localmente en tu dispositivo. No se almacenan en servidores externos ni condicionan el acceso a los materiales.
+        </p>
+</div>
+</div>
+</main>
+<!-- FOOTER (Shared Component Anchored) -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 transition-colors duration-150">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Editorial Claim -->
+<div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface">SA</span>
+<span class="text-outline-variant hidden sm:inline">|</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 font-normal">
+          © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+        </p>
+</div>
+<!-- Legal Links -->
+<div class="flex flex-wrap justify-center items-center gap-6 font-label-sm text-label-sm text-on-surface-variant/70">
+<a class="hover:text-primary transition-colors duration-150" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Términos de servicio</a>
+<a class="hover:text-primary transition-colors duration-150" href="#">Contacto</a>
+<a class="hover:text-primary transition-colors duration-150 font-medium text-primary" href="#">Auditoría VIP</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+    function handleSelection(isSelected) {
+      const continueBtn = document.getElementById('btn-continue');
+      
+      // Update custom radio indicator visuals
+      document.querySelectorAll('input[name="diagnostic_area"]').forEach(input => {
+        const indicator = input.closest('label').querySelector('.selector-indicator');
+        if (input.checked) {
+          indicator.classList.remove('opacity-0');
+          indicator.classList.add('opacity-100');
+        } else {
+          indicator.classList.remove('opacity-100');
+          indicator.classList.add('opacity-0');
+        }
+      });
+
+      if (isSelected && continueBtn) {
+        continueBtn.disabled = false;
+        continueBtn.className = "inline-flex items-center gap-3 px-8 py-3 bg-primary-container text-on-primary-container font-label-md text-label-md uppercase tracking-wider cursor-pointer hover:bg-primary transition-all duration-200 select-none shadow-none font-semibold";
+      }
+    }
+  </script>
+</body></html>

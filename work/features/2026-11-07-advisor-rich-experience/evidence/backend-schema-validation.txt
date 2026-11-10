@@ -1,0 +1,13 @@
+PASS: 39 OpenAPI 3.1 component schemas conform to JSON Schema Draft 2020-12.
+PASS: initial_session
+PASS: current_reply
+PASS: restored_session
+PASS: reply_with_detail
+PASS: restored_session_with_detail
+PASS: legacy_cached_reply_three_links
+PASS: current_reply_three_cards_rejected
+PASS: unapproved_action_kind_rejected
+PASS: external_inline_video_rejected
+PASS: oversized_detail_rejected
+RESULT: 6 positive payloads and 4 negative cases passed. No runtime or behavior changes; no package installation.
+Scope: validates JSON Schema components and API payloads; it is not a separate OpenAPI document semantic validator.

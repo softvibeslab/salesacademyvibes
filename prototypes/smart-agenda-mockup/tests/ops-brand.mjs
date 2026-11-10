@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const css = readFileSync(path.join(ROOT, "ops/ops.css"), "utf8");
 const js = readFileSync(path.join(ROOT, "ops/ops.js"), "utf8");
+const apiJs = readFileSync(path.join(ROOT, "ops-api.js"), "utf8");
 const html = readFileSync(path.join(ROOT, "ops/index.html"), "utf8");
 
 assert.match(css, /--sa-night:\s*#101110/i, "noche de Descubre");
@@ -22,6 +23,10 @@ assert.match(js, /md-segmented/, "segmented buttons Material Design 3");
 assert.match(js, /md-field/, "text fields Material Design 3");
 assert.match(js, /md-card/, "cards Material Design 3");
 assert.match(js, /md-avatar/, "avatares Material Design 3 en reps");
+assert.doesNotMatch(js, /whoAmI/, "/ops/ no depende de /api/me ni redirige al login");
+assert.match(js, /data-role="\$\{id\}"/, "selector de rol directo en /ops/");
+assert.match(js, /data-jefe="\$\{person\.id\}"/, "selector de jefe de sala directo en /ops/");
+assert.match(apiJs, /X-Ops-Actor/, "ops-api envía X-Ops-Actor para que /ops/ opere sin login");
 assert.doesNotMatch(html, /DM\+Sans/, "sin DM Sans de Material");
 
 console.log("ops-brand ok");

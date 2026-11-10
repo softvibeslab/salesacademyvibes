@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Sales Academy - Asesor IA</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#999081",
+            "on-secondary-container": "#b8b9b4",
+            "on-secondary": "#2f312d",
+            "secondary-fixed-dim": "#c6c7c2",
+            "primary-container": "#d4b574",
+            "text-light": "#f4f2e9",
+            "surface-container": "#221f1a",
+            "on-primary-container": "#5c460f",
+            "surface-bright": "#3c3933",
+            "on-primary": "#3f2e00",
+            "on-background": "#e9e1d9",
+            "on-error": "#690005",
+            "tertiary-container": "#adb7e5",
+            "paper-main": "#f5f3ed",
+            "surface-container-lowest": "#100e0a",
+            "tertiary-fixed": "#dce1ff",
+            "surface-dim": "#16130f",
+            "on-surface-variant": "#d0c5b5",
+            "cms-bg": "#f4f4ed",
+            "surface-tint": "#e3c380",
+            "inverse-surface": "#e9e1d9",
+            "advisor-visitor": "#203c28",
+            "on-secondary-fixed": "#1a1c19",
+            "secondary-fixed": "#e3e3dd",
+            "paper-light": "#f7f5f0",
+            "background": "#16130f",
+            "border-dark": "#30342a",
+            "surface": "#16130f",
+            "on-tertiary": "#242e54",
+            "inverse-primary": "#735b23",
+            "border-light": "#dcdcd2",
+            "on-primary-fixed": "#251a00",
+            "tertiary": "#cad3ff",
+            "surface-container-highest": "#38342f",
+            "on-surface": "#e9e1d9",
+            "primary-fixed": "#ffdf9d",
+            "text-secondary": "#62655e",
+            "outline-variant": "#4d463a",
+            "gold-dark": "#765922",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#e3c380",
+            "on-error-container": "#ffdad6",
+            "primary": "#f1d18d",
+            "on-tertiary-fixed-variant": "#3b456c",
+            "advisor-gold": "#f4bd3f",
+            "text-dark": "#20211e",
+            "secondary-container": "#484a46",
+            "secondary": "#c6c7c2",
+            "surface-container-low": "#1e1b17",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#0e193e",
+            "inverse-on-surface": "#33302b",
+            "tertiary-fixed-dim": "#bbc4f3",
+            "on-primary-fixed-variant": "#59440d",
+            "surface-container-high": "#2d2a25",
+            "cms-sidebar": "#1d241c",
+            "advisor-ink": "#182219",
+            "surface-variant": "#38342f",
+            "on-tertiary-container": "#3d476f",
+            "on-secondary-fixed-variant": "#464743"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Newsreader", "Georgia", "serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "headline-md": ["Newsreader", "Georgia", "serif"],
+            "headline-lg": ["Newsreader", "Georgia", "serif"],
+            "body-lg": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Custom subtle scrollbar */
+    .chat-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .chat-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .chat-scroll::-webkit-scrollbar-thumb {
+      background: #dcdcd2;
+      border-radius: 4px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface flex justify-center items-center min-h-screen p-0 sm:p-space-sm select-none antialiased">
+<!-- Mobile Frame Container (390px simulated) -->
+<div class="relative w-full max-w-[390px] h-[844px] bg-surface-dim overflow-hidden shadow-2xl flex flex-col justify-between sm:rounded-[28px] sm:border sm:border-border-dark">
+<!-- Underlying Background Sales Academy Canvas (Blurred & Darkened for Modal Focus) -->
+<div class="absolute inset-0 bg-surface pointer-events-none opacity-40 filter blur-[2px]">
+<header class="bg-surface px-space-md py-space-sm flex justify-between items-center border-b border-border-dark">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary">menu</span>
+<span class="font-headline-md text-headline-md text-primary italic font-normal tracking-wide">Sales Academy</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary px-space-sm py-space-xs border border-border-dark rounded">Demo</button>
+</header>
+<div class="p-space-md space-y-space-md opacity-30">
+<div class="h-32 bg-surface-container rounded-xl"></div>
+<div class="h-20 bg-surface-container-high rounded-xl"></div>
+<div class="h-44 bg-surface-container rounded-xl"></div>
+</div>
+</div>
+<!-- Backdrop Dimmer Overlay -->
+<div class="absolute inset-0 bg-black/60 z-10 backdrop-blur-[1px]"></div>
+<!-- Active Advisor Modal Sheet (Inset 10px, radius 20px, near full height) -->
+<section class="relative z-20 m-[10px] h-[calc(100%-20px)] bg-[#f6f5ef] text-[#182219] rounded-[20px] shadow-2xl flex flex-col overflow-hidden border border-border-dark/20">
+<!-- Header: #101a13 -->
+<header class="bg-[#101a13] text-[#f4f2e9] pt-3 px-space-md pb-0 shrink-0">
+<!-- Top bar: Monogram Tag & Close button (44px target) -->
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-advisor-gold animate-pulse"></span>
+<span class="font-label-sm text-[10px] tracking-[0.14em] font-semibold text-advisor-gold uppercase">SALES ACADEMY · ASISTENTE IA</span>
+</div>
+<button aria-label="Cerrar modal" class="w-[44px] h-[44px] -mr-2 flex items-center justify-center text-on-surface-variant hover:text-white transition-colors duration-150 focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Headline in Georgia serif -->
+<h1 class="font-headline-lg text-headline-lg font-normal tracking-tight text-white mb-3">
+          Tu siguiente paso, <span class="italic text-primary">claro.</span>
+</h1>
+<!-- Navigation Tabs -->
+<div class="flex gap-space-md border-b border-border-dark">
+<button class="pb-2.5 px-0.5 font-label-sm text-label-sm text-primary border-b-2 border-advisor-gold font-semibold flex items-center gap-1.5 transition-all">
+<span>Conversar</span>
+<span class="w-1.5 h-1.5 rounded-full bg-advisor-gold"></span>
+</button>
+<button class="pb-2.5 px-0.5 font-label-sm text-label-sm text-on-surface-variant/80 hover:text-white border-b-2 border-transparent transition-all">
+            Coordinar demo
+          </button>
+</div>
+</header>
+<!-- Chat Scrollable Body -->
+<main class="flex-1 overflow-y-auto chat-scroll p-space-md space-y-space-md bg-[#f6f5ef]">
+<!-- Visitor Message (Deep Green #203c28) -->
+<div class="flex justify-end">
+<div class="max-w-[85%] bg-advisor-visitor text-white rounded-2xl rounded-tr-xs px-space-md py-2.5 shadow-sm border border-[#2e5238]">
+<p class="font-body-md text-body-md leading-relaxed text-slate-100">
+              ¿Tienen algún video breve que muestre cómo asiste el Smart Agent dentro de la sala de ventas?
+            </p>
+<span class="block text-right font-label-sm text-[10.5px] text-white/60 mt-1">11:42</span>
+</div>
+</div>
+<!-- Advisor Bubble (Crisp Paper / Ink) -->
+<div class="flex gap-2.5 items-start">
+<div class="w-7 h-7 rounded-full bg-[#101a13] text-advisor-gold flex items-center justify-center shrink-0 border border-border-dark text-[11px] font-serif font-bold">
+            SA
+          </div>
+<div class="flex-1 space-y-space-sm max-w-[92%]">
+<div class="bg-white rounded-2xl rounded-tl-xs p-3.5 shadow-sm border border-border-light text-[#182219]">
+<p class="font-body-md text-body-md leading-snug">
+                Aquí tienes la síntesis visual de 33 segundos. Demuestra cómo el agente sugiere reformulaciones de objeciones sin distraer la mirada con el cliente.
+              </p>
+</div>
+<!-- Video Player Card Container (Height exactly 196px frame) -->
+<div class="bg-white rounded-xl border border-border-light overflow-hidden shadow-sm">
+<!-- Video Frame with native/overlay controls (196px strictly) -->
+<div class="relative w-full h-[196px] bg-[#16130f] flex items-center justify-center overflow-hidden group">
+<!-- Video Poster Background Mock -->
+<div class="absolute inset-0 bg-cover bg-center opacity-85 scale-105" data-alt="A cinematic, low-angle interior shot of an executive luxury timeshare sales lounge with soft golden lighting and warm ambient tones. A smart digital HUD interface softly accents the conversational table, featuring elegant olive green and warm paper editorial aesthetics. High contrast, professional cinematic framing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqNMFObUELyIi0hk1XHHook6JRdu2gLXYxiZ9iH1To-Xse5an_-9YKe29Vth5vQbjTPyXAldr7dM_Fgb4C_eHtaodVyTU7qu5p57cy_K75fwFiZwk4_yETdrYbe9BMYVa1Jo2UFf7pmViD--wodQFEZJUosOuf-iR6I3W4OOKGoDiyBqn_bGeiuxMgotEA-SIl4sMNPFAN-RUMcLmUFzVyA5vrjDgbgSvCoD1IzGdx7GsmbuJzilXkMLIW1NM9syi9Fy4s6VbVznQ')">
+</div>
+<!-- Contrast Gradient for Player Controls -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40"></div>
+<!-- Top Badges Overlay -->
+<div class="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between z-10">
+<span class="bg-[#101a13]/90 text-advisor-gold text-[10.5px] font-label-sm font-medium px-2 py-0.5 rounded border border-advisor-gold/30 tracking-tight">
+                    Visión de producto · película conceptual
+                  </span>
+<!-- Subtitles Active Badge -->
+<span class="bg-advisor-gold text-[#101a13] font-label-sm font-semibold text-[10px] px-1.5 py-0.5 rounded tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">subtitles</span>
+                    CC · ES
+                  </span>
+</div>
+<!-- Center Floating Play/Pause Action -->
+<button aria-label="Reproducir video" class="relative z-10 w-11 h-11 rounded-full bg-advisor-gold/95 hover:bg-advisor-gold text-advisor-ink flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Bottom Video Scrubber & Timeline Controls -->
+<div class="absolute bottom-0 left-0 right-0 p-2.5 z-10 space-y-1.5 bg-gradient-to-t from-black/95 to-transparent">
+<!-- Progress Bar -->
+<div class="relative w-full h-1 bg-white/30 rounded-full overflow-hidden cursor-pointer">
+<div class="h-full bg-advisor-gold w-[42%]"></div>
+</div>
+<!-- Controls Bar -->
+<div class="flex items-center justify-between text-white/90 text-[11px] font-label-sm">
+<div class="flex items-center gap-2">
+<span class="font-medium tracking-tight text-advisor-gold">00:14</span>
+<span class="text-white/50">/</span>
+<span class="text-white/70">00:33</span>
+</div>
+<div class="flex items-center gap-2.5">
+<button aria-label="Silenciar audio" class="text-white/90 hover:text-advisor-gold transition-colors">
+<span class="material-symbols-outlined text-[16px]">volume_up</span>
+</button>
+<button aria-label="Pantalla completa" class="text-white/90 hover:text-advisor-gold transition-colors">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Video Metadata Section -->
+<div class="p-3 bg-white space-y-1.5 border-t border-border-light/60">
+<h2 class="font-headline-md text-headline-md font-serif text-[#182219] font-medium leading-snug">
+                  Smart Agent en acción: sala VIP
+                </h2>
+<p class="font-label-sm text-[13px] text-text-secondary leading-normal">
+                  Audio y subtítulos en español. Tú decides cuándo reproducir.
+                </p>
+<div class="pt-1">
+<a class="inline-flex items-center gap-1 font-label-sm text-[12px] font-semibold text-[#765922] hover:text-advisor-gold transition-colors" href="#">
+                    Ver contexto y transcripción completa <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Secondary Resource Card -->
+<div class="bg-[#edeae0] rounded-xl p-3 border border-border-light flex items-center justify-between gap-2.5">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#765922] text-[20px] mt-0.5">menu_book</span>
+<div>
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-text-secondary block font-semibold">Guía Metodológica</span>
+<p class="font-label-sm text-[12.5px] font-medium text-advisor-ink leading-tight mt-0.5">
+                    Antes del tour: una intención y dos preguntas (Metodología V4.2)
+                  </p>
+</div>
+</div>
+<button aria-label="Abrir guía" class="shrink-0 w-8 h-8 rounded-full bg-white flex items-center justify-center text-advisor-ink border border-border-light shadow-2xs hover:bg-advisor-gold/20">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Follow-up Prompt Chips -->
+<div class="pt-1 pl-9 flex flex-wrap gap-1.5">
+<button class="bg-[#ffe6a1] hover:bg-primary-fixed text-[#182219] text-[12px] font-label-sm font-medium py-1.5 px-3 rounded-full border border-advisor-gold/60 transition-colors shadow-2xs text-left active:scale-95">
+            ¿Cómo se integra en la sala?
+          </button>
+<button class="bg-[#ffe6a1] hover:bg-primary-fixed text-[#182219] text-[12px] font-label-sm font-medium py-1.5 px-3 rounded-full border border-advisor-gold/60 transition-colors shadow-2xs text-left active:scale-95">
+            Coordinar demo con Chris
+          </button>
+</div>
+</main>
+<!-- Sticky Bottom Composer & Privacy Disclaimer -->
+<footer class="bg-white border-t border-border-light/80 p-space-sm pb-3 shrink-0">
+<form class="flex items-center gap-space-xs" onsubmit="event.preventDefault();">
+<div class="relative flex-1">
+<input class="w-full bg-[#f6f5ef] border border-border-light rounded-xl px-3.5 py-2.5 font-body-md text-[13.5px] text-advisor-ink placeholder:text-[#888b83] focus:border-advisor-gold focus:ring-1 focus:ring-advisor-gold focus:outline-none transition-all" placeholder="Cuéntame qué quieres mejorar en tu sala…" type="text"/>
+</div>
+<!-- 44px Touch Target Button -->
+<button aria-label="Enviar mensaje" class="w-[44px] h-[44px] rounded-xl bg-advisor-visitor text-white hover:bg-[#162a1c] active:scale-95 flex items-center justify-center transition-all shrink-0 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[20px] text-advisor-gold" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</form>
+<!-- Privacy & Storage Notice -->
+<p class="text-[10px] font-label-sm text-text-secondary text-center mt-2 px-space-xs leading-tight">
+          Conversación disponible durante 1 hora; borrado automático periódico. Evita datos de clientes.
+        </p>
+</footer>
+</section>
+</div>
+</body></html>

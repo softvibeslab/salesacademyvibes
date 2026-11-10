@@ -1,0 +1,138 @@
+FFFFFFFFF.FFE
+======================================================================
+ERROR: test_13_bad_credentials_permissions_fail_closed (__main__.RegistrationHTTPTest.test_13_bad_credentials_permissions_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 244, in test_13_bad_credentials_permissions_fail_closed
+    self.assertFalse(self.call("GET", "/tour-registrations/capabilities", cookie=cookie)[1]["canRegister"])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'canRegister'
+
+======================================================================
+FAIL: test_01_private_login_and_capabilities (__main__.RegistrationHTTPTest.test_01_private_login_and_capabilities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 109, in test_01_private_login_and_capabilities
+    self.assertEqual(status, 200)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_02_create_persists_and_public_projection (__main__.RegistrationHTTPTest.test_02_create_persists_and_public_projection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 117, in test_02_create_persists_and_public_projection
+    cookie, body = self.create()
+                   ~~~~~~~~~~~^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 103, in create
+    self.assertEqual(status, 201, body)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 201 : {'ok': False, 'error': 'No existe.'}
+
+======================================================================
+FAIL: test_03_scope_and_actor_spoofing (__main__.RegistrationHTTPTest.test_03_scope_and_actor_spoofing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 133, in test_03_scope_and_actor_spoofing
+    ana, body = self.create()
+                ~~~~~~~~~~~^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 103, in create
+    self.assertEqual(status, 201, body)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 201 : {'ok': False, 'error': 'No existe.'}
+
+======================================================================
+FAIL: test_04_validation_and_no_writes (__main__.RegistrationHTTPTest.test_04_validation_and_no_writes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 149, in test_04_validation_and_no_writes
+    self.assertEqual(self.call("POST", "/tour-registrations", value, cookie)[0], 400)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 400
+
+======================================================================
+FAIL: test_05_idempotency_and_schedule_conflict (__main__.RegistrationHTTPTest.test_05_idempotency_and_schedule_conflict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 155, in test_05_idempotency_and_schedule_conflict
+    _, created = self.create(cookie, payload)
+                 ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 103, in create
+    self.assertEqual(status, 201, body)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 201 : {'ok': False, 'error': 'No existe.'}
+
+======================================================================
+FAIL: test_06_concurrent_create_and_actor_scoped_idempotency (__main__.RegistrationHTTPTest.test_06_concurrent_create_and_actor_scoped_idempotency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 169, in test_06_concurrent_create_and_actor_scoped_idempotency
+    self.assertEqual(sorted(r[0] for r in results), [200, 201])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [404, 404] != [200, 201]
+
+First differing element 0:
+404
+200
+
+- [404, 404]
++ [200, 201]
+
+======================================================================
+FAIL: test_07_origin_json_and_disabled (__main__.RegistrationHTTPTest.test_07_origin_json_and_disabled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 176, in test_07_origin_json_and_disabled
+    self.assertEqual(self.call("POST", "/tour-registrations", self.payload(), cookie, {"Origin": origin})[0], 403)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 403
+
+======================================================================
+FAIL: test_08_protected_legacy_mutations_even_disabled (__main__.RegistrationHTTPTest.test_08_protected_legacy_mutations_even_disabled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 183, in test_08_protected_legacy_mutations_even_disabled
+    cookie, body = self.create()
+                   ~~~~~~~~~~~^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 103, in create
+    self.assertEqual(status, 201, body)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 201 : {'ok': False, 'error': 'No existe.'}
+
+======================================================================
+FAIL: test_09_private_move_does_not_transfer_history (__main__.RegistrationHTTPTest.test_09_private_move_does_not_transfer_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 195, in test_09_private_move_does_not_transfer_history
+    ana, body = self.create()
+                ~~~~~~~~~~~^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 103, in create
+    self.assertEqual(status, 201, body)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 201 : {'ok': False, 'error': 'No existe.'}
+
+======================================================================
+FAIL: test_11_retention_and_expired_idempotency (__main__.RegistrationHTTPTest.test_11_retention_and_expired_idempotency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 217, in test_11_retention_and_expired_idempotency
+    _, body = self.create(cookie, payload)
+              ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 103, in create
+    self.assertEqual(status, 201, body)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 201 : {'ok': False, 'error': 'No existe.'}
+
+======================================================================
+FAIL: test_12_preview_invalid_unavailable_and_no_persistence (__main__.RegistrationHTTPTest.test_12_preview_invalid_unavailable_and_no_persistence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 231, in test_12_preview_invalid_unavailable_and_no_persistence
+    self.assertEqual(self.call("POST", "/tour-registrations/preview", {"image": "broken", "mime": "image/jpeg"}, cookie)[0], 415)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 415
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.860s
+
+FAILED (failures=11, errors=1)

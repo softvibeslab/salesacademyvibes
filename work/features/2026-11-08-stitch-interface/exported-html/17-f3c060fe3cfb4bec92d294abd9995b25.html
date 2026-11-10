@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>17 · CMS · Editar landing | Sales Academy</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-xl": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Scrollbar aesthetics */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d0c5b5;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7e7668;
+    }
+  </style>
+</head>
+<body class="h-full flex overflow-hidden bg-background antialiased font-body-md text-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SIDEBAR OSCURA 240px (#1d241c) -->
+<aside class="w-[240px] flex-shrink-0 bg-[#1d241c] text-[#fbf9f3] flex flex-col justify-between h-full border-r border-[#2c362b] z-20 select-none">
+<div class="flex flex-col">
+<!-- Brand & Product Header -->
+<div class="h-20 flex items-center px-6 border-b border-[#2a3529] gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-sm tracking-widest">
+          SA
+        </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md tracking-tight text-white leading-tight">Sales Academy</span>
+<span class="text-[11px] text-[#9ba899] font-body-md tracking-wider">CMS &amp; Sala Digital</span>
+</div>
+</div>
+<!-- Navigation Menu -->
+<nav class="p-3 space-y-1">
+<div class="px-3 py-2 text-[10px] uppercase tracking-wider text-[#798877] font-semibold">Administración</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9ba899] hover:text-white hover:bg-[#273226] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span class="text-xs font-medium">Panel general</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#2b3829] text-[#e3c380] font-medium border-l-2 border-[#e3c380] transition-colors duration-150" href="/cms/landing">
+<span class="material-symbols-outlined text-lg">web</span>
+<span class="text-xs">Landing Page</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9ba899] hover:text-white hover:bg-[#273226] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-lg">smart_toy</span>
+<span class="text-xs font-medium">Agentes de IA</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9ba899] hover:text-white hover:bg-[#273226] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-lg">perm_media</span>
+<span class="text-xs font-medium">MediaHub</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9ba899] hover:text-white hover:bg-[#273226] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-lg">psychology</span>
+<span class="text-xs font-medium">Diagnóstico</span>
+</a>
+<div class="pt-4 px-3 py-2 text-[10px] uppercase tracking-wider text-[#798877] font-semibold">Configuración</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9ba899] hover:text-white hover:bg-[#273226] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-lg">tune</span>
+<span class="text-xs font-medium">Ajustes globales</span>
+</a>
+</nav>
+</div>
+<!-- User / Workspace Info -->
+<div class="p-4 border-t border-[#2a3529]">
+<div class="flex items-center gap-3 bg-[#242e23] p-2.5 rounded-lg">
+<div class="w-8 h-8 rounded-full bg-[#354333] border border-[#445542] flex items-center justify-center text-xs font-semibold text-[#d4b574]">
+          OP
+        </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="text-xs font-medium text-white truncate">Operaciones Sala</span>
+<span class="text-[10px] text-[#8e9c8c] truncate">director@salesacademy.mx</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN CANVAS: WORKSPACE CLARO (#f4f4ed) -->
+<div class="flex-1 flex flex-col h-full bg-[#f4f4ed] overflow-hidden">
+<!-- TOPBAR DE ACCIONES -->
+<header class="h-20 bg-surface px-6 border-b border-outline-variant/30 flex items-center justify-between flex-shrink-0 z-10 shadow-sm">
+<div class="flex flex-col">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="hover:text-primary transition-colors cursor-pointer">Inicio</span>
+<span class="text-outline-variant">/</span>
+<span class="font-medium text-on-surface">Landing</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-medium">Editor Visual</span>
+</nav>
+<div class="flex items-center gap-3 mt-1">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight font-normal">
+            17 · CMS · Editar landing
+          </h1>
+<span class="bg-primary/10 text-primary border border-primary/20 text-[11px] px-2 py-0.5 rounded-full font-label-sm font-medium">
+            Ruta: /cms/landing
+          </span>
+</div>
+</div>
+<!-- Action cluster with 44px touch targets -->
+<div class="flex items-center gap-3">
+<button class="h-11 px-4 rounded-lg border border-outline-variant text-on-surface-variant hover:text-on-surface hover:border-outline hover:bg-surface-container transition-all duration-150 font-body-md text-xs font-medium flex items-center gap-2 focus:ring-2 focus:ring-primary-container focus:outline-none" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span>Guardar borrador</span>
+</button>
+<button class="h-11 px-4 rounded-lg border border-outline-variant bg-surface text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150 font-body-md text-xs font-medium flex items-center gap-2 focus:ring-2 focus:ring-primary-container focus:outline-none" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+<span>Vista previa</span>
+</button>
+<button class="h-11 px-5 rounded-lg bg-[#10120f] hover:bg-[#20251e] text-white shadow-sm transition-all duration-150 font-body-md text-xs font-medium flex items-center gap-2.5 focus:ring-2 focus:ring-[#10120f] focus:outline-none group" type="button">
+<span class="material-symbols-outlined text-base text-primary-fixed-dim">publish</span>
+<span>Publicar cambios</span>
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider group-hover:bg-primary-fixed">
+            Owner
+          </span>
+</button>
+</div>
+</header>
+<!-- ALERTA DE REVISIÓN EN BORRADOR -->
+<div class="bg-amber-50/70 border-b border-amber-200/60 px-6 py-2.5 flex items-center justify-between text-xs text-amber-900 flex-shrink-0">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-amber-700 text-sm" style="font-variation-settings: 'FILL' 1;">info</span>
+<span>
+<strong>Revisión en borrador (Datos de ejemplo):</strong> Los cambios aplicados no impactarán la sala de ventas pública hasta que confirmes la publicación.
+        </span>
+</div>
+<div class="flex items-center gap-3 text-[11px] text-amber-800">
+<span>Último autoguardado hace 2 minutos</span>
+<button class="underline hover:text-amber-950 font-medium">Descartar cambios</button>
+</div>
+</div>
+<!-- CONTENIDO DIVIDIDO: FORMULARIO (IZQ) & PREVISUALIZACIÓN ESQUEMÁTICA (DER) -->
+<div class="flex-1 flex overflow-hidden">
+<!-- FORMULARIO DE EDICIÓN (PANEL IZQUIERDO 55%) -->
+<section class="w-7/12 border-r border-outline-variant/30 flex flex-col h-full bg-[#f4f4ed] overflow-y-auto p-6 space-y-6">
+<div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Estructura editorial de la landing</h2>
+<p class="font-body-md text-xs text-on-surface-variant">Modifique las secciones mediante módulos controlados sin manipular código crudo.</p>
+</div>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2.5 py-1 rounded">
+            4 Módulos Activos
+          </span>
+</div>
+<!-- 1. ACORDEÓN: HERO SECTION (ABIERTO) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-xs overflow-hidden transition-all duration-200">
+<div class="bg-surface-container-low px-5 py-4 flex items-center justify-between border-b border-outline-variant/20 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-xs font-semibold">1</span>
+<div>
+<h3 class="text-sm font-semibold text-on-surface">Hero Principal</h3>
+<p class="text-[11px] text-on-surface-variant">Mensaje clave superior, promesas y llamada de conversión</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-primary font-medium bg-primary-fixed/40 px-2 py-0.5 rounded">Sección Prioritaria</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">expand_less</span>
+</div>
+</div>
+<div class="p-5 space-y-5">
+<!-- Eyebrow -->
+<div>
+<label class="block text-xs font-medium text-on-surface-variant mb-1.5" for="eyebrow">
+                Eyebrow (Antetítulo)
+              </label>
+<input class="w-full h-11 px-3.5 bg-surface rounded-lg border border-outline-variant text-xs text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none transition-all duration-150" id="eyebrow" type="text" value="Agentes de inteligencia artificial para tu sala"/>
+</div>
+<!-- Título Principal -->
+<div>
+<label class="block text-xs font-medium text-on-surface-variant mb-1.5" for="hero-title">
+                Título del Hero (H1)
+              </label>
+<input class="w-full h-11 px-3.5 bg-surface rounded-lg border border-outline-variant text-xs text-on-surface font-serif focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none transition-all duration-150" id="hero-title" type="text" value="Agentes de IA. Tu método, presente en cada conversación."/>
+</div>
+<!-- Subtítulo -->
+<div>
+<label class="block text-xs font-medium text-on-surface-variant mb-1.5" for="hero-subtitle">
+                Subtítulo Descriptivo
+              </label>
+<textarea class="w-full p-3 bg-surface rounded-lg border border-outline-variant text-xs text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none transition-all duration-150 leading-relaxed" id="hero-subtitle" rows="3">Sales Academy acompaña la jornada de una sala de ventas de tiempo compartido con método, preparación, práctica, coaching y agentes autónomos orientados a elevar el volumen cerrado con total precisión de hospitalidad.</textarea>
+</div>
+<!-- CTA Configuration Grid -->
+<div class="grid grid-cols-2 gap-4 pt-1">
+<div>
+<label class="block text-xs font-medium text-on-surface-variant mb-1.5" for="cta-text">
+                  Texto del Botón CTA
+                </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-sm text-outline">touch_app</span>
+<input class="w-full h-11 pl-9 pr-3 bg-surface rounded-lg border border-outline-variant text-xs text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none" id="cta-text" type="text" value="Solicitar demo por WhatsApp"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-on-surface-variant mb-1.5" for="cta-dest">
+                  Enlace o Destino
+                </label>
+<input class="w-full h-11 px-3 bg-surface rounded-lg border border-outline-variant text-xs text-on-surface font-mono text-[11px] focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none" id="cta-dest" type="text" value="https://wa.me/5215500000000?text=Hola%20SalesAcademy"/>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. ACORDEÓN: RECORRIDO DE 5 PILARES -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-xs overflow-hidden">
+<div class="bg-surface-container-low px-5 py-4 flex items-center justify-between border-b border-outline-variant/20 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center text-xs font-semibold">2</span>
+<div>
+<h3 class="text-sm font-semibold text-on-surface">Recorrido de 5 Pilares</h3>
+<p class="text-[11px] text-on-surface-variant">Método operativo: Método, Preparación, Práctica, Coaching e Inteligencia Artificial</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-outline font-medium">5 Elementos configurados</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">expand_more</span>
+</div>
+</div>
+<div class="p-5 space-y-4 bg-surface-container-lowest">
+<div class="space-y-2">
+<!-- Pilar 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface border border-outline-variant/30 text-xs">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">drag_indicator</span>
+<span class="font-semibold text-on-surface">Pilar I · Método Estructurado</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-secondary">Estandarización de sala</span>
+<button class="text-primary hover:text-on-surface p-1"><span class="material-symbols-outlined text-sm">edit</span></button>
+</div>
+</div>
+<!-- Pilar 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface border border-outline-variant/30 text-xs">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">drag_indicator</span>
+<span class="font-semibold text-on-surface">Pilar II · Preparación Continua</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-secondary">Warm-up y calibración mental</span>
+<button class="text-primary hover:text-on-surface p-1"><span class="material-symbols-outlined text-sm">edit</span></button>
+</div>
+</div>
+<!-- Pilar 3 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface border border-outline-variant/30 text-xs">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">drag_indicator</span>
+<span class="font-semibold text-on-surface">Pilar III · Práctica Deliberada</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-secondary">Role-playing guiado</span>
+<button class="text-primary hover:text-on-surface p-1"><span class="material-symbols-outlined text-sm">edit</span></button>
+</div>
+</div>
+<!-- Pilar 4 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface border border-outline-variant/30 text-xs">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">drag_indicator</span>
+<span class="font-semibold text-on-surface">Pilar IV · Coaching en Tiempo Real</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-secondary">Retroalimentación asertiva</span>
+<button class="text-primary hover:text-on-surface p-1"><span class="material-symbols-outlined text-sm">edit</span></button>
+</div>
+</div>
+<!-- Pilar 5 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface border border-outline-variant/30 text-xs">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-base">drag_indicator</span>
+<span class="font-semibold text-on-surface">Pilar V · Agentes de IA Asistivos</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-secondary">Copilotos de cierre</span>
+<button class="text-primary hover:text-on-surface p-1"><span class="material-symbols-outlined text-sm">edit</span></button>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg border border-dashed border-outline text-xs text-primary font-medium hover:bg-surface-container transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>Añadir nuevo pilar temático</span>
+</button>
+</div>
+</div>
+<!-- 3. ACORDEÓN: PREGUNTAS FRECUENTES (FAQ) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-xs overflow-hidden">
+<div class="bg-surface-container-low px-5 py-4 flex items-center justify-between border-b border-outline-variant/20 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center text-xs font-semibold">3</span>
+<div>
+<h3 class="text-sm font-semibold text-on-surface">Preguntas Frecuentes (FAQ)</h3>
+<p class="text-[11px] text-on-surface-variant">Resolución de objeciones comerciales y adopción tecnológica</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-outline font-medium">3 Preguntas activas</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">expand_more</span>
+</div>
+</div>
+<div class="p-5 space-y-3">
+<div class="p-3.5 rounded-lg bg-surface border border-outline-variant/30 space-y-2">
+<div class="flex items-center justify-between text-xs font-semibold text-on-surface">
+<span>¿Cómo se adaptan los agentes al pitch específico de mi desarrollo?</span>
+<span class="material-symbols-outlined text-sm text-outline">drag_handle</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+                Los modelos se entrenan con tus manuales de producto, inventario de semanas y regulaciones antes de interactuar en simulación.
+              </p>
+</div>
+<div class="p-3.5 rounded-lg bg-surface border border-outline-variant/30 space-y-2">
+<div class="flex items-center justify-between text-xs font-semibold text-on-surface">
+<span>¿Requiere conexión constante en la mesa de negociación?</span>
+<span class="material-symbols-outlined text-sm text-outline">drag_handle</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+                Diseñado para operar en modalidades sincronizadas y análisis posterior a cada recorrido por sala.
+              </p>
+</div>
+</div>
+</div>
+<!-- 4. ACORDEÓN: METADATOS SEO -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-xs overflow-hidden">
+<div class="bg-surface-container-low px-5 py-4 flex items-center justify-between border-b border-outline-variant/20 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-secondary text-white flex items-center justify-center text-xs font-semibold">4</span>
+<div>
+<h3 class="text-sm font-semibold text-on-surface">Metadatos SEO &amp; Social Share</h3>
+<p class="text-[11px] text-on-surface-variant">Optimización de indexación y fichas de WhatsApp / LinkedIn</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">expand_more</span>
+</div>
+</div>
+<div class="p-5 grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-medium text-on-surface-variant" for="seo-title">Meta Title</label>
+<input class="w-full h-10 px-3 bg-surface rounded-lg border border-outline-variant text-xs text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none" id="seo-title" type="text" value="Sales Academy | IA y Metodología para Salas de Ventas"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-medium text-on-surface-variant" for="seo-keywords">Palabras Clave (Comma separated)</label>
+<input class="w-full h-10 px-3 bg-surface rounded-lg border border-outline-variant text-xs text-on-surface focus:border-primary focus:ring-2 focus:ring-primary-container focus:outline-none" id="seo-keywords" type="text" value="tiempo compartido, hospitality sales, IA en ventas, vacation club"/>
+</div>
+</div>
+</div>
+</section>
+<!-- PREVISUALIZACIÓN ESQUEMÁTICA EN VIVO (PANEL DERECHO 45%) -->
+<section class="w-5/12 flex flex-col h-full bg-[#eae8e2]/60 overflow-hidden">
+<!-- Mock Browser Toolbar -->
+<div class="h-12 bg-surface-container border-b border-outline-variant/30 px-4 flex items-center justify-between flex-shrink-0">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-[#ba1a1a]/60"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#e6b033]"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-[#203c28]/60"></div>
+</div>
+<div class="ml-3 px-3 py-1 bg-surface rounded text-[11px] text-on-surface-variant border border-outline-variant/30 flex items-center gap-2 w-64 justify-between">
+<span class="truncate">salesacademy.mx/landing</span>
+<span class="material-symbols-outlined text-[13px] text-primary">lock</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded bg-surface text-primary border border-outline-variant/30" title="Vista desktop">
+<span class="material-symbols-outlined text-sm">desktop_windows</span>
+</button>
+<button class="p-1 rounded text-outline-variant hover:text-on-surface transition-colors" title="Vista móvil">
+<span class="material-symbols-outlined text-sm">stay_current_portrait</span>
+</button>
+</div>
+</div>
+<!-- Canvas Container with Interactive Simulator Frame -->
+<div class="flex-1 p-6 overflow-y-auto flex justify-center">
+<div class="w-full max-w-[620px] bg-surface rounded-xl shadow-md border border-outline-variant/40 flex flex-col min-h-[750px] overflow-hidden">
+<!-- SCHEMATIC HEADER (Using Shared Component TopNavBar Archetype) -->
+<div class="h-16 px-6 bg-surface border-b border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface">SA</span>
+<span class="text-xs text-outline-variant">|</span>
+<span class="text-[11px] text-on-surface-variant tracking-wider uppercase font-semibold">Hospitalidad &amp; IA</span>
+</div>
+<nav class="hidden sm:flex items-center gap-4 text-xs font-label-md">
+<span class="text-primary font-medium tracking-wide">Agentes en acción</span>
+<span class="text-on-surface-variant/70 font-medium">Galería</span>
+<span class="text-on-surface-variant/70 font-medium">FAQ</span>
+</nav>
+<div class="h-8 px-2.5 rounded bg-primary-container text-on-primary-container text-[11px] font-medium flex items-center gap-1.5 shadow-xs">
+<span>Demo</span>
+</div>
+</div>
+<!-- SCHEMATIC HERO SECTION -->
+<div class="p-8 text-center bg-gradient-to-b from-surface to-surface-container-low border-b border-outline-variant/20 relative">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/20 text-on-primary-container text-[11px] font-medium mb-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>Agentes de inteligencia artificial para tu sala</span>
+</div>
+<h2 class="font-headline-xl text-[26px] leading-[32px] text-on-surface font-normal mb-3 max-w-md mx-auto">
+                Agentes de IA. Tu método, presente en cada conversación.
+              </h2>
+<p class="text-xs text-on-surface-variant max-w-sm mx-auto leading-relaxed mb-6 font-body-md">
+                Sales Academy acompaña la jornada de una sala de ventas de tiempo compartido con método, preparación, práctica, coaching y agentes de IA.
+              </p>
+<!-- Main tactile CTA Button -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+<a class="h-11 px-5 rounded-lg bg-[#d4b574] hover:bg-[#c3a463] text-on-primary-container font-medium text-xs flex items-center justify-center gap-2 shadow-xs transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>Solicitar demo por WhatsApp</span>
+</a>
+<span class="text-[11px] text-secondary italic">Atención personalizada en 5 min</span>
+</div>
+</div>
+<!-- SCHEMATIC 5 PILARES (BENTO GRID PATTERN) -->
+<div class="p-6 bg-surface-container-lowest border-b border-outline-variant/20">
+<div class="text-center mb-5">
+<span class="text-[10px] uppercase font-bold tracking-widest text-primary">Arquitectura Integral</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">El Recorrido de los 5 Pilares</h4>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/30 flex flex-col justify-between h-24">
+<span class="text-[10px] text-outline font-semibold">PILAR I</span>
+<p class="text-xs font-semibold text-on-surface leading-snug">Método Estructurado</p>
+<span class="text-[10px] text-on-surface-variant">Procesos estandarizados</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/30 flex flex-col justify-between h-24">
+<span class="text-[10px] text-outline font-semibold">PILAR II</span>
+<p class="text-xs font-semibold text-on-surface leading-snug">Preparación Continua</p>
+<span class="text-[10px] text-on-surface-variant">Calibración en sala</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/30 flex flex-col justify-between h-24">
+<span class="text-[10px] text-outline font-semibold">PILAR III</span>
+<p class="text-xs font-semibold text-on-surface leading-snug">Práctica Deliberada</p>
+<span class="text-[10px] text-on-surface-variant">Simulaciones realistas</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg border border-outline-variant/30 flex flex-col justify-between h-24">
+<span class="text-[10px] text-outline font-semibold">PILAR IV</span>
+<p class="text-xs font-semibold text-on-surface leading-snug">Coaching en Tiempo Real</p>
+<span class="text-[10px] text-on-surface-variant">Métricas precisas</span>
+</div>
+<div class="col-span-2 p-3.5 bg-secondary-container/40 rounded-lg border border-outline-variant/40 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded bg-primary text-white flex items-center justify-center font-bold text-xs">V</span>
+<div>
+<p class="text-xs font-semibold text-on-surface">Agentes Autónomos de IA</p>
+<span class="text-[11px] text-on-surface-variant">Copiloto analítico durante cada conversación</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+</div>
+</div>
+</div>
+<!-- SCHEMATIC FAQ COMPONENT -->
+<div class="p-6 bg-surface space-y-3">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-md text-headline-md text-on-surface">Preguntas Frecuentes</h4>
+<span class="text-[10px] text-primary font-medium">Ver todas (3)</span>
+</div>
+<div class="space-y-2 text-xs">
+<div class="p-2.5 rounded bg-surface-container-low border border-outline-variant/20 flex justify-between items-center text-on-surface">
+<span class="font-medium text-[11px]">¿Cómo se adapta el pitch a mi desarrollo?</span>
+<span class="material-symbols-outlined text-xs text-outline">add</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low border border-outline-variant/20 flex justify-between items-center text-on-surface">
+<span class="font-medium text-[11px]">¿Requiere conexión constante en sala?</span>
+<span class="material-symbols-outlined text-xs text-outline">add</span>
+</div>
+</div>
+</div>
+<!-- SCHEMATIC FOOTER (Using Shared Component Footer Archetype) -->
+<div class="mt-auto p-4 bg-surface-container-lowest border-t border-outline-variant/20 text-center">
+<p class="text-[10px] text-on-surface-variant/70">
+                © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+              </p>
+</div>
+</div>
+</div>
+<!-- Live Status Bar -->
+<div class="h-9 bg-surface border-t border-outline-variant/30 px-6 flex items-center justify-between text-[11px] text-on-surface-variant flex-shrink-0">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span>Previsualización sincronizada (Vista 1440px simulada)</span>
+</div>
+<span>Escala: 85%</span>
+</div>
+</section>
+</div>
+</div>
+<script>
+    // Micro-interactions for interactive experience
+    document.querySelectorAll('input, textarea').forEach(element => {
+      element.addEventListener('input', (e) => {
+        // Subtle indicator that changes are reactive
+        console.log('Synchronized change:', e.target.id);
+      });
+    });
+  </script>
+</body></html>

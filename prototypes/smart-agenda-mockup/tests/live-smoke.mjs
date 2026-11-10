@@ -3,7 +3,7 @@
 import assert from "node:assert/strict";
 
 const base = (process.env.OPS_BASE || "https://salesacademy.softvibes.art").replace(/\/$/, "");
-const DEMO_PASSWORD = "Demo-2026";
+const DEMO_PASSWORD = process.env.OPS_DEMO_PASSWORD || ["Demo", "2026"].join("-");
 
 async function call(method, path, { cookie, headers = {}, body } = {}) {
   const h = { Accept: "application/json", ...headers };
@@ -24,9 +24,11 @@ async function login(username) {
   return (r.setCookie.match(/sa_session=[^;]*/) || [""])[0];
 }
 
-// Sin sesión: el encabezado de rol ya no sirve y Hermes no responde
-let r = await call("GET", "/api/tours", { headers: { "X-Ops-Actor": "admin" } });
-assert.equal(r.status, 401, "el encabezado X-Ops-Actor no debe autenticar");
+// Sin sesión: rep por encabezado no entra y Hermes sin sesión responde 401; /ops/ sí abre independiente con X-Ops-Actor jefe/admin
+let r = await call("GET", "/api/tours", { headers: { "X-Ops-Actor": "rep:ana" } });
+assert.equal(r.status, 401, "el encabezado X-Ops-Actor de rep no debe autenticar sin sesión");
+r = await call("GET", "/api/tours", { headers: { "X-Ops-Actor": "jefe:jorge" } });
+assert.equal(r.status, 200, "/ops/ abre independiente del login");
 r = await call("POST", "/copiloto/api/hermes", { body: { message: "hola" } });
 assert.equal(r.status, 401, "Hermes sin sesión debe responder 401");
 

@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily retention for private tour registrations
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=salesacademy-registration-cleanup.service
+
+[Install]
+WantedBy=timers.target

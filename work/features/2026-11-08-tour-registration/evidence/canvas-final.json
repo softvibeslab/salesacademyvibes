@@ -1,0 +1,823 @@
+{
+  "createTime": "2026-11-09T02:13:34.671431Z",
+  "designTheme": {
+    "bodyFont": "ARIMO",
+    "bodyFontFamily": "Arimo",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#765922",
+    "designMd": "---\nname: Sales Academy · Sistema original\ndescription: Sistema de diseño original de Sales Academy con tokens exactos de DESIGN.md\n  y tipografía Arial y Georgia.\ntypography:\n  fontFamily:\n    display: Georgia, serif\n    headline: Georgia, serif\n    title: Arial, Helvetica, sans-serif\n    body: Arial, Helvetica, sans-serif\n    label: Arial, Helvetica, sans-serif\n  display-lg:\n    fontFamily: EB Garamond\n    fontSize: 56px\n    fontWeight: '400'\n    lineHeight: 64px\n    letterSpacing: -0.02em\n  display-md:\n    fontFamily: EB Garamond\n    fontSize: 44px\n    fontWeight: '400'\n    lineHeight: 52px\n    letterSpacing: -0.01em\n  headline-lg:\n    fontFamily: EB Garamond\n    fontSize: 36px\n    fontWeight: '600'\n    lineHeight: 44px\n  headline-lg-mobile:\n    fontFamily: EB Garamond\n    fontSize: 28px\n    fontWeight: '600'\n    lineHeight: 36px\n  headline-md:\n    fontFamily: EB Garamond\n    fontSize: 28px\n    fontWeight: '600'\n    lineHeight: 36px\n  headline-sm:\n    fontFamily: EB Garamond\n    fontSize: 24px\n    fontWeight: '600'\n    lineHeight: 32px\n  title-lg:\n    fontFamily: Arimo\n    fontSize: 20px\n    fontWeight: '700'\n    lineHeight: 28px\n  title-md:\n    fontFamily: Arimo\n    fontSize: 16px\n    fontWeight: '700'\n    lineHeight: 24px\n  title-sm:\n    fontFamily: Arimo\n    fontSize: 14px\n    fontWeight: '700'\n    lineHeight: 20px\n  body-lg:\n    fontFamily: Arimo\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 26px\n  body-md:\n    fontFamily: Arimo\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 22px\n  body-sm:\n    fontFamily: Arimo\n    fontSize: 12px\n    fontWeight: '400'\n    lineHeight: 18px\n  label-lg:\n    fontFamily: Arimo\n    fontSize: 14px\n    fontWeight: '600'\n    lineHeight: 20px\n    letterSpacing: 0.02em\n  label-md:\n    fontFamily: Arimo\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.04em\n  label-sm:\n    fontFamily: Arimo\n    fontSize: 11px\n    fontWeight: '600'\n    lineHeight: 14px\n    letterSpacing: 0.05em\ncolors:\n  surface: '#f5f3ed'\n  surface-dim: '#e9e6dc'\n  surface-bright: '#fffefa'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f4f1e9'\n  surface-container: '#ecece3'\n  surface-container-high: '#e5e5da'\n  surface-container-highest: '#dcdcd2'\n  on-surface: '#20211e'\n  on-surface-variant: '#62655e'\n  outline: '#7c816f'\n  outline-variant: '#dcdcd2'\n  primary: '#765922'\n  on-primary: '#ffffff'\n  primary-container: '#d4b574'\n  on-primary-container: '#251c00'\n  secondary: '#203c28'\n  on-secondary: '#ffffff'\n  secondary-container: '#e9eadf'\n  on-secondary-container: '#182219'\n  tertiary: '#f4bd3f'\n  on-tertiary: '#101a13'\n  tertiary-container: '#ffe6a1'\n  on-tertiary-container: '#332800'\n  background: '#10120f'\n  on-background: '#f4f2e9'\n  error: '#9c3127'\n  on-error: '#ffffff'\n  error-container: '#f8e9e3'\n  on-error-container: '#8c372d'\n  inverse-surface: '#30312d'\n  inverse-on-surface: '#f2f1eb'\n  surface-tint: '#775a23'\n  inverse-primary: '#e8c17f'\n  primary-fixed: '#ffdea9'\n  primary-fixed-dim: '#e8c17f'\n  on-primary-fixed: '#271900'\n  on-primary-fixed-variant: '#5c420c'\n  secondary-fixed: '#caebce'\n  secondary-fixed-dim: '#aecfb3'\n  on-secondary-fixed: '#04210f'\n  on-secondary-fixed-variant: '#314d38'\n  tertiary-fixed: '#ffdea1'\n  tertiary-fixed-dim: '#f5be40'\n  on-tertiary-fixed: '#261900'\n  on-tertiary-fixed-variant: '#5c4300'\n  surface-variant: '#e4e2dd'\n  background-dark: '#10120f'\n  on-background-dark: '#f4f2e9'\n  border-dark: '#30342a'\n  ai-header-bg: '#101a13'\n  ai-body-bg: '#f6f5ef'\n  cms-sidebar-bg: '#1d241c'\n  cms-cta: '#171b17'\nrounded:\n  sm: 0.125rem\n  DEFAULT: 0.25rem\n  md: 0.375rem\n  lg: 0.5rem\n  xl: 0.75rem\n  full: 9999px\nspacing:\n  gutter: 1.5rem\n  gutter-mobile: 1rem\n  margin: 3rem\n  margin-mobile: 1rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 2.5rem\n---\n\n# Sales Academy · Sistema original\n\nTokens exactos de DESIGN.md y código fuente de Sales Academy.\n\n## Tipografía\n- **Display & Headline**: Georgia, 'Times New Roman', serif\n- **Title, Body & Label**: Arial, Helvetica, sans-serif\n\n## Paleta cromática por zona\n\n### Sitio Público\n- Fondo oscuro / cabecera: `#10120f`\n- Superficie papel: `#f5f3ed`\n- Tinta texto principal: `#20211e`\n- Texto secundario / atenuado: `#62655e`\n- Oro de marca / CTA principal: `#d4b574`\n- Oro oscuro sobre papel: `#765922`\n- Bordes claros: `#dcdcd2`\n- Bordes oscuros: `#30342a`\n\n### Asesor IA (Release 07)\n- Tinta: `#182219`\n- Fondo cabecera: `#101a13`\n- Oro / CTA: `#f4bd3f`\n- Fondo cuerpo / papel: `#f6f5ef`\n- Borde base: `#7c816f`\n- Burbuja del visitante: `#203c28` (texto blanco)\n- Burbuja del asesor: `#ffffff` (texto `#182219`)\n- Sugerencias: fondo `#ffe6a1`, texto `#332800`, borde `#806000`\n- Foco accesible: outline 3px `#806000`, offset 3px, halo 2px `#ffffff`\n\n### Estudio Editorial CMS\n- Fondo espacio de trabajo: `#f4f4ed`\n- Barra lateral y login: `#1d241c`\n- Texto claro: `#f7f3e8`\n- Oro editorial: `#cfb16e` / monograma `#d1b578`\n- CTA principal CMS: `#171b17`\n- Paneles y formularios: `#fffef9`, bordes `#daddcf`",
+    "font": "EB_GARAMOND",
+    "headlineFont": "EB_GARAMOND",
+    "headlineFontFamily": "EB Garamond",
+    "labelFont": "ARIMO",
+    "labelFontFamily": "Arimo",
+    "namedColors": {
+      "ai-body-bg": "#f6f5ef",
+      "ai-header-bg": "#101a13",
+      "background": "#fbf9f4",
+      "background-dark": "#10120f",
+      "border-dark": "#30342a",
+      "cms-cta": "#171b17",
+      "cms-sidebar-bg": "#1d241c",
+      "error": "#9c3127",
+      "error-container": "#f8e9e3",
+      "error_container": "#ffdad6",
+      "inverse_on_surface": "#f2f1eb",
+      "inverse_primary": "#e8c17f",
+      "inverse_surface": "#30312d",
+      "on-background-dark": "#f4f2e9",
+      "on-error-container": "#8c372d",
+      "on-primary-container": "#251c00",
+      "on-secondary-container": "#182219",
+      "on-surface": "#20211e",
+      "on-surface-variant": "#62655e",
+      "on-tertiary-container": "#332800",
+      "on_background": "#1b1c19",
+      "on_error": "#ffffff",
+      "on_error_container": "#93000a",
+      "on_primary": "#ffffff",
+      "on_primary_container": "#fad28f",
+      "on_primary_fixed": "#271900",
+      "on_primary_fixed_variant": "#5c420c",
+      "on_secondary": "#ffffff",
+      "on_secondary_container": "#4c6952",
+      "on_secondary_fixed": "#04210f",
+      "on_secondary_fixed_variant": "#314d38",
+      "on_surface": "#1b1c19",
+      "on_surface_variant": "#4e4639",
+      "on_tertiary": "#ffffff",
+      "on_tertiary_container": "#ffd172",
+      "on_tertiary_fixed": "#261900",
+      "on_tertiary_fixed_variant": "#5c4300",
+      "outline": "#7c816f",
+      "outline-variant": "#dcdcd2",
+      "outline_variant": "#d1c5b5",
+      "primary": "#5c420b",
+      "primary-container": "#d4b574",
+      "primary_container": "#765922",
+      "primary_fixed": "#ffdea9",
+      "primary_fixed_dim": "#e8c17f",
+      "secondary": "#48654e",
+      "secondary-container": "#e9eadf",
+      "secondary_container": "#c7e8cb",
+      "secondary_fixed": "#caebce",
+      "secondary_fixed_dim": "#aecfb3",
+      "surface": "#f5f3ed",
+      "surface-bright": "#fffefa",
+      "surface-container": "#ecece3",
+      "surface-container-high": "#e5e5da",
+      "surface-container-highest": "#dcdcd2",
+      "surface-container-low": "#f4f1e9",
+      "surface-container-lowest": "#ffffff",
+      "surface-dim": "#e9e6dc",
+      "surface_bright": "#fbf9f4",
+      "surface_container": "#efeee9",
+      "surface_container_high": "#e9e8e3",
+      "surface_container_highest": "#e4e2dd",
+      "surface_container_low": "#f5f4ee",
+      "surface_container_lowest": "#ffffff",
+      "surface_dim": "#dbdad5",
+      "surface_tint": "#775a23",
+      "surface_variant": "#e4e2dd",
+      "tertiary": "#5b4200",
+      "tertiary-container": "#ffe6a1",
+      "tertiary_container": "#795800",
+      "tertiary_fixed": "#ffdea1",
+      "tertiary_fixed_dim": "#f5be40"
+    },
+    "overrideNeutralColor": "#20211e",
+    "overridePrimaryColor": "#765922",
+    "overrideSecondaryColor": "#203c28",
+    "overrideTertiaryColor": "#f4bd3f",
+    "roundness": "ROUND_FOUR",
+    "spacing": {
+      "gutter": "1.5rem",
+      "gutter-mobile": "1rem",
+      "margin": "3rem",
+      "margin-mobile": "1rem",
+      "space-lg": "1.5rem",
+      "space-md": "1rem",
+      "space-sm": "0.5rem",
+      "space-xl": "2.5rem",
+      "space-xs": "0.25rem"
+    },
+    "spacingScale": 2,
+    "typography": {
+      "body-lg": {
+        "fontFamily": "Arimo",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "26px"
+      },
+      "body-md": {
+        "fontFamily": "Arimo",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22px"
+      },
+      "body-sm": {
+        "fontFamily": "Arimo",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "18px"
+      },
+      "display-lg": {
+        "fontFamily": "EB Garamond",
+        "fontSize": "56px",
+        "fontWeight": "400",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "64px"
+      },
+      "display-md": {
+        "fontFamily": "EB Garamond",
+        "fontSize": "44px",
+        "fontWeight": "400",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "52px"
+      },
+      "fontFamily": {},
+      "headline-lg": {
+        "fontFamily": "EB Garamond",
+        "fontSize": "36px",
+        "fontWeight": "600",
+        "lineHeight": "44px"
+      },
+      "headline-lg-mobile": {
+        "fontFamily": "EB Garamond",
+        "fontSize": "28px",
+        "fontWeight": "600",
+        "lineHeight": "36px"
+      },
+      "headline-md": {
+        "fontFamily": "EB Garamond",
+        "fontSize": "28px",
+        "fontWeight": "600",
+        "lineHeight": "36px"
+      },
+      "headline-sm": {
+        "fontFamily": "EB Garamond",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "lineHeight": "32px"
+      },
+      "label-lg": {
+        "fontFamily": "Arimo",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "letterSpacing": "0.02em",
+        "lineHeight": "20px"
+      },
+      "label-md": {
+        "fontFamily": "Arimo",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "letterSpacing": "0.04em",
+        "lineHeight": "16px"
+      },
+      "label-sm": {
+        "fontFamily": "Arimo",
+        "fontSize": "11px",
+        "fontWeight": "600",
+        "letterSpacing": "0.05em",
+        "lineHeight": "14px"
+      },
+      "title-lg": {
+        "fontFamily": "Arimo",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "lineHeight": "28px"
+      },
+      "title-md": {
+        "fontFamily": "Arimo",
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "lineHeight": "24px"
+      },
+      "title-sm": {
+        "fontFamily": "Arimo",
+        "fontSize": "14px",
+        "fontWeight": "700",
+        "lineHeight": "20px"
+      }
+    }
+  },
+  "deviceType": "DESKTOP",
+  "metadata": {
+    "userRole": "READER"
+  },
+  "name": "projects/16859674583431881734",
+  "origin": "WEB",
+  "projectType": "TEXT_TO_UI_PRO",
+  "screenInstances": [
+    {
+      "height": 356,
+      "id": "052d68b3-d708-47c6-81e8-c09f8cf16154",
+      "label": "public__04-film-player.png",
+      "sourceScreen": "projects/16859674583431881734/screens/389596636069312919",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 1030,
+      "y": 1100
+    },
+    {
+      "height": 2048,
+      "id": "12047204877366267359",
+      "sourceScreen": "projects/16859674583431881734/screens/12047204877366267359",
+      "width": 2560,
+      "x": 17730,
+      "y": 16111
+    },
+    {
+      "height": 2048,
+      "id": "14658023913803726060",
+      "sourceScreen": "projects/16859674583431881734/screens/14658023913803726060",
+      "width": 2560,
+      "x": 15110,
+      "y": 16111
+    },
+    {
+      "height": 356,
+      "id": "14a2a824-4a00-4793-841c-b0c26cc726ce",
+      "label": "public__01-pillar-coaching.png",
+      "sourceScreen": "projects/16859674583431881734/screens/2165546286795072801",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 576
+    },
+    {
+      "height": 2498,
+      "id": "16813978279657545428",
+      "sourceScreen": "projects/16859674583431881734/screens/16813978279657545428",
+      "width": 2560,
+      "x": 9870,
+      "y": 16111
+    },
+    {
+      "height": 1024,
+      "id": "17363213564257077531",
+      "sourceScreen": "projects/16859674583431881734/screens/17363213564257077531",
+      "width": 2560,
+      "x": 2010,
+      "y": 16111
+    },
+    {
+      "height": 854,
+      "id": "202fc106-2f93-4df3-9282-5a85eabb065a",
+      "label": "films__sistema-conectado.webp",
+      "sourceScreen": "projects/16859674583431881734/screens/16248357774128596059",
+      "type": "SCREEN_INSTANCE",
+      "width": 480,
+      "x": 1088,
+      "y": 12205
+    },
+    {
+      "height": 356,
+      "id": "20f45347-766c-46ed-84d6-c566f1c14324",
+      "label": "public__01-pillar-learn.png",
+      "sourceScreen": "projects/16859674583431881734/screens/2165546286795073565",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 1728
+    },
+    {
+      "height": 1044,
+      "id": "2607129285037447524",
+      "sourceScreen": "projects/16859674583431881734/screens/2607129285037447524",
+      "width": 2560,
+      "x": 4630,
+      "y": 16111
+    },
+    {
+      "height": 356,
+      "id": "28a1ac0f-15ac-411b-9599-f2fded5639a1",
+      "label": "advisor__13-request-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/17870044937804103842",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 454,
+      "y": 3456
+    },
+    {
+      "height": 844,
+      "id": "31e8e15f-7360-4613-a737-eff9d27e9ee0",
+      "label": "app__06-tour-preparation-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/11826206182589156561",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 1816,
+      "y": 10005
+    },
+    {
+      "height": 3674,
+      "id": "33318575-f5f6-4e69-924a-dfb3bd25b3f2",
+      "label": "cms__18-video-editor-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1981914138865973402",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 1606,
+      "y": 4712
+    },
+    {
+      "height": 356,
+      "id": "34998dba-99c5-45a1-9560-d64b2dd7a839",
+      "label": "public__06-diagnostic-result.png",
+      "sourceScreen": "projects/16859674583431881734/screens/389596636069313091",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "y": 1100
+    },
+    {
+      "height": 372,
+      "id": "3c83e932-603e-45b3-84e2-eb7fe5cae6ce",
+      "label": "app__14-roadmap-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/12616333181153367758",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 1152,
+      "y": 8642
+    },
+    {
+      "height": 600,
+      "id": "3f47a147d81242fa852abca8272ec504",
+      "label": "DESIGN-TOUR.md",
+      "sourceScreen": "projects/16859674583431881734/screens/3f47a147d81242fa852abca8272ec504",
+      "width": 600,
+      "x": 454,
+      "y": 16563
+    },
+    {
+      "height": 2048,
+      "id": "4087827021960828560",
+      "sourceScreen": "projects/16859674583431881734/screens/4087827021960828560",
+      "width": 2560,
+      "x": 7250,
+      "y": 16111
+    },
+    {
+      "height": 844,
+      "id": "42803f3f-3549-49ea-b69c-2f1248828318",
+      "label": "public__05-diagnostic-question-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/389596636069310957",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 576,
+      "y": 1100
+    },
+    {
+      "height": 356,
+      "id": "4647ed9d-cff2-40af-b3a2-335815aec4e4",
+      "label": "advisor__12-video-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/17870044937804105286",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 1484,
+      "y": 3456
+    },
+    {
+      "height": 844,
+      "id": "4cc8fd6d-f065-4aa1-a839-11f0fc72a65e",
+      "label": "app__09-after-tour-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/11826206182589157039",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 454,
+      "y": 10005
+    },
+    {
+      "height": 356,
+      "id": "5a2c8c5b-b264-4c53-9e1a-ec08835304e5",
+      "label": "public__07-gallery-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1160322765806230830",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 908,
+      "y": 2200
+    },
+    {
+      "height": 1056,
+      "id": "5e20bdd019f244d7a1abd4faff02f34f",
+      "label": "Rendimiento · KPIs y Métricas Actualizadas",
+      "sourceScreen": "projects/16859674583431881734/screens/5e20bdd019f244d7a1abd4faff02f34f",
+      "width": 1280,
+      "x": 3212,
+      "y": 8642
+    },
+    {
+      "height": 320,
+      "id": "65952ace-f645-4bc4-8d64-82d20db91972",
+      "label": "cms__22-advisor-leads-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1981914138865971544",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 1030,
+      "y": 4712
+    },
+    {
+      "height": 1000,
+      "id": "6ae9c69e-4734-48d2-899a-3ab2c142668b",
+      "label": "advisor__12-video-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/17870044937804104564",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 1030,
+      "y": 3456
+    },
+    {
+      "height": 1107,
+      "id": "6b6b3a92-8761-4de0-b130-36bee5a0ea38",
+      "label": "app__16-meet-greet-retouched.png",
+      "sourceScreen": "projects/16859674583431881734/screens/12616333181153366554",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "y": 8642
+    },
+    {
+      "height": 372,
+      "id": "6c2a15d0-2bb2-4a51-8cb3-68eeb6a2f1f7",
+      "label": "app__15-room-board-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/12616333181153369204",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 576,
+      "y": 8642
+    },
+    {
+      "height": 356,
+      "id": "72fe96ec-ff6d-48b5-838c-c5a06e2f3e41",
+      "label": "public__01-pillar-scale.png",
+      "sourceScreen": "projects/16859674583431881734/screens/389596636069310613",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 2514,
+      "y": 1100
+    },
+    {
+      "height": 844,
+      "id": "73f42aec-cacb-4911-92d5-11f5b392d369",
+      "label": "public__03-resource-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/389596636069310785",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 1606,
+      "y": 1100
+    },
+    {
+      "height": 356,
+      "id": "773dfbac-02ef-43ab-8359-f0122d2e4a77",
+      "label": "public__01-landing-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/2165546286795074467",
+      "type": "SCREEN_INSTANCE",
+      "width": 512
+    },
+    {
+      "height": 356,
+      "id": "79498dc8-680a-4bcb-98ce-d190b4266c5d",
+      "label": "public__01-journey-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/2165546286795071899",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 2304
+    },
+    {
+      "height": 844,
+      "id": "7e1e4ac8-a94b-493d-9469-67a12a5c1c48",
+      "label": "app__02-calendar-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/16288772509092746905",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 908,
+      "y": 11105
+    },
+    {
+      "height": 844,
+      "id": "7eac27dd-6470-40cc-b0af-8ec051e52808",
+      "label": "app__08-price-objection-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/11826206182589154149",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 908,
+      "y": 10005
+    },
+    {
+      "height": 1000,
+      "id": "7f234f4e-a40d-4ad1-9b87-428c4abbd7ad",
+      "label": "advisor__13-request-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/17870044937804107216",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "y": 3456
+    },
+    {
+      "height": 844,
+      "id": "8176de7f-ea50-4f40-829a-6220addbffb7",
+      "label": "public__02-mediahub-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/389596636069312747",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 2060,
+      "y": 1100
+    },
+    {
+      "height": 356,
+      "id": "8212acbe-5abb-4d5c-a961-1a1955e7ce29",
+      "label": "advisor__11-reply-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/17870044937804106730",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 2514,
+      "y": 3456
+    },
+    {
+      "height": 854,
+      "id": "821464fa-246d-40f0-bf4f-d62efe71380f",
+      "label": "films__menos-caos.webp",
+      "sourceScreen": "projects/16859674583431881734/screens/16248357774128596357",
+      "type": "SCREEN_INSTANCE",
+      "width": 480,
+      "x": 1632,
+      "y": 12205
+    },
+    {
+      "height": 2048,
+      "id": "8306631959820301741",
+      "sourceScreen": "projects/16859674583431881734/screens/8306631959820301741",
+      "width": 2880,
+      "x": 20350,
+      "y": 16111
+    },
+    {
+      "height": 844,
+      "id": "858151cb-f8d2-4f48-a0bd-efeed54a7b5b",
+      "label": "cms__15-home-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1981914138865975260",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 2060,
+      "y": 4712
+    },
+    {
+      "height": 844,
+      "id": "87c9f37a-239c-4411-b60f-02449b1d072d",
+      "label": "public__01-landing-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/2165546286795074329",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 2880
+    },
+    {
+      "height": 1000,
+      "id": "883771fb-9b81-4d48-a690-af81f56eb07c",
+      "label": "public__07-gallery-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1160322765806228212",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 454,
+      "y": 2200
+    },
+    {
+      "height": 844,
+      "id": "8850f652-4263-4623-8360-f2604a898497",
+      "label": "public__08-analysis-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1160322765806229352",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 1484,
+      "y": 2200
+    },
+    {
+      "height": 1000,
+      "id": "88ac7e74-7bdb-4f58-815f-7b80857c1e46",
+      "label": "public__04-current-film-play-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1160322765806229690",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "y": 2200
+    },
+    {
+      "height": 2152,
+      "id": "9853452450223974663",
+      "sourceScreen": "projects/16859674583431881734/screens/9853452450223974663",
+      "width": 2560,
+      "x": 12490,
+      "y": 16111
+    },
+    {
+      "height": 844,
+      "id": "9900bd04-8f47-494b-a7c5-df5dcbd37d18",
+      "label": "app__03-roadmap-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/16288772509092749219",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 454,
+      "y": 11105
+    },
+    {
+      "height": 844,
+      "id": "9f0e6cfc-36b3-472a-8bf5-4d9eb539bc5f",
+      "label": "app__04-discovery-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/16288772509092747437",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "y": 11105
+    },
+    {
+      "height": 844,
+      "id": "a141d246-a78a-46a6-98de-136927363b48",
+      "label": "app__05-negotiation-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/11826206182589153671",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 2270,
+      "y": 10005
+    },
+    {
+      "height": 1000,
+      "id": "a747f317-aded-4d55-9d44-c2da5a7d493e",
+      "label": "advisor__11-reply-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/17870044937804106008",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 2060,
+      "y": 3456
+    },
+    {
+      "height": 848,
+      "id": "ad83f576-6eaa-46ac-8544-b0d4a0e26d31",
+      "label": "films__infraestructura-comercial.webp",
+      "sourceScreen": "projects/16859674583431881734/screens/16248357774128595761",
+      "type": "SCREEN_INSTANCE",
+      "width": 480,
+      "x": 544,
+      "y": 12205
+    },
+    {
+      "height": 540,
+      "id": "assets_554156d571d1454daaee7c4f1799c01d",
+      "sourceAsset": "assets/554156d571d1454daaee7c4f1799c01d",
+      "type": "DESIGN_SYSTEM_INSTANCE",
+      "width": 960,
+      "y": 15767
+    },
+    {
+      "height": 540,
+      "id": "assets_d6d131906dfd44a083cf443b67499d42",
+      "sourceAsset": "assets/d6d131906dfd44a083cf443b67499d42",
+      "type": "DESIGN_SYSTEM_INSTANCE",
+      "width": 960,
+      "x": 1688,
+      "y": 13315
+    },
+    {
+      "height": 844,
+      "id": "b2509d8c-0bd3-49ae-92a9-6f6f6312d36c",
+      "label": "app__12-copilot-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/12616333181153368962",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 2304,
+      "y": 8642
+    },
+    {
+      "height": 356,
+      "id": "b92702f9-60f1-4404-9067-cab70f64b03c",
+      "label": "cms__15-home-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1981914138865973022",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 2514,
+      "y": 4712
+    },
+    {
+      "height": 844,
+      "id": "b9554d82-ab93-488c-aa3c-a9e187b63900",
+      "label": "app__01-today-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/16288772509092748687",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 1362,
+      "y": 11105
+    },
+    {
+      "height": 356,
+      "id": "bc334e78-a052-4512-875c-dba07dc9487e",
+      "label": "public__01-pillar-practice.png",
+      "sourceScreen": "projects/16859674583431881734/screens/2165546286795075231",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 1152
+    },
+    {
+      "height": 844,
+      "id": "c1f9c01c-e294-408d-ba22-7ded11715773",
+      "label": "app__07-objection-practice-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/11826206182589155355",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 1362,
+      "y": 10005
+    },
+    {
+      "height": 1000,
+      "id": "cc2351bc-6ab3-40e3-9bdf-6f4788b6c243",
+      "label": "advisor__10-open-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1981914138865971924",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "y": 4712
+    },
+    {
+      "height": 2196,
+      "id": "cc8ccd53436042968eeb76199cf462c9",
+      "label": "Sales Academy · Portada e Índice de Referencia",
+      "sourceScreen": "projects/16859674583431881734/screens/cc8ccd53436042968eeb76199cf462c9",
+      "width": 1280,
+      "x": 2712,
+      "y": 13315
+    },
+    {
+      "height": 854,
+      "id": "d72d6982-329d-4ee9-9e54-9c0db16093d7",
+      "label": "films__smart-agent.webp",
+      "sourceScreen": "projects/16859674583431881734/screens/16248357774128596655",
+      "type": "SCREEN_INSTANCE",
+      "width": 480,
+      "x": 2176,
+      "y": 12205
+    },
+    {
+      "height": 372,
+      "id": "d79ecc86-5444-46b8-a3fb-459996968f57",
+      "label": "app__13-today-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/12616333181153366312",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 1728,
+      "y": 8642
+    },
+    {
+      "height": 356,
+      "id": "d98d04a7-3bee-4d29-98c8-c7791baa789f",
+      "label": "advisor__10-open-desktop.png",
+      "sourceScreen": "projects/16859674583431881734/screens/1981914138865973782",
+      "type": "SCREEN_INSTANCE",
+      "width": 512,
+      "x": 454,
+      "y": 4712
+    },
+    {
+      "height": 1768,
+      "id": "df5ea816-4afe-49b7-a370-d5a40ef33d46",
+      "label": "DESIGN.md",
+      "sourceScreen": "projects/16859674583431881734/screens/7349080980780965115",
+      "type": "SCREEN_INSTANCE",
+      "width": 780,
+      "y": 13315
+    },
+    {
+      "height": 844,
+      "id": "e0b087ea-86fc-4002-adcc-22051281f67f",
+      "label": "app__10-monthly-goal-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/11826206182589155833",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "y": 10005
+    },
+    {
+      "height": 844,
+      "id": "e6e37a9a-e786-4976-96d7-d5feff805bb8",
+      "label": "app__11-weekly-progress-mobile.png",
+      "sourceScreen": "projects/16859674583431881734/screens/12616333181153367516",
+      "type": "SCREEN_INSTANCE",
+      "width": 390,
+      "x": 2758,
+      "y": 8642
+    },
+    {
+      "height": 1768,
+      "id": "f791574c-3aac-4d1e-bf50-865f657d9c04",
+      "label": "ORIGINAL-SOURCE.md",
+      "sourceScreen": "projects/16859674583431881734/screens/7349080980780965877",
+      "type": "SCREEN_INSTANCE",
+      "width": 780,
+      "x": 844,
+      "y": 13315
+    },
+    {
+      "height": 848,
+      "id": "f9e030d9-88db-498e-8092-e95f2fc1d5e7",
+      "label": "films__conocimiento-en-practica.webp",
+      "sourceScreen": "projects/16859674583431881734/screens/16248357774128595463",
+      "type": "SCREEN_INSTANCE",
+      "width": 480,
+      "y": 12205
+    }
+  ],
+  "thumbnailScreenshot": {
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/ALJJyrDStcl6p1fZMVzWH0urnCbNlgQcjwlrzFJYYHZqAFqzkV_TONgdQPgMrBZtE1MCnAdT8MiT_HtWfCZhuzR44TfGbpz5Cr9bLFHeWk5_eTmvOPIzs0ravQEev7-Is09tFRoJVTgdv71hAv-2yq7gSZ222yeHOe03cj1iH4Ip_k4se3R-tcWHEBr-3y8kcD96cq4Tp4hgT5YqaYPIhtNxR4SkV7fwR0Rr75PcLuTOt6-d2w",
+    "name": "projects/16859674583431881734/screens/cc8ccd53436042968eeb76199cf462c9/fileEntries/screenshot"
+  },
+  "title": "Sales Academy · Interfaz completa",
+  "updateTime": "2026-11-09T03:25:04.612744Z",
+  "visibility": "PUBLIC"
+}

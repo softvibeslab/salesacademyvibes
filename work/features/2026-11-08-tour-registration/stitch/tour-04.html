@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>TOUR 04 · Pareja · Captura manual móvil</title>
+<style>
+  :root {
+    --bg-page: #f7f7f5;
+    --ink: #20211e;
+    --muted: #62655e;
+    --border: #e2e2dc;
+    --border-card: #d8d8d0;
+    --surface: #ffffff;
+    --surface-soft: #efefe9;
+    --gold: #806000;
+    --gold-light: #f4d894;
+    --gold-chip: #fcf6e6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-page);
+    color: var(--ink);
+    line-height: 1.45;
+    font-size: 15px;
+    padding-bottom: 96px;
+    width: 390px;
+    margin: 0 auto;
+    min-height: 844px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Top Bar */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .back-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: 500;
+    min-height: 44px;
+    padding: 4px 6px;
+  }
+  .demo-tag {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    background: #e9ece4;
+    color: #405538;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  .content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header-block h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .header-block p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Form Card Sections */
+  .form-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .field-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+  }
+  .field-label span {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .input-text {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--surface);
+    font-family: inherit;
+  }
+  .input-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* Details Accordion */
+  details.optional-accordion {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  details.optional-accordion summary {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+  }
+  details.optional-accordion summary::-webkit-details-marker { display: none; }
+  details.optional-accordion summary::after {
+    content: "▾";
+    font-size: 14px;
+    color: var(--muted);
+    transition: transform 0.2s;
+  }
+  details.optional-accordion[open] summary::after {
+    transform: rotate(180deg);
+  }
+  .accordion-inner {
+    padding: 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px solid var(--surface-soft);
+  }
+
+  .chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .chip {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    border: 1px solid var(--border-card);
+    background: var(--surface-soft);
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .chip.selected {
+    background: var(--gold-chip);
+    border-color: var(--gold);
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* Sticky Footer */
+  .footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 390px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.04);
+  }
+  .btn-primary {
+    flex: 1.2;
+    background: var(--gold);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    min-height: 48px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-secondary {
+    flex: 0.9;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 48px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="back-btn" aria-label="Volver al inicio">
+    <span class="">‹</span>
+    <span class="">Nuevo tour</span>
+  </button>
+  <span class="demo-tag">Prototipo · Datos de ejemplo</span>
+</header>
+
+<main class="content"><div class="header-block">
+    <h1 class="">Captura manual</h1>
+    <p class="">Ingresa los datos confirmados de la pareja para preparar la sesión.</p>
+  </div>
+
+  <form id="tour-form" class="flex flex-col gap-4" onsubmit="return false;">
+    <!-- Section 1: La Pareja -->
+    <section class="form-section">
+      <div class="section-title">
+        <span class="">👥</span>
+        <span class="">Datos de la pareja</span>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="inp-vis1">Visitante 1 <span class="">(Obligatorio)</span></label>
+        <input class="input-text" id="inp-vis1" name="vis1" type="text" value="Ana Demo" placeholder="Nombre completo" required="">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="inp-vis2">Visitante 2 <span class="">(Opcional)</span></label>
+        <input class="input-text" id="inp-vis2" name="vis2" type="text" value="Luis Demo" placeholder="Nombre de pareja o acompañante (opcional)">
+      </div>
+    </section>
+
+    <!-- Section 2: Datos del Tour -->
+    <section class="form-section">
+      <div class="section-title">
+        <span class="">🗓️</span>
+        <span class="">Datos del tour</span>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="inp-sala">Sala y asesor <span class="">(Contexto de sesión)</span></label>
+        <input class="input-text" id="inp-sala" name="sala" type="text" value="Sala Demo (Norte) · Asesor asignado" readonly="" style="background: var(--surface-soft); color: var(--muted); cursor: not-allowed;">
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="inp-fecha">Fecha del tour</label>
+        <input class="input-text" id="inp-fecha" name="fecha" type="date" value="2026-11-09" required="">
+      </div>
+
+      <div class="input-grid-2">
+        <div class="field">
+          <label class="field-label" for="inp-h-ini">Hora inicio</label>
+          <input class="input-text" id="inp-h-ini" name="hora_inicio" type="time" value="10:30" required="">
+        </div>
+        <div class="field">
+          <label class="field-label" for="inp-h-fin">Hora fin</label>
+          <input class="input-text" id="inp-h-fin" name="hora_fin" type="time" value="11:30" required="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Más Contexto Opcional (Cerrado por defecto) -->
+    <details class="optional-accordion">
+      <summary>
+        <span class="">Más contexto (opcional)</span>
+      </summary>
+      <div class="accordion-inner">
+        <div class="field">
+          <label class="field-label" for="inp-idioma-opt">Idioma preferido</label>
+          <input class="input-text" id="inp-idioma-opt" name="idioma" type="text" value="Español" placeholder="Ej. Español, Inglés">
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="inp-contacto-opt">Contacto compartido <span class="">(opcional, sin valor real)</span></label>
+          <input class="input-text" id="inp-contacto-opt" name="contacto" type="text" value="" placeholder="Correo electrónico o teléfono">
+        </div>
+
+        <div class="field">
+          <label class="field-label" id="label-intereses" for="intereses-group">Intereses para preparar conversación con IA</label>
+          <div class="chips-row" id="intereses-group" role="group" aria-labelledby="label-intereses">
+            <span class="chip selected">Playa y descanso</span>
+            <span class="chip selected">Viajes en pareja</span>
+            <span class="chip">Flexibilidad de fechas</span>
+            <span class="chip">+ Añadir</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="inp-notas">Notas breves</label>
+          <textarea class="input-text" id="inp-notas" name="notas" rows="3" placeholder="Menciona requerimientos especiales o notas previas..." style="resize: vertical; min-height: 80px; font-family: inherit; font-size: 16px; line-height: 1.4;">Mencionaron que buscan relajarse y planear vacaciones anuales.</textarea>
+        </div>
+      </div>
+    </details>
+  </form></main>
+
+<div class="footer-bar"><button type="button" class="btn-secondary" style="min-height: 48px; font-size: 14px; line-height: 1.2; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  <span class="">Mantener borrador</span>
+  <span style="font-size: 11px; font-weight: 400; opacity: 0.85;" class="">(durante la sesión actual)</span>
+</button>
+<a href="#resumen" class="btn-primary" id="btn-save-summary" style="min-height: 48px; font-size: 16px;">
+  <span class="">Revisar resumen</span>
+  <span class="">→</span>
+</a></div>
+
+
+
+
+
+</body></html>

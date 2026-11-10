@@ -1,0 +1,8 @@
+{
+  "projectId": "16859674583431881734",
+  "method": "Downloaded persisted markdown using Stitch download_file; compared Unicode codepoint length and FNV-1a-64 fingerprint with local originals. FNV is a non-cryptographic integrity check; local SHA256 values record the source artifacts.",
+  "documents": [
+    {"name": "ORIGINAL-SOURCE.md", "charactersLocal": 448592, "charactersRemote": 448592, "fnvLocal": "0xfa8b96e880b0b2cd", "fnvRemote": "0xfa8b96e880b0b2cd", "localSha256": "4253ec77402dc85bf08a4f2d4be126b3fc181477fd0dcc8e20b05a1d5b81d5cb", "matched": true},
+    {"name": "DESIGN.md", "charactersLocal": 16494, "charactersRemote": 16494, "fnvLocal": "0x4b95c78fb3434a37", "fnvRemote": "0x4b95c78fb3434a37", "localSha256": "4c67ef734dc0b5753266def011da9fc12b3232c8999fea7300a081c53a9a0037", "matched": true}
+  ]
+}

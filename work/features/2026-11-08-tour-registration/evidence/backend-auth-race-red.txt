@@ -1,0 +1,14 @@
+F
+======================================================================
+FAIL: test_19_rotation_during_login_does_not_adopt_new_version (__main__.RegistrationHTTPTest.test_19_rotation_during_login_does_not_adopt_new_version)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 341, in test_19_rotation_during_login_does_not_adopt_new_version
+    self.assertEqual(status, 401)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 200 != 401
+
+----------------------------------------------------------------------
+Ran 1 test in 0.529s
+
+FAILED (failures=1)

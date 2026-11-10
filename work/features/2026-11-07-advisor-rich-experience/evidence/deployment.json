@@ -1,0 +1,17 @@
+{
+  "release": "/srv/salesacademy-cloud/releases/20261107-advisor-rich-07",
+  "previousRelease": "/srv/salesacademy-cloud/releases/20261107-advisor-links-06",
+  "changedFiles": [
+    "v5/growth/openapi.json",
+    "v5/growth/server/advisor.py",
+    "v5/growth/site/assets/advisor.css",
+    "v5/growth/site/assets/advisor.mjs"
+  ],
+  "profileSha256": "c46f674287c83d04670671ba70ca8836fb182d3520e3d0d66112e67841149aee",
+  "profileBackup": "/srv/salesacademy-cloud/operations/advisor-rich-07-profile-before.md",
+  "manifestSha256": "0d92c266d0215f1129fc732583535e752ee95cb65b9110d784ffa6b0685fabf1",
+  "databaseSchemaChanged": false,
+  "modelCredentialsChanged": false,
+  "restart": "salesacademy-cloud@v5.service",
+  "rollback": "Restore both SOUL files atomically from profileBackup preserving permissions, point current to previousRelease, restart V5 only."
+}

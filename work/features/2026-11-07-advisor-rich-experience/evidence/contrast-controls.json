@@ -1,0 +1,626 @@
+[
+  {
+    "width": 1440,
+    "tab": "chat",
+    "rows": [
+      {
+        "element": "BUTTON",
+        "label": "Cerrar asesor",
+        "border": "rgb(180, 196, 172)",
+        "borderRatio": 9.695055636844252,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "BUTTON",
+        "label": "Conversar",
+        "border": "rgb(16, 26, 19)",
+        "borderRatio": 14.670538965062377,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Coordinar demo ↗",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.581918652799616,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Cómo funciona",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Soy representante",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Soy líder de sala",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Reproducir video: Agentes de IA en el día a día de tu sala",
+        "border": "rgb(255, 255, 255)",
+        "borderRatio": 17.80878871359792,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "FORM",
+        "label": "Tu pregunta sobre Sales Academy↑",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815
+      },
+      {
+        "element": "TEXTAREA",
+        "label": "",
+        "border": "rgb(24, 34, 25)",
+        "borderRatio": null,
+        "focus": "solid",
+        "focusRatio": 5.847973934092918
+      },
+      {
+        "element": "BUTTON",
+        "label": "Enviar pregunta",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.847973934092918,
+        "focus": "solid",
+        "focusRatio": 5.847973934092918
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "tab": "demo",
+    "rows": [
+      {
+        "element": "BUTTON",
+        "label": "Cerrar asesor",
+        "border": "rgb(180, 196, 172)",
+        "borderRatio": 9.695055636844252,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "BUTTON",
+        "label": "Conversar",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.581918652799616,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Coordinar demo ↗",
+        "border": "rgb(16, 26, 19)",
+        "borderRatio": 14.670538965062377,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Selecciona tu rolRepresentanteLíderDirec",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Por definir1 sala2–3 salas4 o más salas",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "TEXTAREA",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "FIELDSET",
+        "label": "Tu horario preferido (opcional)FechaHora",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Cancún · Caribe mexicanoCiudad de México",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Preparar mi solicitud →",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "chat",
+    "rows": [
+      {
+        "element": "BUTTON",
+        "label": "Cerrar asesor",
+        "border": "rgb(180, 196, 172)",
+        "borderRatio": 9.695055636844252,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "BUTTON",
+        "label": "Conversar",
+        "border": "rgb(16, 26, 19)",
+        "borderRatio": 14.670538965062377,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Coordinar demo ↗",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.581918652799616,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Cómo funciona",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Soy representante",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Soy líder de sala",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Reproducir video: Agentes de IA en el día a día de tu sala",
+        "border": "rgb(255, 255, 255)",
+        "borderRatio": 17.80878871359792,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "FORM",
+        "label": "Tu pregunta sobre Sales Academy↑",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815
+      },
+      {
+        "element": "TEXTAREA",
+        "label": "",
+        "border": "rgb(24, 34, 25)",
+        "borderRatio": null,
+        "focus": "solid",
+        "focusRatio": 5.847973934092918
+      },
+      {
+        "element": "BUTTON",
+        "label": "Enviar pregunta",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.847973934092918,
+        "focus": "solid",
+        "focusRatio": 5.847973934092918
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "tab": "demo",
+    "rows": [
+      {
+        "element": "BUTTON",
+        "label": "Cerrar asesor",
+        "border": "rgb(180, 196, 172)",
+        "borderRatio": 9.695055636844252,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "BUTTON",
+        "label": "Conversar",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.581918652799616,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Coordinar demo ↗",
+        "border": "rgb(16, 26, 19)",
+        "borderRatio": 14.670538965062377,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Selecciona tu rolRepresentanteLíderDirec",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Por definir1 sala2–3 salas4 o más salas",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "TEXTAREA",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "FIELDSET",
+        "label": "Tu horario preferido (opcional)FechaHora",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Cancún · Caribe mexicanoCiudad de México",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Preparar mi solicitud →",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "tab": "chat",
+    "rows": [
+      {
+        "element": "BUTTON",
+        "label": "Cerrar asesor",
+        "border": "rgb(180, 196, 172)",
+        "borderRatio": 9.695055636844252,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "BUTTON",
+        "label": "Conversar",
+        "border": "rgb(16, 26, 19)",
+        "borderRatio": 14.670538965062377,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Coordinar demo ↗",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.581918652799616,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Cómo funciona",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Soy representante",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Soy líder de sala",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Reproducir video: Agentes de IA en el día a día de tu sala",
+        "border": "rgb(255, 255, 255)",
+        "borderRatio": 17.80878871359792,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "FORM",
+        "label": "Tu pregunta sobre Sales Academy↑",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815
+      },
+      {
+        "element": "TEXTAREA",
+        "label": "",
+        "border": "rgb(24, 34, 25)",
+        "borderRatio": null,
+        "focus": "solid",
+        "focusRatio": 5.847973934092918
+      },
+      {
+        "element": "BUTTON",
+        "label": "Enviar pregunta",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.847973934092918,
+        "focus": "solid",
+        "focusRatio": 5.847973934092918
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "tab": "demo",
+    "rows": [
+      {
+        "element": "BUTTON",
+        "label": "Cerrar asesor",
+        "border": "rgb(180, 196, 172)",
+        "borderRatio": 9.695055636844252,
+        "focus": "solid",
+        "focusRatio": 3.0452920813779674
+      },
+      {
+        "element": "BUTTON",
+        "label": "Conversar",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.581918652799616,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "BUTTON",
+        "label": "Coordinar demo ↗",
+        "border": "rgb(16, 26, 19)",
+        "borderRatio": 14.670538965062377,
+        "focus": "solid",
+        "focusRatio": 4.817448892594923
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Selecciona tu rolRepresentanteLíderDirec",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Por definir1 sala2–3 salas4 o más salas",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "TEXTAREA",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "FIELDSET",
+        "label": "Tu horario preferido (opcional)FechaHora",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "INPUT",
+        "label": "",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "SELECT",
+        "label": "Cancún · Caribe mexicanoCiudad de México",
+        "border": "rgb(116, 124, 105)",
+        "borderRatio": 3.980815519135815,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      },
+      {
+        "element": "BUTTON",
+        "label": "Preparar mi solicitud →",
+        "border": "rgb(128, 96, 0)",
+        "borderRatio": 5.353939375283283,
+        "focus": "solid",
+        "focusRatio": 5.353939375283283
+      }
+    ]
+  }
+]

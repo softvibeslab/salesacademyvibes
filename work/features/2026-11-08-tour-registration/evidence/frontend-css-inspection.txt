@@ -1,0 +1,18 @@
+light ink/card: 17.12:1 PASS
+light muted/card: 9.37:1 PASS
+light muted/surface: 8.90:1 PASS
+light gold-deep/tint: 8.25:1 PASS
+light on-gold-btn/gold-btn: 9.55:1 PASS
+light error/card: 6.46:1 PASS
+dark ink/card: 15.75:1 PASS
+dark muted/card: 10.04:1 PASS
+dark muted/surface: 10.84:1 PASS
+dark gold-deep/tint: 10.36:1 PASS
+dark on-gold-btn/gold-btn: 9.77:1 PASS
+dark error/card: 10.10:1 PASS
+
+Static layout inspection (not browser UAT):
+360 / 390px: one column; 18px inline padding; field width100% with min-width0; time inputs two minmax(0,1fr) columns; wrap buttons; 48px controls; field text16px.
+1440px: 264px application rail; >=1096px content after existing 40px padding; form min-widths260+380+24=664px fit. Source + form columns only >=1100px.
+FAB hidden on registration; desktop result CTA hidden; native bottom dock remains in page layout; safe-area bottom padding.
+Visual rendering, focus traversal, native photo picker and end-to-end manual capture require CUA. No visual pass inferred from CSS.

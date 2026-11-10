@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>20 · CMS · Biblioteca de medios | Sales Academy</title>
+<!-- Google Fonts: Libre Caslon Text & Arimo -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-xl": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface h-full flex flex-col font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- Top Navigation Shell (Shared Components JSON Anchor) -->
+<header class="bg-surface docked full-width top-0 border-b border-outline-variant/30 sticky z-40">
+<div class="flex justify-between items-center w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-20 transition-all duration-200 ease-out">
+<!-- Brand Logo Anchor -->
+<div class="flex items-center gap-6">
+<a class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface hover:text-primary transition-colors duration-200 flex items-center gap-2" href="#">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-high border border-outline-variant/40 text-primary font-headline-md font-bold">SA</span>
+<span class="font-headline-md tracking-wide">Sales Academy</span>
+</a>
+<span class="hidden md:inline-block text-outline-variant">/</span>
+<span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/40">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          CMS Suite v2.4
+        </span>
+</div>
+<!-- Navigation Links from JSON -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#">Agentes en acción</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#">Galería</a>
+<a class="text-primary font-medium tracking-wide transition-colors duration-200 border-b border-primary pb-0.5" href="#">MediaHub</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#">Diagnóstico</a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200" href="#">FAQ</a>
+</nav>
+<!-- Trailing Action from JSON -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-2 px-4 py-2.5 bg-primary-container text-on-primary-container rounded-lg font-label-sm text-label-sm font-semibold hover:bg-tertiary-fixed-dim transition-colors duration-200 shadow-sm" href="https://wa.me/">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span>Solicitar demo por WhatsApp</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main CMS Split Layout (Sidebar 240px + Workspace) -->
+<div class="flex flex-1 w-full max-w-[1440px] mx-auto overflow-hidden">
+<!-- Sidebar Oscura (240px, tonalidad bosque nocturno #1d241c) -->
+<aside class="w-[240px] flex-shrink-0 bg-[#1d241c] text-[#e3e3dd] flex flex-col justify-between border-r border-[#2b3529] select-none">
+<div class="p-5">
+<!-- Workspace ID / Path context -->
+<div class="pb-5 mb-5 border-b border-[#2b3529]/60">
+<div class="flex items-center gap-2 text-xs uppercase tracking-wider text-[#a0a59b] font-medium mb-1">
+<span class="material-symbols-outlined text-sm text-[#d4b574]" data-icon="admin_panel_settings">admin_panel_settings</span>
+            Panel Editorial
+          </div>
+<p class="text-xs font-mono text-[#c6c7c2]/80 truncate">/cms/medios/</p>
+</div>
+<!-- Sidebar Navigation Menu -->
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#c6c7c2] hover:bg-[#283227] hover:text-white transition-colors duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="dashboard">dashboard</span>
+<span>Resumen</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#c6c7c2] hover:bg-[#283227] hover:text-white transition-colors duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="psychology">psychology</span>
+<span>Agentes IA</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#c6c7c2] hover:bg-[#283227] hover:text-white transition-colors duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="menu_book">menu_book</span>
+<span>Guiones de Sala</span>
+</a>
+<!-- Active Navigation Item: Medios -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[#273225] text-[#d4b574] font-medium transition-colors duration-150 font-label-sm text-label-sm border-l-2 border-[#d4b574]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="perm_media" style="font-variation-settings: 'FILL' 1;">perm_media</span>
+<span>Medios</span>
+</div>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-[#1d241c] text-[#d4b574] font-mono">14</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#c6c7c2] hover:bg-[#283227] hover:text-white transition-colors duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="folder_managed">folder_managed</span>
+<span>Categorías</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#c6c7c2] hover:bg-[#283227] hover:text-white transition-colors duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified_user">verified_user</span>
+<span>Derechos de Uso</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#c6c7c2] hover:bg-[#283227] hover:text-white transition-colors duration-150 font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer Badge & Session -->
+<div class="p-5 border-t border-[#2b3529]/60">
+<div class="bg-[#242c23] p-3 rounded-lg border border-[#2e3a2c]">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="text-[11px] font-medium text-[#c6c7c2]">Licencia Hotelera Corp</span>
+</div>
+<p class="text-[11px] text-[#8e9389] leading-relaxed">Vacacional Riviera Maya &amp; Cancún Hub</p>
+</div>
+<div class="mt-4 flex items-center justify-between text-xs text-[#a0a59b]">
+<span class="font-mono">v20.4-prod</span>
+<span class="hover:text-white cursor-pointer transition-colors">Cerrar sesión</span>
+</div>
+</div>
+</aside>
+<!-- Main Workspace Canvas (#f5f3ed / #f4f4ed) -->
+<main class="flex-1 bg-surface-container-low flex flex-col overflow-y-auto">
+<!-- Operational Header & Controls -->
+<section class="bg-surface px-8 py-6 border-b border-outline-variant/30 flex-shrink-0">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+<!-- Title & Breadcrumbs -->
+<div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant font-label-sm mb-1.5">
+<span>CMS</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span>Repositorio</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-medium">Biblioteca de medios autorizados</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-normal">
+              20 · CMS · Biblioteca de medios
+            </h1>
+</div>
+<!-- Quick Actions & CTA -->
+<div class="flex items-center flex-wrap gap-3">
+<!-- Upload CTA -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm font-semibold hover:bg-on-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="upload_file">upload_file</span>
+<span>Subir medio</span>
+</button>
+<!-- Secondary Audit Action -->
+<button class="inline-flex items-center gap-2 px-3.5 py-2.5 bg-surface-container text-on-surface rounded-lg font-label-sm text-label-sm border border-outline-variant/40 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg text-outline" data-icon="fact_check">fact_check</span>
+<span>Auditar licencias</span>
+</button>
+</div>
+</div>
+<!-- Filter Bar and View Controls -->
+<div class="mt-6 pt-5 border-t border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Filters by Type -->
+<div class="flex items-center flex-wrap gap-2">
+<span class="text-xs text-on-surface-variant font-medium mr-2">Filtrar por tipo:</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold border border-outline-variant/30 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+              Todos (14)
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/40 hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-outline" data-icon="photo_camera">photo_camera</span>
+              Imágenes (8)
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/40 hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-outline" data-icon="picture_as_pdf">picture_as_pdf</span>
+              Documentos PDF (4)
+            </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/40 hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-outline" data-icon="schema">schema</span>
+              Esquemas (2)
+            </button>
+</div>
+<!-- View Mode Toggle & Search -->
+<div class="flex items-center gap-3">
+<!-- Search field -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg" data-icon="search">search</span>
+<input class="pl-9 pr-3 py-1.5 text-xs bg-surface-container-lowest border border-outline-variant/50 rounded-lg text-on-surface focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim w-48 transition-all" placeholder="Buscar por clave o uso..." type="text"/>
+</div>
+<!-- Grid / List Switcher -->
+<div class="inline-flex rounded-lg bg-surface-container p-1 border border-outline-variant/40">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary shadow-xs flex items-center gap-1 text-xs font-medium" title="Vista en cuadrícula">
+<span class="material-symbols-outlined text-base" data-icon="grid_view">grid_view</span>
+<span class="hidden sm:inline">Cuadrícula</span>
+</button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface flex items-center gap-1 text-xs font-medium transition-colors" title="Vista en lista">
+<span class="material-symbols-outlined text-base" data-icon="view_list">view_list</span>
+<span class="hidden sm:inline">Lista</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Curated Institution Notice -->
+<div class="mt-4 px-4 py-3 rounded-lg bg-surface-container border-l-4 border-primary flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl flex-shrink-0 mt-0.5" data-icon="policy">policy</span>
+<div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Colección institucional curada.</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-0.5">
+              No se admiten archivos multimedia privados o sin derechos cedidos. Todo material cargado pasa por auditoría legal automática para salvaguardar la propiedad intelectual de la sala de ventas.
+            </p>
+</div>
+</div>
+</section>
+<!-- Workspace Body: Grid + Inspector Drawer Split -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Grid Content Area -->
+<div class="flex-1 p-8 overflow-y-auto">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Recursos autorizados activos</h2>
+<span class="text-xs text-on-surface-variant font-mono">Mostrando 6 de 14 elementos</span>
+</div>
+<!-- Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1: FOTO SALA (Selected State) -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary-container p-4 shadow-sm hover:shadow transition-all relative flex flex-col justify-between cursor-pointer ring-1 ring-primary/20">
+<div class="absolute top-3 right-3 z-10">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  Derechos cedidos
+                </span>
+</div>
+<div>
+<!-- Thumbnail -->
+<div class="w-full h-40 rounded-lg overflow-hidden bg-surface-container mb-3 border border-outline-variant/30 relative">
+<img class="w-full h-full object-cover" data-alt="An elegant, softly illuminated luxury timeshare sales gallery with warm teak wood paneling, floor-to-ceiling panoramic windows overlooking lush palm gardens, tailored armchairs, and brass-trimmed consultative desks. The atmosphere is warm, editorial, professional, bathed in refined natural sunlight with balanced golden amber tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGVNyzyIFevhtwor_ASe2e3XEmA6E2opg1lE8fpVK-Sx5PXCfkjRhSgUMPFdrhwpnjJ0pUMeuMGXaa7E3dR7VkMN4Xru8UHAuCSUfjriTj07BcoQblST0ttcxt9rcHwgfWMLzJJTk71jCscLUwkBQSpyvHB8hRSL-5KDZ8h200bgpxTKzx2gxjMGhK-FYOAxKvuDT-48Ns8CJKUUYfT_CtALKpKl7lks1cL6kxHdhrr2_b3yFQ6VZJ1cXm1VufHisie7VEbqhqBDM"/>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/60 text-white rounded text-[10px] font-mono backdrop-blur-sm">JPG · 2400×1600</span>
+</div>
+<!-- Metadata -->
+<div class="flex items-start justify-between gap-2">
+<div>
+<h3 class="font-label-sm text-label-sm font-bold text-on-surface truncate" title="sala_ventas_galeria_cancun_v3.jpg">sala_ventas_galeria_cancun_v3.jpg</h3>
+<p class="text-xs text-on-surface-variant mt-0.5">Fotografía de ambientación principal</p>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-mono">3.4 MB</span>
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-xs" data-icon="update">update</span>
+                  Rev: 18 May 2025
+                </span>
+<span class="text-primary font-medium text-[11px] underline">Inspeccionar</span>
+</div>
+</div>
+<!-- Card 2: ESQUEMA METODOLOGICO -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-4 hover:border-primary-container transition-all flex flex-col justify-between cursor-pointer group">
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-surface-container text-on-surface-variant border border-outline-variant/30">
+                  SVG / Vector
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  Propiedad SA
+                </span>
+</div>
+<div>
+<!-- Thumbnail Schematic -->
+<div class="w-full h-40 rounded-lg overflow-hidden bg-[#f7f5f0] border border-outline-variant/20 p-4 flex flex-col justify-center items-center text-center relative">
+<div class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-2xl" data-icon="account_tree">account_tree</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface text-xs font-semibold">Pirámide de Cierre de Confianza</p>
+<p class="text-[11px] text-on-surface-variant mt-1">Fases: Diagnóstico &gt; Demostración &gt; Pacto</p>
+</div>
+<!-- Metadata -->
+<h3 class="font-label-sm text-label-sm font-bold text-on-surface truncate mt-3" title="metodo_cierre_confianza_diagrama.svg">metodo_cierre_confianza_diagrama.svg</h3>
+<p class="text-xs text-on-surface-variant mt-0.5">Esquema metodológico para agentes</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-mono">420 KB</span>
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-xs" data-icon="update">update</span>
+                  Rev: 12 May 2025
+                </span>
+<span class="group-hover:text-primary transition-colors text-[11px]">2 Inserciones</span>
+</div>
+</div>
+<!-- Card 3: PDF GUIA OPERATIVA -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-4 hover:border-primary-container transition-all flex flex-col justify-between cursor-pointer group">
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-red-50 text-red-700 border border-red-200">
+                  PDF Descargable
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  Derechos cedidos
+                </span>
+</div>
+<div>
+<!-- Thumbnail Document -->
+<div class="w-full h-40 rounded-lg overflow-hidden bg-surface-container-high border border-outline-variant/20 p-4 flex flex-col items-center justify-center text-center relative">
+<span class="material-symbols-outlined text-red-600 text-4xl mb-2" data-icon="picture_as_pdf">picture_as_pdf</span>
+<p class="font-label-sm text-xs font-bold text-on-surface">Guía de Objeciones Críticas 2025</p>
+<p class="text-[10px] text-on-surface-variant mt-0.5">Versión para sala de firma · 32 págs.</p>
+</div>
+<!-- Metadata -->
+<h3 class="font-label-sm text-label-sm font-bold text-on-surface truncate mt-3" title="manual_objeciones_hospitalidad_2025.pdf">manual_objeciones_hospitalidad_2025.pdf</h3>
+<p class="text-xs text-on-surface-variant mt-0.5">Documento normativo de coaching</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-mono">8.2 MB</span>
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-xs" data-icon="update">update</span>
+                  Rev: 04 May 2025
+                </span>
+<span class="group-hover:text-primary transition-colors text-[11px]">5 Inserciones</span>
+</div>
+</div>
+<!-- Card 4: FOTO SIMULADOR AGENTE IA -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-4 hover:border-primary-container transition-all flex flex-col justify-between cursor-pointer group">
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-surface-container text-on-surface-variant border border-outline-variant/30">
+                  WEBP · Imagen
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  Derechos cedidos
+                </span>
+</div>
+<div>
+<div class="w-full h-40 rounded-lg overflow-hidden bg-surface-container mb-3 border border-outline-variant/30 relative">
+<img class="w-full h-full object-cover" data-alt="A modern, high-end hospitality training suite showing a sales counselor interacting with a digital AI coaching avatar on a sleek vertical glass display. The room has warm architectural lighting, travertine stone surfaces, minimal dark bronze accents, and editorial warmth, conveying premium hospitality tech." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeZOvmy1lnSQ3_yqYItA8k54SZuggy7sK3yGPjU7xilp1CypcZY5A8FHjbr0LIFhGaUOpups7rCPujVn6AD0K8IPVfm0TJfJXpdho-NUop42DP7jDIBC1NG8NqLAgQNTSgmTvT-w32L5sYY9e2nB2Kb1EDCFYLVII4kNfcF2OQOPxr462gmTwRlNO1C6EABI6rWeClsb_-vtjqzW8cWSDXL9Ntl7UnTBAVWg3N5NyvL3KwqWygZZl2_cp3L2rls2kL_Qs2Y_6Dg2k"/>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/60 text-white rounded text-[10px] font-mono backdrop-blur-sm">WEBP · 1920×1080</span>
+</div>
+<h3 class="font-label-sm text-label-sm font-bold text-on-surface truncate" title="asesor_interaccion_simulador_ia.webp">asesor_interaccion_simulador_ia.webp</h3>
+<p class="text-xs text-on-surface-variant mt-0.5">Captura oficial de experiencia de usuario</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-mono">1.1 MB</span>
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-xs" data-icon="update">update</span>
+                  Rev: 28 Abr 2025
+                </span>
+<span class="group-hover:text-primary transition-colors text-[11px]">1 Inserción</span>
+</div>
+</div>
+<!-- Card 5: INFOGRAFIA TIEMPO COMPARTIDO -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-4 hover:border-primary-container transition-all flex flex-col justify-between cursor-pointer group">
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-surface-container text-on-surface-variant border border-outline-variant/30">
+                  PNG · Gráfico
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  Propiedad SA
+                </span>
+</div>
+<div>
+<div class="w-full h-40 rounded-lg overflow-hidden bg-[#f0eee8] border border-outline-variant/20 p-4 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-1" data-icon="pie_chart">pie_chart</span>
+<p class="font-headline-md text-headline-md text-xs font-semibold text-on-surface">Estructura Financiera Vacacional</p>
+<p class="text-[10px] text-on-surface-variant">Comparativa Plusvalía vs Renta Anual</p>
+</div>
+<h3 class="font-label-sm text-label-sm font-bold text-on-surface truncate mt-3" title="tabla_financiera_rentabilidad_membresia.png">tabla_financiera_rentabilidad_membresia.png</h3>
+<p class="text-xs text-on-surface-variant mt-0.5">Soporte gráfico para sala de ventas</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-mono">890 KB</span>
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-xs" data-icon="update">update</span>
+                  Rev: 22 Abr 2025
+                </span>
+<span class="group-hover:text-primary transition-colors text-[11px]">3 Inserciones</span>
+</div>
+</div>
+<!-- Card 6: PDF CONTRATO MARCO -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-4 hover:border-primary-container transition-all flex flex-col justify-between cursor-pointer group">
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-red-50 text-red-700 border border-red-200">
+                  PDF Descargable
+                </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  Revisado Legal
+                </span>
+</div>
+<div>
+<div class="w-full h-40 rounded-lg overflow-hidden bg-surface-container-high border border-outline-variant/20 p-4 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-red-600 text-4xl mb-2" data-icon="gavel">gavel</span>
+<p class="font-label-sm text-xs font-bold text-on-surface">Términos Modelo Afiliación 2025</p>
+<p class="text-[10px] text-on-surface-variant mt-0.5">Cláusulas de hospitalidad certificada</p>
+</div>
+<h3 class="font-label-sm text-label-sm font-bold text-on-surface truncate mt-3" title="terminos_modelo_hospitalidad_afiliacion.pdf">terminos_modelo_hospitalidad_afiliacion.pdf</h3>
+<p class="text-xs text-on-surface-variant mt-0.5">Plantilla descargable cliente VIP</p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-mono">2.4 MB</span>
+<span class="flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-xs" data-icon="update">update</span>
+                  Rev: 15 Abr 2025
+                </span>
+<span class="group-hover:text-primary transition-colors text-[11px]">4 Inserciones</span>
+</div>
+</div>
+</div>
+<!-- Bottom Pagination / Status Indicator -->
+<div class="mt-8 flex items-center justify-between text-xs text-on-surface-variant border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>Todos los archivos mostrados cuentan con certificación de cesión de derechos 2025.</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded bg-surface border border-outline-variant/40 hover:bg-surface-container disabled:opacity-50" disabled="">Anterior</button>
+<span class="px-2 font-mono">1 / 3</span>
+<button class="px-3 py-1 rounded bg-surface border border-outline-variant/40 hover:bg-surface-container">Siguiente</button>
+</div>
+</div>
+</div>
+<!-- Inspector Drawer / Panel Lateral "Dónde se utiliza" (340px) -->
+<aside class="w-[360px] flex-shrink-0 bg-surface border-l border-outline-variant/30 p-6 flex flex-col justify-between overflow-y-auto">
+<div>
+<!-- Drawer Header -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="hub">hub</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Dónde se utiliza</h2>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-primary-container/30 text-on-primary-container font-semibold">3 vinculaciones</span>
+</div>
+<!-- Selected Item Header Preview -->
+<div class="my-5 p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/30 flex items-center gap-3">
+<div class="w-14 h-14 rounded bg-surface-container overflow-hidden flex-shrink-0 border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Close up crop of the luxury timeshare sales gallery with rich teak textures and golden sunlight reflections, showing architectural symmetry and high-end editorial salesroom aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCydWUv1b6H5qaGTzDV5mnW0srDnif6Vitn1ePZhUOJcL38f21HDTZP8jyPO9dVfsSRZgC-n39IPikbX8_fIlPTRwbjgCz6fbJpO4kbaTQ68Cre6uz6TqQf0p6D2Q33-Uu-2oFXuB55vKj0IZiDjtGicrtZPELFKKOnWSwQ7EUFE4oqpqHBpBQdmiccKyQ10lnQjkYFWNlcjjVlgSPaifkQqsFvmoc9X9HpTAzec9-Z507Avm61YLs1l6-6zFZSvnwWRcl4BlSIVQI"/>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-xs font-bold text-on-surface truncate">sala_ventas_galeria_cancun_v3.jpg</p>
+<p class="text-[11px] text-on-surface-variant font-mono">3.4 MB · 2400×1600 · JPG</p>
+<div class="mt-1 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+<span class="text-[10px] text-emerald-800 font-medium">Derechos vigentes hasta Dic 2026</span>
+</div>
+</div>
+</div>
+<!-- Inserciones Activas en MediaHub y Plataforma -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase tracking-wider text-on-surface-variant font-semibold">Módulos que consumen este activo</span>
+<span class="material-symbols-outlined text-xs text-outline cursor-pointer" data-icon="help">help</span>
+</div>
+<!-- Item 1: MediaHub Hero -->
+<div class="p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:border-primary transition-all">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="web">web</span>
+<div>
+<h4 class="font-label-sm text-xs font-bold text-on-surface">MediaHub · Cabecera Principal</h4>
+<p class="text-[11px] text-on-surface-variant">Ruta: <span class="font-mono text-outline">/mediahub/galeria</span></p>
+</div>
+</div>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Hero</span>
+</div>
+<div class="mt-2 text-[11px] text-on-surface-variant bg-surface-container-low p-2 rounded flex items-center justify-between">
+<span>Renderizado con overlay oscuro #1d241c 40%</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="visibility">visibility</span>
+</div>
+</div>
+<!-- Item 2: Agente Virtual de Onboarding -->
+<div class="p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:border-primary transition-all">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="smart_toy">smart_toy</span>
+<div>
+<h4 class="font-label-sm text-xs font-bold text-on-surface">Simulador Agente · Escenario 02</h4>
+<p class="text-[11px] text-on-surface-variant">Ruta: <span class="font-mono text-outline">/agentes/simulacion-sala</span></p>
+</div>
+</div>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Fondo</span>
+</div>
+<div class="mt-2 text-[11px] text-on-surface-variant bg-surface-container-low p-2 rounded flex items-center justify-between">
+<span>Fondo inmersivo para rol de cierre</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="visibility">visibility</span>
+</div>
+</div>
+<!-- Item 3: PDF Kit de Bienvenida -->
+<div class="p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30 hover:border-primary transition-all">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="book">book</span>
+<div>
+<h4 class="font-label-sm text-xs font-bold text-on-surface">Brochure Digital VIP</h4>
+<p class="text-[11px] text-on-surface-variant">Ruta: <span class="font-mono text-outline">/descargas/dossier-2025</span></p>
+</div>
+</div>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Pág. 04</span>
+</div>
+<div class="mt-2 text-[11px] text-on-surface-variant bg-surface-container-low p-2 rounded flex items-center justify-between">
+<span>Portada de sección 'Instalaciones'</span>
+<span class="material-symbols-outlined text-sm text-primary" data-icon="visibility">visibility</span>
+</div>
+</div>
+<!-- Desglose de Metadatos Jurídicos -->
+<div class="mt-6 pt-5 border-t border-outline-variant/20">
+<h5 class="text-xs font-semibold text-on-surface mb-2.5 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="verified">verified</span>
+                  Registro Legal de la Obra
+                </h5>
+<dl class="space-y-1.5 text-xs">
+<div class="flex justify-between text-on-surface-variant">
+<span>Titular de Derechos:</span>
+<span class="text-on-surface font-medium">Sales Academy Latam S.A.</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Fotógrafo / Creador:</span>
+<span class="text-on-surface font-medium">Estudio Arq. Cancún</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>ID Certificado:</span>
+<span class="font-mono text-outline">SA-MED-2025-0899-CR</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Ámbito territorial:</span>
+<span class="text-on-surface font-medium">Internacional (Web &amp; Salones)</span>
+</div>
+</dl>
+</div>
+</div>
+</div>
+<!-- Bottom Panel Action Buttons -->
+<div class="pt-6 border-t border-outline-variant/30 space-y-2 mt-6">
+<button class="w-full py-2.5 px-4 bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm font-semibold rounded-lg flex items-center justify-center gap-2 border border-outline-variant/40 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="sync">sync</span>
+<span>Reemplazar activo (Actualizar 3 referencias)</span>
+</button>
+<button class="w-full py-2 px-4 text-on-surface-variant hover:text-error font-label-sm text-xs rounded-lg flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="link_off">link_off</span>
+<span>Desvincular de todas las pantallas</span>
+</button>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- Footer Shell (Shared Components JSON Anchor) -->
+<footer class="bg-surface-container-lowest docked full-width bottom border-t border-outline-variant/20 z-30">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6 transition-colors duration-150 ease-out">
+<!-- Brand & Copyright -->
+<div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface font-normal">Sales Academy</span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70">
+          © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+        </span>
+</div>
+<!-- Footer Navigation Links from JSON -->
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-on-surface-variant/70 font-normal hover:text-primary transition-colors duration-150 font-label-sm text-label-sm" href="#">Privacidad</a>
+<a class="text-on-surface-variant/70 font-normal hover:text-primary transition-colors duration-150 font-label-sm text-label-sm" href="#">Términos de servicio</a>
+<a class="text-on-surface-variant/70 font-normal hover:text-primary transition-colors duration-150 font-label-sm text-label-sm" href="#">Contacto</a>
+<a class="text-primary font-medium hover:text-primary transition-colors duration-150 font-label-sm text-label-sm flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Auditoría VIP</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -12,6 +12,7 @@ import re
 import secrets
 import time
 import uuid
+import unicodedata
 from urllib.parse import quote, urlparse
 from urllib.request import Request
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -21,6 +22,7 @@ from flask import jsonify, request
 from .campaign import WHATSAPP_DEMO_URL, WHATSAPP_NUMBER
 from .content import ContentError, markdown
 from .store import audit, database, digest, encode, now
+from .videos import load_video_catalog
 
 COOKIE = 'sa_advisor_session'
 SESSION_SECONDS = 3600
@@ -31,6 +33,10 @@ LEAD_FIELDS = {'requestId', 'name', 'contact', 'role', 'roomCountBucket', 'teamS
                'need', 'timeframe', 'preferredDate', 'preferredTime', 'timezone',
                'summary', 'contactConsent', 'privacyVersion'}
 SYSTEM = '''Eres el Asesor IA de Sales Academy. Responde en español con claridad y brevedad.
+Escribe entre 30 y 65 palabras, nunca más de 90. Una idea principal en dos o tres
+frases y, solo si ayuda, una pregunta alineada con los controles del siguiente paso.
+No enumeres un catálogo ni repitas lo ya dicho. Videos y guías aparecen como tarjetas.
+No describas la interfaz ni expliques botones que no sean necesarios para responder.
 Explica la plataforma, resuelve la duda primero, recomienda recursos públicos pertinentes y
 comprende progresivamente rol, salas, equipo, necesidad y plazo sin repetir preguntas.
 Puedes sugerir el botón «Coordinar demo con Chris» para revisar los datos y preparar WhatsApp.
@@ -92,20 +98,172 @@ def ranked_resources(document, message):
     return sorted(document['resources'], key=score, reverse=True), score
 
 
-def resources_for(document, message, reply=''):
-    # A recommendation by title must point to that exact published resource.
-    # Only titles from the server's catalogue participate; model URLs are ignored.
-    normalize = lambda value: ' '.join(value.casefold().split())
-    answer = normalize(reply)
-    mentioned = [resource for resource in document['resources']
-                 if normalize(resource['title']) in answer]
-    mentioned.sort(key=lambda resource: answer.find(normalize(resource['title'])))
-    mentioned_ids = {resource['id'] for resource in mentioned}
-    ranked, score = ranked_resources(document, message)
-    selected = (mentioned + [resource for resource in ranked
-                             if resource['id'] not in mentioned_ids and score(resource) > 0])[:3]
-    return [{'title': resource['title'], 'url': f"/mediahub/{resource['slug']}/"}
-            for resource in selected]
+ACTION_CATALOG = {
+    'platform': {'id':'platform', 'label':'Cómo funciona', 'kind':'prompt',
+                 'prompt':'¿Qué es Sales Academy y cómo ayuda a mi equipo?'},
+    'role-rep': {'id':'role-rep', 'label':'Soy representante', 'kind':'prompt',
+                 'prompt':'Soy representante. ¿Cómo puede ayudarme Sales Academy en mi día a día?'},
+    'role-leader': {'id':'role-leader', 'label':'Soy líder de sala', 'kind':'prompt',
+                    'prompt':'Soy líder de sala. ¿Cómo puede ayudarme Sales Academy con mi equipo?'},
+    'practice': {'id':'practice', 'label':'Preparar mi próximo tour', 'kind':'prompt',
+                 'prompt':'Quiero mejorar la preparación antes del tour. ¿Cuál sería el primer paso?'},
+    'objections': {'id':'objections', 'label':'Practicar objeciones', 'kind':'prompt',
+                   'prompt':'Quiero practicar objeciones con el método de mi sala. Dame un ejemplo breve.'},
+    'coaching': {'id':'coaching', 'label':'Mejorar el coaching', 'kind':'prompt',
+                 'prompt':'Quiero mejorar el coaching de mi equipo. ¿Cómo empiezo?'},
+    'process': {'id':'process', 'label':'Ordenar el método', 'kind':'prompt',
+                'prompt':'Quiero ordenar procesos y conocimiento de mi sala. ¿Cómo lo abordamos?'},
+    'rooms-one': {'id':'rooms-one', 'label':'Una sala', 'kind':'prompt',
+                  'prompt':'Tenemos una sala. ¿Cómo plantearías un primer paso para nosotros?'},
+    'rooms-many': {'id':'rooms-many', 'label':'Varias salas', 'kind':'prompt',
+                   'prompt':'Tenemos varias salas. ¿Cómo plantearías una implementación gradual?'},
+    'plan': {'id':'plan', 'label':'Ver un primer paso', 'kind':'prompt',
+             'prompt':'Con ese contexto, dame un primer paso concreto para mi equipo.'},
+    'resources': {'id':'resources', 'label':'Elegir un recurso útil', 'kind':'prompt',
+                  'prompt':'Con ese contexto, ¿qué guía o video publicado me recomiendas y por qué?'},
+    'example': {'id':'example', 'label':'Ver un ejemplo breve', 'kind':'prompt',
+                'prompt':'Muéstrame un ejemplo breve para aplicar esto en el día a día.'},
+    'demo': {'id':'demo', 'label':'Coordinar demo con Chris', 'kind':'demo'},
+}
+TOPIC_RESOURCES = {
+    'intro': ('film-smart-agent', 'room-day'),
+    'practice': ('film-menos-caos', 'before-tour'),
+    'coaching': ('film-infraestructura-comercial', 'coaching'),
+    'process': ('film-sistema-conectado', 'three-rooms'),
+    'scale': ('film-conocimiento-en-practica', 'three-rooms'),
+}
+
+
+def normalized(value):
+    return ''.join(char for char in unicodedata.normalize('NFKD', value.casefold())
+                   if not unicodedata.combining(char))
+
+
+def user_context(history, message=''):
+    values = [item['content'] for item in history if item.get('role') == 'user']
+    if message:
+        values.append(message)
+    return values
+
+
+def topic_for(values):
+    # The newest explicit topic wins; a later role/room answer keeps prior intent.
+    for value in reversed(values):
+        text = normalized(value)
+        if re.search(r'coaching|entrenar al equipo|liderazgo|gerente', text):
+            return 'coaching'
+        if re.search(r'escalar|cultura|transferir|expansion', text):
+            return 'scale'
+        if re.search(r'proceso|implement|conectar|integrar', text):
+            return 'process'
+        if re.search(r'practic|objecion|prepar|tour|bienvenida', text):
+            return 'practice'
+    return 'intro'
+
+
+def declared_profile(values):
+    # Interest in a role or a three-room guide is not a visitor's declared profile.
+    role, rooms_known = None, False
+    boundary = r'(?:^|,\s*|\by\s+)\s*(?:yo\s+)?'
+    role_names = r'(lider|director|gerente|jefe|representante|rep)'
+    room_count = r'(?:una|dos|tres|cuatro|varias|[1-9][0-9]*)\s+salas?\b'
+    for value in values:
+        for clause in re.split(r'[.;!\n]+', normalized(value)):
+            # Preserve an affirmative prelude: "Soy líder, ¿qué recomiendas?".
+            statement = clause.split('¿', 1)[0]
+            if '?' in statement:
+                continue
+            match = re.search(boundary + r'(?:soy|somos|trabajo como|mi rol es)\s+(?:un[ao]?\s+)?' + role_names + r'\b', statement)
+            if match:
+                role = 'rep' if match.group(1) in {'representante','rep'} else 'leader'
+            if re.search(boundary + r'(?:dirijo|dirigimos|lidero|lideramos|coordino|coordinamos)\b', statement):
+                role = 'leader'
+            if re.search(boundary + r'(?:tengo|tenemos|son|somos|operamos|dirijo|dirigimos|gestiono|gestionamos)\s+' + room_count, statement):
+                rooms_known = True
+            if re.search(boundary + r'(?:soy|somos)\s+(?:un[ao]?\s+)?' + role_names + r'\s+de\s+' + room_count, statement):
+                rooms_known = True
+    return role, rooms_known
+
+
+def conversation_controls(history, message='', remaining_turns=20):
+    values = user_context(history, message)
+    role, rooms_known = declared_profile(values)
+    role_known, leader = role is not None, role == 'leader'
+    topic = topic_for(values)
+    if remaining_turns <= 0:
+        ids, question = ['demo'], 'Ofrece continuar con Chris; no pidas más datos en el chat.'
+    elif not values:
+        ids, question = ['platform','role-rep','role-leader'], 'Invita a conocer la plataforma o elegir su rol.'
+    elif re.search(r'\b(?:demo|agendar|cita|whatsapp|chris)\b', normalized(values[-1])):
+        ids, question = ['demo','resources'], 'La demo se coordina con Chris; su horario queda pendiente de confirmación.'
+    elif not role_known:
+        ids, question = ['role-rep','role-leader','demo'], 'Si aporta valor, pregunta si es representante o líder de sala.'
+    elif topic == 'intro':
+        ids = ['coaching','process','demo'] if leader else ['practice','objections','demo']
+        question = 'Pregunta qué quiere mejorar: coaching o procesos.' if leader else 'Pregunta si quiere preparar el tour o practicar objeciones.'
+    elif not rooms_known:
+        ids, question = ['rooms-one','rooms-many','demo'], 'Si aporta valor, pregunta si trabaja con una sala o varias.'
+    else:
+        ids, question = ['plan','resources','demo'], 'Ofrece un primer paso, un recurso útil o coordinar la demo; no vuelvas a pedir rol o salas.'
+    sent = {normalized(value.strip()) for value in values}
+    chosen = [dict(ACTION_CATALOG[key]) for key in ids
+              if ACTION_CATALOG[key]['kind'] == 'demo' or normalized(ACTION_CATALOG[key]['prompt']) not in sent]
+    for key in ('example','resources','plan'):
+        if len(chosen) >= len(ids):
+            break
+        action = ACTION_CATALOG[key]
+        if normalized(action['prompt']) not in sent and key not in {item['id'] for item in chosen}:
+            chosen.insert(max(0,len(chosen)-1), dict(action))
+    return chosen[:3], question
+
+
+def compact_answer(value):
+    if len(value.split()) <= 90:
+        return value, None
+    notice = 'La explicación completa y sus condiciones están en «Ver detalle».'
+    budget = 90 - len(notice.split())
+    complete = []
+    # Keep only complete sentence prefixes. Never cut a qualifier mid-sentence.
+    for sentence in re.split(r'(?<=[.!?])\s+', value.strip()):
+        if not re.search(r'[.!?][»”\"\']?$', sentence) or len((' '.join(complete+[sentence])).split()) > budget:
+            break
+        complete.append(sentence)
+    brief = (' '.join(complete) + ' ' + notice).strip() if complete else (
+        'Preparé una explicación más amplia para esta pregunta. Abre «Ver detalle» para leerla completa, incluidas sus condiciones.')
+    return brief, value
+
+
+def resource_card(resource, catalog):
+    card = {'title':resource['title'], 'url':f"/mediahub/{resource['slug']}/",
+            'type':resource['type'], 'excerpt':resource['excerpt'][:220],
+            'evidenceLabel':resource['evidenceLabel']}
+    clip = catalog.get(resource.get('videoId')) if resource['type'] == 'video' else None
+    if clip:
+        card['video'] = {key:clip[key] for key in ('id','src','poster','captions','durationSeconds','width','height')}
+    return card
+
+
+def resources_for(document, message, reply='', history=()):
+    # A recommendation by title points to that exact published resource. The
+    # current CMS publication is the sole allowlist; model URLs are ignored.
+    answer = ' '.join(reply.casefold().split())
+    published_resources = [resource for resource in document['resources'] if resource['status'] == 'published']
+    mentioned = [resource for resource in published_resources
+                 if ' '.join(resource['title'].casefold().split()) in answer]
+    mentioned.sort(key=lambda resource: answer.find(' '.join(resource['title'].casefold().split())))
+    values = user_context(history, message)
+    topic = topic_for(values)
+    by_id = {resource['id']:resource for resource in published_resources}
+    contextual = [by_id[key] for key in TOPIC_RESOURCES[topic] if key in by_id]
+    ranked, score = ranked_resources({'resources':published_resources}, message)
+    selected, seen = [], set()
+    for resource in mentioned + contextual + [r for r in ranked if score(r) > 0]:
+        if resource['id'] not in seen:
+            seen.add(resource['id']); selected.append(resource)
+        if len(selected) == 2:
+            break
+    catalog = load_video_catalog()
+    return [resource_card(resource, catalog) for resource in selected]
 
 
 def knowledge_context(document, fact_sheet, message):
@@ -226,7 +384,8 @@ def register_advisor(app, root, active_document, owner, rate_limit, body, exact,
     def advisor_session():
         origin_check()
         if not enabled():
-            return jsonify(csrf='', enabled=False, whatsappUrl=WHATSAPP_DEMO_URL, messages=[], remainingTurns=0)
+            return jsonify(csrf='', enabled=False, whatsappUrl=WHATSAPP_DEMO_URL, messages=[], remainingTurns=0,
+                           suggestions=[dict(ACTION_CATALOG['demo'])], resources=resources_for(active_document(), ''))
         stamp = int(time.time())
         token = request.cookies.get(COOKIE, '')
         row = None
@@ -242,8 +401,22 @@ def register_advisor(app, root, active_document, owner, rate_limit, body, exact,
                 con.execute('INSERT INTO advisor_sessions(token_hash,csrf,expires,created_at) VALUES(?,?,?,?)',
                             (digest(token), secrets.token_urlsafe(32), stamp + SESSION_SECONDS, now()))
                 row = con.execute('SELECT * FROM advisor_sessions WHERE token_hash=?', (digest(token),)).fetchone()
+        history = json.loads(row['history'])
+        presented = []
+        for item in history:
+            visible = dict(item)
+            if item['role'] == 'assistant':
+                visible['content'], detail = compact_answer(item['content'])
+                if detail:
+                    visible['detail'] = detail
+            presented.append(visible)
+        remaining = max(0, MAX_TURNS-row['turns'])
+        suggestions, _ = conversation_controls(history, remaining_turns=remaining)
+        last_user = next((m['content'] for m in reversed(history) if m['role']=='user'), '')
+        last_answer = next((m['content'] for m in reversed(history) if m['role']=='assistant'), '')
         response = jsonify(csrf=row['csrf'], enabled=True, whatsappUrl=WHATSAPP_DEMO_URL,
-                           messages=json.loads(row['history']), remainingTurns=max(0, MAX_TURNS-row['turns']))
+                           messages=presented, remainingTurns=remaining, suggestions=suggestions,
+                           resources=resources_for(active_document(), last_user, last_answer, history))
         response.set_cookie(COOKIE, token, max_age=max(0, row['expires']-stamp),
                             secure=bool(app.config['COOKIE_SECURE']), httponly=True, samesite='Strict', path='/')
         return response
@@ -294,7 +467,9 @@ def register_advisor(app, root, active_document, owner, rate_limit, body, exact,
             document = active_document()
             fact_path = app.config['ADVISOR_KNOWLEDGE_PATH']
             fact_sheet = fact_path.read_text(encoding='utf-8')
+            suggestions, next_step = conversation_controls(history, message, MAX_TURNS-turns-1)
             system = knowledge_context(document,fact_sheet,message)
+            system += '\nSIGUIENTE PASO DE LA CONVERSACIÓN: '+next_step+'\nControles disponibles: '+', '.join(item['label'] for item in suggestions)
             messages = [{'role':'system','content':system}] + history[-38:] + [{'role':'user','content':message}]
             # Trim complete past turns before the transport budget, never the current question.
             while len(encode({'messages':messages}).encode()) > 120000 and len(messages) > 2:
@@ -303,8 +478,11 @@ def register_advisor(app, root, active_document, owner, rate_limit, body, exact,
                 current_context = messages[0]['content']
                 messages[0]['content'] = current_context[:len(current_context)//2] + '\n</conocimiento_publico>'
             reply = model_reply(app, messages)
-            result = {'reply':reply,'resources':resources_for(document,message,reply), 'requestId':rid,
-                      'remainingTurns':MAX_TURNS-turns-1}
+            brief, detail = compact_answer(reply)
+            result = {'reply':brief,'resources':resources_for(document,message,reply,history), 'requestId':rid,
+                      'remainingTurns':MAX_TURNS-turns-1, 'suggestions':suggestions}
+            if detail:
+                result['detail'] = detail
             history.extend([{'role':'user','content':message},{'role':'assistant','content':reply}])
             # Cap stored history by bytes as well as turns; no shared Hermes memory.
             while len(encode(history).encode()) > 65000 and len(history) > 2:

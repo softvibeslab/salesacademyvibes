@@ -1,0 +1,66 @@
+[
+  {
+    "field_count": 9,
+    "required_count": 4,
+    "has_phone": false,
+    "cta_text": [],
+    "issues": [
+      "Too many fields (9). Each field above 3 reduces conversion by ~5-10%. Consider progressive disclosure.",
+      "4 fields have no label AND no placeholder. Users won't know what to enter.",
+      "No submit button found. Form may be broken or use JavaScript submission only."
+    ],
+    "warnings": [
+      "5 fields use placeholder-only labels. Placeholders disappear on focus \u2014 use visible labels.",
+      "No autocomplete attributes. Adding autocomplete reduces mobile friction significantly."
+    ],
+    "positives": [],
+    "score": 45,
+    "fields": [
+      {
+        "name": "vis1",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "vis2",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "sala",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "fecha",
+        "type": "date",
+        "required": true
+      },
+      {
+        "name": "hora_inicio",
+        "type": "time",
+        "required": true
+      },
+      {
+        "name": "hora_fin",
+        "type": "time",
+        "required": true
+      },
+      {
+        "name": "idioma",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "contacto",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "notas",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  }
+]

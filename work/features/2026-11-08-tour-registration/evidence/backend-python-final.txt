@@ -1,0 +1,11 @@
+.............../Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tasks.py:82: ResourceWarning: unclosed file <_io.BufferedWriter name='/var/folders/st/6m6rs6vd4dx8mv_52r4c1d8w0000gn/T/tmpguar32vp/t1.png'>
+  open(os.path.join(folder, f"{t['id']}.png"), "wb").write(PNG)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tasks.py:82: ResourceWarning: unclosed file <_io.BufferedWriter name='/var/folders/st/6m6rs6vd4dx8mv_52r4c1d8w0000gn/T/tmpguar32vp/t2.png'>
+  open(os.path.join(folder, f"{t['id']}.png"), "wb").write(PNG)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+........................
+----------------------------------------------------------------------
+Ran 39 tests in 1.350s
+
+OK

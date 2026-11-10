@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "projectId": "8496026853797356014",
+  "screenCount": 25,
+  "note": "25 includes dedicated mobile landing at02. Reference filenames keep original numbering. CMS suffixes are view states, not HTTP routes.",
+  "screens": [
+    {
+      "number": "01",
+      "semanticId": "public-landing-desktop",
+      "title": "Landing cinematográfica · escritorio",
+      "routeOrState": "/descubre/",
+      "references": [
+        "references/public/01-landing-desktop.png",
+        "references/public/01-journey-desktop.png"
+      ]
+    },
+    {
+      "number": "02",
+      "semanticId": "public-landing-mobile",
+      "title": "Landing cinematográfica · móvil",
+      "routeOrState": "/descubre/",
+      "references": [
+        "references/public/01-landing-mobile.png"
+      ]
+    },
+    {
+      "number": "03",
+      "semanticId": "public-mediahub",
+      "title": "MediaHub",
+      "routeOrState": "/mediahub/",
+      "references": [
+        "references/public/02-mediahub-mobile.png"
+      ]
+    },
+    {
+      "number": "04",
+      "semanticId": "public-resource-written",
+      "title": "Recurso escrito",
+      "routeOrState": "/mediahub/antes-del-tour/",
+      "references": [
+        "references/public/03-resource-mobile.png"
+      ]
+    },
+    {
+      "number": "05",
+      "semanticId": "public-resource-film",
+      "title": "Película y contexto",
+      "routeOrState": "/mediahub/smart-agent/",
+      "references": [
+        "references/public/04-film-player.png",
+        "references/public/04-current-film-play-mobile.png"
+      ]
+    },
+    {
+      "number": "06",
+      "semanticId": "public-diagnostic-question",
+      "title": "Diagnóstico · pregunta",
+      "routeOrState": "/descubre/diagnostico/",
+      "references": [
+        "references/public/05-diagnostic-question-mobile.png"
+      ]
+    },
+    {
+      "number": "07",
+      "semanticId": "public-diagnostic-result",
+      "title": "Diagnóstico · orientación",
+      "routeOrState": "/descubre/diagnostico/",
+      "references": [
+        "references/public/06-diagnostic-result.png"
+      ]
+    },
+    {
+      "number": "08",
+      "semanticId": "public-scenarios",
+      "title": "Jornada y escenarios",
+      "routeOrState": "/growth-assets/scenarios/index.html",
+      "references": [
+        "references/public/07-gallery-desktop.png",
+        "references/public/07-gallery-mobile.png"
+      ]
+    },
+    {
+      "number": "09",
+      "semanticId": "public-analysis",
+      "title": "Análisis",
+      "routeOrState": "/descubre/analisis/",
+      "references": [
+        "references/public/08-analysis-mobile.png"
+      ]
+    },
+    {
+      "number": "10",
+      "semanticId": "public-privacy",
+      "title": "Privacidad",
+      "routeOrState": "/descubre/privacidad/",
+      "references": []
+    },
+    {
+      "number": "11",
+      "semanticId": "advisor-welcome",
+      "title": "Asesor · bienvenida",
+      "routeOrState": "modal:chat:welcome",
+      "references": [
+        "references/advisor/10-open-desktop.png",
+        "references/advisor/10-open-mobile.png"
+      ]
+    },
+    {
+      "number": "12",
+      "semanticId": "advisor-conversation",
+      "title": "Asesor · conversación",
+      "routeOrState": "modal:chat:reply",
+      "references": [
+        "references/advisor/11-reply-desktop.png",
+        "references/advisor/11-reply-mobile.png"
+      ]
+    },
+    {
+      "number": "13",
+      "semanticId": "advisor-video",
+      "title": "Asesor · video",
+      "routeOrState": "modal:chat:video",
+      "references": [
+        "references/advisor/12-video-desktop.png",
+        "references/advisor/12-video-mobile.png"
+      ]
+    },
+    {
+      "number": "14",
+      "semanticId": "advisor-demo",
+      "title": "Asesor · demo y revisión",
+      "routeOrState": "modal:demo:form|review",
+      "references": [
+        "references/advisor/13-request-desktop.png",
+        "references/advisor/13-request-mobile.png"
+      ]
+    },
+    {
+      "number": "15",
+      "semanticId": "cms-login",
+      "title": "CMS · acceso",
+      "routeOrState": "/cms/:logged-out",
+      "references": []
+    },
+    {
+      "number": "16",
+      "semanticId": "cms-home",
+      "title": "CMS · inicio",
+      "routeOrState": "/cms/:home",
+      "references": [
+        "references/cms/15-home-desktop.png",
+        "references/cms/15-home-mobile.png"
+      ]
+    },
+    {
+      "number": "17",
+      "semanticId": "cms-landing",
+      "title": "CMS · editar landing",
+      "routeOrState": "/cms/:landing",
+      "references": []
+    },
+    {
+      "number": "18",
+      "semanticId": "cms-resources",
+      "title": "CMS · recursos",
+      "routeOrState": "/cms/:resources",
+      "references": []
+    },
+    {
+      "number": "19",
+      "semanticId": "cms-resource-editor",
+      "title": "CMS · editor de recurso",
+      "routeOrState": "/cms/:resources:edit",
+      "references": [
+        "references/cms/18-video-editor-mobile.png"
+      ]
+    },
+    {
+      "number": "20",
+      "semanticId": "cms-media",
+      "title": "CMS · biblioteca de medios",
+      "routeOrState": "/cms/:media",
+      "references": []
+    },
+    {
+      "number": "21",
+      "semanticId": "cms-media-editor",
+      "title": "CMS · subir o editar medio",
+      "routeOrState": "/cms/:media:upload|edit",
+      "references": []
+    },
+    {
+      "number": "22",
+      "semanticId": "cms-requests",
+      "title": "CMS · solicitudes",
+      "routeOrState": "/cms/:requests",
+      "references": []
+    },
+    {
+      "number": "23",
+      "semanticId": "cms-advisor",
+      "title": "CMS · asesor IA",
+      "routeOrState": "/cms/:advisor",
+      "references": [
+        "references/cms/22-advisor-leads-desktop.png"
+      ]
+    },
+    {
+      "number": "24",
+      "semanticId": "cms-publications",
+      "title": "CMS · publicaciones",
+      "routeOrState": "/cms/:publications",
+      "references": []
+    },
+    {
+      "number": "25",
+      "semanticId": "cms-users",
+      "title": "CMS · usuarios y acceso",
+      "routeOrState": "/cms/:users:list|new|edit",
+      "references": []
+    }
+  ],
+  "appReferenceGroup": {
+    "semanticId": "app-demo-references",
+    "count": 16,
+    "folder": "references/app/",
+    "separateFromScreenCount": true
+  }
+}

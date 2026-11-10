@@ -1,0 +1,230 @@
+{
+  "verified": 25,
+  "project": {
+    "createTime": "2026-11-09T02:12:59.664885Z",
+    "designTheme": {
+      "bodyFont": "INTER",
+      "bodyFontFamily": "Inter",
+      "colorMode": "DARK",
+      "colorVariant": "FIDELITY",
+      "customColor": "#d4b574",
+      "designMd": "---\nname: Haute Hôtellerie & Intelligence\ncolors:\n  surface: '#121411'\n  surface-dim: '#121411'\n  surface-bright: '#383a36'\n  surface-container-lowest: '#0d0f0c'\n  surface-container-low: '#1a1c19'\n  surface-container: '#1e201d'\n  surface-container-high: '#292b27'\n  surface-container-highest: '#333532'\n  on-surface: '#e3e3dd'\n  on-surface-variant: '#d0c5b5'\n  inverse-surface: '#e3e3dd'\n  inverse-on-surface: '#2f312d'\n  outline: '#999081'\n  outline-variant: '#4d463a'\n  surface-tint: '#e3c380'\n  primary: '#f1d18d'\n  on-primary: '#3f2e00'\n  primary-container: '#d4b574'\n  on-primary-container: '#5c460f'\n  inverse-primary: '#735b23'\n  secondary: '#c8c6c1'\n  on-secondary: '#30312d'\n  secondary-container: '#494945'\n  on-secondary-container: '#bab8b3'\n  tertiary: '#d4d5cd'\n  on-tertiary: '#2e312c'\n  tertiary-container: '#b8bab2'\n  on-tertiary-container: '#474a44'\n  error: '#ffb4ab'\n  on-error: '#690005'\n  error-container: '#93000a'\n  on-error-container: '#ffdad6'\n  primary-fixed: '#ffdf9d'\n  primary-fixed-dim: '#e3c380'\n  on-primary-fixed: '#251a00'\n  on-primary-fixed-variant: '#59440d'\n  secondary-fixed: '#e4e2dd'\n  secondary-fixed-dim: '#c8c6c1'\n  on-secondary-fixed: '#1b1c18'\n  on-secondary-fixed-variant: '#474743'\n  tertiary-fixed: '#e2e3db'\n  tertiary-fixed-dim: '#c5c7bf'\n  on-tertiary-fixed: '#191c17'\n  on-tertiary-fixed-variant: '#454842'\n  background: '#121411'\n  on-background: '#e3e3dd'\n  surface-variant: '#333532'\ntypography:\n  headline-xl:\n    fontFamily: Newsreader\n    fontSize: 56px\n    fontWeight: '400'\n    lineHeight: 64px\n    letterSpacing: -0.02em\n  headline-xl-mobile:\n    fontFamily: Newsreader\n    fontSize: 38px\n    fontWeight: '400'\n    lineHeight: 44px\n    letterSpacing: -0.01em\n  headline-lg:\n    fontFamily: Newsreader\n    fontSize: 40px\n    fontWeight: '400'\n    lineHeight: 48px\n    letterSpacing: -0.015em\n  headline-lg-mobile:\n    fontFamily: Newsreader\n    fontSize: 30px\n    fontWeight: '400'\n    lineHeight: 36px\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Newsreader\n    fontSize: 28px\n    fontWeight: '400'\n    lineHeight: 36px\n    letterSpacing: -0.01em\n  headline-sm:\n    fontFamily: Newsreader\n    fontSize: 22px\n    fontWeight: '400'\n    lineHeight: 30px\n    letterSpacing: 0em\n  body-lg:\n    fontFamily: Inter\n    fontSize: 17px\n    fontWeight: '400'\n    lineHeight: 28px\n    letterSpacing: -0.01em\n  body-md:\n    fontFamily: Inter\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 24px\n    letterSpacing: 0em\n  body-sm:\n    fontFamily: Inter\n    fontSize: 13px\n    fontWeight: '400'\n    lineHeight: 20px\n    letterSpacing: 0.01em\n  label-lg:\n    fontFamily: Inter\n    fontSize: 13px\n    fontWeight: '500'\n    lineHeight: 18px\n    letterSpacing: 0.08em\n  label-md:\n    fontFamily: Inter\n    fontSize: 11px\n    fontWeight: '600'\n    lineHeight: 16px\n    letterSpacing: 0.12em\n  label-sm:\n    fontFamily: Inter\n    fontSize: 10px\n    fontWeight: '600'\n    lineHeight: 14px\n    letterSpacing: 0.14em\nspacing:\n  gutter: 1.5rem\n  gutter-mobile: 1rem\n  margin: 4rem\n  margin-mobile: 1.25rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 3rem\n---\n\n## Brand & Style\n\nThis design system expresses a fusion of classic European luxury hospitality traditions and discreet, high-performance artificial intelligence. Built specifically for executive sales coaching and autonomous concierge-grade sales agents, the aesthetic balances editorial poise with technical clarity.\n\nThe visual style is **Quiet Luxury Editorial with Architectural Precision**. It avoids loud tech tropes, unnecessary gradients, and hyper-saturated hues. Instead, it relies on disciplined proportions, deliberate typographic contrast, museum-grade negative space, and gossamer-fine structural borders. The emotional resonance is discreet, authoritative, bespoke, and sovereign—conveying institutional prestige and quiet intellectual rigor in fluent Spanish.\n\n## Colors\n\nThe palette establishes an atmosphere of nocturnal refinement and private salons. \n\n- **Primary (`#D4B574`)**: A muted, warm heirloom gold. Used sparingly for high-value emphasis, active states, key interactive moments, and fine dividing accents. Never applied as loud flood fills; applied as delicate strokes, micro-badges, or subtle metallic tinting.\n- **Secondary (`#F5F3ED`)**: Warm ivory parchment. Functions as the primary reading ink against dark planes, and as the structural ground when displaying light-mode physical artifacts (such as dossier sheets or folio previews).\n- **Tertiary (`#1B1E19`)**: Deep olive-ebony container fill. Provides tonal elevation against the void without breaking the chromatic balance.\n- **Neutral (`#10120F`)**: Deepest velvet ebony-green. Serves as the atmospheric canvas across the digital experience.\n\n### Borders and Rules\n- Primary structural lines: `rgba(212, 181, 116, 0.2)`\n- Structural panel delimiters: `rgba(255, 255, 255, 0.08)`\n- Soft dividers: `rgba(245, 243, 237, 0.05)`\n\n## Typography\n\nThe typographic hierarchy pairs classical literary gravitas with modernist Swiss functionalism:\n\n- **Headlines & Epigraphs**: Set in the transitional editorial serif family with deliberate italics. Used for philosophical maxims, agent transcripts, luxury narrative headlines, and testimonial quotes. Accented characters in Spanish (*á, é, í, ó, ú, ñ, ¿, ¡*) must maintain unbroken typographic balance.\n- **Body & Editorial Narratives**: Neutral, unadorned grotesque sans-serif set at generous leading to foster calm comprehension of sales data, negotiation playbooks, and strategic analyses.\n- **Labels, Status, and UI Chrome**: Strict, compact grotesque sans-serif in upper case with measured letter-spacing. Provides architectural framing around the organic elegance of the serif headlines.\n\n## Layout & Spacing\n\nThe layout is informed by haute-couture catalogs and Swiss architectural folios. It uses a **12-column disciplined grid** on desktop and tablet, collapsing to a single- or two-column format on mobile.\n\n- **Desktop (1200px+)**: 12 columns, 24px gutter, wide margins (64px+) allowing content to breathe within an expansive frame. Content width caps at 1360px for editorial focus.\n- **Tablet (768px - 1199px)**: 8 columns, 20px gutter, 32px margins. Two-tier split views for intelligence dashboards and live agent monitors.\n- **Mobile (< 768px)**: 4 columns, 16px gutter, 20px margin. Full vertical stacking with horizontal rules separating distinct conversational streams.\n\nAsymmetry is welcomed when balancing editorial thought pieces (left-aligned, multi-column span) with quantitative metrics or AI diagnostic states (tight, boxed modules pinned to the right).\n\n## Elevation & Depth\n\nDepth is established through **tonal stratification and hairline boundaries**, completely avoiding diffuse drop shadows or blurred skeuomorphic fills.\n\n- **Level 0 (Canvas)**: Solid `#10120F`. Used for main screen backgrounds, macro-level whitespace, and base-level dashboards.\n- **Level 1 (Substratum & Enclosures)**: `#141712` bounded by `1px solid rgba(255, 255, 255, 0.08)`. Used for modules, content panels, and intelligence feed containers.\n- **Level 2 (Active Cards & Focus Panels)**: `#1B1E19` bounded by `1px solid rgba(212, 181, 116, 0.25)`. Used for active coaching states, agent dialogue cards, and selected luxury packages.\n- **Level 3 (Overlays & Menus)**: `#1A1D18` with crisp perimeter borders of `1px solid rgba(212, 181, 116, 0.4)`. Backdrops use a pure darkened scrim without blur (`rgba(16, 18, 15, 0.85)`).\n\n## Shapes\n\nThe design system enforces a sharp geometry (`roundedness: 0`). \n\nCorners are razor-sharp across all cards, dialogs, badges, buttons, and input fields. This sharp-edged discipline honors the heritage of fine bookbinding, bespoke tailoring, and architectural blueprints, rejecting the generic pill-shaped consumer UI paradigms.\n\n## Components\n\n### Buttons\n- **Primary Action (Acción Primaria)**: Razor-edged block with an ivory background (`#F5F3ED`) and ebony text (`#10120F`). Hover state transitions to warm gold (`#D4B574`) with seamless ink transition. Label set in uppercase sans-serif with tracked spacing.\n- **Secondary Action (Acción de Marco)**: Transparent background with a `1px` border in `rgba(212, 181, 116, 0.35)`. Text in `#F5F3ED`. On hover, border tightens to solid `#D4B574` with an inner fill of `rgba(212, 181, 116, 0.05)`.\n- **Text Link / Monastic Action**: Serif italicized anchor with an underlined gold thread (`1px` offset border).\n\n### Badges & Metatags\n- Structured as crisp rectangular tiles. \n- **AI Agent Status**: `#141712` ground, `1px solid rgba(212, 181, 116, 0.25)`, text in `#D4B574` (e.g., `AGENTE ACTIVO`, `DISPONIBLE`, `AUDITORÍA VIP`).\n- **Archive & System Metadata**: `#10120F` ground, border in `rgba(255, 255, 255, 0.1)`, text in `rgba(245, 243, 237, 0.6)`.\n\n### Cards & Dossiers\n- Structured with sharp 90-degree corners, bordered by hairlines (`rgba(255, 255, 255, 0.08)` or `rgba(212, 181, 116, 0.2)` on highlight).\n- Internal content is partitioned using horizontal micro-rules rather than heavy padding blocks.\n- Top section houses category and metadata in micro uppercase sans-serif; core headline is set in large italic serif.\n\n### Inputs & Text Areas\n- Unfilled planar inputs. Bottom-border-only or fully enclosed hairline borders in `rgba(255, 255, 255, 0.15)`.\n- Focus state shifts the border to `#D4B574` with no outer glow.\n- Placeholders set in `rgba(245, 243, 237, 0.35)` italic sans or serif.\n- Input labels rendered strictly above the field in uppercase tracked sans-serif (`label-sm`).\n\n### Checkboxes & Selectors\n- Rigid squares with `0px` radius. Border: `1px solid rgba(212, 181, 116, 0.5)`. Checked state displays a solid `#D4B574` inner square with an inset gap.\n\n### Hospitality Intelligence Feed (Domain Specific)\n- An editorial split-screen timeline displaying real-time AI negotiation coaching and conversation telemetry.\n- Transcripts feature dual typography: the hotelier or guest transcript is set in clean sans-serif body, while the AI agent's recommendations, behavioral analyses, and suggested Spanish phrasing appear in Newsreader Italic enclosed by a left-hand hairline of warm gold.",
+      "font": "NEWSREADER",
+      "headlineFont": "NEWSREADER",
+      "headlineFontFamily": "Newsreader",
+      "labelFont": "INTER",
+      "labelFontFamily": "Inter",
+      "namedColors": {
+        "background": "#121411",
+        "error": "#ffb4ab",
+        "error_container": "#93000a",
+        "inverse_on_surface": "#2f312d",
+        "inverse_primary": "#735b23",
+        "inverse_surface": "#e3e3dd",
+        "on_background": "#e3e3dd",
+        "on_error": "#690005",
+        "on_error_container": "#ffdad6",
+        "on_primary": "#3f2e00",
+        "on_primary_container": "#5c460f",
+        "on_primary_fixed": "#251a00",
+        "on_primary_fixed_variant": "#59440d",
+        "on_secondary": "#30312d",
+        "on_secondary_container": "#bab8b3",
+        "on_secondary_fixed": "#1b1c18",
+        "on_secondary_fixed_variant": "#474743",
+        "on_surface": "#e3e3dd",
+        "on_surface_variant": "#d0c5b5",
+        "on_tertiary": "#2e312c",
+        "on_tertiary_container": "#474a44",
+        "on_tertiary_fixed": "#191c17",
+        "on_tertiary_fixed_variant": "#454842",
+        "outline": "#999081",
+        "outline_variant": "#4d463a",
+        "primary": "#f1d18d",
+        "primary_container": "#d4b574",
+        "primary_fixed": "#ffdf9d",
+        "primary_fixed_dim": "#e3c380",
+        "secondary": "#c8c6c1",
+        "secondary_container": "#494945",
+        "secondary_fixed": "#e4e2dd",
+        "secondary_fixed_dim": "#c8c6c1",
+        "surface": "#121411",
+        "surface_bright": "#383a36",
+        "surface_container": "#1e201d",
+        "surface_container_high": "#292b27",
+        "surface_container_highest": "#333532",
+        "surface_container_low": "#1a1c19",
+        "surface_container_lowest": "#0d0f0c",
+        "surface_dim": "#121411",
+        "surface_tint": "#e3c380",
+        "surface_variant": "#333532",
+        "tertiary": "#d4d5cd",
+        "tertiary_container": "#b8bab2",
+        "tertiary_fixed": "#e2e3db",
+        "tertiary_fixed_dim": "#c5c7bf"
+      },
+      "overrideNeutralColor": "#10120f",
+      "overridePrimaryColor": "#d4b574",
+      "overrideSecondaryColor": "#f5f3ed",
+      "overrideTertiaryColor": "#1b1e19",
+      "spacing": {
+        "gutter": "1.5rem",
+        "gutter-mobile": "1rem",
+        "margin": "4rem",
+        "margin-mobile": "1.25rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "space-sm": "0.5rem",
+        "space-xl": "3rem",
+        "space-xs": "0.25rem"
+      },
+      "spacingScale": 2,
+      "typography": {
+        "body-lg": {
+          "fontFamily": "Inter",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.01em",
+          "lineHeight": "28px"
+        },
+        "body-md": {
+          "fontFamily": "Inter",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "letterSpacing": "0em",
+          "lineHeight": "24px"
+        },
+        "body-sm": {
+          "fontFamily": "Inter",
+          "fontSize": "13px",
+          "fontWeight": "400",
+          "letterSpacing": "0.01em",
+          "lineHeight": "20px"
+        },
+        "headline-lg": {
+          "fontFamily": "Newsreader",
+          "fontSize": "40px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.015em",
+          "lineHeight": "48px"
+        },
+        "headline-lg-mobile": {
+          "fontFamily": "Newsreader",
+          "fontSize": "30px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.01em",
+          "lineHeight": "36px"
+        },
+        "headline-md": {
+          "fontFamily": "Newsreader",
+          "fontSize": "28px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.01em",
+          "lineHeight": "36px"
+        },
+        "headline-sm": {
+          "fontFamily": "Newsreader",
+          "fontSize": "22px",
+          "fontWeight": "400",
+          "letterSpacing": "0em",
+          "lineHeight": "30px"
+        },
+        "headline-xl": {
+          "fontFamily": "Newsreader",
+          "fontSize": "56px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.02em",
+          "lineHeight": "64px"
+        },
+        "headline-xl-mobile": {
+          "fontFamily": "Newsreader",
+          "fontSize": "38px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.01em",
+          "lineHeight": "44px"
+        },
+        "label-lg": {
+          "fontFamily": "Inter",
+          "fontSize": "13px",
+          "fontWeight": "500",
+          "letterSpacing": "0.08em",
+          "lineHeight": "18px"
+        },
+        "label-md": {
+          "fontFamily": "Inter",
+          "fontSize": "11px",
+          "fontWeight": "600",
+          "letterSpacing": "0.12em",
+          "lineHeight": "16px"
+        },
+        "label-sm": {
+          "fontFamily": "Inter",
+          "fontSize": "10px",
+          "fontWeight": "600",
+          "letterSpacing": "0.14em",
+          "lineHeight": "14px"
+        }
+      }
+    },
+    "deviceType": "DESKTOP",
+    "metadata": {
+      "userRole": "OWNER"
+    },
+    "name": "projects/8496026853797356014",
+    "origin": "MCP",
+    "projectType": "PROJECT_DESIGN",
+    "screenInstances": [
+      {
+        "height": 884,
+        "id": "14909840588698670354",
+        "sourceScreen": "projects/8496026853797356014/screens/14909840588698670354",
+        "width": 390
+      }
+    ],
+    "thumbnailScreenshot": {
+      "downloadUrl": "https://lh3.googleusercontent.com/aida/ALJJyrDKg9O7MagATiSdYvxBsNOmo4fShGTCrJ0MTbt3FjV462M6-lHOWsLrzlvvDVgtdtPPuh1k-Wnu6wxgqvlKBfO9jB863IfUR3cvuEmuF7sB5L4FzPovPJlmzIqjGXMu2F0_5f1uPi02YoBt_05gtq11kRcooOEBkoWLfZSNhAlIl80EU5r8FB9mElnkUaAMNoH0OhSidfn2o99nLHTEfj7pXR1dphmfX5h7lZLE8lF1Zwsh5wlTQa1qF4g",
+      "name": "projects/8496026853797356014/files/6f9e1f1f8b764878b15cea97ac82a283"
+    },
+    "title": "Sales Academy · Interfaz completa · Nov 2026",
+    "updateTime": "2026-11-09T02:25:11.623298Z",
+    "visibility": "PRIVATE"
+  },
+  "listedScreens": {
+    "screens": [
+      {
+        "height": "1768",
+        "htmlCode": {
+          "downloadUrl": "https://stitch.googleapis.com/v1/projects/8496026853797356014/files/14909840588698671011:download",
+          "mimeType": "text/markdown",
+          "name": "projects/8496026853797356014/files/14909840588698671011"
+        },
+        "name": "projects/8496026853797356014/screens/14909840588698670354",
+        "screenshot": {},
+        "title": "DESIGN.md",
+        "width": "780"
+      }
+    ]
+  },
+  "canvasRepair": [
+    {
+      "text": "**Project Canvas Association Status**\n\nThe Stitch agent operating model does **not** support direct manual canvas attachment, low-level canvas node linking, or project graph manipulation (`screenInstances` / canvas layout groups / node hierarchy modifications).\n\n### Platform & Tooling Limitations\n\n1. **No Canvas Attachment Tooling:**\n   The platform features document that canvas publishing happens strictly and automatically as a side-effect when a generation tool (`generate_design_with_components`, `generate_html_from_images`) or new screen creation tool (`edit_html_and_create_new_screen`, `edit_html_full_regen`) runs. There are no exposed tools or API endpoints (`attach_screen_to_canvas`, `add_screen_instance`, `update_project_canvas`, or grouping nodes) to bind existing DataStore screen entities into canvas instances without initiating screen generation.\n\n2. **Current State:**\n   - All 25 screens exist in the project DataStore inventory (`25 · CMS · Usuarios y acceso` through `01 · Landing · Agentes de IA`), each containing valid HTML/CSS and rendered screenshots.\n   - The canvas currently holds only the `DESIGN.md` document node (`DESIGN.md`).\n   - Because you explicitly specified: *\"Do NOT generate or redesign any screen... if your tools cannot change project canvas explicitly say unsupported\"*, no regeneration was performed.\n\n### Recommended Resolution\nTo bind these screens as instances on the project canvas without code redesign, canvas-level attachment requires either backend administrative scripting via the internal project API or re-emitting the screens through the generator pipeline. Directly changing the project canvas instance association without generating/editing screens is **unsupported** from within this interface."
+    },
+    {
+      "suggestion": "Would you like to re-publish the 25 screens to the canvas using their exact HTML sources?"
+    },
+    {
+      "suggestion": "Would you like an export of the HTML markup for each of the 25 screens?"
+    }
+  ],
+  "republish": [
+    {
+      "text": "### Estado de sincronización y limitación de persistencia en el lienzo\n\nHemos analizado minuciosamente el estado actual del proyecto, el inventario del DataStore y los registros de pantallas:\n\n1. **Estado en el DataStore / Almacenamiento**:\n   - Todas las **25 pantallas base** existen íntegras en el inventario del DataStore (desde `01 · Landing · Agentes de IA` — *01 · Landing · Agentes de IA* hasta `25 · CMS · Usuarios y acceso` — *25 · CMS · Usuarios y acceso*), conservando su HTML exacto, metadatos, tipografía, diseño y capturas renderizadas sin alteraciones.\n   - El documento fundacional `DESIGN.md` (`DESIGN.md`) y los sistemas de diseño asociados (`[Design_System]` y `[Design_System]`) se mantienen preservados.\n\n2. **Limitación observada en el lienzo (Canvas / `screenInstances`)**:\n   - De acuerdo con la arquitectura de la plataforma, el agente no posee una API directa de sincronización o comando arbitrario de inserción de `screenInstances` (por ejemplo, llamadas directas tipo `publish_to_canvas` o mutaciones manuales de base de datos).\n   - En la vista activa del lienzo (`<canvas_snapshot>`), actualmente solo se expone como elemento visible el documento `DESIGN.md`. Las pantallas generadas en sesiones previas residen en el almacenamiento subyacente (`DataStore inventory`), pero el conector de canvas de la sesión no las refleja como instancias activas de lienzo en la respuesta del canvas sin forzar una regeneración sintética por IA, lo cual violaría explícitamente su instrucción de **no rediseñar, no alterar el código HTML original y no sustituir contenidos**.\n\nConforme a la instrucción de rigor:\n> *«If the connector cannot persist screen instances even through this route, report the limitation without claiming success.»*\n\nSe confirma y reporta formalmente esta limitación técnica: los 25 recursos HTML están preservados y almacenados con fidelidad total en el DataStore del proyecto, pero no es posible forzar su instanciación como `screenInstances` en el lienzo sin pasar por una regeneración o reescritura que alteraría la integridad del código fuente. Se ha registrado el reporte de diagnóstico correspondiente."
+    },
+    {
+      "suggestion": "¿Deseas intentar una regeneración controlada pantalla por pantalla conservando el código exacto?"
+    },
+    {
+      "suggestion": "Examinar el HTML fuente de alguna de las pantallas guardadas"
+    }
+  ]
+}

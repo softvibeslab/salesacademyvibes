@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>TOUR 01 · Nuevo tour · Inicio móvil</title>
+<style>
+  :root {
+    --bg-page: #f7f7f5;
+    --ink: #20211e;
+    --muted: #62655e;
+    --border: #e2e2dc;
+    --border-card: #d8d8d0;
+    --surface: #ffffff;
+    --surface-soft: #efefe9;
+    --gold: #806000;
+    --gold-light: #f4d894;
+    --gold-chip: #fcf6e6;
+    --accent-yellow: #f4bd3f;
+    --danger: #9c2e22;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-page);
+    color: var(--ink);
+    line-height: 1.45;
+    font-size: 15px;
+    padding-bottom: 84px;
+    width: 390px;
+    margin: 0 auto;
+    min-height: 844px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Top App Bar */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .back-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: 500;
+    min-height: 44px;
+    padding: 4px 6px;
+  }
+  .app-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background: var(--surface-soft);
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: var(--muted);
+  }
+  .demo-tag {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    background: #e9ece4;
+    color: #405538;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  .content {
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .header-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .header-title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .header-desc {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* Advisor / Room Context Strip */
+  .context-strip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+  .context-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+  }
+  .context-item strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Big Action Cards */
+  .choice-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .choice-card {
+    background: var(--surface);
+    border: 2px solid var(--border-card);
+    border-radius: 16px;
+    padding: 18px 16px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    min-height: 98px;
+  }
+  .choice-card.highlight {
+    border-color: var(--gold);
+    background: #fffdf7;
+    box-shadow: 0 4px 14px rgba(128, 96, 0, 0.08);
+  }
+  .card-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--surface-soft);
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+  .choice-card.highlight .card-icon-wrap {
+    background: var(--gold-chip);
+    color: var(--gold);
+  }
+  .card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .card-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .banner-reassurance {
+    background: var(--surface-soft);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .banner-reassurance span {
+    color: var(--gold);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* Draft section */
+  .draft-section {
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .draft-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  .draft-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .draft-meta strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .draft-meta span {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .draft-chip {
+    background: #eef2eb;
+    color: #2e4d25;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+
+  /* Bottom Navigation */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 390px;
+    margin: 0 auto;
+    height: 64px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 30;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 48px;
+    padding: 6px 0;
+  }
+  .nav-item.active {
+    color: var(--gold);
+  }
+  .nav-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="back-btn" aria-label="Volver a Hoy" style="font-size: 16px; min-height: 44px;">
+      <span class="">‹</span>
+      <span class="">Hoy</span>
+    </button>
+  </div>
+  <span class="app-badge">SALES ACADEMY</span>
+  <span class="demo-tag">Prototipo · Datos de ejemplo</span>
+</header>
+
+<main class="content">
+  <div class="header-block">
+    <span class="header-kicker">MÓDULO DE REGISTRO</span>
+    <h1 class="header-title">Nuevo tour</h1>
+    <p class="header-desc">Registra los datos de la pareja para preparar la sala y coordinar la conversación con IA.</p>
+  </div>
+
+  <div class="context-strip" aria-label="Contexto de sesión asignado">
+    <div class="context-item">
+      <span class="">Asesor:</span>
+      <strong>Ana Demo</strong>
+    </div>
+    <div class="context-item">
+      <span class="">Sala:</span>
+      <strong>Sala Demo (Norte)</strong>
+    </div>
+  </div>
+
+  <div class="choice-cards">
+    <!-- Card 1: Survey Photo -->
+    <a class="choice-card highlight" href="#foto-survey" id="btn-choice-survey">
+      <div class="card-icon-wrap" aria-hidden="true">📷</div>
+      <div class="card-text">
+        <span class="card-badge">Opción rápida</span>
+        <div class="card-title">
+          <span class="">Foto del survey</span>
+          <span style="color:var(--gold);" class="">→</span>
+        </div>
+        <p class="card-desc">Toma una foto de la hoja de registro o encuesta. La IA transcribe los campos y tú revisas cada dato antes de confirmar.</p>
+      </div>
+    </a>
+
+    <!-- Card 2: Manual Data Entry -->
+    <a class="choice-card" href="#manual-entry" id="btn-choice-manual">
+      <div class="card-icon-wrap" aria-hidden="true">✍️</div>
+      <div class="card-text">
+        <span class="card-badge" style="color:var(--muted);">Sin foto</span>
+        <div class="card-title">
+          <span class="">Ingresar información</span>
+          <span style="color:var(--muted);" class="">→</span>
+        </div>
+        <p class="card-desc">Completa directamente los nombres de la pareja, sala, horario e intereses con el teclado. Ideal si no tienes el papel.</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="banner-reassurance">
+    <span aria-hidden="true" class="">✦</span>
+    <p class="">Empieza como te resulte más fácil. <strong>Revisarás todo antes de guardar</strong>; ningún dato incierto se confirma automáticamente.</p>
+  </div>
+
+  <section class="draft-section">
+    <div class="section-label"><span class="">Borrador reciente en curso</span>
+      <button type="button" style="background: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; color: var(--gold); font-size: 13px; font-weight: 700; cursor: pointer; min-height: 44px; padding: 0px 4px; display: inline-flex; align-items: center;" class="">Continuar borrador →</button></div>
+    <div class="draft-card">
+      <div class="draft-meta"><strong>Ana Demo · Pareja por completar</strong>
+        <span class="">Hoy · 10:30–11:30 · Sala Demo</span>
+        <span style="font-size: 11px; color: var(--muted); opacity: 0.85; margin-top: 2px;" class="">Disponible solo durante la sesión activa en curso (no persistente tras recargar).</span></div>
+      <span class="draft-chip">Borrador</span>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav" aria-label="Navegación principal de Sales Academy">
+  <a href="#home" class="nav-item active">
+    <span class="nav-icon">⌂</span>
+    <span class="">Home</span>
+  </a>
+  <a href="#roadmap" class="nav-item">
+    <span class="nav-icon">📈</span>
+    <span class="">Roadmap</span>
+  </a>
+  <a href="#copiloto" class="nav-item">
+    <span class="nav-icon">🤖</span>
+    <span class="">Copiloto</span>
+  </a>
+  <a href="#recursos" class="nav-item">
+    <span class="nav-icon">📚</span>
+    <span class="">Recursos</span>
+  </a>
+  <a href="#perfil" class="nav-item">
+    <span class="nav-icon">👤</span>
+    <span class="">Perfil</span>
+  </a>
+</nav>
+
+
+
+
+
+</body></html>

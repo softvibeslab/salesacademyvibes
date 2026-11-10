@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>TOUR 05 · Tour · Resumen móvil</title>
+<style>
+  :root {
+    --bg-page: #f7f7f5;
+    --ink: #20211e;
+    --muted: #62655e;
+    --border: #e2e2dc;
+    --border-card: #d8d8d0;
+    --surface: #ffffff;
+    --surface-soft: #efefe9;
+    --gold: #806000;
+    --gold-light: #f4d894;
+    --gold-chip: #fcf6e6;
+    --accent-yellow: #f4bd3f;
+    --danger: #9c2e22;
+    --danger-bg: #fdf2f1;
+    --danger-border: #f1b8b2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-page);
+    color: var(--ink);
+    line-height: 1.45;
+    font-size: 15px;
+    padding-bottom: 104px;
+    width: 390px;
+    margin: 0 auto;
+    min-height: 844px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .back-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: 500;
+    min-height: 44px;
+    padding: 4px 6px;
+  }
+  .demo-tag {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    background: #e9ece4;
+    color: #405538;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  /* Stepper */
+  .stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .step-item.active {
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface-soft);
+    color: var(--muted);
+  }
+  .step-item.active .step-num {
+    background: var(--gold);
+    color: #ffffff;
+    border-color: var(--gold);
+  }
+  .step-sep { color: var(--border-card); }
+
+  .content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header-block h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .header-block p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Origin Route Badge */
+  .origin-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--surface-soft);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  .origin-badge {
+    background: #e8ede3;
+    color: #27471d;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+  }
+
+  /* Review Cards */
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--surface-soft);
+  }
+  .card-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .edit-link {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .data-title {
+    color: var(--muted);
+  }
+  .data-val {
+    color: var(--ink);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  /* Conflict alert state box */
+  .conflict-alert {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .conflict-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--danger);
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .conflict-desc {
+    font-size: 12px;
+    color: #63211b;
+    line-height: 1.4;
+  }
+  .conflict-action {
+    color: var(--danger);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    align-self: flex-start;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Checkbox confirmation */
+  .confirm-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+  }
+  .confirm-box input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    accent-color: var(--gold);
+    flex-shrink: 0;
+  }
+  .confirm-label strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .confirm-label p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Sticky Footer */
+  .footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 390px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.04);
+  }
+  .btn-primary {
+    flex: 1;
+    background: var(--gold);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    min-height: 48px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-back {
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="back-btn" aria-label="Volver a Captura">
+    <span class="">‹</span>
+    <span class="">Editar</span>
+  </button>
+  <span class="demo-tag">Prototipo · Datos de ejemplo</span>
+</header>
+
+<div class="stepper" aria-label="Progreso del registro">
+  <div class="step-item">
+    <span class="step-num">✓</span>
+    <span class="">Capturar</span>
+  </div>
+  <span class="step-sep">›</span>
+  <div class="step-item">
+    <span class="step-num">✓</span>
+    <span class="">Revisar</span>
+  </div>
+  <span class="step-sep">›</span>
+  <div class="step-item active">
+    <span class="step-num">3</span>
+    <span class="">Confirmar</span>
+  </div>
+</div>
+
+<main class="content">
+  <div class="header-block">
+    <h1 class="">Resumen del tour</h1>
+    <p class="">Comprueba los datos antes de registrar. Puedes editar cualquier sección.</p>
+  </div>
+
+  <div class="origin-strip">
+    <span class="">Procedencia de captura:</span>
+    <span class="origin-badge">Foto de survey + Edición</span>
+  </div>
+
+  <!-- Card 1: Pareja -->
+  <section class="summary-card"><div class="card-top">
+      <span class="card-label">La pareja</span>
+      <a class="edit-link" href="#editar-pareja">Editar</a>
+    </div>
+    <div class="data-row">
+      <span class="data-title">Visitante 1 (Principal):</span>
+      <span class="data-val">Ana Demo</span>
+    </div>
+    <div class="data-row">
+      <span class="data-title">Visitante 2:</span>
+      <span class="data-val" style="color: var(--muted); font-weight: normal; font-style: italic;">Sin acompañante registrado <span style="font-size: 11px; background: #e9ece4; color: #405538; padding: 2px 6px; border-radius: 4px; font-style: normal; margin-left: 4px;" class="">Opcional</span></span>
+    </div>
+    <div class="data-row">
+      <span class="data-title">Idioma:</span>
+      <span class="data-val">Español</span>
+    </div></section>
+
+  <!-- Card 2: Tour & Sala -->
+  <section class="summary-card"><div class="card-top">
+      <span class="card-label">Datos del tour</span>
+      <a class="edit-link" href="#editar-tour">Editar</a>
+    </div>
+    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); margin-top: 4px;" class="">Valores propuestos para revisar</div>
+    <div class="data-row">
+      <span class="data-title">Fecha:</span>
+      <span class="data-val">9 nov 2026</span>
+    </div>
+    <div class="data-row">
+      <span class="data-title">Horario:</span>
+      <span class="data-val">10:30 – 11:30</span>
+    </div>
+    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);" class="">Contexto de sesión</div>
+    <div class="data-row">
+      <span class="data-title">Sala asignada:</span>
+      <span class="data-val">Sala Demo (Norte)</span>
+    </div>
+    <div class="data-row">
+      <span class="data-title">Asesor a cargo:</span>
+      <span class="data-val">Ana Demo</span>
+    </div></section>
+
+  <!-- Conflict Alert (diseñado para validación de empalmes sin duplicar) -->
+  <div class="conflict-alert" role="region" aria-label="Estado alterno de conflicto" style="border: 1.5px solid var(--danger-border); background: var(--danger-bg);">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--danger-border); padding-bottom: 6px;">
+      <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: var(--danger); text-transform: uppercase;" class="">ESTADO ALTERNO / CASO DE CONFLICTO</span>
+      <span style="font-size: 11px; background: #fff; color: var(--danger); border: 1px solid var(--danger-border); padding: 1px 6px; border-radius: 4px; font-weight: 600;" class="">Simulación</span>
+    </div>
+    <div class="conflict-head" style="margin-top: 4px;">
+      <span style="font-size: 18px;" class="">⚠️</span>
+      <span style="font-size: 14px;" class="">Conflicto de agenda detectado</span>
+    </div>
+    <p class="conflict-desc" style="font-size: 13px;">«Ese horario se cruza con otro tour en Sala Demo». Los datos de la pareja y la sesión se conservan intactos para permitir reasignar fecha u hora sin reingresar información.</p>
+    <div style="display: flex; gap: 8px; margin-top: 4px;">
+      <button type="button" style="background: var(--danger); color: #fff; border: none; border-radius: 8px; padding: 10px 16px; font-size: 14px; font-weight: 700; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;" class="">Cambiar horario</button>
+      <button type="button" style="background: #fff; color: var(--danger); border: 1px solid var(--danger-border); border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 600; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;" class="">Ver agenda completa</button>
+    </div>
+  </div>
+
+  <!-- Human Confirmation Checkbox -->
+  <label class="confirm-box">
+    <input type="checkbox" id="chk-revisado" checked="">
+    <div class="confirm-label">
+      <strong>Revisé la información del tour</strong>
+      <p class="">Confirmo que los nombres y la sala son correctos para preparar la sesión con IA.</p>
+    </div>
+  </label>
+</main>
+
+<div class="footer-bar"><button class="btn-back" style="min-height: 48px; font-size: 15px;">Volver</button>
+  <a href="#exito" class="btn-primary" id="btn-registrar" style="min-height: 48px; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">
+    <span class="">Registrar tour</span>
+    <span aria-hidden="true" class="">✓</span>
+  </a></div>
+
+
+
+
+
+</body></html>

@@ -10,6 +10,22 @@ export function buildWhatsAppUrl(summary){
  return `https://wa.me/529843163268?text=${encodeURIComponent(`Hola Chris, quiero coordinar una demo de Sales Academy.\n\n${String(summary).slice(0,1500)}\n\nSolicitud pendiente de confirmación contigo.`)}`;
 }
 export function safeResourceUrl(value){return typeof value==='string'&&/^\/mediahub\/[a-z0-9]+(?:-[a-z0-9]+)*\/$/.test(value)?value:null;}
+const filmIds=new Set(['smart-agent','menos-caos','sistema-conectado','infraestructura-comercial','conocimiento-en-practica']);
+export function safeVideo(value){
+ if(!value||!filmIds.has(value.id))return null;
+ const base='/growth-assets/films/'+value.id;
+ if(value.src!==base+'.mp4'||value.poster!==base+'.webp'||value.captions!==base+'.es.vtt')return null;
+ if(!Number.isFinite(value.durationSeconds)||value.durationSeconds<=0||value.durationSeconds>600)return null;
+ if(!Number.isInteger(value.width)||!Number.isInteger(value.height)||value.width<1||value.height<1||value.width>4096||value.height>4096)return null;
+ return value;
+}
+export function safeSuggestions(values){
+ const seen=new Set();return (Array.isArray(values)?values:[]).filter(v=>{
+  if(!v||typeof v.id!=='string'||!/^[-a-z0-9]{1,64}$/.test(v.id)||seen.has(v.id)||typeof v.label!=='string'||!v.label.trim()||v.label.length>48)return false;
+  if(v.kind!=='demo'&&(v.kind!=='prompt'||typeof v.prompt!=='string'||!v.prompt.trim()||v.prompt.length>1200))return false;
+  seen.add(v.id);return true;
+ }).slice(0,3);
+}
 export function appointmentError(v,now=new Date()){
  if(Boolean(v.preferredDate)!==Boolean(v.preferredTime))return 'Indica fecha y hora juntas, o deja ambas vacías para acordarlas con Chris.';
  try{
@@ -30,7 +46,7 @@ function mountAdvisor(){
    <header class="advisor-header"><span class="advisor-mark" aria-hidden="true">✦</span><div><p>SALES ACADEMY · ASISTENTE IA</p><h2 id="sa-advisor-title">Tu siguiente paso, claro.</h2></div><button type="button" class="advisor-close" data-advisor-close aria-label="Cerrar asesor">×</button></header>
    <div class="advisor-tabs" role="group" aria-label="Qué quieres hacer"><button type="button" data-advisor-tab="chat" aria-pressed="true">Conversar</button><button type="button" data-advisor-tab="demo" aria-pressed="false">Coordinar demo <span aria-hidden="true">↗</span></button></div>
    <section class="advisor-chat" id="sa-advisor-chat" aria-label="Conversación con el asesor">
-    <div class="advisor-messages" id="sa-advisor-messages" role="log" aria-label="Mensajes" aria-live="polite" aria-relevant="additions text"><article class="advisor-message advisor-message-assistant"><span class="advisor-sender">ASESOR IA</span><p>Soy el asesor IA de Sales Academy. Puedo explicarte la plataforma, explorar tu caso y ayudarte a coordinar una demo con Chris.</p></article><div class="advisor-suggestions"><button type="button" data-advisor-prompt="¿Qué es Sales Academy y cómo ayuda a mi equipo?">Conocer la plataforma</button><button type="button" data-advisor-prompt="Ayúdame a explorar un caso de uso para mi sala de ventas.">Ver mi caso de uso</button><button type="button" data-advisor-prompt="Quiero un plan para implementar Sales Academy en mi sala. ¿Por dónde empiezo?">Plan para mi sala</button><button type="button" data-advisor-demo>Agendar demo con Chris ↗</button></div></div>
+    <div class="advisor-messages" id="sa-advisor-messages" role="log" aria-label="Mensajes" aria-live="polite" aria-relevant="additions text"><article class="advisor-message advisor-message-assistant"><span class="advisor-sender">ASESOR IA</span><p>Soy tu asesor IA de Sales Academy. Descubre cómo los agentes pueden ayudar a tu sala y explora una demo con Chris. ¿Qué te gustaría mejorar?</p></article></div>
     <div class="advisor-chat-feedback"><p id="sa-advisor-chat-status" role="status"></p><button type="button" class="advisor-text-button" data-advisor-retry hidden>Reintentar pregunta</button><a href="https://wa.me/529843163268?text=Hola%20Chris%2C%20quiero%20conocer%20Sales%20Academy." target="_blank" rel="noopener noreferrer" data-advisor-fallback hidden>Hablar con Chris por WhatsApp ↗</a></div>
     <form class="advisor-composer" id="sa-advisor-chat-form"><label class="advisor-sr-only" for="sa-advisor-message">Tu pregunta sobre Sales Academy</label><textarea id="sa-advisor-message" name="message" rows="2" maxlength="1200" placeholder="Cuéntame qué quieres mejorar en tu sala…" required></textarea><button type="submit" aria-label="Enviar pregunta"><span aria-hidden="true">↑</span></button></form>
     <p class="advisor-disclosure">Conversación disponible durante 1 hora; borrado automático periódico. IA mediante Hermes y OpenAI. Evita datos de clientes. <a href="/descubre/privacidad/" target="_blank" rel="noopener noreferrer">Privacidad</a></p>
@@ -52,7 +68,7 @@ function mountAdvisor(){
  document.body.append(root);
  const $=s=>root.querySelector(s),dialog=$('dialog'),launcher=$('[data-advisor-open]'),message=$('#sa-advisor-message'),feed=$('#sa-advisor-messages'),chatStatus=$('#sa-advisor-chat-status'),retry=$('[data-advisor-retry]'),fallback=$('[data-advisor-fallback]');
  const demoForm=$('#sa-advisor-demo-form'),review=$('#sa-advisor-review'),summary=$('#sa-advisor-summary'),wa=$('[data-advisor-whatsapp]'),save=$('[data-advisor-save]'),consent=$('#sa-advisor-contact-consent');
- let session=null,sessionPromise=null,busy=false,pending=null,prepared=null,pendingLead=null,restored=false,lastQuestion='';
+ let session=null,sessionPromise=null,busy=false,pending=null,prepared=null,pendingLead=null,restored=false,lastQuestion='',currentSuggestions=[];
  const uuid=()=>crypto.randomUUID();
  async function api(path,payload){
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),45000);
@@ -61,50 +77,96 @@ function mountAdvisor(){
    const data=await response.json();if(!response.ok){const error=new Error(data.error?.message||'No se pudo completar la solicitud. Puedes reintentar.');error.status=response.status;throw error;}return data;
   }catch(error){if(error.name==='AbortError'||error.message==='Failed to fetch')throw new Error('La conexión tardó más de lo esperado. Puedes reintentar o hablar con Chris.');throw error;}finally{clearTimeout(timer);}
  }
- function addMessage(role,text,resources=[]){
+ function pauseMedia(){root.querySelectorAll('video').forEach(v=>v.pause());}
+ function clearControls(){pauseMedia();feed.querySelectorAll('[data-advisor-current]').forEach(el=>el.remove());currentSuggestions=[];}
+ function addMessage(role,text,detail){
+  // Old idempotent replies may predate the brief-answer contract. Preserve their wording.
+  if(role==='assistant'&&text.trim().split(/\s+/).length>90){detail=typeof detail==='string'&&detail.trim()?detail:text;text='La explicación completa y sus condiciones están en «Ver detalle». Puedes revisarlas y elegir tu siguiente paso.';}
   const article=document.createElement('article');article.className='advisor-message advisor-message-'+(role==='user'?'user':'assistant');
   const sender=document.createElement('span');sender.className='advisor-sender';sender.textContent=role==='user'?'TÚ':'ASESOR IA';
   const body=document.createElement('p');body.textContent=text;article.append(sender,body);
-  for(const resource of resources){const url=safeResourceUrl(resource.url);if(!url)continue;const link=document.createElement('a');link.href=url;link.textContent=resource.title+' ↗';link.target='_blank';link.rel='noopener noreferrer';link.className='advisor-resource';article.append(link);}
-  feed.append(article);feed.scrollTop=feed.scrollHeight;
+  if(role==='assistant'&&typeof detail==='string'&&detail.trim()){
+   const more=document.createElement('details'),label=document.createElement('summary'),full=document.createElement('p');more.className='advisor-detail';label.textContent='Ver detalle';full.textContent=detail.slice(0,6000);more.append(label,full);article.append(more);
+  }
+  feed.append(article);feed.scrollTop=feed.scrollHeight;return article;
  }
+ function resourceCard(resource){
+  const url=safeResourceUrl(resource?.url);if(!url||typeof resource.title!=='string'||!resource.title.trim())return null;
+  const card=document.createElement('article');card.className='advisor-resource';card.dataset.advisorResource='';
+  const title=document.createElement('h3');title.className='advisor-resource-title';title.textContent=resource.title.slice(0,180);
+  const evidence=document.createElement('p');evidence.className='advisor-resource-evidence';evidence.textContent=typeof resource.evidenceLabel==='string'?resource.evidenceLabel.slice(0,140):'Recurso de Sales Academy';
+  card.append(evidence,title);
+  if(typeof resource.excerpt==='string'&&resource.excerpt.trim()){const excerpt=document.createElement('p');excerpt.className='advisor-resource-excerpt';excerpt.textContent=resource.excerpt.slice(0,220);card.append(excerpt);}
+  const clip=resource.type==='video'?safeVideo(resource.video):null;
+  if(clip){
+   const frame=document.createElement('div'),poster=document.createElement('img'),play=document.createElement('button');frame.className='advisor-video-frame';poster.src=clip.poster;poster.alt='';poster.width=clip.width;poster.height=clip.height;poster.loading='lazy';poster.decoding='async';
+   play.type='button';play.className='advisor-video-play';play.dataset.advisorVideoPlay='';play.setAttribute('aria-label','Reproducir video: '+resource.title);play.textContent='▶ Ver video · '+Math.round(clip.durationSeconds)+' s';frame.append(poster,play);card.append(frame);
+   const hint=document.createElement('p');hint.className='advisor-video-hint';hint.textContent='Audio y subtítulos en español. Tú decides cuándo reproducir.';card.append(hint);
+   let video;
+   play.addEventListener('click',()=>{
+    if(!video){
+     video=document.createElement('video');video.dataset.advisorVideo='';video.controls=true;video.playsInline=true;video.preload='none';video.poster=clip.poster;video.setAttribute('aria-label',resource.title);
+     const track=document.createElement('track');track.kind='captions';track.src=clip.captions;track.srclang='es';track.label='Español';track.default=true;video.append(track);video.src=clip.src;frame.append(video);
+     video.addEventListener('error',()=>{hint.textContent='No se pudo reproducir aquí. Puedes abrir el recurso en MediaHub.';play.hidden=false;});
+    }
+    poster.hidden=true;play.hidden=true;video.play().catch(()=>{play.hidden=false;hint.textContent='Pulsa reproducir para volver a intentar. También puedes abrir el recurso.';});
+   });
+  }
+  const link=document.createElement('a');link.href=url;link.textContent=clip?'Ver contexto y transcripción ↗':'Abrir recurso ↗';link.target='_blank';link.rel='noopener noreferrer';link.className='advisor-resource-link';card.append(link);return card;
+ }
+ function renderControls(suggestions,resources){
+  clearControls();const group=document.createElement('div');group.className='advisor-current';group.dataset.advisorCurrent='';currentSuggestions=safeSuggestions(suggestions);
+  if(currentSuggestions.length){
+   const label=document.createElement('p');label.className='advisor-controls-label';label.textContent='Elige un siguiente paso';const choices=document.createElement('div');choices.className='advisor-suggestions';choices.setAttribute('role','group');choices.setAttribute('aria-label','Sugerencias para continuar');
+   for(const suggestion of currentSuggestions){const button=document.createElement('button');button.type='button';button.dataset.advisorSuggestion=suggestion.id;button.dataset.kind=suggestion.kind;button.textContent=suggestion.label;button.disabled=busy;choices.append(button);}group.append(label,choices);
+  }
+  const cards=(Array.isArray(resources)?resources:[]).filter(r=>safeResourceUrl(r?.url)&&typeof r.title==='string'&&r.title.trim()).slice(0,2).map(resourceCard).filter(Boolean);if(cards.length){const list=document.createElement('div');list.className='advisor-resources';list.setAttribute('aria-label','Contenido recomendado');list.append(...cards);group.append(list);}feed.append(group);
+ }
+ feed.addEventListener('click',e=>{
+  const button=e.target.closest('[data-advisor-suggestion]');if(!button||busy)return;
+  const suggestion=currentSuggestions.find(v=>v.id===button.dataset.advisorSuggestion);if(!suggestion)return;
+  if(suggestion.kind==='demo')tab('demo');else send(suggestion.prompt);
+ });
+ document.addEventListener('play',e=>{if(e.target.tagName==='VIDEO')document.querySelectorAll('video').forEach(v=>{if(v!==e.target)v.pause();});},true);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseMedia();});
  async function ensureSession(){
   if(session)return session;if(sessionPromise)return sessionPromise;
   sessionPromise=api('session').then(data=>{
-   session=data;if(!restored&&Array.isArray(data.messages)){for(const m of data.messages)if(['user','assistant'].includes(m.role)&&typeof m.content==='string'){addMessage(m.role,m.content);if(m.role==='user')lastQuestion=m.content;}restored=true;$('[data-advisor-use-question]').hidden=!lastQuestion;}
+   session=data;if(!restored&&Array.isArray(data.messages)){for(const m of data.messages)if(['user','assistant'].includes(m.role)&&typeof m.content==='string'){addMessage(m.role,m.content,m.detail);if(m.role==='user')lastQuestion=m.content;}restored=true;$('[data-advisor-use-question]').hidden=!lastQuestion;}
+   renderControls(data.suggestions,data.resources);
    if(!data.enabled){chatStatus.textContent='El asesor está en pausa. Puedes preparar tu solicitud o hablar con Chris.';fallback.hidden=false;}
    return data;
   }).finally(()=>{sessionPromise=null;});return sessionPromise;
  }
  function tab(which){
+  if(which!=='chat')pauseMedia();
   $('#sa-advisor-chat').hidden=which!=='chat';$('#sa-advisor-demo').hidden=which!=='demo';
   root.querySelectorAll('[data-advisor-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.advisorTab===which)));
   if(which==='chat')message.focus();else demoForm.querySelector('input').focus();
  }
  launcher.addEventListener('click',()=>{
-  dialog.showModal();launcher.setAttribute('aria-expanded','true');document.documentElement.classList.add('advisor-open');
+  document.querySelectorAll('video').forEach(v=>v.pause());dialog.showModal();launcher.setAttribute('aria-expanded','true');document.documentElement.classList.add('advisor-open');
   message.focus();ensureSession().catch(e=>{chatStatus.textContent=e.message;fallback.hidden=false;});
  });
- function close(){dialog.close();}
+ function close(){pauseMedia();dialog.close();}
+ dialog.addEventListener('cancel',pauseMedia);
  $('[data-advisor-close]').addEventListener('click',close);
- dialog.addEventListener('close',()=>{launcher.setAttribute('aria-expanded','false');document.documentElement.classList.remove('advisor-open');launcher.focus();});
+ dialog.addEventListener('close',()=>{pauseMedia();launcher.setAttribute('aria-expanded','false');document.documentElement.classList.remove('advisor-open');launcher.focus();});
  dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
  root.querySelectorAll('[data-advisor-tab]').forEach(b=>b.addEventListener('click',()=>tab(b.dataset.advisorTab)));
- $('[data-advisor-demo]').addEventListener('click',()=>tab('demo'));
- function loading(value){busy=value;$('#sa-advisor-chat-form button').disabled=value;message.disabled=value;retry.disabled=value;root.querySelectorAll('[data-advisor-prompt]').forEach(b=>b.disabled=value);feed.setAttribute('aria-busy',String(value));}
+ function loading(value){busy=value;$('#sa-advisor-chat-form button').disabled=value;message.disabled=value;retry.disabled=value;root.querySelectorAll('[data-advisor-suggestion]').forEach(b=>b.disabled=value);feed.setAttribute('aria-busy',String(value));}
  async function send(text,repeating=false){
-  if(busy||!text.trim())return;loading(true);retry.hidden=true;chatStatus.textContent='Buscando la mejor orientación para tu sala…';
+  if(busy||!text.trim())return;clearControls();loading(true);retry.hidden=true;chatStatus.textContent='Preparando una respuesta breve…';
   if(!repeating){pending={message:text.trim().slice(0,1200),requestId:uuid()};lastQuestion=pending.message;$('[data-advisor-use-question]').hidden=false;addMessage('user',pending.message);message.value='';}
   try{
    const current=await ensureSession();if(!current.enabled){session=null;throw new Error('El asesor está en pausa. Puedes reintentar más tarde o hablar con Chris.');}
    const data=await api('messages',pending);if(typeof data.reply!=='string')throw new Error('La respuesta no llegó completa. Puedes reintentar.');
-   addMessage('assistant',data.reply,Array.isArray(data.resources)?data.resources:[]);pending=null;
+   const article=addMessage('assistant',data.reply,data.detail);renderControls(data.suggestions,data.resources);feed.scrollTop=Math.max(0,article.offsetTop-8);pending=null;
    chatStatus.textContent=data.remainingTurns===0?'Has llegado al límite de esta conversación. Puedes coordinar tu demo con Chris.':'';
   }catch(e){if([401,403].includes(e.status))session=null;chatStatus.textContent=e.message;retry.hidden=false;fallback.hidden=false;}finally{loading(false);}
  }
  $('#sa-advisor-chat-form').addEventListener('submit',e=>{e.preventDefault();send(message.value);});
  message.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();send(message.value);}});
- root.querySelectorAll('[data-advisor-prompt]').forEach(b=>b.addEventListener('click',()=>send(b.dataset.advisorPrompt)));
  retry.addEventListener('click',()=>{if(pending)send(pending.message,true);});
  const zone=demoForm.elements.timezone;
  try{const local=Intl.DateTimeFormat().resolvedOptions().timeZone;if(local){if(!Array.from(zone.options).some(o=>o.value===local)){const o=new Option(local+' · tu dispositivo',local);zone.append(o);}zone.value=local;}}catch{}

@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>TOUR 06 · Tour registrado · Siguiente paso móvil</title>
+<style>
+  :root {
+    --bg-page: #f7f7f5;
+    --ink: #20211e;
+    --muted: #62655e;
+    --border: #e2e2dc;
+    --border-card: #d8d8d0;
+    --surface: #ffffff;
+    --surface-soft: #efefe9;
+    --gold: #806000;
+    --gold-light: #f4d894;
+    --gold-chip: #fcf6e6;
+    --accent-yellow: #f4bd3f;
+    --green-badge: #2c5921;
+    --green-bg: #edf5ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-page);
+    color: var(--ink);
+    line-height: 1.45;
+    font-size: 15px;
+    padding-bottom: 40px;
+    width: 390px;
+    margin: 0 auto;
+    min-height: 844px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .topbar-brand {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+  .demo-tag {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    background: #e9ece4;
+    color: #405538;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  .content {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Success Card Header */
+  .success-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 10px 0;
+  }
+  .success-icon-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--green-bg);
+    border: 2px solid #b7dbae;
+    color: var(--green-badge);
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  .success-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .success-ref {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface-soft);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Summary recap card */
+  .recap-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .recap-status-pill {
+    align-self: flex-start;
+    background: #eaf1f7;
+    color: #1a4870;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .recap-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .recap-label { color: var(--muted); }
+  .recap-val { font-weight: 600; color: var(--ink); }
+
+  /* AI Preparation Prompt Callout */
+  .ai-prep-card {
+    background: #fffdf7;
+    border: 1px solid var(--gold-light);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ai-prep-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .ai-prep-text {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .ai-prep-text strong {
+    color: var(--ink);
+  }
+
+  /* Primary CTA and Secondary buttons */
+  .actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .btn-gold-action {
+    background: var(--gold);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(128, 96, 0, 0.15);
+  }
+  .btn-secondary-action {
+    background: var(--surface);
+    border: 1px solid var(--border-card);
+    color: var(--ink);
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .btn-return-link {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="topbar-brand">SALES ACADEMY</span>
+  <span class="demo-tag">Prototipo · Datos de ejemplo</span>
+</header>
+
+<main class="content">
+  <!-- Success message -->
+  <div class="success-banner">
+    <div class="success-icon-badge" aria-hidden="true">✓</div>
+    <h1 class="success-title">Tour listo</h1>
+    <div class="success-ref">
+      <span class="">Simulación · Ref:</span>
+      <strong>DEMO-8206</strong>
+    </div>
+  </div>
+
+  <!-- Tour recap details -->
+  <section class="recap-card"><div class="recap-status-pill">Pendiente de iniciar</div>
+    <div class="recap-row">
+      <span class="recap-label">Pareja:</span>
+      <span class="recap-val">Ana Demo &amp; Luis Demo</span>
+    </div>
+    <div class="recap-row">
+      <span class="recap-label">Fecha y horario:</span>
+      <span class="recap-val">9 nov 2026 · 10:30 – 11:30</span>
+    </div>
+    <div style="margin-top: 6px; padding-top: 8px; border-top: 1px dashed var(--border);">
+      <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 6px;" class="">Contexto de sesión</div>
+      <div class="recap-row" style="margin-bottom: 4px;">
+        <span class="recap-label">Sala:</span>
+        <span class="recap-val">Sala Demo (Norte)</span>
+      </div>
+      <div class="recap-row">
+        <span class="recap-label">Asesor responsable:</span>
+        <span class="recap-val">Ana Demo</span>
+      </div>
+    </div></section>
+
+  <!-- AI Copilot summary (only from provided facts) -->
+  <div class="ai-prep-card">
+    <div class="ai-prep-head">
+      <span aria-hidden="true" class="">✦</span>
+      <span class="">Resumen breve para IA</span>
+    </div>
+    <p class="ai-prep-text">
+      Datos ingresados: idioma español, interés registrado en descanso y vacaciones en pareja. 
+      <strong>Próxima acción sugerida:</strong> confirmar preferencias con Ana y Luis al iniciar la conversación sin asumir requisitos no declarados.
+    </p>
+  </div>
+
+  <!-- Direct next actions -->
+  <div class="actions-group">
+    <!-- CTA 1: Preparar con mi agente IA -->
+    <a class="btn-gold-action" href="#preparar-tour-ia" id="btn-preparar-ia">
+      <span class="">Preparar con mi agente IA</span>
+      <span class="">→</span>
+    </a>
+
+    <!-- CTA 2: Abrir Meet & Greet -->
+    <a class="btn-secondary-action" href="#meet-greet" id="btn-open-meet-greet" style="font-size: 16px; min-height: 48px;">
+      <span class="">Abrir Meet &amp; Greet (Roadmap)</span>
+      <span class="">↗</span>
+    </a>
+
+    <!-- CTA 3: Volver a mis tours -->
+    <a class="btn-return-link" href="#tours-hoy">← Volver a Mis tours de Hoy</a>
+  </div>
+</main>
+
+
+
+
+
+</body></html>

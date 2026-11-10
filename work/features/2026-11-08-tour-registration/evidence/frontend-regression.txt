@@ -1,0 +1,52 @@
+(node:18154) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/fab.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+app-fab ok
+✔ tests/app-fab.mjs (41.235167ms)
+(node:18155) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/fichas.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+fichas ok
+✔ tests/fichas.mjs (38.242042ms)
+(node:18156) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/home-counters.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+home-counters ok
+✔ tests/home-counters.mjs (37.789334ms)
+(node:18157) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/install.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+install ok
+✔ tests/install.mjs (36.559334ms)
+ops-brand ok
+✔ tests/ops-brand.mjs (37.685917ms)
+(node:18159) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tasks.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+tasks ok
+✔ tests/tasks.mjs (36.962792ms)
+(node:18160) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/theme.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+theme ok
+✔ tests/theme.mjs (36.727042ms)
+(node:18161) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/wa-share.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+wa-share ok
+✔ tests/wa-share.mjs (34.97625ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 46.940375

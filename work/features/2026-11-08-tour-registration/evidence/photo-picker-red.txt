@@ -1,0 +1,61 @@
+(node:11994) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tour-registration.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rogergv/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✖ file selection survives session polling while the native chooser is open (4.871917ms)
+✖ a file chosen after session expiry is discarded without normalization (1.682125ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63.811917
+
+✖ failing tests:
+
+test at tests/tour-photo-picker.mjs:45:1
+✖ file selection survives session polling while the native chooser is open (4.871917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + []
+  - [
+  -   {
+  -     name: 'survey.png',
+  -     type: 'image/png'
+  -   }
+  - ]
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/tour-photo-picker.mjs:50:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [],
+    expected: [ { name: 'survey.png', type: 'image/png' } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/tour-photo-picker.mjs:54:1
+✖ a file chosen after session expiry is discarded without normalization (1.682125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'C:\\fakepath\\survey.png'
+  - ''
+  
+      at TestContext.<anonymous> (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/tour-photo-picker.mjs:59:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'C:\\fakepath\\survey.png',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

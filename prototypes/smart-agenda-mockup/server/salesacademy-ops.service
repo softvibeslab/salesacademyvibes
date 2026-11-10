@@ -12,6 +12,8 @@ Restart=on-failure
 User=www-data
 Group=www-data
 NoNewPrivileges=true
+UMask=0077
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target

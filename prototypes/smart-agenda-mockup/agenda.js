@@ -1,4 +1,4 @@
-import { opsRequest } from "./ops-api.js";
+import { opsRequest } from "./ops-api.js?v=20261110tour2";
 import { EXAMPLE_TODAY, ME_REP, STATUS_LABEL, addDays, defaultOps, labelDate } from "./ops-store.js";
 import { homeCounters } from "./home-counters.js";
 import { waShareUrl, previewMessage } from "./wa-share.js";
@@ -7,6 +7,7 @@ import { FAB_MSG_TYPE, FAB_SIZE, FAB_MARGIN, clampFab, isTap, resolveFabMenu } f
 import { fichaFor } from "./fichas.js";
 import { INSTALL_HELP, installMode, isIOS, isStandalone } from "./install.js";
 import { EVIDENCE_LIMITS, canComplete, fitInside, pickAudioMime, taskToPriority } from "./tasks.js";
+import { TourRegistration, registrationMarkup, normalizeSurveyPhoto, preparationPrompt, mondayOf, validDate } from "./tour-registration.js?v=20261110tour2";
 
 // Catálogos del resultado (REQ-006). El servidor manda los vigentes en /api/catalog;
 // estos son el respaldo si no responde.
@@ -192,6 +193,147 @@ const state = {
 };
 
 const phone = document.getElementById("phone");
+let registrationCapabilities = { enabled: false, canRegister: false, mode: "demo", operationalDate: EXAMPLE_TODAY };
+let registrationReturn = "hoy";
+let registrationPaintedStep = "";
+let registrationPhotoToken = 0;
+const registration = new TourRegistration({
+  request: opsRequest,
+  onChange: () => { if (state.view === "newtour" && state.auth.user) paintRegistration(); },
+  onExpired: () => signedOut("Tu sesión terminó. Ingresa de nuevo."),
+  onSaved: (data) => {
+    state.calDate = data.registration.date;
+    state.calWeek = mondayOf(state.calDate);
+    if (state.auth.user?.role === "rep") refreshTours({ quiet: true });
+  },
+});
+
+function operationalToday() {
+  return registrationCapabilities.mode === "private" && validDate(registrationCapabilities.operationalDate)
+    ? registrationCapabilities.operationalDate : EXAMPLE_TODAY;
+}
+
+async function refreshRegistrationCapabilities() {
+  try { registrationCapabilities = await opsRequest("/api/tour-registrations/capabilities"); }
+  catch { registrationCapabilities = { enabled: false, canRegister: false, mode: "demo", operationalDate: EXAMPLE_TODAY }; }
+  const user = state.auth.user ? { ...state.auth.user, roomId: state.auth.user.roomId || roster.people.find(p => p.id === state.auth.user.id)?.roomId } : null;
+  registration.setSession(user, registrationCapabilities);
+}
+
+function registrationContext() {
+  const user = registration.state.user;
+  const saved = registration.state.saved?.registration;
+  const repId = saved?.repId || registration.state.draft.repId || user?.id;
+  const rep = roster.people.find(person => person.id === repId);
+  return { manager: user?.role !== "rep", userLabel: rep?.name || user?.name || "Asesor de tu sesión",
+    roomLabel: roomLabel(saved?.roomId || rep?.roomId || user?.roomId || ""),
+    reps: roster.people.filter(person => person.role === "rep" && (user?.role === "admin" || person.roomId === user?.roomId)) };
+}
+
+function paintRegistration() {
+  if (state.view !== "newtour" || !state.auth.user) return;
+  if (coachFrame) coachFrame.hidden = true;
+  fab.hidden = true; fabMenu.hidden = true;
+  const previous = sheets.querySelector(".tr-screen");
+  const scroll = previous?.scrollTop || 0;
+  const focused = document.activeElement;
+  const focusId = focused?.id?.startsWith("tr-") ? focused.id : "";
+  const selection = focusId && typeof focused.selectionStart === "number" ? [focused.selectionStart, focused.selectionEnd] : null;
+  const changed = registrationPaintedStep !== registration.state.step;
+  const html = registrationMarkup(registration.state, registrationContext());
+  sheets.innerHTML = state.auth.user.role === "rep" ? shell(html) : html;
+  registrationPaintedStep = registration.state.step;
+  phone.dataset.view = "newtour";
+  phone.classList.toggle("has-dock", state.auth.user.role === "rep");
+  const screen = sheets.querySelector(".tr-screen");
+  if (screen) screen.scrollTop = changed ? 0 : scroll;
+  const invalid = sheets.querySelector('[aria-invalid="true"]');
+  const field = focusId ? document.getElementById(focusId) : null;
+  if (invalid && Object.keys(registration.state.errors).length) { invalid.closest("details")?.setAttribute("open", ""); invalid.focus(); }
+  else if (!changed && field) { field.focus(); if (selection) field.setSelectionRange?.(...selection); }
+  else if (changed) { const heading = sheets.querySelector("h1"); heading?.setAttribute("tabindex", "-1"); heading?.focus(); }
+}
+
+function openRegistration(date) {
+  registrationReturn = state.view === "calendario" ? "calendario" : "hoy";
+  state.view = "newtour"; registrationPaintedStep = "";
+  registration.start(date || operationalToday());
+  render();
+}
+
+function readRegistrationFields() {
+  phone.querySelectorAll("[data-tour-field]").forEach(input => {
+    const key = input.dataset.tourField;
+    const old = registration.state.draft[key];
+    const value = key === "interests" ? input.value.split(",").map(item => item.trim()).filter(Boolean) : input.value;
+    if (JSON.stringify(value) !== JSON.stringify(old)) registration.update(key, value);
+  });
+}
+
+async function pickSurvey(file) {
+  if (!file || !registration.canRegister()) return;
+  const epoch = registration.epoch, token = ++registrationPhotoToken;
+  registration.state.error = "";
+  try {
+    const photo = await normalizeSurveyPhoto(file);
+    if (epoch !== registration.epoch || token !== registrationPhotoToken || registration.state.step !== "photo") { URL.revokeObjectURL(photo.url); return; }
+    registration.setPhoto(photo);
+  } catch (error) {
+    if (epoch === registration.epoch && token === registrationPhotoToken) { registration.state.error = error.message; registration.emit(); }
+  }
+}
+
+function openSurveyPicker(camera = false) {
+  if (!registration.canRegister()) return;
+  const epoch = registration.epoch, token = ++registrationPhotoToken;
+  // Native file dialogs outlive a render. Keep their input outside #sheets,
+  // which session checks replace, and handle completion on the input itself.
+  phone.querySelectorAll("[data-survey-picker]").forEach(input => { input.value = ""; input.remove(); });
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = "image/jpeg,image/png";
+  input.hidden = true;
+  input.dataset.surveyPicker = "";
+  if (camera) input.capture = "environment";
+  const release = () => { input.value = ""; input.remove(); };
+  input.addEventListener("change", () => {
+    const file = input.files?.[0];
+    release();
+    if (epoch === registration.epoch && token === registrationPhotoToken && registration.state.step === "photo") pickSurvey(file);
+  }, { once: true });
+  input.addEventListener("cancel", release, { once: true });
+  phone.append(input);
+  input.click();
+}
+
+async function runRegistration(action) {
+  readRegistrationFields();
+  const r = registration.state;
+  if (action === "camera" || action === "pick") { openSurveyPicker(action === "camera"); return; }
+  if (action === "refresh") { await refreshRegistrationCapabilities(); return; }
+  if (action === "survey" || action === "manual") { registrationPhotoToken++; registration.choose(action); return; }
+  if (action === "read") { await registration.preview(); return; }
+  if (action === "submit") { await registration.submit(); return; }
+  if (action === "edit") { r.step = "form"; r.draft.reviewConfirmed = false; registration.emit(); return; }
+  if (action === "prepare") {
+    state.copilotoQuery = preparationPrompt({ ...(r.saved?.registration || {}), lead: r.saved?.visit?.lead || r.saved?.registration?.lead });
+    state.copilotoRole = "";
+    if (state.auth.user?.role !== "rep") { window.location.href = `/copiloto/?q=${encodeURIComponent(state.copilotoQuery)}`; return; }
+    go("coach"); return;
+  }
+  if (action === "meet") { state.moduleId = 1; go("tourmeet"); return; }
+  if (action === "agenda") {
+    state.calDate = r.saved?.registration?.date || operationalToday(); state.calWeek = mondayOf(state.calDate);
+    if (state.auth.user?.role !== "rep") { window.location.href = "/ops/"; return; }
+    go("calendario"); return;
+  }
+  if (action === "exit" || action === "keep") {
+    registration.cancelPreview(); registrationPhotoToken++;
+    if (state.auth.user?.role !== "rep") { registration.reset(); window.location.href = "/ops/"; return; }
+    go(registrationReturn); return;
+  }
+}
+
 const sheets = document.createElement("div");
 sheets.id = "sheets";
 phone.append(sheets);
@@ -363,6 +505,7 @@ function money(n) {
 }
 
 function go(view, flow) {
+  if (state.view === "newtour" && view !== "newtour") { readRegistrationFields(); registration.cancelPreview(); registrationPhotoToken++; }
   state.view = view;
   if (flow) state.flow = flow;
   state.toast = "";
@@ -486,14 +629,14 @@ function minutesOf(value) {
 
 function viewHoy() {
   const goal = 12000;
-  const live = homeCounters(tours.visits, state.meId, EXAMPLE_TODAY);
+  const live = homeCounters(tours.visits, state.meId, operationalToday());
   state.presentations = live.presentations;
   state.closes = live.closes;
   state.volume = live.volumeUSD;
   const presPct = Math.min(100, Math.round((live.presentations / 4) * 100));
   const closePct = Math.min(100, Math.round((live.closes / 2) * 100));
   const volPct = Math.min(100, Math.round((live.volumeUSD / goal) * 100));
-  const mxnSale = myVisits(EXAMPLE_TODAY).some((visit) => visit.result?.outcome === "venta" && visit.result.currency === "MXN");
+  const mxnSale = myVisits(operationalToday()).some((visit) => visit.result?.outcome === "venta" && visit.result.currency === "MXN");
   const stats = [
     ["Presentaciones", `${live.presentations}/4`, presPct],
     ["Cierres", `${live.closes}/2`, closePct],
@@ -543,9 +686,9 @@ function viewHoy() {
   const addLink = pinned.length < 6 ? `<button class="linkish" data-go="atajos" type="button">Agregar</button>` : `<span class="fine">6 de 6</span>`;
   return shell(`
     <header class="topbar">
-      <div class="brand"><span class="avatar">SA</span> <span class="m-only">Sales Academy</span><span class="d-only page-title-d">Hoy · Viernes 6 de noviembre</span></div>
+      <div class="brand"><span class="avatar">SA</span> <span class="m-only">Sales Academy</span><span class="d-only page-title-d">Hoy · ${esc(labelDate(operationalToday()))}</span></div>
       <div class="top-actions">
-        <button class="datechip d-only" data-go="calendario" type="button"><span class="material-symbols-outlined">calendar_today</span>Nov 06</button>
+        <button class="datechip d-only" data-go="calendario" type="button"><span class="material-symbols-outlined">calendar_today</span>${esc(operationalToday().slice(5))}</button>
         <button class="pill-btn line d-only" data-go="nota" type="button"><span class="material-symbols-outlined">edit_note</span>Nueva nota</button>
         <button class="pill-btn gold d-only" data-go="presentacion" type="button"><span class="material-symbols-outlined">add_task</span>Registrar presentación</button>
         <button class="icon-btn m-only" data-go="calendario" type="button" aria-label="Calendario"><span class="material-symbols-outlined">calendar_today</span></button>
@@ -554,8 +697,8 @@ function viewHoy() {
     <div class="screen">
       <div data-install-slot="hoy">${installBlock("hoy")}</div>
       <div class="head">
-        <div><h1>Hoy</h1><p>Viernes 6 de noviembre</p></div>
-        <button class="datechip" data-go="calendario" type="button">Nov 06</button>
+        <div><h1>Hoy</h1><p>${esc(labelDate(operationalToday()))}</p></div>
+        <button class="datechip" data-go="calendario" type="button">${esc(operationalToday().slice(5))}</button>
       </div>
       <div class="home-layout">
       <div class="home-main">
@@ -586,7 +729,8 @@ function viewHoy() {
       <section class="panel p-tours" style="margin-top:16px">
         <div class="row-between"><h2 class="section-title">Tours de hoy</h2><span><button class="linkish" data-act="reload-tours" type="button">Actualizar</button> · <button class="linkish" data-go="calendario" type="button">Calendario</button></span></div>
         <p class="fine">${esc(meLabel())}. ${esc(agoLabel())}</p>
-        ${tourCard(EXAMPLE_TODAY)}
+        <button class="btn gold tr-new-tour" data-tour-new type="button"><span aria-hidden="true">＋</span> Nuevo tour</button>
+        ${tourCard(operationalToday())}
       </section>
       <section class="panel p-now" style="margin-top:16px">
         <div class="row-between"><h2 class="section-title">Ahora</h2><button class="linkish" data-go="bloque" data-flow="bloque" type="button">+ Bloque</button></div>
@@ -1003,6 +1147,7 @@ function agoLabel() {
 }
 
 function whoChips() {
+  if (registrationCapabilities.mode === "private") return "";
   const reps = roster.people.filter((person) => person.role === "rep");
   return `<div class="who">${reps.map((rep) => `<button class="chip-btn ${rep.id === state.meId ? "on" : ""}" data-act="me-${esc(rep.id)}" type="button">${esc(rep.name)}</button>`).join("")}</div>`;
 }
@@ -1079,15 +1224,15 @@ function tourCard(date) {
   if (tours.error && !tours.visits.length) return `<section class="card"><p class="fine">${esc(tours.error)}</p></section>`;
   const visits = myVisits(date);
   if (!visits.length) return `<section class="card"><p class="fine">Sin tours asignados. Los carga el jefe de sala.</p></section>`;
-  return `<section class="card">${visits.map((visit) => `<button class="vrow vrow-btn" data-act="open-result-${esc(visit.id)}" type="button">
+  return `<section class="card">${visits.map((visit) => `<div class="tr-tour-row"><button class="vrow vrow-btn" data-act="open-result-${esc(visit.id)}" type="button">
       <span><b>${esc(visit.start)}</b> ${esc(visit.lead)}</span>
       <span class="vtags"><span class="pill">${esc(STATUS_LABEL[visit.status] || visit.status)}</span>${resultChip(visit)}</span>
-    </button>`).join("")}</section>`;
+    </button>${registration.canRegister() ? `<button class="linkish tr-detail-link" type="button" data-tour-detail="${esc(visit.id)}">Datos de visitantes</button>` : ""}</div>`).join("")}</section>`;
 }
 
 function viewCalendario() {
   const week = state.calWeek || "2026-11-02";
-  const selected = state.calDate || EXAMPLE_TODAY;
+  const selected = state.calDate || operationalToday();
   const names = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
   const days = names.map((name, index) => {
     const iso = addDays(week, index);
@@ -1096,12 +1241,13 @@ function viewCalendario() {
   }).join("");
   const visits = myVisits(selected);
   const list = visits.length
-    ? visits.map((visit) => `<section class="card vrow"><span><b>${esc(visit.start)}–${esc(visit.end)}</b><br>${esc(visit.lead)}${visit.note ? `<span class="fine"> · ${esc(visit.note)}</span>` : ""}</span><span class="vtags"><span class="pill">${esc(STATUS_LABEL[visit.status] || visit.status)}</span>${resultChip(visit)}</span></section>`).join("")
+    ? visits.map((visit) => `<section class="card"><div class="vrow"><span><b>${esc(visit.start)}–${esc(visit.end)}</b><br>${esc(visit.lead)}${visit.note ? `<span class="fine"> · ${esc(visit.note)}</span>` : ""}</span><span class="vtags"><span class="pill">${esc(STATUS_LABEL[visit.status] || visit.status)}</span>${resultChip(visit)}</span></div>${registration.canRegister() ? `<button class="linkish tr-detail-link" type="button" data-tour-detail="${esc(visit.id)}">Datos de visitantes</button>` : ""}</section>`).join("")
     : `<section class="card"><p class="fine">Este día no tienes tours.</p></section>`;
   return `${taskbar("Calendario", "hoy", mePerson().name)}
     <div class="screen task">
       <div class="row"><button class="icon-btn" data-act="cal-prev" type="button" aria-label="Semana anterior"><span class="material-symbols-outlined">chevron_left</span></button><h1 class="page-title" style="font-size:18px">${esc(labelDate(selected))}</h1><button class="icon-btn" data-act="cal-next" type="button" aria-label="Semana siguiente"><span class="material-symbols-outlined">chevron_right</span></button></div>
-      <p class="fine">${esc(meLabel())}. Los tours los asigna el jefe de sala. ${esc(agoLabel())}</p>
+      <p class="fine">${esc(meLabel())}. ${esc(agoLabel())}</p>
+      <button class="btn gold tr-new-tour" data-tour-new type="button"><span aria-hidden="true">＋</span> Nuevo tour</button>
       ${tours.error ? `<div class="warn">${esc(tours.error)}</div>` : ""}
       <div class="week">${days}</div>
       ${tours.ready ? list : `<section class="card"><p class="fine">Cargando tours…</p></section>`}
@@ -1217,7 +1363,7 @@ function viewModulo() {
   const doneBtn = status === "done"
     ? `<p class="fine">Este paso ya está listo.</p>`
     : `<button class="btn line" data-act="complete-step" type="button" style="width:100%">Marcar paso como listo</button>`;
-  return `<header class="taskbar"><button class="back" data-go="roadmap" type="button"><span class="material-symbols-outlined">chevron_left</span> Roadmap</button><span class="pill">Paso ${step.n}</span></header>
+  return `<header class="taskbar"><button class="back" data-go="${state.view === "tourmeet" ? "newtour" : "roadmap"}" type="button"><span class="material-symbols-outlined">chevron_left</span> ${state.view === "tourmeet" ? "Mi tour" : "Roadmap"}</button><span class="pill">Paso ${step.n}</span></header>
     <div class="screen task">
       <div class="row"><span class="kicker">Paso ${step.n} de ${STEPS.length}</span><button class="chip-btn" data-act="how" type="button">Cómo funciona</button></div>
       <h1 class="page-title">${esc(step.title)}</h1>
@@ -1252,7 +1398,7 @@ function viewModulo() {
 }
 
 function copilotoSrc() {
-  const query = new URLSearchParams({ embed: "1", today: EXAMPLE_TODAY });
+  const query = new URLSearchParams({ embed: "1", today: operationalToday() });
   if (state.copilotoQuery) query.set("q", state.copilotoQuery);
   if (state.copilotoRole) query.set("role", state.copilotoRole);
   return `/copiloto/?${query.toString()}`;
@@ -1859,6 +2005,7 @@ async function promptInstall() {
 // sin funciones inexistentes (biometría) ni promesas que hoy no se cumplen (cifrado en reposo).
 function viewAcceso() {
   const a = state.auth;
+  const privateMode = registrationCapabilities.mode === "private";
   return `<div class="screen login-screen">
     <header class="login-top">
       <div class="login-brand"><span class="sa-mark">SA</span><span>Acceso</span></div>
@@ -1892,35 +2039,41 @@ function viewAcceso() {
       <button class="login-submit" type="submit" ${a.busy ? "disabled" : ""}>${a.busy ? "Verificando…" : "Ingresar a mi libreta"}<span class="material-symbols-outlined">arrow_forward</span></button>
     </form>
     <aside class="login-note"><span class="material-symbols-outlined">shield</span>
-      <div><b>Datos de ejemplo</b><p>Es un demo de sala: no captures nombres, teléfonos ni montos reales de clientes. Los reps entran a su cuaderno; jefes y administración, al tablero.</p></div>
+      <div><b>${privateMode ? "Acceso privado" : "Datos de ejemplo"}</b><p>${privateMode ? "Usa tu cuenta individual. Tu administrador gestiona el acceso a los datos de tu sala." : "Es un demo de sala: no captures nombres, teléfonos ni montos reales de clientes. Los reps entran a su cuaderno; jefes y administración, al tablero."}</p></div>
     </aside>
     <div data-install-slot="login">${installBlock("login")}</div>
     <footer class="login-foot">
       ${themeSwitch()}
       <nav><a href="${DOCS}/inicio-rapido" target="_blank" rel="noopener">Centro de ayuda</a><i></i><a href="${DOCS}/privacidad" target="_blank" rel="noopener">Privacidad</a></nav>
-      <p>Sales Academy · Demo de sala</p>
+      <p>Sales Academy · ${privateMode ? "Acceso a tu sala" : "Demo de sala"}</p>
     </footer>
   </div>`;
 }
 
 function signedOut(message = "") {
   state.auth.user = null;
+  registrationPhotoToken++;
+  registration.setSession(null, registrationCapabilities);
   state.auth.error = message;
   state.auth.busy = false;
   render();
 }
 
 async function enterAs(user) {
-  if (user.role !== "rep") {
-    window.location.href = "/ops/";
-    return;
-  }
   state.auth.user = user;
   state.auth.error = "";
   state.meId = user.id;
   state.view = "hoy";
   render();
   await refreshRoster();
+  await refreshRegistrationCapabilities();
+  if (user.role !== "rep") {
+    if (registration.canRegister()) { openRegistration(operationalToday()); return; }
+    window.location.href = "/ops/"; return;
+  }
+  state.meId = user.id;
+  if (registrationCapabilities.mode === "private") { state.calDate = operationalToday(); state.calWeek = mondayOf(state.calDate); }
+  render();
   refreshTours();
   refreshCatalog();
   refreshTasks();
@@ -1942,10 +2095,10 @@ async function submitLogin(form) {
 }
 
 async function logout() {
-  try { await opsRequest("/api/logout", { method: "POST", body: {} }); } catch { /* la cookie ya no sirve */ }
   tours.visits = [];
   tours.ready = false;
   signedOut();
+  try { await opsRequest("/api/logout", { method: "POST", body: {} }); } catch { /* la vista local ya se cerró; el servidor expira la cookie */ }
 }
 
 /* ---------- Evidencia (tareas-evidencia) ---------- */
@@ -2062,6 +2215,7 @@ async function reopenTask() {
 }
 
 async function boot() {
+  await refreshRegistrationCapabilities();
   try {
     const data = await opsRequest("/api/me");
     state.auth.checked = true;
@@ -2107,6 +2261,7 @@ const views = {
 };
 
 function readDraftFromDom() {
+  if (state.view === "newtour") readRegistrationFields();
   const title = phone.querySelector("#note-title");
   if (title) {
     state.draft.title = title.value;
@@ -2145,6 +2300,13 @@ function render() {
     fabMenu.hidden = true;
     sheets.innerHTML = state.auth.checked ? viewAcceso() : `<div class="screen"><p class="fine">Cargando…</p></div>`;
     phone.querySelector("#login-user")?.focus();
+    return;
+  }
+  if (state.view === "newtour") { paintRegistration(); return; }
+  if (state.view === "tourmeet") {
+    if (coachFrame) coachFrame.hidden = true;
+    fab.hidden = true; fabMenu.hidden = true;
+    sheets.innerHTML = state.auth.user.role === "rep" ? shell(viewModulo()) : viewModulo();
     return;
   }
   fab.hidden = false;
@@ -2199,6 +2361,11 @@ function setThemePref(pref) {
 }
 
 phone.addEventListener("click", (event) => {
+  const tourAction = event.target.closest("[data-tour-action]");
+  if (tourAction) { runRegistration(tourAction.dataset.tourAction); return; }
+  if (event.target.closest("[data-tour-new]")) { openRegistration(state.view === "calendario" ? state.calDate : operationalToday()); return; }
+  const tourDetail = event.target.closest("[data-tour-detail]");
+  if (tourDetail) { registrationReturn = state.view; state.view = "newtour"; registrationPaintedStep = ""; registration.detail(tourDetail.dataset.tourDetail); return; }
   const themeBtn = event.target.closest("[data-theme-pref]");
   if (themeBtn) { setThemePref(themeBtn.dataset.themePref); return; }
   const passToggle = event.target.closest('[data-act="toggle-pass"]');
@@ -2269,6 +2436,12 @@ phone.addEventListener("click", (event) => {
 });
 
 phone.addEventListener("change", (event) => {
+  if (event.target.matches("[data-tour-review]")) { registration.setReview(event.target.checked); return; }
+  if (event.target.matches("[data-tour-field]")) {
+    registration.update(event.target.dataset.tourField, event.target.value);
+    if (["contactType", "repId"].includes(event.target.dataset.tourField)) registration.emit();
+    return;
+  }
   if (event.target.id === "ev-file") {
     const file = event.target.files?.[0];
     if (file) takePhoto(file);
@@ -2292,6 +2465,29 @@ phone.addEventListener("change", (event) => {
   }
 });
 
+phone.addEventListener("input", (event) => {
+  if (event.target.matches("[data-tour-field]")) registration.update(event.target.dataset.tourField, event.target.value);
+});
+phone.addEventListener("toggle", (event) => {
+  if (event.target.matches("[data-tour-optional]")) registration.state.optionalOpen = event.target.open;
+}, true);
+
+window.addEventListener("pagehide", () => {
+  registrationPhotoToken++; registration.reset({ emit: false });
+  if (state.view === "newtour") sheets.innerHTML = '<div class="screen"><p>El registro se cerró al salir de la página.</p></div>';
+});
+window.addEventListener("pageshow", (event) => { if (event.persisted) { state.auth.user = null; boot(); } });
+
+async function checkRegistrationSession() {
+  if (!state.auth.user) return;
+  try {
+    const data = await opsRequest("/api/me");
+    if (data.user.id !== state.auth.user.id) { signedOut("La sesión cambió. Ingresa de nuevo."); return; }
+    state.auth.user = data.user;
+    await refreshRegistrationCapabilities();
+  } catch (error) { if (error.status === 401) signedOut("Tu sesión terminó. Ingresa de nuevo."); }
+}
+
 if (map) map.addEventListener("click", (event) => {
   const button = event.target.closest("[data-flow-start]");
   if (!button) return;
@@ -2314,9 +2510,11 @@ function run(act) {
     return;
   }
   if (act.startsWith("me-")) {
+    if (registrationCapabilities.mode === "private") return;
     const id = act.slice(3);
     if (!roster.people.some((person) => person.id === id && person.role === "rep")) return;
     state.meId = id;
+    registration.reset();
     try { sessionStorage.setItem("sa.app.rep", id); } catch { /* el modo privado no guarda */ }
     refreshTours();
     return;
@@ -2591,14 +2789,16 @@ async function submitResult() {
 }
 
 document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible" && state.auth.user) refreshTours({ quiet: true });
+  if (document.visibilityState === "visible" && state.auth.user) { checkRegistrationSession(); if (state.auth.user.role === "rep") refreshTours({ quiet: true }); }
 });
 window.setInterval(() => {
   if (document.visibilityState !== "visible" || !state.auth.user) return;
+  if (state.view === "newtour") checkRegistrationSession();
   if (state.view === "hoy" || state.view === "calendario") refreshTours({ quiet: true });
 }, 15000);
 
 phone.addEventListener("submit", (event) => {
+  if (event.target.id === "tr-form") { event.preventDefault(); readRegistrationFields(); registration.review(); return; }
   if (event.target.id !== "login-form") return;
   event.preventDefault();
   submitLogin(event.target);

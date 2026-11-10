@@ -1,0 +1,261 @@
+{
+  "ok": true,
+  "report": [
+    {
+      "tab": "chat",
+      "entries": [
+        {
+          "control": "✦Pregunta a Sales AcademyTu asesor con IA↗",
+          "border": "rgb(244, 189, 63)",
+          "adjacent": [
+            16,
+            17,
+            16
+          ],
+          "ratio": 10.991714971378627
+        },
+        {
+          "control": "Cerrar asesor",
+          "border": "rgb(180, 196, 172)",
+          "adjacent": [
+            16,
+            26,
+            19
+          ],
+          "ratio": 9.695055636844252
+        },
+        {
+          "control": "Conversar",
+          "border": "rgb(16, 26, 19)",
+          "adjacent": [
+            233,
+            234,
+            223
+          ],
+          "ratio": 14.670538965062377
+        },
+        {
+          "control": "Coordinar demo ↗",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            233,
+            234,
+            223
+          ],
+          "ratio": 3.581918652799616
+        },
+        {
+          "control": "Cómo funciona",
+          "border": "rgb(128, 96, 0)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 5.353939375283283
+        },
+        {
+          "control": "Soy representante",
+          "border": "rgb(128, 96, 0)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 5.353939375283283
+        },
+        {
+          "control": "Soy líder de sala",
+          "border": "rgb(128, 96, 0)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 5.353939375283283
+        },
+        {
+          "control": "Reproducir video: Agentes de IA en el día a día de tu sala",
+          "border": "rgb(255, 255, 255)",
+          "adjacent": [
+            16,
+            26,
+            19
+          ],
+          "ratio": 17.80878871359792
+        },
+        {
+          "control": "Enviar pregunta",
+          "border": "rgb(128, 96, 0)",
+          "adjacent": [
+            255,
+            255,
+            255
+          ],
+          "ratio": 5.847973934092918
+        }
+      ]
+    },
+    {
+      "tab": "demo",
+      "entries": [
+        {
+          "control": "✦Pregunta a Sales AcademyTu asesor con IA↗",
+          "border": "rgb(244, 189, 63)",
+          "adjacent": [
+            16,
+            17,
+            16
+          ],
+          "ratio": 10.991714971378627
+        },
+        {
+          "control": "Cerrar asesor",
+          "border": "rgb(180, 196, 172)",
+          "adjacent": [
+            16,
+            26,
+            19
+          ],
+          "ratio": 9.695055636844252
+        },
+        {
+          "control": "Conversar",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            233,
+            234,
+            223
+          ],
+          "ratio": 3.581918652799616
+        },
+        {
+          "control": "Coordinar demo ↗",
+          "border": "rgb(16, 26, 19)",
+          "adjacent": [
+            233,
+            234,
+            223
+          ],
+          "ratio": 14.670538965062377
+        },
+        {
+          "control": "name",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "role",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "roomCountBucket",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "teamSize",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "need",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "timeframe",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "contact",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "preferredDate",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "preferredTime",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "timezone",
+          "border": "rgb(116, 124, 105)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 3.980815519135815
+        },
+        {
+          "control": "Preparar mi solicitud →",
+          "border": "rgb(128, 96, 0)",
+          "adjacent": [
+            246,
+            245,
+            239
+          ],
+          "ratio": 5.353939375283283
+        }
+      ]
+    }
+  ],
+  "focus": {
+    "control": "BUTTON",
+    "outline": "rgb(128, 96, 0)",
+    "width": "3px",
+    "halo": "rgb(255, 255, 255) 0px 0px 0px 2px"
+  }
+}

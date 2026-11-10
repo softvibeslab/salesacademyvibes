@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-10",
+  "scope": "HTTPS probes without authentication; synthetic payloads only",
+  "exit_code": 0,
+  "checks": [
+    {
+      "path": "/api/tour-registrations/preview",
+      "actual_bytes": 80034,
+      "declared_bytes": "80034",
+      "status": 401,
+      "content_type": "application/json; charset=utf-8",
+      "json_code": "authentication_required"
+    },
+    {
+      "path": "/api/tour-registrations/preview",
+      "actual_bytes": 0,
+      "declared_bytes": "2000001",
+      "status": 413,
+      "content_type": "text/html",
+      "json_code": null
+    },
+    {
+      "path": "/api/login",
+      "actual_bytes": 80034,
+      "declared_bytes": "80034",
+      "status": 413,
+      "content_type": "text/html",
+      "json_code": null
+    }
+  ]
+}

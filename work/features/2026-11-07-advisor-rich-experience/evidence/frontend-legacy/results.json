@@ -1,0 +1,15 @@
+{
+  "base": "http://127.0.0.1:4310",
+  "synthetic": true,
+  "results": [
+    {
+      "name": "Legacy answers stay brief while preserving the complete original in details",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "mp4BeforeGesture": 0,
+  "whatsappOpened": false,
+  "ok": true,
+  "finishedAt": "2026-11-07T15:06:59.053Z"
+}

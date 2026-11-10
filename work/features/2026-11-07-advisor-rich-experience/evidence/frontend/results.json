@@ -1,0 +1,1077 @@
+{
+  "base": "http://127.0.0.1:4310",
+  "synthetic": true,
+  "results": [
+    {
+      "name": "Contextual controls and an introductory film appear without inference at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Computed colors are readable and layout fits at 1440px",
+      "passed": true,
+      "contrast": [
+        {
+          "selector": ".advisor-launcher strong",
+          "text": "Pregunta a Sales Academy",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-launcher small",
+          "text": "Tu asesor con IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header p",
+          "text": "SALES ACADEMY · ASISTENTE IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header h2",
+          "text": "Tu siguiente paso, claro.",
+          "ratio": 17.80878871359792,
+          "font": 23
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Conversar",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Coordinar demo ↗",
+          "ratio": 13.100938905760591,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-message p",
+          "text": "Soy tu asesor IA de Sales Academy. ",
+          "ratio": 16.38466274968859,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-sender",
+          "text": "ASESOR IA",
+          "ratio": 7.848903717140892,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Soy líder",
+          "ratio": 11.829692951640698,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Quiero practicar",
+          "ratio": 11.829692951640698,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Coordinar demo",
+          "ratio": 9.798989363956215,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-disclosure",
+          "text": "Conversación disponible durante 1 h",
+          "ratio": 7.698383714183389,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-resource-title",
+          "text": "Tu Smart Agent, en acción",
+          "ratio": 16.38466274968859,
+          "font": 17
+        },
+        {
+          "selector": ".advisor-resource-excerpt",
+          "text": "Una visión de cómo la IA puede acom",
+          "ratio": 10.54147523965981,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-resource-evidence",
+          "text": "Visión de producto · película conce",
+          "ratio": 8.603330360845824,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-resource-link",
+          "text": "Ver contexto y transcripción ↗",
+          "ratio": 10.910468261376296,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-video-play",
+          "text": "▶ Ver video · 33 s",
+          "ratio": 9.798989363956215,
+          "font": 14
+        }
+      ]
+    },
+    {
+      "name": "Suggested answers replace the previous choices and media remains trusted at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Film plays only after a gesture with audio and captions, then pauses on tab switch at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Demo action and editable WhatsApp handoff stay voluntary at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Media stops on close, hidden page, another film and a new question at 1440px",
+      "passed": true,
+      "contrast": [
+        {
+          "selector": ".advisor-launcher strong",
+          "text": "Pregunta a Sales Academy",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-launcher small",
+          "text": "Tu asesor con IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header p",
+          "text": "SALES ACADEMY · ASISTENTE IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header h2",
+          "text": "Tu siguiente paso, claro.",
+          "ratio": 17.80878871359792,
+          "font": 23
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Conversar",
+          "ratio": 13.100938905760591,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Coordinar demo ↗",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu nombre (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu rolSelecciona tu rolRepresentant",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "SalasPor definir1 sala2–3 salas4 o ",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tamaño del equipo",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "¿Qué quieres mejorar?",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "¿Para cuándo?",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Contacto (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Fecha",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Hora",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Zona horariaCancún · Caribe mexican",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu resumen editable",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "También quiero guardar esta solicit",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo-intro p",
+          "text": "CON CHRIS · POR WHATSAPP",
+          "ratio": 7.876524364954656,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-demo-intro p",
+          "text": "Comparte lo que sea útil. Revisarás",
+          "ratio": 9.650935519763502,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo-intro h3",
+          "text": "Una demo para tu contexto.",
+          "ratio": 15.000492826222164,
+          "font": 27
+        },
+        {
+          "selector": ".advisor-primary",
+          "text": "Preparar mi solicitud →",
+          "ratio": 9.798989363956215,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-primary",
+          "text": "Coordinar mi demo con Chris ↗",
+          "ratio": 9.798989363956215,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-pending",
+          "text": "Pendiente de confirmación. WhatsApp",
+          "ratio": 7.698383714183389,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-consent span",
+          "text": "También quiero guardar esta solicit",
+          "ratio": 9.650935519763502,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-demo legend",
+          "text": "Tu horario preferido (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo small",
+          "text": "Deja fecha y hora vacías si prefier",
+          "ratio": 7.698383714183389,
+          "font": 12
+        }
+      ],
+      "controls": [
+        {
+          "text": "×",
+          "height": 44
+        },
+        {
+          "text": "Conversar",
+          "height": 44
+        },
+        {
+          "text": "Coordinar demo ↗",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 44
+        },
+        {
+          "text": "Selecciona tu rolRepresentante",
+          "height": 44
+        },
+        {
+          "text": "Por definir1 sala2–3 salas4 o ",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 44
+        },
+        {
+          "text": "Usar mi última pregunta como p",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 45
+        },
+        {
+          "text": "",
+          "height": 45
+        },
+        {
+          "text": "Cancún · Caribe mexicanoCiudad",
+          "height": 44
+        },
+        {
+          "text": "Preparar mi solicitud →",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "MediaHub and scenarios preserve strong text colors at 1440px",
+      "passed": true
+    },
+    {
+      "name": "Contextual controls and an introductory film appear without inference at 390px",
+      "passed": true
+    },
+    {
+      "name": "Computed colors are readable and layout fits at 390px",
+      "passed": true,
+      "contrast": [
+        {
+          "selector": ".advisor-launcher strong",
+          "text": "Pregunta a Sales Academy",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-launcher small",
+          "text": "Tu asesor con IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header p",
+          "text": "SALES ACADEMY · ASISTENTE IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header h2",
+          "text": "Tu siguiente paso, claro.",
+          "ratio": 17.80878871359792,
+          "font": 21
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Conversar",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Coordinar demo ↗",
+          "ratio": 13.100938905760591,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-message p",
+          "text": "Soy tu asesor IA de Sales Academy. ",
+          "ratio": 16.38466274968859,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-sender",
+          "text": "ASESOR IA",
+          "ratio": 7.848903717140892,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Soy líder",
+          "ratio": 11.829692951640698,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Quiero practicar",
+          "ratio": 11.829692951640698,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Coordinar demo",
+          "ratio": 9.798989363956215,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-disclosure",
+          "text": "Conversación disponible durante 1 h",
+          "ratio": 7.698383714183389,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-resource-title",
+          "text": "Tu Smart Agent, en acción",
+          "ratio": 16.38466274968859,
+          "font": 17
+        },
+        {
+          "selector": ".advisor-resource-excerpt",
+          "text": "Una visión de cómo la IA puede acom",
+          "ratio": 10.54147523965981,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-resource-evidence",
+          "text": "Visión de producto · película conce",
+          "ratio": 8.603330360845824,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-resource-link",
+          "text": "Ver contexto y transcripción ↗",
+          "ratio": 10.910468261376296,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-video-play",
+          "text": "▶ Ver video · 33 s",
+          "ratio": 9.798989363956215,
+          "font": 14
+        }
+      ]
+    },
+    {
+      "name": "Suggested answers replace the previous choices and media remains trusted at 390px",
+      "passed": true
+    },
+    {
+      "name": "Film plays only after a gesture with audio and captions, then pauses on tab switch at 390px",
+      "passed": true
+    },
+    {
+      "name": "Demo action and editable WhatsApp handoff stay voluntary at 390px",
+      "passed": true
+    },
+    {
+      "name": "Media stops on close, hidden page, another film and a new question at 390px",
+      "passed": true,
+      "contrast": [
+        {
+          "selector": ".advisor-launcher strong",
+          "text": "Pregunta a Sales Academy",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-launcher small",
+          "text": "Tu asesor con IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header p",
+          "text": "SALES ACADEMY · ASISTENTE IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header h2",
+          "text": "Tu siguiente paso, claro.",
+          "ratio": 17.80878871359792,
+          "font": 21
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Conversar",
+          "ratio": 13.100938905760591,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Coordinar demo ↗",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu nombre (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu rolSelecciona tu rolRepresentant",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "SalasPor definir1 sala2–3 salas4 o ",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tamaño del equipo",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "¿Qué quieres mejorar?",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "¿Para cuándo?",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Contacto (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Fecha",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Hora",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Zona horariaCancún · Caribe mexican",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu resumen editable",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "También quiero guardar esta solicit",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo-intro p",
+          "text": "CON CHRIS · POR WHATSAPP",
+          "ratio": 7.876524364954656,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-demo-intro p",
+          "text": "Comparte lo que sea útil. Revisarás",
+          "ratio": 9.650935519763502,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-demo-intro h3",
+          "text": "Una demo para tu contexto.",
+          "ratio": 15.000492826222164,
+          "font": 27
+        },
+        {
+          "selector": ".advisor-primary",
+          "text": "Preparar mi solicitud →",
+          "ratio": 9.798989363956215,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-primary",
+          "text": "Coordinar mi demo con Chris ↗",
+          "ratio": 9.798989363956215,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-pending",
+          "text": "Pendiente de confirmación. WhatsApp",
+          "ratio": 7.698383714183389,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-consent span",
+          "text": "También quiero guardar esta solicit",
+          "ratio": 9.650935519763502,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-demo legend",
+          "text": "Tu horario preferido (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo small",
+          "text": "Deja fecha y hora vacías si prefier",
+          "ratio": 7.698383714183389,
+          "font": 12
+        }
+      ],
+      "controls": [
+        {
+          "text": "×",
+          "height": 44
+        },
+        {
+          "text": "Conversar",
+          "height": 44
+        },
+        {
+          "text": "Coordinar demo ↗",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "Selecciona tu rolRepresentante",
+          "height": 44
+        },
+        {
+          "text": "Por definir1 sala2–3 salas4 o ",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "Usar mi última pregunta como p",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "",
+          "height": 48
+        },
+        {
+          "text": "",
+          "height": 48
+        },
+        {
+          "text": "Cancún · Caribe mexicanoCiudad",
+          "height": 44
+        },
+        {
+          "text": "Preparar mi solicitud →",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "MediaHub and scenarios preserve strong text colors at 390px",
+      "passed": true
+    },
+    {
+      "name": "Contextual controls and an introductory film appear without inference at 360px",
+      "passed": true
+    },
+    {
+      "name": "Computed colors are readable and layout fits at 360px",
+      "passed": true,
+      "contrast": [
+        {
+          "selector": ".advisor-launcher strong",
+          "text": "Pregunta a Sales Academy",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-launcher small",
+          "text": "Tu asesor con IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header p",
+          "text": "SALES ACADEMY · ASISTENTE IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header h2",
+          "text": "Tu siguiente paso, claro.",
+          "ratio": 17.80878871359792,
+          "font": 21
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Conversar",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Coordinar demo ↗",
+          "ratio": 13.100938905760591,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-message p",
+          "text": "Soy tu asesor IA de Sales Academy. ",
+          "ratio": 16.38466274968859,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-sender",
+          "text": "ASESOR IA",
+          "ratio": 7.848903717140892,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Soy líder",
+          "ratio": 11.829692951640698,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Quiero practicar",
+          "ratio": 11.829692951640698,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-suggestions button",
+          "text": "Coordinar demo",
+          "ratio": 9.798989363956215,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-disclosure",
+          "text": "Conversación disponible durante 1 h",
+          "ratio": 7.698383714183389,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-resource-title",
+          "text": "Tu Smart Agent, en acción",
+          "ratio": 16.38466274968859,
+          "font": 17
+        },
+        {
+          "selector": ".advisor-resource-excerpt",
+          "text": "Una visión de cómo la IA puede acom",
+          "ratio": 10.54147523965981,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-resource-evidence",
+          "text": "Visión de producto · película conce",
+          "ratio": 8.603330360845824,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-resource-link",
+          "text": "Ver contexto y transcripción ↗",
+          "ratio": 10.910468261376296,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-video-play",
+          "text": "▶ Ver video · 33 s",
+          "ratio": 9.798989363956215,
+          "font": 14
+        }
+      ]
+    },
+    {
+      "name": "Suggested answers replace the previous choices and media remains trusted at 360px",
+      "passed": true
+    },
+    {
+      "name": "Film plays only after a gesture with audio and captions, then pauses on tab switch at 360px",
+      "passed": true
+    },
+    {
+      "name": "Demo action and editable WhatsApp handoff stay voluntary at 360px",
+      "passed": true
+    },
+    {
+      "name": "Media stops on close, hidden page, another film and a new question at 360px",
+      "passed": true,
+      "contrast": [
+        {
+          "selector": ".advisor-launcher strong",
+          "text": "Pregunta a Sales Academy",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-launcher small",
+          "text": "Tu asesor con IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header p",
+          "text": "SALES ACADEMY · ASISTENTE IA",
+          "ratio": 12.802475047955456,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-header h2",
+          "text": "Tu siguiente paso, claro.",
+          "ratio": 17.80878871359792,
+          "font": 21
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Conversar",
+          "ratio": 13.100938905760591,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-tabs button",
+          "text": "Coordinar demo ↗",
+          "ratio": 17.80878871359792,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu nombre (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu rolSelecciona tu rolRepresentant",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "SalasPor definir1 sala2–3 salas4 o ",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tamaño del equipo",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "¿Qué quieres mejorar?",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "¿Para cuándo?",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Contacto (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Fecha",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Hora",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Zona horariaCancún · Caribe mexican",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "Tu resumen editable",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo label",
+          "text": "También quiero guardar esta solicit",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo-intro p",
+          "text": "CON CHRIS · POR WHATSAPP",
+          "ratio": 7.876524364954656,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-demo-intro p",
+          "text": "Comparte lo que sea útil. Revisarás",
+          "ratio": 9.650935519763502,
+          "font": 16
+        },
+        {
+          "selector": ".advisor-demo-intro h3",
+          "text": "Una demo para tu contexto.",
+          "ratio": 15.000492826222164,
+          "font": 27
+        },
+        {
+          "selector": ".advisor-primary",
+          "text": "Preparar mi solicitud →",
+          "ratio": 9.798989363956215,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-primary",
+          "text": "Coordinar mi demo con Chris ↗",
+          "ratio": 9.798989363956215,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-pending",
+          "text": "Pendiente de confirmación. WhatsApp",
+          "ratio": 7.698383714183389,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-consent span",
+          "text": "También quiero guardar esta solicit",
+          "ratio": 9.650935519763502,
+          "font": 12
+        },
+        {
+          "selector": ".advisor-demo legend",
+          "text": "Tu horario preferido (opcional)",
+          "ratio": 11.994176692856964,
+          "font": 14
+        },
+        {
+          "selector": ".advisor-demo small",
+          "text": "Deja fecha y hora vacías si prefier",
+          "ratio": 7.698383714183389,
+          "font": 12
+        }
+      ],
+      "controls": [
+        {
+          "text": "×",
+          "height": 44
+        },
+        {
+          "text": "Conversar",
+          "height": 44
+        },
+        {
+          "text": "Coordinar demo ↗",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "Selecciona tu rolRepresentante",
+          "height": 44
+        },
+        {
+          "text": "Por definir1 sala2–3 salas4 o ",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "Usar mi última pregunta como p",
+          "height": 44
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "",
+          "height": 46
+        },
+        {
+          "text": "",
+          "height": 48
+        },
+        {
+          "text": "",
+          "height": 48
+        },
+        {
+          "text": "Cancún · Caribe mexicanoCiudad",
+          "height": 44
+        },
+        {
+          "text": "Preparar mi solicitud →",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "name": "MediaHub and scenarios preserve strong text colors at 360px",
+      "passed": true
+    },
+    {
+      "name": "Legacy answers stay brief while preserving the complete original in details",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "mp4BeforeGesture": 0,
+  "whatsappOpened": false,
+  "ok": true,
+  "finishedAt": "2026-11-07T15:07:39.926Z"
+}

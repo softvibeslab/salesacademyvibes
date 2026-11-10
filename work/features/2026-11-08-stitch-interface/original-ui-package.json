@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "date": "2026-11-08",
+  "archive": "salesacademy-original-interface.zip",
+  "bytes": 30557111,
+  "sha256": "661f770684da240aa06cb93e93be5c3414397ca93f68ad57e8e2c61309f97fe9",
+  "sourceFiles": 94,
+  "sourceBytes": 31238320,
+  "zipEntries": 96,
+  "mp4Count": 5,
+  "freeBytesBefore": 12165120000,
+  "allSourcesUnchanged": true,
+  "runtimeModified": false,
+  "uploadedToStitch": false,
+  "notes": "Contains UI source and public assets only; no server or credentials. Source equals local current files, not a claim of byte-for-byte equivalence with an independently re-fetched production release."
+}

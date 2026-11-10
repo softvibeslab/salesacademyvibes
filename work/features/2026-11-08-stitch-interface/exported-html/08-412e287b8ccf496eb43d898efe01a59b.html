@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Galería · Un día en la sala | Sales Academy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#e2e3db",
+            "outline": "#999081",
+            "on-error": "#690005",
+            "primary-container": "#d4b574",
+            "inverse-surface": "#e3e3dd",
+            "surface-container-low": "#1a1c19",
+            "inverse-on-surface": "#2f312d",
+            "primary": "#f1d18d",
+            "error": "#ffb4ab",
+            "on-surface": "#e3e3dd",
+            "surface-dim": "#121411",
+            "error-container": "#93000a",
+            "on-primary-fixed-variant": "#59440d",
+            "on-error-container": "#ffdad6",
+            "surface-container-high": "#292b27",
+            "surface-tint": "#e3c380",
+            "on-secondary": "#30312d",
+            "background": "#121411",
+            "outline-variant": "#4d463a",
+            "secondary-fixed-dim": "#c8c6c1",
+            "tertiary-fixed-dim": "#c5c7bf",
+            "primary-fixed-dim": "#e3c380",
+            "on-primary-container": "#5c460f",
+            "surface-container": "#1e201d",
+            "on-tertiary-fixed-variant": "#454842",
+            "on-tertiary": "#2e312c",
+            "on-surface-variant": "#d0c5b5",
+            "on-secondary-fixed": "#1b1c18",
+            "tertiary": "#d4d5cd",
+            "on-primary": "#3f2e00",
+            "secondary-container": "#494945",
+            "tertiary-container": "#b8bab2",
+            "secondary": "#c8c6c1",
+            "surface-container-highest": "#333532",
+            "secondary-fixed": "#e4e2dd",
+            "surface-bright": "#383a36",
+            "on-secondary-fixed-variant": "#474743",
+            "surface-container-lowest": "#0d0f0c",
+            "surface-variant": "#333532",
+            "on-primary-fixed": "#251a00",
+            "inverse-primary": "#735b23",
+            "surface": "#121411",
+            "on-background": "#e3e3dd",
+            "primary-fixed": "#ffdf9d",
+            "on-tertiary-fixed": "#191c17",
+            "on-tertiary-container": "#474a44",
+            "on-secondary-container": "#bab8b3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "3rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "4rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-md": ["Newsreader"],
+            "headline-lg": ["Newsreader"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Newsreader"],
+            "headline-xl-mobile": ["Newsreader"],
+            "label-md": ["Inter"],
+            "headline-xl": ["Newsreader"],
+            "headline-lg-mobile": ["Newsreader"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar (Shared Component: Active = Galería) -->
+<header class="w-full bg-surface dark:bg-surface border-b border-outline-variant/30 sticky top-0 z-50 transition-all duration-200 ease-out">
+<div class="flex justify-between items-center w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-20">
+<div class="flex items-center gap-12">
+<a class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface dark:text-on-surface flex items-center gap-2" href="#">
+<span>SA</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#">Agentes en acción</a>
+<a class="text-primary dark:text-primary font-medium tracking-wide font-label-md text-label-md transition-colors duration-200 flex items-center gap-1.5" href="#">
+<span>Galería</span>
+<span class="w-1 h-1 rounded-full bg-primary inline-block"></span>
+</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#">MediaHub</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#">Diagnóstico</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#">FAQ</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="px-5 py-2.5 bg-[#F5F3ED] text-[#10120F] hover:bg-primary-container transition-colors duration-200 font-label-sm text-label-sm font-semibold tracking-wider uppercase border border-transparent" href="#contacto-demo">
+          Solicitar demo por WhatsApp
+        </a>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1360px] mx-auto px-6 lg:px-16 py-16 md:py-24">
+<!-- Hero / Encabezado cinematográfico -->
+<section class="mb-20 md:mb-28 text-left border-b border-outline-variant/20 pb-16">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-primary/30 mb-6">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">theater_comedy</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">RECORRIDO CINEMATOGRÁFICO DE OPERACIONES</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface italic font-normal tracking-tight max-w-4xl leading-[1.08] mb-6">
+        Un día en la sala
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl font-light">
+        06 momentos · 16 pantallas operativas que acompañan a tu equipo desde el briefing matutino hasta el cierre.
+      </p>
+<div class="mt-8 flex flex-wrap items-center gap-6 text-on-surface-variant/80 font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>ESTÁNDAR LUXURY HOSPITALITY</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span>INTELIGENCIA DE CONVERSACIÓN SÍNCRONA</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>TELEMETRÍA EN SALA EN TIEMPO REAL</span>
+</div>
+</div>
+</section>
+<!-- 6 Escenas Operativas Detalladas -->
+<section class="space-y-24 md:space-y-32 mb-28">
+<!-- Escena 1: Preparación matutina -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface-container-lowest p-6 md:p-10 border border-white/5">
+<div class="lg:col-span-4 space-y-4">
+<div class="font-label-sm text-label-sm text-primary tracking-widest uppercase">MOMENTO 01 / 06</div>
+<h2 class="font-headline-md text-headline-md text-on-surface italic">Preparación matutina</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Briefing de perfil y calibración de intención. Los directores de sala y asesores alinean prioridades emocionales, tickets objetivo y puntos de dolor antes de que ingrese el primer huésped.
+          </p>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/60 uppercase">MÉTRICAS CLAVE EN PANTALLA</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Calibración de perfil: 98.4% · Tono inicial: Empatía formal</span>
+</div>
+</div>
+<!-- Escena Ilustrativa -->
+<div class="lg:col-span-5 flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Escena ilustrativa generada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">Sala Ejecutiva 08:30 hrs</span>
+</div>
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container border border-white/10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An executive hospitality sales team gathered around a polished dark marble briefing table in a quiet luxury private boardroom. Soft morning architectural sunlight cuts across dark wood slatted walls with subtle brass accents. The atmosphere is solemn, focused, and prestigious with refined European hospitality styling, muted obsidian, deep charcoal, and warm antique gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9N70O6jQ6uO4tdBUNdRYPxcXhfUhK_5GLq_eekE6SOA0_vqXhEPOzFFYcyBq4-E6W6g9VjlAUiijg5Ih0_z0a0Ux62ow20cZTOGz4g-Y5RLCd2LhJF1kuv1nb27Yb5IP-GdYv3_1zIl2W8YhHtWRHJUILZfLNwEdco45CaBZOUZ1_-gqjeo6wehiDbydYNCaysHCOO8bCJxB0v9m7Dv0g44aKxHkie7SXf6HPK-mjb7QukUplKogFGhyv5WI8TkX0y2a-m_fpHf0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Mockup Móvil Compacto (<=260px) -->
+<div class="lg:col-span-3 flex flex-col items-center">
+<div class="w-full max-w-[260px] flex flex-col gap-2">
+<div class="px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 tracking-wider uppercase block">Captura real demo / datos de ejemplo</span>
+</div>
+<!-- Mockup Frame -->
+<div class="w-[260px] bg-surface-container-high border border-primary/30 p-3 shadow-2xl relative">
+<div class="w-full flex justify-between items-center pb-2 border-b border-outline-variant/30 text-[9px] text-on-surface-variant font-mono">
+<span>08:45 AM</span>
+<span class="text-primary font-bold">SA · BRIEFING</span>
+</div>
+<div class="py-3 space-y-2.5">
+<div class="p-2 bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-[9px] text-primary uppercase font-bold block">HuÉsped entrante #402</span>
+<p class="font-headline-sm text-[13px] leading-4 text-on-surface italic mt-0.5">Familia Valenzuela (Madrid)</p>
+</div>
+<div class="space-y-1 text-[11px] text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 py-1">
+<span>Intención:</span>
+<span class="text-on-surface font-medium">Patrimonio vacacional</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 py-1">
+<span>Presupuesto est:</span>
+<span class="text-primary font-mono font-medium">$420,000 USD</span>
+</div>
+<div class="flex justify-between py-1">
+<span>Sensibilidad:</span>
+<span class="text-error font-medium">Tiempo de entrega</span>
+</div>
+</div>
+<div class="p-2 bg-surface-container-low border-l-2 border-primary text-[10px] text-on-surface-variant italic">
+                  "Priorizar privacidad y exclusividad del club de playa antes de desglosar cuotas."
+                </div>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 text-center">
+<span class="font-label-sm text-[9px] text-primary tracking-widest uppercase">BRIEFING CONFIRMADO ✓</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Escena 2: Meet & Greet -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface-container-lowest p-6 md:p-10 border border-white/5">
+<div class="lg:col-span-4 space-y-4">
+<div class="font-label-sm text-label-sm text-primary tracking-widest uppercase">MOMENTO 02 / 06</div>
+<h2 class="font-headline-md text-headline-md text-on-surface italic">Meet &amp; Greet</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Apertura cálida y recepción del huésped. Protocolo de bienvenida donde la cortesía monástica y la calibración visual de comodidad marcan el tono de confianza sin presión comercial.
+          </p>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/60 uppercase">CALIDAD DEL CONTACTO</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Índice de distensión: Óptimo · Tiempo inicial: 4.2 min</span>
+</div>
+</div>
+<!-- Escena Ilustrativa -->
+<div class="lg:col-span-5 flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Escena ilustrativa generada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">Lobby &amp; Concierge Lounge</span>
+</div>
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container border border-white/10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A refined European luxury sales executive gracefully greeting a sophisticated couple in an ultra-luxurious resort lounge. Hand-crafted stone walls, minimalist warm lighting, quiet architecture, elegant formal postures, understated hospitality elegance in deep charcoal and warm golden ambient light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAebnudQM_XJVjJ0lsjD3vfKgKQpXD-EX_PF7bXS5zdQZ_jeqxGAhYB7H9Rx9ESnGVhK5k28wYCgDQsIuQKPC5TQbpvZIPDOaWi7tp67QBbuKuj6tiH6p4fd-1v5On06ZQHncUb8X1__gMAS5OgZc4ZF6Z4VNJswgHSq-nBp7Back0WPQT9tY1Zo9sjYP9pYmcMGUfootye5dSSphQanTxBy0fFUh0PLll9xH8sBoQq9SuQg21C6PSeXunlfBHtitn5sQeBLygsXYw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Mockup Móvil Compacto (<=260px) -->
+<div class="lg:col-span-3 flex flex-col items-center">
+<div class="w-full max-w-[260px] flex flex-col gap-2">
+<div class="px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 tracking-wider uppercase block">Captura real demo / datos de ejemplo</span>
+</div>
+<!-- Mockup Frame -->
+<div class="w-[260px] bg-surface-container-high border border-primary/30 p-3 shadow-2xl relative">
+<div class="w-full flex justify-between items-center pb-2 border-b border-outline-variant/30 text-[9px] text-on-surface-variant font-mono">
+<span>09:12 AM</span>
+<span class="text-primary font-bold">MONITOR EN SALA</span>
+</div>
+<div class="py-3 space-y-2.5">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[10px] text-on-surface font-semibold uppercase">Recepción en progreso</span>
+</div>
+<div class="p-2 bg-surface-container-lowest border border-outline-variant/20">
+<span class="text-[9px] text-on-surface-variant block uppercase">Micro-análisis acústico</span>
+<p class="font-headline-sm text-[12px] text-primary italic mt-0.5">"Ritmo pausado. El huésped busca sentirse en casa, no evaluado."</p>
+</div>
+<div class="space-y-1.5 text-[11px]">
+<div class="p-1.5 bg-surface-container border border-outline-variant/10 text-on-surface">
+<span class="text-[8px] text-outline uppercase font-mono block">Sugerencia IA Concierge</span>
+                    Ofrecer café artesanal sin iniciar presentación de planos.
+                  </div>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 text-center">
+<span class="font-label-sm text-[9px] text-primary tracking-widest uppercase">RECEPCIÓN SATISFACTORIA</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Escena 3: Descubrimiento -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface-container-lowest p-6 md:p-10 border border-white/5">
+<div class="lg:col-span-4 space-y-4">
+<div class="font-label-sm text-label-sm text-primary tracking-widest uppercase">MOMENTO 03 / 06</div>
+<h2 class="font-headline-md text-headline-md text-on-surface italic">Descubrimiento</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Preguntas clave y exploración de motivaciones. Profundización en los motivos genuinos del comprador: legado familiar, rentabilidad discreta y santuario de retiro.
+          </p>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/60 uppercase">NIVEL DE REVELACIÓN</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Profundidad de necesidad: 92% · 3 detonantes fijados</span>
+</div>
+</div>
+<!-- Escena Ilustrativa -->
+<div class="lg:col-span-5 flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Escena ilustrativa generada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">Mesa de Consulta Privada</span>
+</div>
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container border border-white/10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An intimate consultative scene between an elite private wealth sales advisor and clients seated across an unvarnished natural oak table. Subtle architectural models, ambient low-key museum lighting, serene luxury atmosphere with deep shadows and warm brass accents, evoking sovereign trust and quiet intellectual rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyJ3hlulWFh8w4oRjKrMw0y8JK0dSfBYyOGOCAzgL3xDDvRfn90KbZPG0koyTv0i0KCqRA8z1m8XTEs-bSiFkEctUHgBpZ3il513OpdHHErL-nxZDc0PtGxlp4uFnGw0gr6lMnWV0srtcRuGZRrNAIGvoSzk0tsbEzmVLIkT4T619ZHzdZPJBxL9AIoNn0x-X5cP_YG6U5bOtkRwg0MnOv-YLeIr-1vvfMgKKrjXQGcsXY2kQtdzjLIyFcRYf6hi44XlkvyyyRqVc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Mockup Móvil Compacto (<=260px) -->
+<div class="lg:col-span-3 flex flex-col items-center">
+<div class="w-full max-w-[260px] flex flex-col gap-2">
+<div class="px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 tracking-wider uppercase block">Captura real demo / datos de ejemplo</span>
+</div>
+<!-- Mockup Frame -->
+<div class="w-[260px] bg-surface-container-high border border-primary/30 p-3 shadow-2xl relative">
+<div class="w-full flex justify-between items-center pb-2 border-b border-outline-variant/30 text-[9px] text-on-surface-variant font-mono">
+<span>10:05 AM</span>
+<span class="text-primary font-bold">DESCOVERY LIVE</span>
+</div>
+<div class="py-3 space-y-2.5">
+<div class="text-[10px] text-on-surface-variant uppercase font-mono">Pregunta exploratoria formulada</div>
+<div class="p-2 bg-surface-container-lowest border-l-2 border-primary text-[12px] text-on-surface italic font-headline-sm">
+                  "¿Qué significa para ustedes garantizar veranos privados para la siguiente generación?"
+                </div>
+<div class="space-y-1">
+<div class="text-[9px] text-primary uppercase font-bold">Respuestas detectadas:</div>
+<div class="flex items-center gap-1.5 text-[10px] text-on-surface">
+<span class="text-primary">✦</span> Legado familiar ininterrumpido
+                  </div>
+<div class="flex items-center gap-1.5 text-[10px] text-on-surface">
+<span class="text-primary">✦</span> Cero fricción logística
+                  </div>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 text-center">
+<span class="font-label-sm text-[9px] text-primary tracking-widest uppercase">CONEXIÓN EMOCIONAL 94%</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Escena 4: Práctica de objeción -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface-container-lowest p-6 md:p-10 border border-white/5">
+<div class="lg:col-span-4 space-y-4">
+<div class="font-label-sm text-label-sm text-primary tracking-widest uppercase">MOMENTO 04 / 06</div>
+<h2 class="font-headline-md text-headline-md text-on-surface italic">Práctica de objeción</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Manejo honesto de objeciones de precio y tiempo. La objeción no se esquiva: se abraza como validación de compromiso con rigor financiero y serenidad argumental.
+          </p>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/60 uppercase">RESOLUCIÓN DE CONFLICTO</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Tasa de disipación de duda: 89% · Sin descuento forzado</span>
+</div>
+</div>
+<!-- Escena Ilustrativa -->
+<div class="lg:col-span-5 flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Escena ilustrativa generada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">Sala de Simulación &amp; Modelaje</span>
+</div>
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container border border-white/10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Two executive sales professionals in a contemporary minimalist salon reviewing portfolio architectural models. A large dark slate screen softly renders real-time telemetry behind them. The lighting is cinematic, atmospheric, with deep tonal stratification, dark granite textures, and subtle warm golden highlights highlighting sovereign luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARkcDr__-VEHX15hiyQSicf0jeEcgoV0tPHZHUvKxNl2dUYLafD_wvnhKTl86RNGdns2PeaHrZxAWlY7pJ1nKcgklfLt10RBhzEDFs_9cR8Yj8oFAPcc1OLQU1EyQdg0SfmVCYUpB_R-GmMRE8X825v5sS__5dcjTjzFYk4MWYo1efkIKov9dfCoL424NOSE1PVL3D7sHabK065ryauVdbepfdtoV5ondyVCHML4IwNztlLiTEqS0l3ron9F6fCo9z_bhDhQecfpY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Mockup Móvil Compacto (<=260px) -->
+<div class="lg:col-span-3 flex flex-col items-center">
+<div class="w-full max-w-[260px] flex flex-col gap-2">
+<div class="px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 tracking-wider uppercase block">Captura real demo / datos de ejemplo</span>
+</div>
+<!-- Mockup Frame -->
+<div class="w-[260px] bg-surface-container-high border border-primary/30 p-3 shadow-2xl relative">
+<div class="w-full flex justify-between items-center pb-2 border-b border-outline-variant/30 text-[9px] text-on-surface-variant font-mono">
+<span>11:20 AM</span>
+<span class="text-primary font-bold">OBJECIÓN · TIEMPO</span>
+</div>
+<div class="py-3 space-y-2">
+<div class="p-2 bg-error-container/20 border border-error/30 text-[10px] text-error font-medium">
+                  Objeción: "Queremos esperar 6 meses antes de firmar."
+                </div>
+<div class="p-2 bg-surface-container-lowest border-l-2 border-primary">
+<span class="text-[8px] text-primary uppercase font-mono block">Encuadre sugerido:</span>
+<p class="font-headline-sm text-[12px] text-on-surface italic mt-0.5">"El tiempo es un filtro, no una pausa. ¿Esperar les garantiza mejor valor o solo pospone la decisión que ya tienen clara?"</p>
+</div>
+<div class="text-[9px] text-on-surface-variant flex justify-between pt-1">
+<span>Impacto percibido:</span>
+<span class="text-primary font-bold">Alto respeto</span>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 text-center">
+<span class="font-label-sm text-[9px] text-primary tracking-widest uppercase">ENFOQUE RECALIBRADO</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Escena 5: Coaching y observación -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface-container-lowest p-6 md:p-10 border border-white/5">
+<div class="lg:col-span-4 space-y-4">
+<div class="font-label-sm text-label-sm text-primary tracking-widest uppercase">MOMENTO 05 / 06</div>
+<h2 class="font-headline-md text-headline-md text-on-surface italic">Coaching y observación</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Feedback conciso de alto impacto post-tour. Devolución quirúrgica en los tres minutos inmediatos al tour para fijar aciertos tácticos y corregir desviaciones verbales.
+          </p>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/60 uppercase">FRECUENCIA DE AJUSTE</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Feedback en &lt; 180s · 3 anclajes de retención</span>
+</div>
+</div>
+<!-- Escena Ilustrativa -->
+<div class="lg:col-span-5 flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Escena ilustrativa generada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">Debriefing Room Privado</span>
+</div>
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container border border-white/10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A master sales director providing discrete 1-on-1 coaching to a junior luxury sales executive in an intimate European salon lounge. Refined architectural wood paneling, discreet coffee service on slate surface, focused professional expressions, warm museum accent spotlights, deep shadows with subtle warm ochre and gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA93Xj1Mq_yOYGBsCdq16G5qQCdCST4hAmZ7Y6x3_lp1sZyZfNPA3OXEpyiq4oQreuQ_2Z1MlwsT3WXfL8KxjweO3r-c0HG_7wegfMw_GO_JA5b2hBs4gV7Y6c7uujtbP3ijyj2DTSE8pfTx9F2yk_-spWOsctQaPipNXNx9Jo4tFEKsRapCyRWtL1AK0TzC_5iopa7kqKR2DxM1UFpniraogWPwYHi7y2kZR7nabDQg_koWzK2XDW4GJoDWTnBJAbVCIVyD1VcQn0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Mockup Móvil Compacto (<=260px) -->
+<div class="lg:col-span-3 flex flex-col items-center">
+<div class="w-full max-w-[260px] flex flex-col gap-2">
+<div class="px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 tracking-wider uppercase block">Captura real demo / datos de ejemplo</span>
+</div>
+<!-- Mockup Frame -->
+<div class="w-[260px] bg-surface-container-high border border-primary/30 p-3 shadow-2xl relative">
+<div class="w-full flex justify-between items-center pb-2 border-b border-outline-variant/30 text-[9px] text-on-surface-variant font-mono">
+<span>12:45 PM</span>
+<span class="text-primary font-bold">DEBRIEF DE SALA</span>
+</div>
+<div class="py-3 space-y-2">
+<div class="text-[10px] text-on-surface font-semibold flex items-center justify-between">
+<span>PUNTAJE DEL TOUR</span>
+<span class="text-primary font-mono text-sm">94/100</span>
+</div>
+<div class="p-1.5 bg-surface-container border border-outline-variant/20 space-y-1">
+<div class="text-[9px] text-emerald-400 font-bold uppercase">Acierto mayor:</div>
+<p class="text-[10px] text-on-surface-variant">Pausa intencional de 4 segundos antes del desglose de inversión.</p>
+</div>
+<div class="p-1.5 bg-surface-container border border-outline-variant/20 space-y-1">
+<div class="text-[9px] text-primary uppercase font-bold">Ajuste recomendado:</div>
+<p class="text-[10px] text-on-surface-variant">Evitar justificar el valor con especificaciones técnicas secundarias.</p>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 text-center">
+<span class="font-label-sm text-[9px] text-primary tracking-widest uppercase">REGISTRADO EN EXPEDIENTE</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Escena 6: Siguiente día -->
+<article class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface-container-lowest p-6 md:p-10 border border-white/5">
+<div class="lg:col-span-4 space-y-4">
+<div class="font-label-sm text-label-sm text-primary tracking-widest uppercase">MOMENTO 06 / 06</div>
+<h2 class="font-headline-md text-headline-md text-on-surface italic">Siguiente día</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Consolidación de aprendizajes y escala progresiva. Análisis comparativo entre equipos, integración de patrones conversacionales y memoria institucional acumulada.
+          </p>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/60 uppercase">IMPACTO ACUMULADO</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">+38% retención de objeciones · Cierre predecible</span>
+</div>
+</div>
+<!-- Escena Ilustrativa -->
+<div class="lg:col-span-5 flex flex-col gap-2">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase">Escena ilustrativa generada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/50">Torre de Operaciones &amp; Analytics</span>
+</div>
+<div class="relative overflow-hidden aspect-[4/3] bg-surface-container border border-white/10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A tranquil, dawn-lit executive suite overlooking an architectural panorama. A senior hotelier and sales leader reviewing executive dashboards on an ultra-slim slate console. Muted warm brass accents, deep ebony surfaces, pristine editorial luxury framing, symbolizing mastery, foresight, and sovereign institutional rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWktI5b7be795wL3N2M3scLl8tmIJGbWxR0WTjoFUZMzrpHyxvSe9gZGMAR_aJXDRRHWqjqoR-BzD5WzquQuogWdAPUtnnd2seAcEiO5rtZ7dCGsxAkWnxS8rXiBuGSWPn5hfeySXmR4kw2mwSlfYDTn5RyZxlLQDJmljuueyUrjMnoS8N5gFAAFnHuaRErPfriK_EcSZhPCCOcatipTDGwxYY-szIiZg_IapLf0ra5lTpzL7o4amq7wCeTOAeqI88HrRWEFXEYCU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Mockup Móvil Compacto (<=260px) -->
+<div class="lg:col-span-3 flex flex-col items-center">
+<div class="w-full max-w-[260px] flex flex-col gap-2">
+<div class="px-1 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 tracking-wider uppercase block">Captura real demo / datos de ejemplo</span>
+</div>
+<!-- Mockup Frame -->
+<div class="w-[260px] bg-surface-container-high border border-primary/30 p-3 shadow-2xl relative">
+<div class="w-full flex justify-between items-center pb-2 border-b border-outline-variant/30 text-[9px] text-on-surface-variant font-mono">
+<span>DÍA +1 · 07:00 AM</span>
+<span class="text-primary font-bold">CONSOLIDADO</span>
+</div>
+<div class="py-3 space-y-2">
+<div class="flex justify-between text-[11px] text-on-surface">
+<span>Tours evaluados:</span>
+<span class="font-mono font-bold text-primary">18 tours</span>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface">
+<span>Asimilación táctica:</span>
+<span class="font-mono font-bold text-primary">91.6%</span>
+</div>
+<div class="p-2 bg-surface-container-lowest border border-outline-variant/20 mt-2">
+<span class="text-[8px] text-outline uppercase font-mono block">Patrón de la semana</span>
+<p class="font-headline-sm text-[11px] text-on-surface italic mt-0.5">
+                    "La objeción de liquidez se diluye al presentar la opción de fideicomiso privado en el minuto 25."
+                  </p>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/30 text-center">
+<span class="font-label-sm text-[9px] text-primary tracking-widest uppercase">MODELO ENTRENADO ✓</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Catálogo Inferior Completo: Índice de las 16 pantallas operativas -->
+<section class="border-t border-outline-variant/30 pt-16 mb-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary block mb-2">CATÁLOGO OPERATIVO COMPLETO</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface italic">
+            Las 16 pantallas de la suite
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          Ecosistema integral diseñado para tablet y smartphone, adaptado al flujo físico y mental de la venta en sala de alto ticket.
+        </p>
+</div>
+<!-- Bento Grid de 16 Pantallas -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<!-- Pantalla 01 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-01</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">BRIEFING</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>ID: 801</span><span class="text-primary">VIP</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-3/4 bg-primary/40"></div>
+<div class="h-1.5 w-1/2 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Ficha de Intención</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">01. Briefing matutino</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Calibración de perfil de visitante.</p>
+</div>
+<!-- Pantalla 02 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-02</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">RECEPCIÓN</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>LOBBY</span><span class="text-emerald-400">ACTIVO</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-full bg-primary/40"></div>
+<div class="h-1.5 w-2/3 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Protocolo de Bienvenida</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">02. Meet &amp; Greet</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Recepción y anclaje inicial de confort.</p>
+</div>
+<!-- Pantalla 03 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-03</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">DESCUBRIMIENTO</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>RADAR</span><span class="text-primary">94%</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-2/3 bg-primary/40"></div>
+<div class="h-1.5 w-4/5 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Preguntas Clave</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">03. Exploración de motivaciones</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Extracción de valores profundos.</p>
+</div>
+<!-- Pantalla 04 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-04</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">TOUR</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>MAPA</span><span class="text-primary">ZONA A</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-3/4 bg-primary/40"></div>
+<div class="h-1.5 w-1/3 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Navegación del Espacio</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">04. Ruta sensorial de producto</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Conexión de amenidades con deseos.</p>
+</div>
+<!-- Pantalla 05 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-05</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">FINANZAS</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>CALC</span><span class="text-primary">TIER 1</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-1/2 bg-primary/40"></div>
+<div class="h-1.5 w-full bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Desglose de Inversión</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">05. Cuadro patrimonial</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Transparencia de rentabilidad y plusvalía.</p>
+</div>
+<!-- Pantalla 06 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-06</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">OBJECIONES</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>DIL</span><span class="text-error">PRECIO</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-2/3 bg-primary/40"></div>
+<div class="h-1.5 w-1/2 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Disipador de Duda</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">06. Manejo de objeción: Precio</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Reencuadre sin ceder margen.</p>
+</div>
+<!-- Pantalla 07 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-07</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">OBJECIONES</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>DIL</span><span class="text-primary">TIEMPO</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-3/4 bg-primary/40"></div>
+<div class="h-1.5 w-2/3 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Filtro de Decisión</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">07. Manejo de objeción: Tiempo</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Aceleración respetuosa de certidumbre.</p>
+</div>
+<!-- Pantalla 08 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-08</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">CIERRE</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>FIRMA</span><span class="text-emerald-400">READY</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-full bg-primary/40"></div>
+<div class="h-1.5 w-1/3 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Acuerdo de Adhesión</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">08. Transición al cierre</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Firma sin presión teatral.</p>
+</div>
+<!-- Pantalla 09 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-09</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">FEEDBACK</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>POST</span><span class="text-primary">180s</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-2/3 bg-primary/40"></div>
+<div class="h-1.5 w-1/2 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Debrief Quirúrgico</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">09. Coaching post-tour</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Corrección en caliente del diálogo.</p>
+</div>
+<!-- Pantalla 10 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-10</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">TELEMETRÍA</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>VOZ</span><span class="text-primary">ONDAS</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-full bg-primary/40"></div>
+<div class="h-1.5 w-3/4 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Cadencia &amp; Pausas</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">10. Monitor de prosodia verbal</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Análisis de silencios y empatía.</p>
+</div>
+<!-- Pantalla 11 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-11</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">INVENTARIO</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>DISP</span><span class="text-primary">4 UNID</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-1/3 bg-primary/40"></div>
+<div class="h-1.5 w-2/3 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Disponibilidad en Vivo</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">11. Bloqueo de unidades VIP</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Gestión síncrona con back-office.</p>
+</div>
+<!-- Pantalla 12 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-12</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">CONTRATOS</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>LEGAL</span><span class="text-primary">OK</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-full bg-primary/40"></div>
+<div class="h-1.5 w-1/2 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Fideicomiso &amp; Cláusulas</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">12. Expediente notarial ágil</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Certeza jurídica en un click.</p>
+</div>
+<!-- Pantalla 13 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-13</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">AUDITORÍA</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>DIRECCIÓN</span><span class="text-primary">KPI</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-3/4 bg-primary/40"></div>
+<div class="h-1.5 w-1/2 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Auditoría de Calidad</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">13. Panel del Director de Sala</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Supervisión en vivo de 12 mesas.</p>
+</div>
+<!-- Pantalla 14 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-14</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">NURTURING</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>SEGUIMIENTO</span><span class="text-primary">DÍA +2</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-1/2 bg-primary/40"></div>
+<div class="h-1.5 w-4/5 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Cartas de Cortesía</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">14. Seguimiento editorial</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Mensajes personalizados de hospitalidad.</p>
+</div>
+<!-- Pantalla 15 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-15</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">INTELIGENCIA</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>MODEL</span><span class="text-primary">v5.4</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-full bg-primary/40"></div>
+<div class="h-1.5 w-2/3 bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Curva de Aprendizaje</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">15. Consolidación de aprendizajes</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Calibración semántica del equipo.</p>
+</div>
+<!-- Pantalla 16 -->
+<div class="bg-surface-container-low border border-white/5 p-4 hover:border-primary/40 transition-colors duration-200 group">
+<div class="flex justify-between items-center mb-3">
+<span class="font-mono text-xs text-primary font-bold">P-16</span>
+<span class="font-label-sm text-[9px] text-on-surface-variant/60 uppercase">ESCALA</span>
+</div>
+<div class="aspect-[9/16] max-h-48 bg-surface-container-lowest border border-outline-variant/20 mb-3 flex flex-col justify-between p-2.5">
+<div class="w-full flex justify-between text-[8px] text-outline font-mono"><span>GLOBAL</span><span class="text-primary">+38%</span></div>
+<div class="space-y-1">
+<div class="h-1.5 w-3/4 bg-primary/40"></div>
+<div class="h-1.5 w-full bg-outline-variant"></div>
+</div>
+<div class="text-[8px] text-on-surface-variant/70 italic text-center">Expansión Multi-Sala</div>
+</div>
+<h3 class="font-headline-sm text-sm text-on-surface italic group-hover:text-primary transition-colors">16. Escala y replicabilidad</h3>
+<p class="font-body-sm text-[11px] text-on-surface-variant/70 mt-1">Despliegue homogéneo entre resorts.</p>
+</div>
+</div>
+</section>
+<!-- Bloque Final CTA: Solicitar demo por WhatsApp -->
+<section class="border border-primary/30 bg-surface-container-low p-8 md:p-16 relative overflow-hidden text-center md:text-left mb-16" id="contacto-demo">
+<div class="max-w-3xl space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">SESIÓN GUIADA PRIVADA</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface italic leading-tight">
+          Recorre la sala de operaciones con un asesor senior
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl font-light">
+          Evaluamos tus flujos de venta actuales y proyectamos el impacto de equipar a tu equipo con las 16 pantallas operativas de Sales Academy.
+        </p>
+<div class="pt-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+<a class="px-8 py-4 bg-[#F5F3ED] text-[#10120F] hover:bg-primary-container transition-colors duration-200 font-label-md text-label-md font-bold tracking-widest uppercase text-center flex items-center justify-center gap-3" href="https://wa.me/?text=Hola,%20deseo%20solicitar%20una%20demo%20guiada%20de%20Un%20d%C3%ADa%20en%20la%20sala" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>Solicitar demo por WhatsApp</span>
+</a>
+<a class="px-8 py-4 border border-primary/30 text-on-surface hover:border-primary hover:bg-primary/5 transition-colors duration-200 font-label-md text-label-md font-medium tracking-wider uppercase text-center" href="#">
+            Descargar Whitepaper Técnico
+          </a>
+</div>
+<div class="text-on-surface-variant/60 font-label-sm text-label-sm pt-2">
+          RESPUESTA DIRECTA POR EL EQUIPO DE DIRECCIÓN EJECUTIVA · SIN BOTS DE FILTRO
+        </div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20 mt-auto">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface font-normal">SA</span>
+<span class="hidden md:inline-block text-outline-variant/40">|</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal">
+          © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+        </p>
+</div>
+<div class="flex items-center gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Términos de servicio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Contacto</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#">Auditoría VIP</a>
+</div>
+</div>
+</footer>
+</body></html>

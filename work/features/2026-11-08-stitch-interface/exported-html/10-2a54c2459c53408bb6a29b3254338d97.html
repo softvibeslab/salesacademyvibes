@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>10 · Privacidad · Información y controles | Sales Academy</title>
+<!-- Typography Preconnect -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Injection -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo", "Arial", "sans-serif"],
+            "label-sm": ["Arimo", "Arial", "sans-serif"],
+            "label-md": ["Arimo", "Arial", "sans-serif"],
+            "body-lg": ["Arimo", "Arial", "sans-serif"],
+            "headline-lg": ["Libre Caslon Text", "Georgia", "serif"],
+            "headline-md": ["Libre Caslon Text", "Georgia", "serif"],
+            "headline-xl": ["Libre Caslon Text", "Georgia", "serif"],
+            "headline-sm": ["Libre Caslon Text", "Georgia", "serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-sm": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "32px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "42px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    ::selection {
+      background-color: #ffdf9d;
+      color: #251a00;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col justify-between">
+<!-- ================= TOP APP BAR (Shared Component) ================= -->
+<header class="w-full bg-surface dark:bg-surface border-b border-outline-variant/30 sticky top-0 z-50 backdrop-blur-md bg-surface/95 transition-all duration-200">
+<div class="flex justify-between items-center w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-20">
+<!-- Brand Logo / Product Identifier -->
+<a class="flex items-center gap-3 group focus:outline-none" href="/descubre/">
+<span class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface dark:text-on-surface flex items-center gap-2">
+<span class="w-7 h-7 rounded bg-on-surface text-surface flex items-center justify-center font-headline-sm font-bold text-xs tracking-normal">SA</span>
+<span class="tracking-normal font-headline-md text-headline-md text-on-surface">SA</span>
+</span>
+<span class="text-outline-variant/60 hidden sm:inline">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline tracking-wider uppercase">Editorial &amp; Privacidad</span>
+</a>
+<!-- Navigation Links -->
+<nav aria-label="Navegación principal" class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#agentes">Agentes en acción</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#galeria">Galería</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#mediahub">MediaHub</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#diagnostico">Diagnóstico</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide transition-colors duration-200 font-label-md text-label-md" href="#faq">FAQ</a>
+</nav>
+<!-- Trailing Action Button -->
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-medium hover:bg-tertiary-fixed-dim transition-all duration-200 shadow-sm hover:shadow" href="https://wa.me/">
+<span class="material-symbols-outlined mr-2 text-base" data-icon="chat">chat</span>
+          Solicitar demo por WhatsApp
+        </a>
+</div>
+</div>
+</header>
+<!-- ================= MAIN EDITORIAL CONTENT ================= -->
+<main class="flex-grow w-full max-w-[1360px] mx-auto px-6 lg:px-16 py-10 lg:py-16">
+<!-- Editorial Breadcrumb & Header Context -->
+<div class="mb-10 pb-8 border-b border-outline-variant/30">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-4">
+<span class="text-primary font-medium tracking-wide">/descubre</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-medium">privacidad</span>
+<span class="text-outline-variant">/</span>
+<span class="text-secondary">revisión 2025.1</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div class="max-w-3xl">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-2">Tratamiento Técnico &amp; Declaración de Transparencia</p>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-normal leading-tight tracking-tight">
+            10 · Privacidad · Información y controles
+          </h1>
+<p class="mt-4 font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Una relación basada en el rigor metodológico y la honestidad digital. Sin métricas inventadas, sin intermediarios opacos y con soberanía explícita sobre lo que ejecutas en nuestro espacio.
+          </p>
+</div>
+<!-- Quick Summary Pill/Badge -->
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-4 flex items-center gap-3 self-start lg:self-auto min-w-[260px]">
+<div class="w-10 h-10 rounded-full bg-primary-container/30 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">Sin cookies comerciales</div>
+<div class="font-body-md text-xs text-on-surface-variant">Ejecución segura y transparente</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Layout with Anchor Sticky Sidebar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<!-- STICKY TABLE OF CONTENTS / INDICE ANCLA -->
+<aside class="lg:col-span-3 lg:sticky lg:top-28 space-y-6">
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-5">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-outline-variant/30">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Índice ancla</span>
+<span class="material-symbols-outlined text-sm text-outline" data-icon="toc">toc</span>
+</div>
+<nav aria-label="Tabla de contenido" class="space-y-1">
+<a class="group flex items-center gap-2 py-1.5 text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#seccion-diagnostico">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant group-hover:bg-primary transition-colors"></span>
+<span>1. Diagnóstico local</span>
+</a>
+<a class="group flex items-center gap-2 py-1.5 text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#seccion-solicitudes">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant group-hover:bg-primary transition-colors"></span>
+<span>2. Solicitudes &amp; Datos</span>
+</a>
+<a class="group flex items-center gap-2 py-1.5 text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#seccion-asesor">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant group-hover:bg-primary transition-colors"></span>
+<span>3. Asesor conversacional IA</span>
+</a>
+<a class="group flex items-center gap-2 py-1.5 text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#seccion-medicion">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant group-hover:bg-primary transition-colors"></span>
+<span>4. Medición limpia</span>
+</a>
+<a class="group flex items-center gap-2 py-1.5 text-on-surface-variant hover:text-primary transition-colors text-body-md" href="#seccion-conservacion">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant group-hover:bg-primary transition-colors"></span>
+<span>5. Conservación y control</span>
+</a>
+</nav>
+</div>
+<!-- Direct Action Card in Sidebar -->
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-5">
+<span class="font-label-sm text-label-sm text-secondary font-medium block mb-2">Soporte directo</span>
+<p class="font-body-md text-xs text-on-surface-variant mb-4 leading-relaxed">
+            Puedes revocar tu contacto o solicitar la eliminación inmediata de cualquier mensaje sin formalismos burocráticos.
+          </p>
+<a class="text-primary hover:text-on-primary-container font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors" href="mailto:hola@salesacademy.internal">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+            hola@salesacademy.internal
+          </a>
+</div>
+</aside>
+<!-- EDITORIAL CONTENT COLUMNS -->
+<article class="lg:col-span-9 space-y-16">
+<!-- SECTION 1: DIAGNÓSTICO LOCAL -->
+<section class="scroll-mt-28" id="seccion-diagnostico">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-sm border border-outline-variant/50">01</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Diagnóstico procesado localmente en navegador</h2>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-6 lg:p-8 space-y-4">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              La herramienta interactiva de evaluación de sala y rendimiento comercial de Sales Academy funciona enteramente en tu propio entorno de navegación. Cuando completas las preguntas relativas a cierres, retención, dotación de linners o perfil de closers:
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4">
+<div class="flex items-center gap-2 text-on-surface font-medium font-headline-sm mb-1.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="memory">memory</span>
+                  Cómputo en memoria viva
+                </div>
+<p class="text-body-md text-xs text-on-surface-variant">
+                  Los coeficientes, brechas y gráficas comparativas se compilan mediante JavaScript del lado del cliente sin enviar respuestas intermedias a servidores centrales.
+                </p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4">
+<div class="flex items-center gap-2 text-on-surface font-medium font-headline-sm mb-1.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="phonelink_erase">phonelink_erase</span>
+                  Persistencia voluntaria
+                </div>
+<p class="text-body-md text-xs text-on-surface-variant">
+                  Al cerrar la pestaña o recargar la página, los cálculos temporales se limpian del espacio de sesión (sessionStorage) sin dejar huellas indebidas.
+                </p>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant pt-2 text-xs text-secondary leading-relaxed border-t border-outline-variant/20">
+              * Nota de integridad: Únicamente si decides pulsar expresamente el botón de "Guardar informe y enviar por correo", los resultados finales numéricos se empaquetan para despachar dicho resumen a tu bandeja.
+            </p>
+</div>
+</section>
+<!-- SECTION 2: SOLICITUDES & DATOS VOLUNTARIOS -->
+<section class="scroll-mt-28" id="seccion-solicitudes">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-sm border border-outline-variant/50">02</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Solicitudes y datos estrictamente voluntarios</h2>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-6 lg:p-8 space-y-5">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              No exigimos registro preventivo, pasarelas de pago ocultas ni barreras para examinar nuestros casos de estudio o simuladores. La recopilación de información de contacto se limita a casos de mutuo interés operativo:
+            </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-base" data-icon="check_circle">check_circle</span>
+<div class="font-body-md text-on-surface-variant">
+<strong class="text-on-surface font-medium">Coordinación de Demostraciones:</strong> Si solicitas una sesión en vivo para tu equipo directivo o sala de ventas, requerimos únicamente tu nombre, correo corporativo, resort/desarrollo y número de WhatsApp si prefieres coordinación ágil.
+                </div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-base" data-icon="check_circle">check_circle</span>
+<div class="font-body-md text-on-surface-variant">
+<strong class="text-on-surface font-medium">Uso no comercial cruzado:</strong> Jamás vendemos, compartimos, alquilamos ni agregamos tus datos a redes de intermediación ni bases de prospectos turísticos o de multipropiedad.
+                </div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-base" data-icon="check_circle">check_circle</span>
+<div class="font-body-md text-on-surface-variant">
+<strong class="text-on-surface font-medium">Exclusión de spam:</strong> No entrarás en secuencias automatizadas infinitas. Si una vez atendido decides que el momento no es propicio, el canal cesa de inmediato.
+                </div>
+</li>
+</ul>
+</div>
+</section>
+<!-- SECTION 3: ASESOR CONVERSACIONAL IA -->
+<section class="scroll-mt-28" id="seccion-asesor">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-sm border border-outline-variant/50">03</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Asesor conversacional IA: Ventana de 1 hora y purga periódica</h2>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-6 lg:p-8 space-y-6">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              Sales Academy integra agentes conversacionales para resolver dudas de metodología, objeciones y configuración de salas en tiempo real. Esta arquitectura respeta un protocolo estricto de retención efímera:
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Ventana de contexto</span>
+<div class="font-headline-md text-headline-md text-on-surface mt-1 mb-2">1 Hora Máxima</div>
+<p class="text-body-md text-xs text-on-surface-variant leading-relaxed">
+                    La conversación retiene el hilo interactivo en un búfer temporal volátil solo para contestar tus dudas continuas.
+                  </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center gap-1.5 text-xs text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="timer">timer</span> Sesión activa
+                </div>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Rutina de borrado</span>
+<div class="font-headline-md text-headline-md text-on-surface mt-1 mb-2">Purga Automática</div>
+<p class="text-body-md text-xs text-on-surface-variant leading-relaxed">
+                    Un proceso periódico purga de manera definitiva los registros de diálogo transcurridos 60 minutos de inactividad.
+                  </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center gap-1.5 text-xs text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="auto_delete">auto_delete</span> Cero acumulación
+                </div>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Entrenamiento</span>
+<div class="font-headline-md text-headline-md text-on-surface mt-1 mb-2">No Re-entrenamiento</div>
+<p class="text-body-md text-xs text-on-surface-variant leading-relaxed">
+                    Tus consultas concretas sobre cifras internas o tácticas no se utilizan para re-entrenar modelos públicos.
+                  </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center gap-1.5 text-xs text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span> Aislamiento lógico
+                </div>
+</div>
+</div>
+<!-- Visual Advisor Message Sample -->
+<div class="p-4 rounded-lg bg-surface-container border border-outline-variant/30 flex items-center gap-3">
+<span class="w-9 h-9 rounded-full bg-surface-container-lowest border border-outline-variant/40 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="smart_toy">smart_toy</span>
+</span>
+<p class="font-body-md text-xs text-on-surface-variant italic">
+                “Este canal conversacional ha sido creado para asistirte de manera ágil. Ningún dato expuesto durante este diálogo será vinculado a perfiles comerciales de terceros.”
+              </p>
+</div>
+</div>
+</section>
+<!-- SECTION 4: MEDICIÓN LIMPIA -->
+<section class="scroll-mt-28" id="seccion-medicion">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-sm border border-outline-variant/50">04</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Medición: Sin cookies invasivas ni métricas comerciales infladas</h2>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-6 lg:p-8 space-y-4">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              Rechazamos deliberadamente los banners invasivos de consentimiento con laberintos oscuros (dark patterns), porque no empleamos tecnologías que los requieran:
+            </p>
+<div class="space-y-3">
+<div class="flex items-start gap-3 p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-error-container bg-error-container/40 p-1 rounded text-sm mt-0.5" data-icon="close">close</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-0.5">Sin rastreadores de terceros (Third-Party Trackers)</h4>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">No embebemos píxeles de remarketing de plataformas sociales ni generadores de perfiles cruzados que rastreen tus hábitos en otros sitios.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-error-container bg-error-container/40 p-1 rounded text-sm mt-0.5" data-icon="close">close</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-0.5">Sin métricas comerciales inventadas</h4>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">No recurrimos a falsos contadores de visitantes urgentes ("3 directores viendo esta sala ahora") ni analíticas diseñadas para inducir ansiedad de compra.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary bg-primary-container/30 p-1 rounded text-sm mt-0.5" data-icon="check">check</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-0.5">Telemetría de rendimiento técnico agregada</h4>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Supervisamos únicamente latencia de carga, compatibilidad de pantallas y códigos de error del servidor de manera disociada y sin recopilar direcciones IP permanentes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: CONSERVACIÓN Y CONTROLES -->
+<section class="scroll-mt-28" id="seccion-conservacion">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-sm border border-outline-variant/50">05</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Conservación de datos y controles directos</h2>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-6 lg:p-8 space-y-6">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              No nos escudamos en formulismos abstractos, jurisdicciones legales ficticias ni falsos delegados inaccesibles. La gobernanza de tus datos es simple, comprensible y directa:
+            </p>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-body-md text-xs">
+<thead>
+<tr class="border-b border-outline-variant/40 text-on-surface font-semibold font-label-md">
+<th class="py-3 pr-4">Concepto</th>
+<th class="py-3 px-4">Periodo de retención</th>
+<th class="py-3 px-4">Destino de almacenamiento</th>
+<th class="py-3 pl-4">Opción de control</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-on-surface-variant">
+<tr>
+<td class="py-3.5 pr-4 font-medium text-on-surface">Simulación de diagnóstico</td>
+<td class="py-3.5 px-4">Inmediato (sesión)</td>
+<td class="py-3.5 px-4">Memoria local navegador</td>
+<td class="py-3.5 pl-4"><span class="text-primary font-medium">Borrado automático al cerrar pestaña</span></td>
+</tr>
+<tr>
+<td class="py-3.5 pr-4 font-medium text-on-surface">Historial Asesor IA</td>
+<td class="py-3.5 px-4">1 hora máximo</td>
+<td class="py-3.5 px-4">Búfer temporal encriptado</td>
+<td class="py-3.5 pl-4"><span class="text-primary font-medium">Purga periódica sin registro permanente</span></td>
+</tr>
+<tr>
+<td class="py-3.5 pr-4 font-medium text-on-surface">Contacto para demo</td>
+<td class="py-3.5 px-4">Hasta concluir relación</td>
+<td class="py-3.5 px-4">Base interna de coordinación</td>
+<td class="py-3.5 pl-4"><span class="text-primary font-medium">Baja con 1 clic o mensaje</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Explicit Action Box -->
+<div class="bg-surface-container border border-outline-variant/40 rounded-xl p-5 mt-4">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">¿Deseas revocar o solicitar confirmación de borrado?</h4>
+<p class="font-body-md text-xs text-on-surface-variant max-w-xl">
+                    Escríbenos directamente indicando tu teléfono o correo. Sin formularios extensos ni esperas artificiales de 30 días.
+                  </p>
+</div>
+<a class="inline-flex items-center px-4 py-2 rounded-lg bg-inverse-surface text-inverse-on-surface hover:bg-on-surface transition-colors font-label-md text-label-md whitespace-nowrap" href="mailto:hola@salesacademy.internal?subject=Solicitud%20de%20baja%20de%20datos">
+<span class="material-symbols-outlined mr-2 text-sm" data-icon="delete_forever">delete_forever</span>
+                  Solicitar borrado total
+                </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Clarification Banner -->
+<div class="border-l-2 border-primary pl-4 py-1">
+<p class="font-headline-sm text-headline-sm text-on-surface italic">
+            "La inteligencia artificial en salas de hospitalidad de alto valor requiere confianza absoluta entre directores, linners, closers y consultores. Esa confianza inicia en nuestro propio código."
+          </p>
+<span class="font-label-sm text-label-sm text-secondary block mt-1.5">— Equipo de Arquitectura e Integridad de Sales Academy</span>
+</div>
+</article>
+</div>
+</main>
+<!-- ================= FOOTER (Shared Component) ================= -->
+<footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 mt-16 transition-colors duration-150 ease-out">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Footer Copyright & Manifesto -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface tracking-normal">SA · Sales Academy</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70 dark:text-on-surface-variant/70">
+          © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+        </span>
+</div>
+<!-- Footer Navigation Links -->
+<div aria-label="Enlaces legales y de contacto" class="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+<a class="text-primary dark:text-primary font-medium font-label-sm text-label-sm transition-colors duration-150" href="/descubre/privacidad/">Privacidad</a>
+<a class="text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary font-normal font-label-sm text-label-sm transition-colors duration-150" href="#terminos">Términos de servicio</a>
+<a class="text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary font-normal font-label-sm text-label-sm transition-colors duration-150" href="#contacto">Contacto</a>
+<a class="text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary font-normal font-label-sm text-label-sm transition-colors duration-150" href="#auditoria-vip">Auditoría VIP</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,325 @@
+[
+  {
+    "name": "initial_session",
+    "schema": "AdvisorSession",
+    "payload": {
+      "csrf": "synthetic-csrf",
+      "enabled": true,
+      "messages": [],
+      "remainingTurns": 20,
+      "resources": [
+        {
+          "evidenceLabel": "Visión de producto",
+          "excerpt": "Conoce la visión de Sales Academy en 33 segundos: agentes de IA que conectan el método, la preparación y la práctica del equipo.",
+          "title": "Agentes de IA en el día a día de tu sala",
+          "type": "video",
+          "url": "/mediahub/smart-agent/",
+          "video": {
+            "captions": "/growth-assets/films/smart-agent.es.vtt",
+            "durationSeconds": 32.879,
+            "height": 1024,
+            "id": "smart-agent",
+            "poster": "/growth-assets/films/smart-agent.webp",
+            "src": "/growth-assets/films/smart-agent.mp4",
+            "width": 576
+          }
+        },
+        {
+          "evidenceLabel": "Simulación de uso · pantallas de la demo",
+          "excerpt": "Seis situaciones de time share: qué consultar, qué preguntar al agente de IA y qué decisión corresponde al equipo, con pantallas reales de la demo.",
+          "title": "Un día en la sala con agentes de IA",
+          "type": "guide",
+          "url": "/mediahub/un-dia-en-la-sala/"
+        }
+      ],
+      "suggestions": [
+        {
+          "id": "platform",
+          "kind": "prompt",
+          "label": "Cómo funciona",
+          "prompt": "¿Qué es Sales Academy y cómo ayuda a mi equipo?"
+        },
+        {
+          "id": "role-rep",
+          "kind": "prompt",
+          "label": "Soy representante",
+          "prompt": "Soy representante. ¿Cómo puede ayudarme Sales Academy en mi día a día?"
+        },
+        {
+          "id": "role-leader",
+          "kind": "prompt",
+          "label": "Soy líder de sala",
+          "prompt": "Soy líder de sala. ¿Cómo puede ayudarme Sales Academy con mi equipo?"
+        }
+      ],
+      "whatsappUrl": "https://wa.me/529843163268?text=Hola%2C%20quiero%20conocer%20los%20agentes%20de%20IA%20de%20Sales%20Academy%20y%20agendar%20una%20demo%20para%20mi%20sala%20de%20ventas."
+    }
+  },
+  {
+    "name": "current_reply",
+    "schema": "AdvisorReply",
+    "payload": {
+      "remainingTurns": 19,
+      "reply": "Puedes practicar antes del tour. La demo se coordina con Chris.",
+      "requestId": "c21d4fd4-3b3f-48c5-8342-7fab93e4c7d7",
+      "resources": [
+        {
+          "evidenceLabel": "Visión de producto",
+          "excerpt": "Una visión del conocimiento del líder convertido en apoyo de IA para la preparación y la práctica del equipo.",
+          "title": "Tu método, acompañado por agentes de IA",
+          "type": "video",
+          "url": "/mediahub/infraestructura-comercial/",
+          "video": {
+            "captions": "/growth-assets/films/infraestructura-comercial.es.vtt",
+            "durationSeconds": 29.025,
+            "height": 848,
+            "id": "infraestructura-comercial",
+            "poster": "/growth-assets/films/infraestructura-comercial.webp",
+            "src": "/growth-assets/films/infraestructura-comercial.mp4",
+            "width": 480
+          }
+        },
+        {
+          "evidenceLabel": "Guía original · orientación práctica",
+          "excerpt": "Una guía para preparar una reflexión con apoyo de IA y acordar una acción observable con el líder.",
+          "title": "Coaching y agentes de IA: el siguiente paso",
+          "type": "guide",
+          "url": "/mediahub/coaching-con-una-accion/"
+        }
+      ],
+      "suggestions": [
+        {
+          "id": "rooms-one",
+          "kind": "prompt",
+          "label": "Una sala",
+          "prompt": "Tenemos una sala. ¿Cómo plantearías un primer paso para nosotros?"
+        },
+        {
+          "id": "rooms-many",
+          "kind": "prompt",
+          "label": "Varias salas",
+          "prompt": "Tenemos varias salas. ¿Cómo plantearías una implementación gradual?"
+        },
+        {
+          "id": "demo",
+          "kind": "demo",
+          "label": "Coordinar demo con Chris"
+        }
+      ]
+    }
+  },
+  {
+    "name": "restored_session",
+    "schema": "AdvisorSession",
+    "payload": {
+      "csrf": "synthetic-csrf",
+      "enabled": true,
+      "messages": [
+        {
+          "content": "Soy líder y quiero mejorar el coaching.",
+          "role": "user"
+        },
+        {
+          "content": "Puedes practicar antes del tour. La demo se coordina con Chris.",
+          "role": "assistant"
+        }
+      ],
+      "remainingTurns": 19,
+      "resources": [
+        {
+          "evidenceLabel": "Visión de producto",
+          "excerpt": "Una visión del conocimiento del líder convertido en apoyo de IA para la preparación y la práctica del equipo.",
+          "title": "Tu método, acompañado por agentes de IA",
+          "type": "video",
+          "url": "/mediahub/infraestructura-comercial/",
+          "video": {
+            "captions": "/growth-assets/films/infraestructura-comercial.es.vtt",
+            "durationSeconds": 29.025,
+            "height": 848,
+            "id": "infraestructura-comercial",
+            "poster": "/growth-assets/films/infraestructura-comercial.webp",
+            "src": "/growth-assets/films/infraestructura-comercial.mp4",
+            "width": 480
+          }
+        },
+        {
+          "evidenceLabel": "Guía original · orientación práctica",
+          "excerpt": "Una guía para preparar una reflexión con apoyo de IA y acordar una acción observable con el líder.",
+          "title": "Coaching y agentes de IA: el siguiente paso",
+          "type": "guide",
+          "url": "/mediahub/coaching-con-una-accion/"
+        }
+      ],
+      "suggestions": [
+        {
+          "id": "rooms-one",
+          "kind": "prompt",
+          "label": "Una sala",
+          "prompt": "Tenemos una sala. ¿Cómo plantearías un primer paso para nosotros?"
+        },
+        {
+          "id": "rooms-many",
+          "kind": "prompt",
+          "label": "Varias salas",
+          "prompt": "Tenemos varias salas. ¿Cómo plantearías una implementación gradual?"
+        },
+        {
+          "id": "demo",
+          "kind": "demo",
+          "label": "Coordinar demo con Chris"
+        }
+      ],
+      "whatsappUrl": "https://wa.me/529843163268?text=Hola%2C%20quiero%20conocer%20los%20agentes%20de%20IA%20de%20Sales%20Academy%20y%20agendar%20una%20demo%20para%20mi%20sala%20de%20ventas."
+    }
+  },
+  {
+    "name": "reply_with_detail",
+    "schema": "AdvisorReply",
+    "payload": {
+      "detail": "Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. La demo no está confirmada; Chris acuerda la fecha contigo.",
+      "remainingTurns": 18,
+      "reply": "Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. La explicación completa y sus condiciones están en «Ver detalle».",
+      "requestId": "f2ab8d75-59a5-4050-bf23-d30d7ba330fa",
+      "resources": [
+        {
+          "evidenceLabel": "Visión de producto",
+          "excerpt": "Una visión del conocimiento del líder convertido en apoyo de IA para la preparación y la práctica del equipo.",
+          "title": "Tu método, acompañado por agentes de IA",
+          "type": "video",
+          "url": "/mediahub/infraestructura-comercial/",
+          "video": {
+            "captions": "/growth-assets/films/infraestructura-comercial.es.vtt",
+            "durationSeconds": 29.025,
+            "height": 848,
+            "id": "infraestructura-comercial",
+            "poster": "/growth-assets/films/infraestructura-comercial.webp",
+            "src": "/growth-assets/films/infraestructura-comercial.mp4",
+            "width": 480
+          }
+        },
+        {
+          "evidenceLabel": "Guía original · orientación práctica",
+          "excerpt": "Una guía para preparar una reflexión con apoyo de IA y acordar una acción observable con el líder.",
+          "title": "Coaching y agentes de IA: el siguiente paso",
+          "type": "guide",
+          "url": "/mediahub/coaching-con-una-accion/"
+        }
+      ],
+      "suggestions": [
+        {
+          "id": "rooms-one",
+          "kind": "prompt",
+          "label": "Una sala",
+          "prompt": "Tenemos una sala. ¿Cómo plantearías un primer paso para nosotros?"
+        },
+        {
+          "id": "rooms-many",
+          "kind": "prompt",
+          "label": "Varias salas",
+          "prompt": "Tenemos varias salas. ¿Cómo plantearías una implementación gradual?"
+        },
+        {
+          "id": "demo",
+          "kind": "demo",
+          "label": "Coordinar demo con Chris"
+        }
+      ]
+    }
+  },
+  {
+    "name": "restored_session_with_detail",
+    "schema": "AdvisorSession",
+    "payload": {
+      "csrf": "synthetic-csrf",
+      "enabled": true,
+      "messages": [
+        {
+          "content": "Soy líder y quiero mejorar el coaching.",
+          "role": "user"
+        },
+        {
+          "content": "Puedes practicar antes del tour. La demo se coordina con Chris.",
+          "role": "assistant"
+        },
+        {
+          "content": "Dame un ejemplo más completo.",
+          "role": "user"
+        },
+        {
+          "content": "Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. La explicación completa y sus condiciones están en «Ver detalle».",
+          "detail": "Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. Sales Academy acompaña la preparación y práctica del equipo con su método autorizado. La demo no está confirmada; Chris acuerda la fecha contigo.",
+          "role": "assistant"
+        }
+      ],
+      "remainingTurns": 18,
+      "resources": [
+        {
+          "evidenceLabel": "Visión de producto",
+          "excerpt": "Una visión del conocimiento del líder convertido en apoyo de IA para la preparación y la práctica del equipo.",
+          "title": "Tu método, acompañado por agentes de IA",
+          "type": "video",
+          "url": "/mediahub/infraestructura-comercial/",
+          "video": {
+            "captions": "/growth-assets/films/infraestructura-comercial.es.vtt",
+            "durationSeconds": 29.025,
+            "height": 848,
+            "id": "infraestructura-comercial",
+            "poster": "/growth-assets/films/infraestructura-comercial.webp",
+            "src": "/growth-assets/films/infraestructura-comercial.mp4",
+            "width": 480
+          }
+        },
+        {
+          "evidenceLabel": "Guía original · orientación práctica",
+          "excerpt": "Una guía para preparar una reflexión con apoyo de IA y acordar una acción observable con el líder.",
+          "title": "Coaching y agentes de IA: el siguiente paso",
+          "type": "guide",
+          "url": "/mediahub/coaching-con-una-accion/"
+        }
+      ],
+      "suggestions": [
+        {
+          "id": "rooms-one",
+          "kind": "prompt",
+          "label": "Una sala",
+          "prompt": "Tenemos una sala. ¿Cómo plantearías un primer paso para nosotros?"
+        },
+        {
+          "id": "rooms-many",
+          "kind": "prompt",
+          "label": "Varias salas",
+          "prompt": "Tenemos varias salas. ¿Cómo plantearías una implementación gradual?"
+        },
+        {
+          "id": "demo",
+          "kind": "demo",
+          "label": "Coordinar demo con Chris"
+        }
+      ],
+      "whatsappUrl": "https://wa.me/529843163268?text=Hola%2C%20quiero%20conocer%20los%20agentes%20de%20IA%20de%20Sales%20Academy%20y%20agendar%20una%20demo%20para%20mi%20sala%20de%20ventas."
+    }
+  },
+  {
+    "name": "legacy_cached_reply_three_links",
+    "schema": "AdvisorReply",
+    "payload": {
+      "reply": "Respuesta de prueba conservada en caché.",
+      "resources": [
+        {
+          "title": "Recurso sintético 0",
+          "url": "/mediahub/guia-0/"
+        },
+        {
+          "title": "Recurso sintético 1",
+          "url": "/mediahub/guia-1/"
+        },
+        {
+          "title": "Recurso sintético 2",
+          "url": "/mediahub/guia-2/"
+        }
+      ],
+      "requestId": "11111111-1111-4111-8111-111111111111",
+      "remainingTurns": 19
+    }
+  }
+]

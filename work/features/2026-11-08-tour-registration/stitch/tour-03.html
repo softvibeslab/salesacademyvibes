@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1.0">
+<title>TOUR 03 · Survey · Revisión IA móvil</title>
+<style>
+  :root {
+    --bg-page: #f7f7f5;
+    --ink: #20211e;
+    --muted: #62655e;
+    --border: #e2e2dc;
+    --border-card: #d8d8d0;
+    --surface: #ffffff;
+    --surface-soft: #efefe9;
+    --gold: #806000;
+    --gold-light: #f4d894;
+    --gold-chip: #fdf6e2;
+    --accent-yellow: #f4bd3f;
+    --amber-soft: #fff9e6;
+    --amber-border: #f0c868;
+    --amber-ink: #5c4500;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-page);
+    color: var(--ink);
+    line-height: 1.45;
+    font-size: 15px;
+    padding-bottom: 90px;
+    width: 390px;
+    margin: 0 auto;
+    min-height: 844px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Top Bar */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .back-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    color: var(--ink);
+    cursor: pointer;
+    font-weight: 500;
+    min-height: 44px;
+    padding: 4px 6px;
+  }
+  .demo-tag {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    background: #e9ece4;
+    color: #405538;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  /* Stepper */
+  .stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .step-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .step-item.active {
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface-soft);
+    color: var(--muted);
+  }
+  .step-item.active .step-num {
+    background: var(--gold);
+    color: #ffffff;
+    border-color: var(--gold);
+  }
+  .step-sep { color: var(--border-card); }
+
+  .content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Trust Callout */
+  .trust-banner {
+    background: #fbf9f2;
+    border: 1px solid var(--gold-light);
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .trust-icon {
+    font-size: 18px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .trust-text strong {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .trust-text p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Thumbnail source row */
+  .source-strip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .source-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .thumb-mock {
+    width: 36px;
+    height: 46px;
+    background: #eae8df;
+    border: 1px solid #d4d0c2;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .source-info strong {
+    display: block;
+    font-size: 13px;
+  }
+  .source-info span {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .retake-link {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Form Fields with Origin Tag */
+  .fields-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .field-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .field-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .field-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .origin-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 7px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .origin-tag.extracted {
+    background: #edf3e7;
+    color: #2b541d;
+  }
+  .origin-tag.review {
+    background: var(--amber-soft);
+    color: var(--amber-ink);
+    border: 1px solid var(--amber-border);
+  }
+  .origin-tag.empty {
+    background: var(--surface-soft);
+    color: var(--muted);
+  }
+
+  .form-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    font-size: 16px;
+    color: var(--ink);
+    background: var(--surface);
+    font-family: inherit;
+  }
+  .form-input.warning-border {
+    border-color: var(--amber-border);
+    background: #fffdfa;
+  }
+
+  .field-note {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .field-note.warning {
+    color: var(--amber-ink);
+    font-weight: 600;
+  }
+
+  /* Sticky Footer Actions */
+  .footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 390px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.04);
+  }
+  .btn-primary {
+    flex: 1;
+    background: var(--gold);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    min-height: 48px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-outline {
+    background: var(--surface);
+    border: 1px solid var(--border-card);
+    color: var(--ink);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 48px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="back-btn" aria-label="Volver a Captura">
+    <span class="">‹</span>
+    <span class="">Foto</span>
+  </button>
+  <span class="demo-tag">Prototipo · Datos de ejemplo</span>
+</header>
+
+<div class="stepper" aria-label="Progreso del registro">
+  <div class="step-item">
+    <span class="step-num">✓</span>
+    <span class="">Capturar</span>
+  </div>
+  <span class="step-sep">›</span>
+  <div class="step-item active">
+    <span class="step-num">2</span>
+    <span class="">Revisar</span>
+  </div>
+  <span class="step-sep">›</span>
+  <div class="step-item">
+    <span class="step-num">3</span>
+    <span class="">Confirmar</span>
+  </div>
+</div>
+
+<main class="content">
+  <!-- Trust reassurance banner -->
+  <div class="trust-banner">
+    <span class="trust-icon" aria-hidden="true">✦</span>
+    <div class="trust-text"><strong>El agente preparó estos datos. Tú confirmas.</strong><p class="">Borrador conservado únicamente durante la sesión actual. Revisa la procedencia de cada dato antes de confirmar.</p></div>
+  </div>
+
+  <!-- Origin Strip -->
+  <div class="source-strip">
+    <div class="source-left">
+      <div class="thumb-mock">DEMO</div>
+      <div class="source-info">
+        <strong>Survey-09nov.jpg</strong>
+        <span class="">Foto procesada · 3 campos detectados</span>
+      </div>
+    </div>
+    <span class="retake-link">Retomar</span>
+  </div>
+
+  <!-- Fields with source origins -->
+  <div class="fields-group"><!-- Field 1: Visitante 1 -->
+    <div class="field-item">
+      <div class="field-header">
+        <label class="field-label" for="inp-vis1">Visitante 1 (Principal)</label>
+        <span class="origin-tag extracted">Del survey</span>
+      </div>
+      <input class="form-input" id="inp-vis1" type="text" value="Ana Demo" required="">
+      <span class="field-note">Lectura clara detectada desde el encabezado físico del survey.</span>
+    </div>
+
+    <!-- Field 2: Visitante 2 (Opcional) -->
+    <div class="field-item">
+      <div class="field-header">
+        <label class="field-label" for="inp-vis2">Visitante 2 (Acompañante · Opcional)</label>
+        <span class="origin-tag review">Revisar</span>
+      </div>
+      <input class="form-input warning-border" id="inp-vis2" type="text" placeholder="Sin acompañante registrado (o escribe el nombre)">
+      <span class="field-note warning">⚠️ Trazo ilegible en la hoja. Se dejó vacío sin inventar datos. Si no asistió acompañado, puede quedar como 'Sin acompañante registrado'.</span>
+    </div>
+
+    <!-- Field 3: Idioma -->
+    <div class="field-item">
+      <div class="field-header">
+        <label class="field-label" for="inp-idioma">Idioma preferido</label>
+        <span class="origin-tag extracted">Del survey</span>
+      </div>
+      <input class="form-input" id="inp-idioma" type="text" value="Español">
+      <span class="field-note">Casilla marcada detectada en la encuesta física original.</span>
+    </div>
+
+    <!-- Field 4: Sala y Asesor (Contexto de sesión) -->
+    <div class="field-item">
+      <div class="field-header">
+        <label class="field-label" for="inp-sala-asesor">Sala y asesor asignado</label>
+        <span class="origin-tag extracted">Contexto de sesión</span>
+      </div>
+      <input class="form-input" id="inp-sala-asesor" type="text" value="Sala Demo · Asesor: Ana Demo">
+      <span class="field-note">Asignación operativa de turno; no proviene del papel ni se asume disponibilidad sin validar.</span>
+    </div>
+
+    <!-- Field 5: Fecha y horario (Valores propuestos para revisar con type date y time) -->
+    <div class="field-item">
+      <div class="field-header">
+        <label class="field-label" for="inp-fecha">Fecha y horario</label>
+        <span class="origin-tag review">Valores propuestos para revisar</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div>
+          <label for="inp-fecha" style="font-size: 11px; color: var(--muted); display: block; margin-bottom: 2px;" class="">Fecha</label>
+          <input class="form-input warning-border" id="inp-fecha" type="date" value="2026-11-09">
+        </div>
+        <div>
+          <label for="inp-hora" style="font-size: 11px; color: var(--muted); display: block; margin-bottom: 2px;" class="">Hora inicio</label>
+          <input class="form-input warning-border" id="inp-hora" type="time" value="10:30">
+        </div>
+      </div>
+      <span class="field-note warning">Propuesta basada en la agenda del día (no atribuida al survey impreso). Verifica con el visitante.</span>
+    </div></div>
+</main>
+
+<!-- Sticky bottom actions -->
+<div class="footer-bar"><button class="btn-outline" type="button" style="min-height: 48px; font-size: 16px;">Cancelar</button>
+  <a href="#resumen" class="btn-primary" id="btn-goto-summary" style="min-height: 48px; font-size: 16px;">
+    <span class="">Revisar resumen</span>
+    <span class="">→</span>
+  </a></div>
+
+
+
+
+
+</body></html>

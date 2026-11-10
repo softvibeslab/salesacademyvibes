@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "targetProjectId": "16859674583431881734",
+  "targetProjectUrl": "https://stitch.withgoogle.com/projects/16859674583431881734",
+  "accessContext": "Project selected by user; owner in Chrome UI, reader in MCP.",
+  "uploadStatus": "prepared-not-uploaded",
+  "fileCount": 49,
+  "bytes": 11095161,
+  "sourceManifest": "reference-manifest.json",
+  "format": "Flat image folder: source group prefixed with double underscore. All images unchanged.",
+  "files": [
+    {
+      "filename": "public__01-landing-desktop.png",
+      "path": "stitch-upload-images/public__01-landing-desktop.png",
+      "referencePath": "references/public/01-landing-desktop.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/landing-desktop.png",
+      "bytes": 595410,
+      "sha256": "5b97583b61b00cf7c66294bd192db25c6045526c610b5ea5e1be6ef7fdbe3a5a",
+      "note": "Public landing QA; reference predates final advisor styling."
+    },
+    {
+      "filename": "public__01-landing-mobile.png",
+      "path": "stitch-upload-images/public__01-landing-mobile.png",
+      "referencePath": "references/public/01-landing-mobile.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/landing-mobile-390.png",
+      "bytes": 181820,
+      "sha256": "c8a4d8722425a5fd9fbb0749b431ede4ccd34d0418e38a17861704b53ecabe37",
+      "note": "Public landing QA; reference predates final advisor styling."
+    },
+    {
+      "filename": "public__01-journey-desktop.png",
+      "path": "stitch-upload-images/public__01-journey-desktop.png",
+      "referencePath": "references/public/01-journey-desktop.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/cinematic-desktop.png",
+      "bytes": 595454,
+      "sha256": "57badc1ca6a4448fe5aa3e82c29ba7df7d6431c93b5bc17f5532c33c95248bef",
+      "note": "Five-pillar scroll journey; static reference."
+    },
+    {
+      "filename": "public__01-pillar-learn.png",
+      "path": "stitch-upload-images/public__01-pillar-learn.png",
+      "referencePath": "references/public/01-pillar-learn.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/chapter-method.png",
+      "bytes": 703063,
+      "sha256": "f5eabe27fc3e124cea73048610db1792351bfd741694699e4260719982db386f",
+      "note": "Learn pillar; latest Meet & Greet reference is in app/16."
+    },
+    {
+      "filename": "public__01-pillar-practice.png",
+      "path": "stitch-upload-images/public__01-pillar-practice.png",
+      "referencePath": "references/public/01-pillar-practice.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/chapter-practice.png",
+      "bytes": 665413,
+      "sha256": "d3e2e42367db8107fe03b3573af0be5508451c8e27bb4bc8904cf6ee5770d23c",
+      "note": "Practice pillar."
+    },
+    {
+      "filename": "public__01-pillar-coaching.png",
+      "path": "stitch-upload-images/public__01-pillar-coaching.png",
+      "referencePath": "references/public/01-pillar-coaching.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/chapter-coaching.png",
+      "bytes": 650730,
+      "sha256": "69369ee2df1990324762b90486e5c9cf7db4e16567acc297990c3a6e98b4e09d",
+      "note": "Coaching pillar."
+    },
+    {
+      "filename": "public__01-pillar-scale.png",
+      "path": "stitch-upload-images/public__01-pillar-scale.png",
+      "referencePath": "references/public/01-pillar-scale.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/chapter-scale.png",
+      "bytes": 703289,
+      "sha256": "fdac0c5303311a75c85b9a7be8d65f860d0350a5eb99e91600a78c3d40021137",
+      "note": "Three-room proposed route."
+    },
+    {
+      "filename": "public__02-mediahub-mobile.png",
+      "path": "stitch-upload-images/public__02-mediahub-mobile.png",
+      "referencePath": "references/public/02-mediahub-mobile.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/hub-mobile-390.png",
+      "bytes": 49238,
+      "sha256": "671bd6bb148987ab59318805128dc762c137d607810f2f6ca6144ed8d5771fb4",
+      "note": "Published resources only; QA."
+    },
+    {
+      "filename": "public__03-resource-mobile.png",
+      "path": "stitch-upload-images/public__03-resource-mobile.png",
+      "referencePath": "references/public/03-resource-mobile.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/resource-mobile-390.png",
+      "bytes": 71600,
+      "sha256": "a90cd225b1e95d609629982c7ae9fe3d5de5e0295fde23b1b617fbc57d78ca49",
+      "note": "Published editorial template; QA."
+    },
+    {
+      "filename": "public__04-film-player.png",
+      "path": "stitch-upload-images/public__04-film-player.png",
+      "referencePath": "references/public/04-film-player.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/film-player.png",
+      "bytes": 542304,
+      "sha256": "5eecb3375120761be981b11bebb8ec41c9b1bcf7f343f84cba3f436e38f0124b",
+      "note": "Public conceptual film player; play button updated later."
+    },
+    {
+      "filename": "public__05-diagnostic-question-mobile.png",
+      "path": "stitch-upload-images/public__05-diagnostic-question-mobile.png",
+      "referencePath": "references/public/05-diagnostic-question-mobile.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/diagnostic-mobile-390.png",
+      "bytes": 67369,
+      "sha256": "6867f19754bc1cf7a2c0bfa9c4de6af1f37acd17d920aac30cfb0a3f16ba5de3",
+      "note": "Synthetic diagnostic answers only."
+    },
+    {
+      "filename": "public__06-diagnostic-result.png",
+      "path": "stitch-upload-images/public__06-diagnostic-result.png",
+      "referencePath": "references/public/06-diagnostic-result.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/diagnostic-result.png",
+      "bytes": 122876,
+      "sha256": "58a0680157df055178bc12045faed773bc5b7693a5e8443253b3843b48b31d22",
+      "note": "Synthetic diagnostic result; not measured business performance."
+    },
+    {
+      "filename": "public__08-analysis-mobile.png",
+      "path": "stitch-upload-images/public__08-analysis-mobile.png",
+      "referencePath": "references/public/08-analysis-mobile.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/analysis-mobile-390.png",
+      "bytes": 69154,
+      "sha256": "8b6eaf8faf806f4027609b4a20db8acbd66e15aff888e58a5dc7afa242d49e40",
+      "note": "Public editorial analysis."
+    },
+    {
+      "filename": "public__07-gallery-desktop.png",
+      "path": "stitch-upload-images/public__07-gallery-desktop.png",
+      "referencePath": "references/public/07-gallery-desktop.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/gallery/gallery-1440.png",
+      "bytes": 673645,
+      "sha256": "9c367cc8821683d6984c1bb68a51b0c6784b3c276478e0e657a1bbd53eb5dca8",
+      "note": "Simulated scenarios, generated photos, demo screenshots."
+    },
+    {
+      "filename": "public__07-gallery-mobile.png",
+      "path": "stitch-upload-images/public__07-gallery-mobile.png",
+      "referencePath": "references/public/07-gallery-mobile.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/gallery/gallery-390.png",
+      "bytes": 236420,
+      "sha256": "5fc9f0f65f69bcaf0c5ad9668adc503e7e0fa53a51e4866e39c05e3654971d31",
+      "note": "Simulated scenarios, generated photos, demo screenshots."
+    },
+    {
+      "filename": "public__04-current-film-play-mobile.png",
+      "path": "stitch-upload-images/public__04-current-film-play-mobile.png",
+      "referencePath": "references/public/04-current-film-play-mobile.png",
+      "originalSource": "work/features/2026-11-07-film-play-cta/evidence/green/play-ready-390.png",
+      "bytes": 233933,
+      "sha256": "940b8d79c4f1a16d101ffc4df577ed6f2f244e847a76adebaf817cd771ba0393",
+      "note": "Updated gold play CTA."
+    },
+    {
+      "filename": "cms__15-home-desktop.png",
+      "path": "stitch-upload-images/cms__15-home-desktop.png",
+      "referencePath": "references/cms/15-home-desktop.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/cms-desktop.png",
+      "bytes": 122467,
+      "sha256": "ac896fe8cef60d74369cedbbbe8af0ce6e1b35851a5e74dfdb2f6c5690005e8d",
+      "note": "Local QA home dashboard with synthetic account e2e-owner; reference predates advisor sidebar addition."
+    },
+    {
+      "filename": "cms__15-home-mobile.png",
+      "path": "stitch-upload-images/cms__15-home-mobile.png",
+      "referencePath": "references/cms/15-home-mobile.png",
+      "originalSource": "work/features/2026-11-07-ai-vsl/evidence/regression/screenshots/cms-mobile.png",
+      "bytes": 48539,
+      "sha256": "ca360e4343ab802a31e15788b695d4dd139de1a42a6665fa80c0091fb688b94f",
+      "note": "Local QA home dashboard with synthetic account e2e-owner; reference predates advisor sidebar addition."
+    },
+    {
+      "filename": "cms__18-video-editor-mobile.png",
+      "path": "stitch-upload-images/cms__18-video-editor-mobile.png",
+      "referencePath": "references/cms/18-video-editor-mobile.png",
+      "originalSource": "work/features/2026-11-07-cinematic-journey/evidence/cms-video-mobile.png",
+      "bytes": 166899,
+      "sha256": "9dcd6feaedd24f83750db4b6ce9d25513e63573e809e0d611c0fa28bbe802ff8",
+      "note": "Local editor fixture with synthetic staff."
+    },
+    {
+      "filename": "cms__22-advisor-leads-desktop.png",
+      "path": "stitch-upload-images/cms__22-advisor-leads-desktop.png",
+      "referencePath": "references/cms/22-advisor-leads-desktop.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/integration/cms-advisor-owner.png",
+      "bytes": 116352,
+      "sha256": "109f9ac95e79902773cf87986dcf846651d32f9f9c991ced230051b696de48f8",
+      "note": "Ephemeral integration database with synthetic lead; no production prospect."
+    },
+    {
+      "filename": "advisor__10-open-desktop.png",
+      "path": "stitch-upload-images/advisor__10-open-desktop.png",
+      "referencePath": "references/advisor/10-open-desktop.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-open-1440.png",
+      "bytes": 375792,
+      "sha256": "89d368e028d991cb70129fb9578fc4dc50ec928a4026eb5fa9908320efd17b98",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "advisor__10-open-mobile.png",
+      "path": "stitch-upload-images/advisor__10-open-mobile.png",
+      "referencePath": "references/advisor/10-open-mobile.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-open-390.png",
+      "bytes": 110465,
+      "sha256": "698723bc647b83d5a3da36b8084198e84ea6a7c4acd88554fbda77d84397068d",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "advisor__11-reply-desktop.png",
+      "path": "stitch-upload-images/advisor__11-reply-desktop.png",
+      "referencePath": "references/advisor/11-reply-desktop.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-reply-1440.png",
+      "bytes": 376907,
+      "sha256": "c392bcb3562ea176a56c615dcf3dff94a1ead57258e23eea05b2869380b94392",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "advisor__11-reply-mobile.png",
+      "path": "stitch-upload-images/advisor__11-reply-mobile.png",
+      "referencePath": "references/advisor/11-reply-mobile.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-reply-390.png",
+      "bytes": 109615,
+      "sha256": "f2bf9880b7302589f064e968d1aa1fa8145b9f8bf4c2daa34f53f4995d49fc1c",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "advisor__12-video-desktop.png",
+      "path": "stitch-upload-images/advisor__12-video-desktop.png",
+      "referencePath": "references/advisor/12-video-desktop.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-video-1440.png",
+      "bytes": 374586,
+      "sha256": "dd73bf37c522c83eaf77a6789223acd333d3ba53536fae12ba73230bd57f48ab",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "advisor__12-video-mobile.png",
+      "path": "stitch-upload-images/advisor__12-video-mobile.png",
+      "referencePath": "references/advisor/12-video-mobile.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-video-390.png",
+      "bytes": 118334,
+      "sha256": "f2a34d3f3e28cffa4bed49807523b3a5920eafe1b4bfd4fb22ab95109a2ae98b",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "advisor__13-request-desktop.png",
+      "path": "stitch-upload-images/advisor__13-request-desktop.png",
+      "referencePath": "references/advisor/13-request-desktop.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-request-1440.png",
+      "bytes": 347848,
+      "sha256": "3f73b03f6e8abcb11f5afca030126cea38ec1545c606d1ceeae750473f7e441f",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "advisor__13-request-mobile.png",
+      "path": "stitch-upload-images/advisor__13-request-mobile.png",
+      "referencePath": "references/advisor/13-request-mobile.png",
+      "originalSource": "work/features/2026-11-07-advisor-rich-experience/evidence/public/advisor-request-390.png",
+      "bytes": 96810,
+      "sha256": "003ae0344d3e2b187612b12297870bf00674f78d6f8c7d16d71cd37dcf50d4e5",
+      "note": "Latest published advisor release07; synthetic QA conversation/preferences; no lead saved or WhatsApp sent."
+    },
+    {
+      "filename": "app__01-today-mobile.png",
+      "path": "stitch-upload-images/app__01-today-mobile.png",
+      "referencePath": "references/app/01-today-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/01-today-mobile.png",
+      "bytes": 73733,
+      "sha256": "659b52f9f753badd16cebb2250e2983a6826ed3ef35279fad17b19357b61c259",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__02-calendar-mobile.png",
+      "path": "stitch-upload-images/app__02-calendar-mobile.png",
+      "referencePath": "references/app/02-calendar-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/02-calendar-mobile.png",
+      "bytes": 60604,
+      "sha256": "b80c2ec560524059b2d3f10aef18b1aac4fe33056baba9236216f97db3548632",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__03-roadmap-mobile.png",
+      "path": "stitch-upload-images/app__03-roadmap-mobile.png",
+      "referencePath": "references/app/03-roadmap-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/03-roadmap-mobile.png",
+      "bytes": 82171,
+      "sha256": "266043ef4733d3d704ee161afe6b5fa94df14f59fe36a9cc19f1d4b83b1de892",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__04-discovery-mobile.png",
+      "path": "stitch-upload-images/app__04-discovery-mobile.png",
+      "referencePath": "references/app/04-discovery-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/04-discovery-mobile.png",
+      "bytes": 53373,
+      "sha256": "7118b9e66312402675fb616d26cfe9c1897457a35a9361fca40cad3de4a0a2d8",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__05-negotiation-mobile.png",
+      "path": "stitch-upload-images/app__05-negotiation-mobile.png",
+      "referencePath": "references/app/05-negotiation-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/05-negotiation-mobile.png",
+      "bytes": 54031,
+      "sha256": "388a66bba4dcee044014e79e8b1ea7ede507a8d051e1c174ecd16a13214fc54e",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__06-tour-preparation-mobile.png",
+      "path": "stitch-upload-images/app__06-tour-preparation-mobile.png",
+      "referencePath": "references/app/06-tour-preparation-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/06-tour-preparation-mobile.png",
+      "bytes": 38396,
+      "sha256": "5cea5d3b0e275876eeed90d2d2540f614cade78cad46d212a01019e36569f248",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__07-objection-practice-mobile.png",
+      "path": "stitch-upload-images/app__07-objection-practice-mobile.png",
+      "referencePath": "references/app/07-objection-practice-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/07-objection-practice-mobile.png",
+      "bytes": 43067,
+      "sha256": "d46845c43b5e4b69e3bde01f927bb982715c1e177290940cbafff6f2ca50bf5b",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__08-price-objection-mobile.png",
+      "path": "stitch-upload-images/app__08-price-objection-mobile.png",
+      "referencePath": "references/app/08-price-objection-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/08-price-objection-mobile.png",
+      "bytes": 55039,
+      "sha256": "1e5527bef1ff98c858455fdb70974baf8bd63be3536c28ed76358580dee7d751",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__09-after-tour-mobile.png",
+      "path": "stitch-upload-images/app__09-after-tour-mobile.png",
+      "referencePath": "references/app/09-after-tour-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/09-after-tour-mobile.png",
+      "bytes": 40586,
+      "sha256": "a771bf85e3f4743ec48c670d72a384d72cb399935a41d1488cf7dcc9e0ea23de",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__10-monthly-goal-mobile.png",
+      "path": "stitch-upload-images/app__10-monthly-goal-mobile.png",
+      "referencePath": "references/app/10-monthly-goal-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/10-monthly-goal-mobile.png",
+      "bytes": 37590,
+      "sha256": "43421cd30783394d7b97214ecd070121dc97a99d75de5cea57a06d7c08d896b9",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__11-weekly-progress-mobile.png",
+      "path": "stitch-upload-images/app__11-weekly-progress-mobile.png",
+      "referencePath": "references/app/11-weekly-progress-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/11-weekly-progress-mobile.png",
+      "bytes": 66882,
+      "sha256": "3858cf46889c4190797ce43f6244dde951b59849926826fdc6ceb0347d40f595",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__12-copilot-mobile.png",
+      "path": "stitch-upload-images/app__12-copilot-mobile.png",
+      "referencePath": "references/app/12-copilot-mobile.png",
+      "originalSource": "growth/site/assets/scenarios/screens/12-copilot-mobile.png",
+      "bytes": 37308,
+      "sha256": "daef7dda95a1fadba6c5dcc8297465b011f62e9a3ba67c2895e17cc85fb30bcc",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__13-today-desktop.png",
+      "path": "stitch-upload-images/app__13-today-desktop.png",
+      "referencePath": "references/app/13-today-desktop.png",
+      "originalSource": "growth/site/assets/scenarios/screens/13-today-desktop.png",
+      "bytes": 92847,
+      "sha256": "902f39761880bd52ef83faf9f8613e324a6f09380df29ee7cfe8ce36e1907aec",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__14-roadmap-desktop.png",
+      "path": "stitch-upload-images/app__14-roadmap-desktop.png",
+      "referencePath": "references/app/14-roadmap-desktop.png",
+      "originalSource": "growth/site/assets/scenarios/screens/14-roadmap-desktop.png",
+      "bytes": 100310,
+      "sha256": "23b75ecebde780e118ce709c6edbdf6047fc2de80be60095b7732ccfa888fea5",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__15-room-board-desktop.png",
+      "path": "stitch-upload-images/app__15-room-board-desktop.png",
+      "referencePath": "references/app/15-room-board-desktop.png",
+      "originalSource": "growth/site/assets/scenarios/screens/15-room-board-desktop.png",
+      "bytes": 93955,
+      "sha256": "dee5a1227497c6a964a2d34b1528b94793c63760b109135fffc5a35a85c94072",
+      "note": "Public catalog demo screenshot."
+    },
+    {
+      "filename": "app__16-meet-greet-retouched.png",
+      "path": "stitch-upload-images/app__16-meet-greet-retouched.png",
+      "referencePath": "references/app/16-meet-greet-retouched.png",
+      "originalSource": "growth/site/assets/scenarios/screens/16-meet-greet-retouched.png",
+      "bytes": 1517543,
+      "sha256": "3de1c6fcbce141fa6bc3c072e8f2d92d6fc91eace838c05018c9dd93d90be14c",
+      "note": "User-supplied Meet & Greet screenshot, retouched presentation; original preserved outside this bundle."
+    },
+    {
+      "filename": "films__smart-agent.webp",
+      "path": "stitch-upload-images/films__smart-agent.webp",
+      "referencePath": "references/films/smart-agent.webp",
+      "originalSource": "growth/site/assets/films/smart-agent.webp",
+      "bytes": 21764,
+      "sha256": "3548a90610861f02557fd70291bfac224cec80ce5d38ec645a8060ea366dc238",
+      "note": "Public curated conceptual film poster; not evidence of live integrations."
+    },
+    {
+      "filename": "films__menos-caos.webp",
+      "path": "stitch-upload-images/films__menos-caos.webp",
+      "referencePath": "references/films/menos-caos.webp",
+      "originalSource": "growth/site/assets/films/menos-caos.webp",
+      "bytes": 23520,
+      "sha256": "314374a9090a354f3342c4c3020ea4687d6344afbbbd476ed19769457925ec29",
+      "note": "Public curated conceptual film poster; not evidence of live integrations."
+    },
+    {
+      "filename": "films__sistema-conectado.webp",
+      "path": "stitch-upload-images/films__sistema-conectado.webp",
+      "referencePath": "references/films/sistema-conectado.webp",
+      "originalSource": "growth/site/assets/films/sistema-conectado.webp",
+      "bytes": 22980,
+      "sha256": "bc52da68a621d16a48b480ecc71aecff9602945e870ea2713cef8dc0f64bd13c",
+      "note": "Public curated conceptual film poster; not evidence of live integrations."
+    },
+    {
+      "filename": "films__infraestructura-comercial.webp",
+      "path": "stitch-upload-images/films__infraestructura-comercial.webp",
+      "referencePath": "references/films/infraestructura-comercial.webp",
+      "originalSource": "growth/site/assets/films/infraestructura-comercial.webp",
+      "bytes": 37864,
+      "sha256": "443eba51b2e84cb825074c82a063878219e163ac22e2fb7b36b0fc0d1829340b",
+      "note": "Public curated conceptual film poster; not evidence of live integrations."
+    },
+    {
+      "filename": "films__conocimiento-en-practica.webp",
+      "path": "stitch-upload-images/films__conocimiento-en-practica.webp",
+      "referencePath": "references/films/conocimiento-en-practica.webp",
+      "originalSource": "growth/site/assets/films/conocimiento-en-practica.webp",
+      "bytes": 15266,
+      "sha256": "4efc8c43fc009be7327c04aa265fb4d620be1449d60a5904ddcdc6cd0eafe4c0",
+      "note": "Public curated conceptual film poster; not evidence of live integrations."
+    }
+  ]
+}

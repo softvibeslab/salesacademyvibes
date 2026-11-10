@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-10",
+  "exit_code": 0,
+  "script_sha256": "b090b4540d15a8ca22e36c8ded88e95af2fe3bc1e72660f43ad1a7d25d4c6e81",
+  "scope": "localhost synthetic store only",
+  "normal_smoke": {
+    "accounts_verified": 7,
+    "private_capability": true,
+    "demo_password_rejected": true,
+    "forged_header_rejected": true,
+    "same_room_peer_denied": true,
+    "other_room_denied": true,
+    "idempotency_verified": true,
+    "synthetic_fixture_deleted": true,
+    "existing_tours_preserved": true,
+    "existing_tours_count": 7,
+    "ocr_available": false,
+    "time_zone": "America/Cancun"
+  },
+  "uncertain_response_cleanup": true,
+  "sessions_revoked": true,
+  "previous_visits_preserved": true,
+  "production_calls": 0,
+  "notes": [
+    "Real provisioning CLI created seven synthetic credentials in a temporary directory without printing secrets.",
+    "Real API and unchanged activation smoke validated status codes, JSON shapes and no-store headers.",
+    "An injected error immediately after the creation response exercised cleanup by internal requestId, createdBy and tourId.",
+    "No systemd changes, production provisioning, private activation or TLS validation were performed by this local review."
+  ]
+}

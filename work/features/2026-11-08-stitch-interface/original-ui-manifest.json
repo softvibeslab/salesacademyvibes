@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "kind": "Original UI source and public assets; not generated Stitch code",
+  "sourceFiles": 94,
+  "sourceBytes": 31238320,
+  "included": [
+    "growth/site/**",
+    "growth/content/seed.json",
+    "growth/content/video-catalog.json"
+  ],
+  "excluded": [
+    "growth/server/**",
+    "private data and databases",
+    "sessions and credentials",
+    "deployment and provider configuration",
+    "generated Stitch exported-html"
+  ],
+  "mp4Included": true,
+  "mp4Count": 5,
+  "files": [
+    {
+      "path": "growth/site/assets/advisor.css",
+      "bytes": 13365,
+      "sha256": "68014a07f69d6a6b49c0af4d93121ae7b51610a81f0c7051d7659816a5fa94bb",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/advisor.css"
+    },
+    {
+      "path": "growth/site/assets/advisor.mjs",
+      "bytes": 24722,
+      "sha256": "773956de733de1de9b1675a1590659bf92827ebc0f57f20a50b0c6e0f0749be3",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/advisor.mjs"
+    },
+    {
+      "path": "growth/site/assets/ai-journey.css",
+      "bytes": 20514,
+      "sha256": "a821ed863ba00355dfa0442ddb413659ab60f4f25df2d91258a6e116f3ba9833",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-journey.css"
+    },
+    {
+      "path": "growth/site/assets/ai-scenes/briefing.webp",
+      "bytes": 118284,
+      "sha256": "be7a28536372380ecde0b1baf67ffe450f2ccc2772264cf85ad74f17412f97f5",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/briefing.webp"
+    },
+    {
+      "path": "growth/site/assets/ai-scenes/coaching.webp",
+      "bytes": 98142,
+      "sha256": "9205d247bb17c49407f1cbbb35b8695f0295402cd7d4cdbc3ef76443ac7c38d1",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/coaching.webp"
+    },
+    {
+      "path": "growth/site/assets/ai-scenes/consultation.webp",
+      "bytes": 119264,
+      "sha256": "3abd14e25340725db9b253b0b528ba81cfcc44b7e6575c5997dd822d0222cd51",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-scenes/consultation.webp"
+    },
+    {
+      "path": "growth/site/assets/ai-screens/03-roadmap-mobile.webp",
+      "bytes": 32110,
+      "sha256": "5ee5b4422359afa25dc1352ac6d72b495b209ed53a6ece1e3093d1ff0f984d63",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/03-roadmap-mobile.webp"
+    },
+    {
+      "path": "growth/site/assets/ai-screens/06-tour-preparation-mobile.webp",
+      "bytes": 16396,
+      "sha256": "e19db283dc2d18035d4b9e2173c9061993a39f157b514c3bb405496eef7d36f3",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/06-tour-preparation-mobile.webp"
+    },
+    {
+      "path": "growth/site/assets/ai-screens/07-objection-practice-mobile.webp",
+      "bytes": 18494,
+      "sha256": "9d4c621cc91fa83f311dcc7d13f056f6055374435363124cdd6c83efe40c5ddf",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/07-objection-practice-mobile.webp"
+    },
+    {
+      "path": "growth/site/assets/ai-screens/09-after-tour-mobile.webp",
+      "bytes": 17592,
+      "sha256": "2ac7dfc7e71e4c354e7c7f1c3366eef4cbe28d10026e4c1dad04858066aa78d3",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/09-after-tour-mobile.webp"
+    },
+    {
+      "path": "growth/site/assets/ai-screens/12-copilot-mobile.webp",
+      "bytes": 16990,
+      "sha256": "5cf67190f9f57fce703451f2805323d9fe30489866ce7b4921a43bebd3eb17ae",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/ai-screens/12-copilot-mobile.webp"
+    },
+    {
+      "path": "growth/site/assets/campaign.css",
+      "bytes": 866,
+      "sha256": "8f2ab0f4d55f587ff20c3a8ca85337112fbc3d443e546364b360e123a63fd150",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/campaign.css"
+    },
+    {
+      "path": "growth/site/assets/cinematic.css",
+      "bytes": 21881,
+      "sha256": "4d2ba6e0a4c9d6e53cdc619fb9ff8cc43b973deb1994632c4f5f0bb7f327a09c",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/cinematic.css"
+    },
+    {
+      "path": "growth/site/assets/cms.css",
+      "bytes": 20751,
+      "sha256": "b596e94f82500acbac113de74d37cbefe3ff5f38d4a0dd4ad50051cfa1b287dc",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.css"
+    },
+    {
+      "path": "growth/site/assets/cms.mjs",
+      "bytes": 53228,
+      "sha256": "ae0b9488f25b6f88d152dfc065524531b007f456198e93339d2a16a9c8bcca8f",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/cms.mjs"
+    },
+    {
+      "path": "growth/site/assets/diagnostic-ui.mjs",
+      "bytes": 6477,
+      "sha256": "1148f2f6f087499ca27747200d50f442e321511f97e1d9f672a849af5d1795cb",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/diagnostic-ui.mjs"
+    },
+    {
+      "path": "growth/site/assets/diagnostic.mjs",
+      "bytes": 1888,
+      "sha256": "ea4b346de879ceb9ff5b4d49ef1e90f64510f70a4f6a904480c473482d998791",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/diagnostic.mjs"
+    },
+    {
+      "path": "growth/site/assets/films/conocimiento-en-practica.es.txt",
+      "bytes": 687,
+      "sha256": "48057685dd4e656c742ccd102da4c1946ec93a05107ad38f73b08baae4ca018d",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.es.txt"
+    },
+    {
+      "path": "growth/site/assets/films/conocimiento-en-practica.es.vtt",
+      "bytes": 827,
+      "sha256": "43c9f1440d9f05b6c17dbb1c268a9cf2e1a91f84472ee2f6daedd9f3a1556199",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.es.vtt"
+    },
+    {
+      "path": "growth/site/assets/films/conocimiento-en-practica.mp4",
+      "bytes": 3342374,
+      "sha256": "f4dac21211c6f3434527b189417b7114071463789fa37d61017dd27e829f0d26",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.mp4"
+    },
+    {
+      "path": "growth/site/assets/films/conocimiento-en-practica.webp",
+      "bytes": 15266,
+      "sha256": "4efc8c43fc009be7327c04aa265fb4d620be1449d60a5904ddcdc6cd0eafe4c0",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/conocimiento-en-practica.webp"
+    },
+    {
+      "path": "growth/site/assets/films/infraestructura-comercial.es.txt",
+      "bytes": 752,
+      "sha256": "4751bb82705e028346b80b51708ba84b78cbf03944b5d13e8d0bf4b46111b451",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.es.txt"
+    },
+    {
+      "path": "growth/site/assets/films/infraestructura-comercial.es.vtt",
+      "bytes": 909,
+      "sha256": "c0cf830233e5dd63412284df8f89a68046c49e3c2d86096a29b5c8927ac37177",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.es.vtt"
+    },
+    {
+      "path": "growth/site/assets/films/infraestructura-comercial.mp4",
+      "bytes": 3587135,
+      "sha256": "58c1c990b094d8d9f0637cd6dde2c502b13ffc347c4075aa135c94ef6a373f45",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.mp4"
+    },
+    {
+      "path": "growth/site/assets/films/infraestructura-comercial.webp",
+      "bytes": 37864,
+      "sha256": "443eba51b2e84cb825074c82a063878219e163ac22e2fb7b36b0fc0d1829340b",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/infraestructura-comercial.webp"
+    },
+    {
+      "path": "growth/site/assets/films/menos-caos.es.txt",
+      "bytes": 783,
+      "sha256": "2870241f18851ea4d93de71e1b86f3ffe120a4e96de8d388a764cf75aa912fb3",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.es.txt"
+    },
+    {
+      "path": "growth/site/assets/films/menos-caos.es.vtt",
+      "bytes": 985,
+      "sha256": "d6d23b2511322fcc7c167bbc136d708d97f52b77b857ecc48866741458e28f11",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.es.vtt"
+    },
+    {
+      "path": "growth/site/assets/films/menos-caos.mp4",
+      "bytes": 3786601,
+      "sha256": "54394a0da1fdfba7c81fe981b57f015a6aaa6fb9eb7f65985275abbbbcdb4d1e",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.mp4"
+    },
+    {
+      "path": "growth/site/assets/films/menos-caos.webp",
+      "bytes": 23520,
+      "sha256": "314374a9090a354f3342c4c3020ea4687d6344afbbbd476ed19769457925ec29",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/menos-caos.webp"
+    },
+    {
+      "path": "growth/site/assets/films/sistema-conectado.es.txt",
+      "bytes": 791,
+      "sha256": "4f254e851db2728d0bb294b73e144a547edfed9f8dc081b45980faddb73a4ce6",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.es.txt"
+    },
+    {
+      "path": "growth/site/assets/films/sistema-conectado.es.vtt",
+      "bytes": 985,
+      "sha256": "6960a5e20db59f3481ccdce0b3a2643c65bf2a85da51ff2dd574d541fe4cb4a5",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.es.vtt"
+    },
+    {
+      "path": "growth/site/assets/films/sistema-conectado.mp4",
+      "bytes": 6367669,
+      "sha256": "d8d34f63de90ee3f0440781be40ad52d9daabec92b1b9c7451dd24fc3feaf7db",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.mp4"
+    },
+    {
+      "path": "growth/site/assets/films/sistema-conectado.webp",
+      "bytes": 22980,
+      "sha256": "bc52da68a621d16a48b480ecc71aecff9602945e870ea2713cef8dc0f64bd13c",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/sistema-conectado.webp"
+    },
+    {
+      "path": "growth/site/assets/films/smart-agent.es.txt",
+      "bytes": 741,
+      "sha256": "19ced8711e488038e256dfddc97148725cfe556f93c04924addea9473f5973e1",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.es.txt"
+    },
+    {
+      "path": "growth/site/assets/films/smart-agent.es.vtt",
+      "bytes": 921,
+      "sha256": "b4b1f87c28420948c61f34f99ccb6913c543c3b12af982af88c66a46f0d96087",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.es.vtt"
+    },
+    {
+      "path": "growth/site/assets/films/smart-agent.mp4",
+      "bytes": 5549996,
+      "sha256": "862d0958977f03c0d39fdc1e8259d7f58303f71fbdbebc2f1865e24e48459c11",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.mp4"
+    },
+    {
+      "path": "growth/site/assets/films/smart-agent.webp",
+      "bytes": 21764,
+      "sha256": "3548a90610861f02557fd70291bfac224cec80ce5d38ec645a8060ea366dc238",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/films/smart-agent.webp"
+    },
+    {
+      "path": "growth/site/assets/hub-v2.css",
+      "bytes": 12588,
+      "sha256": "572a033dde48eb028226c4eca47de6170e21549804e9b50e5d4703c96fc07894",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/hub-v2.css"
+    },
+    {
+      "path": "growth/site/assets/journey-math.mjs",
+      "bytes": 1117,
+      "sha256": "13acea44388bdb1ea17a7d63ec98970682c79c58f29d18431b62cd6fbd08bf3f",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/journey-math.mjs"
+    },
+    {
+      "path": "growth/site/assets/journey.mjs",
+      "bytes": 3563,
+      "sha256": "66b2c76c221ba28c43a1b0d61fcfecb14cc8adceb5cadc442232d7bee6544734",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/journey.mjs"
+    },
+    {
+      "path": "growth/site/assets/landing-v2.css",
+      "bytes": 30258,
+      "sha256": "00433ca82ef7477612e32483aa8afe8f3965b6a9ba243c7e2a42939029c5ff8e",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/landing-v2.css"
+    },
+    {
+      "path": "growth/site/assets/landing-v2.mjs",
+      "bytes": 946,
+      "sha256": "c1b6272777422315a1941f00bc77114d1f08f129bc77f01bebcd7bcd4d1e1a26",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/landing-v2.mjs"
+    },
+    {
+      "path": "growth/site/assets/mark.svg",
+      "bytes": 206,
+      "sha256": "5ad064efb01e1579db51106b17d79610dc7aa3a0fb18c51affd7deaf0e104377",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/mark.svg"
+    },
+    {
+      "path": "growth/site/assets/media-player.css",
+      "bytes": 2353,
+      "sha256": "8d2c298e2bffcc573d95d7ee2251f4324f81ba538c8c8a3007f3090f81dc2f6b",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.css"
+    },
+    {
+      "path": "growth/site/assets/media-player.mjs",
+      "bytes": 2134,
+      "sha256": "729857c81082d0fdfcfa3777c5264a5e555b0c1d2db19292d80ea3cc07c0b660",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/media-player.mjs"
+    },
+    {
+      "path": "growth/site/assets/product-agenda.png",
+      "bytes": 69815,
+      "sha256": "16e57f1db2d9a8dfd04b1ff07b481bcac9e485b08277e3da8e65628b65c00e0f",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/product-agenda.png"
+    },
+    {
+      "path": "growth/site/assets/product-demo.png",
+      "bytes": 78780,
+      "sha256": "34124d5a0897961de0ef869eee2063cbbf457ceffb8ce966b4d3445ee0cae749",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/product-demo.png"
+    },
+    {
+      "path": "growth/site/assets/product-resources.png",
+      "bytes": 52612,
+      "sha256": "22dea634e8bf5d9096ec647f24ba865538086dd828a1cc1fcf2753a973e7581a",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/product-resources.png"
+    },
+    {
+      "path": "growth/site/assets/public-v2.css",
+      "bytes": 3071,
+      "sha256": "bb20a360345dd3d0ad8873566aa30021f5baba71c1108361e2ae23c357e2d347",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/public-v2.css"
+    },
+    {
+      "path": "growth/site/assets/scenarios/compositions/01-daily-intention.png",
+      "bytes": 566514,
+      "sha256": "6b60cf20f148917af470fdea242b7dc68ed48c84686d9a5c1dbaf11c8e21c9ac",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/01-daily-intention.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/compositions/02-meet-greet.png",
+      "bytes": 695340,
+      "sha256": "fd10196f670e2ef4c07a5e7997f9ddacb28e2ac674da213626bdd874e22dbfff",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/02-meet-greet.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/compositions/02-tour-preparation.png",
+      "bytes": 572370,
+      "sha256": "18cc47b806ac712e0f37029e0a3507df9a5ea3330f0fa9674c869668fb49bfc4",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/02-tour-preparation.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/compositions/03-needs-discovery.png",
+      "bytes": 615616,
+      "sha256": "ebb3cab6d0cc1cfe85a136ff2954fe87a98aaef3df060b058389262185955d6a",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/03-needs-discovery.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/compositions/04-objection-practice.png",
+      "bytes": 575260,
+      "sha256": "2114a395b0c65d8639445c7af0a3a599dcd65fc52330db6b736d562538e87f90",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/04-objection-practice.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/compositions/05-leader-coaching.png",
+      "bytes": 573803,
+      "sha256": "0977bd5934c99bbef1e6141a831854dfd0b0be7a4a582edaccca417a71dcf0ec",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/05-leader-coaching.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/compositions/06-learning-close.png",
+      "bytes": 598800,
+      "sha256": "46dfcb23c55922f8017313325cb0f1da2b0e256c7601d7844e52b6ddeef74e8b",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/compositions/06-learning-close.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/index.html",
+      "bytes": 32633,
+      "sha256": "ddc995f9a43845b8bea1acf3caa6701bd4227dff6fa4d54f07af9388c18c92aa",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/index.html"
+    },
+    {
+      "path": "growth/site/assets/scenarios/scenarios.css",
+      "bytes": 22216,
+      "sha256": "89a4318a8c13fc52d5888a1cafe7554cf47483a8da75f2beb9f66deb8391ed6e",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.css"
+    },
+    {
+      "path": "growth/site/assets/scenarios/scenarios.mjs",
+      "bytes": 1764,
+      "sha256": "4c43225d3110c9eb8c2d1a0e7b131ff1c2ef6732b8b21f1fbff9f6d1da584f4e",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenarios.mjs"
+    },
+    {
+      "path": "growth/site/assets/scenarios/scenes/briefing.webp",
+      "bytes": 198878,
+      "sha256": "cc67db767c70514269bfb3d0be433d804a54e8f6156eb06e17c2c66d6f30dd0a",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/briefing.webp"
+    },
+    {
+      "path": "growth/site/assets/scenarios/scenes/coaching.webp",
+      "bytes": 160992,
+      "sha256": "aa47d7f21972de9bbdcde635096f5b2e6703501dd997f8037bf1e079628eab48",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/coaching.webp"
+    },
+    {
+      "path": "growth/site/assets/scenarios/scenes/consultation.webp",
+      "bytes": 204766,
+      "sha256": "cc78f79422695d524172b793803562608635c28b012f570ecb39d3f9bfb01e37",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/scenes/consultation.webp"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/01-today-mobile.png",
+      "bytes": 73733,
+      "sha256": "659b52f9f753badd16cebb2250e2983a6826ed3ef35279fad17b19357b61c259",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/01-today-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/02-calendar-mobile.png",
+      "bytes": 60604,
+      "sha256": "b80c2ec560524059b2d3f10aef18b1aac4fe33056baba9236216f97db3548632",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/02-calendar-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/03-roadmap-mobile.png",
+      "bytes": 82171,
+      "sha256": "266043ef4733d3d704ee161afe6b5fa94df14f59fe36a9cc19f1d4b83b1de892",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/03-roadmap-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/04-discovery-mobile.png",
+      "bytes": 53373,
+      "sha256": "7118b9e66312402675fb616d26cfe9c1897457a35a9361fca40cad3de4a0a2d8",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/04-discovery-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/05-negotiation-mobile.png",
+      "bytes": 54031,
+      "sha256": "388a66bba4dcee044014e79e8b1ea7ede507a8d051e1c174ecd16a13214fc54e",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/05-negotiation-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/06-tour-preparation-mobile.png",
+      "bytes": 38396,
+      "sha256": "5cea5d3b0e275876eeed90d2d2540f614cade78cad46d212a01019e36569f248",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/06-tour-preparation-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/07-objection-practice-mobile.png",
+      "bytes": 43067,
+      "sha256": "d46845c43b5e4b69e3bde01f927bb982715c1e177290940cbafff6f2ca50bf5b",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/07-objection-practice-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/08-price-objection-mobile.png",
+      "bytes": 55039,
+      "sha256": "1e5527bef1ff98c858455fdb70974baf8bd63be3536c28ed76358580dee7d751",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/08-price-objection-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/09-after-tour-mobile.png",
+      "bytes": 40586,
+      "sha256": "a771bf85e3f4743ec48c670d72a384d72cb399935a41d1488cf7dcc9e0ea23de",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/09-after-tour-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/10-monthly-goal-mobile.png",
+      "bytes": 37590,
+      "sha256": "43421cd30783394d7b97214ecd070121dc97a99d75de5cea57a06d7c08d896b9",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/10-monthly-goal-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/11-weekly-progress-mobile.png",
+      "bytes": 66882,
+      "sha256": "3858cf46889c4190797ce43f6244dde951b59849926826fdc6ceb0347d40f595",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/11-weekly-progress-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/12-copilot-mobile.png",
+      "bytes": 37308,
+      "sha256": "daef7dda95a1fadba6c5dcc8297465b011f62e9a3ba67c2895e17cc85fb30bcc",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/12-copilot-mobile.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/13-today-desktop.png",
+      "bytes": 92847,
+      "sha256": "902f39761880bd52ef83faf9f8613e324a6f09380df29ee7cfe8ce36e1907aec",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/13-today-desktop.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/14-roadmap-desktop.png",
+      "bytes": 100310,
+      "sha256": "23b75ecebde780e118ce709c6edbdf6047fc2de80be60095b7732ccfa888fea5",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/14-roadmap-desktop.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/15-room-board-desktop.png",
+      "bytes": 93955,
+      "sha256": "dee5a1227497c6a964a2d34b1528b94793c63760b109135fffc5a35a85c94072",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/15-room-board-desktop.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/16-meet-greet-original.png",
+      "bytes": 162319,
+      "sha256": "da051d399971773d91b434704ffcf34c8f82eed1cb29a01d318c9ec6fef03b9e",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-original.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/16-meet-greet-retouched.png",
+      "bytes": 1517543,
+      "sha256": "3de1c6fcbce141fa6bc3c072e8f2d92d6fc91eace838c05018c9dd93d90be14c",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.png"
+    },
+    {
+      "path": "growth/site/assets/scenarios/screens/16-meet-greet-retouched.webp",
+      "bytes": 49838,
+      "sha256": "33202c6afa08462fbbd6c8f232bfaca76d5a21345475f89cb6962c921d0c024f",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios/screens/16-meet-greet-retouched.webp"
+    },
+    {
+      "path": "growth/site/assets/scenarios-entry.css",
+      "bytes": 1232,
+      "sha256": "8fa518e67b0036e67ed4d8b6087dadfca3a8f353265911ecf01c21af351d4e58",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/scenarios-entry.css"
+    },
+    {
+      "path": "growth/site/assets/site.css",
+      "bytes": 35641,
+      "sha256": "b4ae24a7bc5d2e315a84b3433e53ccce6f4ef637037177c76b5892dcd2197e7c",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/site.css"
+    },
+    {
+      "path": "growth/site/assets/site.mjs",
+      "bytes": 4009,
+      "sha256": "a2b6fd25d479de5b63484b2f59353e681959da8113811dee6ef38f435f037316",
+      "publicReferenceUrl": "https://v5.salesacademy.softvibes.cloud/growth-assets/site.mjs"
+    },
+    {
+      "path": "growth/site/templates/analysis.html",
+      "bytes": 3979,
+      "sha256": "68c4e6ffe7ea008e6e92edb08abe4ab6aa52e9d1b157b36acf12554ebffc2c63"
+    },
+    {
+      "path": "growth/site/templates/base.html",
+      "bytes": 4353,
+      "sha256": "8ecf0a11bc559cd1c697f049139a7c5ef7ba286d42eefe48d08492cfe6ef456b"
+    },
+    {
+      "path": "growth/site/templates/cms.html",
+      "bytes": 4307,
+      "sha256": "cb560e15979adf2cb207d88953f97c5fbfdb7110e86ab53419477e695db38492"
+    },
+    {
+      "path": "growth/site/templates/diagnostic.html",
+      "bytes": 2383,
+      "sha256": "d4545cc337b78b659b19e22bfea5e35761c7516e73c4d305b347d7726dd015cd"
+    },
+    {
+      "path": "growth/site/templates/hub.html",
+      "bytes": 4626,
+      "sha256": "e600f5a839b58f1ae3ec70701d5315b6a9b3d4f15e6acf1fb5309ea4ce25a818"
+    },
+    {
+      "path": "growth/site/templates/landing.html",
+      "bytes": 22497,
+      "sha256": "d6521ac07d0ce75f186cbb762dbd20b7f575cfb1da17ad575159d27b53ff64d5"
+    },
+    {
+      "path": "growth/site/templates/macros.html",
+      "bytes": 3494,
+      "sha256": "e2e405fdd8aee22f1fa100a8cbc948d76c936f4a00c7402b8c2907df63f5e756"
+    },
+    {
+      "path": "growth/site/templates/privacy.html",
+      "bytes": 3886,
+      "sha256": "26dddbdeafafa4b0cc6ac906a7f2dbca2277a6167a9e6744a456ff1f9a179915"
+    },
+    {
+      "path": "growth/site/templates/resource.html",
+      "bytes": 5210,
+      "sha256": "b801f11dc7cdfa1f9924dcfa8c2feff342cb23da7d1ae77b179b54068af73689"
+    },
+    {
+      "path": "growth/content/seed.json",
+      "bytes": 40244,
+      "sha256": "787af23076a92234965ac44b9cd2baa703f6441586418124f5cfdadbddc22b79"
+    },
+    {
+      "path": "growth/content/video-catalog.json",
+      "bytes": 1958,
+      "sha256": "01ffa655b73eb7bdd0ac14142a0f08f568d986ed67350869eef58f05d485a34f"
+    }
+  ]
+}

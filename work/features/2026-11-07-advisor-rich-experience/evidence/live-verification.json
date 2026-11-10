@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "activeRelease": "/srv/salesacademy-cloud/releases/20261107-advisor-rich-07",
+  "verifiedFiles": 326,
+  "profiles": [
+    {
+      "path": "/var/lib/salesacademy-advisor/.hermes/profiles/sales-academy-advisor/SOUL.md",
+      "sha256": "c46f674287c83d04670671ba70ca8836fb182d3520e3d0d66112e67841149aee",
+      "owner": "sa-advisor",
+      "mode": "0o600"
+    },
+    {
+      "path": "/opt/salesacademy-advisor/SOUL.md",
+      "sha256": "c46f674287c83d04670671ba70ca8836fb182d3520e3d0d66112e67841149aee",
+      "owner": "root",
+      "mode": "0o644"
+    }
+  ],
+  "services": {
+    "salesacademy-cloud@v1.service": "active",
+    "salesacademy-cloud@v2.service": "active",
+    "salesacademy-cloud@v3.service": "active",
+    "salesacademy-cloud@v4.service": "active",
+    "salesacademy-cloud@v5.service": "active",
+    "salesacademy-advisor.service": "active",
+    "salesacademy-advisor-credential.timer": "active",
+    "salesacademy-advisor-retention.timer": "active"
+  }
+}

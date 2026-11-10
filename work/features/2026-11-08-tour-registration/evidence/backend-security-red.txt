@@ -1,0 +1,23 @@
+FF
+======================================================================
+FAIL: test_17_reset_tombstones_requires_private_admin (__main__.RegistrationHTTPTest.test_17_reset_tombstones_requires_private_admin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 314, in test_17_reset_tombstones_requires_private_admin
+    self.assertIn(self.call("POST", "/reset", {}, headers={"X-Ops-Actor": "admin"})[0], (401, 403))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 200 not found in (401, 403)
+
+======================================================================
+FAIL: test_18_idempotent_replay_cannot_downgrade_private_data (__main__.RegistrationHTTPTest.test_18_idempotent_replay_cannot_downgrade_private_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/prototypes/smart-agenda-mockup/tests/test_tour_registration.py", line 327, in test_18_idempotent_replay_cannot_downgrade_private_data
+    self.assertIn(status, (403, 404))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 200 not found in (403, 404)
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.584s
+
+FAILED (failures=2)

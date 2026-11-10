@@ -1,0 +1,32 @@
+{
+  "observed": "2026-11-10",
+  "service": "active",
+  "apiRoot": "/opt/salesacademy-ops",
+  "webRoot": "/var/www/salesacademy.softvibes.art",
+  "dataPath": "/var/lib/salesacademy-ops/ops.json",
+  "storeMode": "0600",
+  "directoryMode": "0750",
+  "serviceUser": "www-data",
+  "python": "3.13.7",
+  "ocrLanguages": [
+    "eng",
+    "spa",
+    "osd"
+  ],
+  "counts": {
+    "people": 6,
+    "rooms": 2,
+    "visits": 7,
+    "tourRegistrations": 0
+  },
+  "privateAuthConfigured": false,
+  "environmentFiles": [
+    "/etc/salesacademy-ops/admin.env"
+  ],
+  "hashesBefore": {
+    "ops_api.py": "8fc3350098afe3ce6c6c76af55946216da13487121200c2edac8bbe009e22029",
+    "ops_import.py": "0355728e55a48466474697c1aa35c946877739f34a6f48e1a3fd5ee4e5d4c541",
+    "agenda.js": "fd0664864055274eb217c3b6f45dc47796c7e159ad850b2ee4f14da5a5771edc",
+    "index.html": "d4dffd7448fcd831610db6104bee734ae2a5b5e13a5082dc7a1b204d16f73d9e"
+  }
+}

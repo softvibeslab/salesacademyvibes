@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok((await bubble.locator(':scope > p').innerText()).trim().split(/\s+/).length<=90)
+
+    at file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-rich-browser.mjs:87:10
+    at async check (file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-rich-browser.mjs:16:49)
+    at async file:///Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/advisor-rich-browser.mjs:82:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.15.0

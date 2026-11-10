@@ -1,0 +1,5 @@
+Endpoints en spec: 2
+Paths en OpenAPI:  36
+OK   /growth-api/advisor/messages
+OK   /growth-api/advisor/session
+OK: el OpenAPI cubre los endpoints declarados en el spec.

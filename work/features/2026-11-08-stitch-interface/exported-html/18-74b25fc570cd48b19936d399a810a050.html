@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>18 · CMS · Recursos | Sales Academy</title>
+<!-- Typography & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dcdad4",
+            "secondary-fixed-dim": "#c6c7c2",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e2dd",
+            "secondary-fixed": "#e3e3dd",
+            "on-primary-fixed": "#251a00",
+            "on-primary-container": "#5c460f",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdf9d",
+            "surface-container": "#f0eee8",
+            "secondary": "#5d5f5b",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#e6b033",
+            "surface-tint": "#735b23",
+            "surface-container-high": "#eae8e2",
+            "secondary-container": "#e3e3dd",
+            "surface-container-highest": "#e4e2dd",
+            "on-tertiary-fixed": "#261900",
+            "on-secondary-fixed": "#1a1c19",
+            "on-error-container": "#93000a",
+            "outline": "#7e7668",
+            "surface-bright": "#fbf9f3",
+            "surface": "#fbf9f3",
+            "tertiary-fixed-dim": "#f5be40",
+            "background": "#fbf9f3",
+            "inverse-on-surface": "#f3f1eb",
+            "on-primary-fixed-variant": "#59440d",
+            "outline-variant": "#d0c5b5",
+            "tertiary": "#7a5900",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "on-tertiary-container": "#5f4500",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-container": "#d4b574",
+            "tertiary-fixed": "#ffdea1",
+            "on-secondary-container": "#636561",
+            "on-background": "#1b1c18",
+            "primary": "#735b23",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#30312d",
+            "on-secondary-fixed-variant": "#464743",
+            "primary-fixed-dim": "#e3c380",
+            "on-surface-variant": "#4d463a",
+            "surface-container-low": "#f5f3ed",
+            "on-surface": "#1b1c18",
+            "inverse-primary": "#e3c380",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Arimo"],
+            "label-sm": ["Arimo"],
+            "body-lg": ["Arimo"],
+            "headline-lg": ["Libre Caslon Text"],
+            "headline-md": ["Libre Caslon Text"],
+            "headline-xl": ["Libre Caslon Text"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased h-full flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar (Shared Component Anchor) -->
+<header class="bg-surface border-b border-outline-variant/30 sticky top-0 z-30 flex-none">
+<div class="flex justify-between items-center w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-20">
+<!-- Brand Logo -->
+<div class="flex items-center gap-3">
+<a class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface hover:text-primary transition-colors duration-200" href="/cms/recursos/">
+          SA
+        </a>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-label-sm text-label-sm tracking-wider uppercase bg-surface-container-high text-on-surface-variant font-medium">
+          Editorial CMS
+        </span>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#agentes">
+          Agentes en acción
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#galeria">
+          Galería
+        </a>
+<a class="text-primary font-medium tracking-wide font-label-md text-label-md border-b-2 border-primary pb-1" href="/cms/recursos/">
+          MediaHub
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#diagnostico">
+          Diagnóstico
+        </a>
+<a class="text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="#faq">
+          FAQ
+        </a>
+</nav>
+<!-- Trailing Primary Action -->
+<div class="flex items-center gap-4">
+<button class="h-11 px-5 rounded-lg bg-primary-container text-on-primary-container hover:bg-tertiary-fixed-dim transition-all duration-200 font-label-sm text-label-sm font-medium flex items-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Solicitar demo por WhatsApp</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Application Layout with Dark Forest Sidebar -->
+<div class="flex flex-1 overflow-hidden min-h-0">
+<!-- Sidebar fija de 240px verde oscuro (#1d241c) -->
+<aside class="w-[240px] flex-none bg-[#1d241c] text-[#f5f3ed] flex flex-col justify-between py-6 px-4 border-r border-[#263125] z-20">
+<div class="flex flex-col gap-6">
+<!-- Workspace Badge -->
+<div class="px-3 py-2 rounded-lg bg-[#273226] border border-[#354333]/50 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#d4b574] text-[20px]">apartment</span>
+<div>
+<p class="font-label-sm text-label-sm text-[#f5f3ed] font-medium leading-none">Sala de Ventas</p>
+<p class="text-[11px] text-[#8e988c] font-body-md mt-0.5">Cancún Signature</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#8e988c] text-[16px]">unfold_more</span>
+</div>
+<!-- Sidebar Navigation Sections -->
+<div class="space-y-6">
+<div>
+<span class="px-3 text-[11px] font-label-sm tracking-widest text-[#8e988c] uppercase font-semibold">
+              Contenido &amp; Medios
+            </span>
+<nav class="mt-2 space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 rounded-lg bg-[#2a3628] text-[#f4f4ed] font-medium text-body-md border-l-2 border-[#d4b574] shadow-sm" href="/cms/recursos/">
+<span class="material-symbols-outlined text-[#d4b574] text-[20px]">library_books</span>
+<span>Recursos</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded-lg text-[#b8c2b5] hover:bg-[#252f23] hover:text-[#ffffff] transition-colors text-body-md" href="#articulos">
+<span class="material-symbols-outlined text-[#8e988c] text-[20px]">article</span>
+<span>Artículos MediaHub</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded-lg text-[#b8c2b5] hover:bg-[#252f23] hover:text-[#ffffff] transition-colors text-body-md" href="#guias-ia">
+<span class="material-symbols-outlined text-[#8e988c] text-[20px]">smart_toy</span>
+<span>Scripts de Agentes</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded-lg text-[#b8c2b5] hover:bg-[#252f23] hover:text-[#ffffff] transition-colors text-body-md" href="#audiovisual">
+<span class="material-symbols-outlined text-[#8e988c] text-[20px]">video_library</span>
+<span>Cápsulas &amp; Video</span>
+</a>
+</nav>
+</div>
+<div>
+<span class="px-3 text-[11px] font-label-sm tracking-widest text-[#8e988c] uppercase font-semibold">
+              Gobernanza
+            </span>
+<nav class="mt-2 space-y-1">
+<a class="flex items-center gap-3 px-3 h-11 rounded-lg text-[#b8c2b5] hover:bg-[#252f23] hover:text-[#ffffff] transition-colors text-body-md" href="#roles">
+<span class="material-symbols-outlined text-[#8e988c] text-[20px]">groups</span>
+<span>Roles &amp; Certificación</span>
+</a>
+<a class="flex items-center gap-3 px-3 h-11 rounded-lg text-[#b8c2b5] hover:bg-[#252f23] hover:text-[#ffffff] transition-colors text-body-md" href="#auditoria">
+<span class="material-symbols-outlined text-[#8e988c] text-[20px]">verified_user</span>
+<span>Control de Calidad</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+<!-- Sidebar Footer / Environment Indicator -->
+<div class="pt-4 border-t border-[#263125] flex flex-col gap-3">
+<div class="flex items-center justify-between px-3 text-[#8e988c] text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Sync activo
+          </span>
+<span class="text-[11px] font-mono">v2.4.9</span>
+</div>
+<div class="px-3 py-2 bg-[#171c16] rounded-md border border-[#232c21]">
+<p class="text-[11px] text-[#8e988c] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-[#d4b574]">info</span>
+            Modo: CMS Producción
+          </p>
+</div>
+</div>
+</aside>
+<!-- Workspace Claro (#f4f4ed) Content Area -->
+<main class="flex-1 bg-[#f4f4ed] overflow-y-auto flex flex-col">
+<!-- Top Action Bar & Breadcrumbs -->
+<div class="border-b border-outline-variant/30 bg-surface-container-lowest/80 backdrop-blur px-8 py-5 flex items-center justify-between sticky top-0 z-10">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-secondary">
+<span>Sales Academy CMS</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>MediaHub</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">18 · CMS · Recursos</span>
+<span class="ml-2 px-2 py-0.5 rounded text-[11px] bg-secondary-fixed text-on-secondary-fixed font-mono">
+              /cms/recursos/
+            </span>
+</div>
+<div class="flex items-baseline gap-3">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+              Repositorio de Recursos
+            </h1>
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">
+              9 recursos registrados
+            </span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-11 px-4 rounded-lg bg-surface-container-lowest border border-outline-variant/60 hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-medium flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">download</span>
+<span>Exportar CSV</span>
+</button>
+<!-- Botón primario 'Nuevo recurso' (44px de alto) -->
+<button class="h-11 px-5 rounded-lg bg-primary-container text-on-primary-container hover:bg-tertiary-fixed-dim transition-all duration-200 font-label-sm text-label-sm font-medium flex items-center gap-2 shadow-sm active:translate-y-0.5" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Nuevo recurso</span>
+</button>
+</div>
+</div>
+<!-- Body Container with Filter Canvas & Editorial Table -->
+<div class="p-8 max-w-[1280px] w-full mx-auto space-y-6">
+<!-- Synthetic Data Notice Badge -->
+<div class="flex items-center justify-between bg-surface-container-low border border-outline-variant/40 px-4 py-2.5 rounded-lg text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Entorno editorial con <strong class="font-medium text-on-surface">Datos de ejemplo</strong> sincronizados desde el MediaHub central.</span>
+</div>
+<span class="text-[11px] tracking-wider uppercase px-2 py-0.5 bg-surface-variant rounded text-on-surface font-semibold">
+            Datos de ejemplo
+          </span>
+</div>
+<!-- Filter Bar: Search, Formato, Estado -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 shadow-[0_1px_3px_rgba(0,0,0,0.02)] space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- Buscador por palabra clave -->
+<div class="md:col-span-5 relative">
+<label class="block text-label-sm font-label-sm text-secondary mb-1.5" for="search-input">
+                Búsqueda en títulos o descriptores
+              </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px]">
+                  search
+                </span>
+<input class="w-full h-11 pl-11 pr-4 rounded-lg bg-[#fbf9f3] border border-outline-variant/60 focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim text-body-md font-body-md text-on-surface transition-colors placeholder:text-outline" id="search-input" placeholder="Buscar por título, rol o contenido..." type="text"/>
+</div>
+</div>
+<!-- Selector de Formato -->
+<div class="md:col-span-3">
+<label class="block text-label-sm font-label-sm text-secondary mb-1.5" for="format-filter">
+                Formato
+              </label>
+<div class="relative">
+<select class="w-full h-11 pl-3.5 pr-10 rounded-lg bg-[#fbf9f3] border border-outline-variant/60 focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim text-body-md font-body-md text-on-surface appearance-none transition-colors" id="format-filter">
+<option value="">Todos los formatos</option>
+<option value="Plantilla">Plantilla</option>
+<option value="Guía">Guía</option>
+<option value="Matriz">Matriz</option>
+<option value="Visión de producto">Visión de producto</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">
+                  expand_more
+                </span>
+</div>
+</div>
+<!-- Selector de Estado -->
+<div class="md:col-span-3">
+<label class="block text-label-sm font-label-sm text-secondary mb-1.5" for="status-filter">
+                Estado de publicación
+              </label>
+<div class="relative">
+<select class="w-full h-11 pl-3.5 pr-10 rounded-lg bg-[#fbf9f3] border border-outline-variant/60 focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim text-body-md font-body-md text-on-surface appearance-none transition-colors" id="status-filter">
+<option value="">Todos los estados</option>
+<option value="Publicado">Publicado</option>
+<option value="Borrador">Borrador</option>
+<option value="Archivado">Archivado</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-secondary text-[20px] pointer-events-none">
+                  expand_more
+                </span>
+</div>
+</div>
+<!-- Clear / Filter action button -->
+<div class="md:col-span-1 flex items-end">
+<button class="w-full h-11 rounded-lg border border-outline-variant/60 hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors" onclick="resetFilters()" title="Reiniciar filtros" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Active Filter Pill Tags -->
+<div class="flex items-center gap-2 pt-2 border-t border-outline-variant/20 text-label-sm font-label-sm">
+<span class="text-secondary">Filtros rápidos:</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-variant transition-colors">
+              Solo Guías de Agentes
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-variant transition-colors">
+              Borradores pendientes (3)
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-variant transition-colors">
+              Rol: Liner / Closer
+            </button>
+</div>
+</div>
+<!-- Tabla Editorial de Recursos con 9 Títulos Reales -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="resources-table">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/40 text-label-sm font-label-sm text-secondary">
+<th class="py-3.5 px-6 font-medium" scope="col">Título y Formato</th>
+<th class="py-3.5 px-4 font-medium" scope="col">Rol sugerido</th>
+<th class="py-3.5 px-4 font-medium" scope="col">Estado</th>
+<th class="py-3.5 px-4 font-medium" scope="col">Última actualización</th>
+<th class="py-3.5 px-6 font-medium text-right" scope="col">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-md text-body-md text-on-surface" id="table-body">
+<!-- Recurso 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Guía" data-status="Publicado">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-1">
+                          Antes del tour: una intención y dos preguntas
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Guía
+                          </span>
+<span class="text-[12px] text-secondary">• 8 min de lectura</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">badge</span>
+                      Liner / Frontline
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#e7f3e8] text-[#205128] border border-[#b8dfbc]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2e7d32]"></span>
+                      Publicado
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    12 Feb 2025, 14:30
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Plantilla" data-status="Publicado">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-2">
+                          Coaching y agentes de IA
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Plantilla
+                          </span>
+<span class="text-[12px] text-secondary">• Framework de simulación</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">school</span>
+                      Director de Capacitación
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#e7f3e8] text-[#205128] border border-[#b8dfbc]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2e7d32]"></span>
+                      Publicado
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    10 Feb 2025, 09:15
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Matriz" data-status="Borrador">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">schema</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-3">
+                          Piloto en tres salas
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Matriz
+                          </span>
+<span class="text-[12px] text-secondary">• Hoja de despliegue operacional</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">manage_accounts</span>
+                      Gerente General de Ventas
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#fef7d8] text-[#7a5900] border border-[#f5e08b]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#f5be40]"></span>
+                      Borrador
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    08 Feb 2025, 18:45
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Guía" data-status="Publicado">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-4">
+                          Un día en la sala: el método en 6 momentos
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Guía
+                          </span>
+<span class="text-[12px] text-secondary">• Cronograma y rituales</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">diversity_3</span>
+                      Equipo Completo de Sala
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#e7f3e8] text-[#205128] border border-[#b8dfbc]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2e7d32]"></span>
+                      Publicado
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    05 Feb 2025, 11:20
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Visión de producto" data-status="Publicado">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-5">
+                          Smart Agent: película conceptual
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Visión de producto
+                          </span>
+<span class="text-[12px] text-secondary">• Video 4K + transcripción</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">trending_up</span>
+                      Líderes de Operación &amp; Board
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#e7f3e8] text-[#205128] border border-[#b8dfbc]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2e7d32]"></span>
+                      Publicado
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    01 Feb 2025, 17:00
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 6 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Plantilla" data-status="Borrador">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">wb_twilight</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-6">
+                          Menos caos: estructurar la sesión matutina
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Plantilla
+                          </span>
+<span class="text-[12px] text-secondary">• Warm-up matutino 20 min</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">record_voice_over</span>
+                      Table Captain / Supervisor
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#fef7d8] text-[#7a5900] border border-[#f5e08b]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#f5be40]"></span>
+                      Borrador
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    28 Ene 2025, 08:30
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 7 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Matriz" data-status="Publicado">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-7">
+                          Sistema conectado
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Matriz
+                          </span>
+<span class="text-[12px] text-secondary">• Integración CRM &amp; IA</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">terminal</span>
+                      Arquitecto de Solución
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#e7f3e8] text-[#205128] border border-[#b8dfbc]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2e7d32]"></span>
+                      Publicado
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    22 Ene 2025, 16:10
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 8 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Guía" data-status="Borrador">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-8">
+                          Infraestructura comercial
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Guía
+                          </span>
+<span class="text-[12px] text-secondary">• Estándares físicos &amp; digitales</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">storefront</span>
+                      VP de Desarrollo Comercial
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#fef7d8] text-[#7a5900] border border-[#f5e08b]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#f5be40]"></span>
+                      Borrador
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    18 Ene 2025, 12:05
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Recurso 9 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-format="Plantilla" data-status="Publicado">
+<td class="py-4 px-6">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-none mt-0.5 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">fitness_center</span>
+</div>
+<div>
+<a class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors block" href="#detalle-9">
+                          Conocimiento en práctica
+                        </a>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm">
+                            Plantilla
+                          </span>
+<span class="text-[12px] text-secondary">• Rúbricas de objeciones VIP</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">handshake</span>
+                      Closer / Negociador
+                    </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#e7f3e8] text-[#205128] border border-[#b8dfbc]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2e7d32]"></span>
+                      Publicado
+                    </span>
+</td>
+<td class="py-4 px-4 text-secondary text-label-sm">
+                    15 Ene 2025, 10:00
+                  </td>
+<td class="py-4 px-6 text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-3 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[17px]">edit</span>
+                        Editar
+                      </button>
+<button class="h-9 px-2.5 rounded-md hover:bg-surface-container text-secondary hover:text-error transition-colors" onclick="toggleArchive(this)" title="Archivar recurso" type="button">
+<span class="material-symbols-outlined text-[17px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Estado Vacío Reusable (Oculto inicialmente, toggleable vía script) -->
+<div class="hidden py-16 px-6 text-center border-t border-outline-variant/30 bg-surface-container-lowest" id="empty-state">
+<div class="max-w-md mx-auto space-y-4">
+<div class="w-14 h-14 rounded-full bg-surface-container mx-auto flex items-center justify-center text-secondary border border-outline-variant/40">
+<span class="material-symbols-outlined text-[30px]">search_off</span>
+</div>
+<div class="space-y-1.5">
+<h3 class="font-headline-md text-headline-md text-on-surface">
+                  No se encontraron recursos
+                </h3>
+<p class="text-body-md font-body-md text-secondary">
+                  No hay coincidencias para los filtros o términos seleccionados. Puedes restablecer los criterios de búsqueda o dar de alta un nuevo contenido editorial.
+                </p>
+</div>
+<div class="pt-2 flex justify-center gap-3">
+<button class="h-11 px-4 rounded-lg border border-outline-variant/60 hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-medium transition-colors" onclick="resetFilters()" type="button">
+                  Restablecer filtros
+                </button>
+<button class="h-11 px-4 rounded-lg bg-primary-container text-on-primary-container hover:bg-tertiary-fixed-dim font-label-sm text-label-sm font-medium transition-colors" type="button">
+                  Nuevo recurso
+                </button>
+</div>
+</div>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-6 py-4 bg-surface-container-lowest border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm text-secondary">
+<div class="flex items-center gap-2">
+<span>Mostrando <strong class="text-on-surface">1 - 9</strong> de 9 recursos</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="h-9 px-3 rounded border border-outline-variant/40 opacity-40 cursor-not-allowed" disabled="">Anterior</button>
+<button class="h-9 px-3 rounded bg-surface-container text-on-surface font-medium border border-outline-variant/40">1</button>
+<button class="h-9 px-3 rounded border border-outline-variant/40 opacity-40 cursor-not-allowed" disabled="">Siguiente</button>
+</div>
+</div>
+</div>
+<!-- Asesor Prompt Box: Microinteracción editorial Sales Academy -->
+<div class="rounded-xl border border-outline-variant/40 p-6 bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="w-11 h-11 rounded-full bg-[#203c28] text-white flex items-center justify-center flex-none">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-[#182219]">
+                Asesor Autónomo de Sala: Guía de Calidad
+              </p>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 max-w-2xl">
+                Los recursos marcados como <span class="font-medium text-[#205128]">Publicado</span> se distribuyen instantáneamente a los paneles de sala y se sincronizan con las sesiones matutinas guiadas por IA.
+              </p>
+</div>
+</div>
+<button class="h-11 px-5 rounded-lg border border-outline text-on-surface hover:bg-surface-container transition-colors font-label-sm text-label-sm font-medium flex-none" type="button">
+            Ver registro de auditoría
+          </button>
+</div>
+</div>
+<!-- Footer (Shared Component Anchor) -->
+<footer class="mt-auto bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col md:flex-row items-center gap-4">
+<span class="font-headline-sm text-headline-sm text-on-surface">SA</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 text-center md:text-left">
+              © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+            </p>
+</div>
+<div class="flex items-center gap-6 font-label-sm text-label-sm">
+<a class="text-on-surface-variant/70 hover:text-primary transition-colors duration-150" href="#privacidad">
+              Privacidad
+            </a>
+<a class="text-on-surface-variant/70 hover:text-primary transition-colors duration-150" href="#terminos">
+              Términos de servicio
+            </a>
+<a class="text-on-surface-variant/70 hover:text-primary transition-colors duration-150" href="#contacto">
+              Contacto
+            </a>
+<a class="text-on-surface-variant/70 hover:text-primary transition-colors duration-150" href="#auditoria-vip">
+              Auditoría VIP
+            </a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Micro-interactions Script: Filter logic & State Toggling -->
+<script>
+    const searchInput = document.getElementById('search-input');
+    const formatFilter = document.getElementById('format-filter');
+    const statusFilter = document.getElementById('status-filter');
+    const tableBody = document.getElementById('table-body');
+    const emptyState = document.getElementById('empty-state');
+
+    function applyFilters() {
+      const term = (searchInput.value || '').toLowerCase().trim();
+      const format = formatFilter.value;
+      const status = statusFilter.value;
+
+      const rows = tableBody.querySelectorAll('tr');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const rowText = row.innerText.toLowerCase();
+        const rowFormat = row.getAttribute('data-format') || '';
+        const rowStatus = row.getAttribute('data-status') || '';
+
+        const matchesTerm = !term || rowText.includes(term);
+        const matchesFormat = !format || rowFormat === format;
+        const matchesStatus = !status || rowStatus === status;
+
+        if (matchesTerm && matchesFormat && matchesStatus) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+      }
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    formatFilter.addEventListener('change', applyFilters);
+    statusFilter.addEventListener('change', applyFilters);
+
+    function resetFilters() {
+      searchInput.value = '';
+      formatFilter.value = '';
+      statusFilter.value = '';
+      applyFilters();
+    }
+
+    function toggleArchive(button) {
+      const row = button.closest('tr');
+      const currentStatus = row.getAttribute('data-status');
+      const statusCell = row.cells[2];
+      
+      if (currentStatus === 'Archivado') {
+        row.setAttribute('data-status', 'Publicado');
+        statusCell.innerHTML = `
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-[#e7f3e8] text-[#205128] border border-[#b8dfbc]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#2e7d32]"></span>
+            Publicado
+          </span>
+        `;
+        button.innerHTML = '<span class="material-symbols-outlined text-[17px]">archive</span>';
+        button.title = 'Archivar recurso';
+      } else {
+        row.setAttribute('data-status', 'Archivado');
+        statusCell.innerHTML = `
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-medium bg-surface-container-highest text-secondary border border-outline-variant/40">
+            <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+            Archivado
+          </span>
+        `;
+        button.innerHTML = '<span class="material-symbols-outlined text-[17px]">unarchive</span>';
+        button.title = 'Recuperar recurso';
+      }
+      applyFilters();
+    }
+  </script>
+</body></html>

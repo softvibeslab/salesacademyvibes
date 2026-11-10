@@ -1,0 +1,82 @@
+test_actions_progress_without_reasking_known_role_or_salas (growth.tests.test_advisor.AdvisorAcceptance.test_actions_progress_without_reasking_known_role_or_salas) ... ok
+test_cards_match_topic_and_hide_archived_video_and_external_media (growth.tests.test_advisor.AdvisorAcceptance.test_cards_match_topic_and_hide_archived_video_and_external_media) ... ok
+test_daily_and_session_budgets_stop_inference (growth.tests.test_advisor.AdvisorAcceptance.test_daily_and_session_budgets_stop_inference) ... ok
+test_date_timezone_and_shape_validation (growth.tests.test_advisor.AdvisorAcceptance.test_date_timezone_and_shape_validation) ... ok
+test_declared_room_answer_keeps_prior_coaching_resource_context (growth.tests.test_advisor.AdvisorAcceptance.test_declared_room_answer_keeps_prior_coaching_resource_context) ... FAIL
+test_disabled_advisor_does_not_invoke_model (growth.tests.test_advisor.AdvisorAcceptance.test_disabled_advisor_does_not_invoke_model) ... ok
+test_expired_sessions_and_leads_are_purged_without_editorial_changes (growth.tests.test_advisor.AdvisorAcceptance.test_expired_sessions_and_leads_are_purged_without_editorial_changes) ... ok
+test_global_concurrency_is_bounded_and_capacity_recovers (growth.tests.test_advisor.AdvisorAcceptance.test_global_concurrency_is_bounded_and_capacity_recovers) ... ok
+test_initial_controls_and_media_are_public_and_do_not_infer (growth.tests.test_advisor.AdvisorAcceptance.test_initial_controls_and_media_are_public_and_do_not_infer) ... ok
+test_invalid_input_or_client_tools_never_reach_model (growth.tests.test_advisor.AdvisorAcceptance.test_invalid_input_or_client_tools_never_reach_model) ... ok
+test_lead_consent_pending_status_and_replay (growth.tests.test_advisor.AdvisorAcceptance.test_lead_consent_pending_status_and_replay) ... ok
+test_long_reply_has_complete_brief_preview_and_full_optional_detail (growth.tests.test_advisor.AdvisorAcceptance.test_long_reply_has_complete_brief_preview_and_full_optional_detail) ... ok
+test_model_failure_releases_lease_and_can_retry (growth.tests.test_advisor.AdvisorAcceptance.test_model_failure_releases_lease_and_can_retry) ... ok
+test_only_current_published_knowledge_is_sent_to_model (growth.tests.test_advisor.AdvisorAcceptance.test_only_current_published_knowledge_is_sent_to_model) ... ok
+test_oversized_single_sentence_is_not_cut_inside_a_qualification (growth.tests.test_advisor.AdvisorAcceptance.test_oversized_single_sentence_is_not_cut_inside_a_qualification) ... ok
+test_owner_only_leads_metrics_and_followup (growth.tests.test_advisor.AdvisorAcceptance.test_owner_only_leads_metrics_and_followup) ... ok
+test_rate_limit_blocks_abuse_and_secure_cookie_in_production (growth.tests.test_advisor.AdvisorAcceptance.test_rate_limit_blocks_abuse_and_secure_cookie_in_production) ... ok
+test_real_contract_reply_resources_and_idempotency (growth.tests.test_advisor.AdvisorAcceptance.test_real_contract_reply_resources_and_idempotency) ... ok
+test_relevant_resource_at_end_of_large_catalog_is_in_context (growth.tests.test_advisor.AdvisorAcceptance.test_relevant_resource_at_end_of_large_catalog_is_in_context) ... ok
+test_request_completed_before_lease_is_not_inferred_twice (growth.tests.test_advisor.AdvisorAcceptance.test_request_completed_before_lease_is_not_inferred_twice) ... ok
+test_resources_prioritize_published_title_named_by_reply_over_query_matches (growth.tests.test_advisor.AdvisorAcceptance.test_resources_prioritize_published_title_named_by_reply_over_query_matches) ... ok
+test_session_cookie_is_separate_no_inference_and_csrf_origin_required (growth.tests.test_advisor.AdvisorAcceptance.test_session_cookie_is_separate_no_inference_and_csrf_origin_required) ... ok
+test_session_expiration_cannot_reveal_old_history (growth.tests.test_advisor.AdvisorAcceptance.test_session_expiration_cannot_reveal_old_history) ... ok
+test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) ... 
+  test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='¿Cómo líder puedo usarlo?') ... FAIL
+  test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='No soy líder; solo quiero entenderlo.') ... FAIL
+  test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='Quiero ver la guía del piloto en tres salas.') ... FAIL
+  test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='No tenemos tres salas.') ... FAIL
+test_visitors_never_share_history_or_idempotent_responses (growth.tests.test_advisor.AdvisorAcceptance.test_visitors_never_share_history_or_idempotent_responses) ... ok
+test_whatsapp_uses_only_reviewed_summary_without_reintroducing_removed_contact (growth.tests.test_advisor.AdvisorAcceptance.test_whatsapp_uses_only_reviewed_summary_without_reintroducing_removed_contact) ... ok
+
+======================================================================
+FAIL: test_declared_room_answer_keeps_prior_coaching_resource_context (growth.tests.test_advisor.AdvisorAcceptance.test_declared_room_answer_keeps_prior_coaching_resource_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 121, in test_declared_room_answer_keeps_prior_coaching_resource_context
+    self.assertTrue(any(card.get('video', {}).get('id') == 'infraestructura-comercial'
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        for card in response.json['resources']))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='¿Cómo líder puedo usarlo?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 106, in test_topic_interest_does_not_become_a_declared_role_or_room_count
+    self.assertIn('role-rep', [item['id'] for item in controls])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'role-rep' not found in ['coaching', 'process', 'demo']
+
+======================================================================
+FAIL: test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='No soy líder; solo quiero entenderlo.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 106, in test_topic_interest_does_not_become_a_declared_role_or_room_count
+    self.assertIn('role-rep', [item['id'] for item in controls])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'role-rep' not found in ['coaching', 'process', 'demo']
+
+======================================================================
+FAIL: test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='Quiero ver la guía del piloto en tres salas.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 111, in test_topic_interest_does_not_become_a_declared_role_or_room_count
+    self.assertIn('rooms-one', [item['id'] for item in controls])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'rooms-one' not found in ['plan', 'resources', 'demo']
+
+======================================================================
+FAIL: test_topic_interest_does_not_become_a_declared_role_or_room_count (growth.tests.test_advisor.AdvisorAcceptance.test_topic_interest_does_not_become_a_declared_role_or_room_count) (message='No tenemos tres salas.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/rogergv/Documents/SoftvibesLab/SalesAcademyVibes/growth/tests/test_advisor.py", line 111, in test_topic_interest_does_not_become_a_declared_role_or_room_count
+    self.assertIn('rooms-one', [item['id'] for item in controls])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'rooms-one' not found in ['plan', 'resources', 'demo']
+
+----------------------------------------------------------------------
+Ran 26 tests in 3.082s
+
+FAILED (failures=5)

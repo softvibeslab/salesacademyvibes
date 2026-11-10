@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tu Smart Agent, en acción — MediaHub | Sales Academy</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Editorial Serif (Newsreader & Georgia fallback style) & Sans (Inter) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#e2e3db",
+            "outline": "#999081",
+            "on-error": "#690005",
+            "primary-container": "#d4b574",
+            "inverse-surface": "#e3e3dd",
+            "surface-container-low": "#1a1c19",
+            "inverse-on-surface": "#2f312d",
+            "primary": "#f1d18d",
+            "error": "#ffb4ab",
+            "on-surface": "#e3e3dd",
+            "surface-dim": "#121411",
+            "error-container": "#93000a",
+            "on-primary-fixed-variant": "#59440d",
+            "on-error-container": "#ffdad6",
+            "surface-container-high": "#292b27",
+            "surface-tint": "#e3c380",
+            "on-secondary": "#30312d",
+            "background": "#121411",
+            "outline-variant": "#4d463a",
+            "secondary-fixed-dim": "#c8c6c1",
+            "tertiary-fixed-dim": "#c5c7bf",
+            "primary-fixed-dim": "#e3c380",
+            "on-primary-container": "#5c460f",
+            "surface-container": "#1e201d",
+            "on-tertiary-fixed-variant": "#454842",
+            "on-tertiary": "#2e312c",
+            "on-surface-variant": "#d0c5b5",
+            "on-secondary-fixed": "#1b1c18",
+            "tertiary": "#d4d5cd",
+            "on-primary": "#3f2e00",
+            "secondary-container": "#494945",
+            "tertiary-container": "#b8bab2",
+            "secondary": "#c8c6c1",
+            "surface-container-highest": "#333532",
+            "secondary-fixed": "#e4e2dd",
+            "surface-bright": "#383a36",
+            "on-secondary-fixed-variant": "#474743",
+            "surface-container-lowest": "#0d0f0c",
+            "surface-variant": "#333532",
+            "on-primary-fixed": "#251a00",
+            "inverse-primary": "#735b23",
+            "surface": "#121411",
+            "on-background": "#e3e3dd",
+            "primary-fixed": "#ffdf9d",
+            "on-tertiary-fixed": "#191c17",
+            "on-tertiary-container": "#474a44",
+            "on-secondary-container": "#bab8b3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "3rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "4rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-md": ["Newsreader", "Georgia", "serif"],
+            "headline-lg": ["Newsreader", "Georgia", "serif"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Newsreader", "Georgia", "serif"],
+            "headline-xl-mobile": ["Newsreader", "Georgia", "serif"],
+            "label-md": ["Inter"],
+            "headline-xl": ["Newsreader", "Georgia", "serif"],
+            "headline-lg-mobile": ["Newsreader", "Georgia", "serif"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #121411;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(212, 181, 116, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#10120f] text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between">
+<!-- TopNavBar (Shared Component) -->
+<header class="w-full bg-surface dark:bg-surface border-b border-outline-variant/30 dark:border-outline-variant/30 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-20">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md tracking-tight font-normal text-on-surface dark:text-on-surface flex items-center gap-3" href="/">
+<span class="tracking-widest font-serif">SA</span>
+<span class="h-3 w-[1px] bg-outline-variant/40"></span>
+<span class="font-label-sm text-label-sm tracking-widest text-outline uppercase hidden sm:inline">Sales Academy</span>
+</a>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="/agentes">Agentes en acción</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="/galeria">Galería</a>
+<a class="text-primary dark:text-primary font-medium tracking-wide font-label-md text-label-md transition-colors duration-200 border-b border-primary/40 pb-0.5" href="/mediahub">MediaHub</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="/diagnostico">Diagnóstico</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface font-medium tracking-wide font-label-md text-label-md transition-colors duration-200" href="/faq">FAQ</a>
+</nav>
+<!-- Trailing Primary Action -->
+<div class="flex items-center gap-4">
+<a class="bg-[#F5F3ED] text-[#10120F] hover:bg-primary hover:text-on-primary-fixed transition-colors duration-200 px-5 py-2.5 font-label-md text-label-md uppercase tracking-wider font-medium flex items-center gap-2" href="https://wa.me/">
+<span>Solicitar demo por WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-[1360px] mx-auto px-6 lg:px-16 py-10 lg:py-14">
+<!-- Breadcrumb Hierarchy -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2.5 font-label-sm text-label-sm uppercase tracking-widest text-outline mb-8">
+<a class="hover:text-primary transition-colors duration-150" href="/mediahub">MediaHub</a>
+<span class="text-outline-variant/60 font-serif">/</span>
+<span class="text-on-surface-variant/70">Recursos</span>
+<span class="text-outline-variant/60 font-serif">/</span>
+<span aria-current="page" class="text-primary tracking-widest">Película conceptual</span>
+</nav>
+<!-- Header Section with Badge & Editorial Serif Title -->
+<header class="mb-12 border-b border-outline-variant/20 pb-8">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+<span class="inline-flex items-center px-3 py-1 bg-[#141712] border border-primary-container/30 text-primary font-label-sm text-label-sm uppercase tracking-widest">
+          Visión de producto
+        </span>
+<span class="font-label-sm text-label-sm text-outline tracking-wider flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container/80 animate-pulse"></span>
+          FICHA CINEMATOGRÁFICA · 33 SEG
+        </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg lg:text-headline-xl italic text-on-surface font-normal tracking-tight font-serif">
+        Tu Smart Agent, en acción
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant/80 mt-3 max-w-2xl font-light">
+        Un recorrido de alta fidelidad coreografiado para salas de ventas residenciales de alto standing, demostrando la sinergia silenciosa entre la intuición humana y la telemetría contextual autónoma.
+      </p>
+</header>
+<!-- Bento Grid Showcase: Video Player & Hospitality Intelligence Stream -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+<!-- Left Column: Portrait Player Container (5 Cols on Desktop) -->
+<section class="lg:col-span-5 flex flex-col items-center">
+<!-- Film Enclosure Frame -->
+<div class="w-full max-w-[380px] bg-[#141712] border border-primary-container/30 p-2.5 shadow-2xl relative">
+<!-- Outer Decorative Architectural Corners -->
+<div class="absolute -top-[1px] -left-[1px] w-2 h-2 border-t border-l border-primary"></div>
+<div class="absolute -top-[1px] -right-[1px] w-2 h-2 border-t border-r border-primary"></div>
+<div class="absolute -bottom-[1px] -left-[1px] w-2 h-2 border-b border-l border-primary"></div>
+<div class="absolute -bottom-[1px] -right-[1px] w-2 h-2 border-b border-r border-primary"></div>
+<!-- Video Aspect Ratio Box (Portrait 9:16 approx) -->
+<div class="relative w-full aspect-[9/16] bg-[#0d0f0c] overflow-hidden group">
+<!-- Poster Background Image -->
+<img class="w-full h-full object-cover brightness-[0.78] contrast-[1.08] transition-transform duration-700 group-hover:scale-105" data-alt="Cinematic vertical preview frame showing an ultra-luxury hospitality sales private salon in warm gold and deep ebony lighting, featuring a discrete executive closer interacting with a sleek ambient intelligent sales display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZhfQqyLzEx5DEMKg8fn_r_gRJ-f8dSgWp2nnODb-JufEmZp2KPR0r3PtS2oYhp5e0KEUEhtxJG7rK9-S1coVmawx7BMvXDLWZxXEARKVjcet168f12soD-omKsQ56abcsFuYYBVUSNRDey2IeE2CYjudATmOPg5CFmmgVPgQzSh1VcjmOfXN58FWxd8nVaMgaW8GKX6C4DiWfIqptPFTfkZxqK4I2o68bCGqQl9V2CIYEc58_E63U0MLBAXIy89lkohaTArEIQX4"/>
+<!-- Ambient Atmospheric Vignette Layer -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#10120f] via-transparent to-[#10120f]/60 pointer-events-none"></div>
+<!-- Top Film Metadata Overlay -->
+<div class="absolute top-4 left-4 right-4 flex items-center justify-between text-xs text-on-surface-variant font-label-sm uppercase tracking-widest z-10">
+<span class="bg-[#10120F]/90 px-2 py-0.5 border border-white/10 text-primary">SCENE 01 / 03</span>
+<span class="flex items-center gap-1.5 text-on-surface/90 bg-[#10120F]/80 px-2 py-0.5 border border-white/10">
+<span class="w-2 h-2 rounded-full bg-red-500 inline-block animate-ping"></span>
+                REC 4K
+              </span>
+</div>
+<!-- Center Play Button Trigger -->
+<div class="absolute inset-0 flex items-center justify-center z-20">
+<button aria-label="Reproducir película conceptual" class="w-16 h-16 rounded-full bg-[#d4b574] text-[#10120F] flex items-center justify-center shadow-lg hover:scale-110 hover:bg-primary transition-all duration-300 group-hover:ring-8 group-hover:ring-primary/20" id="play-button">
+<span class="material-symbols-outlined text-3xl translate-x-0.5" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Active Spanish Captions Display (Simulated HUD Overlay) -->
+<div class="absolute bottom-16 left-3 right-3 text-center z-20">
+<p class="inline-block bg-[#10120F]/95 border-l-2 border-primary text-on-surface px-3 py-1.5 font-headline-sm text-sm italic font-serif tracking-normal shadow-md backdrop-blur-sm">
+                «Closer: Entiendo el dilema de los 4 penthouses; sugiero activar la cláusula de exclusividad temporal.»
+              </p>
+</div>
+<!-- Integrated Bottom Scrubber & Media Control Bar -->
+<div class="absolute bottom-0 inset-x-0 bg-[#141712]/95 border-t border-outline-variant/30 px-3 py-2.5 z-20 flex flex-col gap-1.5">
+<!-- Scrubber Bar Track -->
+<div class="w-full bg-[#333532] h-[3px] cursor-pointer relative group/scrub">
+<div class="bg-primary h-full w-[42%] relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-primary-container rounded-full shadow opacity-0 group-hover/scrub:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<!-- Media Controls Line -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<button aria-label="Pausa o reanudación" class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow">play_arrow</span>
+</button>
+<span class="font-label-sm text-[11px] text-primary tracking-wider font-mono">00:14 / 00:33</span>
+</div>
+<div class="flex items-center gap-3">
+<!-- Spanish Subtitles Active Indicator -->
+<button class="flex items-center gap-1 font-label-sm text-[9px] uppercase tracking-wider text-primary border border-primary/40 px-1 py-0.5 bg-primary/10" title="Subtítulos en español activos">
+<span class="material-symbols-outlined text-[12px]" data-icon="closed_caption">closed_caption</span>
+<span>ES ACTIVO</span>
+</button>
+<!-- Audio volume -->
+<button aria-label="Control de volumen" class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="volume_up">volume_up</span>
+</button>
+<!-- Fullscreen toggle -->
+<button aria-label="Pantalla completa" class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-4 text-center">
+          Formato Vertical 9:16 · Máxima Fidelidad Acústica
+        </p>
+</section>
+<!-- Right Column: Institutional Context & Full Audio Transcript (7 Cols on Desktop) -->
+<section class="lg:col-span-7 flex flex-col gap-6">
+<!-- Honest & Explicit Context Declaration Box -->
+<div class="bg-[#141712] border-l-2 border-primary-container/70 border-r border-t border-b border-white/5 p-5">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5" data-icon="info">info</span>
+<div>
+<h2 class="font-label-md text-label-md uppercase tracking-wider text-primary mb-1">
+                Declaración de Contexto Institucional
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant/90 leading-relaxed font-light">
+<strong>Aviso:</strong> Película conceptual de visión de producto. Diseñada para ilustrar la interacción deseada entre comercial y agente, no representa una integración de producción en tiempo real ni capacidades automatizadas sin supervisión.
+              </p>
+</div>
+</div>
+</div>
+<!-- Comprehensive Step-by-Step Transcript Component -->
+<div class="bg-[#141712] border border-white/10 p-6 sm:p-8">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4 mb-6">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-1">Registro Estenográfico</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-serif">Transcripción completa del diálogo</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline border border-outline-variant/40 px-2 py-1 uppercase">
+              Audio 100% en Español
+            </span>
+</div>
+<!-- Chronological Step-by-Step Flow -->
+<div class="space-y-6">
+<!-- Turn 01: Closer Setup -->
+<div class="relative pl-6 border-l border-outline-variant/40">
+<div class="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-outline"></div>
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wider uppercase">00:02 — Closer Comercial</span>
+<span class="font-label-sm text-outline text-[10px] tracking-widest font-mono">CANAL SALA VIP</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface/90 font-light">
+                «El inversionista duda sobre el periodo de entrega del ático principal en La Moraleja. Percibo que busca una palanca de negociación pero teme comprometerse hoy.»
+              </p>
+</div>
+<!-- Turn 02: AI Agent Tactical Intervention -->
+<div class="relative pl-6 border-l-2 border-primary-container bg-[#1B1E19]/60 p-4 border-r border-t border-b border-white/5">
+<div class="absolute -left-[5px] top-4 w-2 h-2 rounded-full bg-primary-container"></div>
+<div class="flex items-center justify-between text-xs mb-1.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wider uppercase flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="psychology">psychology</span>
+                  00:11 — Smart Agent (Recomendación Cognitiva)
+                </span>
+<span class="font-label-sm text-primary/80 text-[10px] tracking-widest font-mono">LATENCIA: 180MS</span>
+</div>
+<p class="font-headline-sm text-base italic font-serif text-on-surface leading-relaxed">
+                «Sugerencia de encuadre: No reduzcas precio. Activa el protocolo de <em>garantía de arrendamiento corporativo preferente</em> por 24 meses y ofrece la visita privada con el arquitecto jefe antes del viernes.»
+              </p>
+<div class="mt-2 text-xs font-label-sm text-outline tracking-wider flex items-center gap-3">
+<span>INTENCIÓN DE COMPRA: 88%</span>
+<span>·</span>
+<span>PERFIL DE RIESGO: PATRIMONIAL CONSERVADOR</span>
+</div>
+</div>
+<!-- Turn 03: Closer Execution -->
+<div class="relative pl-6 border-l border-outline-variant/40">
+<div class="absolute -left-[5px] top-1 w-2 h-2 rounded-full bg-outline"></div>
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wider uppercase">00:21 — Closer Comercial</span>
+<span class="font-label-sm text-outline text-[10px] tracking-widest font-mono">INTERACCIÓN EN VIVO</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface/90 font-light">
+                «Don Fernando, permítame una alternativa que protege su rentabilidad: mantendremos el valor por metro cuadrado, pero la promotora le garantiza el contrato corporativo blindado de dos años junto a un briefing técnico confidencial esta semana.»
+              </p>
+</div>
+<!-- Turn 04: Resolution & Outcome -->
+<div class="relative pl-6 border-l-2 border-primary-container bg-[#1B1E19]/40 p-4 border-r border-t border-b border-white/5">
+<div class="absolute -left-[5px] top-4 w-2 h-2 rounded-full bg-primary-container"></div>
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wider uppercase flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="task_alt">task_alt</span>
+                  00:29 — Smart Agent (Cierre &amp; Síntesis)
+                </span>
+<span class="font-label-sm text-primary/80 text-[10px] tracking-widest font-mono">CONFIRMADO</span>
+</div>
+<p class="font-headline-sm text-base italic font-serif text-on-surface leading-relaxed">
+                «El prospecto ha aceptado verbalmente los términos de reserva. Preparando borrador de acuerdo en la tablet del cliente.»
+              </p>
+</div>
+</div>
+</div>
+<!-- Contextual Action Bar & Guide Links -->
+<div class="p-6 bg-[#141712] border border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="menu_book">menu_book</span>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Metodología Recomendada</span>
+<a class="font-headline-sm text-lg italic font-serif text-on-surface hover:text-primary transition-colors underline decoration-primary/40 underline-offset-4" href="/guias/antes-del-tour">
+                Ver guía metodológica: Antes del tour
+              </a>
+</div>
+</div>
+<a class="w-full sm:w-auto text-center bg-[#F5F3ED] text-[#10120F] hover:bg-primary hover:text-on-primary-fixed transition-colors duration-200 px-6 py-3 font-label-md text-label-md uppercase tracking-wider font-semibold shadow-md whitespace-nowrap" href="https://wa.me/">
+            Solicitar demo por WhatsApp
+          </a>
+</div>
+</section>
+</div>
+<!-- Supplementary Insights Grid -->
+<section class="border-t border-outline-variant/20 pt-10">
+<div class="mb-6 flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-serif italic text-on-surface">Principios rectores del Smart Agent</h3>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">3 PILARES DE EXCELENCIA</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<article class="p-5 bg-[#141712] border border-white/5 hover:border-primary-container/40 transition-colors">
+<span class="font-label-sm text-label-sm text-primary tracking-widest block mb-2">01 / DISCRECIÓN ABSOLUTA</span>
+<h4 class="font-headline-sm text-base font-serif mb-2 text-on-surface">Presencia silenciosa en sala</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light">
+            El sistema nunca interrumpe el vínculo empático entre el closer y el cliente; actúa como una plantilla mental invisible mediante susurros visuales.
+          </p>
+</article>
+<article class="p-5 bg-[#141712] border border-white/5 hover:border-primary-container/40 transition-colors">
+<span class="font-label-sm text-label-sm text-primary tracking-widest block mb-2">02 / MODELO DE VALOR</span>
+<h4 class="font-headline-sm text-base font-serif mb-2 text-on-surface">Defensa estricta del ticket</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light">
+            Diseñado para erradicar las concesiones de descuento no fundamentadas mediante la entrega inmediata de activos colaterales de alta fidelidad.
+          </p>
+</article>
+<article class="p-5 bg-[#141712] border border-white/5 hover:border-primary-container/40 transition-colors">
+<span class="font-label-sm text-label-sm text-primary tracking-widest block mb-2">03 / VERACIDAD Y RIGOR</span>
+<h4 class="font-headline-sm text-base font-serif mb-2 text-on-surface">Supervisión humana perpetua</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light">
+            La decisión contractual soberana recae inalterablemente en el equipo comercial. El modelo amplifica el criterio sin suplantar la ética.
+          </p>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 dark:border-outline-variant/20 mt-16">
+<div class="w-full px-6 lg:px-16 max-w-[1360px] mx-auto py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright -->
+<div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface font-serif">Sales Academy</span>
+<span class="hidden sm:inline text-outline-variant/60">·</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal">
+          © 2025 Sales Academy. Excelencia en hospitalidad e inteligencia autónoma.
+        </p>
+</div>
+<!-- Links -->
+<nav class="flex flex-wrap justify-center items-center gap-6 font-label-sm text-label-sm">
+<a class="text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="/privacidad">Privacidad</a>
+<a class="text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="/terminos">Términos de servicio</a>
+<a class="text-on-surface-variant/70 dark:text-on-surface-variant/70 font-normal hover:text-primary dark:hover:text-primary transition-colors duration-150" href="/contacto">Contacto</a>
+<a class="text-primary dark:text-primary font-medium hover:text-primary-fixed transition-colors duration-150 flex items-center gap-1" href="/auditoria-vip">
+<span>Auditoría VIP</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="north_east">north_east</span>
+</a>
+</nav>
+</div>
+</footer>
+</body></html>

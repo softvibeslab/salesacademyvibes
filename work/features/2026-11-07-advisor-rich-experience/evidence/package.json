@@ -1,0 +1,39 @@
+{
+  "archive": "/private/tmp/advisor-rich-07.tar.gz",
+  "sha256": "9ad3757cefbbfb866360dffd22316d315e64a210edd6f5f7b4ed8f30c5b325a3",
+  "bytes": 32448,
+  "patch": {
+    "name": "20261107-advisor-rich-07",
+    "parentRelease": "20261107-advisor-links-06",
+    "files": [
+      {
+        "source": "growth/server/advisor.py",
+        "path": "v5/growth/server/advisor.py",
+        "sha256": "c2f5625920fea8a4716caaa942f03347db78b3a15f5163d1df576a27fc42aa9b",
+        "bytes": 31782,
+        "beforeSha256": "cba8f22381c399071937459bc192d9844dadcb87131ae76e15aecf2b40fea856"
+      },
+      {
+        "source": "growth/openapi.json",
+        "path": "v5/growth/openapi.json",
+        "sha256": "42dd30a796724442108bc7de1ced5d9af020aca854ed30158be96a3cbad1d040",
+        "bytes": 142703,
+        "beforeSha256": "d0349863edbc66f05b0613da7e22c614f2cd18f75d91b54ff697d5e65d58794e"
+      },
+      {
+        "source": "growth/site/assets/advisor.mjs",
+        "path": "v5/growth/site/assets/advisor.mjs",
+        "sha256": "773956de733de1de9b1675a1590659bf92827ebc0f57f20a50b0c6e0f0749be3",
+        "bytes": 24722,
+        "beforeSha256": "2f18502f5761ba10579095bc035736f09eda0a27324040f3514837878edcf97f"
+      },
+      {
+        "source": "growth/site/assets/advisor.css",
+        "path": "v5/growth/site/assets/advisor.css",
+        "sha256": "68014a07f69d6a6b49c0af4d93121ae7b51610a81f0c7051d7659816a5fa94bb",
+        "bytes": 13365,
+        "beforeSha256": "ff6f5c9a91b7a792f92d589bbb314ab08e681886832be1ceb5ea7df9d240290b"
+      }
+    ]
+  }
+}

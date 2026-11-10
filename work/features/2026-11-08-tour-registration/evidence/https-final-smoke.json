@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "https_preview": 200,
+  "ocr_fields_verified": 5,
+  "engine": "tesseract",
+  "private_cache": "no-store",
+  "saved_tours": 0,
+  "public_files_verified": {
+    "index.html": "6c255c8b7766082f1032646fb563ea7873d453e13b24b15d762c27df914aab20",
+    "agenda.js": "f234a976acc76c13dc6ac045ffa64623eca7ec5b53a3d1000124c03d356bd309",
+    "tour-registration.js": "099a2e6fe0010da1d302a6bb36091f61f667f0dedfd9221d7e17418187c9d1e4"
+  }
+}

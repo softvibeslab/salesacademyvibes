@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Academy · Asesor IA Bienvenida</title>
+<!-- Google Fonts: Newsreader & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#999081",
+            "on-secondary-container": "#b8b9b4",
+            "on-secondary": "#2f312d",
+            "secondary-fixed-dim": "#c6c7c2",
+            "primary-container": "#d4b574",
+            "text-light": "#f4f2e9",
+            "surface-container": "#221f1a",
+            "on-primary-container": "#5c460f",
+            "surface-bright": "#3c3933",
+            "on-primary": "#3f2e00",
+            "on-background": "#e9e1d9",
+            "on-error": "#690005",
+            "tertiary-container": "#adb7e5",
+            "paper-main": "#f5f3ed",
+            "surface-container-lowest": "#100e0a",
+            "tertiary-fixed": "#dce1ff",
+            "surface-dim": "#16130f",
+            "on-surface-variant": "#d0c5b5",
+            "cms-bg": "#f4f4ed",
+            "surface-tint": "#e3c380",
+            "inverse-surface": "#e9e1d9",
+            "advisor-visitor": "#203c28",
+            "on-secondary-fixed": "#1a1c19",
+            "secondary-fixed": "#e3e3dd",
+            "paper-light": "#f7f5f0",
+            "background": "#16130f",
+            "border-dark": "#30342a",
+            "surface": "#16130f",
+            "on-tertiary": "#242e54",
+            "inverse-primary": "#735b23",
+            "border-light": "#dcdcd2",
+            "on-primary-fixed": "#251a00",
+            "tertiary": "#cad3ff",
+            "surface-container-highest": "#38342f",
+            "on-surface": "#e9e1d9",
+            "primary-fixed": "#ffdf9d",
+            "text-secondary": "#62655e",
+            "outline-variant": "#4d463a",
+            "gold-dark": "#765922",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#e3c380",
+            "on-error-container": "#ffdad6",
+            "primary": "#f1d18d",
+            "on-tertiary-fixed-variant": "#3b456c",
+            "advisor-gold": "#f4bd3f",
+            "text-dark": "#20211e",
+            "secondary-container": "#484a46",
+            "secondary": "#c6c7c2",
+            "surface-container-low": "#1e1b17",
+            "error": "#ffb4ab",
+            "on-tertiary-fixed": "#0e193e",
+            "inverse-on-surface": "#33302b",
+            "tertiary-fixed-dim": "#bbc4f3",
+            "on-primary-fixed-variant": "#59440d",
+            "surface-container-high": "#2d2a25",
+            "cms-sidebar": "#1d241c",
+            "advisor-ink": "#182219",
+            "surface-variant": "#38342f",
+            "on-tertiary-container": "#3d476f",
+            "on-secondary-fixed-variant": "#464743"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Newsreader", "serif"],
+            "headline-lg": ["Newsreader", "serif"],
+            "headline-md": ["Newsreader", "serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+            "headline-lg": ["23px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-md": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Custom scrollbar for sleek paper view */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #dcdcd2;
+      border-radius: 4px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface antialiased font-body-md text-body-md min-h-screen flex justify-center items-center overflow-hidden">
+<!-- Mobile Viewport Wrapper (390px constrained canvas simulating high-end mobile frame) -->
+<div class="relative w-[390px] h-[844px] bg-background overflow-hidden shadow-2xl flex flex-col justify-between">
+<!-- Background Behind Modal: Sales Academy Context (Dimmed Mobile Dashboard) -->
+<div class="absolute inset-0 z-0 bg-surface flex flex-col opacity-25 filter blur-[2px] pointer-events-none select-none">
+<!-- Background Header -->
+<header class="bg-surface border-b border-border-dark px-space-md py-space-sm flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-primary tracking-wide italic">Sales Academy</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</div>
+</header>
+<!-- Background Content Mock -->
+<div class="p-space-md space-y-space-md">
+<div class="h-32 bg-surface-container rounded-xl p-space-md border border-border-dark flex flex-col justify-between">
+<div class="w-24 h-4 bg-outline-variant/40 rounded"></div>
+<div class="w-48 h-6 bg-primary/20 rounded"></div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="h-28 bg-surface-container-high rounded-lg p-space-sm border border-border-dark"></div>
+<div class="h-28 bg-surface-container-high rounded-lg p-space-sm border border-border-dark"></div>
+</div>
+</div>
+</div>
+<!-- AI Advisor Welcome Modal Overlay: Inset 10px, radius 20px, calc(100vh - 20px) equivalent -->
+<div class="relative z-10 m-[10px] h-[824px] max-h-[calc(100%-20px)] bg-[#f6f5ef] text-advisor-ink rounded-[20px] shadow-2xl border border-[#7c816f]/30 flex flex-col overflow-hidden">
+<!-- Top Modal Header: #101a13 with gold accent #f4bd3f -->
+<div class="bg-[#101a13] text-text-light px-space-md pt-3 pb-3 border-b-2 border-advisor-gold flex-shrink-0 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] tracking-[0.16em] uppercase text-advisor-gold font-bold">
+            SALES ACADEMY · ASISTENTE IA
+          </span>
+<h1 class="font-headline-lg text-headline-lg text-text-light font-normal leading-tight mt-0.5">
+            Tu siguiente paso, <span class="italic text-advisor-gold">claro.</span>
+</h1>
+</div>
+<!-- Close button: Minimum 44px touch target -->
+<button aria-label="Cerrar modal" class="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-text-light hover:bg-[#1d241c] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Segmented Navigation / Tabs Bar: Fixed under header -->
+<nav class="bg-[#101a13] px-space-md border-b border-[#30342a] flex items-center gap-space-lg flex-shrink-0">
+<!-- Active Tab: Conversar -->
+<button class="relative py-2.5 font-label-sm text-body-md font-bold text-text-light flex items-center gap-1.5 focus:outline-none transition-colors">
+<span>Conversar</span>
+<span class="absolute bottom-0 left-0 right-0 h-[2.5px] bg-advisor-gold rounded-t-sm"></span>
+</button>
+<!-- Inactive Tab: Coordinar demo -->
+<button class="relative py-2.5 font-label-sm text-body-md font-normal text-on-surface-variant hover:text-text-light transition-colors focus:outline-none">
+<span>Coordinar demo</span>
+</button>
+</nav>
+<!-- Scrollable Chat Body: Background #f6f5ef -->
+<div class="flex-1 overflow-y-auto custom-scroll p-space-md space-y-space-md">
+<!-- Status & Telemetry Tag -->
+<div class="flex items-center justify-center">
+<span class="font-label-sm text-[11px] text-text-secondary bg-[#e8e6de] px-2.5 py-1 rounded-full border border-[#dcdcd2] text-center">
+            Release advisor-rich-07 · Respuestas orientativas
+          </span>
+</div>
+<!-- Advisor Greeting Message Bubble -->
+<div class="flex items-start gap-2.5 max-w-[95%]">
+<!-- Monogram Avatar -->
+<div class="w-8 h-8 rounded-full bg-[#101a13] border border-advisor-gold flex items-center justify-center flex-shrink-0 shadow-sm mt-1">
+<span class="font-headline-md text-[13px] text-advisor-gold font-bold italic">SA</span>
+</div>
+<!-- Bubble Content -->
+<div class="bg-white rounded-xl rounded-tl-sm p-3.5 border border-[#7c816f]/30 shadow-sm text-advisor-ink">
+<p class="font-body-md text-body-md leading-relaxed">
+              Soy tu asesor IA de Sales Academy. Descubre cómo los agentes pueden ayudar a tu sala. ¿Qué te gustaría mejorar?
+            </p>
+</div>
+</div>
+<!-- Quick-Action Suggestion Chips (Gold accent container, 44px min touch target) -->
+<div class="space-y-space-xs pl-10">
+<p class="font-label-sm text-[11px] text-text-secondary uppercase tracking-wider mb-1 font-semibold">
+            Sugerencias rápidas
+          </p>
+<!-- Chip 1: ¿Cómo funciona? -->
+<button class="w-full min-h-[44px] px-3.5 py-2.5 rounded-lg bg-[#ffe6a1] hover:bg-[#fed97b] border border-[#806000] text-[#332800] text-left flex items-center justify-between active:scale-[0.99] transition-all shadow-sm" type="button">
+<span class="font-label-sm text-body-md font-semibold">¿Cómo funciona?</span>
+<span class="material-symbols-outlined text-[18px] text-[#806000]">arrow_forward</span>
+</button>
+<!-- Chip 2: Soy representante -->
+<button class="w-full min-h-[44px] px-3.5 py-2.5 rounded-lg bg-[#ffe6a1] hover:bg-[#fed97b] border border-[#806000] text-[#332800] text-left flex items-center justify-between active:scale-[0.99] transition-all shadow-sm" type="button">
+<span class="font-label-sm text-body-md font-semibold">Soy representante</span>
+<span class="material-symbols-outlined text-[18px] text-[#806000]">person</span>
+</button>
+<!-- Chip 3: Soy líder de sala -->
+<button class="w-full min-h-[44px] px-3.5 py-2.5 rounded-lg bg-[#ffe6a1] hover:bg-[#fed97b] border border-[#806000] text-[#332800] text-left flex items-center justify-between active:scale-[0.99] transition-all shadow-sm" type="button">
+<span class="font-label-sm text-body-md font-semibold">Soy líder de sala</span>
+<span class="material-symbols-outlined text-[18px] text-[#806000]">groups</span>
+</button>
+</div>
+<!-- Resource Card: Smart Agent conceptual card -->
+<div class="bg-white rounded-xl border border-[#dcdcd2] overflow-hidden shadow-sm mt-3 ml-10">
+<!-- Card Header / Meta -->
+<div class="p-3 border-b border-[#f0eee6] flex items-center justify-between bg-[#fbfaf6]">
+<span class="font-label-sm text-[11px] font-semibold uppercase tracking-wider text-gold-dark flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+              Smart Agent Concept
+            </span>
+<span class="font-label-sm text-[11px] text-text-secondary">33s</span>
+</div>
+<!-- Video / Concept Preview Canvas -->
+<div class="relative h-28 bg-[#1d241c] overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-60" data-alt="An atmospheric cinematic photo of an executive time-share sales gallery in deep gold and slate tones. Elegant corporate architectural interior with soft focused lighting and subtle digital telemetry interface overlaid on screen, creating an authoritative luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9dBlU7lnf_zI4b5ROdE355W1syF7zB94JNg3ZP68qx43eDYW6B5FgL6sfN1HzimFCLphs-Bz8aKtJ4gUXGBLFpax7MzJE16b-J9b3pGm6SaObVf7D4_17tDE12JwI6GLKumWFPpsh-dgcwTD5x-bcsJAjfRCH18PWXgT-nFExFoWLAHyQ7x7GZXCAHF6JbmeU6dMPkgpJ0sYOGII-j1pWufOaw8qoa4RPxHaeAf19Qwb4T_yrzfccpoBB-qDgYqNVhyJ1Z6utSIw"/>
+<!-- Video Play Overlay Button -->
+<button aria-label="Reproducir visión de producto" class="absolute w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-advisor-gold text-advisor-ink flex items-center justify-center shadow-lg active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-black/60 text-white font-label-sm text-[10px]">
+              0:33 min
+            </div>
+</div>
+<!-- Card Body Description -->
+<div class="p-3 space-y-2">
+<h2 class="font-headline-md text-headline-md text-advisor-ink leading-tight font-semibold">
+              Visión de producto: Smart Agent en acción
+            </h2>
+<p class="font-body-md text-[13px] text-text-secondary leading-snug">
+              Metodología continua para salas comerciales de alto rendimiento: preparación, guía y cierre asistido.
+            </p>
+<!-- Recommended Guide Action Link -->
+<a class="inline-flex items-center gap-1.5 pt-1 text-advisor-ink font-body-md text-[13px] font-semibold hover:text-gold-dark border-t border-[#f0eee6] w-full mt-2" href="#guia-tour">
+<span class="material-symbols-outlined text-[16px] text-gold-dark">menu_book</span>
+<span>Guía recomendada: Antes del tour (3 min)</span>
+<span class="material-symbols-outlined text-[14px] ml-auto text-text-secondary">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Composer & Privacy Disclosure -->
+<footer class="bg-[#f6f5ef] border-t border-[#dcdcd2] p-space-md flex-shrink-0 space-y-2">
+<form class="flex items-center gap-2" onsubmit="event.preventDefault();">
+<!-- Text Input Container: Min 44px touch height, light bg, clear border -->
+<div class="relative flex-1">
+<input class="w-full min-h-[44px] bg-white border border-[#7c816f] rounded-lg px-3.5 py-2.5 font-body-md text-[14px] text-advisor-ink placeholder-text-secondary/70 focus:outline-none focus:ring-2 focus:ring-advisor-gold focus:border-advisor-gold transition-all" placeholder="Cuéntame qué quieres mejorar en tu sala…" type="text"/>
+</div>
+<!-- Send Action Button: Solid Gold #f4bd3f, 44px min touch target -->
+<button aria-label="Enviar mensaje" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-lg bg-advisor-gold hover:bg-[#e0ac32] text-advisor-ink flex items-center justify-center font-bold active:scale-95 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-advisor-gold focus:ring-offset-2" type="submit">
+<span class="material-symbols-outlined text-[20px] font-bold">arrow_upward</span>
+</button>
+</form>
+<!-- Privacy Disclosure Note -->
+<p class="font-label-sm text-[11px] text-text-secondary text-center leading-tight">
+          Conversación disponible durante 1 hora; borrado automático periódico. Evita datos de clientes.
+        </p>
+</footer>
+</div>
+<!-- Hidden Accessible Semantic Anchors / Top destinations reference from JSON -->
+<div aria-hidden="true" class="hidden">
+<span>Preparar</span>
+<span>Aprender</span>
+<span>Practicar</span>
+<span>Acompañar</span>
+<span>Escalar</span>
+</div>
+</div>
+</body></html>

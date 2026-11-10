@@ -1,0 +1,14 @@
+✔ review summary contains qualification and explicit pending preference (0.921875ms)
+✔ WhatsApp is encoded to the approved Chris number without sending (0.291583ms)
+✔ only a public local MediaHub resource may be rendered as an agent link (2.030792ms)
+✔ appointment requires matching date/time and an IANA timezone (12.7915ms)
+✔ video metadata requires one approved catalog triple and bounded dimensions (0.380125ms)
+✔ suggestions discard malformed entries, duplicates and excess actions (0.400625ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77.622334

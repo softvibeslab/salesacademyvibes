@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "screens": 25,
+  "referenceCount": 49,
+  "appReferences": 16,
+  "zipEntries": 50,
+  "allCopiesMatchSources": true,
+  "designSha256": "4c67ef734dc0b5753266def011da9fc12b3232c8999fea7300a081c53a9a0037",
+  "inventorySha256": "750931fe2041a1c007ac98992347b0c292233720792b039565cfcf41d0cdd828",
+  "zipSha256": "cd0946741dd14247a5c355681b4a536bddabceabe2d2784c43c5b8dfaca20046",
+  "runtimeChanged": false,
+  "numberingNote": "25 screens include the dedicated mobile landing02; original reference filenames preserved."
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440, initial-scale=1.0">
+<title>TOUR 08 · Nuevo tour · Revisión escritorio</title>
+<style>
+  :root {
+    --bg-page: #f7f7f5;
+    --ink: #20211e;
+    --muted: #62655e;
+    --border: #e2e2dc;
+    --border-card: #d8d8d0;
+    --surface: #ffffff;
+    --surface-soft: #f2f2eb;
+    --gold: #806000;
+    --gold-light: #f4d894;
+    --gold-chip: #fcf6e6;
+    --accent-yellow: #f4bd3f;
+    --amber-soft: #fff9e6;
+    --amber-border: #f0c868;
+    --amber-ink: #5c4500;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-page);
+    color: var(--ink);
+    line-height: 1.5;
+    font-size: 15px;
+    width: 1440px;
+    margin: 0 auto;
+    min-height: 900px;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Desktop Header */
+  .desktop-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .brand-name {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+  }
+  .header-nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 500;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .header-nav a.active {
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .demo-badge {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    background: #e9ece4;
+    color: #405538;
+    padding: 5px 12px;
+    border-radius: 14px;
+    font-weight: 600;
+  }
+  .advisor-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-soft);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+
+  /* Main Two-Column Layout */
+  .layout-container {
+    padding: 32px 48px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .page-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .page-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .page-desc {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  /* Two Column Split: Photo left, Form right */
+  .split-grid {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  /* Left Panel: Photo & Source Evidence */
+  .photo-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 96px;
+  }
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+  .panel-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .evidence-badge {
+    background: #edf3e7;
+    color: #2b541d;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+
+  .survey-mockup {
+    width: 100%;
+    height: 380px;
+    background: #1d2119;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  .survey-sheet {
+    width: 78%;
+    height: 300px;
+    background: #fbf9f4;
+    border-radius: 8px;
+    color: #20211e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .sheet-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    text-align: left;
+  }
+  .sheet-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+    font-size: 11px;
+  }
+  .sheet-field strong { font-size: 13px; color: var(--ink); }
+  .sheet-tag-demo {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(128, 96, 0, 0.7);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.1em;
+  }
+  .photo-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .btn-sm-outline {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border-card);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Right Panel: Fields, Verification & Summary */
+  .fields-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 22px;
+  }
+  .section-title-lg {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+  }
+  .label-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .label-tag.extracted { background: #edf3e7; color: #2b541d; }
+  .label-tag.review { background: var(--amber-soft); color: var(--amber-ink); border: 1px solid var(--amber-border); }
+
+  .desktop-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-card);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--surface);
+    font-family: inherit;
+  }
+  .desktop-input.warning {
+    border-color: var(--amber-border);
+    background: #fffdf9;
+  }
+  .hint-text {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* Comparison Confirmation Bar */
+  .confirm-bar {
+    background: var(--surface-soft);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .confirm-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .confirm-left input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+  .confirm-text strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .confirm-text span {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .cta-primary-lg {
+    background: var(--gold);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<header class="desktop-header">
+  <div class="brand-group">
+    <span class="brand-name">SALES ACADEMY</span>
+    <nav class="header-nav">
+      <a href="#hoy" class="">Hoy</a>
+      <a href="#calendario" class="">Calendario</a>
+      <a href="#nuevo-tour" class="active">Nuevo tour</a>
+      <a href="#roadmap" class="">Roadmap</a>
+      <a href="#mediahub" class="">MediaHub</a>
+    </nav>
+  </div>
+  <div class="header-right">
+    <div class="advisor-pill">
+      <span class="">Asesor:</span>
+      <strong>Ana Demo</strong>
+      <span style="color:var(--muted);" class="">· Sala Demo (Norte)</span>
+    </div>
+    <span class="demo-badge">Prototipo · Datos de ejemplo</span>
+  </div>
+</header>
+
+<main class="layout-container">
+  <div class="page-intro">
+    <div>
+      <span class="page-kicker">MÓDULO DE REGISTRO · VISTA DE ESCRITORIO</span>
+      <h1 class="page-title">Revisión y confirmación del tour</h1>
+      <p class="page-desc">Compara la fuente documental a la izquierda con los datos estructurados a la derecha antes de confirmar.</p>
+    </div>
+    <a href="#volver-hoy" class="btn-sm-outline" style="min-width:140px;">← Volver a Hoy</a>
+  </div>
+
+  <div class="split-grid">
+    <!-- Panel Izquierdo: Fuente / Documento -->
+    <div class="photo-panel">
+      <div class="panel-header">
+        <span class="panel-title">Documento de origen</span>
+        <span class="evidence-badge">Foto del survey</span>
+      </div>
+
+      <div class="survey-mockup">
+        <span class="sheet-tag-demo">DEMO / DATOS FICTICIOS</span>
+        <div class="survey-sheet">
+          <div class="sheet-title">ENCUESTA DE REGISTRO DE SALA</div>
+          <div class="sheet-field">
+            <span class="">Nombre titular:</span>
+            <strong>Ana Demo</strong>
+          </div>
+          <div class="sheet-field">
+            <span class="">Acompañante / Pareja:</span>
+            <span style="color:var(--muted); font-style:italic;" class="">[Trazo ilegible]</span>
+          </div>
+          <div class="sheet-field">
+            <span class="">Idioma:</span>
+            <strong>Español</strong>
+          </div>
+          <div class="sheet-field">
+            <span class="">Interés principal:</span>
+            <strong>Playa / Viajes anuales</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:12px; color:var(--muted); line-height:1.4;" class="">
+        Fuente capturada el 9 nov 2026. La IA extrajo automáticamente los campos claros y marcó incertidumbres para tu validación humana.
+      </div>
+
+      <div class="photo-actions">
+        <button class="btn-sm-outline">Volver a tomar foto</button>
+        <button class="btn-sm-outline">Cambiar de imagen</button>
+      </div>
+    </div>
+
+    <!-- Panel Derecho: Formulario y Confirmación -->
+    <div class="fields-panel"><form id="form-revision-tour" onsubmit="event.preventDefault();" style="display: flex; flex-direction: column; gap: 24px;">
+        <!-- Sección 1: Pareja -->
+        <div class="section-block">
+          <div class="section-title-lg">
+            <span class="">1. Datos de la pareja</span>
+            <span style="font-size:13px; color:var(--gold); font-weight:600; cursor:pointer;" class="">Limpiar sección</span>
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label for="d-vis1">
+                <span class="">Visitante 1 (Titular) *</span>
+                <span class="label-tag extracted">Del survey</span>
+              </label>
+              <input class="desktop-input" id="d-vis1" name="titular" type="text" value="Ana Demo" required="" style="font-size:16px;">
+              <span class="hint-text">Lectura confirmada del encabezado.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="d-vis2">
+                <span class="">Visitante 2 (Pareja / Acompañante) <span style="font-weight:400; color:var(--muted); font-size:12px;" class="">(Opcional)</span></span>
+                <span class="label-tag review">Revisar</span>
+              </label>
+              <input class="desktop-input warning" id="d-vis2" name="pareja" type="text" value="Luis Demo" placeholder="Sin acompañante registrado" style="font-size:16px;">
+              <span class="hint-text" style="color:var(--amber-ink);">Si no aplica, dejar vacío para marcar como 'Sin acompañante registrado'.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 2: Tour y Horario -->
+        <div class="section-block">
+          <div class="section-title-lg">
+            <span class="">2. Sala y horario del tour</span>
+          </div>
+
+          <!-- Procedencia: Contexto de sesión -->
+          <div style="margin-bottom:6px;">
+            <div style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;" class="">Procedencia: Contexto de sesión</div>
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="d-sala" class="">Sala de ventas</label>
+                <input class="desktop-input" id="d-sala" name="sala" type="text" value="Sala Demo (Norte)" readonly="" style="background:var(--surface-soft); font-size:16px; cursor:not-allowed;">
+              </div>
+              <div class="form-group">
+                <label for="d-asesor" class="">Asesor asignado</label>
+                <input class="desktop-input" id="d-asesor" name="asesor" type="text" value="Ana Demo" readonly="" style="background:var(--surface-soft); font-size:16px; cursor:not-allowed;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Procedencia: Valores propuestos para revisar -->
+          <div>
+            <div style="font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;" class="">Procedencia: Valores propuestos para revisar</div>
+            <div class="grid-2" style="margin-bottom:14px;">
+              <div class="form-group">
+                <label for="d-fecha">
+                  <span class="">Fecha del tour</span>
+                  <span class="label-tag review">Revisar</span>
+                </label>
+                <input class="desktop-input" id="d-fecha" name="fecha" type="date" value="2026-11-09" required="" style="font-size:16px;">
+              </div>
+              <div class="form-group">
+                <label for="d-idioma">
+                  <span class="">Idioma de atención</span>
+                  <span class="label-tag extracted">Del survey</span>
+                </label>
+                <input class="desktop-input" id="d-idioma" name="idioma" type="text" value="Español" style="font-size:16px;">
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label for="d-hini">
+                  <span class="">Hora de inicio</span>
+                  <span class="label-tag review">Revisar</span>
+                </label>
+                <input class="desktop-input" id="d-hini" name="hora_inicio" type="time" value="10:30" required="" style="font-size:16px;">
+              </div>
+              <div class="form-group">
+                <label for="d-hfin">
+                  <span class="">Hora de fin</span>
+                  <span class="label-tag review">Revisar</span>
+                </label>
+                <input class="desktop-input" id="d-hfin" name="hora_fin" type="time" value="11:30" required="" style="font-size:16px;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 3: Más contexto (opcional) cerrado por defecto mediante control nativo details -->
+        <div class="section-block" style="border-bottom:none; padding-bottom:0;">
+          <details id="details-mas-contexto" style="border:1px solid var(--border); border-radius:12px; background:var(--surface-soft); overflow:hidden;">
+            <summary style="padding:14px 18px; font-weight:700; font-size:16px; color:var(--ink); cursor:pointer; user-select:none; display:flex; align-items:center; justify-content:space-between; list-style:none;">
+              <span class="">Más contexto (opcional)</span>
+              <span style="font-size:13px; color:var(--muted); font-weight:500;" class="">Desplegar para agregar notas o contacto ▾</span>
+            </summary>
+            <div style="padding:18px; border-top:1px solid var(--border); background:var(--surface); display:flex; flex-direction:column; gap:16px;">
+              <div class="form-group">
+                <label for="d-contacto" class="">Contacto compartido (opcional)</label>
+                <input class="desktop-input" id="d-contacto" name="contacto" type="email" value="" placeholder="ejemplo@correo.com o teléfono" style="font-size:16px;">
+                <span class="hint-text">Sin valor prellenado: ingrésalo si la pareja compartió datos de seguimiento directo.</span>
+              </div>
+              <div class="form-group">
+                <label for="d-notas" class="">Notas y observaciones del tour</label>
+                <textarea class="desktop-input" id="d-notas" name="notas" rows="3" placeholder="Intereses clave (ej. Playa / Viajes anuales), dudas iniciales o requerimientos especiales..." style="resize:vertical; min-height:80px; font-size:16px; line-height:1.4;"></textarea>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Barra de confirmación y CTA -->
+        <div class="confirm-bar">
+          <div class="confirm-left">
+            <input type="checkbox" id="d-chk-confirm" required="" checked="" style="width:22px; height:22px; cursor:pointer;">
+            <label for="d-chk-confirm" class="confirm-text" style="cursor:pointer;">
+              <strong style="font-size:15px;">Revisé la información con el documento de referencia</strong>
+              <span style="font-size:13px;" class="">Los datos de la pareja y horario están validados para coordinar la sala.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="cta-primary-lg" id="btn-desktop-confirm" style="font-size:16px; min-height:48px;">
+            <span class="">Confirmar y registrar tour</span>
+            <span class="">✓</span>
+          </button>
+        </div>
+      </form></div>
+  </div>
+</main>
+
+
+
+
+
+</body></html>

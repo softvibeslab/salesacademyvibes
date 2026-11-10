@@ -1,0 +1,107 @@
+[
+  {
+    "file": "tour-01.html",
+    "forms": 0,
+    "fields": 0,
+    "unlabelled": [],
+    "details": [],
+    "types": []
+  },
+  {
+    "file": "tour-02.html",
+    "forms": 0,
+    "fields": 0,
+    "unlabelled": [],
+    "details": [],
+    "types": []
+  },
+  {
+    "file": "tour-03.html",
+    "forms": 0,
+    "fields": 6,
+    "unlabelled": [],
+    "details": [],
+    "types": [
+      "text",
+      "text",
+      "text",
+      "text",
+      "date",
+      "time"
+    ]
+  },
+  {
+    "file": "tour-04.html",
+    "forms": 1,
+    "fields": 9,
+    "unlabelled": [],
+    "details": [
+      {
+        "open": false
+      }
+    ],
+    "types": [
+      "text",
+      "text",
+      "text",
+      "date",
+      "time",
+      "time",
+      "text",
+      "text",
+      "textarea"
+    ]
+  },
+  {
+    "file": "tour-05.html",
+    "forms": 0,
+    "fields": 1,
+    "unlabelled": [
+      "chk-revisado"
+    ],
+    "details": [],
+    "types": [
+      "checkbox"
+    ]
+  },
+  {
+    "file": "tour-06.html",
+    "forms": 0,
+    "fields": 0,
+    "unlabelled": [],
+    "details": [],
+    "types": []
+  },
+  {
+    "file": "tour-07.html",
+    "forms": 0,
+    "fields": 0,
+    "unlabelled": [],
+    "details": [],
+    "types": []
+  },
+  {
+    "file": "tour-08.html",
+    "forms": 1,
+    "fields": 11,
+    "unlabelled": [],
+    "details": [
+      {
+        "open": false
+      }
+    ],
+    "types": [
+      "text",
+      "text",
+      "text",
+      "text",
+      "date",
+      "text",
+      "time",
+      "time",
+      "email",
+      "textarea",
+      "checkbox"
+    ]
+  }
+]
